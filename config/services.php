@@ -20,7 +20,7 @@ return [
     ],
 
     'ses' => [
-        'key' => env('SES_KEY'),
+        'key'    => env('SES_KEY'),
         'secret' => env('SES_SECRET'),
         'region' => 'us-east-1',
     ],
@@ -30,9 +30,17 @@ return [
     ],
 
     'stripe' => [
-        'model' => App\User::class,
-        'key' => env('STRIPE_KEY'),
+        'model'  => App\Model\User::class,
+        'key'    => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'mastodon' => [
+        'domain'        => env('MASTODON_DOMAIN', 'https://chitose.moe'),
+        'client_id'     => env('MASTODON_ID'),
+        'client_secret' => env('MASTODON_SECRET'),
+        'redirect'      => env('MASTODON_REDIRECT'),
+        //'read', 'write', 'follow'
+        'scope'         => ['read'],
+    ],
 ];

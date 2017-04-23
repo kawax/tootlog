@@ -171,6 +171,8 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
 
+        Revolution\Socialite\Mastodon\MastodonServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
