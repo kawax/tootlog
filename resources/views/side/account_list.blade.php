@@ -5,7 +5,7 @@
         <ul class="list-group">
             @foreach($accounts as $account)
                 <li class="list-group-item">
-                    <span class="badge">14</span>
+                    <span class="badge">{{ $account->statuses_count }}</span>
                     {{ $account->username . '@' }}{{ parse_url($account->url, PHP_URL_HOST) }}
                 </li>
             @endforeach

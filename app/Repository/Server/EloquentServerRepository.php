@@ -2,7 +2,6 @@
 
 namespace App\Repository\Server;
 
-use Illuminate\Database\Query\Builder;
 use App\Model\Server;
 use Revolution\Mastodon\Apps;
 

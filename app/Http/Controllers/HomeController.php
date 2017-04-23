@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Repository\Account\AccountRepositoryInterface as Account;
+use App\Repository\Status\StatusRepositoryInterface as Status;
 
 class HomeController extends Controller
 {
@@ -15,7 +16,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-//        $this->middleware('auth');
+        //        $this->middleware('auth');
     }
 
     /**
@@ -23,12 +24,13 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response|\Illuminate\View\View
      */
-    public function index(Account $account)
+    public function index(Account $account, Status $status)
     {
-        $accounts = $account->index();
+        $accounts = $account->userAccounts();
+        $statuses = $status->userStatuses();
 
-//        dd($accounts);
+        //                dd($statuses);
 
-        return view('home')->with(compact('accounts'));
+        return view('home')->with(compact('accounts', 'statuses'));
     }
 }

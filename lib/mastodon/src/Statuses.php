@@ -1,0 +1,69 @@
+<?php
+
+namespace Revolution\Mastodon;
+
+use GuzzleHttp\Client;
+use GuzzleHttp\ClientInterface;
+
+class Statuses
+{
+    /**
+     * @var Client
+     */
+    protected $client;
+
+    /**
+     * @var string
+     */
+    protected $token;
+
+    /**
+     * Apps constructor.
+     */
+    public function __construct()
+    {
+        $this->client = new Client();
+    }
+
+    /**
+     * @param string $domain
+     * @param int    $account_id
+     * @param int    $since_id
+     *
+     * @return array
+     */
+    public function get(string $domain, int $account_id, int $since_id = null): array
+    {
+        //
+        $response = $this->client->get($domain . "/api/v1/accounts/$account_id/statuses?limit=40&since_id=$since_id", [
+            'headers' =>
+                ['Authorization' => 'Bearer ' . $this->token],
+        ]);
+
+        return json_decode($response->getBody(), true);
+    }
+
+    /**
+     * @param string $token
+     *
+     * @return $this
+     */
+    public function token(string $token)
+    {
+        $this->token = $token;
+
+        return $this;
+    }
+
+    /**
+     * @param ClientInterface $client
+     *
+     * @return $this
+     */
+    public function setClient(ClientInterface $client)
+    {
+        $this->client = $client;
+
+        return $this;
+    }
+}

@@ -9,7 +9,13 @@ interface AccountRepositoryInterface
      *
      * @return mixed
      */
-    public function index();
+    public function all();
+
+    /**
+     *
+     * @return mixed
+     */
+    public function userAccounts();
 
 
     /**

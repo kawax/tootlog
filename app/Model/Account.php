@@ -20,4 +20,9 @@ class Account extends Model
     {
         return $this->belongsTo(Server::class);
     }
+
+    public function statuses()
+    {
+        return $this->hasMany(Status::class);
+    }
 }

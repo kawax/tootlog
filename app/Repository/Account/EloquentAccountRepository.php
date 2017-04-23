@@ -10,11 +10,22 @@ class EloquentAccountRepository implements AccountRepositoryInterface
     /**
      * @inheritDoc
      */
-    public function index()
+    public function all()
+    {
+        $accounts = Account::all();
+
+        return $accounts;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function userAccounts()
     {
         $accounts = request()->user()
                              ->accounts()
-//                             ->with('server')
+            //                             ->with('server')
+                             ->withCount('statuses')
                              ->get();
 
         return $accounts;

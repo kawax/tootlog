@@ -7,6 +7,15 @@
                 @include('side.account_add')
                 @include('side.account_list')
             </div>
+
+            <div class="col-md-8">
+                {{ $statuses->links() }}
+
+                @each('status.item', $statuses, 'status')
+
+                {{ $statuses->links() }}
+
+            </div>
         </div>
     </div>
 @endsection

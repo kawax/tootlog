@@ -31,4 +31,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Account::class);
     }
+
+    public function statuses()
+    {
+        return $this->hasManyThrough(Status::class, Account::class);
+    }
 }
