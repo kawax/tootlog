@@ -18,6 +18,7 @@ class CreateServersTable extends Migration
 
             $table->unsignedInteger('app_id');
             $table->string('domain')->unique();
+            $table->string('redirect_uri');
             $table->string('client_id');
             $table->string('client_secret');
 

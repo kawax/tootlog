@@ -24,10 +24,10 @@ class Apps
      * @param string $domain
      * @param string $client_name
      * @param string $redirect_uris
-     * @param string $scopes
+     * @param array $scopes
      * @param string $website
      *
-     * @return string
+     * @return array
      */
     public function register(
         string $domain,
@@ -35,7 +35,7 @@ class Apps
         string $redirect_uris,
         string $scopes,
         string $website = ''
-    ): string {
+    ): array {
 
         $response = $this->client->post(trim($domain, "/\t\n\r\0\x0B") . '/api/v1/apps', [
                 'form_params' =>
@@ -43,7 +43,7 @@ class Apps
             ]
         );
 
-        return (string)$response->getBody();
+        return json_decode($response->getBody(), true);
     }
 
     /**
