@@ -41,6 +41,8 @@ class GetStatus extends Command
      */
     public function handle(Account $account)
     {
+        \Log::info('toot:statuses start');
+        
         $accounts = $account->oldest();
 
         foreach ($accounts as $account){
