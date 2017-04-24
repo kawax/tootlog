@@ -21,6 +21,7 @@ class CreateStatusesTable extends Migration
                   ->references('id')->on('accounts')
                   ->onDelete('cascade');
 
+            $table->unsignedBigInteger('status_id');
             $table->text('content');
             $table->timestampTz('created_at');
             $table->string('uri')->unique();
