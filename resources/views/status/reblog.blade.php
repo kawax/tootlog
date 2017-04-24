@@ -4,12 +4,12 @@
     <div class="panel-body">
         <div class="media">
             <div class="media-left">
-                <a href="{{ $status->reblog->account_url }}">
+                <a href="{{ $status->reblog->account_url }}" target="_blank">
                     <img class="media-object img-rounded toot-icon" src="{{ $status->reblog->avatar }}" alt="...">
                 </a>
             </div>
             <div class="media-body">
-                <h4 class="media-heading"><a href="{{ $status->reblog->account_url }}">{{ $status->reblog->name }}</a>
+                <h4 class="media-heading"><a href="{{ $status->reblog->account_url }}" target="_blank">{{ $status->reblog->name }}</a>
                 <small>{{ $status->reblog->acct }}</small></h4>
                 {!! $status->reblog->content !!}
 
