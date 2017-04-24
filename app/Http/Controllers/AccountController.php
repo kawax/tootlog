@@ -10,6 +10,8 @@ use App\Http\Requests\Account\AccountCreateRequest;
 use App\Repository\Server\ServerRepositoryInterface as Server;
 use App\Repository\Account\AccountRepositoryInterface as Account;
 
+use App\Jobs\Status\GetStatusJob;
+
 use Socialite;
 
 class AccountController extends Controller
@@ -26,6 +28,8 @@ class AccountController extends Controller
     {
         $domain = $request->input('domain');
         $domain = trim($domain, "/\t\n\r\0\x0B");
+        $url = parse_url($domain);
+        $domain = $url['scheme'] . '://' . $url['host'];
 
         $info = $server->firstOrCreate($domain);
 
@@ -38,6 +42,13 @@ class AccountController extends Controller
         return Socialite::driver('mastodon')->redirect();
     }
 
+    /**
+     * @param Request $request
+     * @param Account $account
+     * @param Server  $server
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function callback(Request $request, Account $account, Server $server)
     {
         $domain = session('mastodon_domain');
@@ -54,6 +65,9 @@ class AccountController extends Controller
 //            dd($user);
             $acct = $account->store($user, $info);
 //            dd($acct);
+
+            dispatch((new GetStatusJob($acct))->onConnection('sync'));
+
 
         } catch (ClientException $e) {
             \Log::error($e->getMessage());

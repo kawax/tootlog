@@ -2070,16 +2070,16 @@
         },
         {
             "name": "revolution/socialite-mastodon",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kawax/socialite-mastodon.git",
-                "reference": "27a403959dbe6f51421135f43c05a627e38d348c"
+                "reference": "1e847ed1c65ea748fb28ba859b492caef04c23bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kawax/socialite-mastodon/zipball/27a403959dbe6f51421135f43c05a627e38d348c",
-                "reference": "27a403959dbe6f51421135f43c05a627e38d348c",
+                "url": "https://api.github.com/repos/kawax/socialite-mastodon/zipball/1e847ed1c65ea748fb28ba859b492caef04c23bb",
+                "reference": "1e847ed1c65ea748fb28ba859b492caef04c23bb",
                 "shasum": ""
             },
             "require": {
@@ -2108,7 +2108,7 @@
                 "mastodon",
                 "socialite"
             ],
-            "time": "2017-04-13T10:59:27+00:00"
+            "time": "2017-04-23T07:37:08+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

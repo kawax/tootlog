@@ -13,6 +13,8 @@ use Cake\Chronos\Chronos;
 use App\Model\Account;
 use App\Model\Reblog;
 use App\Repository\Status\StatusRepositoryInterface as Status;
+use App\Repository\Account\AccountRepositoryInterface as AccountRepository;
+
 use Revolution\Mastodon\Statuses;
 
 
@@ -35,13 +37,20 @@ class GetStatusJob implements ShouldQueue
     /**
      * Execute the job.
      *
-     * @param Statuses $mstdn
-     * @param Status   $statusRepository
+     * @param Statuses          $mstdn
+     * @param Status            $statusRepository
+     * @param AccountRepository $accountRepository
      *
      * @return void
      */
-    public function handle(Statuses $mstdn, Status $statusRepository)
+    public function handle(Statuses $mstdn, Status $statusRepository, AccountRepository $accountRepository)
     {
+        \Log::info('GetStatusesJob: ' . $this->account->url);
+
+        $this->account = $accountRepository->refresh($this->account);
+
+//        $this->account->touch();
+
         $statuses = $mstdn->token($this->account->token)
                           ->get(
                               $this->account->server->domain,
@@ -49,7 +58,9 @@ class GetStatusJob implements ShouldQueue
                               $this->account->since_id
                           );
 
-        //        dd($statuses);
+//                dd($statuses);
+
+        $since_id = null;
 
         foreach ($statuses as $status) {
             $data = array_only($status, [
@@ -59,6 +70,11 @@ class GetStatusJob implements ShouldQueue
                 'uri',
             ]);
 
+            if(empty($since_id)){
+                $since_id = $data['id'];
+                $accountRepository->updateSince($this->account, $since_id);
+            }
+
             $date = Chronos::parse($data['created_at'], 'UTC');
 
             $data['created_at'] = $date->toDateTimeString();
@@ -67,7 +83,6 @@ class GetStatusJob implements ShouldQueue
             $data = array_add($data, 'account_id', $this->account->id);
 
             array_pull($data, 'id');
-            //            dd($data);
 
             if (!empty($status['reblog'])) {
                 $reblog = $status['reblog'];

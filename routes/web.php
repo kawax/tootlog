@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
 
 Auth::routes();
 
@@ -23,3 +24,10 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/home', 'HomeController@index');
 });
+
+Route::namespace('Open')->group(function () {
+    Route::name('open.user')->get('@{user}', 'UserController@index');
+});
+
+
+Route::get('/', 'WelcomeController');

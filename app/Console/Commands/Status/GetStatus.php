@@ -22,7 +22,7 @@ class GetStatus extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Get statuses';
 
     /**
      * Create a new command instance.
@@ -41,7 +41,7 @@ class GetStatus extends Command
      */
     public function handle(Account $account)
     {
-        $accounts = $account->all();
+        $accounts = $account->oldest();
 
         foreach ($accounts as $account){
             dispatch((new GetStatusJob($account)));

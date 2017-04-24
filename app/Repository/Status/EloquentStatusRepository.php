@@ -25,6 +25,20 @@ class EloquentStatusRepository implements StatusRepositoryInterface
     /**
      * @inheritDoc
      */
+    public function openStatuses($user)
+    {
+        $statuses = $user->statuses()
+                         ->where('accounts.locked', false)
+                         ->with(['account', 'reblog'])
+                         ->latest('created_at')
+                         ->paginate(10);
+
+        return $statuses;
+    }
+
+    /**
+     * @inheritDoc
+     */
     public function updateOrCreate(array $attr, array $values)
     {
         $status = Status::updateOrCreate($attr, $values);

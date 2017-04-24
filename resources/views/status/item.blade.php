@@ -4,18 +4,22 @@
             <div class="media">
                 <div class="media-left">
                     <a href="{{ $status->account->url }}">
-                        <img class="media-object img-rounded" src="{{ $status->account->avatar }}" alt="...">
+                        <img class="media-object img-rounded" src="{{ $status->account->avatar }}" alt="{{ $status->name }}">
                     </a>
                 </div>
                 <div class="media-body">
-                    <h4 class="media-heading"><a href="{{ $status->account->url }}">{{ $status->account->acct }}</a>
+                    <h4 class="media-heading">
+                        <a href="{{ $status->account->url }}">{{ $status->name }}</a>
                         <small class="text-muted">{{ $status->acct }}</small>
                     </h4>
+
                     {!! $status->content !!}
 
                     <div>
                         <a href="{{ $status->url }}" target="_blank">
-                            {!! $status->local_datetime !!}
+                            <time datetime="{{ $status->local_datetime->toAtomString() }}">
+                                {{ $status->local_datetime->diffForHumans() }}
+                            </time>
                         </a>
                     </div>
                 </div>

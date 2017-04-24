@@ -2,8 +2,28 @@
 // Fonts
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
 
+@font-face {
+  font-family: 'Noto Sans CJK JP';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Noto Sans CJK JP Light'),
+  url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Light.woff2) format('woff2'),
+  url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Light.woff) format('woff'),
+  url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Light.otf) format('opentype');
+}
+
+
+
 // Variables
 @import "variables";
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+$font-family-sans-serif: "Raleway", "Noto Sans", "Noto Sans CJK JP", -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+
+body {
+  margin: 0;
+  background-color: $body-bg;
+  font-family: $font-family-sans-serif;
+}

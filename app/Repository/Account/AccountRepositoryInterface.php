@@ -2,6 +2,8 @@
 
 namespace App\Repository\Account;
 
+use App\Model\Account;
+
 interface AccountRepositoryInterface
 {
 
@@ -15,7 +17,34 @@ interface AccountRepositoryInterface
      *
      * @return mixed
      */
+    public function oldest();
+
+    /**
+     *
+     * @return mixed
+     */
     public function userAccounts();
+
+    /**
+     *
+     * @return mixed
+     */
+    public function openAccounts($user);
+
+
+    /**
+     * @param Account $account
+     *
+     * @return mixed
+     */
+    public function refresh(Account $account);
+
+    /**
+     * @param Account $account
+     *
+     * @return mixed
+     */
+    public function updateSince(Account $account, $since_id);
 
 
     /**

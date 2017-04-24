@@ -5,7 +5,7 @@ namespace Revolution\Mastodon;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 
-class Statuses
+class Account
 {
     /**
      * @var Client
@@ -27,18 +27,21 @@ class Statuses
 
     /**
      * @param string $domain
-     * @param int    $account_id
-     * @param int    $since_id
+     * @param string $client_name
+     * @param string $redirect_uris
+     * @param array  $scopes
+     * @param string $website
      *
      * @return array
      */
-    public function get(string $domain, int $account_id, int $since_id = null): array
+    public function verify_credentials(string $domain): array
     {
-        $url = $domain . "/api/v1/accounts/$account_id/statuses?limit=40&since_id=$since_id";
-        $response = $this->client->get($url, [
-            'headers' =>
-                ['Authorization' => 'Bearer ' . $this->token],
-        ]);
+
+        $response = $this->client->get($domain . '/api/v1/accounts/verify_credentials', [
+                'headers' =>
+                    ['Authorization' => 'Bearer ' . $this->token],
+            ]
+        );
 
         return json_decode($response->getBody(), true);
     }
@@ -57,13 +60,9 @@ class Statuses
 
     /**
      * @param ClientInterface $client
-     *
-     * @return $this
      */
     public function setClient(ClientInterface $client)
     {
         $this->client = $client;
-
-        return $this;
     }
 }

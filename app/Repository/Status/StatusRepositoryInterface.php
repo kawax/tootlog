@@ -14,6 +14,12 @@ interface StatusRepositoryInterface
 
     /**
      *
+     * @return mixed
+     */
+    public function openStatuses($user);
+
+    /**
+     *
      * @param array $attr
      * @param array $values
      *

@@ -27,6 +27,16 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /**
+     * モデルのルートキーの取得
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'name';
+    }
+
     public function accounts()
     {
         return $this->hasMany(Account::class);
