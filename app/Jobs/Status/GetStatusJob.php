@@ -68,6 +68,7 @@ class GetStatusJob implements ShouldQueue
                 'created_at',
                 'content',
                 'uri',
+                'url',
             ]);
 
             if(empty($since_id)){

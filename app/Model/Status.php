@@ -18,7 +18,6 @@ class Status extends Model
 
     protected $appends = [
         'local_datetime',
-        'url',
         'name',
     ];
 
@@ -53,13 +52,6 @@ class Status extends Model
         $datetime = $this->created_at;//->setTimezone('Asia/Tokyo')->toDateTimeString();
 
         return $datetime;
-    }
-
-    public function getUrlAttribute()
-    {
-        $url = $this->account->url . '/' . $this->status_id;
-
-        return $url;
     }
 
     public function account()
