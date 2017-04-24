@@ -1,3 +1,9 @@
+@if (session('message'))
+    <div class="alert alert-danger">
+        {{ session('message') }}
+    </div>
+@endif
+
 <div class="panel panel-default">
     <div class="panel-heading">Add Account</div>
 

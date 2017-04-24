@@ -63,6 +63,11 @@ class AccountController extends Controller
         try {
             $user = Socialite::driver('mastodon')->user();
 //            dd($user);
+
+            if ($account->exists($user->user['url'])) {
+                return redirect('/home')->with('message', 'This account already exists.');
+            }
+
             $acct = $account->store($user, $info);
 //            dd($acct);
 

@@ -55,4 +55,11 @@ interface AccountRepositoryInterface
      */
     public function store($user, $server);
 
+    /**
+     * @param string $url
+     *
+     * @return bool
+     */
+    public function exists(string $url): bool;
+
 }
