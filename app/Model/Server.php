@@ -6,7 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Server extends Model
 {
-    protected $guarded = ['id'];
+    protected $fillable = [
+        'app_id',
+        'domain',
+        'redirect_uri',
+        'client_id',
+        'client_secret',
+    ];
 
     public function accounts()
     {

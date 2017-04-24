@@ -6,9 +6,25 @@ use Illuminate\Database\Eloquent\Model;
 
 class Account extends Model
 {
-    protected $guarded = [
-        'id',
-        'created_at',
+    protected $fillable = [
+        'user_id',
+        'server_id',
+        'account_id',
+        'since_id',
+        'token',
+        'username',
+        'display_name',
+        'locked',
+        'account_created_at',
+        'statuses_count',
+        'following_count',
+        'followers_count',
+        'note',
+        'url',
+        'avatar',
+        'avatar_static',
+        'header',
+        'header_static',
     ];
 
     public function user()

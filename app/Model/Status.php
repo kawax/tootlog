@@ -6,8 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Status extends Model
 {
-    protected $guarded = [
-        'id',
+    protected $fillable = [
+        'account_id',
+        'status_id',
+        'content',
+        'created_at',
+        'uri',
+        'url',
+        'reblog_id',
     ];
 
     public $timestamps = false;

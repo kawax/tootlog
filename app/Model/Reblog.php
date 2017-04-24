@@ -6,8 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reblog extends Model
 {
-    protected $guarded = [
-        'id',
+    protected $fillable = [
+        'account_id',
+        'status_id',
+        'content',
+        'created_at',
+        'uri',
+        'url',
+        'acct',
+        'display_name',
+        'account_url',
+        'avatar',
     ];
 
     public $timestamps = false;
