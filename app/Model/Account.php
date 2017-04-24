@@ -13,6 +13,7 @@ class Account extends Model
         'since_id',
         'token',
         'username',
+        'acct',
         'display_name',
         'locked',
         'account_created_at',
