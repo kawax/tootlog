@@ -49,7 +49,7 @@ class GetStatusJob implements ShouldQueue
 
         $this->account = $accountRepository->refresh($this->account);
 
-//        $this->account->touch();
+        //        $this->account->touch();
 
         $statuses = $mstdn->token($this->account->token)
                           ->get(
@@ -58,7 +58,7 @@ class GetStatusJob implements ShouldQueue
                               $this->account->since_id
                           );
 
-//                dd($statuses);
+        //                dd($statuses);
 
         $since_id = null;
 
@@ -71,10 +71,6 @@ class GetStatusJob implements ShouldQueue
                 'url',
             ]);
 
-            if(empty($since_id)){
-                $since_id = $data['id'];
-                $accountRepository->updateSince($this->account, $since_id);
-            }
 
             $date = Chronos::parse($data['created_at'], 'UTC');
 
@@ -83,7 +79,7 @@ class GetStatusJob implements ShouldQueue
             $data = array_add($data, 'status_id', $data['id']);
             $data = array_add($data, 'account_id', $this->account->id);
 
-            array_pull($data, 'id');
+            //            array_pull($data, 'id');
 
             if (!empty($status['reblog'])) {
                 $reblog = $status['reblog'];
@@ -93,6 +89,11 @@ class GetStatusJob implements ShouldQueue
 
             if (!empty($data['uri'])) {
                 $sta = $statusRepository->updateOrCreate(['uri' => $data['uri']], $data);
+            }
+
+            if (empty($since_id)) {
+                $since_id = $data['id'];
+                $accountRepository->updateSince($this->account, $since_id);
             }
         }
     }
