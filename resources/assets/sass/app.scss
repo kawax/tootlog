@@ -31,3 +31,13 @@ body {
 .toot-icon {
   max-width: 90px;
 }
+
+.footer {
+  //position: absolute;
+  border-top: 1px solid $navbar-default-border;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #fff;
+}
