@@ -5,7 +5,7 @@
         <div class="media">
             <div class="media-left">
                 <a href="{{ $status->reblog->account_url }}">
-                    <img class="media-object img-rounded" src="{{ $status->reblog->avatar }}" alt="...">
+                    <img class="media-object img-rounded toot-icon" src="{{ $status->reblog->avatar }}" alt="...">
                 </a>
             </div>
             <div class="media-body">
