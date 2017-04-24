@@ -41,3 +41,16 @@ body {
   height: 60px;
   background-color: #fff;
 }
+
+.invisible {
+  font-size: 0;
+  line-height: 0;
+  display: inline-block;
+  width: 0;
+}
+
+.ellipsis {
+  &:after {
+    content: "…";
+  }
+}
