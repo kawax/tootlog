@@ -62,6 +62,10 @@ class EloquentAccountRepository implements AccountRepositoryInterface
     {
         $data = $user->user;
 
+        if (Account::where('url', $data['url'])->exists()) {
+            abort(200, 'This account already exists.');
+        }
+
         $data['account_id'] = $data['id'];
         $data['account_created_at'] = Chronos::parse($data['created_at']);
         $data['token'] = $user->token;

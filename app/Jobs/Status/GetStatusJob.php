@@ -88,7 +88,12 @@ class GetStatusJob implements ShouldQueue
             }
 
             if (!empty($data['uri'])) {
-                $sta = $statusRepository->updateOrCreate(['uri' => $data['uri']], $data);
+                $attr = [
+                    'uri'        => $data['uri'],
+                    'account_id' => $this->account->id,
+                ];
+
+                $sta = $statusRepository->updateOrCreate($attr, $data);
             }
 
             if (empty($since_id)) {
