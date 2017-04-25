@@ -71,6 +71,13 @@ interface AccountRepositoryInterface
     public function store($user, $server);
 
     /**
+     * @param $user
+     *
+     * @return mixed
+     */
+    public function update($user);
+
+    /**
      * @param string $url
      *
      * @return bool

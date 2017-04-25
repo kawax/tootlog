@@ -62,17 +62,17 @@ class AccountController extends Controller
 
         try {
             $user = Socialite::driver('mastodon')->user();
-//            dd($user);
+            //            dd($user);
 
             if ($account->exists($user->user['url'])) {
-                return redirect('/home')->with('message', 'This account already exists.');
+                $acct = $account->update($user);
+                //                dd($acct);
+                //                return redirect('/home')->with('message', 'This account already exists.');
+            } else {
+                $acct = $account->store($user, $info);
             }
 
-            $acct = $account->store($user, $info);
-//            dd($acct);
-
             dispatch((new GetStatusJob($acct))->onConnection('sync'));
-
 
         } catch (ClientException $e) {
             \Log::error($e->getMessage());

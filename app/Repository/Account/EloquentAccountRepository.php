@@ -94,6 +94,25 @@ class EloquentAccountRepository implements AccountRepositoryInterface
     /**
      * @inheritDoc
      */
+    public function update($user)
+    {
+        $data = [];
+
+        $data['token'] = $user->token;
+        $data['fails'] = 0;
+
+        $account = Account::where('url', $user->user['url'])
+                          ->where('user_id', request()->user()->id)
+                          ->first();
+
+        $account->fill($data)->save();
+
+        return $account;
+    }
+
+    /**
+     * @inheritDoc
+     */
     public function refresh(Account $account)
     {
         $mstdn = new MastodonAccount();
