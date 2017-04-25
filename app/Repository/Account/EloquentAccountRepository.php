@@ -19,7 +19,6 @@ class EloquentAccountRepository implements AccountRepositoryInterface
     }
 
     /**
-     * toot:statusesのためのアカウントリスト
      *
      * @inheritDoc
      */
@@ -58,6 +57,19 @@ class EloquentAccountRepository implements AccountRepositoryInterface
         return $accounts;
     }
 
+    /**
+     * @inheritDoc
+     */
+    public function getByAcct(string $username, string $domain)
+    {
+        $url = '://' . $domain . '/@' . $username;
+
+        return Account::where('url', 'like', '%' . $url)->firstOrFail();
+    }
+
+    /**
+     * @inheritDoc
+     */
     public function store($user, $server)
     {
         $data = $user->user;

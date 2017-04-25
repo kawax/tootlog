@@ -27,7 +27,7 @@
 
             <div class="col-md-4 col-md-pull-8">
                 @include('side.account_add')
-                @include('side.account_list')
+                @include('open.account_list')
             </div>
         </div>
     </div>

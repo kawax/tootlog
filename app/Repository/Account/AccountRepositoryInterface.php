@@ -14,25 +14,39 @@ interface AccountRepositoryInterface
     public function all();
 
     /**
+     * toot:statusesのためのアカウントリスト
      *
      * @return mixed
      */
     public function oldest();
 
     /**
+     * ユーザーのアカウント
      *
      * @return mixed
      */
     public function userAccounts();
 
     /**
+     * ユーザーのアカウント（公開用）
      *
      * @return mixed
      */
     public function openAccounts($user);
 
+    /**
+     * ユーザー名とドメインからアカウント
+     *
+     * @param string $username
+     * @param string $domain
+     *
+     * @return mixed
+     */
+    public function getByAcct(string $username, string $domain);
 
     /**
+     * アカウント情報を更新
+     *
      * @param Account $account
      *
      * @return mixed
@@ -40,12 +54,13 @@ interface AccountRepositoryInterface
     public function refresh(Account $account);
 
     /**
+     * since_idを更新
+     *
      * @param Account $account
      *
      * @return mixed
      */
     public function updateSince(Account $account, $since_id);
-
 
     /**
      * @param $user

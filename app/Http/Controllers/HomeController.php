@@ -22,15 +22,21 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
+     * @param Request $request
+     * @param Account $account
+     * @param Status  $status
+     *
      * @return \Illuminate\Http\Response|\Illuminate\View\View
      */
-    public function index(Account $account, Status $status)
+    public function index(Request $request, Account $account, Status $status)
     {
+        $user = $request->user();
+
         $accounts = $account->userAccounts();
         $statuses = $status->userStatuses();
 
         //                dd($statuses);
 
-        return view('home')->with(compact('accounts', 'statuses'));
+        return view('home')->with(compact('user', 'accounts', 'statuses'));
     }
 }

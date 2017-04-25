@@ -28,6 +28,30 @@ class Account extends Model
         'header_static',
     ];
 
+    /**
+     * acct
+     *
+     * @return string
+     */
+    public function getAcctAttribute()
+    {
+        $domain = parse_url($this->url, PHP_URL_HOST);
+
+        return $this->username . '@' . $domain;
+    }
+
+    /**
+     * domain
+     *
+     * @return string
+     */
+    public function getDomainAttribute()
+    {
+        $domain = parse_url($this->url, PHP_URL_HOST);
+
+        return $domain;
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);

@@ -14,7 +14,7 @@ class UserController extends Controller
 {
     public function index(User $user, Account $accountRepository, Status $statusRepository)
     {
-        $statuses = $statusRepository->openStatuses($user);
+        $statuses = $statusRepository->openUserStatuses($user);
         $accounts = $accountRepository->openAccounts($user);
 
         return view('open.user')->with(compact('user', 'accounts', 'statuses'));

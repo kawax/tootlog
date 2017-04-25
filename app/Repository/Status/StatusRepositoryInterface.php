@@ -2,10 +2,15 @@
 
 namespace App\Repository\Status;
 
+use App\Model\User;
+use App\Model\Account;
+
+
 interface StatusRepositoryInterface
 {
 
     /**
+     * ユーザーのステータス
      *
      * @return mixed
      */
@@ -13,10 +18,23 @@ interface StatusRepositoryInterface
 
 
     /**
+     * ユーザーのステータス（公開用）
+     *
+     * @param User $user
      *
      * @return mixed
      */
-    public function openStatuses($user);
+    public function openUserStatuses(User $user);
+
+    /**
+     * アカウントのステータス（公開用）
+     *
+     * @param Account $acct
+     *
+     * @return mixed
+     */
+    public function openAcctStatuses(Account $acct);
+
 
     /**
      *

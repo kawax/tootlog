@@ -27,6 +27,8 @@ Route::middleware('auth')->group(function () {
 
 Route::namespace('Open')->group(function () {
     Route::name('open.user')->get('@{user}', 'UserController@index');
+    Route::name('open.account.index')->get('@{user}/{username}@{domain}', 'AccountController@index');
+    Route::name('open.account.show')->get('@{user}/{username}@{domain}/{status_id}', 'AccountController@show');
 });
 
 
