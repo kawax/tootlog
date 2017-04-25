@@ -58,11 +58,15 @@ class GetStatusJob implements ShouldQueue
                               $this->account->since_id
                           );
 
-        //                        dd($statuses);
+//        dd($statuses);
 
         $since_id = null;
 
         foreach ($statuses as $status) {
+            if($status['visibility'] == 'direct'){
+                continue;
+            }
+
             $data = array_only($status, [
                 'id',
                 'created_at',
