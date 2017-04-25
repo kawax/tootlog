@@ -31,6 +31,6 @@ class AccountPolicy
      */
     public function show(User $user, Account $account)
     {
-        return $account->locked = false or $user->id === $account->user_id;
+        return $user->id === $account->user_id;
     }
 }

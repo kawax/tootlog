@@ -45,7 +45,9 @@ class AccountController extends Controller
     {
         $acct = $this->accountRepository->getByAcct($username, $domain);
 
-        $this->authorize('show', $acct);
+        if ($acct->locked) {
+            $this->authorize('show', $acct);
+        }
 
         $statuses = $this->statusRepository->openAcctStatuses($acct);
         $accounts = $this->accountRepository->openAccounts($user);
@@ -65,7 +67,9 @@ class AccountController extends Controller
     {
         $acct = $this->accountRepository->getByAcct($username, $domain);
 
-        $this->authorize('show', $acct);
+        if ($acct->locked) {
+            $this->authorize('show', $acct);
+        }
 
         $status = $this->statusRepository->getByAcct($acct, $status_id);
         $accounts = $this->accountRepository->openAccounts($user);
