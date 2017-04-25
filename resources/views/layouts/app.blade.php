@@ -21,6 +21,8 @@
         'csrfToken' => csrf_token(),
     ]) !!};
     </script>
+
+    @include('layouts.google')
 </head>
 <body>
 <div id="app">
