@@ -11,6 +11,10 @@
                         <i class="fa fa-ban text-danger" aria-hidden="true"></i>
                     @endif
                     {{ $account->acct }}
+                    @if($account->locked)
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                    @endif
+
                 </a>
             @endforeach
         </div>

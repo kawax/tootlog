@@ -13,7 +13,12 @@
                 <div class="media-body">
                     <h4 class="media-heading">
                         <a href="{{ $status->account->url }}" target="_blank">{{ $status->name }}</a>
-                        <small class="text-muted">{{ $status->acct }}</small>
+                        <small class="text-muted">
+                            {{ $status->acct }}
+                            @if($status->account->locked)
+                                <i class="fa fa-lock" aria-hidden="true"></i>
+                            @endif
+                        </small>
                     </h4>
 
                     @if(empty($status->spoiler_text))
