@@ -44,6 +44,9 @@ class AccountController extends Controller
     public function index(User $user, string $username, string $domain)
     {
         $acct = $this->accountRepository->getByAcct($username, $domain);
+
+        $this->authorize('show', $acct);
+
         $statuses = $this->statusRepository->openAcctStatuses($acct);
         $accounts = $this->accountRepository->openAccounts($user);
 
@@ -61,6 +64,9 @@ class AccountController extends Controller
     public function show(User $user, string $username, string $domain, string $status_id)
     {
         $acct = $this->accountRepository->getByAcct($username, $domain);
+
+        $this->authorize('show', $acct);
+
         $status = $this->statusRepository->getByAcct($acct, $status_id);
         $accounts = $this->accountRepository->openAccounts($user);
 

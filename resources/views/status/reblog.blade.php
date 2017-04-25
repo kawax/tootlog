@@ -11,7 +11,22 @@
             <div class="media-body">
                 <h4 class="media-heading"><a href="{{ $status->reblog->account_url }}" target="_blank">{{ $status->reblog->name }}</a>
                 <small>{{ $status->reblog->acct }}</small></h4>
-                {!! $status->reblog->content !!}
+
+                @if(empty($status->reblog->spoiler_text))
+                    {!! $status->reblog->content !!}
+                @else
+                    <button class="btn btn-warning btn-sm"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#cw_{{ $status->id }}"
+                            aria-expanded="false"
+                            aria-controls="collapse">
+                        {{ $status->reblog->spoiler_text }}
+                    </button>
+                    <div class="collapse" id="cw_{{ $status->id }}">
+                        {!! $status->reblog->content !!}
+                    </div>
+                @endif
 
                 <div>
                     <a href="{{ $status->reblog->url }}" target="_blank">

@@ -67,6 +67,7 @@ class GetStatusJob implements ShouldQueue
                 'id',
                 'created_at',
                 'content',
+                'spoiler_text',
                 'uri',
                 'url',
             ]);
@@ -113,6 +114,7 @@ class GetStatusJob implements ShouldQueue
             'account_url'  => $reblog['account']['url'],
             'avatar'       => $reblog['account']['avatar'],
             'content'      => $reblog['content'],
+            'spoiler_text' => $reblog['spoiler_text'],
             'uri'          => $reblog['uri'],
             'url'          => $reblog['url'],
         ];

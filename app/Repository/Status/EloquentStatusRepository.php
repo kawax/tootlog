@@ -43,9 +43,9 @@ class EloquentStatusRepository implements StatusRepositoryInterface
      */
     public function openAcctStatuses(Account $acct)
     {
-        //        if ($acct->locked) {
-        //            abort(404);
-        //        }
+//                if ($acct->locked) {
+        //                    abort(404);
+        //                }
 
         $statuses = $acct->statuses()
                          ->with(['account', 'reblog'])

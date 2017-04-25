@@ -10,6 +10,7 @@ class Reblog extends Model
         'account_id',
         'status_id',
         'content',
+        'spoiler_text',
         'created_at',
         'uri',
         'url',

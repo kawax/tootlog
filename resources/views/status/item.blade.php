@@ -14,7 +14,21 @@
                         <small class="text-muted">{{ $status->acct }}</small>
                     </h4>
 
-                    {!! $status->content !!}
+                    @if(empty($status->spoiler_text))
+                        {!! $status->content !!}
+                    @else
+                        <button class="btn btn-warning btn-sm"
+                                type="button"
+                                data-toggle="collapse"
+                                data-target="#cw_{{ $status->id }}"
+                                aria-expanded="false"
+                                aria-controls="collapse">
+                            {{ $status->spoiler_text }}
+                        </button>
+                        <div class="collapse" id="cw_{{ $status->id }}">
+                            {!! $status->content !!}
+                        </div>
+                    @endif
 
                     <div>
                         <a href="{{ $status->url }}" target="_blank">
