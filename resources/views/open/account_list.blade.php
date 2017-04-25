@@ -7,6 +7,9 @@
                 <a href="{{ route('open.account.index', ['user' => $user->name ,'username' => $account->username, 'domain' => $account->domain]) }}"
                    class="list-group-item">
                     <span class="badge">{{ $account->statuses_count }}</span>
+                    @if($account->fails >= config('tootlog.account_fails'))
+                        <i class="fa fa-ban text-danger" aria-hidden="true"></i>
+                    @endif
                     {{ $account->acct }}
                 </a>
             @endforeach
