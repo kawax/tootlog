@@ -11,6 +11,7 @@ class Account extends Model
         'server_id',
         'account_id',
         'since_id',
+        'fails',
         'token',
         'username',
         'acct',

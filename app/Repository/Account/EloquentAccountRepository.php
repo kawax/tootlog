@@ -24,7 +24,10 @@ class EloquentAccountRepository implements AccountRepositoryInterface
      */
     public function oldest()
     {
-        $accounts = Account::oldest('updated_at')->limit(config('tootlog.account_limit'))->get();
+        $accounts = Account::oldest('updated_at')
+                           ->where('fails', '<', config('tootlog.account_fails'))
+                           ->limit(config('tootlog.account_limit'))
+                           ->get();
 
         return $accounts;
     }
@@ -36,7 +39,7 @@ class EloquentAccountRepository implements AccountRepositoryInterface
     {
         $accounts = request()->user()
                              ->accounts()
-            //                             ->with('server')
+                             ->latest('updated_at')
                              ->withCount('statuses')
                              ->get();
 
@@ -50,7 +53,7 @@ class EloquentAccountRepository implements AccountRepositoryInterface
     {
         $accounts = $user->accounts()
                          ->where('locked', false)
-            //                             ->with('server')
+                         ->latest('updated_at')
                          ->withCount('statuses')
                          ->get();
 

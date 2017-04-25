@@ -2,6 +2,7 @@
 
 namespace App\Jobs\Status;
 
+use GuzzleHttp\Exception\ClientException;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
@@ -22,6 +23,9 @@ class GetStatusJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
+    /**
+     * @var Account
+     */
     protected $account;
 
     /**
@@ -49,21 +53,29 @@ class GetStatusJob implements ShouldQueue
 
         $this->account = $accountRepository->refresh($this->account);
 
-        //        $this->account->touch();
+        try {
+            $statuses = $mstdn->token($this->account->token)
+                              ->get(
+                                  $this->account->server->domain,
+                                  $this->account->account_id,
+                                  $this->account->since_id
+                              );
+        } catch (ClientException $e) {
+            \Log::error('ClientException: ' . $this->account->url . ' ' . $e->getMessage());
 
-        $statuses = $mstdn->token($this->account->token)
-                          ->get(
-                              $this->account->server->domain,
-                              $this->account->account_id,
-                              $this->account->since_id
-                          );
+            $this->account->increment('fails');
 
-//        dd($statuses);
+            return;
+        }
+
+        $this->account->fill(['fails' => 0])->save();
+
+        //        dd($statuses);
 
         $since_id = null;
 
         foreach ($statuses as $status) {
-            if($status['visibility'] == 'direct'){
+            if ($status['visibility'] == 'direct') {
                 continue;
             }
 
@@ -123,7 +135,7 @@ class GetStatusJob implements ShouldQueue
             'url'          => $reblog['url'],
         ];
 
-        $re = Reblog::firstOrCreate($data);
+        $re = Reblog::updateOrCreate(['uri' => $reblog['uri']], $data);
 
         return $re;
     }
