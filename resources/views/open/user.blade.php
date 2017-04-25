@@ -10,7 +10,9 @@
             <div class="col-md-8 col-md-push-4">
                 {{ $statuses->links() }}
 
-                @each('status.item', $statuses, 'status')
+                @foreach($statuses as $status)
+                    @include('status.item')
+                @endforeach
 
                 {{ $statuses->links() }}
 

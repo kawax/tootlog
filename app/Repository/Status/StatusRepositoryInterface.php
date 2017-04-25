@@ -16,7 +16,6 @@ interface StatusRepositoryInterface
      */
     public function userStatuses();
 
-
     /**
      * ユーザーのステータス（公開用）
      *
@@ -35,6 +34,15 @@ interface StatusRepositoryInterface
      */
     public function openAcctStatuses(Account $acct);
 
+    /**
+     * アカウントのステータス（公開用）
+     *
+     * @param Account $acct
+     * @param string  $status_id
+     *
+     * @return mixed
+     */
+    public function getByAcct(Account $acct, string $status_id);
 
     /**
      *

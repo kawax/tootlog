@@ -18,7 +18,9 @@
 
                 {{ $statuses->links() }}
 
-                @each('status.item', $statuses, 'status')
+                @foreach($statuses as $status)
+                    @include('status.item')
+                @endforeach
 
                 {{ $statuses->links() }}
 

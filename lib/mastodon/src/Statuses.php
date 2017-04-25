@@ -34,6 +34,7 @@ class Statuses
      */
     public function get(string $domain, int $account_id, int $since_id = null): array
     {
+        //$since_id
         $url = $domain . "/api/v1/accounts/$account_id/statuses?limit=40&since_id=$since_id";
         $response = $this->client->get($url, [
             'headers' =>

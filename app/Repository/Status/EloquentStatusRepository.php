@@ -43,9 +43,9 @@ class EloquentStatusRepository implements StatusRepositoryInterface
      */
     public function openAcctStatuses(Account $acct)
     {
-        if ($acct->locked) {
-            abort(404);
-        }
+        //        if ($acct->locked) {
+        //            abort(404);
+        //        }
 
         $statuses = $acct->statuses()
                          ->with(['account', 'reblog'])
@@ -53,6 +53,19 @@ class EloquentStatusRepository implements StatusRepositoryInterface
                          ->paginate(10);
 
         return $statuses;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getByAcct(Account $acct, string $status_id)
+    {
+        $status = $acct->statuses()
+                       ->where('status_id', $status_id)
+                       ->with(['account', 'reblog'])
+                       ->firstOrFail();
+
+        return $status;
     }
 
     /**

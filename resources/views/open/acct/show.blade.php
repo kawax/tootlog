@@ -11,13 +11,7 @@
 
                 @include('open.acct.profile')
 
-                {{ $statuses->links() }}
-
-                @foreach($statuses as $status)
-                    @include('status.item')
-                @endforeach
-
-                {{ $statuses->links() }}
+                @include('status.item', $status)
 
             </div>
 

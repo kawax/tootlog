@@ -58,7 +58,7 @@ class GetStatusJob implements ShouldQueue
                               $this->account->since_id
                           );
 
-        //                dd($statuses);
+        //                        dd($statuses);
 
         $since_id = null;
 
