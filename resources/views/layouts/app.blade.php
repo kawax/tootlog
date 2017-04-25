@@ -10,14 +10,16 @@
 
     <title>@yield('title', config('app.name', 'Laravel'))</title>
 
+    <meta name="description" content="@yield('description', 'Mastodon log archives service.')">
+
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
-            'csrfToken' => csrf_token(),
-        ]) !!};
+        'csrfToken' => csrf_token(),
+    ]) !!};
     </script>
 </head>
 <body>
@@ -66,7 +68,7 @@
                                 <li>
                                     <a href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                                 document.getElementById('logout-form').submit();">
                                         Logout
                                     </a>
 

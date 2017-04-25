@@ -5,11 +5,15 @@
         <div class="media">
             <div class="media-left">
                 <a href="{{ $status->reblog->account_url }}" target="_blank">
-                    <img class="media-object img-rounded toot-icon" src="{{ $status->reblog->avatar }}" alt="...">
+                    <img class="media-object img-rounded toot-icon"
+                         src="{{ $status->reblog->avatar }}"
+                         alt="{{ $status->reblog->name }}"
+                         title="{{ $status->reblog->name }}">
                 </a>
             </div>
             <div class="media-body">
-                <h4 class="media-heading"><a href="{{ $status->reblog->account_url }}" target="_blank">{{ $status->reblog->name }}</a>
+                <h4 class="media-heading">
+                    <a href="{{ $status->reblog->account_url }}" target="_blank">{{ $status->reblog->name }}</a>
                 <small>{{ $status->reblog->acct }}</small></h4>
 
                 @if(empty($status->reblog->spoiler_text))

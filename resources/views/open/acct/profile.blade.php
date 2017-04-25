@@ -7,7 +7,10 @@
         <div class="media">
             <div class="media-left">
                 <a href="{{ $acct->url }}" target="_blank">
-                    <img class="media-object img-rounded toot-icon" src="{{ $acct->avatar }}" alt="">
+                    <img class="media-object img-rounded toot-icon"
+                         src="{{ $acct->avatar }}"
+                         alt="{{ $acct->username }}"
+                         title="{{ $acct->username }}">
                 </a>
             </div>
             <div class="media-body">

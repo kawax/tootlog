@@ -4,8 +4,10 @@
             <div class="media">
                 <div class="media-left">
                     <a href="{{ $status->account->url }}" target="_blank">
-                        <img class="media-object img-rounded toot-icon" src="{{ $status->account->avatar }}"
-                             alt="{{ $status->name }}">
+                        <img class="media-object img-rounded toot-icon"
+                             src="{{ $status->account->avatar }}"
+                             alt="{{ $status->name }}"
+                             title="{{ $status->name }}">
                     </a>
                 </div>
                 <div class="media-body">
