@@ -3,7 +3,7 @@
         <div class="panel-body">
             <div class="media">
                 <div class="media-left">
-                    <a href="{{ $status->account->url }}" target="_blank">
+                    <a href="{{ $status->account->url }}" target="_blank" rel="nofollow noopener">
                         <img class="media-object img-rounded toot-icon"
                              src="{{ $status->account->avatar }}"
                              alt="{{ $status->name }}"
@@ -12,7 +12,7 @@
                 </div>
                 <div class="media-body">
                     <h4 class="media-heading">
-                        <a href="{{ $status->account->url }}" target="_blank">{{ $status->name }}</a>
+                        <a href="{{ $status->account->url }}" target="_blank" rel="nofollow noopener">{{ $status->name }}</a>
                         <small class="text-muted">
                             {{ $status->acct }}
                             @if($status->account->locked)
@@ -38,7 +38,7 @@
                     @endif
 
                     <div>
-                        <a href="{{ $status->url }}" target="_blank">
+                        <a href="{{ $status->url }}" target="_blank" rel="nofollow noopener">
                             <time datetime="{{ $status->local_datetime->toAtomString() }}">
                                 {{ $status->local_datetime->diffForHumans() }}
                             </time>

@@ -6,7 +6,7 @@
 
         <div class="media">
             <div class="media-left">
-                <a href="{{ $acct->url }}" target="_blank">
+                <a href="{{ $acct->url }}" target="_blank" rel="nofollow noopener">
                     <img class="media-object img-rounded toot-icon"
                          src="{{ $acct->avatar }}"
                          alt="{{ $acct->username }}"
@@ -23,7 +23,7 @@
 
                 <p>{!! $acct->note !!}</p>
 
-                <a href="{{ $acct->url }}" target="_blank">
+                <a href="{{ $acct->url }}" target="_blank" rel="nofollow noopener">
                     {{ $acct->url }}
                 </a>
             </div>

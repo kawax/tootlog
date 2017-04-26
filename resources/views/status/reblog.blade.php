@@ -4,7 +4,7 @@
     <div class="panel-body">
         <div class="media">
             <div class="media-left">
-                <a href="{{ $status->reblog->account_url }}" target="_blank">
+                <a href="{{ $status->reblog->account_url }}" target="_blank" rel="nofollow noopener">
                     <img class="media-object img-rounded toot-icon"
                          src="{{ $status->reblog->avatar }}"
                          alt="{{ $status->reblog->name }}"
@@ -13,7 +13,7 @@
             </div>
             <div class="media-body">
                 <h4 class="media-heading">
-                    <a href="{{ $status->reblog->account_url }}" target="_blank">{{ $status->reblog->name }}</a>
+                    <a href="{{ $status->reblog->account_url }}" target="_blank" rel="nofollow noopener">{{ $status->reblog->name }}</a>
                     <small>{{ $status->reblog->acct }}</small>
                 </h4>
 
@@ -34,7 +34,7 @@
                 @endif
 
                 <div>
-                    <a href="{{ $status->reblog->url }}" target="_blank">
+                    <a href="{{ $status->reblog->url }}" target="_blank" rel="nofollow noopener">
                         <time datetime="{{ $status->reblog->created_at->toAtomString() }}">
                             {{ $status->reblog->created_at->diffForHumans() }}
                         </time>
