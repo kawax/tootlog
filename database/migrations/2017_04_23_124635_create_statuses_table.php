@@ -23,7 +23,7 @@ class CreateStatusesTable extends Migration
 
             $table->unsignedBigInteger('status_id');
             $table->text('content');
-            $table->timestampTz('created_at');
+            $table->timestamp('created_at')->nullable();
             $table->string('uri')->unique();
             $table->string('url');
         });

@@ -67,11 +67,13 @@ class AccountController extends Controller
     {
         $acct = $this->accountRepository->getByAcct($username, $domain);
 
-        if ($acct->locked) {
+
+        $status = $this->statusRepository->getByAcct($acct, $status_id);
+
+        if ($acct->locked or $status->trashed()) {
             $this->authorize('show', $acct);
         }
 
-        $status = $this->statusRepository->getByAcct($acct, $status_id);
         $accounts = $this->accountRepository->openAccounts($user);
 
         return view('open.acct.show')->with(compact('user', 'acct', 'accounts', 'status'));

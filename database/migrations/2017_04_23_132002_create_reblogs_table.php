@@ -23,7 +23,7 @@ class CreateReblogsTable extends Migration
             $table->string('avatar');
 
             $table->text('content');
-            $table->timestampTz('created_at');
+            $table->timestamp('created_at')->nullable();
             $table->string('uri')->unique();
             $table->string('url');
         });

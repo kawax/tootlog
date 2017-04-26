@@ -25,6 +25,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/home', 'HomeController@index');
 });
 
+Route::middleware('auth')->namespace('Api')->prefix('api')->group(function () {
+    Route::delete('status/hide/{status}', 'StatusController@hide');
+    Route::put('status/show/{status}', 'StatusController@show');
+});
+
 Route::namespace('Open')->group(function () {
     Route::name('open.user')->get('@{user}', 'UserController@index');
     Route::name('open.account.index')->get('@{user}/{username}@{domain}', 'AccountController@index');

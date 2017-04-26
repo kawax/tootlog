@@ -15,6 +15,12 @@
             </div>
             <div class="media-body">
                 <h3 class="media-heading">{{ empty($acct->display_name) ? $acct->username : $acct->display_name }}</h3>
+                <p>
+                    <span class="badge">{!! $acct->statuses_count !!} posts</span>
+                    <span class="badge">{!! $acct->following_count !!} follows</span>
+                    <span class="badge">{!! $acct->followers_count !!} followers</span>
+                </p>
+
                 <p>{!! $acct->note !!}</p>
 
                 <a href="{{ $acct->url }}" target="_blank">

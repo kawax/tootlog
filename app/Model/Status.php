@@ -3,9 +3,12 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Status extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = [
         'account_id',
         'status_id',
@@ -17,10 +20,10 @@ class Status extends Model
         'reblog_id',
     ];
 
-    public $timestamps = false;
-
     protected $dates = [
         'created_at',
+        'updated_at',
+        'deleted_at',
     ];
 
     protected $appends = [

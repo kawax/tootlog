@@ -45,23 +45,23 @@
                         </a>
                     </div>
 
-                    @if(!empty($user))
-                        <div>
-                            <a href="{{ route('open.account.show', [
+                    <div>
+                        <a href="{{ route('open.account.show', [
                             'user' => $user,
                             'username' => $status->account->username,
                             'domain' => $status->account->domain,
                             'status_id' => $status->status_id
                             ]) }}">
-                                {{ $status->account->acct . '/' . $status->status_id }}
+                            {{ $status->account->acct . '/' . $status->status_id }}
 
-                            </a>
-                        </div>
-                    @endif
+                        </a>
+                    </div>
                 </div>
-
             </div>
         </div>
+
+        @include('status.footer')
+
     </div>
 @else
     @include('status.reblog')

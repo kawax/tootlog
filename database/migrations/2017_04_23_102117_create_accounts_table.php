@@ -32,7 +32,7 @@ class CreateAccountsTable extends Migration
             $table->string('acct');
             $table->string('display_name');
             $table->boolean('locked');
-            $table->timestampTz('account_created_at');
+            $table->timestamp('account_created_at')->nullable();
             $table->unsignedInteger('statuses_count');
             $table->unsignedInteger('following_count');
             $table->unsignedInteger('followers_count');

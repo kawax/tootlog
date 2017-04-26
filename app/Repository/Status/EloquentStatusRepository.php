@@ -17,6 +17,7 @@ class EloquentStatusRepository implements StatusRepositoryInterface
     {
         $statuses = request()->user()
                              ->statuses()
+                             ->withTrashed()
                              ->with(['account', 'reblog'])
                              ->latest('created_at')
                              ->paginate(10);
@@ -43,10 +44,6 @@ class EloquentStatusRepository implements StatusRepositoryInterface
      */
     public function openAcctStatuses(Account $acct)
     {
-//                if ($acct->locked) {
-        //                    abort(404);
-        //                }
-
         $statuses = $acct->statuses()
                          ->with(['account', 'reblog'])
                          ->latest('created_at')
@@ -61,6 +58,7 @@ class EloquentStatusRepository implements StatusRepositoryInterface
     public function getByAcct(Account $acct, string $status_id)
     {
         $status = $acct->statuses()
+                       ->withTrashed()
                        ->where('status_id', $status_id)
                        ->with(['account', 'reblog'])
                        ->firstOrFail();

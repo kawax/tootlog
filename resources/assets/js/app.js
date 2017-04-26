@@ -15,7 +15,8 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
+Vue.component('tt-status-hide', require('./components/StatusHide.vue'));
+Vue.component('tt-status-show', require('./components/StatusShow.vue'));
 
 const app = new Vue({
     el: '#app'

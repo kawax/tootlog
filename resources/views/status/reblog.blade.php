@@ -14,7 +14,8 @@
             <div class="media-body">
                 <h4 class="media-heading">
                     <a href="{{ $status->reblog->account_url }}" target="_blank">{{ $status->reblog->name }}</a>
-                <small>{{ $status->reblog->acct }}</small></h4>
+                    <small>{{ $status->reblog->acct }}</small>
+                </h4>
 
                 @if(empty($status->reblog->spoiler_text))
                     {!! $status->reblog->content !!}
@@ -40,22 +41,23 @@
                     </a>
                 </div>
 
-                @if(!empty($user))
-                    <div>
-                        <a href="{{ route('open.account.show', [
+                <div>
+                    <a href="{{ route('open.account.show', [
                             'user' => $user,
                             'username' => $status->account->username,
                             'domain' => $status->account->domain,
                             'status_id' => $status->status_id
                             ]) }}">
-                            {{ $status->account->acct . '/' . $status->status_id }}
+                        {{ $status->account->acct . '/' . $status->status_id }}
 
-                        </a>
-                    </div>
-                @endif
+                    </a>
+                </div>
 
             </div>
 
         </div>
     </div>
+
+    @include('status.footer')
+
 </div>
