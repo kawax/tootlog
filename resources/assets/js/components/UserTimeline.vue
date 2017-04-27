@@ -90,9 +90,7 @@
                     headers: {'Authorization': 'Bearer ' + this.token}
                 }).then(res => {
                     console.log(res)
-                    this.posts = res.data
-
-                    this.posts = _.orderBy(this.posts, ['created_at', 'id'], 'desc')
+                    this.posts = _.orderBy(res.data, ['created_at', 'id'], 'desc')
 
                     this.stream(type)
                 }).catch(error => {
@@ -139,13 +137,15 @@
                     } else if (data.event === "update") {
                         // status update for one of your timelines
 //                        console.log(data.payload)
-                        this.posts.unshift(data.payload)
+                        let tmp = this.posts
 
-                        this.posts = _.uniqBy(this.posts, 'id')
+                        tmp.unshift(data.payload)
 
-                        this.posts = _.orderBy(this.posts, ['created_at', 'id'], 'desc')
+                        tmp = _.uniqBy(tmp, 'id')
 
-                        this.posts = _.slice(this.posts, 0, this.max)
+                        tmp = _.orderBy(tmp, ['created_at', 'id'], 'desc')
+
+                        this.posts = _.slice(tmp, 0, this.max)
 
                     } else {
                         // probably an error

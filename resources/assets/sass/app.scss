@@ -18,9 +18,11 @@
 @import "variables";
 
 // Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
 
-@import "node_modules/font-awesome/scss/font-awesome";
+@import "~font-awesome/scss/font-awesome";
+
+//@import "~emojione-assets/sprites/emojione-sprite-64";
 
 $font-family-sans-serif: "Raleway", "Noto Sans", "Noto Sans CJK JP", -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
 
@@ -58,5 +60,18 @@ body {
 .ellipsis {
   &:after {
     content: "…";
+  }
+}
+
+.emojione {
+  display: inline-block;
+  font-size: inherit;
+  vertical-align: middle;
+  margin: -.2ex .15em .2ex;
+  width: 16px;
+  height: 16px;
+
+  img {
+    width: auto;
   }
 }

@@ -3,7 +3,7 @@
         <span class="label label-info">
             <img class="img-circle toot-icon-small"
                  :src="post.account.avatar">
-            {{ post.account.display_name.length > 0 ? post.account.display_name : post.account.username }} reblogged
+            <span v-html="display_name()"></span> reblogged
         </span>
 
         <div class="media">
@@ -15,23 +15,22 @@
             </div>
             <div class="media-body">
                 <h4 class="media-heading">
-                    <a :href="post.reblog.account.url" target="_blank" rel="nofollow noopener">
-                        {{ post.reblog.account.display_name ? post.reblog.account.display_name : post.reblog.account.username }}
+                    <a :href="post.reblog.account.url" v-html="reblog_display_name()" target="_blank"
+                       rel="nofollow noopener">
                     </a>
                     <small class="text-muted">
                         @{{ post.reblog.account.acct }}
                     </small>
                 </h4>
 
-
                 <button class="btn btn-warning btn-sm"
                         type="button"
                         v-if="post.reblog.spoiler_text.length != 0"
-                        v-html="post.reblog.spoiler_text"
+                        v-html="emoji(post.reblog.spoiler_text)"
                         @click="post.reblog.spoiler_text = ''">
                 </button>
 
-                <div v-if="!post.reblog.spoiler_text" v-html="post.reblog.content">
+                <div v-if="!post.reblog.spoiler_text" v-html="emoji(post.reblog.content)">
                 </div>
 
                 <div v-if="post.reblog.media_attachments" v-for="media in post.reblog.media_attachments">
@@ -40,7 +39,11 @@
                     </a>
                 </div>
 
-                <div>{{ formatDate(post.reblog.created_at) }}</div>
+                <div>
+                    <a :href="post.reblog.url" target="_blank" ref="nofollow noopener">
+                        {{ formatDate(post.reblog.created_at) }}
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -51,12 +54,26 @@
 <script>
     import format from 'date-fns/format'
     import parse from 'date-fns/parse'
+    import emoji from '../emoji'
 
     export default {
         props: [
             'post',
         ],
         methods: {
+            display_name() {
+                return this.post.account.display_name.length > 0 ?
+                    this.emoji(this.post.account.display_name) :
+                    this.post.account.username
+            },
+            reblog_display_name() {
+                return this.post.reblog.account.display_name ?
+                    this.emoji(this.post.reblog.account.display_name) :
+                    this.post.reblog.account.username
+            },
+            emoji(input) {
+                return emoji.toImage(input)
+            },
             formatDate(date) {
                 return format(parse(date), 'YYYY-MM-DD HH:mm:ss')
             }

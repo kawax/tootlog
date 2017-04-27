@@ -8,23 +8,21 @@
         </div>
         <div class="media-body">
             <h4 class="media-heading">
-                <a :href="post.account.url" target="_blank" rel="nofollow noopener">
-                    {{ post.account.display_name ? post.account.display_name : post.account.username }}
+                <a :href="post.account.url" v-html="display_name()" target="_blank" rel="nofollow noopener">
                 </a>
                 <small class="text-muted">
                     @{{ post.account.acct }}
                 </small>
             </h4>
 
-
             <button class="btn btn-warning btn-sm"
                     type="button"
                     v-if="post.spoiler_text.length != 0"
-                    v-html="post.spoiler_text"
+                    v-html="emoji(post.spoiler_text)"
                     @click="post.spoiler_text = ''">
             </button>
 
-            <div v-if="!post.spoiler_text" v-html="post.content">
+            <div v-if="!post.spoiler_text" v-html="emoji(post.content)">
             </div>
 
             <div v-if="post.media_attachments" v-for="media in post.media_attachments">
@@ -33,7 +31,11 @@
                 </a>
             </div>
 
-            <div>{{ formatDate(post.created_at) }}</div>
+            <div>
+                <a :href="post.url" target="_blank" ref="nofollow noopener">
+                    {{ formatDate(post.created_at) }}
+                </a>
+            </div>
         </div>
     </div>
 </template>
@@ -41,13 +43,24 @@
 <script>
     import format from 'date-fns/format'
     import parse from 'date-fns/parse'
+    import emoji from '../emoji'
 
     export default {
         props: [
             'post',
         ],
         methods: {
+            display_name() {
+                return this.post.account.display_name ?
+                    this.emoji(this.post.account.display_name) :
+                    this.post.account.username
+            },
+            emoji(input) {
+//                return input
+                return emoji.toImage(input)
+            },
             formatDate(date) {
+//                return ''
                 return format(parse(date), 'YYYY-MM-DD HH:mm:ss')
             }
         }
