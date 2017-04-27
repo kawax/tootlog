@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', config('app.name', 'Laravel'))</title>
+    <title>@yield('title', config('app.name', 'tootlog'))</title>
 
     <meta name="description" content="@yield('description', 'Mastodon log archives service.')">
 
@@ -50,6 +50,7 @@
                 <ul class="nav navbar-nav">
                     &nbsp; @if (Auth::check())
                         <li><a href="{{ url('home') }}">Home</a></li>
+                        <li><a href="{{ route('timeline') }}">Timeline</a></li>
                     @endif
                 </ul>
 

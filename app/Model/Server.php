@@ -14,6 +14,16 @@ class Server extends Model
         'client_secret',
     ];
 
+    /**
+     * streaming api url
+     *
+     * @return mixed
+     */
+    public function getStreamingAttribute()
+    {
+        return array_get(config('tootlog.streaming'), $this->domain, $this->domain);
+    }
+
     public function accounts()
     {
         return $this->hasMany(Account::class);

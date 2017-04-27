@@ -19,15 +19,20 @@
 Auth::routes();
 
 Route::middleware('auth')->group(function () {
-    Route::name('accounts.add')->post('/accounts', 'AccountController@redirect');
-    Route::get('/accounts/callback', 'AccountController@callback');
+    Route::name('accounts.add')->post('accounts', 'AccountController@redirect');
+    Route::get('accounts/callback', 'AccountController@callback');
 
-    Route::get('/home', 'HomeController@index');
+    Route::name('timeline')->get('timeline', 'TimelineController@index');
+    Route::name('timeline.account')->get('timeline/{username}@{domain}', 'TimelineController@acct');
+
+    Route::get('home', 'HomeController@index');
 });
 
 Route::middleware('auth')->namespace('Api')->prefix('api')->group(function () {
     Route::delete('status/hide/{status}', 'StatusController@hide');
     Route::put('status/show/{status}', 'StatusController@show');
+
+    Route::get('accounts', 'AccountController@index');
 });
 
 Route::namespace('Open')->group(function () {

@@ -1,5 +1,10 @@
 <div class="panel panel-info">
-    <div class="panel-heading">reblogged at {{ $status->local_datetime->diffForHumans() }}</div>
+    <div class="panel-heading">
+        <img class="img-circle toot-icon-small"
+             src="{{ $status->account->avatar }}"
+             alt="{{ $status->name }}"
+             title="{{ $status->name }}">
+        {{ $status->name }} reblogged at {{ $status->local_datetime->diffForHumans() }}</div>
 
     <div class="panel-body">
         <div class="media">

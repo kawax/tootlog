@@ -28,6 +28,13 @@ interface AccountRepositoryInterface
     public function userAccounts();
 
     /**
+     * ユーザーのタイムライン表示用アカウント
+     *
+     * @return mixed
+     */
+    public function userTimelineAccounts();
+
+    /**
      * ユーザーのアカウント（公開用）
      *
      * @return mixed

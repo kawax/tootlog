@@ -17,6 +17,9 @@ window.Vue = require('vue');
 
 Vue.component('tt-status-hide', require('./components/StatusHide.vue'));
 Vue.component('tt-status-show', require('./components/StatusShow.vue'));
+Vue.component('tt-user-timeline', require('./components/UserTimeline.vue'));
+Vue.component('tt-timeline-status', require('./components/TimelineStatus.vue'));
+Vue.component('tt-timeline-reblog', require('./components/TimelineReblog.vue'));
 
 const app = new Vue({
     el: '#app'
