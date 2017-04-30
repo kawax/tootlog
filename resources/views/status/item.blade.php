@@ -12,7 +12,8 @@
                 </div>
                 <div class="media-body">
                     <h4 class="media-heading">
-                        <a href="{{ $status->account->url }}" target="_blank" rel="nofollow noopener">{{ $status->name }}</a>
+                        <a href="{{ $status->account->url }}" target="_blank"
+                           rel="nofollow noopener">{!! EmojiOne::toImage($status->name) !!} </a>
                         <small class="text-muted">
                             {{ $status->acct }}
                             @if($status->account->locked)
@@ -22,7 +23,7 @@
                     </h4>
 
                     @if(empty($status->spoiler_text))
-                        {!! $status->content !!}
+                        {!! EmojiOne::toImage($status->content) !!}
                     @else
                         <button class="btn btn-warning btn-sm"
                                 type="button"
@@ -30,10 +31,10 @@
                                 data-target="#cw_{{ $status->id }}"
                                 aria-expanded="false"
                                 aria-controls="collapse">
-                            {{ $status->spoiler_text }}
+                            {!! EmojiOne::toImage($status->spoiler_text) !!}
                         </button>
                         <div class="collapse" id="cw_{{ $status->id }}">
-                            {!! $status->content !!}
+                            {!! EmojiOne::toImage($status->content) !!}
                         </div>
                     @endif
 

@@ -18,12 +18,12 @@
             </div>
             <div class="media-body">
                 <h4 class="media-heading">
-                    <a href="{{ $status->reblog->account_url }}" target="_blank" rel="nofollow noopener">{{ $status->reblog->name }}</a>
+                    <a href="{{ $status->reblog->account_url }}" target="_blank" rel="nofollow noopener">{!! EmojiOne::toImage($status->reblog->name) !!}</a>
                     <small>{{ $status->reblog->acct }}</small>
                 </h4>
 
                 @if(empty($status->reblog->spoiler_text))
-                    {!! $status->reblog->content !!}
+                    {!! EmojiOne::toImage($status->reblog->content) !!}
                 @else
                     <button class="btn btn-warning btn-sm"
                             type="button"
@@ -31,10 +31,10 @@
                             data-target="#cw_{{ $status->id }}"
                             aria-expanded="false"
                             aria-controls="collapse">
-                        {{ $status->reblog->spoiler_text }}
+                        {!! EmojiOne::toImage($status->reblog->spoiler_text) !!}
                     </button>
                     <div class="collapse" id="cw_{{ $status->id }}">
-                        {!! $status->reblog->content !!}
+                        {!! EmojiOne::toImage($status->reblog->content) !!}
                     </div>
                 @endif
 

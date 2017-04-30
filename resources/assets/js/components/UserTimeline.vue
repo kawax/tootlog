@@ -2,8 +2,11 @@
     <div>
 
         <div class="btn-group" style="margin-bottom: 10px;" role="group">
-            <button type="button" class="btn btn-default" v-for="(text, type) in types"
-                    :class="{active : active_type == type}" @click="get(type)" v-html="text"></button>
+            <button type="button" class="btn btn-default"
+                    v-for="(text, type) in types"
+                    :class="{active : active_type === type}"
+                    @click="get(type)"
+                    v-html="text"></button>
         </div>
 
         <div class="alert alert-danger" v-if="errors.length > 0">
@@ -58,7 +61,8 @@
                 },
                 active_type: 'public:local',
                 posts: [],
-                max: 100,
+                count: 0,
+                max: 50,
                 errors: [],
             }
         },
@@ -86,7 +90,7 @@
 
                 const timeline = this.timelines[type]
 
-                axios.get(this.endpoint + '/timelines/' + timeline + '?limit=40', {
+                axios.get(this.endpoint + '/timelines/' + timeline + '?limit=20', {
                     headers: {'Authorization': 'Bearer ' + this.token}
                 }).then(res => {
                     console.log(res)
@@ -137,15 +141,10 @@
                     } else if (data.event === "update") {
                         // status update for one of your timelines
 //                        console.log(data.payload)
-                        let tmp = this.posts
 
-                        tmp.unshift(data.payload)
+                        this.posts.unshift(data.payload)
 
-                        tmp = _.uniqBy(tmp, 'id')
-
-                        tmp = _.orderBy(tmp, ['created_at', 'id'], 'desc')
-
-                        this.posts = _.slice(tmp, 0, this.max)
+                        this.posts.splice(this.max)
 
                     } else {
                         // probably an error

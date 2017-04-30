@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "22819a63a170a0d1cc8f54919721aabe",
+    "content-hash": "23910bb6d40e175717cb9984ba267173",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.26.3",
+            "version": "3.26.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "a843acca973557ca4fefb7e4d407e6312ff0b9ed"
+                "reference": "5fd52d91aa168134f13a57df7fbf7d1f7b7a85ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/a843acca973557ca4fefb7e4d407e6312ff0b9ed",
-                "reference": "a843acca973557ca4fefb7e4d407e6312ff0b9ed",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/5fd52d91aa168134f13a57df7fbf7d1f7b7a85ca",
+                "reference": "5fd52d91aa168134f13a57df7fbf7d1f7b7a85ca",
                 "shasum": ""
             },
             "require": {
@@ -84,7 +84,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-04-26T17:47:01+00:00"
+            "time": "2017-04-28T23:15:22+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -311,6 +311,63 @@
                 "time"
             ],
             "time": "2017-04-27T01:27:49+00:00"
+        },
+        {
+            "name": "christofferok/laravel-emojione",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/christofferok/laravel-emojione.git",
+                "reference": "ebf95e42e8c7b9d60e5d553280f6a529ca3e282a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/christofferok/laravel-emojione/zipball/ebf95e42e8c7b9d60e5d553280f6a529ca3e282a",
+                "reference": "ebf95e42e8c7b9d60e5d553280f6a529ca3e282a",
+                "shasum": ""
+            },
+            "require": {
+                "emojione/emojione": "^3.0",
+                "illuminate/support": "~5.1",
+                "php": "~5.6|~7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0||~5.0",
+                "squizlabs/php_codesniffer": "^2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ChristofferOK\\LaravelEmojiOne\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": ":Christoffer Korvald",
+                    "email": "korvald@gmail.com",
+                    "homepage": "https://christoffeork.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel helper for EmojiOne",
+            "homepage": "https://github.com/christofferok/LaravelEmojiOne",
+            "keywords": [
+                "ChristofferOK",
+                "LaravelEmojiOne",
+                "emoji",
+                "emojione",
+                "laravel"
+            ],
+            "time": "2017-04-27T16:56:48+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -816,6 +873,49 @@
             "time": "2014-09-09T13:34:57+00:00"
         },
         {
+            "name": "emojione/emojione",
+            "version": "v3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Ranks/emojione.git",
+                "reference": "07955d394c9f2e80dd43445fd2eb6bb4fd460d54"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Ranks/emojione/zipball/07955d394c9f2e80dd43445fd2eb6bb4fd460d54",
+                "reference": "07955d394c9f2e80dd43445fd2eb6bb4fd460d54",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.6 || ~5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Emojione\\": "lib/php/src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "(CC-BY-4.0 and MIT)"
+            ],
+            "description": "EmojiOne is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG format provided for the emoji images.",
+            "homepage": "http://www.emojione.com",
+            "keywords": [
+                "emoji",
+                "emojione",
+                "emojis",
+                "emoticons",
+                "smileys",
+                "smilies",
+                "unicode"
+            ],
+            "time": "2017-04-24T21:38:47+00:00"
+        },
+        {
             "name": "erusev/parsedown",
             "version": "1.6.2",
             "source": {
@@ -1124,16 +1224,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.4.19",
+            "version": "v5.4.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "02444b7450350db17a7607c8a52f7268ebdb0dad"
+                "reference": "2ed668f96d1a6ca42f50d5c87ee9ceecfc0a6eee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/02444b7450350db17a7607c8a52f7268ebdb0dad",
-                "reference": "02444b7450350db17a7607c8a52f7268ebdb0dad",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/2ed668f96d1a6ca42f50d5c87ee9ceecfc0a6eee",
+                "reference": "2ed668f96d1a6ca42f50d5c87ee9ceecfc0a6eee",
                 "shasum": ""
             },
             "require": {
@@ -1249,7 +1349,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-04-16T13:33:34+00:00"
+            "time": "2017-04-28T15:40:01+00:00"
         },
         {
             "name": "laravel/socialite",
@@ -1419,16 +1519,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.39",
+            "version": "1.0.40",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "2474325ee924134bb05848663b12531f6f2e9fbe"
+                "reference": "3828f0b24e2c1918bb362d57a53205d6dc8fde61"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/2474325ee924134bb05848663b12531f6f2e9fbe",
-                "reference": "2474325ee924134bb05848663b12531f6f2e9fbe",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/3828f0b24e2c1918bb362d57a53205d6dc8fde61",
+                "reference": "3828f0b24e2c1918bb362d57a53205d6dc8fde61",
                 "shasum": ""
             },
             "require": {
@@ -1498,7 +1598,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2017-04-25T15:24:43+00:00"
+            "time": "2017-04-28T10:15:08+00:00"
         },
         {
             "name": "league/oauth1-client",

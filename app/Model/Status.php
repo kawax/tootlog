@@ -51,7 +51,7 @@ class Status extends Model
      */
     public function getNameAttribute()
     {
-        $name = empty($this->account->display_name) ? $this->account->username : $this->account->display_name;
+        $name = $this->account->name;
 
         return $name;
     }

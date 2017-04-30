@@ -9,19 +9,19 @@
                 <a href="{{ $acct->url }}" target="_blank" rel="nofollow noopener">
                     <img class="media-object img-rounded toot-icon"
                          src="{{ $acct->avatar }}"
-                         alt="{{ $acct->username }}"
-                         title="{{ $acct->username }}">
+                         alt="{{ $acct->name }}"
+                         title="{{ $acct->name }}">
                 </a>
             </div>
             <div class="media-body">
-                <h3 class="media-heading">{{ empty($acct->display_name) ? $acct->username : $acct->display_name }}</h3>
+                <h3 class="media-heading">{!! EmojiOne::toImage($acct->name) !!}</h3>
                 <p>
                     <span class="badge">{!! $acct->statuses_count !!} posts</span>
                     <span class="badge">{!! $acct->following_count !!} follows</span>
                     <span class="badge">{!! $acct->followers_count !!} followers</span>
                 </p>
 
-                <p>{!! $acct->note !!}</p>
+                <p>{!! EmojiOne::toImage($acct->note) !!}</p>
 
                 <a href="{{ $acct->url }}" target="_blank" rel="nofollow noopener">
                     {{ $acct->url }}

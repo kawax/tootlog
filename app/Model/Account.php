@@ -41,6 +41,7 @@ class Account extends Model
         return $this->username . '@' . $domain;
     }
 
+
     /**
      * domain
      *
@@ -51,6 +52,16 @@ class Account extends Model
         $domain = parse_url($this->url, PHP_URL_HOST);
 
         return $domain;
+    }
+
+    /**
+     * @return mixed|string
+     */
+    public function getNameAttribute()
+    {
+        $name = empty($this->display_name) ? $this->username : $this->display_name;
+
+        return $name;
     }
 
     public function user()
