@@ -49,20 +49,6 @@ class EloquentAccountRepository implements AccountRepositoryInterface
     /**
      * @inheritDoc
      */
-    public function userTimelineAccounts()
-    {
-        $accounts = request()->user()
-                             ->accounts()
-                             ->oldest()
-                             ->limit(2)
-                             ->get();
-
-        return $accounts;
-    }
-
-    /**
-     * @inheritDoc
-     */
     public function openAccounts($user)
     {
         $accounts = $user->accounts()

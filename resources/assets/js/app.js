@@ -9,6 +9,10 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+import VueCharts from 'vue-charts'
+Vue.use(VueCharts)
+
+
 /**
  * Next, we will redirect a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -20,7 +24,14 @@ Vue.component('tt-status-show', require('./components/StatusShow.vue'));
 Vue.component('tt-user-timeline', require('./components/UserTimeline.vue'));
 Vue.component('tt-timeline-status', require('./components/TimelineStatus.vue'));
 Vue.component('tt-timeline-reblog', require('./components/TimelineReblog.vue'));
+Vue.component('tt-calendar', require('./components/Calendar.vue'));
+
+Vue.component('tt-card', require('./components/Card.vue'));
 
 const app = new Vue({
     el: '#app'
+});
+
+$(window).resize(function () {
+    app.$emit('redrawChart');
 });

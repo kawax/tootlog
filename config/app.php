@@ -188,6 +188,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
+        App\Providers\ViewComposerServiceProvider::class,
 
     ],
 
@@ -244,6 +245,8 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
 
         'EmojiOne' => ChristofferOK\LaravelEmojiOne\LaravelEmojiOneFacade::class,
+
+        'Lava' => Khill\Lavacharts\Laravel\LavachartsFacade::class,
 
     ],
 

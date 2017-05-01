@@ -1,5 +1,5 @@
 <div class="panel panel-default">
-    <div class="panel-heading"><a href="{{ route('open.user', $user) }}">Account List</a></div>
+    <div class="panel-heading"><a href="{{ route('open.user', $user) }}">{{ '@' . $user->name }} Account List</a></div>
 
     <div class="panel-body">
         <div class="list-group">

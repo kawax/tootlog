@@ -18,18 +18,16 @@
             </ul>
         </div>
 
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <div v-for="post in posts">
+        <tt-card>
+            <div v-for="post in posts">
 
-                    <tt-timeline-reblog :post="post" v-if="post.reblog"></tt-timeline-reblog>
+                <tt-timeline-reblog :post="post" v-if="post.reblog"></tt-timeline-reblog>
 
-                    <tt-timeline-status :post="post" v-else></tt-timeline-status>
+                <tt-timeline-status :post="post" v-else></tt-timeline-status>
 
-                    <hr>
-                </div>
+                <hr>
             </div>
-        </div>
+        </tt-card>
 
     </div>
 </template>

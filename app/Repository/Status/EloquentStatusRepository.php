@@ -9,6 +9,7 @@ use Cake\Chronos\Chronos;
 
 class EloquentStatusRepository implements StatusRepositoryInterface
 {
+    const PAGINATE = 20;
 
     /**
      * @inheritDoc
@@ -20,7 +21,7 @@ class EloquentStatusRepository implements StatusRepositoryInterface
                              ->withTrashed()
                              ->with(['account', 'reblog'])
                              ->latest('created_at')
-                             ->paginate(10);
+                             ->paginate(self::PAGINATE);
 
         return $statuses;
     }
@@ -34,9 +35,41 @@ class EloquentStatusRepository implements StatusRepositoryInterface
                          ->where('accounts.locked', false)
                          ->with(['account', 'reblog'])
                          ->latest('created_at')
-                         ->paginate(10);
+                         ->paginate(self::PAGINATE);
 
         return $statuses;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function openUserStatusesByDate(User $user, string $date)
+    {
+        $statuses = $user->statuses()
+                         ->where('accounts.locked', false)
+                         ->whereDate('statuses.created_at', $date)
+                         ->with(['account', 'reblog'])
+                         ->latest('created_at')
+                         ->paginate(self::PAGINATE);
+
+        return $statuses;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function openRecents(User $user)
+    {
+        $recents = $user->statuses()
+                        ->where('accounts.locked', false)
+                        ->latest()
+                        ->get()
+                        ->groupBy(function ($item, $key) {
+                            return $item->created_at->format('Y-m-d');
+                        })
+                        ->take(10);
+
+        return $recents;
     }
 
     /**
@@ -47,7 +80,7 @@ class EloquentStatusRepository implements StatusRepositoryInterface
         $statuses = $acct->statuses()
                          ->with(['account', 'reblog'])
                          ->latest('created_at')
-                         ->paginate(10);
+                         ->paginate(self::PAGINATE);
 
         return $statuses;
     }
@@ -64,6 +97,55 @@ class EloquentStatusRepository implements StatusRepositoryInterface
                        ->firstOrFail();
 
         return $status;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function openCalendar(User $user)
+    {
+        $from_date = Chronos::now()->startOfYear()->format('Y-m-d');
+
+        $statuses = $user->statuses()
+                         ->whereDate('statuses.created_at', '>=', $from_date)
+                         ->where('accounts.locked', false)
+                         ->latest()
+                         ->get()
+                         ->groupBy(function ($item, $key) {
+                             return $item->created_at->format('Y-m-d');
+                         });
+
+        $cal = collect([]);
+
+        foreach ($statuses as $key => $status) {
+            $cal->prepend($status->count(), $key);
+        }
+
+        return $cal;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function openAcctCalendar(Account $account)
+    {
+        $from_date = Chronos::now()->startOfYear()->format('Y-m-d');
+
+        $statuses = $account->statuses()
+                            ->whereDate('statuses.created_at', '>=', $from_date)
+                            ->latest()
+                            ->get()
+                            ->groupBy(function ($item, $key) {
+                                return $item->created_at->format('Y-m-d');
+                            });
+
+        $cal = collect([]);
+
+        foreach ($statuses as $key => $status) {
+            $cal->prepend($status->count(), $key);
+        }
+
+        return $cal;
     }
 
     /**

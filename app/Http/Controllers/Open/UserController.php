@@ -18,6 +18,5 @@ class UserController extends Controller
         $accounts = $accountRepository->openAccounts($user);
 
         return view('open.user')->with(compact('user', 'accounts', 'statuses'));
-
     }
 }

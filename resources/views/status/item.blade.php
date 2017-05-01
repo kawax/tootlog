@@ -1,6 +1,7 @@
 @if(empty($status->reblog))
     <div class="panel panel-default">
         <div class="panel-body">
+
             <div class="media">
                 <div class="media-left">
                     <a href="{{ $status->account->url }}" target="_blank" rel="nofollow noopener">
@@ -64,6 +65,7 @@
         @include('status.footer')
 
     </div>
+
 @else
     @include('status.reblog')
 @endif
