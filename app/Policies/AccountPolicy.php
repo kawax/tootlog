@@ -31,6 +31,6 @@ class AccountPolicy
      */
     public function show(User $user, Account $account)
     {
-        return $user->id === $account->user_id;
+        return (int)$user->id === (int)$account->user_id;
     }
 }

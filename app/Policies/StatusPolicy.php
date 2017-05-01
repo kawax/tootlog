@@ -29,6 +29,6 @@ class StatusPolicy
      */
     public function hide(User $user, Status $status)
     {
-        return $user->id === $status->account->user_id;
+        return (int)$user->id === (int)$status->account->user_id;
     }
 }
