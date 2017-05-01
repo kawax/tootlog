@@ -94,7 +94,7 @@
                     headers: {'Authorization': 'Bearer ' + this.token}
                 }).then(res => {
                     console.log(res)
-                    this.posts = _.orderBy(res.data, ['created_at', 'id'], 'desc')
+                    this.posts = res.data
 
                     this.stream(type)
                 }).catch(error => {

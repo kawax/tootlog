@@ -15,6 +15,9 @@
                     <li class="active">{{ '@' . $user->name  }}</li>
                 </ol>
 
+                <tt-calendar user="{{ $user->name }}"></tt-calendar>
+
+
                 {{ $statuses->links() }}
 
                 @foreach($statuses as $status)

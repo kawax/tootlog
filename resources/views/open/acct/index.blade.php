@@ -17,6 +17,8 @@
 
                 @include('open.acct.profile')
 
+                <tt-calendar user="{{ $user->name }}" acct="{{ $acct->acct }}"></tt-calendar>
+
                 {{ $statuses->links() }}
 
                 @foreach($statuses as $status)
