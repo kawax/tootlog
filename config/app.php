@@ -179,6 +179,8 @@ return [
 
         ChristofferOK\LaravelEmojiOne\LaravelEmojiOneServiceProvider::class,
 
+        Roumen\Sitemap\SitemapServiceProvider::class,
+
         /*
          * Application Service Providers...
          */

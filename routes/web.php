@@ -52,4 +52,7 @@ Route::namespace('Api')->prefix('api')->group(function () {
 });
 
 
+Route::get('sitemaps', 'SitemapController');
+
+
 Route::get('/', 'WelcomeController');
