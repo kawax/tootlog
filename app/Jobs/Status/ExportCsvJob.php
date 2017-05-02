@@ -58,8 +58,8 @@ class ExportCsvJob implements ShouldQueue
                 'content',
                 'spoiler_text',
                 'created_at',
-                'url',
                 'uri',
+                'url',
             ]);
 
             $path = 'csv/' . $this->user->name . '/' . $account->acct . '.csv';
