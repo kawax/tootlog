@@ -25,6 +25,9 @@ Route::middleware('auth')->group(function () {
     Route::name('timeline')->get('timeline', 'TimelineController@index');
     Route::name('timeline.account')->get('timeline/{username}@{domain}', 'TimelineController@acct');
 
+    Route::name('preferences.index')->get('preferences', 'PreferencesController@index');
+    Route::name('preferences.update')->post('preferences', 'PreferencesController@update');
+
     Route::get('home', 'HomeController@index');
 });
 

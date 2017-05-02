@@ -68,6 +68,10 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ route('preferences.index') }}">Preferences</a></li>
+
+                                <li role="separator" class="divider"></li>
+
                                 <li>
                                     <a href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
