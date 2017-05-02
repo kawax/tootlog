@@ -157,4 +157,16 @@ class EloquentStatusRepository implements StatusRepositoryInterface
 
         return $status;
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function exportCsv(Account $account)
+    {
+        return $account->statuses()
+                       ->withTrashed()
+                       ->where('reblog_id', null)
+                       ->latest()
+                       ->get();
+    }
 }

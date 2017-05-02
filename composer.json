@@ -20,7 +20,8 @@
     "laravelcollective/html": "^5.4",
     "peppeocchi/laravel-elb-middleware": "^1.0",
     "revolution/socialite-mastodon": "^1.0",
-    "roumen/sitemap": "^2.6"
+    "roumen/sitemap": "^2.6",
+    "usmanhalalit/laracsv": "dev-master"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",

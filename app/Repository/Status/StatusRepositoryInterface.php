@@ -90,4 +90,13 @@ interface StatusRepositoryInterface
      */
     public function updateOrCreate(array $attr, array $values);
 
+    /**
+     * CSVエクスポート
+     *
+     * @param Account $account
+     *
+     * @return mixed
+     */
+    public function exportCsv(Account $account);
+
 }

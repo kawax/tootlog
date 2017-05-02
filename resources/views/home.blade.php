@@ -30,6 +30,8 @@
             <div class="col-md-4 col-md-pull-8">
                 @include('side.account_add')
                 @include('open.account_list')
+                @include('side.export')
+
             </div>
         </div>
     </div>

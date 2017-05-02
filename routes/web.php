@@ -28,6 +28,8 @@ Route::middleware('auth')->group(function () {
     Route::name('preferences.index')->get('preferences', 'PreferencesController@index');
     Route::name('preferences.update')->post('preferences', 'PreferencesController@update');
 
+    Route::name('export.csv')->post('export/csv', 'ExportController@csv');
+
     Route::get('home', 'HomeController@index');
 });
 

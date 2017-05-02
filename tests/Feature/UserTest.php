@@ -7,6 +7,7 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
+
 use App\Model\User;
 use App\Model\Server;
 use App\Model\Account;
@@ -312,4 +313,29 @@ class UserTest extends TestCase
 
         $response->assertDontSee($statuses->content);
     }
+
+    public function testSitemap()
+    {
+        $response = $this->get('/sitemaps');
+
+        $response->assertStatus(200);
+    }
+
+    public function testPreferences()
+    {
+        $user = factory(User::class)->make();
+
+        $response = $this->actingAs($user)
+                         ->get('/preferences');
+
+        $response->assertSee('User Preferences');
+    }
+
+    public function testDontSeePreferences()
+    {
+        $response = $this->get('/preferences');
+
+        $response->assertRedirect('/login');
+    }
+
 }
