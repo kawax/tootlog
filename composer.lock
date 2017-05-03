@@ -314,20 +314,20 @@
         },
         {
             "name": "christofferok/laravel-emojione",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/christofferok/laravel-emojione.git",
-                "reference": "ebf95e42e8c7b9d60e5d553280f6a529ca3e282a"
+                "reference": "672db33d97c0c802d179ffd2aed9dbb21ca2c5ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/christofferok/laravel-emojione/zipball/ebf95e42e8c7b9d60e5d553280f6a529ca3e282a",
-                "reference": "ebf95e42e8c7b9d60e5d553280f6a529ca3e282a",
+                "url": "https://api.github.com/repos/christofferok/laravel-emojione/zipball/672db33d97c0c802d179ffd2aed9dbb21ca2c5ff",
+                "reference": "672db33d97c0c802d179ffd2aed9dbb21ca2c5ff",
                 "shasum": ""
             },
             "require": {
-                "emojione/emojione": "^3.0",
+                "emojione/emojione": "^3.0.2",
                 "illuminate/support": "~5.1",
                 "php": "~5.6|~7.0"
             },
@@ -367,7 +367,7 @@
                 "emojione",
                 "laravel"
             ],
-            "time": "2017-04-27T16:56:48+00:00"
+            "time": "2017-05-03T05:01:22+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -874,16 +874,16 @@
         },
         {
             "name": "emojione/emojione",
-            "version": "v3.0.1",
+            "version": "v3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Ranks/emojione.git",
-                "reference": "07955d394c9f2e80dd43445fd2eb6bb4fd460d54"
+                "reference": "bbdeceabb443d671c5a9577dc4b63af3155df4f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Ranks/emojione/zipball/07955d394c9f2e80dd43445fd2eb6bb4fd460d54",
-                "reference": "07955d394c9f2e80dd43445fd2eb6bb4fd460d54",
+                "url": "https://api.github.com/repos/Ranks/emojione/zipball/bbdeceabb443d671c5a9577dc4b63af3155df4f3",
+                "reference": "bbdeceabb443d671c5a9577dc4b63af3155df4f3",
                 "shasum": ""
             },
             "require": {
@@ -913,7 +913,7 @@
                 "smilies",
                 "unicode"
             ],
-            "time": "2017-04-24T21:38:47+00:00"
+            "time": "2017-05-02T21:24:00+00:00"
         },
         {
             "name": "erusev/parsedown",
