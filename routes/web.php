@@ -18,7 +18,7 @@
 
 Auth::routes();
 
-Route::middleware('auth')->group(function () {
+Route::middleware('auth')->namespace('Home')->group(function () {
     Route::name('accounts.add')->post('accounts', 'AccountController@redirect');
     Route::get('accounts/callback', 'AccountController@callback');
 
