@@ -15,16 +15,19 @@
                     <li class="active">{{ '@' . $user->name  }}</li>
                 </ol>
 
+                @include('open.search')
+
+
                 <tt-calendar user="{{ $user->name }}"></tt-calendar>
 
 
-                {{ $statuses->links() }}
+                {{ $statuses->appends(['search' => request('search')])->links() }}
 
                 @foreach($statuses as $status)
                     @include('status.item')
                 @endforeach
 
-                {{ $statuses->links() }}
+                {{ $statuses->appends(['search' => request('search')])->links() }}
 
             </div>
 

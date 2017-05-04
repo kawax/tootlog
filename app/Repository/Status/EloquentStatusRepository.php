@@ -19,9 +19,14 @@ class EloquentStatusRepository implements StatusRepositoryInterface
         $statuses = request()->user()
                              ->statuses()
                              ->withTrashed()
-                             ->with(['account', 'reblog'])
-                             ->latest('created_at')
-                             ->paginate(self::PAGINATE);
+                             ->with('account', 'reblog')
+                             ->latest('created_at');
+
+        if (request()->has('search')) {
+            $statuses = $statuses->where('content', 'like', '%' . request('search') . '%');
+        }
+
+        $statuses = $statuses->paginate(self::PAGINATE);
 
         return $statuses;
     }
@@ -34,8 +39,13 @@ class EloquentStatusRepository implements StatusRepositoryInterface
         $statuses = $user->statuses()
                          ->where('accounts.locked', false)
                          ->with(['account', 'reblog'])
-                         ->latest('created_at')
-                         ->paginate(self::PAGINATE);
+                         ->latest('created_at');
+
+        if (request()->has('search')) {
+            $statuses = $statuses->where('content', 'like', '%' . request('search') . '%');
+        }
+
+        $statuses = $statuses->paginate(self::PAGINATE);
 
         return $statuses;
     }
@@ -79,8 +89,13 @@ class EloquentStatusRepository implements StatusRepositoryInterface
     {
         $statuses = $acct->statuses()
                          ->with(['account', 'reblog'])
-                         ->latest('created_at')
-                         ->paginate(self::PAGINATE);
+                         ->latest('created_at');
+
+        if (request()->has('search')) {
+            $statuses = $statuses->where('content', 'like', '%' . request('search') . '%');
+        }
+
+        $statuses = $statuses->paginate(self::PAGINATE);
 
         return $statuses;
     }

@@ -17,6 +17,9 @@
 
                 @include('open.acct.profile')
 
+                @include('open.acct.search')
+
+
                 <tt-calendar user="{{ $user->name }}" acct="{{ $acct->acct }}"></tt-calendar>
 
                 {{ $statuses->links() }}

@@ -30,7 +30,7 @@ Route::middleware('auth')->group(function () {
 
     Route::name('export.csv')->post('export/csv', 'ExportController@csv');
 
-    Route::get('home', 'HomeController@index');
+    Route::name('home')->get('home', 'HomeController@index');
 });
 
 Route::middleware('auth')->namespace('Api')->prefix('api')->group(function () {

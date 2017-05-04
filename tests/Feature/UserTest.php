@@ -338,4 +338,70 @@ class UserTest extends TestCase
         $response->assertRedirect('/login');
     }
 
+    public function testSearchHome()
+    {
+        $user = factory(User::class)->create();
+
+        $accounts = factory(Account::class)->create([
+            'user_id' => $user->id,
+        ]);
+
+        $statuses = factory(Status::class)->create([
+            'account_id' => $accounts->id,
+            'content'    => 'test',
+        ]);
+
+        $response = $this->actingAs($user)
+                         ->get('/home?search=test');
+
+        $response->assertViewHas('statuses');
+    }
+
+
+    public function testSearchHomeEmpty()
+    {
+        $user = factory(User::class)->create();
+
+        $accounts = factory(Account::class)->create([
+            'user_id' => $user->id,
+        ]);
+
+        $statuses = factory(Status::class)->create([
+            'account_id' => $accounts->id,
+            'content'    => '',
+        ]);
+
+        $response = $this->actingAs($user)
+                         ->get('/home?search=test');
+
+        $response->assertDontSee('class="media"');
+    }
+
+    public function testSearchAccount()
+    {
+        $user = factory(User::class)->create([
+            'name' => 'test',
+        ]);
+
+        $server = factory(Server::class)->create([
+            'domain' => 'https://example.com',
+        ]);
+
+        $accounts = factory(Account::class)->create([
+            'user_id'   => $user->id,
+            'server_id' => $server->id,
+            'username'  => 'test',
+            'url'       => 'https://example.com/@test',
+        ]);
+
+        $statuses = factory(Status::class)->create([
+            'account_id' => $accounts->id,
+            'content'    => 'test',
+        ]);
+
+        $response = $this->actingAs($user)
+                         ->get('/@test/test@example.com?search=test');
+
+        $response->assertViewHas('statuses');
+    }
 }
