@@ -19,6 +19,14 @@ class EloquentAccountRepository implements AccountRepositoryInterface
     }
 
     /**
+     * @inheritDoc
+     */
+    public function find($id)
+    {
+        return Account::find($id);
+    }
+
+    /**
      *
      * @inheritDoc
      */

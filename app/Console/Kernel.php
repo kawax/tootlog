@@ -14,6 +14,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         Commands\Status\GetStatus::class,
+        Commands\Status\GetUserStatus::class,
     ];
 
     /**

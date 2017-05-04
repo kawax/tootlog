@@ -14,6 +14,12 @@ interface AccountRepositoryInterface
     public function all();
 
     /**
+     *
+     * @return mixed
+     */
+    public function find($id);
+
+    /**
      * toot:statusesのためのアカウントリスト
      *
      * @return mixed
