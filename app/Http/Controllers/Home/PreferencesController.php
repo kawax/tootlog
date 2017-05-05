@@ -30,9 +30,7 @@ class PreferencesController extends Controller
     {
         $user = $request->user();
 
-        $user->update([
-            'email' => $request->input('email'),
-        ]);
+        $user->update($request->intersect(['email', 'theme']));
 
         return view('prefs.index')->with(compact('user'));
     }

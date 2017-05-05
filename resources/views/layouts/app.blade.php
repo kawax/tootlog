@@ -24,7 +24,7 @@
 
     @include('layouts.google')
 </head>
-<body>
+<body class="theme-{{ auth()->check() ? auth()->user()->theme : 'thin' }}">
 <div id="app">
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container-fluid">

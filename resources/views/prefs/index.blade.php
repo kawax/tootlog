@@ -26,6 +26,23 @@
                                 </div>
                             </div>
 
+                            <div class="form-group{{ $errors->has('theme') ? ' has-error' : '' }}">
+                                <label for="theme" class="col-md-4 control-label">Font</label>
+
+                                <div class="col-md-6">
+                                    {{ Form::select('theme', [
+                                    'thin' => 'Thin',
+                                    'normal' => 'Normal'
+                                    ], $user->theme, ['class' => 'form-control']) }}
+
+                                    @if ($errors->has('theme'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('theme') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary btn-block">
