@@ -4,7 +4,7 @@ namespace App\Repository\Status;
 
 use App\Model\User;
 use App\Model\Account;
-
+use App\Model\Tag;
 
 interface StatusRepositoryInterface
 {
@@ -43,6 +43,16 @@ interface StatusRepositoryInterface
      * @return mixed
      */
     public function openRecents(User $user);
+
+    /**
+     * ユーザーのタグ別ステータス（公開用）
+     *
+     * @param User $user
+     * @param Tag  $tag
+     *
+     * @return mixed
+     */
+    public function openUserTagStatus(User $user, Tag $tag);
 
     /**
      * アカウントのステータス（公開用）

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $user->name . '@' . config('app.name', 'tootlog'))
+@section('title', '#'.  $tag->name . ' ' . $user->name . '@' . config('app.name', 'tootlog'))
 
 @if(!empty($statuses->first()->content))
     @section('description', strip_tags($statuses->first()->content))
@@ -12,16 +12,15 @@
 
             <div class="col-md-8 col-md-push-4">
                 <ol class="breadcrumb">
-                    <li class="active">{{ '@' . $user->name  }}</li>
+                    <li><a href="{{ route('open.user', $user) }}">{{ '@' . $user->name  }}</a></li>
+                    <li><a href="{{ route('tags.index', $user) }}">tags</a></li>
+                    <li class="active">#{{ $tag->name  }}</li>
                 </ol>
 
                 @include('home.search', [
-                'search_route' => ['open.user', $user],
-                'search_in' => '@' . $user->name
+                'search_route' => ['tags.show', $user, $tag],
+                'search_in' => '#' . $tag->name
                 ])
-
-
-                <tt-calendar user="{{ $user->name }}"></tt-calendar>
 
 
                 {{ $statuses->appends(['search' => request('search')])->links() }}

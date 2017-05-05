@@ -1,8 +1,8 @@
 <div class="panel panel-default">
-    <div class="panel-heading">Search</div>
+    <div class="panel-heading">Search in {{ $search_in or '' }}</div>
 
     <div class="panel-body">
-        {{ Form::open(['route' => 'home', 'class' => 'form-horizontal', 'method' => 'get']) }}
+        {{ Form::open(['route' => $search_route, 'class' => 'form-horizontal', 'method' => 'get']) }}
 
         <div class="form-group{{ $errors->has('search') ? ' has-error' : '' }}">
             <div class="col-sm-12">

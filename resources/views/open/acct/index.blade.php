@@ -17,7 +17,10 @@
 
                 @include('open.acct.profile')
 
-                @include('open.acct.search')
+                @include('home.search', [
+                'search_route' => ['open.account.index', $user, $acct->username, $acct->domain],
+                'search_in' => $acct->acct
+                ])
 
 
                 <tt-calendar user="{{ $user->name }}" acct="{{ $acct->acct }}"></tt-calendar>

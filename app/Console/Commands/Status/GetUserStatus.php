@@ -15,14 +15,14 @@ class GetUserStatus extends Command
      *
      * @var string
      */
-    protected $signature = 'toot:user-statuses {user=1}';
+    protected $signature = 'toot:user-statuses {account=1}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Get user statuses';
+    protected $description = 'Get account statuses (test command)';
 
     /**
      * Create a new command instance.

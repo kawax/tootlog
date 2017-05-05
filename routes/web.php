@@ -49,6 +49,8 @@ Route::namespace('Open')->group(function () {
     Route::name('open.user.date')->get('@{user}/date/{date}', 'DateController@show')
          ->where('date', '[0-9]{4}-[0-9]{2}-[0-9]{2}');
 
+    Route::resource('@{user}/tags', 'TagController', ['only' => ['index', 'show']]);
+
 });
 
 Route::namespace('Api')->prefix('api')->group(function () {

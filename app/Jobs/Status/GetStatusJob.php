@@ -13,6 +13,8 @@ use Cake\Chronos\Chronos;
 
 use App\Model\Account;
 use App\Model\Reblog;
+use App\Model\Tag;
+
 use App\Repository\Status\StatusRepositoryInterface as Status;
 use App\Repository\Account\AccountRepositoryInterface as AccountRepository;
 
@@ -98,19 +100,28 @@ class GetStatusJob implements ShouldQueue
 
             //            array_pull($data, 'id');
 
-            if (!empty($status['reblog'])) {
-                $reblog = $status['reblog'];
-                $reb = $this->reblog($reblog);
-                $data = array_add($data, 'reblog_id', $reb->id);
+
+            if (empty($data['uri'])) {
+                continue;
             }
 
-            if (!empty($data['uri'])) {
-                $attr = [
-                    'uri'        => $data['uri'],
-                    'account_id' => $this->account->id,
-                ];
+            $attr = [
+                'uri'        => $data['uri'],
+                'account_id' => $this->account->id,
+            ];
 
-                $sta = $statusRepository->updateOrCreate($attr, $data);
+            $new_status = $statusRepository->updateOrCreate($attr, $data);
+
+            if (!empty($status['reblog'])) {
+                $reblog = $this->reblog($status['reblog']);
+                $new_status->reblog()->save($reblog);
+                //                    $data = array_add($data, 'reblog_id', $reb->id);
+            }
+
+            if (!empty($status['tags'])) {
+                \Log::info($status['tags']);
+                $tags = $this->tags($status['tags']);
+                $new_status->tags()->sync($tags);
             }
 
             if (empty($since_id)) {
@@ -120,7 +131,12 @@ class GetStatusJob implements ShouldQueue
         }
     }
 
-    protected function reblog($reblog)
+    /**
+     * @param array $reblog
+     *
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    protected function reblog(array $reblog)
     {
         $data = [
             'created_at'   => Chronos::parse($reblog['created_at'], 'UTC'),
@@ -138,5 +154,21 @@ class GetStatusJob implements ShouldQueue
         $re = Reblog::updateOrCreate(['uri' => $reblog['uri']], $data);
 
         return $re;
+    }
+
+    /**
+     * @param array $tags
+     *
+     * @return array
+     */
+    protected function tags(array $tags)
+    {
+        $ids = [];
+
+        foreach ($tags as $tag) {
+            $ids[] = Tag::firstOrCreate(['name' => $tag['name']], $tag)->id;
+        }
+
+        return $ids;
     }
 }

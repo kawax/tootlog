@@ -15,7 +15,14 @@ class ViewComposerServiceProvider extends ServiceProvider
     public function boot()
     {
         View::composer(
-            'side.recents', 'App\Http\ViewComposers\RecentComposer'
+            'open.account_list', \App\Http\ViewComposers\AccountComposer::class
+        );
+        View::composer(
+            'side.recents', \App\Http\ViewComposers\RecentComposer::class
+        );
+
+        View::composer(
+            'side.tags', \App\Http\ViewComposers\TagComposer::class
         );
     }
 

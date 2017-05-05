@@ -20,7 +20,6 @@ class RecentComposer
     {
         if (!is_null(request()->user)) {
             $view->with('recents', $this->statusRepository->openRecents(request()->user));
-
         }
     }
 }

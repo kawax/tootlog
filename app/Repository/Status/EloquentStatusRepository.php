@@ -5,6 +5,8 @@ namespace App\Repository\Status;
 use App\Model\Account;
 use App\Model\Status;
 use App\Model\User;
+use App\Model\Tag;
+
 use Cake\Chronos\Chronos;
 
 class EloquentStatusRepository implements StatusRepositoryInterface
@@ -80,6 +82,26 @@ class EloquentStatusRepository implements StatusRepositoryInterface
                         ->take(10);
 
         return $recents;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function openUserTagStatus(User $user, Tag $tag)
+    {
+        $accounts = $user->accounts()->where('locked', false)->pluck('id');
+
+        $statuses = $tag->statuses()
+                        ->whereIn('statuses.account_id', $accounts)
+                        ->latest();
+
+        if (request()->has('search')) {
+            $statuses = $statuses->where('content', 'like', '%' . request('search') . '%');
+        }
+
+        $statuses = $statuses->paginate(self::PAGINATE);
+
+        return $statuses;
     }
 
     /**

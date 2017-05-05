@@ -33,6 +33,9 @@ class HomeController extends Controller
     {
         $user = $request->user();
 
+//        $tags = $user->tags();
+//        dd($user->tags());
+
         $accounts = $account->userAccounts();
         $statuses = $status->userStatuses();
 

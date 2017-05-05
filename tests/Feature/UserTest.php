@@ -12,6 +12,7 @@ use App\Model\User;
 use App\Model\Server;
 use App\Model\Account;
 use App\Model\Status;
+use App\Model\Tag;
 use Cake\Chronos\Chronos;
 
 class UserTest extends TestCase
@@ -94,7 +95,7 @@ class UserTest extends TestCase
 
         $response->assertSee('@test Account List');
         $response->assertSee('Recent');
-        $response->assertViewHas('accounts');
+        $response->assertViewHas('statuses');
     }
 
     public function testDontSeeUser()
@@ -403,5 +404,87 @@ class UserTest extends TestCase
                          ->get('/@test/test@example.com?search=test');
 
         $response->assertViewHas('statuses');
+    }
+
+
+    public function testUserTags()
+    {
+        $user = factory(User::class)->create([
+            'name' => 'test',
+        ]);
+
+        $accounts = factory(Account::class)->create([
+            'user_id' => $user->id,
+        ]);
+
+        $statuses = factory(Status::class)->create([
+            'account_id' => $accounts->id,
+        ]);
+
+        $tag = factory(Tag::class)->create([
+            'name' => 'test_tag',
+        ]);
+
+        \DB::table('status_tag')->insert(['status_id' => $statuses->id, 'tag_id' => $tag->id]);
+
+        $response = $this->actingAs($user)
+                         ->get('/@test/tags');
+
+        $response->assertViewHas('tags');
+        $response->assertSee('test_tag');
+    }
+
+    public function testTag()
+    {
+        $user = factory(User::class)->create([
+            'name' => 'test',
+        ]);
+
+        $accounts = factory(Account::class)->create([
+            'user_id' => $user->id,
+        ]);
+
+        $statuses = factory(Status::class)->create([
+            'account_id' => $accounts->id,
+        ]);
+
+        $tag = factory(Tag::class)->create([
+            'name' => 'test',
+        ]);
+
+        \DB::table('status_tag')->insert(['status_id' => $statuses->id, 'tag_id' => $tag->id]);
+
+        $response = $this->actingAs($user)
+                         ->get('/@test/tags/test');
+
+        $response->assertViewHas('tag');
+        $response->assertSee($statuses->content);
+    }
+
+    public function testLockedTag()
+    {
+        $user = factory(User::class)->create([
+            'name' => 'test',
+        ]);
+
+        $accounts = factory(Account::class)->create([
+            'user_id' => $user->id,
+            'locked'  => true,
+        ]);
+
+        $statuses = factory(Status::class)->create([
+            'account_id' => $accounts->id,
+        ]);
+
+        $tag = factory(Tag::class)->create([
+            'name' => 'test',
+        ]);
+
+        \DB::table('status_tag')->insert(['status_id' => $statuses->id, 'tag_id' => $tag->id]);
+
+        $response = $this->actingAs($user)
+                         ->get('/@test/tags/test');
+
+        $response->assertDontSee($statuses->content);
     }
 }

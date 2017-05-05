@@ -70,3 +70,10 @@ $factory->define(App\Model\Status::class, function (Faker\Generator $faker) {
         'uri' => $faker->unique()->uuid,
     ];
 });
+
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Model\Tag::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->word,
+    ];
+});

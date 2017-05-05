@@ -8,7 +8,10 @@
 
                 @include('home.public_url')
 
-                @include('home.search')
+                @include('home.search', [
+                'search_route' => 'home',
+                'search_in' => 'Home'
+                ])
 
                 {{ $statuses->appends(['search' => request('search')])->links() }}
 
