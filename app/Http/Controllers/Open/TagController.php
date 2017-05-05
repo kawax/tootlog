@@ -18,7 +18,7 @@ class TagController extends Controller
      */
     public function index(User $user)
     {
-        $tags = $user->tags();
+        $tags = $user->tags()->take(100);
 
         return view('tags.index')->with(compact('user', 'tags'));
     }
