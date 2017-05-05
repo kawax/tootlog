@@ -1,6 +1,6 @@
 <?php
 return [
-    'version'       => 'v0.5.0-beta',
+    'version'       => 'v0.5.1-beta',
 
     //一度に更新するアカウント数
     'account_limit' => 3,
@@ -9,8 +9,8 @@ return [
     'account_fails' => 10,
 
     //streaming api用のURLが違う場合
-    'streaming' => [
+    'streaming'     => [
         'https://chitose.moe' => 'https://api.chitose.moe',
-        'https://mstdn.jp' => 'https://streaming.mstdn.jp',
-    ]
+        'https://mstdn.jp'    => 'https://streaming.mstdn.jp',
+    ],
 ];
