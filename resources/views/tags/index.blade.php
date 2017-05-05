@@ -19,7 +19,7 @@
                         <a href="{{ route('tags.show', ['user' => $user->name ,'tag' => $tag]) }}"
                            class="list-group-item">
                             <span class="badge">{{ $tag->statuses_count }}</span>
-                            {{ $tag->name }}
+                            #{{ $tag->name }}
                         </a>
                     @endforeach
                 </div>
