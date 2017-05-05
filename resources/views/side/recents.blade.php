@@ -7,9 +7,8 @@
                 <a href="{{ route('open.user.date', ['user' => $user->name ,'date' => $date]) }}"
                    class="list-group-item">
                     <span class="badge">{{ $recent->count() }}</span>
-
+                    <i class="fa fa-calendar-o" aria-hidden="true"></i>
                     {{ $date }}
-
                 </a>
             @endforeach
         </div>
