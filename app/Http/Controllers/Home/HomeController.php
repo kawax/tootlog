@@ -33,13 +33,8 @@ class HomeController extends Controller
     {
         $user = $request->user();
 
-//        $tags = $user->tags();
-//        dd($user->tags());
-
         $accounts = $account->userAccounts();
         $statuses = $status->userStatuses();
-
-        //                dd($statuses);
 
         return view('home')->with(compact('user', 'accounts', 'statuses'));
     }

@@ -20,7 +20,7 @@
 
                 <div class="panel panel-danger">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Alpha version</h3>
+                        <h3 class="panel-title">Beta version</h3>
                     </div>
                     <div class="panel-body">
                         Early development stage.
@@ -43,8 +43,7 @@
                         <h3 class="panel-title">Add Mastodon Account</h3>
                     </div>
                     <div class="panel-body">
-                        Enter Mastodon instance's url. Authorize by OAuth.<br>
-                        Can't add? Reload browser and add again.
+                        Enter Mastodon instance's url. Authorize by OAuth.
                     </div>
                 </div>
 
