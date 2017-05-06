@@ -66,6 +66,8 @@
 
     </div>
 
+    {!! $status->jsonLd !!}
+
 @else
     @include('status.reblog')
 @endif

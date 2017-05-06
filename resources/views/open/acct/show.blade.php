@@ -19,8 +19,7 @@
 
                 @include('open.acct.profile')
 
-                @include('status.item', $status)
-
+                @include('status.item')
             </div>
 
             @include('open.side')

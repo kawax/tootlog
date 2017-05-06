@@ -4,8 +4,11 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use McCool\LaravelAutoPresenter\HasPresenter;
 
-class Status extends Model
+use App\Presenter\StatusPresenter;
+
+class Status extends Model implements HasPresenter
 {
     use SoftDeletes;
 
@@ -31,6 +34,10 @@ class Status extends Model
         'name',
     ];
 
+    public function getPresenterClass()
+    {
+        return StatusPresenter::class;
+    }
 
     /**
      * acct

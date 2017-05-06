@@ -4,7 +4,10 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Account extends Model
+use McCool\LaravelAutoPresenter\HasPresenter;
+use App\Presenter\AccountPresenter;
+
+class Account extends Model implements HasPresenter
 {
     protected $fillable = [
         'user_id',
@@ -28,6 +31,11 @@ class Account extends Model
         'header',
         'header_static',
     ];
+
+    public function getPresenterClass()
+    {
+        return AccountPresenter::class;
+    }
 
     /**
      * acct

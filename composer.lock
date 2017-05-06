@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "49a10effd69b0adee9a399e37680d826",
+    "content-hash": "9d9a020abeb11dd2e4fb4c516be52ead",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.26.5",
+            "version": "3.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "5fd52d91aa168134f13a57df7fbf7d1f7b7a85ca"
+                "reference": "23fd97c5bc4aaa923b994f8876c86574ed84f27d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/5fd52d91aa168134f13a57df7fbf7d1f7b7a85ca",
-                "reference": "5fd52d91aa168134f13a57df7fbf7d1f7b7a85ca",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/23fd97c5bc4aaa923b994f8876c86574ed84f27d",
+                "reference": "23fd97c5bc4aaa923b994f8876c86574ed84f27d",
                 "shasum": ""
             },
             "require": {
@@ -84,7 +84,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-04-28T23:15:22+00:00"
+            "time": "2017-05-04T22:43:46+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1353,16 +1353,16 @@
         },
         {
             "name": "laravel/socialite",
-            "version": "v3.0.5",
+            "version": "v3.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/socialite.git",
-                "reference": "2771ab96004b6149d0974f8a469e08c8e54474a5"
+                "reference": "bca777a8526983e0ebdf3350f1b6e031923a473b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/socialite/zipball/2771ab96004b6149d0974f8a469e08c8e54474a5",
-                "reference": "2771ab96004b6149d0974f8a469e08c8e54474a5",
+                "url": "https://api.github.com/repos/laravel/socialite/zipball/bca777a8526983e0ebdf3350f1b6e031923a473b",
+                "reference": "bca777a8526983e0ebdf3350f1b6e031923a473b",
                 "shasum": ""
             },
             "require": {
@@ -1395,7 +1395,7 @@
             "authors": [
                 {
                     "name": "Taylor Otwell",
-                    "email": "taylorotwell@gmail.com"
+                    "email": "taylor@laravel.com"
                 }
             ],
             "description": "Laravel wrapper around OAuth 1 & OAuth 2 libraries.",
@@ -1403,7 +1403,7 @@
                 "laravel",
                 "oauth"
             ],
-            "time": "2017-04-20T16:24:07+00:00"
+            "time": "2017-05-05T14:17:11+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -1780,6 +1780,68 @@
                 "debugbar"
             ],
             "time": "2017-01-05T08:46:19+00:00"
+        },
+        {
+            "name": "mccool/laravel-auto-presenter",
+            "version": "5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-auto-presenter/laravel-auto-presenter.git",
+                "reference": "150afe842a973e5c6ad1db9f6878d096d7c5cf1e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-auto-presenter/laravel-auto-presenter/zipball/150afe842a973e5c6ad1db9f6878d096d7c5cf1e",
+                "reference": "150afe842a973e5c6ad1db9f6878d096d7c5cf1e",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/container": "5.1.*|5.2.*|5.3.*|5.4.*",
+                "illuminate/contracts": "5.1.*|5.2.*|5.3.*|5.4.*",
+                "illuminate/events": "5.1.*|5.2.*|5.3.*|5.4.*",
+                "illuminate/pagination": "5.1.*|5.2.*|5.3.*|5.4.*",
+                "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*",
+                "illuminate/view": "5.1.*|5.2.*|5.3.*|5.4.*",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "^3.1",
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "^4.8|^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "McCool\\LaravelAutoPresenter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shawn McCool",
+                    "email": "shawn@heybigname.com"
+                },
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@alt-three.com"
+                }
+            ],
+            "description": "A system for auto-decorating models with presenter objects.",
+            "keywords": [
+                "eloquent",
+                "laravel",
+                "lpm",
+                "presenter"
+            ],
+            "time": "2017-01-01T12:52:59+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -3373,6 +3435,57 @@
             "description": "CssToInlineStyles is a class that enables you to convert HTML-pages/files into HTML-pages/files with inline styles. This is very useful when you're sending emails.",
             "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles",
             "time": "2016-09-20T12:50:39+00:00"
+        },
+        {
+            "name": "torann/json-ld",
+            "version": "0.0.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Torann/json-ld.git",
+                "reference": "fd8581d4f82b2eb6a54355c88a265600b92e17b7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Torann/json-ld/zipball/fd8581d4f82b2eb6a54355c88a265600b92e17b7",
+                "reference": "fd8581d4f82b2eb6a54355c88a265600b92e17b7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "~5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JsonLd\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD 2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Stainback",
+                    "email": "daniel@lyften.com"
+                }
+            ],
+            "description": "Extremely simple JSON-LD markup generator.",
+            "keywords": [
+                "JSON-LD",
+                "generator",
+                "schema",
+                "structured-data"
+            ],
+            "time": "2017-02-13T15:28:33+00:00"
         },
         {
             "name": "usmanhalalit/laracsv",
