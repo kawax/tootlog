@@ -17,11 +17,20 @@ class AccountPresenter extends BasePresenter
     {
         $account = $this->wrappedObject;
 
+        $url = route('open.account.index',
+            [
+                $account->user,
+                $account->username,
+                $account->domain,
+            ]
+        );
+
         return Context::create(Person::class, [
             'name'        => $account->name,
             'image'       => $account->avatar,
             'description' => $account->note,
-            'url'         => $account->url,
+            'url'         => $url,
+            'sameAs'      => $account->url,
         ]);
     }
 }

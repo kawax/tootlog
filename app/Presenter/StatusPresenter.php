@@ -17,6 +17,15 @@ class StatusPresenter extends BasePresenter
     {
         $status = $this->wrappedObject;
 
+        $url = route('open.account.show',
+            [
+                $status->account->user,
+                $status->account->username,
+                $status->account->domain,
+                $status->status_id,
+            ]
+        );
+
         return Context::create(SocialMediaPosting::class, [
             'author'        => [
                 'name'  => $status->name,
@@ -26,8 +35,9 @@ class StatusPresenter extends BasePresenter
             'articleBody'   => $status->content,
             'headline'      => $status->spoiler_text ?: $status->content,
             'datePublished' => $status->created_at,
-            'url'           => $status->url,
-            'image'         => $status->account->avatar,
+            'url'           => $url,
+            'sameAs'        => $status->url,
+            //            'image'         => $status->account->avatar,
         ]);
     }
 }
