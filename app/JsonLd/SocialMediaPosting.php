@@ -12,10 +12,11 @@ class SocialMediaPosting extends AbstractContext
      * @var array
      */
     protected $structure = [
-        'author' => \JsonLd\ContextTypes\Person::class,
+        'author' => Person::class,
         'articleBody' => null,
         'headline' => null,
         'datePublished' => null,
         'url' => null,
+        'image' => null,
     ];
 }

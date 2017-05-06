@@ -24,9 +24,10 @@ class StatusPresenter extends BasePresenter
                 'url'   => $status->account->url,
             ],
             'articleBody'   => $status->content,
-            'headline'      => $status->spoiler_text,
+            'headline'      => $status->spoiler_text ?: ' ',
             'datePublished' => $status->created_at,
             'url'           => $status->url,
+            'image'         => $status->account->avatar,
         ]);
     }
 }
