@@ -1,13 +1,25 @@
 <template>
     <div>
 
-        <div class="btn-group" style="margin-bottom: 10px;" role="group">
-            <button type="button" class="btn btn-default"
-                    v-for="(text, type) in types"
-                    :class="{active : active_type === type}"
-                    @click="get(type)"
-                    v-html="text"></button>
+        <div class="btn-toolbar" role="toolbar" aria-label="toolbar">
+
+            <div class="btn-group" style="margin-bottom: 10px;" role="group">
+                <button type="button" class="btn btn-default"
+                        v-for="(text, type) in types"
+                        :class="{active : active_type === type}"
+                        @click="get(type)"
+                        v-html="text"></button>
+            </div>
+
+            <div class="btn-group" style="margin-bottom: 10px;" role="group">
+                <button type="button" class="btn btn-default"
+                        v-for="(text, type) in media"
+                        :class="{active : active_media === type}"
+                        @click="active_media = type"
+                        v-html="text"></button>
+            </div>
         </div>
+
 
         <div class="alert alert-danger" v-if="errors.length > 0">
             <p><strong>Whoops!</strong> Something went wrong!</p>
@@ -19,7 +31,7 @@
         </div>
 
         <tt-card>
-            <div v-for="post in posts">
+            <div v-for="post in posts" v-if="media_check(post)">
 
                 <tt-timeline-reblog :post="post" v-if="post.reblog"></tt-timeline-reblog>
 
@@ -46,6 +58,7 @@
                     'public:local': '<i class="fa fa-users" aria-hidden="true"></i> Local',
                     'public': '<i class="fa fa-globe" aria-hidden="true"></i> Federated'
                 },
+                active_type: 'public:local',
                 timelines: {
                     'user': 'home',
                     'public:local': 'public?local=true',
@@ -57,7 +70,12 @@
                     favourite: 'favourited your status',
                     follow: 'followed you',
                 },
-                active_type: 'public:local',
+                media: {
+                    normal: '<i class="fa fa-file-image-o" aria-hidden="true"></i> Media Default',
+                    only: '<i class="fa fa-picture-o" aria-hidden="true"></i> Only',
+                    except: '<i class="fa fa-commenting-o" aria-hidden="true"></i> Except'
+                },
+                active_media: 'normal',
                 posts: [],
                 count: 0,
                 max: 50,
@@ -173,6 +191,15 @@
                     this.ws.close()
                     this.posts = []
                 }
+            },
+            media_check(post) {
+                if (this.active_media === 'only') {
+                    return !_.isEmpty(post.media_attachments)
+                } else if (this.active_media === 'except') {
+                    return _.isEmpty(post.media_attachments)
+                }
+
+                return true
             },
             notificationTitle(type, name) {
                 return name + ' ' + this.titles[type]
