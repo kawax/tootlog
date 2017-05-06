@@ -37,7 +37,7 @@ class StatusPresenter extends BasePresenter
             'datePublished' => $status->created_at,
             'url'           => $url,
             'sameAs'        => $status->url,
-            //            'image'         => $status->account->avatar,
+            'image'         => $status->account->avatar,
         ]);
     }
 }
