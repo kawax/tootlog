@@ -107,7 +107,7 @@ class GetStatusJob implements ShouldQueue
 
             if (!empty($status['reblog'])) {
                 $reblog = $this->reblog($status['reblog']);
-                //                $new_status->reblog()->save($reblog);
+                //                $new_status->reblog()->associate($reblog)->save();
                 $data = array_add($data, 'reblog_id', $reblog->id);
             }
 
@@ -120,7 +120,7 @@ class GetStatusJob implements ShouldQueue
 
 
             if (!empty($status['tags'])) {
-                \Log::info($status['tags']);
+                //                \Log::info($status['tags']);
                 $tags = $this->tags($status['tags']);
                 $new_status->tags()->sync($tags);
             }
