@@ -26,7 +26,7 @@ class UserTest extends TestCase
      */
     public function testWelcome()
     {
-        $user = factory(User::class)->make();
+        $user = factory(User::class)->create();
 
         $response = $this->actingAs($user)
                          ->get('/');
@@ -44,7 +44,7 @@ class UserTest extends TestCase
 
     public function testHome()
     {
-        $user = factory(User::class)->make([
+        $user = factory(User::class)->create([
             'name' => 'test',
         ]);
 
@@ -65,7 +65,16 @@ class UserTest extends TestCase
 
     public function testTimeline()
     {
-        $user = factory(User::class)->make();
+        $user = factory(User::class)->create();
+
+        $server = factory(Server::class)->create([
+            'domain' => 'https://example.com',
+        ]);
+
+        $accounts = factory(Account::class)->create([
+            'user_id'   => $user->id,
+            'server_id' => $server->id,
+        ]);
 
         $response = $this->actingAs($user)
                          ->get('/timeline');
@@ -86,7 +95,7 @@ class UserTest extends TestCase
             'name' => 'test',
         ]);
 
-        $accounts = factory(Account::class, 5)->make([
+        $accounts = factory(Account::class, 5)->create([
             'user_id' => $user->id,
         ]);
 
@@ -358,7 +367,6 @@ class UserTest extends TestCase
         $response->assertViewHas('statuses');
     }
 
-
     public function testSearchHomeEmpty()
     {
         $user = factory(User::class)->create();
@@ -405,7 +413,6 @@ class UserTest extends TestCase
 
         $response->assertViewHas('statuses');
     }
-
 
     public function testUserTags()
     {

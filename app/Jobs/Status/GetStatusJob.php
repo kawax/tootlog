@@ -15,7 +15,7 @@ use App\Model\Account;
 use App\Model\Reblog;
 use App\Model\Tag;
 
-use App\Repository\Status\StatusRepositoryInterface as Status;
+use App\Repository\Status\StatusRepositoryInterface as StatusRepository;
 use App\Repository\Account\AccountRepositoryInterface as AccountRepository;
 
 use Revolution\Mastodon\Statuses;
@@ -44,12 +44,12 @@ class GetStatusJob implements ShouldQueue
      * Execute the job.
      *
      * @param Statuses          $mstdn
-     * @param Status            $statusRepository
+     * @param StatusRepository  $statusRepository
      * @param AccountRepository $accountRepository
      *
      * @return void
      */
-    public function handle(Statuses $mstdn, Status $statusRepository, AccountRepository $accountRepository)
+    public function handle(Statuses $mstdn, StatusRepository $statusRepository, AccountRepository $accountRepository)
     {
         \Log::info('GetStatusesJob: ' . $this->account->url);
 
