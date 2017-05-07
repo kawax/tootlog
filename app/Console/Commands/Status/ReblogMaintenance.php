@@ -52,7 +52,8 @@ class ReblogMaintenance extends Command
         \Log::info('Reblog maintenance: ' . $statuses->count());
 
         foreach ($statuses as $status) {
-            $new_status = $mstdn->get_status($status->account->server->domain, $status->status_id);
+            $new_status = $mstdn->token($status->account->token)
+                                ->get_status($status->account->server->domain, $status->status_id);
 
             if (!empty($new_status['reblog'])) {
                 $uri = $new_status['reblog']['uri'];

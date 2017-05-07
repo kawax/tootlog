@@ -53,7 +53,10 @@ class Statuses
     public function get_status(string $domain, int $status_id): array
     {
         $url = $domain . "/api/v1/statuses/$status_id";
-        $response = $this->client->get($url);
+        $response = $this->client->get($url, [
+            'headers' =>
+                ['Authorization' => 'Bearer ' . $this->token],
+        ]);
 
         return json_decode($response->getBody(), true);
     }
