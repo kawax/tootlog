@@ -105,11 +105,6 @@ class GetStatusJob implements ShouldQueue
                 continue;
             }
 
-            if (!empty($status['reblog'])) {
-                $reblog = $this->reblog($status['reblog']);
-                //                $new_status->reblog()->associate($reblog)->save();
-                $data = array_add($data, 'reblog_id', $reblog->id);
-            }
 
             $attr = [
                 'uri'        => $data['uri'],
@@ -118,6 +113,11 @@ class GetStatusJob implements ShouldQueue
 
             $new_status = $statusRepository->updateOrCreate($attr, $data);
 
+            if (!empty($status['reblog'])) {
+                $reblog = $this->reblog($status['reblog']);
+                $new_status->reblog()->associate($reblog)->save();
+                //                $data = array_add($data, 'reblog_id', $reblog->id);
+            }
 
             if (!empty($status['tags'])) {
                 //                \Log::info($status['tags']);
