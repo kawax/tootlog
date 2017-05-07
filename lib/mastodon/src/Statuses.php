@@ -45,6 +45,20 @@ class Statuses
     }
 
     /**
+     * @param string $domain
+     * @param int    $status_id
+     *
+     * @return array
+     */
+    public function get_status(string $domain, int $status_id): array
+    {
+        $url = $domain . "/api/v1/statuses/$status_id";
+        $response = $this->client->get($url);
+
+        return json_decode($response->getBody(), true);
+    }
+
+    /**
      * @param string $token
      *
      * @return $this
