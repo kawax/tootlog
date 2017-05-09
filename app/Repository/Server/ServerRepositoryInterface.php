@@ -31,7 +31,7 @@ interface ServerRepositoryInterface
     /**
      * @param string $domain
      *
-     * @return mixed
+     * @return array
      */
-    public function firstOrCreate(string $domain);
+    public function firstOrCreate(string $domain): array;
 }

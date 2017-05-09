@@ -18,8 +18,7 @@ use App\Model\Tag;
 use App\Repository\Status\StatusRepositoryInterface as StatusRepository;
 use App\Repository\Account\AccountRepositoryInterface as AccountRepository;
 
-use Revolution\Mastodon\Statuses;
-
+use Mastodon;
 
 class GetStatusJob implements ShouldQueue
 {
@@ -43,25 +42,28 @@ class GetStatusJob implements ShouldQueue
     /**
      * Execute the job.
      *
-     * @param Statuses          $mstdn
      * @param StatusRepository  $statusRepository
      * @param AccountRepository $accountRepository
      *
      * @return void
      */
-    public function handle(Statuses $mstdn, StatusRepository $statusRepository, AccountRepository $accountRepository)
-    {
+    public function handle(
+        StatusRepository $statusRepository,
+        AccountRepository $accountRepository
+    ) {
         \Log::info('GetStatusesJob: ' . $this->account->url);
 
         $this->account = $accountRepository->refresh($this->account);
 
         try {
-            $statuses = $mstdn->token($this->account->token)
-                              ->get(
-                                  $this->account->server->domain,
-                                  $this->account->account_id,
-                                  $this->account->since_id
-                              );
+            $statuses = Mastodon::domain($this->account->server->domain)
+                                ->token($this->account->token)
+                                ->status_list(
+                                    $this->account->account_id,
+                                    40,
+                                    $this->account->since_id
+                                );
+
         } catch (ClientException $e) {
             \Log::error('ClientException: ' . $this->account->url . ' ' . $e->getMessage());
 
@@ -98,13 +100,9 @@ class GetStatusJob implements ShouldQueue
             $data = array_add($data, 'status_id', $data['id']);
             $data = array_add($data, 'account_id', $this->account->id);
 
-            //            array_pull($data, 'id');
-
-
             if (empty($data['uri'])) {
                 continue;
             }
-
 
             $attr = [
                 'uri'        => $data['uri'],
@@ -116,11 +114,9 @@ class GetStatusJob implements ShouldQueue
             if (!empty($status['reblog'])) {
                 $reblog = $this->reblog($status['reblog']);
                 $new_status->reblog()->associate($reblog)->save();
-                //                $data = array_add($data, 'reblog_id', $reblog->id);
             }
 
             if (!empty($status['tags'])) {
-                //                \Log::info($status['tags']);
                 $tags = $this->tags($status['tags']);
                 $new_status->tags()->sync($tags);
             }

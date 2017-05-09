@@ -7,7 +7,7 @@ use Illuminate\Console\Command;
 use App\Model\Status;
 use App\Model\Reblog;
 
-use Revolution\Mastodon\Statuses;
+use Mastodon;
 
 class ReblogMaintenance extends Command
 {
@@ -40,11 +40,9 @@ class ReblogMaintenance extends Command
      *
      * Execute the console command.
      *
-     * @param Statuses $mstdn
-     *
      * @return mixed
      */
-    public function handle(Statuses $mstdn)
+    public function handle()
     {
         $statuses = Status::where('content', '<p></p>')
                           ->whereNull('reblog_id')->get();
@@ -52,8 +50,9 @@ class ReblogMaintenance extends Command
         \Log::info('Reblog maintenance: ' . $statuses->count());
 
         foreach ($statuses as $status) {
-            $new_status = $mstdn->token($status->account->token)
-                                ->get_status($status->account->server->domain, $status->status_id);
+            $new_status = Mastodon::domain($status->account->server->domain)
+                                  ->token($status->account->token)
+                                  ->status_get($status->status_id);
 
             if (!empty($new_status['reblog'])) {
                 $uri = $new_status['reblog']['uri'];

@@ -3,7 +3,7 @@
 namespace App\Repository\Server;
 
 use App\Model\Server;
-use Revolution\Mastodon\Apps;
+use Mastodon;
 
 class EloquentServerRepository implements ServerRepositoryInterface
 {
@@ -34,7 +34,7 @@ class EloquentServerRepository implements ServerRepositoryInterface
     /**
      * @inheritDoc
      */
-    public function firstOrCreate(string $domain)
+    public function firstOrCreate(string $domain): array
     {
         $domain = trim($domain, "/\t\n\r\0\x0B");
 
@@ -45,8 +45,8 @@ class EloquentServerRepository implements ServerRepositoryInterface
             $redirect_uris = config('services.mastodon.redirect');
             $scopes = implode(' ', config('services.mastodon.scope'));
 
-            $apps = new Apps();
-            $info = $apps->register($domain, $client_name, $redirect_uris, $scopes);
+            $info = Mastodon::domain($domain)
+                            ->app_register($client_name, $redirect_uris, $scopes);
 
             $info['app_id'] = $info['id'];
             $info['domain'] = $domain;
@@ -54,7 +54,7 @@ class EloquentServerRepository implements ServerRepositoryInterface
             $server = $this->create($info);
         }
 
-        return $server;
+        return $server->toArray();
     }
 
 }

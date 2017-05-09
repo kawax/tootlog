@@ -183,6 +183,8 @@ return [
 
         McCool\LaravelAutoPresenter\AutoPresenterServiceProvider::class,
 
+        Revolution\Mastodon\Providers\MastodonServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -249,6 +251,9 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
 
         'EmojiOne' => ChristofferOK\LaravelEmojiOne\LaravelEmojiOneFacade::class,
+
+        'Mastodon' => Revolution\Mastodon\Facades\Mastodon::class,
+
     ],
 
 ];

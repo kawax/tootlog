@@ -4,6 +4,7 @@ namespace App\Repository\Status;
 
 use App\Model\User;
 use App\Model\Account;
+use App\Model\Status;
 use App\Model\Tag;
 
 interface StatusRepositoryInterface
@@ -12,7 +13,7 @@ interface StatusRepositoryInterface
     /**
      * ユーザーのステータス
      *
-     * @return mixed
+     * @return Status[]
      */
     public function userStatuses();
 
@@ -21,7 +22,7 @@ interface StatusRepositoryInterface
      *
      * @param User $user
      *
-     * @return mixed
+     * @return Status[]
      */
     public function openUserStatuses(User $user);
 
@@ -31,7 +32,7 @@ interface StatusRepositoryInterface
      * @param User   $user
      * @param string $date
      *
-     * @return mixed
+     * @return Status[]
      */
     public function openUserStatusesByDate(User $user, string $date);
 
@@ -40,7 +41,7 @@ interface StatusRepositoryInterface
      *
      * @param User $user
      *
-     * @return mixed
+     * @return Status[]
      */
     public function openRecents(User $user);
 
@@ -50,7 +51,7 @@ interface StatusRepositoryInterface
      * @param User $user
      * @param Tag  $tag
      *
-     * @return mixed
+     * @return Status[]
      */
     public function openUserTagStatus(User $user, Tag $tag);
 
@@ -59,7 +60,7 @@ interface StatusRepositoryInterface
      *
      * @param Account $acct
      *
-     * @return mixed
+     * @return Status[]
      */
     public function openAcctStatuses(Account $acct);
 
@@ -69,7 +70,7 @@ interface StatusRepositoryInterface
      * @param Account $acct
      * @param string  $status_id
      *
-     * @return mixed
+     * @return Status[]
      */
     public function getByAcct(Account $acct, string $status_id);
 

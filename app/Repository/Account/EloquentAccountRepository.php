@@ -2,9 +2,11 @@
 
 namespace App\Repository\Account;
 
+use App\Model\User;
 use App\Model\Account;
 use Cake\Chronos\Chronos;
-use Revolution\Mastodon\Account as MastodonAccount;
+
+use Mastodon;
 
 class EloquentAccountRepository implements AccountRepositoryInterface
 {
@@ -57,7 +59,7 @@ class EloquentAccountRepository implements AccountRepositoryInterface
     /**
      * @inheritDoc
      */
-    public function openAccounts($user)
+    public function openAccounts(User $user)
     {
         $accounts = $user->accounts()
                          ->where('locked', false)
@@ -81,14 +83,14 @@ class EloquentAccountRepository implements AccountRepositoryInterface
     /**
      * @inheritDoc
      */
-    public function store($user, $server)
+    public function store($user, array $server)
     {
         $data = $user->user;
 
         $data['account_id'] = $data['id'];
         $data['account_created_at'] = Chronos::parse($data['created_at']);
         $data['token'] = $user->token;
-        $data['server_id'] = $server->id;
+        $data['server_id'] = $server['id'];
 
         $cond = array_only($data, ['account_id', 'username', 'server_id']);
 
@@ -111,7 +113,7 @@ class EloquentAccountRepository implements AccountRepositoryInterface
 
         $account = Account::where('url', $user->user['url'])
                           ->where('user_id', request()->user()->id)
-                          ->first();
+                          ->firstOrFail();
 
         $account->fill($data)->save();
 
@@ -123,8 +125,9 @@ class EloquentAccountRepository implements AccountRepositoryInterface
      */
     public function refresh(Account $account)
     {
-        $mstdn = new MastodonAccount();
-        $data = $mstdn->token($account->token)->verify_credentials($account->server->domain);
+        $data = Mastodon::domain($account->server->domain)
+                        ->token($account->token)
+                        ->verify_credentials();
 
         $account->fill($data)->save();
 

@@ -8,12 +8,13 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests\Account\AccountCreateRequest;
 
-use App\Repository\Server\ServerRepositoryInterface as Server;
-use App\Repository\Account\AccountRepositoryInterface as Account;
+use App\Repository\Server\ServerRepositoryInterface as ServerRepository;
+use App\Repository\Account\AccountRepositoryInterface as AccountRepository;
 
 use App\Jobs\Status\GetStatusJob;
 
 use Socialite;
+
 
 class AccountController extends Controller
 {
@@ -21,11 +22,11 @@ class AccountController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  AccountCreateRequest $request
-     * @param  Server               $server
+     * @param  ServerRepository     $server
      *
      * @return \Illuminate\Http\Response
      */
-    public function redirect(AccountCreateRequest $request, Server $server)
+    public function redirect(AccountCreateRequest $request, ServerRepository $server)
     {
         $domain = $request->input('domain');
         $domain = trim($domain, "/\t\n\r\0\x0B");
@@ -35,8 +36,8 @@ class AccountController extends Controller
         $info = $server->firstOrCreate($domain);
 
         config(['services.mastodon.domain' => $domain]);
-        config(['services.mastodon.client_id' => $info->client_id]);
-        config(['services.mastodon.client_secret' => $info->client_secret]);
+        config(['services.mastodon.client_id' => $info['client_id']]);
+        config(['services.mastodon.client_secret' => $info['client_secret']]);
 
         session(['mastodon_domain' => $domain]);
 
@@ -44,13 +45,13 @@ class AccountController extends Controller
     }
 
     /**
-     * @param Request $request
-     * @param Account $account
-     * @param Server  $server
+     * @param Request           $request
+     * @param AccountRepository $account
+     * @param ServerRepository  $server
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function callback(Request $request, Account $account, Server $server)
+    public function callback(Request $request, AccountRepository $account, ServerRepository $server)
     {
         $domain = session('mastodon_domain');
         session(['mastodon_domain' => null]);
@@ -58,8 +59,8 @@ class AccountController extends Controller
         $info = $server->firstOrCreate($domain);
 
         config(['services.mastodon.domain' => $domain]);
-        config(['services.mastodon.client_id' => $info->client_id]);
-        config(['services.mastodon.client_secret' => $info->client_secret]);
+        config(['services.mastodon.client_id' => $info['client_id']]);
+        config(['services.mastodon.client_secret' => $info['client_secret']]);
 
         try {
             $user = Socialite::driver('mastodon')->user();

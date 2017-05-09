@@ -2,6 +2,7 @@
 
 namespace App\Repository\Account;
 
+use App\Model\User;
 use App\Model\Account;
 
 interface AccountRepositoryInterface
@@ -22,23 +23,25 @@ interface AccountRepositoryInterface
     /**
      * toot:statusesのためのアカウントリスト
      *
-     * @return mixed
+     * @return Account[]
      */
     public function oldest();
 
     /**
      * ユーザーのアカウント
      *
-     * @return mixed
+     * @return Account[]
      */
     public function userAccounts();
 
     /**
      * ユーザーのアカウント（公開用）
      *
-     * @return mixed
+     * @param User $user
+     *
+     * @return Account[]
      */
-    public function openAccounts($user);
+    public function openAccounts(User $user);
 
     /**
      * ユーザー名とドメインからアカウント
@@ -46,7 +49,7 @@ interface AccountRepositoryInterface
      * @param string $username
      * @param string $domain
      *
-     * @return mixed
+     * @return Account
      */
     public function getByAcct(string $username, string $domain);
 
@@ -70,11 +73,11 @@ interface AccountRepositoryInterface
 
     /**
      * @param $user
-     * @param $server
+     * @param array $server
      *
      * @return mixed
      */
-    public function store($user, $server);
+    public function store($user, array $server);
 
     /**
      * @param $user
