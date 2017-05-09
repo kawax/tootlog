@@ -1224,16 +1224,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.4.21",
+            "version": "v5.4.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "2ed668f96d1a6ca42f50d5c87ee9ceecfc0a6eee"
+                "reference": "fc5c7a18644f231bcb8d02f4ec2f3a2517f5015d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/2ed668f96d1a6ca42f50d5c87ee9ceecfc0a6eee",
-                "reference": "2ed668f96d1a6ca42f50d5c87ee9ceecfc0a6eee",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/fc5c7a18644f231bcb8d02f4ec2f3a2517f5015d",
+                "reference": "fc5c7a18644f231bcb8d02f4ec2f3a2517f5015d",
                 "shasum": ""
             },
             "require": {
@@ -1349,7 +1349,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-04-28T15:40:01+00:00"
+            "time": "2017-05-08T21:45:45+00:00"
         },
         {
             "name": "laravel/socialite",
@@ -3493,12 +3493,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/usmanhalalit/laracsv.git",
-                "reference": "c00387884d9c0ce71d60a3206fb3936d228055fc"
+                "reference": "b596afd37d8e518cbd698c19612b20526e4efae5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/usmanhalalit/laracsv/zipball/c00387884d9c0ce71d60a3206fb3936d228055fc",
-                "reference": "c00387884d9c0ce71d60a3206fb3936d228055fc",
+                "url": "https://api.github.com/repos/usmanhalalit/laracsv/zipball/b596afd37d8e518cbd698c19612b20526e4efae5",
+                "reference": "b596afd37d8e518cbd698c19612b20526e4efae5",
                 "shasum": ""
             },
             "require": {
@@ -3535,7 +3535,7 @@
                 "export",
                 "laravel"
             ],
-            "time": "2017-04-29 13:57:28"
+            "time": "2017-05-09 11:34:58"
         },
         {
             "name": "vlucas/phpdotenv",
