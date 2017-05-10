@@ -84,6 +84,11 @@ class StatusTest extends TestCase
         $this->accountRepository = m::mock(AccountRepository::class)->makePartial();
     }
 
+    public function tearDown()
+    {
+        m::close();
+    }
+
     public function testGetStatusJob()
     {
         $job = new GetStatusJob($this->account);

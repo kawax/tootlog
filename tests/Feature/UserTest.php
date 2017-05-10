@@ -7,7 +7,6 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-
 use App\Model\User;
 use App\Model\Server;
 use App\Model\Account;
@@ -20,15 +19,48 @@ class UserTest extends TestCase
     use DatabaseMigrations;
 
     /**
+     * @var User
+     */
+    protected $user;
+
+    /**
+     * @var Server
+     */
+    protected $server;
+
+    /**
+     * @var Account
+     */
+    protected $account;
+
+    public function setUp()
+    {
+        parent::setUp();
+
+        $this->user = factory(User::class)->create([
+            'name' => 'test',
+        ]);
+
+        $this->server = factory(Server::class)->create([
+            'domain' => 'https://example.com',
+        ]);
+
+        $this->account = factory(Account::class)->create([
+            'user_id'   => $this->user->id,
+            'server_id' => $this->server->id,
+            'username'  => 'test',
+            'url'       => 'https://example.com/@test',
+        ]);
+    }
+
+    /**
      * A basic test example.
      *
      * @return void
      */
     public function testWelcome()
     {
-        $user = factory(User::class)->create();
-
-        $response = $this->actingAs($user)
+        $response = $this->actingAs($this->user)
                          ->get('/');
 
         $response->assertSee('Home');
@@ -44,11 +76,7 @@ class UserTest extends TestCase
 
     public function testHome()
     {
-        $user = factory(User::class)->create([
-            'name' => 'test',
-        ]);
-
-        $response = $this->actingAs($user)
+        $response = $this->actingAs($this->user)
                          ->get('/home');
 
         $response->assertSee('Home');
@@ -65,18 +93,7 @@ class UserTest extends TestCase
 
     public function testTimeline()
     {
-        $user = factory(User::class)->create();
-
-        $server = factory(Server::class)->create([
-            'domain' => 'https://example.com',
-        ]);
-
-        $accounts = factory(Account::class)->create([
-            'user_id'   => $user->id,
-            'server_id' => $server->id,
-        ]);
-
-        $response = $this->actingAs($user)
+        $response = $this->actingAs($this->user)
                          ->get('/timeline');
 
         $response->assertSee('Timeline');
@@ -91,15 +108,7 @@ class UserTest extends TestCase
 
     public function testUser()
     {
-        $user = factory(User::class)->create([
-            'name' => 'test',
-        ]);
-
-        $accounts = factory(Account::class, 5)->create([
-            'user_id' => $user->id,
-        ]);
-
-        $response = $this->actingAs($user)
+        $response = $this->actingAs($this->user)
                          ->get('/@test');
 
         $response->assertSee('@test Account List');
@@ -109,29 +118,14 @@ class UserTest extends TestCase
 
     public function testDontSeeUser()
     {
-        $response = $this->get('/@test');
+        $response = $this->get('/@test2');
 
         $response->assertStatus(404);
     }
 
     public function testAccount()
     {
-        $user = factory(User::class)->create([
-            'name' => 'test',
-        ]);
-
-        $server = factory(Server::class)->create([
-            'domain' => 'https://example.com',
-        ]);
-
-        $accounts = factory(Account::class)->create([
-            'user_id'   => $user->id,
-            'server_id' => $server->id,
-            'username'  => 'test',
-            'url'       => 'https://example.com/@test',
-        ]);
-
-        $response = $this->actingAs($user)
+        $response = $this->actingAs($this->user)
                          ->get('/@test/test@example.com');
 
         $response->assertSee('Profile');
@@ -140,21 +134,6 @@ class UserTest extends TestCase
 
     public function testAccountAnother()
     {
-        $user = factory(User::class)->create([
-            'name' => 'test',
-        ]);
-
-        $server = factory(Server::class)->create([
-            'domain' => 'https://example.com',
-        ]);
-
-        $accounts = factory(Account::class)->create([
-            'user_id'   => $user->id,
-            'server_id' => $server->id,
-            'username'  => 'test',
-            'url'       => 'https://example.com/@test',
-        ]);
-
         $response = $this->get('/@test/test@example.com');
 
         $response->assertSee('Profile');
@@ -163,53 +142,37 @@ class UserTest extends TestCase
 
     public function testLockedAccount()
     {
-        $user = factory(User::class)->create([
-            'name' => 'test',
-        ]);
-
-        $server = factory(Server::class)->create([
-            'domain' => 'https://example.com',
-        ]);
-
         $accounts = factory(Account::class)->create([
-            'user_id'   => (int)$user->id,
-            'server_id' => $server->id,
-            'username'  => 'test',
-            'url'       => 'https://example.com/@test',
+            'user_id'   => (int)$this->user->id,
+            'server_id' => $this->server->id,
+            'username'  => 'test2',
+            'url'       => 'https://example.com/@test2',
             'locked'    => true,
         ]);
 
-        $response = $this->actingAs($user)
-                         ->get('/@test/test@example.com');
+        $response = $this->actingAs($this->user)
+                         ->get('/@test/test2@example.com');
 
         $response->assertStatus(200);
         $response->assertSee('Profile');
-        $response->assertSee('test@example.com');
+        $response->assertSee('test2@example.com');
     }
 
     public function testLockedAccountAnother()
     {
-        $user = factory(User::class)->create([
-            'name' => 'test',
-        ]);
-
         $user2 = factory(User::class)->create([
             'name' => 'test2',
         ]);
 
-        $server = factory(Server::class)->create([
-            'domain' => 'https://example.com',
-        ]);
-
         $accounts = factory(Account::class)->create([
-            'user_id'   => $user->id,
-            'server_id' => $server->id,
-            'username'  => 'test',
-            'url'       => 'https://example.com/@test',
+            'user_id'   => $this->user->id,
+            'server_id' => $this->server->id,
+            'username'  => 'test2',
+            'url'       => 'https://example.com/@test2',
             'locked'    => true,
         ]);
 
-        $response = $this->actingAs($user2)->get('/@test/test@example.com');
+        $response = $this->actingAs($user2)->get('/@test/test2@example.com');
 
         $response->assertStatus(403);
         $response->assertDontSee('Profile');
@@ -217,27 +180,12 @@ class UserTest extends TestCase
 
     public function testStatus()
     {
-        $user = factory(User::class)->create([
-            'name' => 'test',
-        ]);
-
-        $server = factory(Server::class)->create([
-            'domain' => 'https://example.com',
-        ]);
-
-        $accounts = factory(Account::class)->create([
-            'user_id'   => $user->id,
-            'server_id' => $server->id,
-            'username'  => 'test',
-            'url'       => 'https://example.com/@test',
-        ]);
-
         $statuses = factory(Status::class)->create([
-            'account_id' => $accounts->id,
+            'account_id' => $this->account->id,
             'status_id'  => 1,
         ]);
 
-        $response = $this->actingAs($user)
+        $response = $this->actingAs($this->user)
                          ->get('/@test/test@example.com/1');
 
         $response->assertSee($statuses->content);
@@ -245,33 +193,23 @@ class UserTest extends TestCase
 
     public function testLockedStatusAnother()
     {
-        $user = factory(User::class)->create([
-            'name' => 'test',
-        ]);
+        $user2 = factory(User::class)->create();
 
-        $user2 = factory(User::class)->create([
-            'name' => 'test2',
-        ]);
-
-        $server = factory(Server::class)->create([
-            'domain' => 'https://example.com',
-        ]);
-
-        $accounts = factory(Account::class)->create([
-            'user_id'   => $user->id,
-            'server_id' => $server->id,
-            'username'  => 'test',
-            'url'       => 'https://example.com/@test',
+        $account = factory(Account::class)->create([
+            'user_id'   => $this->user->id,
+            'server_id' => $this->server->id,
+            'username'  => 'test2',
+            'url'       => 'https://example.com/@test2',
             'locked'    => true,
         ]);
 
         $statuses = factory(Status::class)->create([
-            'account_id' => $accounts->id,
+            'account_id' => $account->id,
             'status_id'  => 1,
         ]);
 
         $response = $this->actingAs($user2)
-                         ->get('/@test/test@example.com/1');
+                         ->get('/@test/test2@example.com/1');
 
         $response->assertStatus(403);
         $response->assertDontSee('Profile');
@@ -281,20 +219,12 @@ class UserTest extends TestCase
     {
         Chronos::setTestNow(Chronos::parse('2017-04-24'));
 
-        $user = factory(User::class)->create([
-            'name' => 'test',
-        ]);
-
-        $accounts = factory(Account::class)->create([
-            'user_id' => $user->id,
-        ]);
-
         $statuses = factory(Status::class)->create([
-            'account_id' => $accounts->id,
+            'account_id' => $this->account->id,
             'created_at' => Chronos::now(),
         ]);
 
-        $response = $this->actingAs($user)
+        $response = $this->actingAs($this->user)
                          ->get('/@test/date/2017-04-24');
 
         $response->assertSee($statuses->content);
@@ -304,12 +234,8 @@ class UserTest extends TestCase
     {
         Chronos::setTestNow(Chronos::parse('2017-04-24'));
 
-        $user = factory(User::class)->create([
-            'name' => 'test',
-        ]);
-
         $accounts = factory(Account::class)->create([
-            'user_id' => $user->id,
+            'user_id' => $this->user->id,
             'locked'  => true,
         ]);
 
@@ -318,7 +244,7 @@ class UserTest extends TestCase
             'created_at' => Chronos::now(),
         ]);
 
-        $response = $this->actingAs($user)
+        $response = $this->actingAs($this->user)
                          ->get('/@test/date/2017-04-24');
 
         $response->assertDontSee($statuses->content);
@@ -333,9 +259,7 @@ class UserTest extends TestCase
 
     public function testPreferences()
     {
-        $user = factory(User::class)->make();
-
-        $response = $this->actingAs($user)
+        $response = $this->actingAs($this->user)
                          ->get('/preferences');
 
         $response->assertSee('User Preferences');
@@ -350,18 +274,12 @@ class UserTest extends TestCase
 
     public function testSearchHome()
     {
-        $user = factory(User::class)->create();
-
-        $accounts = factory(Account::class)->create([
-            'user_id' => $user->id,
-        ]);
-
         $statuses = factory(Status::class)->create([
-            'account_id' => $accounts->id,
+            'account_id' => $this->account->id,
             'content'    => 'test',
         ]);
 
-        $response = $this->actingAs($user)
+        $response = $this->actingAs($this->user)
                          ->get('/home?search=test');
 
         $response->assertViewHas('statuses');
@@ -369,46 +287,26 @@ class UserTest extends TestCase
 
     public function testSearchHomeEmpty()
     {
-        $user = factory(User::class)->create();
-
-        $accounts = factory(Account::class)->create([
-            'user_id' => $user->id,
-        ]);
-
         $statuses = factory(Status::class)->create([
-            'account_id' => $accounts->id,
+            'account_id' => $this->account->id,
             'content'    => '',
         ]);
 
-        $response = $this->actingAs($user)
+        $response = $this->actingAs($this->user)
                          ->get('/home?search=test');
 
+        $response->assertStatus(200);
         $response->assertDontSee('class="media"');
     }
 
     public function testSearchAccount()
     {
-        $user = factory(User::class)->create([
-            'name' => 'test',
-        ]);
-
-        $server = factory(Server::class)->create([
-            'domain' => 'https://example.com',
-        ]);
-
-        $accounts = factory(Account::class)->create([
-            'user_id'   => $user->id,
-            'server_id' => $server->id,
-            'username'  => 'test',
-            'url'       => 'https://example.com/@test',
-        ]);
-
         $statuses = factory(Status::class)->create([
-            'account_id' => $accounts->id,
+            'account_id' => $this->account->id,
             'content'    => 'test',
         ]);
 
-        $response = $this->actingAs($user)
+        $response = $this->actingAs($this->user)
                          ->get('/@test/test@example.com?search=test');
 
         $response->assertViewHas('statuses');
@@ -416,16 +314,8 @@ class UserTest extends TestCase
 
     public function testUserTags()
     {
-        $user = factory(User::class)->create([
-            'name' => 'test',
-        ]);
-
-        $accounts = factory(Account::class)->create([
-            'user_id' => $user->id,
-        ]);
-
         $statuses = factory(Status::class)->create([
-            'account_id' => $accounts->id,
+            'account_id' => $this->account->id,
         ]);
 
         $tag = factory(Tag::class)->create([
@@ -434,7 +324,7 @@ class UserTest extends TestCase
 
         \DB::table('status_tag')->insert(['status_id' => $statuses->id, 'tag_id' => $tag->id]);
 
-        $response = $this->actingAs($user)
+        $response = $this->actingAs($this->user)
                          ->get('/@test/tags');
 
         $response->assertViewHas('tags');
@@ -443,16 +333,8 @@ class UserTest extends TestCase
 
     public function testTag()
     {
-        $user = factory(User::class)->create([
-            'name' => 'test',
-        ]);
-
-        $accounts = factory(Account::class)->create([
-            'user_id' => $user->id,
-        ]);
-
         $statuses = factory(Status::class)->create([
-            'account_id' => $accounts->id,
+            'account_id' => $this->account->id,
         ]);
 
         $tag = factory(Tag::class)->create([
@@ -461,7 +343,7 @@ class UserTest extends TestCase
 
         \DB::table('status_tag')->insert(['status_id' => $statuses->id, 'tag_id' => $tag->id]);
 
-        $response = $this->actingAs($user)
+        $response = $this->actingAs($this->user)
                          ->get('/@test/tags/test');
 
         $response->assertViewHas('tag');
@@ -470,12 +352,8 @@ class UserTest extends TestCase
 
     public function testLockedTag()
     {
-        $user = factory(User::class)->create([
-            'name' => 'test',
-        ]);
-
         $accounts = factory(Account::class)->create([
-            'user_id' => $user->id,
+            'user_id' => $this->user->id,
             'locked'  => true,
         ]);
 
@@ -489,7 +367,7 @@ class UserTest extends TestCase
 
         \DB::table('status_tag')->insert(['status_id' => $statuses->id, 'tag_id' => $tag->id]);
 
-        $response = $this->actingAs($user)
+        $response = $this->actingAs($this->user)
                          ->get('/@test/tags/test');
 
         $response->assertDontSee($statuses->content);

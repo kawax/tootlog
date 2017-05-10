@@ -24,6 +24,10 @@ class ViewComposerServiceProvider extends ServiceProvider
         View::composer(
             'side.tags', \App\Http\ViewComposers\TagComposer::class
         );
+
+        View::composer(
+            'layouts.footer', \App\Http\ViewComposers\FooterComposer::class
+        );
     }
 
     /**

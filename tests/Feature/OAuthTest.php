@@ -102,6 +102,11 @@ class OAuthTest extends TestCase
         );
     }
 
+    public function tearDown()
+    {
+        m::close();
+    }
+
     public function testAccountAddRedirect()
     {
         $this->serverRepository->shouldReceive('firstOrCreate')
