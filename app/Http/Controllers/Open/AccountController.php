@@ -53,6 +53,7 @@ class AccountController extends Controller
         }
 
         $title = $acct->acct . ' - ' . config('app.name', 'tootlog');
+        OpenGraph::setSiteName(config('app.name', 'tootlog'));
         OpenGraph::setDescription($acct->note);
         OpenGraph::setTitle($title);
         OpenGraph::setUrl(route('open.account.index', [$user, $acct->username, $acct->domain]));
@@ -88,6 +89,8 @@ class AccountController extends Controller
         }
 
         $title = $acct->acct . ' - ' . config('app.name', 'tootlog');
+
+        OpenGraph::setSiteName(config('app.name', 'tootlog'));
         OpenGraph::setDescription($status->content);
         OpenGraph::setTitle($title);
         OpenGraph::setUrl(route('open.account.show', [$user, $acct->username, $acct->domain, $status_id]));

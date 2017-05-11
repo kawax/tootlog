@@ -18,6 +18,7 @@ class UserController extends Controller
 
         $title = $user->name . '@' . config('app.name', 'tootlog');
 
+        OpenGraph::setSiteName(config('app.name', 'tootlog'));
         OpenGraph::setDescription($title);
         OpenGraph::setTitle($title);
         OpenGraph::setUrl(route('open.user', [$user]));
