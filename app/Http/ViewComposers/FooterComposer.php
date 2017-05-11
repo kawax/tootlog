@@ -11,16 +11,14 @@ use App\Model\Status;
 
 class FooterComposer
 {
-    protected $statusRepository;
-
-    public function __construct(Status $statusRepository)
+    public function __construct()
     {
-        $this->statusRepository = $statusRepository;
+        //
     }
 
     public function compose(View $view)
     {
-        $minutes = 60 * 60 * 24;
+        $minutes = 60;
 
         $footer_servers = Cache::remember('footer_servers', $minutes, function () {
             return Server::count();

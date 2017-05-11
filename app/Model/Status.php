@@ -4,13 +4,13 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use McCool\LaravelAutoPresenter\HasPresenter;
 
 use App\Presenter\StatusPresenter;
 
-class Status extends Model implements HasPresenter
+class Status extends Model
 {
     use SoftDeletes;
+    use StatusPresenter;
 
     protected $fillable = [
         'account_id',
@@ -33,11 +33,6 @@ class Status extends Model implements HasPresenter
         'local_datetime',
         'name',
     ];
-
-    public function getPresenterClass()
-    {
-        return StatusPresenter::class;
-    }
 
     /**
      * acct

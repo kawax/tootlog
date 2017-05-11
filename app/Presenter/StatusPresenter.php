@@ -4,9 +4,8 @@ namespace App\Presenter;
 
 use JsonLd\Context;
 use App\JsonLd\SocialMediaPosting;
-use McCool\LaravelAutoPresenter\BasePresenter;
 
-class StatusPresenter extends BasePresenter
+trait StatusPresenter
 {
     /**
      * Create JSON-LD object.
@@ -15,29 +14,27 @@ class StatusPresenter extends BasePresenter
      */
     public function jsonLd()
     {
-        $status = $this->wrappedObject;
-
         $url = route('open.account.show',
             [
-                $status->account->user,
-                $status->account->username,
-                $status->account->domain,
-                $status->status_id,
+                $this->account->user,
+                $this->account->username,
+                $this->account->domain,
+                $this->status_id,
             ]
         );
 
         return Context::create(SocialMediaPosting::class, [
             'author'        => [
-                'name'  => $status->name,
-                'image' => $status->account->avatar,
-                'url'   => $status->account->url,
+                'name'  => $this->name,
+                'image' => $this->account->avatar,
+                'url'   => $this->account->url,
             ],
-            'articleBody'   => $status->content,
-            'headline'      => $status->spoiler_text ?: $status->content,
-            'datePublished' => $status->created_at,
+            'articleBody'   => $this->content,
+            'headline'      => $this->spoiler_text ?: $this->content,
+            'datePublished' => $this->created_at,
             'url'           => $url,
-            'sameAs'        => $status->url,
-            'image'         => $status->account->avatar,
+            'sameAs'        => $this->url,
+            'image'         => $this->account->avatar,
         ]);
     }
 }

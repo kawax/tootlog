@@ -12,11 +12,11 @@ class SocialMediaPosting extends AbstractContext
      * @var array
      */
     protected $structure = [
-        'author' => Person::class,
-        'articleBody' => null,
-        'headline' => null,
+        'author'        => Person::class,
+        'articleBody'   => null,
+        'headline'      => null,
         'datePublished' => null,
-        'url' => null,
-        'image' => null,
+        'url'           => null,
+        'image'         => null,
     ];
 }

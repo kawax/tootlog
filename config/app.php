@@ -181,8 +181,6 @@ return [
 
         Roumen\Sitemap\SitemapServiceProvider::class,
 
-        McCool\LaravelAutoPresenter\AutoPresenterServiceProvider::class,
-
         Revolution\Mastodon\Providers\MastodonServiceProvider::class,
 
         /*

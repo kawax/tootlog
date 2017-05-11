@@ -40,4 +40,3 @@ class CsvExported extends Mailable implements ShouldQueue
                     ->text('emails.export');
     }
 }
-

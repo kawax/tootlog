@@ -369,6 +369,7 @@ class UserTest extends TestCase
     {
         $statuses = factory(Status::class)->create([
             'account_id' => $this->account->id,
+            'content'    => 'test',
         ]);
 
         $tag = factory(Tag::class)->create([
@@ -378,7 +379,7 @@ class UserTest extends TestCase
         \DB::table('status_tag')->insert(['status_id' => $statuses->id, 'tag_id' => $tag->id]);
 
         $response = $this->actingAs($this->user)
-                         ->get('/@test/tags/test');
+                         ->get('/@test/tags/test?search=test');
 
         $response->assertViewHas('tag');
         $response->assertSee($statuses->content);

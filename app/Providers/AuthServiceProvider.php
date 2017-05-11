@@ -7,7 +7,6 @@ use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvid
 
 use App\Model\Account;
 use App\Model\Status;
-use App\Presenter\StatusPresenter;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -19,7 +18,6 @@ class AuthServiceProvider extends ServiceProvider
     protected $policies = [
         Account::class         => \App\Policies\AccountPolicy::class,
         Status::class          => \App\Policies\StatusPolicy::class,
-        StatusPresenter::class => \App\Policies\StatusPresenterPolicy::class,
     ];
 
     /**

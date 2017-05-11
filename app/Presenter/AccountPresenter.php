@@ -4,9 +4,8 @@ namespace App\Presenter;
 
 use JsonLd\Context;
 use App\JsonLd\Person;
-use McCool\LaravelAutoPresenter\BasePresenter;
 
-class AccountPresenter extends BasePresenter
+trait AccountPresenter
 {
     /**
      * Create JSON-LD object.
@@ -15,22 +14,20 @@ class AccountPresenter extends BasePresenter
      */
     public function jsonLd()
     {
-        $account = $this->wrappedObject;
-
         $url = route('open.account.index',
             [
-                $account->user,
-                $account->username,
-                $account->domain,
+                $this->user,
+                $this->username,
+                $this->domain,
             ]
         );
 
         return Context::create(Person::class, [
-            'name'        => $account->name,
-            'image'       => $account->avatar,
-            'description' => $account->note,
+            'name'        => $this->name,
+            'image'       => $this->avatar,
+            'description' => $this->note,
             'url'         => $url,
-            'sameAs'      => $account->url,
+            'sameAs'      => $this->url,
         ]);
     }
 }

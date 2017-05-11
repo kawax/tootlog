@@ -93,6 +93,7 @@ class EloquentStatusRepository implements StatusRepositoryInterface
 
         $statuses = $tag->statuses()
                         ->whereIn('statuses.account_id', $accounts)
+                        ->with(['account', 'reblog'])
                         ->latest();
 
         if (request()->has('search')) {
