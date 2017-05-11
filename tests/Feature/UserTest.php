@@ -91,12 +91,38 @@ class UserTest extends TestCase
         $response->assertRedirect('/login');
     }
 
+    public function testHomeHide()
+    {
+        $statuses = factory(Status::class)->create([
+            'account_id' => $this->account->id,
+        ]);
+
+        $response = $this->actingAs($this->user)
+                         ->get('/home');
+
+        $response->assertSee('<tt-status-hide');
+    }
+
+    public function testHomeShow()
+    {
+        $statuses = factory(Status::class)->create([
+            'account_id' => $this->account->id,
+            'deleted_at' => Chronos::now(),
+        ]);
+
+        $response = $this->actingAs($this->user)
+                         ->get('/home');
+
+        $response->assertSee('<tt-status-show');
+    }
+
     public function testTimeline()
     {
         $response = $this->actingAs($this->user)
                          ->get('/timeline');
 
         $response->assertSee('Timeline');
+        $response->assertSee('<tt-user-timeline');
     }
 
     public function testDontSeeTimeline()
@@ -121,6 +147,14 @@ class UserTest extends TestCase
         $response = $this->get('/@test2');
 
         $response->assertStatus(404);
+    }
+
+    public function testUserCalender()
+    {
+        $response = $this->actingAs($this->user)
+                         ->get('/@test');
+
+        $response->assertSee('<tt-calendar user="test"></tt-calendar>');
     }
 
     public function testAccount()
