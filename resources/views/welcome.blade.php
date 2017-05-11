@@ -2,6 +2,12 @@
 
 @section('title', config('app.name') . ' - Mastodon log archives service')
 
+
+@section('open_graph')
+    {!! OpenGraph::generate() !!}
+    {!! Twitter::generate() !!}
+@endsection
+
 @section('content')
     <div class="container-fluid">
         <div class="row">

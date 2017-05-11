@@ -8,8 +8,10 @@ use App\Http\Controllers\Controller;
 use App\Model\User;
 
 use App\Repository\Status\StatusRepositoryInterface as Status;
+
 use OpenGraph;
 use Twitter;
+
 class UserController extends Controller
 {
     public function index(User $user, Status $statusRepository)
