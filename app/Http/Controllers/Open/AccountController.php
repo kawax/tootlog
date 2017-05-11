@@ -10,6 +10,9 @@ use App\Model\User;
 use App\Repository\Account\AccountRepositoryInterface as Account;
 use App\Repository\Status\StatusRepositoryInterface as Status;
 
+use OpenGraph;
+use Twitter;
+
 class AccountController extends Controller
 {
     /**
@@ -49,6 +52,16 @@ class AccountController extends Controller
             $this->authorize('show', $acct);
         }
 
+        $title = $acct->acct . ' - ' . config('app.name', 'tootlog');
+        OpenGraph::setDescription($acct->note);
+        OpenGraph::setTitle($title);
+        OpenGraph::setUrl(route('open.account.index', [$user, $acct->username, $acct->domain]));
+        OpenGraph::addProperty('type', 'profile');
+        OpenGraph::addImage($acct->avatar);
+
+        Twitter::setTitle($title);
+        Twitter::setType('summary');
+
         $statuses = $this->statusRepository->openAcctStatuses($acct);
         $accounts = $this->accountRepository->openAccounts($user);
 
@@ -73,6 +86,16 @@ class AccountController extends Controller
         if ($acct->locked or $status->trashed()) {
             $this->authorize('show', $acct);
         }
+
+        $title = $acct->acct . ' - ' . config('app.name', 'tootlog');
+        OpenGraph::setDescription($status->content);
+        OpenGraph::setTitle($title);
+        OpenGraph::setUrl(route('open.account.show', [$user, $acct->username, $acct->domain, $status_id]));
+        OpenGraph::addProperty('type', 'article');
+        OpenGraph::addImage($acct->avatar);
+
+        Twitter::setTitle($title);
+        Twitter::setType('summary');
 
         $accounts = $this->accountRepository->openAccounts($user);
 

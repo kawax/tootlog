@@ -15,6 +15,8 @@
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
+    @yield('open_graph')
+
     @include('layouts.google')
 </head>
 <body class="theme-{{ auth()->check() ? auth()->user()->theme : 'thin' }}">

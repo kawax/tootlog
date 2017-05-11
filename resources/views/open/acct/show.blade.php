@@ -4,6 +4,11 @@
 
 @section('description', strip_tags($status->content))
 
+@section('open_graph')
+    {!! OpenGraph::generate() !!}
+    {!! Twitter::generate() !!}
+@endsection
+
 @section('content')
     <div class="container-fluid">
         <div class="row">
