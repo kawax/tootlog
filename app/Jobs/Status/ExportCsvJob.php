@@ -9,9 +9,10 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 
 use Storage;
-use Laracsv\Export;
+use League\Csv\Writer;
 
 use App\Model\User;
+use App\Model\Status;
 
 use App\Repository\Status\StatusRepositoryInterface as StatusRepository;
 
@@ -21,7 +22,15 @@ class ExportCsvJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
+    /**
+     * @var User
+     */
     protected $user;
+
+    /**
+     * @var Writer
+     */
+    protected $writer;
 
     /**
      * Create a new job instance.
@@ -51,21 +60,41 @@ class ExportCsvJob implements ShouldQueue
 
             $statuses = $statusRepository->exportCsv($account);
 
-            $export = new Export();
+            $this->writer = Writer::createFromFileObject(new \SplTempFileObject());
 
-            $export->build($statuses, [
-                'status_id' => 'id',
+            $header = [
+                'id',
                 'content',
                 'spoiler_text',
                 'created_at',
                 'uri',
                 'url',
-            ]);
+            ];
+
+            $this->writer->insertOne($header);
+
+            $statuses->chunk(1000, function ($chunk_statuses) {
+                /**
+                 * @var Status $status
+                 */
+                foreach ($chunk_statuses as $status) {
+                    $status_line = array_only($status->toArray(), [
+                        'status_id',
+                        'content',
+                        'spoiler_text',
+                        'created_at',
+                        'uri',
+                        'url',
+                    ]);
+
+                    $this->writer->insertOne($status_line);
+                }
+            });
 
             $path = 'csv/' . $this->user->name . '/' . $account->acct . '.csv';
             $files[] = $path;
 
-            Storage::put($path, (string)$export->getCsv());
+            Storage::put($path, (string)$this->writer);
         });
 
 

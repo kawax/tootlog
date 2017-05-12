@@ -19,12 +19,12 @@
     "laravel/framework": "5.4.*",
     "laravel/tinker": "~1.0",
     "laravelcollective/html": "^5.4",
+    "league/csv": "^8.2",
     "peppeocchi/laravel-elb-middleware": "^1.0",
     "revolution/laravel-mastodon-api": "^1.0",
     "revolution/socialite-mastodon": "^1.0",
     "roumen/sitemap": "^2.6",
-    "torann/json-ld": "^0.0.9",
-    "usmanhalalit/laracsv": "dev-master"
+    "torann/json-ld": "^0.0.9"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f753331e0d3d68ccf30b4eba1b815503",
+    "content-hash": "c31e79041c118a67103e4a872cb1b23c",
     "packages": [
         {
             "name": "artesaos/seotools",
@@ -61,16 +61,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.27.1",
+            "version": "3.27.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "9fc7aa9cad2e8cff8e49582f1be19cf92631153c"
+                "reference": "eb10e43cccf8e868f9622ab8ce2beb9fb756b5a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/9fc7aa9cad2e8cff8e49582f1be19cf92631153c",
-                "reference": "9fc7aa9cad2e8cff8e49582f1be19cf92631153c",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/eb10e43cccf8e868f9622ab8ce2beb9fb756b5a8",
+                "reference": "eb10e43cccf8e868f9622ab8ce2beb9fb756b5a8",
                 "shasum": ""
             },
             "require": {
@@ -137,7 +137,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-05-09T17:51:04+00:00"
+            "time": "2017-05-11T21:23:43+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1277,16 +1277,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.4.22",
+            "version": "v5.4.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "fc5c7a18644f231bcb8d02f4ec2f3a2517f5015d"
+                "reference": "ad82327705658dbf5f0ce72805caa950dfbe150d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/fc5c7a18644f231bcb8d02f4ec2f3a2517f5015d",
-                "reference": "fc5c7a18644f231bcb8d02f4ec2f3a2517f5015d",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/ad82327705658dbf5f0ce72805caa950dfbe150d",
+                "reference": "ad82327705658dbf5f0ce72805caa950dfbe150d",
                 "shasum": ""
             },
             "require": {
@@ -1402,7 +1402,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-05-08T21:45:45+00:00"
+            "time": "2017-05-11T20:10:35+00:00"
         },
         {
             "name": "laravel/socialite",
@@ -3525,56 +3525,6 @@
             "time": "2017-02-13T15:28:33+00:00"
         },
         {
-            "name": "usmanhalalit/laracsv",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/usmanhalalit/laracsv.git",
-                "reference": "b596afd37d8e518cbd698c19612b20526e4efae5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/usmanhalalit/laracsv/zipball/b596afd37d8e518cbd698c19612b20526e4efae5",
-                "reference": "b596afd37d8e518cbd698c19612b20526e4efae5",
-                "shasum": ""
-            },
-            "require": {
-                "league/csv": "8.2.*",
-                "php": ">=5.6.4"
-            },
-            "require-dev": {
-                "fzaninotto/faker": "^1.6",
-                "illuminate/database": "5.2.*@dev",
-                "phpunit/phpunit": "5.7.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Laracsv\\": "src/Laracsv/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Muhammad Usman",
-                    "email": "hi@usman.it",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A Laravel package to easily generate CSV files from Eloquent model.",
-            "homepage": "https://github.com/usmanhalalit/laracsv",
-            "keywords": [
-                "csv",
-                "eloquent",
-                "export",
-                "laravel"
-            ],
-            "time": "2017-05-09 11:34:58"
-        },
-        {
             "name": "vlucas/phpdotenv",
             "version": "v2.4.0",
             "source": {
@@ -3775,16 +3725,16 @@
         },
         {
             "name": "laravel/homestead",
-            "version": "v5.2.4",
+            "version": "v5.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/homestead.git",
-                "reference": "77f1f01f6ec504c7f3adcb220d73c831a8dcc2bb"
+                "reference": "30538185078f3226a75953eaa57efa0cde145981"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/homestead/zipball/77f1f01f6ec504c7f3adcb220d73c831a8dcc2bb",
-                "reference": "77f1f01f6ec504c7f3adcb220d73c831a8dcc2bb",
+                "url": "https://api.github.com/repos/laravel/homestead/zipball/30538185078f3226a75953eaa57efa0cde145981",
+                "reference": "30538185078f3226a75953eaa57efa0cde145981",
                 "shasum": ""
             },
             "require": {
@@ -3821,7 +3771,7 @@
                 }
             ],
             "description": "A virtual machine for web artisans.",
-            "time": "2017-04-26T15:43:12+00:00"
+            "time": "2017-05-12T03:00:20+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -5200,9 +5150,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "usmanhalalit/laracsv": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

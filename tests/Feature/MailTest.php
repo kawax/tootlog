@@ -78,8 +78,6 @@ class MailTest extends TestCase
         $response = $this->actingAs($this->user)
                          ->post('/export/csv');
 
-        $user = $this->user;
-
         Bus::assertDispatched(ExportCsvJob::class);
 
         $response->assertSessionHas('export');

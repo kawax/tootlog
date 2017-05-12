@@ -204,7 +204,7 @@ class EloquentStatusRepository implements StatusRepositoryInterface
         return $account->statuses()
                        ->withTrashed()
                        ->where('reblog_id', null)
-                       ->latest()
-                       ->get();
+                       ->with('account')
+                       ->latest();
     }
 }
