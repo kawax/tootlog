@@ -7,7 +7,7 @@
 
             <div class="col-md-8 col-md-push-4">
                 <h2>
-                    <a href="{{ $acct->url }}" target="_blank" rel="nofollow noopener">
+                    <a href="{{ $acct->server->domain }}" target="_blank" rel="nofollow noopener">
                         {{ $acct->acct }}
                     </a>
                 </h2>

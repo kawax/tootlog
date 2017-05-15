@@ -8,7 +8,7 @@
 
                 <div class="col-md-8 col-md-push-4">
                     <h2>
-                        <a href="{{ $accounts->first()->url }}" target="_blank" rel="nofollow noopener">
+                        <a href="{{ $accounts->first()->server->domain }}" target="_blank" rel="nofollow noopener">
                             {{ $accounts->first()->acct }}
                         </a>
                     </h2>

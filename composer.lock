@@ -2450,16 +2450,16 @@
         },
         {
             "name": "revolution/laravel-mastodon-api",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kawax/laravel-mastodon-api.git",
-                "reference": "cc313cf0841272140dd0c35fbeafd0f3355d7ef6"
+                "reference": "cb0565f284d79d76bac55c1b8639d39b53587c76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kawax/laravel-mastodon-api/zipball/cc313cf0841272140dd0c35fbeafd0f3355d7ef6",
-                "reference": "cc313cf0841272140dd0c35fbeafd0f3355d7ef6",
+                "url": "https://api.github.com/repos/kawax/laravel-mastodon-api/zipball/cb0565f284d79d76bac55c1b8639d39b53587c76",
+                "reference": "cb0565f284d79d76bac55c1b8639d39b53587c76",
                 "shasum": ""
             },
             "require": {
@@ -2492,7 +2492,7 @@
                 "laravel",
                 "mastodon"
             ],
-            "time": "2017-05-14T03:44:37+00:00"
+            "time": "2017-05-14T13:41:37+00:00"
         },
         {
             "name": "revolution/socialite-mastodon",
