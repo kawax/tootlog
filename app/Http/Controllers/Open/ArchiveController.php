@@ -4,11 +4,12 @@ namespace App\Http\Controllers\Open;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
 use App\Model\User;
 
 use App\Repository\Status\StatusRepositoryInterface as StatusRepository;
 
-class DateController extends Controller
+class ArchiveController extends Controller
 {
     /**
      * @var StatusRepository
@@ -18,18 +19,17 @@ class DateController extends Controller
     /**
      * AccountController constructor.
      *
-     * @param StatusRepository  $statusRepository
+     * @param StatusRepository $statusRepository
      */
     public function __construct(StatusRepository $statusRepository)
     {
         $this->statusRepository = $statusRepository;
     }
 
-    public function show(User $user, string $date)
+    public function __invoke(User $user)
     {
-        $statuses = $this->statusRepository->openUserStatusesByDate($user, $date);
+        $archives = $this->statusRepository->openArchives($user);
 
-        return view('open.date')->with(compact('user',  'statuses', 'date'));
-
+        return view('open.archives')->with(compact('user', 'archives'));
     }
 }

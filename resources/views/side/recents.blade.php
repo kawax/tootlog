@@ -13,4 +13,9 @@
             @endforeach
         </div>
     </div>
+
+    <div class="panel-footer">
+        <a href="{{ route('open.archives', $user) }}">Archives</a>
+    </div>
+
 </div>

@@ -41,9 +41,18 @@ interface StatusRepositoryInterface
      *
      * @param User $user
      *
-     * @return Status[]
+     * @return mixed
      */
     public function openRecents(User $user);
+
+    /**
+     * ユーザーのアーカイブス（公開用）
+     *
+     * @param User $user
+     *
+     * @return mixed
+     */
+    public function openArchives(User $user);
 
     /**
      * ユーザーのタグ別ステータス（公開用）

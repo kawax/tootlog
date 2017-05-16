@@ -51,6 +51,8 @@ Route::namespace('Open')->group(function () {
 
     Route::resource('@{user}/tags', 'TagController', ['only' => ['index', 'show']]);
 
+    Route::name('open.archives')->get('@{user}/archives', 'ArchiveController');
+
 });
 
 Route::namespace('Api')->prefix('api')->group(function () {

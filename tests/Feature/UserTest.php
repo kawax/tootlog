@@ -407,4 +407,20 @@ class UserTest extends TestCase
 
         $response->assertDontSee($statuses->content);
     }
+
+    public function testArchives()
+    {
+        Chronos::setTestNow(Chronos::parse('2017-05-16'));
+
+        $statuses = factory(Status::class)->create([
+            'account_id' => $this->account->id,
+            'created_at' => Chronos::now(),
+        ]);
+
+        $response = $this->actingAs($this->user)
+                         ->get('/@test/archives');
+
+        $response->assertSee('2017-05');
+        $response->assertSee('2017-05-16');
+    }
 }

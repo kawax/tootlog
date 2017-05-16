@@ -9,6 +9,8 @@ use App\Model\Tag;
 
 use Cake\Chronos\Chronos;
 
+use Cache;
+
 class EloquentStatusRepository implements StatusRepositoryInterface
 {
     const PAGINATE = 20;
@@ -72,16 +74,27 @@ class EloquentStatusRepository implements StatusRepositoryInterface
      */
     public function openRecents(User $user)
     {
-        $recents = $user->statuses()
+        $recents = $this->openArchives($user)->take(10);
+
+        return $recents;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function openArchives(User $user)
+    {
+        $archives = Cache::remember('archives/' . $user->id, 60, function () use ($user) {
+            return $user->statuses()
                         ->where('accounts.locked', false)
                         ->latest()
                         ->get()
                         ->groupBy(function ($item, $key) {
                             return $item->created_at->format('Y-m-d');
-                        })
-                        ->take(10);
+                        });
+        });
 
-        return $recents;
+        return $archives;
     }
 
     /**

@@ -1,6 +1,6 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title">Public URL</h3>
+        Public URL
     </div>
     <div class="panel-body">
         <a href="{{ route('open.user', auth()->user()) }}">
