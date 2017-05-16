@@ -26,17 +26,10 @@
                     @if(empty($status->spoiler_text))
                         {!! EmojiOne::toImage($status->content) !!}
                     @else
-                        <button class="btn btn-warning btn-sm"
-                                type="button"
-                                data-toggle="collapse"
-                                data-target="#cw_{{ $status->id }}"
-                                aria-expanded="false"
-                                aria-controls="collapse">
-                            {!! EmojiOne::toImage($status->spoiler_text) !!}
-                        </button>
-                        <div class="collapse" id="cw_{{ $status->id }}">
+                        <details>
+                            <summary class="btn btn-warning">{!! EmojiOne::toImage($status->spoiler_text) !!}</summary>
                             {!! EmojiOne::toImage($status->content) !!}
-                        </div>
+                        </details>
                     @endif
 
                     <div>
