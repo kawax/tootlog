@@ -10,7 +10,6 @@ return [
 
     //streaming api用のURLが違う場合
     'streaming'     => [
-        'https://chitose.moe' => 'https://api.chitose.moe',
         'https://mstdn.jp'    => 'https://streaming.mstdn.jp',
     ],
 ];
