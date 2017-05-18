@@ -27,21 +27,6 @@ class DateController extends Controller
 
     /**
      * @param User   $user
-     * @param string $date
-     *
-     * @return \Illuminate\Http\Response|\Illuminate\View\View
-     */
-    public function show(User $user, string $date)
-    {
-        $year = explode('-', $date)[0];
-        $month = explode('-', $date)[1];
-        $day = explode('-', $date)[2];
-
-        return redirect(route('open.user.date.day', [$user, $year, $month, $day]));
-    }
-
-    /**
-     * @param User   $user
      * @param string $year
      * @param string $month
      * @param string $day
@@ -67,5 +52,20 @@ class DateController extends Controller
         $statuses = $this->statusRepository->openUserStatusesByDate($user, $year, $month, $day);
 
         return view('open.date')->with(compact('user', 'statuses', 'date'));
+    }
+
+    /**
+     * @param User   $user
+     * @param string $date
+     *
+     * @return \Illuminate\Http\Response|\Illuminate\View\View
+     */
+    public function show(User $user, string $date)
+    {
+        $year = explode('-', $date)[0];
+        $month = explode('-', $date)[1];
+        $day = explode('-', $date)[2];
+
+        return redirect(route('open.user.date.day', [$user, $year, $month, $day]));
     }
 }
