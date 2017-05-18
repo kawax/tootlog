@@ -13,7 +13,7 @@
             <div class="col-md-8 col-md-push-4">
                 <ol class="breadcrumb">
                     <li><a href="{{ route('open.user', $user) }}">{{ '@' . $user->name  }}</a></li>
-                    <li>date</li>
+                    <li><a href="{{ route('open.archives', $user) }}">archives</a></li>
                     <li class="active">{{ $date  }}</li>
                 </ol>
 

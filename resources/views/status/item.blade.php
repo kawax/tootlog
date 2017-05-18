@@ -34,7 +34,7 @@
 
                     <div>
                         <a href="{{ $status->url }}" target="_blank" rel="nofollow noopener">
-                            <time datetime="{{ $status->local_datetime->toAtomString() }}">
+                            <time title="{{ $status->local_datetime->toAtomString() }}" datetime="{{ $status->local_datetime->toAtomString() }}">
                                 {{ $status->local_datetime->diffForHumans() }}
                             </time>
                         </a>

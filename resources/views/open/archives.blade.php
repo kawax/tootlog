@@ -16,31 +16,26 @@
 
                 <h2>Archives</h2>
 
-                @foreach($archives as $date => $archive)
-                    @if(empty($month) or $month != substr($date, 0, 7))
-                        @if(!$loop->first)</div>@endif
-            <h3>{{ substr($date, 0, 7) }}</h3>
-            <div class="list-group">
-                @endif
+                <div class="list-group">
 
-                @php
-                    $month = substr($date, 0, 7);
-                @endphp
+                    @foreach($archives as $date => $archive)
 
-                <a href="{{ route('open.user.date', ['user' => $user->name ,'date' => $date]) }}"
-                   class="list-group-item">
-                    <span class="badge">{{ $archive->count() }}</span>
-                    <i class="fa fa-calendar-o" aria-hidden="true"></i>
-                    {{ $date }}
-                </a>
+                        <a href="{{ route('open.user.date.day', [
+                        'user' => $user->name ,
+                        'year' => explode('-', $date)[0],
+                        'month' => explode('-', $date)[1]]) }}"
+                           class="list-group-item">
 
-                @if($loop->last)</div>@endif
+                            <span class="badge">{{ $archive->count() }}</span>
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                            {{ $date }}
+                        </a>
 
-            @endforeach
+                    @endforeach
+                </div>
+            </div>
 
+            @include('open.side')
         </div>
-
-        @include('open.side')
-    </div>
     </div>
 @endsection

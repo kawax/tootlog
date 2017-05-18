@@ -259,7 +259,37 @@ class UserTest extends TestCase
         ]);
 
         $response = $this->actingAs($this->user)
-                         ->get('/@test/date/2017-04-24');
+                         ->get('/@test/date/2017/04/24');
+
+        $response->assertSee($statuses->content);
+    }
+
+    public function testDateMonth()
+    {
+        Chronos::setTestNow(Chronos::parse('2017-04-24'));
+
+        $statuses = factory(Status::class)->create([
+            'account_id' => $this->account->id,
+            'created_at' => Chronos::now(),
+        ]);
+
+        $response = $this->actingAs($this->user)
+                         ->get('/@test/date/2017/04');
+
+        $response->assertSee($statuses->content);
+    }
+
+    public function testDateYear()
+    {
+        Chronos::setTestNow(Chronos::parse('2017-04-24'));
+
+        $statuses = factory(Status::class)->create([
+            'account_id' => $this->account->id,
+            'created_at' => Chronos::now(),
+        ]);
+
+        $response = $this->actingAs($this->user)
+                         ->get('/@test/date/2017');
 
         $response->assertSee($statuses->content);
     }
@@ -282,6 +312,22 @@ class UserTest extends TestCase
                          ->get('/@test/date/2017-04-24');
 
         $response->assertDontSee($statuses->content);
+    }
+
+    public function testDateRedirect()
+    {
+        Chronos::setTestNow(Chronos::parse('2017-04-24'));
+
+        $statuses = factory(Status::class)->create([
+            'account_id' => $this->account->id,
+            'created_at' => Chronos::now(),
+        ]);
+
+        $response = $this->actingAs($this->user)
+                         ->get('/@test/date');
+
+        $response->assertDontSee($statuses->content)
+                 ->assertRedirect('/@test');
     }
 
     public function testSitemap()

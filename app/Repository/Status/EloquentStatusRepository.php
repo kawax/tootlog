@@ -57,14 +57,23 @@ class EloquentStatusRepository implements StatusRepositoryInterface
     /**
      * @inheritDoc
      */
-    public function openUserStatusesByDate(User $user, string $date)
+    public function openUserStatusesByDate(User $user, string $year, string $month = null, string $day = null)
     {
-        $statuses = $user->statuses()
-                         ->where('accounts.locked', false)
-                         ->whereDate('statuses.created_at', $date)
-                         ->with(['account', 'reblog'])
-                         ->latest('created_at')
-                         ->paginate(self::PAGINATE);
+        $query = $user->statuses()
+                      ->where('accounts.locked', false)
+                      ->whereYear('statuses.created_at', $year);
+
+        if (!empty($month)) {
+            $query = $query->whereMonth('statuses.created_at', $month);
+        }
+
+        if (!empty($day)) {
+            $query = $query->whereDay('statuses.created_at', $day);
+        }
+
+        $statuses = $query->with(['account', 'reblog'])
+                          ->latest('created_at')
+                          ->paginate(self::PAGINATE);
 
         return $statuses;
     }
@@ -74,7 +83,16 @@ class EloquentStatusRepository implements StatusRepositoryInterface
      */
     public function openRecents(User $user)
     {
-        $recents = $this->openArchives($user)->take(10);
+        $recents = Cache::remember('recents/' . $user->id, 60, function () use ($user) {
+            return $user->statuses()
+                        ->where('accounts.locked', false)
+                        ->latest()
+                        ->get()
+                        ->groupBy(function ($item, $key) {
+                            return $item->created_at->format('Y-m-d');
+                        })
+                        ->take(10);
+        });
 
         return $recents;
     }
@@ -90,7 +108,7 @@ class EloquentStatusRepository implements StatusRepositoryInterface
                         ->latest()
                         ->get()
                         ->groupBy(function ($item, $key) {
-                            return $item->created_at->format('Y-m-d');
+                            return $item->created_at->format('Y-m');
                         });
         });
 

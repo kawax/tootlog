@@ -30,11 +30,13 @@ interface StatusRepositoryInterface
      * ユーザーの日付別ステータス（公開用）
      *
      * @param User   $user
-     * @param string $date
+     * @param string $year
+     * @param string $month
+     * @param string $day
      *
      * @return Status[]
      */
-    public function openUserStatusesByDate(User $user, string $date);
+    public function openUserStatusesByDate(User $user, string $year, string $month = null, string $day = null);
 
     /**
      * ユーザーの最近のステータス（公開用）

@@ -61,16 +61,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.27.2",
+            "version": "3.27.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "eb10e43cccf8e868f9622ab8ce2beb9fb756b5a8"
+                "reference": "1eece595cdcac0f10616d6b631d0db0878de4f53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/eb10e43cccf8e868f9622ab8ce2beb9fb756b5a8",
-                "reference": "eb10e43cccf8e868f9622ab8ce2beb9fb756b5a8",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/1eece595cdcac0f10616d6b631d0db0878de4f53",
+                "reference": "1eece595cdcac0f10616d6b631d0db0878de4f53",
                 "shasum": ""
             },
             "require": {
@@ -137,7 +137,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-05-11T21:23:43+00:00"
+            "time": "2017-05-17T22:37:49+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1518,16 +1518,16 @@
         },
         {
             "name": "laravelcollective/html",
-            "version": "v5.4.1",
+            "version": "v5.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LaravelCollective/html.git",
-                "reference": "7570f25d58a00fd6909c0563808590f9cdb14d47"
+                "reference": "4b493269d501485d4feb952cb380297290431680"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/7570f25d58a00fd6909c0563808590f9cdb14d47",
-                "reference": "7570f25d58a00fd6909c0563808590f9cdb14d47",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/4b493269d501485d4feb952cb380297290431680",
+                "reference": "4b493269d501485d4feb952cb380297290431680",
                 "shasum": ""
             },
             "require": {
@@ -1568,7 +1568,7 @@
             ],
             "description": "HTML and Form Builders for the Laravel Framework",
             "homepage": "http://laravelcollective.com",
-            "time": "2017-01-26T19:27:05+00:00"
+            "time": "2017-05-18T05:28:33+00:00"
         },
         {
             "name": "league/csv",
@@ -2295,16 +2295,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.8.4",
+            "version": "v0.8.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "17cf432bb80d9198df239b80d00a29155bd74d82"
+                "reference": "38a9d21406597a0440690eafbcb0222f528c8ac6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/17cf432bb80d9198df239b80d00a29155bd74d82",
-                "reference": "17cf432bb80d9198df239b80d00a29155bd74d82",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/38a9d21406597a0440690eafbcb0222f528c8ac6",
+                "reference": "38a9d21406597a0440690eafbcb0222f528c8ac6",
                 "shasum": ""
             },
             "require": {
@@ -2364,7 +2364,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2017-05-12T15:41:55+00:00"
+            "time": "2017-05-17T06:49:19+00:00"
         },
         {
             "name": "ramsey/uuid",
@@ -3725,16 +3725,16 @@
         },
         {
             "name": "laravel/homestead",
-            "version": "v5.3.0",
+            "version": "v5.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/homestead.git",
-                "reference": "30538185078f3226a75953eaa57efa0cde145981"
+                "reference": "ec5933c686e1084a30d7871992f2fbcaf6b15db3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/homestead/zipball/30538185078f3226a75953eaa57efa0cde145981",
-                "reference": "30538185078f3226a75953eaa57efa0cde145981",
+                "url": "https://api.github.com/repos/laravel/homestead/zipball/ec5933c686e1084a30d7871992f2fbcaf6b15db3",
+                "reference": "ec5933c686e1084a30d7871992f2fbcaf6b15db3",
                 "shasum": ""
             },
             "require": {
@@ -3771,7 +3771,7 @@
                 }
             ],
             "description": "A virtual machine for web artisans.",
-            "time": "2017-05-12T03:00:20+00:00"
+            "time": "2017-05-17T02:11:31+00:00"
         },
         {
             "name": "mockery/mockery",
