@@ -14,7 +14,7 @@ stages:
 test:
     stage: test
     script:
-        - /usr/local/bin/composer self-update
+        - sudo /usr/local/bin/composer self-update
         - /usr/local/bin/composer install --no-interaction -q
         - vendor/bin/phpunit
     #except:
