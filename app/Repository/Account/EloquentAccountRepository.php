@@ -50,6 +50,7 @@ class EloquentAccountRepository implements AccountRepositoryInterface
         $accounts = request()->user()
                              ->accounts()
                              ->latest('updated_at')
+                             ->with('server')
                              ->withCount('statuses')
                              ->get();
 
@@ -64,6 +65,7 @@ class EloquentAccountRepository implements AccountRepositoryInterface
         $accounts = $user->accounts()
                          ->where('locked', false)
                          ->latest('updated_at')
+                         ->with('server')
                          ->withCount('statuses')
                          ->get();
 

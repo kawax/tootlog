@@ -30,4 +30,13 @@ trait AccountPresenter
             'sameAs'      => $this->url,
         ]);
     }
+
+    /**
+     * @return string
+     */
+    public function getFaviconAttribute(): string
+    {
+        return $this->server->domain . '/' .
+            array_get(config('tootlog.favicon'), $this->server->domain, 'favicon.ico');
+    }
 }

@@ -6,12 +6,17 @@
             @foreach($accounts as $account)
                 <a href="{{ route('open.account.index', ['user' => $user->name ,'username' => $account->username, 'domain' => $account->domain]) }}"
                    class="list-group-item">
+
                     <span class="badge">{{ $account->statuses_count }}</span>
+
                     @if($account->fails >= config('tootlog.account_fails'))
                         <i class="fa fa-ban text-danger" aria-hidden="true"></i>
+                    @else
+                        <img src="{{ $account->favicon }}" width="{{ config('tootlog.favicon_size') }}" class="img-circle" alt="favicon">
                     @endif
-                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+
                     {{ $account->acct }}
+
                     @if($account->locked)
                         <i class="fa fa-lock" aria-hidden="true"></i>
                     @endif

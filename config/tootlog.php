@@ -10,6 +10,14 @@ return [
 
     //streaming api用のURLが違う場合
     'streaming'     => [
-        'https://mstdn.jp'    => 'https://streaming.mstdn.jp',
+        'https://mstdn.jp' => 'https://streaming.mstdn.jp',
+    ],
+
+    'favicon_size' => 24,
+
+    //faviconが違う場合
+    'favicon'      => [
+        //        'https://chitose.moe' => 'chitose_icon.png',
+        'https://pawoo.net' => 'favicon.png',
     ],
 ];
