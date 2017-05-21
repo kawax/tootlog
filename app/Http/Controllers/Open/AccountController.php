@@ -100,8 +100,6 @@ class AccountController extends Controller
         Twitter::setTitle($title);
         Twitter::setType('summary');
 
-        $accounts = $this->accountRepository->openAccounts($user);
-
-        return view('open.acct.show')->with(compact('user', 'acct', 'accounts', 'status'));
+        return view('open.acct.show')->with(compact('user', 'acct', 'status'));
     }
 }
