@@ -1518,16 +1518,16 @@
         },
         {
             "name": "laravelcollective/html",
-            "version": "v5.4.6",
+            "version": "v5.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LaravelCollective/html.git",
-                "reference": "115141fe55550eaeb9629ba16b48fcb1117846c7"
+                "reference": "5dd169b33dbf777dcdce411039eda86151146dce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/115141fe55550eaeb9629ba16b48fcb1117846c7",
-                "reference": "115141fe55550eaeb9629ba16b48fcb1117846c7",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/5dd169b33dbf777dcdce411039eda86151146dce",
+                "reference": "5dd169b33dbf777dcdce411039eda86151146dce",
                 "shasum": ""
             },
             "require": {
@@ -1568,7 +1568,7 @@
             ],
             "description": "HTML and Form Builders for the Laravel Framework",
             "homepage": "http://laravelcollective.com",
-            "time": "2017-05-19T17:45:41+00:00"
+            "time": "2017-05-22T03:24:43+00:00"
         },
         {
             "name": "league/csv",
