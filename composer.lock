@@ -61,16 +61,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.28.0",
+            "version": "3.28.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "af653f256d99ff372ce3e3be3048e7e5373ab1bc"
+                "reference": "8c3c45f73abfa377f37599da49d053e5d2347059"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/af653f256d99ff372ce3e3be3048e7e5373ab1bc",
-                "reference": "af653f256d99ff372ce3e3be3048e7e5373ab1bc",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/8c3c45f73abfa377f37599da49d053e5d2347059",
+                "reference": "8c3c45f73abfa377f37599da49d053e5d2347059",
                 "shasum": ""
             },
             "require": {
@@ -137,7 +137,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-05-18T20:44:27+00:00"
+            "time": "2017-05-24T18:18:21+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
