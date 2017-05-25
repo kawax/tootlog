@@ -24,16 +24,6 @@
                     </small>
                 </div>
 
-                <div class="panel panel-danger">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Beta version</h3>
-                    </div>
-                    <div class="panel-body">
-                        Early development stage.
-                        Use at your own risk.
-                    </div>
-                </div>
-
                 <h2>Usage</h2>
                 <div class="panel panel-default">
                     <div class="panel-heading">
