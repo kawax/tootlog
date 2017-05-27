@@ -19,8 +19,8 @@ Vue.use(VueCharts)
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('tt-status-hide', require('./components/StatusHide.vue'));
-Vue.component('tt-status-show', require('./components/StatusShow.vue'));
+Vue.component('tt-status-toggle', require('./components/StatusToggle.vue'));
+
 Vue.component('tt-user-timeline', require('./components/UserTimeline.vue'));
 Vue.component('tt-timeline-status', require('./components/TimelineStatus.vue'));
 Vue.component('tt-timeline-reblog', require('./components/TimelineReblog.vue'));

@@ -91,7 +91,7 @@ class UserTest extends TestCase
         $response->assertRedirect('/login');
     }
 
-    public function testHomeHide()
+    public function testHomeShow()
     {
         $statuses = factory(Status::class)->create([
             'account_id' => $this->account->id,
@@ -100,10 +100,10 @@ class UserTest extends TestCase
         $response = $this->actingAs($this->user)
                          ->get('/home');
 
-        $response->assertSee('<tt-status-hide');
+        $response->assertSee('<tt-status-toggle checked status');
     }
 
-    public function testHomeShow()
+    public function testHomeHide()
     {
         $statuses = factory(Status::class)->create([
             'account_id' => $this->account->id,
@@ -113,7 +113,7 @@ class UserTest extends TestCase
         $response = $this->actingAs($this->user)
                          ->get('/home');
 
-        $response->assertSee('<tt-status-show');
+        $response->assertSee('<tt-status-toggle status');
     }
 
     public function testTimeline()

@@ -23,6 +23,7 @@
     "laravel-mix": "0.*",
     "lodash": "^4.17.4",
     "vue": "^2.3.0",
+    "vue-bootstrap-toggle": "^1.0.4",
     "vue-charts": "^0.2.1"
   }
 }
