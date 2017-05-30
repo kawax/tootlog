@@ -85,3 +85,18 @@ body {
 #calendar_div {
   width: 100%;
 }
+
+.media-body code {
+  margin: 10px 0;
+  padding: 8px;
+  border-radius: 2px;
+  //font-size: 12px;
+  line-height: 1.2;
+  white-space: pre;
+  display: block;
+
+  &.inline {
+    display: inline;
+    padding: 1px 6px;
+  }
+}
