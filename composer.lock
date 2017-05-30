@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c31e79041c118a67103e4a872cb1b23c",
+    "content-hash": "88ace9b4969a9d4ac654689957563fbd",
     "packages": [
         {
             "name": "artesaos/seotools",
@@ -2162,39 +2162,6 @@
                 "random"
             ],
             "time": "2017-03-13T16:27:32+00:00"
-        },
-        {
-            "name": "peppeocchi/laravel-elb-middleware",
-            "version": "v1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/peppeocchi/laravel-elb-middleware.git",
-                "reference": "ebc1e1ad7a60e1d4bddbf04bd620e9c5f93236ce"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/peppeocchi/laravel-elb-middleware/zipball/ebc1e1ad7a60e1d4bddbf04bd620e9c5f93236ce",
-                "reference": "ebc1e1ad7a60e1d4bddbf04bd620e9c5f93236ce",
-                "shasum": ""
-            },
-            "type": "middleware",
-            "autoload": {
-                "psr-0": {
-                    "GO": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Giuseppe Occhipinti",
-                    "email": "peppeocchi@gmail.com"
-                }
-            ],
-            "description": "Laravel middleware for Elastic Beanstalk",
-            "time": "2016-08-12T10:36:48+00:00"
         },
         {
             "name": "psr/http-message",

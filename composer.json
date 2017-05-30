@@ -20,7 +20,6 @@
     "laravel/tinker": "~1.0",
     "laravelcollective/html": "^5.4",
     "league/csv": "^8.2",
-    "peppeocchi/laravel-elb-middleware": "^1.0",
     "revolution/laravel-mastodon-api": "^1.0",
     "revolution/socialite-mastodon": "^1.0",
     "roumen/sitemap": "^2.6",
