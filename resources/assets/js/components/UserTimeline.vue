@@ -169,11 +169,7 @@
             },
             steam_open(streamType, onData) {
 
-                const a = document.createElement('a');
-                a.href = this.streaming_url
-                a.protocol = a.protocol.replace('http', 'ws');
-
-                this.ws = new WebSocket(a.href + "/streaming?access_token=" + this.token + "&stream=" + streamType);
+                this.ws = new WebSocket(this.streaming_url + "/streaming?access_token=" + this.token + "&stream=" + streamType);
 
                 this.ws.onmessage = (event) => {
                     console.log("Got Data from Stream " + streamType);

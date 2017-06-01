@@ -10,8 +10,8 @@ return [
 
     //streaming api用のURLが違う場合
     'streaming'     => [
-        'https://mstdn.jp'     => 'https://streaming.mstdn.jp',
-        'https://qiitadon.com' => 'https://streaming.qiitadon.com:4000',
+        'https://mstdn.jp'     => 'wss://streaming.mstdn.jp',
+        'https://qiitadon.com' => 'wss://streaming.qiitadon.com:4000',
     ],
 
     'favicon_size' => 24,
