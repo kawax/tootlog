@@ -53,7 +53,16 @@ class GetStatusJob implements ShouldQueue
     ) {
         \Log::info('GetStatusesJob: ' . $this->account->url);
 
-        $this->account = $accountRepository->refresh($this->account);
+        try {
+            $this->account = $accountRepository->refresh($this->account);
+
+        } catch (ClientException $e) {
+            \Log::error('ClientException(refresh): ' . $this->account->url . ' ' . $e->getMessage());
+
+            $this->account->increment('fails');
+
+            return;
+        }
 
         try {
             $statuses = Mastodon::domain($this->account->server->domain)
