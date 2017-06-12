@@ -21,7 +21,10 @@ class Server extends Model
      */
     public function getStreamingAttribute()
     {
-        return array_get(config('tootlog.streaming'), $this->domain, $this->domain);
+        $domain = array_get(config('tootlog.streaming'), $this->domain, $this->domain);
+        $domain = str_replace('http', 'ws', $domain);
+
+        return $domain;
     }
 
     public function accounts()
