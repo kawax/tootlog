@@ -10,7 +10,6 @@ return [
 
     //streaming api用のURLが違う場合
     'streaming'     => [
-        'https://mstdn.jp'     => 'wss://streaming.mstdn.jp',
         'https://qiitadon.com' => 'wss://streaming.qiitadon.com:4000',
     ],
 
