@@ -61,16 +61,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.29.4",
+            "version": "3.29.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "f714ebbcc23945b1c9b4b0e5fdc339cef33dedf6"
+                "reference": "f09876b949e51110c3385f71fb3ad21880f85ded"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/f714ebbcc23945b1c9b4b0e5fdc339cef33dedf6",
-                "reference": "f714ebbcc23945b1c9b4b0e5fdc339cef33dedf6",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/f09876b949e51110c3385f71fb3ad21880f85ded",
+                "reference": "f09876b949e51110c3385f71fb3ad21880f85ded",
                 "shasum": ""
             },
             "require": {
@@ -137,7 +137,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-06-13T17:38:41+00:00"
+            "time": "2017-06-15T21:00:24+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1285,16 +1285,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.4.26",
+            "version": "v5.4.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "a7ebbfab64111e24f8e584db64e2be9279ded357"
+                "reference": "66f5e1b37cbd66e730ea18850ded6dc0ad570404"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/a7ebbfab64111e24f8e584db64e2be9279ded357",
-                "reference": "a7ebbfab64111e24f8e584db64e2be9279ded357",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/66f5e1b37cbd66e730ea18850ded6dc0ad570404",
+                "reference": "66f5e1b37cbd66e730ea18850ded6dc0ad570404",
                 "shasum": ""
             },
             "require": {
@@ -1410,7 +1410,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-06-13T18:58:49+00:00"
+            "time": "2017-06-15T19:08:25+00:00"
         },
         {
             "name": "laravel/socialite",
