@@ -61,16 +61,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.31.1",
+            "version": "3.31.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "551865464a2779b9038aa871094a24bb9e254e24"
+                "reference": "0b3b64ce80d3381aa25c7bab69411a4a8297b6cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/551865464a2779b9038aa871094a24bb9e254e24",
-                "reference": "551865464a2779b9038aa871094a24bb9e254e24",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/0b3b64ce80d3381aa25c7bab69411a4a8297b6cb",
+                "reference": "0b3b64ce80d3381aa25c7bab69411a4a8297b6cb",
                 "shasum": ""
             },
             "require": {
@@ -137,7 +137,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-07-05T17:26:26+00:00"
+            "time": "2017-07-12T18:22:23+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -382,16 +382,16 @@
         },
         {
             "name": "christofferok/laravel-emojione",
-            "version": "2.1.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/christofferok/laravel-emojione.git",
-                "reference": "2051196d3409b96493ec00ac4bf4705d93da75e3"
+                "reference": "fa55d9eb281898bbf172cedcd034fcf7ae461010"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/christofferok/laravel-emojione/zipball/2051196d3409b96493ec00ac4bf4705d93da75e3",
-                "reference": "2051196d3409b96493ec00ac4bf4705d93da75e3",
+                "url": "https://api.github.com/repos/christofferok/laravel-emojione/zipball/fa55d9eb281898bbf172cedcd034fcf7ae461010",
+                "reference": "fa55d9eb281898bbf172cedcd034fcf7ae461010",
                 "shasum": ""
             },
             "require": {
@@ -438,7 +438,7 @@
                 "emojione",
                 "laravel"
             ],
-            "time": "2017-07-04T11:07:52+00:00"
+            "time": "2017-07-11T15:10:45+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1598,16 +1598,16 @@
         },
         {
             "name": "league/csv",
-            "version": "8.2.1",
+            "version": "8.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/csv.git",
-                "reference": "43fd8b022815a0758d85e925dd92a43fe0d41bb4"
+                "reference": "fa8bc05f64eb6c66b96edfaf60648f022ecb5f55"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/csv/zipball/43fd8b022815a0758d85e925dd92a43fe0d41bb4",
-                "reference": "43fd8b022815a0758d85e925dd92a43fe0d41bb4",
+                "url": "https://api.github.com/repos/thephpleague/csv/zipball/fa8bc05f64eb6c66b96edfaf60648f022ecb5f55",
+                "reference": "fa8bc05f64eb6c66b96edfaf60648f022ecb5f55",
                 "shasum": ""
             },
             "require": {
@@ -1651,7 +1651,7 @@
                 "read",
                 "write"
             ],
-            "time": "2017-02-23T08:25:03+00:00"
+            "time": "2017-07-12T07:18:20+00:00"
         },
         {
             "name": "league/flysystem",
@@ -2288,16 +2288,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.8.8",
+            "version": "v0.8.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "fe65c30cbc55c71e61ba3a38b5a581149be31b8e"
+                "reference": "58a31cc4404c8f632d8c557bc72056af2d3a83db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/fe65c30cbc55c71e61ba3a38b5a581149be31b8e",
-                "reference": "fe65c30cbc55c71e61ba3a38b5a581149be31b8e",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/58a31cc4404c8f632d8c557bc72056af2d3a83db",
+                "reference": "58a31cc4404c8f632d8c557bc72056af2d3a83db",
                 "shasum": ""
             },
             "require": {
@@ -2357,7 +2357,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2017-06-24T06:16:19+00:00"
+            "time": "2017-07-06T14:53:52+00:00"
         },
         {
             "name": "ramsey/uuid",
