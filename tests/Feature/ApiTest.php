@@ -87,7 +87,7 @@ class ApiTest extends TestCase
 
         $response->assertStatus(401)
                  ->assertJson([
-                     'error' => 'Unauthenticated.',
+                     'message' => 'Unauthenticated.',
                  ]);
     }
 

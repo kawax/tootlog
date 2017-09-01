@@ -93,7 +93,7 @@ class MailTest extends TestCase
 
         $user = $this->user;
 
-        Mail::assertSent(CsvExported::class, function ($mail) use ($user) {
+        Mail::assertQueued(CsvExported::class, function ($mail) use ($user) {
             return $mail->hasTo($user->email);
         });
 

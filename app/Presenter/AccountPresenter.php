@@ -27,7 +27,7 @@ trait AccountPresenter
             'image'       => $this->avatar,
             'description' => $this->note,
             'url'         => $url,
-            'sameAs'      => $this->url,
+            //            'sameAs'      => $this->url,
         ]);
     }
 

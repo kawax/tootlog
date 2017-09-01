@@ -13,9 +13,9 @@
     "ide-helper:models": "php artisan ide-helper:models -N"
   },
   "devDependencies": {
-    "axios": "^0.15.3",
+    "axios": "^0.16.2",
     "bootstrap-sass": "^3.3.7",
-    "cross-env": "^3.2.3",
+    "cross-env": "^5.0.1",
     "date-fns": "^1.28.4",
     "emojione": "^3.0.1",
     "font-awesome": "^4.7.0",

@@ -43,10 +43,10 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    &nbsp; @if (Auth::check())
+                    &nbsp; @auth
                         <li><a href="{{ url('home') }}">Home</a></li>
                         <li><a href="{{ route('timeline') }}">Timeline</a></li>
-                    @endif
+                    @endauth
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -98,6 +98,8 @@
 <script src="{{ mix('js/manifest.js') }}"></script>
 <script src="{{ mix('js/vendor.js') }}"></script>
 <script src="{{ mix('js/app.js') }}"></script>
+
+<!-- {{ app()->version() }} -->
 
 </body>
 </html>

@@ -33,7 +33,7 @@ trait StatusPresenter
             'headline'      => $this->spoiler_text ?: $this->content,
             'datePublished' => $this->created_at,
             'url'           => $url,
-            'sameAs'        => $this->url,
+            //            'sameAs'        => $this->url,
             'image'         => $this->account->avatar,
         ]);
     }

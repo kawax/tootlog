@@ -166,22 +166,12 @@ return [
         /*
          * Package Service Providers...
          */
-        Laravel\Tinker\TinkerServiceProvider::class,
 
-        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
-
-        Collective\Html\HtmlServiceProvider::class,
-
-        Laravel\Socialite\SocialiteServiceProvider::class,
-
-        Revolution\Socialite\Mastodon\MastodonServiceProvider::class,
 
         ChristofferOK\LaravelEmojiOne\LaravelEmojiOneServiceProvider::class,
 
         Roumen\Sitemap\SitemapServiceProvider::class,
-
-        Revolution\Mastodon\Providers\MastodonServiceProvider::class,
 
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
 
