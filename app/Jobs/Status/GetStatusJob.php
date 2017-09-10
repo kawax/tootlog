@@ -47,10 +47,8 @@ class GetStatusJob implements ShouldQueue
      *
      * @return void
      */
-    public function handle(
-        StatusRepository $statusRepository,
-        AccountRepository $accountRepository
-    ) {
+    public function handle(StatusRepository $statusRepository, AccountRepository $accountRepository)
+    {
         \Log::info('GetStatusesJob: ' . $this->account->url);
 
         try {
