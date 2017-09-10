@@ -74,11 +74,9 @@ class ApiTest extends TestCase
         $response = $this->actingAs($this->user)
                          ->json('DELETE', '/api/status/hide/' . $this->statuses->first()->id);
 
-        $response
-            ->assertStatus(200)
-            ->assertJson([
-                'message' => 'ok',
-            ]);
+        $response->assertJson([
+            'message' => 'ok',
+        ]);
     }
 
     public function testHideUnauthenticated()
