@@ -45,6 +45,6 @@ class GetUserStatus extends Command
 
         $account = $account->find($this->argument('user'));
 
-        dispatch((new GetStatusJob($account)));
+        GetStatusJob::dispatch($account);
     }
 }

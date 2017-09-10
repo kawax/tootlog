@@ -42,11 +42,11 @@ class GetStatus extends Command
     public function handle(Account $account)
     {
         \Log::info('toot:statuses start');
-        
+
         $accounts = $account->oldest();
 
-        foreach ($accounts as $account){
-            dispatch((new GetStatusJob($account)));
+        foreach ($accounts as $account) {
+            GetStatusJob::dispatch($account);
         }
     }
 }
