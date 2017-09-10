@@ -169,10 +169,6 @@ return [
 
         Barryvdh\Debugbar\ServiceProvider::class,
 
-        ChristofferOK\LaravelEmojiOne\LaravelEmojiOneServiceProvider::class,
-
-        Roumen\Sitemap\SitemapServiceProvider::class,
-
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
 
         /*
