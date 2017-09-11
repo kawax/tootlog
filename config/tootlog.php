@@ -20,4 +20,6 @@ return [
         //        'https://chitose.moe' => 'chitose_icon.png',
         'https://pawoo.net' => 'favicon.png',
     ],
+
+    'analytics' => env('GOOGLE_ANALYTICS'),
 ];

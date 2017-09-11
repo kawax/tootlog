@@ -99,7 +99,7 @@
             this.get(this.active_type)
         },
         methods: {
-            get(type = 'public:local') {
+            get (type = 'public:local') {
                 this.steam_close()
 
                 this.active_type = type
