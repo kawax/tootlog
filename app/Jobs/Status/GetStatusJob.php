@@ -122,7 +122,7 @@ class GetStatusJob implements ShouldQueue
             }
 
             if (!empty($status['tags'])) {
-                $tags = $this->tags($status['tags']);
+                $tags = $this->tag($status['tags']);
                 $new_status->tags()->sync($tags);
             }
 
@@ -163,7 +163,7 @@ class GetStatusJob implements ShouldQueue
      *
      * @return array
      */
-    protected function tags(array $tags)
+    protected function tag(array $tags)
     {
         $ids = [];
 
