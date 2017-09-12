@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "89c51c90c1e99731a5e687db36d25f71",
+    "content-hash": "828c255c225983e62a76cb26763ae034",
     "packages": [
         {
             "name": "artesaos/seotools",
@@ -1536,6 +1536,74 @@
                 "laravel"
             ],
             "time": "2017-09-07T13:50:21+00:00"
+        },
+        {
+            "name": "laravel/horizon",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/horizon.git",
+                "reference": "ec52cd6c304eb9dfc3320e32d9e43c5ee55e7d7c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/ec52cd6c304eb9dfc3320e32d9e43c5ee55e7d7c",
+                "reference": "ec52cd6c304eb9dfc3320e32d9e43c5ee55e7d7c",
+                "shasum": ""
+            },
+            "require": {
+                "cakephp/chronos": "^1.0",
+                "ext-pcntl": "*",
+                "ext-posix": "*",
+                "illuminate/contracts": "~5.5",
+                "illuminate/queue": "~5.5",
+                "illuminate/support": "~5.5",
+                "php": ">=7.1.0",
+                "predis/predis": "^1.1",
+                "ramsey/uuid": "^3.5",
+                "symfony/debug": "~3.3"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "orchestra/database": "~3.5",
+                "orchestra/testbench": "~3.5",
+                "phpunit/phpunit": "~6.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Horizon\\HorizonServiceProvider"
+                    ],
+                    "aliases": {
+                        "Horizon": "Laravel\\Horizon\\Horizon"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Horizon\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "Dashboard and code-driven configuration for Laravel queues.",
+            "keywords": [
+                "laravel",
+                "queue"
+            ],
+            "time": "2017-09-08T16:30:09+00:00"
         },
         {
             "name": "laravel/socialite",

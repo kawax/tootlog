@@ -17,3 +17,4 @@ Vagrantfile
 !.elasticbeanstalk/config.yml
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+.php-version

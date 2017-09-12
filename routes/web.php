@@ -69,3 +69,7 @@ Route::get('sitemaps', 'SitemapController');
 
 
 Route::name('welcome')->get('/', 'WelcomeController');
+
+Horizon::auth(function ($request) {
+    return ($request->user()->id === 1);
+});
