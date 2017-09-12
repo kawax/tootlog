@@ -151,5 +151,4 @@ class EloquentAccountRepository implements AccountRepositoryInterface
     {
         return Account::where('url', $url)->exists();
     }
-
 }

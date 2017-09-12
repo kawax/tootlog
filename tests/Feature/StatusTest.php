@@ -263,5 +263,4 @@ class StatusTest extends TestCase
             'fails' => 1,
         ]);
     }
-
 }

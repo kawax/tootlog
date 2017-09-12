@@ -15,7 +15,6 @@ use App\Jobs\Status\GetStatusJob;
 
 use Socialite;
 
-
 class AccountController extends Controller
 {
     /**
@@ -75,7 +74,6 @@ class AccountController extends Controller
             }
 
             dispatch((new GetStatusJob($acct))->onConnection('sync'));
-
         } catch (ClientException $e) {
             \Log::error($e->getMessage());
         }

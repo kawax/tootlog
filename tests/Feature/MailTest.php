@@ -109,5 +109,4 @@ class MailTest extends TestCase
 
         $response->assertRedirect('/login');
     }
-
 }

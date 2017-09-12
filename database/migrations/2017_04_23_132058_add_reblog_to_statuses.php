@@ -30,7 +30,6 @@ class AddReblogToStatuses extends Migration
         Schema::table('statuses', function (Blueprint $table) {
             $table->dropForeign(['reblog_id']);
             $table->dropColumn('reblog_id');
-
         });
     }
 }

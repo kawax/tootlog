@@ -162,7 +162,6 @@ class EloquentStatusRepository implements StatusRepositoryInterface
         $key = 'account/' . $acct->id . '/status/' . $status_id;
 
         $status = Cache::remember($key, 60 * 24, function () use ($acct, $status_id) {
-
             return $acct->statuses()
                         ->withTrashed()
                         ->where('status_id', $status_id)

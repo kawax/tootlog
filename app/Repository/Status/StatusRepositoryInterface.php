@@ -120,5 +120,4 @@ interface StatusRepositoryInterface
      * @return mixed
      */
     public function exportCsv(Account $account);
-
 }

@@ -92,5 +92,4 @@ interface AccountRepositoryInterface
      * @return bool
      */
     public function exists(string $url): bool;
-
 }

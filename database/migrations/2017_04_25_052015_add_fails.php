@@ -15,7 +15,6 @@ class AddFails extends Migration
     {
         Schema::table('accounts', function (Blueprint $table) {
             $table->unsignedTinyInteger('fails')->after('since_id')->default(0);
-
         });
     }
 
