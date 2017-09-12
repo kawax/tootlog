@@ -73,7 +73,7 @@ return [
         'redis' => [
             'driver' => 'redis',
             'connection' => 'default',
-            'queue' => 'default',
+            'queue' => 'tootlog',
             'retry_after' => 90,
         ],
 
