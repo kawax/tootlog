@@ -18,7 +18,7 @@ use Socialite;
 class AccountController extends Controller
 {
     /**
-     * Store a newly created resource in storage.
+     * Redirect to mastodon server.
      *
      * @param  AccountCreateRequest $request
      * @param  ServerRepository     $server
@@ -40,7 +40,9 @@ class AccountController extends Controller
 
         session(['mastodon_domain' => $domain]);
 
-        return Socialite::driver('mastodon')->redirect();
+        return Socialite::driver('mastodon')
+                        ->setScopes(config('services.mastodon.scope', ['read']))
+                        ->redirect();
     }
 
     /**
