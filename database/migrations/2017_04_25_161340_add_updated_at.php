@@ -27,7 +27,6 @@ class AddUpdatedAt extends Migration
     {
         Schema::table('statuses', function (Blueprint $table) {
             $table->dropColumn('updated_at');
-
         });
     }
 }

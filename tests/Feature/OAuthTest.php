@@ -130,8 +130,7 @@ class OAuthTest extends TestCase
                                ->andReturn(['client_id' => '', 'client_secret' => '']);
 
         Socialite::shouldReceive('driver')->once()->andReturn(m::self());
-        Socialite::shouldReceive('user')->once()->andReturn(new class
-        {
+        Socialite::shouldReceive('user')->once()->andReturn(new class {
             public $user = [
                 'url' => 'https://example.com/@test',
             ];
@@ -171,8 +170,7 @@ class OAuthTest extends TestCase
 
 
         Socialite::shouldReceive('driver')->once()->andReturn(m::self());
-        Socialite::shouldReceive('user')->once()->andReturn(new class
-        {
+        Socialite::shouldReceive('user')->once()->andReturn(new class {
             public $user = [
                 'id'              => '1',
                 'url'             => 'https://example.com/@test',
@@ -211,6 +209,4 @@ class OAuthTest extends TestCase
 
         $response->assertRedirect('/home');
     }
-
 }
-

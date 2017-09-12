@@ -101,4 +101,3 @@ class ExportCsvJob implements ShouldQueue
         \Mail::to($this->user)->send(new CsvExported($files));
     }
 }
-

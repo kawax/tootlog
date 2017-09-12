@@ -29,6 +29,6 @@ class UserController extends Controller
         Twitter::setTitle($title);
         Twitter::setType('summary');
 
-        return view('open.user')->with(compact('user',  'statuses'));
+        return view('open.user')->with(compact('user', 'statuses'));
     }
 }

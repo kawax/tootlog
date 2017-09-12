@@ -63,7 +63,6 @@ class ArtisanTest extends TestCase
         $this->server = factory(Server::class)->create([
             'domain' => 'https://example.com',
         ]);
-
     }
 
     public function testGetStatuses()

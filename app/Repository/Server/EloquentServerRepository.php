@@ -56,5 +56,4 @@ class EloquentServerRepository implements ServerRepositoryInterface
 
         return $server->toArray();
     }
-
 }
