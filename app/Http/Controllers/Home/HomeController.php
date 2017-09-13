@@ -11,16 +11,6 @@ use App\Repository\Status\StatusRepositoryInterface as Status;
 class HomeController extends Controller
 {
     /**
-     * Redirect a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //        $this->middleware('auth');
-    }
-
-    /**
      * Show the application dashboard.
      *
      * @param Request $request

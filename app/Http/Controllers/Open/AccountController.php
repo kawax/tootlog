@@ -81,7 +81,9 @@ class AccountController extends Controller
     {
         $acct = $this->accountRepository->getByAcct($username, $domain);
 
-
+        /**
+         * @var \App\Model\Status $status
+         */
         $status = $this->statusRepository->getByAcct($acct, $status_id);
 
         if ($acct->locked or $status->trashed()) {

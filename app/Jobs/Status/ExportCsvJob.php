@@ -9,10 +9,13 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 
 use Storage;
+
 use League\Csv\Writer;
+use League\Csv\CannotInsertRecord;
 
 use App\Model\User;
 use App\Model\Status;
+use App\Model\Account;
 
 use App\Repository\Status\StatusRepositoryInterface as StatusRepository;
 
@@ -28,9 +31,19 @@ class ExportCsvJob implements ShouldQueue
     protected $user;
 
     /**
+     * @var StatusRepository
+     */
+    protected $statusRepository;
+
+    /**
      * @var Writer
      */
     protected $writer;
+
+    /**
+     * @var array
+     */
+    protected $files = [];
 
     /**
      * Create a new job instance.
@@ -51,53 +64,67 @@ class ExportCsvJob implements ShouldQueue
      */
     public function handle(StatusRepository $statusRepository)
     {
+        $this->statusRepository = $statusRepository;
+
         $accounts = $this->user->accounts;
 
-        $files = [];
-
-        $accounts = $accounts->each(function ($account, $key) use ($statusRepository, &$files) {
-            info('Export: ' . $account->acct);
-
-            $statuses = $statusRepository->exportCsv($account);
-
-            $this->writer = Writer::createFromFileObject(new \SplTempFileObject());
-
-            $header = [
-                'id',
-                'content',
-                'spoiler_text',
-                'created_at',
-                'uri',
-                'url',
-            ];
-
-            $this->writer->insertOne($header);
-
-            $statuses->chunk(1000, function ($chunk_statuses) {
-                /**
-                 * @var Status $status
-                 */
-                foreach ($chunk_statuses as $status) {
-                    $status_line = array_only($status->toArray(), [
-                        'status_id',
-                        'content',
-                        'spoiler_text',
-                        'created_at',
-                        'uri',
-                        'url',
-                    ]);
-
-                    $this->writer->insertOne($status_line);
-                }
-            });
-
-            $path = 'csv/' . $this->user->name . '/' . $account->acct . '.csv';
-            $files[] = $path;
-
-            Storage::put($path, (string)$this->writer);
+        $accounts->each(function ($account, $key) {
+            $this->write($account);
         });
 
+        \Mail::to($this->user)->send(new CsvExported($this->files));
+    }
 
-        \Mail::to($this->user)->send(new CsvExported($files));
+    /**
+     * @param Account $account
+     *
+     * @return void
+     */
+    private function write(Account $account)
+    {
+        info('Export: ' . $this->user->name . ' / ' . $account->acct);
+
+        $this->writer = Writer::createFromFileObject(new \SplTempFileObject());
+
+        $header = [
+            'id',
+            'content',
+            'spoiler_text',
+            'created_at',
+            'uri',
+            'url',
+        ];
+
+        $this->writer->insertOne($header);
+
+        $statuses = $this->statusRepository->exportCsv($account);
+
+        $statuses->chunk(1000, function ($chunk_statuses) {
+            /**
+             * @var Status $status
+             */
+            foreach ($chunk_statuses as $status) {
+                $status_line = $status->only([
+                    'status_id',
+                    'content',
+                    'spoiler_text',
+                    'created_at',
+                    'uri',
+                    'url',
+                ]);
+
+                try {
+                    $this->writer->insertOne($status_line);
+                } catch (CannotInsertRecord $e) {
+                    logger()->error($e->getMessage());
+                }
+            }
+        });
+
+        $path = 'csv/' . $this->user->name . '/' . $account->acct . '.csv';
+
+        if (Storage::put($path, $this->writer)) {
+            $this->files[] = $path;
+        }
     }
 }

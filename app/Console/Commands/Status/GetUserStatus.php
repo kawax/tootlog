@@ -41,7 +41,7 @@ class GetUserStatus extends Command
      */
     public function handle(Account $account)
     {
-        \Log::info('toot:user-statuses start');
+        info('toot:user-statuses start');
 
         $account = $account->find($this->argument('user'));
 
