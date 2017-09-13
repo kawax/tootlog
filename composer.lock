@@ -61,16 +61,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.36.5",
+            "version": "3.36.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "db5dc59777b663c7640a0cd3063e52b39c50dac2"
+                "reference": "a7cd486139971d66387a4938f5a0a2a95e50d678"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/db5dc59777b663c7640a0cd3063e52b39c50dac2",
-                "reference": "db5dc59777b663c7640a0cd3063e52b39c50dac2",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/a7cd486139971d66387a4938f5a0a2a95e50d678",
+                "reference": "a7cd486139971d66387a4938f5a0a2a95e50d678",
                 "shasum": ""
             },
             "require": {
@@ -137,7 +137,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-09-11T19:34:19+00:00"
+            "time": "2017-09-12T17:09:10+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -2851,16 +2851,16 @@
         },
         {
             "name": "revolution/socialite-mastodon",
-            "version": "1.1.2",
+            "version": "1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kawax/socialite-mastodon.git",
-                "reference": "f3733bf346e33822ff2d8fc88f3cdf8c5db0c1ad"
+                "reference": "4ddd94e567967f863b9a368c05ddecedd4a3bcd9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kawax/socialite-mastodon/zipball/f3733bf346e33822ff2d8fc88f3cdf8c5db0c1ad",
-                "reference": "f3733bf346e33822ff2d8fc88f3cdf8c5db0c1ad",
+                "url": "https://api.github.com/repos/kawax/socialite-mastodon/zipball/4ddd94e567967f863b9a368c05ddecedd4a3bcd9",
+                "reference": "4ddd94e567967f863b9a368c05ddecedd4a3bcd9",
                 "shasum": ""
             },
             "require": {
@@ -2896,7 +2896,7 @@
                 "mastodon",
                 "socialite"
             ],
-            "time": "2017-09-12T13:10:57+00:00"
+            "time": "2017-09-13T02:05:23+00:00"
         },
         {
             "name": "roumen/sitemap",
