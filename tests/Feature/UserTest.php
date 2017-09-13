@@ -209,7 +209,7 @@ class UserTest extends TestCase
         $response = $this->actingAs($user2)->get('/@test/test2@example.com');
 
         $response->assertStatus(403);
-//        $response->assertDontSee('Profile');
+        //        $response->assertDontSee('Profile');
     }
 
     public function testStatus()
@@ -246,7 +246,7 @@ class UserTest extends TestCase
                          ->get('/@test/test2@example.com/1');
 
         $response->assertStatus(403);
-//        $response->assertDontSee('Profile');
+        //        $response->assertDontSee('Profile');
     }
 
     public function testDate()
@@ -350,6 +350,29 @@ class UserTest extends TestCase
         $response = $this->get('/preferences');
 
         $response->assertRedirect('/login');
+    }
+
+    public function testUpdatePreferences()
+    {
+        $response = $this->actingAs($this->user)
+                         ->post('/preferences', [
+                             'email' => 'test@example.com',
+                             'theme' => 'normal',
+                         ]);
+
+        $response->assertSuccessful()
+                 ->assertSee('User Preferences');
+    }
+
+    public function testUpdatePreferencesFail()
+    {
+        $response = $this->actingAs($this->user)
+                         ->post('/preferences', [
+                             'email' => 'test@example.com',
+                         ]);
+
+        $response->assertStatus(302)
+                 ->assertSessionHasErrors(['theme']);
     }
 
     public function testSearchHome()

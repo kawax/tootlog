@@ -11,7 +11,7 @@ class ExportController extends Controller
 {
     public function csv(Request $request)
     {
-        dispatch((new ExportCsvJob(auth()->user())));
+        ExportCsvJob::dispatch($request->user());
 
         return back()->with('export', 'Sending files, please wait...');
     }

@@ -75,9 +75,9 @@ class AccountController extends Controller
                 $acct = $account->store($user, $info);
             }
 
-            dispatch((new GetStatusJob($acct))->onConnection('sync'));
+            GetStatusJob::dispatch($acct)->onConnection('sync');
         } catch (ClientException $e) {
-            \Log::error($e->getMessage());
+            logger()->error($e->getMessage());
         }
 
         return redirect('/home');

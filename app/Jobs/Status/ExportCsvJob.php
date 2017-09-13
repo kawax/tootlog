@@ -56,7 +56,7 @@ class ExportCsvJob implements ShouldQueue
         $files = [];
 
         $accounts = $accounts->each(function ($account, $key) use ($statusRepository, &$files) {
-            \Log::info('Export: ' . $account->acct);
+            info('Export: ' . $account->acct);
 
             $statuses = $statusRepository->exportCsv($account);
 

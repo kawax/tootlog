@@ -49,12 +49,12 @@ class GetStatusJob implements ShouldQueue
      */
     public function handle(StatusRepository $statusRepository, AccountRepository $accountRepository)
     {
-        \Log::info('GetStatusesJob: ' . $this->account->url);
+        info('GetStatusesJob: ' . $this->account->url);
 
         try {
             $this->account = $accountRepository->refresh($this->account);
         } catch (ClientException $e) {
-            \Log::error('ClientException(refresh): ' . $this->account->url . ' ' . $e->getMessage());
+            logger()->error('ClientException(refresh): ' . $this->account->url . ' ' . $e->getMessage());
 
             $this->account->increment('fails');
 
@@ -70,7 +70,7 @@ class GetStatusJob implements ShouldQueue
                                     $this->account->since_id
                                 );
         } catch (ClientException $e) {
-            \Log::error('ClientException: ' . $this->account->url . ' ' . $e->getMessage());
+            logger()->error('ClientException: ' . $this->account->url . ' ' . $e->getMessage());
 
             $this->account->increment('fails');
 
