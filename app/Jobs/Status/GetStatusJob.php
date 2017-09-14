@@ -64,7 +64,7 @@ class GetStatusJob implements ShouldQueue
         try {
             $statuses = Mastodon::domain($this->account->server->domain)
                                 ->token($this->account->token)
-                                ->status_list(
+                                ->statuses(
                                     $this->account->account_id,
                                     40,
                                     $this->account->since_id

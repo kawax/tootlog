@@ -107,7 +107,7 @@ class StatusTest extends TestCase
 
         Mastodon::shouldReceive('domain')->with($this->server->domain)->once()->andReturn(m::self());
         Mastodon::shouldReceive('token')->once()->andReturn(m::self());
-        Mastodon::shouldReceive('status_list')->once()->andReturn([$statuses->toArray()]);
+        Mastodon::shouldReceive('statuses')->once()->andReturn([$statuses->toArray()]);
 
 
         $job->handle($this->statusRepository, $this->accountRepository);
@@ -137,7 +137,7 @@ class StatusTest extends TestCase
 
         Mastodon::shouldReceive('domain')->with($this->server->domain)->once()->andReturn(m::self());
         Mastodon::shouldReceive('token')->once()->andReturn(m::self());
-        Mastodon::shouldReceive('status_list')->once()->andReturn([$statuses->toArray()]);
+        Mastodon::shouldReceive('statuses')->once()->andReturn([$statuses->toArray()]);
 
 
         $job->handle($this->statusRepository, $this->accountRepository);
@@ -181,7 +181,7 @@ class StatusTest extends TestCase
 
         Mastodon::shouldReceive('domain')->with($this->server->domain)->once()->andReturn(m::self());
         Mastodon::shouldReceive('token')->once()->andReturn(m::self());
-        Mastodon::shouldReceive('status_list')->once()->andReturn([$statuses->toArray()]);
+        Mastodon::shouldReceive('statuses')->once()->andReturn([$statuses->toArray()]);
 
 
         $job->handle($this->statusRepository, $this->accountRepository);
@@ -225,7 +225,7 @@ class StatusTest extends TestCase
 
         Mastodon::shouldReceive('domain')->with($this->server->domain)->once()->andReturn(m::self());
         Mastodon::shouldReceive('token')->once()->andReturn(m::self());
-        Mastodon::shouldReceive('status_list')->once()->andReturn([$statuses->toArray()]);
+        Mastodon::shouldReceive('statuses')->once()->andReturn([$statuses->toArray()]);
 
         $job->handle($this->statusRepository, $this->accountRepository);
 
@@ -255,7 +255,7 @@ class StatusTest extends TestCase
 
         Mastodon::shouldReceive('domain')->with($this->server->domain)->once()->andReturn(m::self());
         Mastodon::shouldReceive('token')->once()->andReturn(m::self());
-        Mastodon::shouldReceive('status_list')->once()->andThrow(m::mock(ClientException::class));
+        Mastodon::shouldReceive('statuses')->once()->andThrow(m::mock(ClientException::class));
 
         $job->handle($this->statusRepository, $this->accountRepository);
 

@@ -61,16 +61,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.36.6",
+            "version": "3.36.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "a7cd486139971d66387a4938f5a0a2a95e50d678"
+                "reference": "421088947540b1c7956cd693b032124e2c74eb76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/a7cd486139971d66387a4938f5a0a2a95e50d678",
-                "reference": "a7cd486139971d66387a4938f5a0a2a95e50d678",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/421088947540b1c7956cd693b032124e2c74eb76",
+                "reference": "421088947540b1c7956cd693b032124e2c74eb76",
                 "shasum": ""
             },
             "require": {
@@ -137,7 +137,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-09-12T17:09:10+00:00"
+            "time": "2017-09-13T18:56:17+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1413,16 +1413,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.5.3",
+            "version": "v5.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "779a98d3b2ebed2128db1a668dcc10a65c9b01be"
+                "reference": "d3e0493bead126cf7fb9a005c64e6b58a9190e51"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/779a98d3b2ebed2128db1a668dcc10a65c9b01be",
-                "reference": "779a98d3b2ebed2128db1a668dcc10a65c9b01be",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/d3e0493bead126cf7fb9a005c64e6b58a9190e51",
+                "reference": "d3e0493bead126cf7fb9a005c64e6b58a9190e51",
                 "shasum": ""
             },
             "require": {
@@ -1541,7 +1541,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-09-07T13:50:21+00:00"
+            "time": "2017-09-13T13:36:29+00:00"
         },
         {
             "name": "laravel/horizon",
@@ -2802,16 +2802,16 @@
         },
         {
             "name": "revolution/laravel-mastodon-api",
-            "version": "1.1.4",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kawax/laravel-mastodon-api.git",
-                "reference": "79478945092031fd6aa78978216480f963f7c6e7"
+                "reference": "4e9e1481673c6fd9ed7ab896fd97ff1a6eff700a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kawax/laravel-mastodon-api/zipball/79478945092031fd6aa78978216480f963f7c6e7",
-                "reference": "79478945092031fd6aa78978216480f963f7c6e7",
+                "url": "https://api.github.com/repos/kawax/laravel-mastodon-api/zipball/4e9e1481673c6fd9ed7ab896fd97ff1a6eff700a",
+                "reference": "4e9e1481673c6fd9ed7ab896fd97ff1a6eff700a",
                 "shasum": ""
             },
             "require": {
@@ -2854,7 +2854,7 @@
                 "laravel",
                 "mastodon"
             ],
-            "time": "2017-08-04T04:46:01+00:00"
+            "time": "2017-09-14T10:44:54+00:00"
         },
         {
             "name": "revolution/socialite-mastodon",

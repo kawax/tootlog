@@ -46,7 +46,7 @@ class EloquentServerRepository implements ServerRepositoryInterface
             $scopes = implode(' ', config('services.mastodon.scope'));
 
             $info = Mastodon::domain($domain)
-                            ->app_register($client_name, $redirect_uris, $scopes);
+                            ->createApp($client_name, $redirect_uris, $scopes);
 
             $info['app_id'] = $info['id'];
             $info['domain'] = $domain;

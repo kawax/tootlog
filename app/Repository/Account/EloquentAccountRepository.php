@@ -129,7 +129,7 @@ class EloquentAccountRepository implements AccountRepositoryInterface
     {
         $data = Mastodon::domain($account->server->domain)
                         ->token($account->token)
-                        ->verify_credentials();
+                        ->verifyCredentials();
 
         $account->fill($data)->save();
 
