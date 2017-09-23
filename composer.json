@@ -11,7 +11,7 @@
     "php": ">=7.0.0",
     "artesaos/seotools": "^0.10.0",
     "aws/aws-sdk-php": "~3.0",
-    "barryvdh/laravel-debugbar": "^2.4",
+    "barryvdh/laravel-debugbar": "^3.1",
     "barryvdh/laravel-ide-helper": "^2.4",
     "cakephp/chronos": "^1.1",
     "christofferok/laravel-emojione": "^2.0",
