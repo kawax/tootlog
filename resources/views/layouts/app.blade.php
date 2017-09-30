@@ -18,6 +18,8 @@
     @yield('open_graph')
 
     @include('layouts.google')
+
+    <meta name="google-site-verification" content="AjfwegofAkFuyDlrRBsMo8k4y6rpfEri5Qjd7uz3PbQ">
 </head>
 <body class="theme-{{ auth()->check() ? auth()->user()->theme : 'thin' }}">
 <div id="app">
