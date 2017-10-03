@@ -53,7 +53,7 @@ class GetStatusJob implements ShouldQueue
 
         try {
             $this->account = $accountRepository->refresh($this->account);
-        } catch (ClientException $e) {
+        } catch (\Exception $e) {
             logger()->error('ClientException(refresh): ' . $this->account->url . ' ' . $e->getMessage());
 
             $this->account->increment('fails');
@@ -69,7 +69,7 @@ class GetStatusJob implements ShouldQueue
                                     40,
                                     $this->account->since_id
                                 );
-        } catch (ClientException $e) {
+        } catch (\Exception $e) {
             logger()->error('ClientException: ' . $this->account->url . ' ' . $e->getMessage());
 
             $this->account->increment('fails');
