@@ -9,6 +9,8 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 
+use GuzzleHttp\Psr7;
+
 use Cake\Chronos\Chronos;
 
 use App\Model\Account;
@@ -62,13 +64,9 @@ class GetStatusJob implements ShouldQueue
         }
 
         try {
-            $statuses = Mastodon::domain($this->account->server->domain)
-                                ->token($this->account->token)
-                                ->statuses(
-                                    $this->account->account_id,
-                                    40,
-                                    $this->account->since_id
-                                );
+            $statuses = $this->get();
+
+            $since_id = $this->since();
         } catch (\Exception $e) {
             logger()->error('ClientException: ' . $this->account->url . ' ' . $e->getMessage());
 
@@ -80,8 +78,6 @@ class GetStatusJob implements ShouldQueue
         $this->account->fill(['fails' => 0])->save();
 
         //        dd($statuses);
-
-        $since_id = null;
 
         foreach ($statuses as $status) {
             if ($status['visibility'] == 'direct') {
@@ -125,12 +121,48 @@ class GetStatusJob implements ShouldQueue
                 $tags = $this->tag($status['tags']);
                 $new_status->tags()->sync($tags);
             }
-
-            if (empty($since_id)) {
-                $since_id = $data['id'];
-                $accountRepository->updateSince($this->account, $since_id);
-            }
         }
+
+        if (!empty($since_id)) {
+            $accountRepository->updateSince($this->account, $since_id);
+        }
+    }
+
+    /**
+     * @return array
+     */
+    public function get()
+    {
+        return Mastodon::domain($this->account->server->domain)
+                       ->token($this->account->token)
+                       ->statuses(
+                           $this->account->account_id,
+                           40,
+                           $this->account->since_id
+                       );
+    }
+
+    /**
+     * @return null|string
+     */
+    public function since()
+    {
+        $since_id = null;
+
+        $response = Mastodon::getResponse();
+
+        if ($response->hasHeader('Link')) {
+            $link = Psr7\parse_header($response->getHeader('Link'));
+
+            $link = array_first($link, function ($value, $key) {
+                return array_get($value, 'rel') === 'prev';
+            });
+            $link = head($link);
+
+            $since_id = str_before(str_after($link, '&since_id='), '>');
+        }
+
+        return $since_id;
     }
 
     /**

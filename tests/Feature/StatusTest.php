@@ -10,6 +10,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Mockery as m;
 
 use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Psr7\Response;
 
 use Cake\Chronos\Chronos;
 use Faker\Factory as Faker;
@@ -60,6 +61,11 @@ class StatusTest extends TestCase
      */
     protected $accountRepository;
 
+    /**
+     * @var Response
+     */
+    protected $response;
+
     public function setUp()
     {
         parent::setUp();
@@ -78,6 +84,8 @@ class StatusTest extends TestCase
             'username'  => 'test',
             'url'       => 'https://example.com/@test',
         ]);
+
+        $this->response = new Response(200, [], 'body');
 
         $this->statusRepository = m::mock(StatusRepository::class)->makePartial();
 
@@ -108,6 +116,7 @@ class StatusTest extends TestCase
         Mastodon::shouldReceive('domain')->with($this->server->domain)->once()->andReturn(m::self());
         Mastodon::shouldReceive('token')->once()->andReturn(m::self());
         Mastodon::shouldReceive('statuses')->once()->andReturn([$statuses->toArray()]);
+        Mastodon::shouldReceive('getResponse')->once()->andReturn($this->response);
 
 
         $job->handle($this->statusRepository, $this->accountRepository);
@@ -138,6 +147,7 @@ class StatusTest extends TestCase
         Mastodon::shouldReceive('domain')->with($this->server->domain)->once()->andReturn(m::self());
         Mastodon::shouldReceive('token')->once()->andReturn(m::self());
         Mastodon::shouldReceive('statuses')->once()->andReturn([$statuses->toArray()]);
+        Mastodon::shouldReceive('getResponse')->once()->andReturn($this->response);
 
 
         $job->handle($this->statusRepository, $this->accountRepository);
@@ -182,6 +192,7 @@ class StatusTest extends TestCase
         Mastodon::shouldReceive('domain')->with($this->server->domain)->once()->andReturn(m::self());
         Mastodon::shouldReceive('token')->once()->andReturn(m::self());
         Mastodon::shouldReceive('statuses')->once()->andReturn([$statuses->toArray()]);
+        Mastodon::shouldReceive('getResponse')->once()->andReturn($this->response);
 
 
         $job->handle($this->statusRepository, $this->accountRepository);
@@ -226,6 +237,7 @@ class StatusTest extends TestCase
         Mastodon::shouldReceive('domain')->with($this->server->domain)->once()->andReturn(m::self());
         Mastodon::shouldReceive('token')->once()->andReturn(m::self());
         Mastodon::shouldReceive('statuses')->once()->andReturn([$statuses->toArray()]);
+        Mastodon::shouldReceive('getResponse')->once()->andReturn($this->response);
 
         $job->handle($this->statusRepository, $this->accountRepository);
 

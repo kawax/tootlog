@@ -43,7 +43,7 @@ class GetUserStatus extends Command
     {
         info('toot:user-statuses start');
 
-        $account = $account->find($this->argument('user'));
+        $account = $account->find($this->argument('account'));
 
         GetStatusJob::dispatch($account);
     }
