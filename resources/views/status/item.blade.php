@@ -33,22 +33,20 @@
                     @endif
 
                     <div>
-                        <a href="{{ $status->url }}" target="_blank" rel="nofollow noopener">
-                            <time title="{{ $status->local_datetime->toAtomString() }}" datetime="{{ $status->local_datetime->toAtomString() }}">
-                                {{ $status->local_datetime->diffForHumans() }}
-                            </time>
-                        </a>
-                    </div>
-
-                    <div>
                         <a href="{{ route('open.account.show', [
                             'user' => $user,
                             'username' => $status->account->username,
                             'domain' => $status->account->domain,
                             'status_id' => $status->status_id
                             ]) }}">
-                            {{ $status->account->acct . '/' . $status->status_id }}
+                            <time title="{{ $status->local_datetime->toAtomString() }}"
+                                  datetime="{{ $status->local_datetime->toAtomString() }}">
+                                {{ $status->local_datetime->diffForHumans() }}
+                            </time>
+                        </a>
 
+                        <a href="{{ $status->url }}" target="_blank" rel="nofollow noopener">
+                            <i class="fa fa-external-link" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
