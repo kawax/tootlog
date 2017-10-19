@@ -8,7 +8,7 @@ trait UserPresenter
 {
     public function tags()
     {
-        $tags = \Cache::remember('user.tags/' . $this->id, 60, function () {
+        $tags = cache()->remember('user.tags/' . $this->id, 60, function () {
             $status_id = $this->statuses()
                               ->where('accounts.locked', false)
                               ->pluck('statuses.id');

@@ -207,4 +207,17 @@ class GetStatusJob implements ShouldQueue
 
         return $ids;
     }
+
+    /**
+     * 失敗したジョブの処理
+     *
+     * @param  \Exception  $exception
+     * @return void
+     */
+    public function failed(\Exception $exception)
+    {
+        report($exception);
+
+        $this->account->increment('fails');
+    }
 }
