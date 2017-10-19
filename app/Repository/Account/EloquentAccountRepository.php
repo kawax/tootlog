@@ -43,6 +43,23 @@ class EloquentAccountRepository implements AccountRepositoryInterface
     }
 
     /**
+     *
+     * @inheritDoc
+     */
+    public function special()
+    {
+        $accounts = Account::oldest('updated_at')
+                           ->where('fails', '<', config('tootlog.account_fails'))
+                           ->limit(config('tootlog.account_limit'))
+                           ->whereHas('user', function ($query) {
+                               $query->where('special_key', config('tootlog.special_key'));
+                           })
+                           ->get();
+
+        return $accounts;
+    }
+
+    /**
      * @inheritDoc
      */
     public function userAccounts()

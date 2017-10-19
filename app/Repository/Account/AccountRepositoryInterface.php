@@ -28,6 +28,13 @@ interface AccountRepositoryInterface
     public function oldest();
 
     /**
+     * toot:statusesのためのアカウントリスト。特典キーが有効な場合。
+     *
+     * @return Account[]
+     */
+    public function special();
+
+    /**
      * ユーザーのアカウント
      *
      * @return Account[]

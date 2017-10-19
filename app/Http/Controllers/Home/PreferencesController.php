@@ -10,15 +10,12 @@ use App\Http\Requests\User\UserUpdateRequest;
 class PreferencesController extends Controller
 {
     /**
-     * @param Request $request
      *
      * @return \Illuminate\Http\Response|\Illuminate\View\View
      */
-    public function index(Request $request)
+    public function index()
     {
-        $user = $request->user();
-
-        return view('prefs.index')->with(compact('user'));
+        return view('prefs.index');
     }
 
     /**
@@ -30,8 +27,12 @@ class PreferencesController extends Controller
     {
         $user = $request->user();
 
-        $user->update($request->only(['email', 'theme']));
+        $user->update($request->only([
+            'email',
+            'theme',
+            'special_key',
+        ]));
 
-        return view('prefs.index')->with(compact('user'));
+        return view('prefs.index');
     }
 }

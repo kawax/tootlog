@@ -25,8 +25,11 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        $schedule->command('toot:statuses-special')
+                 ->hourlyAt(10);
+
         $schedule->command('toot:statuses')
-                 ->everyTenMinutes();
+                 ->everyFifteenMinutes();
 
         $schedule->command('horizon:snapshot')->everyFiveMinutes();
     }

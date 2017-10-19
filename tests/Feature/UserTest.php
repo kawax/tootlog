@@ -356,8 +356,9 @@ class UserTest extends TestCase
     {
         $response = $this->actingAs($this->user)
                          ->post('/preferences', [
-                             'email' => 'test@example.com',
-                             'theme' => 'normal',
+                             'email'       => 'test@example.com',
+                             'theme'       => 'normal',
+                             'special_ley' => 'test',
                          ]);
 
         $response->assertSuccessful()

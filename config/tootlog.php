@@ -21,5 +21,8 @@ return [
         'https://pawoo.net' => 'favicon.png',
     ],
 
-    'analytics' => env('GOOGLE_ANALYTICS'),
+    'analytics'   => env('GOOGLE_ANALYTICS'),
+
+    //特典キー
+    'special_key' => env('SPECIAL_KEY', ''),
 ];

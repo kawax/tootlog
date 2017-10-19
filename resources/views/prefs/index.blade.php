@@ -15,8 +15,9 @@
                                 <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                                 <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control" name="email"
-                                           value="{{ $user->email }}" required>
+                                    <input id="email" type="email"
+                                           class="form-control" name="email"
+                                           value="{{ request()->user()->email }}" required>
 
                                     @if ($errors->has('email'))
                                         <span class="help-block">
@@ -33,11 +34,31 @@
                                     {{ Form::select('theme', [
                                     'thin' => 'Thin',
                                     'normal' => 'Normal'
-                                    ], $user->theme, ['class' => 'form-control']) }}
+                                    ], request()->user()->theme, ['class' => 'form-control']) }}
 
                                     @if ($errors->has('theme'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('theme') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('special_key') ? ' has-error' : '' }}">
+                                <label for="special_key" class="col-md-4 control-label">Special Key</label>
+
+                                <div class="col-md-6">
+                                    <input id="special_key" type="text"
+                                           class="form-control" name="special_key"
+                                           value="{{ request()->user()->special_key }}">
+                                    <span class="help-block">
+                                        Get key from <a href="https://enty.jp/kawax" target="_blank">Enty</a> or <a
+                                                href="https://fantia.jp/kawax" target="_blank">fantia</a>. (Japanese)
+                                    </span>
+
+                                    @if ($errors->has('special_key'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('special_key') }}</strong>
                                     </span>
                                     @endif
                                 </div>
