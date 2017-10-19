@@ -216,8 +216,6 @@ class GetStatusJob implements ShouldQueue
      */
     public function failed(\Exception $exception)
     {
-        report($exception);
-
         $this->account->increment('fails');
     }
 }
