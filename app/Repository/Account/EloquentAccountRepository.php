@@ -36,7 +36,7 @@ class EloquentAccountRepository implements AccountRepositoryInterface
     {
         $accounts = Account::oldest('updated_at')
                            ->where('fails', '<', config('tootlog.account_fails'))
-                           ->limit(config('tootlog.account_limit'))
+                           ->limit(config('tootlog.account_limit', 3))
                            ->get();
 
         return $accounts;
@@ -50,7 +50,7 @@ class EloquentAccountRepository implements AccountRepositoryInterface
     {
         $accounts = Account::oldest('updated_at')
                            ->where('fails', '<', config('tootlog.account_fails'))
-                           ->limit(config('tootlog.account_limit'))
+                           ->limit(config('tootlog.account_limit_special', 3))
                            ->whereHas('user', function ($query) {
                                $query->where('special_key', config('tootlog.special_key'));
                            })
