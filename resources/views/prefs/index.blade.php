@@ -53,7 +53,7 @@
                                            value="{{ request()->user()->special_key }}">
                                     <span class="help-block">
                                         Get key from <a href="https://enty.jp/kawax" target="_blank">Enty</a> or <a
-                                                href="https://fantia.jp/kawax" target="_blank">fantia</a>. (Japanese)
+                                                href="https://fantia.jp/kawax" target="_blank">fantia(Japanese)</a>. <a href="https://enty.jp/en/kawax" target="_blank">Enty(English)</a>
                                     </span>
 
                                     @if ($errors->has('special_key'))
