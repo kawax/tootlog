@@ -61,16 +61,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.36.29",
+            "version": "3.36.31",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "210958295921f0004d0fdc38bc9aefe33ef2a3de"
+                "reference": "e3135c1f6bc797ca0e0fbba7b2a27faae4e09d5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/210958295921f0004d0fdc38bc9aefe33ef2a3de",
-                "reference": "210958295921f0004d0fdc38bc9aefe33ef2a3de",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/e3135c1f6bc797ca0e0fbba7b2a27faae4e09d5e",
+                "reference": "e3135c1f6bc797ca0e0fbba7b2a27faae4e09d5e",
                 "shasum": ""
             },
             "require": {
@@ -137,7 +137,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-10-18T18:46:11+00:00"
+            "time": "2017-10-20T16:43:56+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1821,16 +1821,16 @@
         },
         {
             "name": "league/csv",
-            "version": "9.0.1",
+            "version": "9.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/csv.git",
-                "reference": "5dc305e7958190bcab0cc2778888a4f658d29aa1"
+                "reference": "bfa3aa8e755377cd6cc2242cfd074e48c7c300ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/csv/zipball/5dc305e7958190bcab0cc2778888a4f658d29aa1",
-                "reference": "5dc305e7958190bcab0cc2778888a4f658d29aa1",
+                "url": "https://api.github.com/repos/thephpleague/csv/zipball/bfa3aa8e755377cd6cc2242cfd074e48c7c300ba",
+                "reference": "bfa3aa8e755377cd6cc2242cfd074e48c7c300ba",
                 "shasum": ""
             },
             "require": {
@@ -1881,7 +1881,7 @@
                 "read",
                 "write"
             ],
-            "time": "2017-08-21T13:42:10+00:00"
+            "time": "2017-10-20T08:03:26+00:00"
         },
         {
             "name": "league/flysystem",
@@ -4313,37 +4313,40 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.6.1",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "8e6e04167378abf1ddb4d3522d8755c5fd90d102"
+                "reference": "3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/8e6e04167378abf1ddb4d3522d8755c5fd90d102",
-                "reference": "8e6e04167378abf1ddb4d3522d8755c5fd90d102",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e",
+                "reference": "3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0"
+                "php": "^5.6 || ^7.0"
             },
             "require-dev": {
-                "doctrine/collections": "1.*",
-                "phpunit/phpunit": "~4.1"
+                "doctrine/collections": "^1.0",
+                "doctrine/common": "^2.6",
+                "phpunit/phpunit": "^4.1"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
                     "DeepCopy\\": "src/DeepCopy/"
-                }
+                },
+                "files": [
+                    "src/DeepCopy/deep_copy.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "description": "Create deep copies (clones) of your objects",
-            "homepage": "https://github.com/myclabs/DeepCopy",
             "keywords": [
                 "clone",
                 "copy",
@@ -4351,7 +4354,7 @@
                 "object",
                 "object graph"
             ],
-            "time": "2017-04-12T18:52:22+00:00"
+            "time": "2017-10-19T19:58:43+00:00"
         },
         {
             "name": "pda/pheanstalk",
