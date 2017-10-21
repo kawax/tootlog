@@ -15,7 +15,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         \Horizon::auth(function (Request $request) {
-            return ($request->user()->id === 1);
+            return $request->user()->isAdmin();
+        });
+
+        //laravel-log-viewer表示可能
+        \Gate::define('admin-logs', function ($user) {
+            return $user->isAdmin();
         });
     }
 

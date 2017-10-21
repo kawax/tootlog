@@ -54,4 +54,9 @@ class User extends Authenticatable
     {
         return $this->hasManyThrough(Status::class, Account::class);
     }
+
+    public function isAdmin()
+    {
+        return $this->id === 1;
+    }
 }

@@ -67,5 +67,8 @@ Route::namespace('Api')->prefix('api')->group(function () {
 
 Route::get('sitemaps', 'SitemapController');
 
+Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')
+     ->middleware('can:admin-logs');
+
 
 Route::name('welcome')->get('/', 'WelcomeController');

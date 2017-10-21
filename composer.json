@@ -23,6 +23,7 @@
     "laravelcollective/html": "^5.5",
     "league/csv": "^9.0",
     "predis/predis": "^1.1",
+    "rap2hpoutre/laravel-log-viewer": "^0.10.4",
     "revolution/laravel-mastodon-api": "^1.0",
     "revolution/socialite-mastodon": "^1.0",
     "roumen/sitemap": "^2.6",
