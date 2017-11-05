@@ -43,6 +43,12 @@
                     </div>
                 </div>
 
+                <h2>Sample</h2>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <a href="https://tootlog.com/@tootlog">https://tootlog.com/@tootlog</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
