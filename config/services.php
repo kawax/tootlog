@@ -43,4 +43,9 @@ return [
         //'read', 'write', 'follow'
         'scope'         => ['read'],
     ],
+
+    'mastodon_notify' => [
+        'domain'        => env('MASTODON_NOTIFY_DOMAIN', 'https://chitose.moe'),
+        'token'         => env('MASTODON_NOTIFY_TOKEN'),
+    ],
 ];

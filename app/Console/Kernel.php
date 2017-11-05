@@ -31,6 +31,9 @@ class Kernel extends ConsoleKernel
         $schedule->command('toot:statuses')
                  ->everyFifteenMinutes();
 
+        $schedule->command('toot:info')
+                 ->daily();
+
         $schedule->command('horizon:snapshot')->everyFiveMinutes();
     }
 
