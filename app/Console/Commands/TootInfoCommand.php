@@ -24,7 +24,7 @@ class TootInfoCommand extends Command
      *
      * @var string
      */
-    protected $description = 'インスタンス数などを投稿';
+    protected $description = 'Post count info';
 
     /**
      * Create a new command instance.
