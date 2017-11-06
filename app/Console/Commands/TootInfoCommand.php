@@ -43,6 +43,8 @@ class TootInfoCommand extends Command
      */
     public function handle()
     {
+        info(self::class);
+
         $faces = collect([
             '😀',
             '😃',
