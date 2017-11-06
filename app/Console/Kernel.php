@@ -32,7 +32,7 @@ class Kernel extends ConsoleKernel
                  ->everyFifteenMinutes();
 
         $schedule->command('toot:info')
-                 ->dailyAt('09:00');
+                 ->dailyAt('08:00');
 
         $schedule->command('horizon:snapshot')->everyFiveMinutes();
     }
