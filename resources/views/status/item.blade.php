@@ -14,7 +14,7 @@
                 <div class="media-body">
                     <h4 class="media-heading">
                         <a href="{{ $status->account->url }}" target="_blank"
-                           rel="nofollow noopener">{!! EmojiOne::toImage($status->name) !!} </a>
+                           rel="nofollow noopener">{!! LaravelEmojiOne::toImage($status->name) !!} </a>
                         <small class="text-muted">
                             {{ $status->acct }}
                             @if($status->account->locked)
@@ -24,11 +24,11 @@
                     </h4>
 
                     @if(empty($status->spoiler_text))
-                        {!! EmojiOne::toImage($status->content) !!}
+                        {!! LaravelEmojiOne::toImage($status->content) !!}
                     @else
                         <details>
-                            <summary class="btn btn-warning">{!! EmojiOne::toImage($status->spoiler_text) !!}</summary>
-                            {!! EmojiOne::toImage($status->content) !!}
+                            <summary class="btn btn-warning">{!! LaravelEmojiOne::toImage($status->spoiler_text) !!}</summary>
+                            {!! LaravelEmojiOne::toImage($status->content) !!}
                         </details>
                     @endif
 

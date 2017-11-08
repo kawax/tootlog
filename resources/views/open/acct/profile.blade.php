@@ -14,14 +14,14 @@
                 </a>
             </div>
             <div class="media-body">
-                <h3 class="media-heading">{!! EmojiOne::toImage($acct->name) !!}</h3>
+                <h3 class="media-heading">{!! LaravelEmojiOne::toImage($acct->name) !!}</h3>
                 <p>
                     <span class="badge">{!! $acct->statuses_count !!} posts</span>
                     <span class="badge">{!! $acct->following_count !!} follows</span>
                     <span class="badge">{!! $acct->followers_count !!} followers</span>
                 </p>
 
-                <p>{!! EmojiOne::toImage($acct->note) !!}</p>
+                <p>{!! LaravelEmojiOne::toImage($acct->note) !!}</p>
 
                 <a href="{{ $acct->url }}" target="_blank" rel="nofollow noopener">
                     {{ $acct->url }}

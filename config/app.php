@@ -167,9 +167,9 @@ return [
          * Package Service Providers...
          */
 
-        Barryvdh\Debugbar\ServiceProvider::class,
-
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
+
+        Revolution\Socialite\Mastodon\MastodonServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -181,7 +181,6 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
         App\Providers\ViewComposerServiceProvider::class,
-
     ],
 
     /*
@@ -231,19 +230,11 @@ return [
         'Validator'    => Illuminate\Support\Facades\Validator::class,
         'View'         => Illuminate\Support\Facades\View::class,
 
-        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-
-        'Form' => Collective\Html\FormFacade::class,
-        'Html' => Collective\Html\HtmlFacade::class,
-
-        'EmojiOne' => ChristofferOK\LaravelEmojiOne\LaravelEmojiOneFacade::class,
-
-        'Mastodon' => Revolution\Mastodon\Facades\Mastodon::class,
+        'LaravelEmojiOne' => ChristofferOK\LaravelEmojiOne\LaravelEmojiOneFacade::class,
 
         'SEOMeta'   => Artesaos\SEOTools\Facades\SEOMeta::class,
         'OpenGraph' => Artesaos\SEOTools\Facades\OpenGraph::class,
         'Twitter'   => Artesaos\SEOTools\Facades\TwitterCard::class,
         'SEO'       => Artesaos\SEOTools\Facades\SEOTools::class,
     ],
-
 ];
