@@ -74,7 +74,6 @@ class AccountController extends Controller
             }
 
             dispatch_now(new GetStatusJob($acct));
-
         } catch (ClientException $e) {
             logger()->error($e->getMessage());
         }
