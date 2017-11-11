@@ -31,6 +31,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        \Mastodon::macro('instance', function () {
+            return $this->get('/instance');
+        });
     }
 }
