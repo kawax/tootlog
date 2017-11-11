@@ -32,7 +32,8 @@ class Kernel extends ConsoleKernel
                  ->everyFifteenMinutes();
 
         $schedule->command('toot:info')
-                 ->dailyAt('08:00');
+                 ->dailyAt('08:00')
+                 ->when(!app()->isLocal());
 
         $schedule->command('horizon:snapshot')->everyFiveMinutes();
     }
