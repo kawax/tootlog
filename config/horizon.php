@@ -47,7 +47,7 @@ return [
                 'connection' => 'redis',
                 'queue' => ['tootlog'],
                 'balance' => 'auto',
-                'processes' => 10,
+                'processes' => 3,
                 'tries' => 3,
             ],
         ],

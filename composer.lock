@@ -74,16 +74,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.48.6",
+            "version": "3.48.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "53e489f7d13c2f65bb28fde21d96a4f261092dda"
+                "reference": "1f272175777111bb5b18831a9048e3aa113c4538"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/53e489f7d13c2f65bb28fde21d96a4f261092dda",
-                "reference": "53e489f7d13c2f65bb28fde21d96a4f261092dda",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/1f272175777111bb5b18831a9048e3aa113c4538",
+                "reference": "1f272175777111bb5b18831a9048e3aa113c4538",
                 "shasum": ""
             },
             "require": {
@@ -150,7 +150,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-12-29T17:28:50+00:00"
+            "time": "2018-01-02T21:47:08+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1582,16 +1582,16 @@
         },
         {
             "name": "laravel/horizon",
-            "version": "v1.0.8",
+            "version": "v1.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "20ec777c3f007a4b026b93f63be6672b2fa3b43b"
+                "reference": "0979469b0b8290dc7e01c0207aad7f49c805ee70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/20ec777c3f007a4b026b93f63be6672b2fa3b43b",
-                "reference": "20ec777c3f007a4b026b93f63be6672b2fa3b43b",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/0979469b0b8290dc7e01c0207aad7f49c805ee70",
+                "reference": "0979469b0b8290dc7e01c0207aad7f49c805ee70",
                 "shasum": ""
             },
             "require": {
@@ -1646,7 +1646,7 @@
                 "laravel",
                 "queue"
             ],
-            "time": "2017-11-04T18:13:57+00:00"
+            "time": "2018-01-03T18:00:20+00:00"
         },
         {
             "name": "laravel/socialite",
