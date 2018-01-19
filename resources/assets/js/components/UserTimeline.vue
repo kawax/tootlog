@@ -1,18 +1,18 @@
 <template>
     <div>
 
-        <div class="btn-toolbar" role="toolbar" aria-label="toolbar">
+        <div class="btn-toolbar mb-2" role="toolbar" aria-label="toolbar">
 
-            <div class="btn-group" style="margin-bottom: 10px;" role="group">
-                <button type="button" class="btn btn-default"
+            <div class="btn-group pr-1"  role="group">
+                <button type="button" class="btn btn-secondary"
                         v-for="(text, type) in types"
                         :class="{active : active_type === type}"
                         @click="get(type)"
                         v-html="text"></button>
             </div>
 
-            <div class="btn-group" style="margin-bottom: 10px;" role="group">
-                <button type="button" class="btn btn-default"
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-secondary"
                         v-for="(text, type) in media"
                         :class="{active : active_media === type}"
                         @click="active_media = type"

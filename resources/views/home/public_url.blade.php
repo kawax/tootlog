@@ -1,8 +1,8 @@
-<div class="panel panel-default">
-    <div class="panel-heading">
+<div class="card mb-2">
+    <div class="card-header bg-white">
         Public URL
     </div>
-    <div class="panel-body">
+    <div class="card-body">
         <a href="{{ route('open.user', auth()->user()) }}">
             {{ route('open.user', auth()->user()) }}
         </a>

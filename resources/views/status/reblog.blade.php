@@ -1,16 +1,16 @@
-<div class="panel panel-info">
-    <div class="panel-heading">
-        <img class="img-circle toot-icon-small"
+<div class="card bg-info">
+    <div class="card-header">
+        <img class="rounded-circle toot-icon-small"
              src="{{ $status->account->avatar }}"
              alt="{{ $status->name }}"
              title="{{ $status->name }}">
         {{ $status->name }} reblogged at {{ $status->local_datetime->diffForHumans() }}</div>
 
-    <div class="panel-body">
+    <div class="card-body">
         <div class="media">
             <div class="media-left">
                 <a href="{{ $status->reblog->account_url }}" target="_blank" rel="nofollow noopener">
-                    <img class="media-object img-rounded toot-icon"
+                    <img class="media-object rounded toot-icon"
                          src="{{ $status->reblog->avatar }}"
                          alt="{{ $status->reblog->name }}"
                          title="{{ $status->reblog->name }}">

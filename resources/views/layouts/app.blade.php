@@ -23,69 +23,65 @@
 </head>
 <body class="theme-{{ auth()->check() ? auth()->user()->theme : 'thin' }}">
 <div id="app">
-    <nav class="navbar navbar-default navbar-static-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
+    <nav class="navbar navbar-expand-lg navbar-light navbar-laravel bg-white border-bottom navbar-static-top mb-2">
+        <a class="navbar-brand" href="{{ url('/') }}">
+            {{ config('app.name', 'Laravel') }}
+        </a>
 
-                <!-- Collapsed Hamburger -->
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#app-navbar-collapse">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-            </div>
 
-            <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    &nbsp; @auth
-                        <li><a href="{{ url('home') }}">Home</a></li>
-                        <li><a href="{{ route('timeline') }}">Timeline</a></li>
-                    @endauth
-                </ul>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Left Side Of Navbar -->
+            <ul class="navbar-nav mr-auto">
+                &nbsp; @auth
+                    <li class="nav-item"><a href="{{ url('home') }}" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="{{ route('timeline') }}" class="nav-link">Timeline</a></li>
+                @endauth
+            </ul>
 
-                <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Authentication Links -->
-                    @if (Auth::guest())
-                        <li><a href="{{ route('login') }}" ref="nofollow">Login</a></li>
-                        <li><a href="{{ route('register') }}" ref="nofollow">Register</a></li>
-                    @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
+            <!-- Right Side Of Navbar -->
+            <ul class="navbar-nav ml-auto">
 
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ route('preferences.index') }}">Preferences</a></li>
+                <!-- Authentication Links -->
+                @if (Auth::guest())
+                    <li class="nav-item"><a href="{{ route('login') }}" class="nav-link" ref="nofollow">Login</a></li>
+                    <li class="nav-item"><a href="{{ route('register') }}" class="nav-link" ref="nofollow">Register</a>
+                    </li>
+                @else
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
 
-                                <li role="separator" class="divider"></li>
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
 
-                                <li>
-                                    <a href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a href="{{ route('preferences.index') }}" class="dropdown-item">Preferences</a></li>
+
+                            <li role="separator" class="dropdown-divider"></li>
+
+                            <li>
+                                <a href="{{ route('logout') }}"
+                                   class="dropdown-item"
+                                   onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
-                                        Logout
-                                    </a>
+                                    Logout
+                                </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                          style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                    @endif
-                </ul>
-            </div>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                      style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                @endif
+            </ul>
+
         </div>
     </nav>
 

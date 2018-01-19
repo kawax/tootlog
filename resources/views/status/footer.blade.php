@@ -1,5 +1,5 @@
 @can('hide', $status)
-    <div class="panel-footer">
+    <div class="card-footer">
         @if($status->trashed())
             <tt-status-toggle status="{{ $status->id }}"></tt-status-toggle>
         @else

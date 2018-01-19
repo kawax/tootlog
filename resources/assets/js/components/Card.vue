@@ -1,6 +1,6 @@
 <template>
-    <div class="panel panel-default">
-        <div class="panel-body">
+    <div class="card">
+        <div class="card bg-white">
             <slot>
             </slot>
         </div>

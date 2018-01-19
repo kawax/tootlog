@@ -1,20 +1,18 @@
 <template>
     <div>
-        <span class="label label-info">
-            <img class="img-circle toot-icon-small"
+        <span class="badge badge-info ml-1">
+            <img class="rounded-circle toot-icon-small"
                  :src="post.account.avatar">
             <span v-html="display_name()"></span> reblogged
         </span>
 
-        <div class="media">
-            <div class="media-left">
-                <a :href="post.reblog.account.url" target="_blank" rel="nofollow noopener">
-                    <img class="media-object img-rounded toot-icon"
-                         :src="post.reblog.account.avatar">
-                </a>
-            </div>
-            <div class="media-body">
-                <h4 class="media-heading">
+        <div class="media m-1 p-1">
+            <a :href="post.reblog.account.url" target="_blank" rel="nofollow noopener">
+                <img class="rounded toot-icon"
+                     :src="post.reblog.account.avatar">
+            </a>
+            <div class="media-body ml-3">
+                <h4>
                     <a :href="post.reblog.account.url" v-html="reblog_display_name()" target="_blank"
                        rel="nofollow noopener">
                     </a>
