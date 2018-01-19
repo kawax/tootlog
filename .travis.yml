@@ -19,4 +19,4 @@ script:
 - vendor/bin/phpunit
 
 after_success:
-   - curl -s "$FORGE";
+   - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then curl -s "$FORGE"; fi';
