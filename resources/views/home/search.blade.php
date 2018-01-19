@@ -1,7 +1,7 @@
-<div class="panel panel-default">
-    <div class="panel-heading">Search in {{ $search_in or '' }}</div>
+<div class="card mb-2">
+    <div class="card-header bg-white">Search in {{ $search_in or '' }}</div>
 
-    <div class="panel-body">
+    <div class="card-body">
         {{ Form::open(['route' => $search_route, 'class' => 'form-horizontal', 'method' => 'get']) }}
 
         <div class="form-group{{ $errors->has('search') ? ' has-error' : '' }}">

@@ -8,11 +8,14 @@
     <div class="container-fluid">
         <div class="row">
 
-            <div class="col-md-8 col-md-push-4">
+            <div class="col-md-8 order-2">
+                <nav aria-label="breadcrumb">
+
                 <ol class="breadcrumb">
-                    <li><a href="{{ route('open.user', $user) }}">{{ '@' . $user->name  }}</a></li>
-                    <li class="active">archives</li>
+                    <li class="breadcrumb-item"><a href="{{ route('open.user', $user) }}">{{ '@' . $user->name  }}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">archives</li>
                 </ol>
+                </nav>
 
                 <h2>Archives</h2>
 
@@ -24,11 +27,13 @@
                         'user' => $user->name ,
                         'year' => explode('-', $date)[0],
                         'month' => explode('-', $date)[1]]) }}"
-                           class="list-group-item">
+                           class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
 
-                            <span class="badge">{{ $archive->count() }}</span>
                             <i class="fa fa-calendar" aria-hidden="true"></i>
                             {{ $date }}
+
+                            <span class="badge badge-pill badge-secondary ml-auto">{{ $archive->count() }}</span>
+
                         </a>
 
                     @endforeach

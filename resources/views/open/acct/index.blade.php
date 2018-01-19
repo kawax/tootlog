@@ -13,12 +13,14 @@
     <div class="container-fluid">
         <div class="row">
 
-            <div class="col-md-8 col-md-push-4">
+            <div class="col-md-8 order-2">
+                <nav aria-label="breadcrumb">
 
                 <ol class="breadcrumb">
-                    <li><a href="{{ route('open.user', $user) }}">{{ '@' . $user->name  }}</a></li>
-                    <li class="active">{{ $acct->acct  }}</li>
+                    <li class="breadcrumb-item"><a href="{{ route('open.user', $user) }}">{{ '@' . $user->name  }}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ $acct->acct  }}</li>
                 </ol>
+                </nav>
 
                 @include('open.acct.profile')
 

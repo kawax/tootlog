@@ -1,7 +1,7 @@
-<div class="panel panel-default">
-    <div class="panel-heading">Recent</div>
+<div class="card mb-2">
+    <div class="card-header bg-white">Recent</div>
 
-    <div class="panel-body">
+    <div class="card-body">
         <div class="list-group">
             @foreach($recents as $date => $recent)
                 <a href="{{ route('open.user.date.day', [
@@ -9,16 +9,16 @@
                 'year' => explode('-', $date)[0],
                 'month' => explode('-', $date)[1],
                 'day' => explode('-', $date)[2]]) }}"
-                   class="list-group-item">
-                    <span class="badge">{{ $recent->count() }}</span>
+                   class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                     <i class="fa fa-calendar-o" aria-hidden="true"></i>
                     {{ $date }}
+                    <span class="badge badge-pill badge-secondary ml-auto">{{ $recent->count() }}</span>
                 </a>
             @endforeach
         </div>
     </div>
 
-    <div class="panel-footer">
+    <div class="card-footer">
         <a href="{{ route('open.archives', $user) }}">Archives</a>
     </div>
 

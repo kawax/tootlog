@@ -1,13 +1,12 @@
 <template>
-    <div class="media">
-        <div class="media-left">
-            <a :href="post.account.url" target="_blank" rel="nofollow noopener">
-                <img class="media-object img-rounded toot-icon"
-                     :src="post.account.avatar">
-            </a>
-        </div>
-        <div class="media-body">
-            <h4 class="media-heading">
+    <div class="media p-1 m-1">
+        <a :href="post.account.url" target="_blank" rel="nofollow noopener">
+            <img class="rounded toot-icon"
+                 :src="post.account.avatar">
+        </a>
+
+        <div class="media-body ml-3">
+            <h4>
                 <a :href="post.account.url" v-html="display_name()" target="_blank" rel="nofollow noopener">
                 </a>
                 <small class="text-muted">

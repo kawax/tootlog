@@ -1,5 +1,5 @@
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url(//fonts.googleapis.com/css?family=Raleway:300,400,600);
 
 @font-face {
   font-family: 'Noto Sans CJK JP';
@@ -15,7 +15,7 @@
 @import "variables";
 
 // Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+@import '~bootstrap/scss/bootstrap';
 
 @import "~font-awesome/scss/font-awesome";
 
@@ -44,16 +44,6 @@ body {
 
 .toot-icon-small {
   max-width: 25px;
-}
-
-.footer {
-  //position: absolute;
-  border-top: 1px solid $navbar-default-border;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  //height: 80px;
-  background-color: #fff;
 }
 
 .invisible {

@@ -4,15 +4,15 @@
     </div>
 @endif
 
-<div class="panel panel-default">
-    <div class="panel-heading">Add Account</div>
+<div class="card mb-2">
+    <div class="card-header bg-white">Add Account</div>
 
-    <div class="panel-body">
+    <div class="card-body">
         {{ Form::open(['route' => 'accounts.add', 'class' => 'form-horizontal']) }}
 
-        <div class="form-group{{ $errors->has('domain') ? ' has-error' : '' }}">
-            {{ Form::label('domain', 'URL', ['class' => 'col-sm-2 control-label']) }}
-            <div class="col-sm-10">
+        <div class="form-group row{{ $errors->has('domain') ? ' has-error' : '' }}">
+            {{ Form::label('domain', 'URL', ['class' => 'col-sm-3 col-form-label']) }}
+            <div class="col-sm-9">
                 {{ Form::text('domain', '', ['placeholder' => 'https://chitose.moe', 'class' => 'form-control']) }}
             </div>
         </div>

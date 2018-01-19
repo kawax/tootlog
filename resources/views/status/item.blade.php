@@ -1,18 +1,16 @@
 @if(empty($status->reblog))
-    <div class="panel panel-default">
-        <div class="panel-body">
+    <div class="card mb-2">
+        <div class="card-body">
 
             <div class="media">
-                <div class="media-left">
-                    <a href="{{ $status->account->url }}" target="_blank" rel="nofollow noopener">
-                        <img class="media-object img-rounded toot-icon"
-                             src="{{ $status->account->avatar }}"
-                             alt="{{ $status->name }}"
-                             title="{{ $status->name }}">
-                    </a>
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading">
+                <a href="{{ $status->account->url }}" target="_blank" rel="nofollow noopener">
+                    <img class="rounded toot-icon"
+                         src="{{ $status->account->avatar }}"
+                         alt="{{ $status->name }}"
+                         title="{{ $status->name }}">
+                </a>
+                <div class="media-body ml-3">
+                    <h4>
                         <a href="{{ $status->account->url }}" target="_blank"
                            rel="nofollow noopener">{!! LaravelEmojiOne::toImage($status->name) !!} </a>
                         <small class="text-muted">
@@ -27,7 +25,8 @@
                         {!! LaravelEmojiOne::toImage($status->content) !!}
                     @else
                         <details>
-                            <summary class="btn btn-warning">{!! LaravelEmojiOne::toImage($status->spoiler_text) !!}</summary>
+                            <summary
+                                    class="btn btn-warning">{!! LaravelEmojiOne::toImage($status->spoiler_text) !!}</summary>
                             {!! LaravelEmojiOne::toImage($status->content) !!}
                         </details>
                     @endif

@@ -15,10 +15,13 @@
     <div class="container-fluid">
         <div class="row">
 
-            <div class="col-md-8 col-md-push-4">
-                <ol class="breadcrumb">
-                    <li class="active">{{ '@' . $user->name  }}</li>
-                </ol>
+            <div class="col-md-8 order-2">
+                <nav aria-label="breadcrumb">
+
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page">{{ '@' . $user->name  }}</li>
+                    </ol>
+                </nav>
 
                 @include('home.search', [
                 'search_route' => ['open.user', $user],

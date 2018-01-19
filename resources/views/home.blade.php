@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="row">
 
-            <div class="col-md-8 col-md-push-4">
+            <div class="col-md-8 order-2">
 
                 @include('home.public_url')
 
@@ -23,7 +23,7 @@
 
             </div>
 
-            <div class="col-md-4 col-md-pull-8">
+            <div class="col-md-4 order-1">
                 @include('home.side')
             </div>
         </div>

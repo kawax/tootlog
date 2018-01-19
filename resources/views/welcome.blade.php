@@ -10,8 +10,8 @@
 
 @section('content')
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+        <div class="row py-3 justify-content-md-center">
+            <div class="col-md-8">
                 <div class="jumbotron">
                     <h1>tootlog</h1>
                     <p>Mastodon log archives service.</p>
@@ -25,27 +25,27 @@
                 </div>
 
                 <h2>Usage</h2>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Register</h3>
+                <div class="card mb-2">
+                    <div class="card-header">
+                        Register
                     </div>
-                    <div class="panel-body">
+                    <div class="card-body">
                         Enter user name(only a-zA-Z0-9_-), e-mail, password. Does not send e-mail.
                     </div>
                 </div>
 
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Add Mastodon Account</h3>
+                <div class="card mb-2">
+                    <div class="card-header">
+                       Add Mastodon Account
                     </div>
-                    <div class="panel-body">
+                    <div class="card-body">
                         Enter Mastodon instance's url. Authorize by OAuth.
                     </div>
                 </div>
 
                 <h2>Sample</h2>
-                <div class="panel panel-default">
-                    <div class="panel-body">
+                <div class="card">
+                    <div class="card-body">
                         <a href="https://tootlog.com/@tootlog">https://tootlog.com/@tootlog</a>
                     </div>
                 </div>
