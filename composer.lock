@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ff507b996f48e16990c928ee628e4422",
+    "content-hash": "95b5d265e854edbfc5f8160427b5c632",
     "packages": [
         {
             "name": "artesaos/seotools",
@@ -4023,16 +4023,16 @@
         },
         {
             "name": "torann/json-ld",
-            "version": "0.0.10",
+            "version": "0.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Torann/json-ld.git",
-                "reference": "dbf7249b4ea0951c22cc11717ce2fb08810a3c1e"
+                "reference": "36fa7fa53c14e6e4d5ffea15f9d550c204c3403e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Torann/json-ld/zipball/dbf7249b4ea0951c22cc11717ce2fb08810a3c1e",
-                "reference": "dbf7249b4ea0951c22cc11717ce2fb08810a3c1e",
+                "url": "https://api.github.com/repos/Torann/json-ld/zipball/36fa7fa53c14e6e4d5ffea15f9d550c204c3403e",
+                "reference": "36fa7fa53c14e6e4d5ffea15f9d550c204c3403e",
                 "shasum": ""
             },
             "require": {
@@ -4055,7 +4055,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "BSD 2-Clause"
+                "BSD-2-Clause"
             ],
             "authors": [
                 {
@@ -4070,7 +4070,7 @@
                 "schema",
                 "structured-data"
             ],
-            "time": "2017-08-18T15:22:08+00:00"
+            "time": "2018-02-01T19:55:55+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

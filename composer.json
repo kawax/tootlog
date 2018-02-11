@@ -27,7 +27,7 @@
     "revolution/laravel-mastodon-api": "^1.0",
     "revolution/socialite-mastodon": "^1.0",
     "roumen/sitemap": "^2.6",
-    "torann/json-ld": "^0.0.10"
+    "torann/json-ld": "~0.0.11"
   },
   "require-dev": {
     "filp/whoops": "~2.0",
