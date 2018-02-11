@@ -14,7 +14,7 @@ class AddThemeToUser extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('theme')->after('email')->default('thin');
+            $table->string('theme')->after('email')->default('normal');
         });
     }
 

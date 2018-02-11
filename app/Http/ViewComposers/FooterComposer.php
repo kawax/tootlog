@@ -8,6 +8,7 @@ use Cache;
 
 use App\Model\Server;
 use App\Model\Status;
+use App\Model\Account;
 
 class FooterComposer
 {
@@ -24,10 +25,14 @@ class FooterComposer
             return Server::count();
         });
 
+        $footer_accounts = Cache::remember('footer_accounts', $minutes, function () {
+            return Account::count();
+        });
+
         $footer_statuses = Cache::remember('footer_statuses', $minutes, function () {
             return Status::count();
         });
 
-        $view->with(compact('footer_servers', 'footer_statuses'));
+        $view->with(compact('footer_servers', 'footer_accounts', 'footer_statuses'));
     }
 }

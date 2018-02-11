@@ -4,7 +4,7 @@
 
 laravel_worker_block="[program:laravel-worker]
 process_name=%(program_name)s_%(process_num)02d
-command=php /home/vagrant/code/artisan queue:work --sleep=3 --tries=3
+command=php /home/vagrant/code/artisan horizon
 autostart=true
 autorestart=true
 user=vagrant

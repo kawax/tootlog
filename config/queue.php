@@ -75,6 +75,7 @@ return [
             'connection' => 'default',
             'queue' => 'tootlog',
             'retry_after' => 90,
+            'block_for' => null,
         ],
 
     ],
