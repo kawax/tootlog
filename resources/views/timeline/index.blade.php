@@ -6,7 +6,7 @@
 
             @if($accounts->count() > 0)
 
-                <div class="col-md-8 order-2">
+                <div class="col-md-8 order-md-last">
                     <h2>
                         <a href="{{ $accounts->first()->server->domain }}" target="_blank" rel="nofollow noopener">
                             {{ $accounts->first()->acct }}
@@ -19,7 +19,7 @@
                     </tt-user-timeline>
                 </div>
 
-                <div class="col-md-4 order-1">
+                <div class="col-md-4 order-md-first">
                     @include('timeline.account_list')
                 </div>
             @endif

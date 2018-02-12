@@ -10,7 +10,7 @@
     <div class="container-fluid">
         <div class="row">
 
-            <div class="col-md-8 order-2">
+            <div class="col-md-8 order-md-last">
                 <nav aria-label="breadcrumb">
 
                     <ol class="breadcrumb">

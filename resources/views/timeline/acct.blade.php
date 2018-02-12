@@ -5,7 +5,7 @@
         <div class="row">
 
 
-            <div class="col-md-8 order-2">
+            <div class="col-md-8 order-md-last">
                 <h2>
                     <a href="{{ $acct->server->domain }}" target="_blank" rel="nofollow noopener">
                         {{ $acct->acct }}
@@ -18,7 +18,7 @@
                 </tt-user-timeline>
             </div>
 
-            <div class="col-md-4 order-1">
+            <div class="col-md-4 order-md-first">
                 @include('timeline.account_list')
             </div>
         </div>
