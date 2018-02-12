@@ -4,11 +4,7 @@
     <div class="container-fluid">
         <div class="row">
 
-            <div class="col-md-4 order-1">
-                @include('home.side')
-            </div>
-
-            <div class="col-md-8 order-2">
+            <div class="col-md-8 order-last">
 
                 @include('home.public_url')
 
@@ -27,6 +23,9 @@
 
             </div>
 
+            <div class="col-md-4 order-first">
+                @include('home.side')
+            </div>
         </div>
     </div>
 @endsection
