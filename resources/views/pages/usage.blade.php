@@ -18,9 +18,11 @@
 
                         <p><code>Register</code>から登録ページに行きます。</p>
 
-                        <p><img alt="" height="365"
-                                src="https://img01.enty.jp/uploads/ckeditor/pictures/81897/content_tootlog_01.png"
-                                width="800"/>
+                        <p>
+                            <img alt=""
+                                 src="{{ asset('images/tootlog_1.png') }}"
+                                 height="365"
+                                 width="800">
                         </p>
 
                         <p>&nbsp;</p>
@@ -32,9 +34,11 @@
                             <li>Confirm Password: 確認用パスワード。上と同じパスワードを入力。</li>
                         </ul>
 
-                        <p><img alt="" height="433"
-                                src="https://img01.enty.jp/uploads/ckeditor/pictures/81898/content_tootlog_2.png"
-                                width="800"/>
+                        <p>
+                            <img alt=""
+                                 src="{{ asset('images/tootlog_2.png') }}"
+                                 height="433"
+                                 width="800">
                         </p>
 
                         <p>&nbsp;</p>
@@ -49,9 +53,12 @@
 
                         <p>なにもないのでまずはMastodonアカウントを追加します。</p>
 
-                        <p><img alt="" height="367"
-                                src="https://img01.enty.jp/uploads/ckeditor/pictures/81899/content_tootlog_3_0.png"
-                                width="800"/></p>
+                        <p>
+                            <img alt=""
+                                 src="{{ asset('images/tootlog_3.png') }}"
+                                 height="367"
+                                 width="800">
+                        </p>
 
                         <h2>アカウント追加</h2>
 
@@ -59,26 +66,33 @@
                             厳密には<code>https</code>部分とドメインだけ見てるので<code>https://mstdn.jp/web/getting-started</code>のようなURLでも大丈夫です。
                         </p>
 
-                        <p><img alt="" height="340"
-                                src="https://img01.enty.jp/uploads/ckeditor/pictures/81900/content_tootlog_4.png"
-                                width="742"/>
+                        <p>
+                            <img alt=""
+                                 src="{{ asset('images/tootlog_4.png') }}"
+                                 height="340"
+                                 width="742">
                         </p>
 
                         <h2>認証</h2>
 
                         <p>相手サーバーに移動してOAuth認証画面が出るので<code>承認</code>します。</p>
 
-                        <p><img alt="" height="475"
-                                src="https://img01.enty.jp/uploads/ckeditor/pictures/81901/content_tootlog_5_0.png"
-                                width="800"/></p>
+                        <p>
+                            <img alt=""
+                                 src="{{ asset('images/tootlog_5.png') }}"
+                                 height="475"
+                                 width="800">
+                        </p>
 
                         <p>&nbsp;</p>
 
                         <p>tootlogに戻って来てログが取得できていれば成功です。</p>
 
-                        <p><img alt="" height="352"
-                                src="https://img01.enty.jp/uploads/ckeditor/pictures/81902/content_tootlog_6.png"
-                                width="800"/>
+                        <p>
+                            <img alt=""
+                                 src="{{ asset('images/tootlog_6.png') }}"
+                                 height="352"
+                                 width="800">
                         </p>
 
                         <p>&nbsp;</p>
@@ -105,9 +119,11 @@
                             <a class="uri"
                                href="https://tootlog.com/password/reset">https://tootlog.com/password/reset</a></p>
 
-                        <p><img alt="" height="233"
-                                src="https://img01.enty.jp/uploads/ckeditor/pictures/81903/content_tootlog_9.png"
-                                width="800"/>
+                        <p>
+                            <img alt=""
+                                 src="{{ asset('images/tootlog_9.png') }}"
+                                 height="233"
+                                 width="800">
                         </p>
 
                         <h3>フォントが細くて読みにくい</h3>
@@ -116,9 +132,11 @@
                             <a class="uri" href="https://tootlog.com/preferences">https://tootlog.com/preferences</a>
                         </p>
 
-                        <p><img alt="" height="303"
-                                src="https://img01.enty.jp/uploads/ckeditor/pictures/81904/content_tootlog_10.png"
-                                width="800"/>
+                        <p>
+                            <img alt=""
+                                 src="{{ asset('images/tootlog_10.png') }}"
+                                 height="303"
+                                 width="800">
                         </p>
 
                         <h3>ログをバックアップしたい</h3>
