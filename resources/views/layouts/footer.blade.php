@@ -7,7 +7,7 @@
             <span class="badge badge-pill badge-secondary">{{ $footer_statuses }} statuses</span>
         </div>
         <div>
-            <a href="https://enty.jp/posts/50050" target="_blank" rel="noopener">使い方</a>
+            <a href="{{ url('/usage') }}">使い方</a>
         </div>
     </div>
 </footer>

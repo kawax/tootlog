@@ -72,3 +72,5 @@ Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')
 
 
 Route::name('welcome')->get('/', 'WelcomeController');
+
+Route::view('usage', 'pages.usage');
