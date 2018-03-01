@@ -97,7 +97,7 @@ class GetStatusJob implements ShouldQueue
     protected function create(?array $statuses)
     {
         foreach ($statuses as $status) {
-            if ($status['visibility'] == 'direct') {
+            if (data_get($status, 'visibility') === 'direct') {
                 continue;
             }
 
@@ -114,13 +114,13 @@ class GetStatusJob implements ShouldQueue
 
             $new_status = $this->statusRepository->updateOrCreate($attr, $data);
 
-            if (!empty($status['reblog'])) {
-                $reblog = $this->reblog($status['reblog']);
+            if (filled(data_get($status, 'reblog'))) {
+                $reblog = $this->reblog(data_get($status, 'reblog'));
                 $new_status->reblog()->associate($reblog)->save();
             }
 
-            if (!empty($status['tags'])) {
-                $tags = $this->tag($status['tags']);
+            if (filled(data_get($status, 'tags'))) {
+                $tags = $this->tag(data_get($status, 'tags'));
                 $new_status->tags()->sync($tags);
             }
         }
