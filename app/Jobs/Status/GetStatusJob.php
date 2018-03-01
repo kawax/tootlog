@@ -39,25 +39,26 @@ class GetStatusJob implements ShouldQueue
     /**
      * Create a new job instance.
      *
-     * @param Account          $account
-     * @param StatusRepository $statusRepository
+     * @param Account $account
      */
-    public function __construct(Account $account, StatusRepository $statusRepository)
+    public function __construct(Account $account)
     {
         $this->account = $account;
-        $this->statusRepository = $statusRepository;
     }
 
     /**
      * Execute the job.
      *
+     * @param StatusRepository  $statusRepository
      * @param AccountRepository $accountRepository
      *
      * @return void
      */
-    public function handle(AccountRepository $accountRepository)
+    public function handle(StatusRepository $statusRepository, AccountRepository $accountRepository)
     {
         info('GetStatusesJob: ' . $this->account->url);
+
+        $this->statusRepository = $statusRepository;
 
         try {
             $this->account = $accountRepository->refresh($this->account);
