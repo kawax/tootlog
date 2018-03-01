@@ -101,21 +101,7 @@ class GetStatusJob implements ShouldQueue
                 continue;
             }
 
-            $data = array_only($status, [
-                'id',
-                'created_at',
-                'content',
-                'spoiler_text',
-                'uri',
-                'url',
-            ]);
-
-            $date = Chronos::parse($data['created_at'], 'UTC');
-
-            $data['created_at'] = $date->toDateTimeString();
-
-            $data = array_add($data, 'status_id', $data['id']);
-            $data = array_add($data, 'account_id', $this->account->id);
+            $data = $this->status($status);
 
             if (empty($data['uri'])) {
                 continue;
@@ -138,6 +124,32 @@ class GetStatusJob implements ShouldQueue
                 $new_status->tags()->sync($tags);
             }
         }
+    }
+
+    /**
+     * @param array $status
+     *
+     * @return array
+     */
+    protected function status(array $status): array
+    {
+        $data = array_only($status, [
+            'id',
+            'created_at',
+            'content',
+            'spoiler_text',
+            'uri',
+            'url',
+        ]);
+
+        $date = Chronos::parse($data['created_at'], 'UTC');
+
+        $data['created_at'] = $date->toDateTimeString();
+
+        $data = array_add($data, 'status_id', $data['id']);
+        $data = array_add($data, 'account_id', $this->account->id);
+
+        return $data;
     }
 
     /**
