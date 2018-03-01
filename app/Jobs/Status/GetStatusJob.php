@@ -32,24 +32,30 @@ class GetStatusJob implements ShouldQueue
     protected $account;
 
     /**
+     * @var StatusRepository
+     */
+    protected $statusRepository;
+
+    /**
      * Create a new job instance.
      *
-     * @return void
+     * @param Account          $account
+     * @param StatusRepository $statusRepository
      */
-    public function __construct(Account $account)
+    public function __construct(Account $account, StatusRepository $statusRepository)
     {
         $this->account = $account;
+        $this->statusRepository = $statusRepository;
     }
 
     /**
      * Execute the job.
      *
-     * @param StatusRepository  $statusRepository
      * @param AccountRepository $accountRepository
      *
      * @return void
      */
-    public function handle(StatusRepository $statusRepository, AccountRepository $accountRepository)
+    public function handle(AccountRepository $accountRepository)
     {
         info('GetStatusesJob: ' . $this->account->url);
 
@@ -77,8 +83,18 @@ class GetStatusJob implements ShouldQueue
 
         $this->account->fill(['fails' => 0])->save();
 
-        //        dd($statuses);
+        $this->create($statuses);
 
+        if (!empty($since_id)) {
+            $accountRepository->updateSince($this->account, $since_id);
+        }
+    }
+
+    /**
+     * @param array|null $statuses
+     */
+    protected function create(?array $statuses)
+    {
         foreach ($statuses as $status) {
             if ($status['visibility'] == 'direct') {
                 continue;
@@ -92,7 +108,6 @@ class GetStatusJob implements ShouldQueue
                 'uri',
                 'url',
             ]);
-
 
             $date = Chronos::parse($data['created_at'], 'UTC');
 
@@ -110,7 +125,7 @@ class GetStatusJob implements ShouldQueue
                 'account_id' => $this->account->id,
             ];
 
-            $new_status = $statusRepository->updateOrCreate($attr, $data);
+            $new_status = $this->statusRepository->updateOrCreate($attr, $data);
 
             if (!empty($status['reblog'])) {
                 $reblog = $this->reblog($status['reblog']);
@@ -122,16 +137,12 @@ class GetStatusJob implements ShouldQueue
                 $new_status->tags()->sync($tags);
             }
         }
-
-        if (!empty($since_id)) {
-            $accountRepository->updateSince($this->account, $since_id);
-        }
     }
 
     /**
      * @return array
      */
-    public function get()
+    protected function get()
     {
         return Mastodon::domain($this->account->server->domain)
                        ->token($this->account->token)
@@ -145,7 +156,7 @@ class GetStatusJob implements ShouldQueue
     /**
      * @return null|string
      */
-    public function since()
+    protected function since()
     {
         $since_id = null;
 
@@ -211,7 +222,8 @@ class GetStatusJob implements ShouldQueue
     /**
      * 失敗したジョブの処理
      *
-     * @param  \Exception  $exception
+     * @param  \Exception $exception
+     *
      * @return void
      */
     public function failed(\Exception $exception)
