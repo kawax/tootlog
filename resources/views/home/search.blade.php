@@ -1,5 +1,5 @@
 <div class="card mb-2">
-    <div class="card-header bg-white">Search in {{ $search_in or '' }}</div>
+    <div class="card-header bg-white">Search in {{ $search_in ?? '' }}</div>
 
     <div class="card-body">
         {{ Form::open(['route' => $search_route, 'class' => 'form-horizontal', 'method' => 'get']) }}
