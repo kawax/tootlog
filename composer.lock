@@ -74,16 +74,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.52.35",
+            "version": "3.52.36",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "3210be6caaf81dfbbafe5b6623408a3c55d313a0"
+                "reference": "f1d453c2c090ef7a8d4887c7d121bdd0cb7b7613"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/3210be6caaf81dfbbafe5b6623408a3c55d313a0",
-                "reference": "3210be6caaf81dfbbafe5b6623408a3c55d313a0",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/f1d453c2c090ef7a8d4887c7d121bdd0cb7b7613",
+                "reference": "f1d453c2c090ef7a8d4887c7d121bdd0cb7b7613",
                 "shasum": ""
             },
             "require": {
@@ -150,7 +150,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-03-28T22:07:39+00:00"
+            "time": "2018-03-29T22:20:51+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1495,16 +1495,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.6.14",
+            "version": "v5.6.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "fba33e59fd43661933e9cecb84dfb0a64c5323ce"
+                "reference": "baa42cf6bdd942523fafece21ec16a1843c6db0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/fba33e59fd43661933e9cecb84dfb0a64c5323ce",
-                "reference": "fba33e59fd43661933e9cecb84dfb0a64c5323ce",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/baa42cf6bdd942523fafece21ec16a1843c6db0f",
+                "reference": "baa42cf6bdd942523fafece21ec16a1843c6db0f",
                 "shasum": ""
             },
             "require": {
@@ -1629,7 +1629,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2018-03-28T14:17:03+00:00"
+            "time": "2018-03-30T13:29:58+00:00"
         },
         {
             "name": "laravel/horizon",
