@@ -50,31 +50,29 @@
 </template>
 
 <script>
-    import format from 'date-fns/format'
-    import parse from 'date-fns/parse'
-    import emoji from '../emoji'
+import format from "date-fns/format";
+import parse from "date-fns/parse";
+import emoji from "../emoji";
 
-    export default {
-        props: [
-            'post',
-        ],
-        methods: {
-            display_name() {
-                return this.post.account.display_name.length > 0 ?
-                    this.emoji(this.post.account.display_name) :
-                    this.post.account.username
-            },
-            reblog_display_name() {
-                return this.post.reblog.account.display_name ?
-                    this.emoji(this.post.reblog.account.display_name) :
-                    this.post.reblog.account.username
-            },
-            emoji(input) {
-                return emoji.toImage(input)
-            },
-            formatDate(date) {
-                return format(parse(date), 'YYYY-MM-DD HH:mm:ss')
-            }
-        }
+export default {
+  props: ["post"],
+  methods: {
+    display_name() {
+      return this.post.account.display_name.length > 0
+        ? this.emoji(this.post.account.display_name)
+        : this.post.account.username;
+    },
+    reblog_display_name() {
+      return this.post.reblog.account.display_name
+        ? this.emoji(this.post.reblog.account.display_name)
+        : this.post.reblog.account.username;
+    },
+    emoji(input) {
+      return emoji.toImage(input);
+    },
+    formatDate(date) {
+      return format(parse(date), "YYYY-MM-DD HH:mm:ss");
     }
+  }
+};
 </script>

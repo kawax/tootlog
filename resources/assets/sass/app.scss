@@ -2,26 +2,32 @@
 @import url(//fonts.googleapis.com/css?family=Raleway:300,400,600);
 
 @font-face {
-  font-family: 'Noto Sans CJK JP';
+  font-family: "Noto Sans CJK JP";
   font-style: normal;
   font-weight: 200;
-  src: local('Noto Sans CJK JP Light'),
-  url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Light.woff2) format('woff2'),
-  url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Light.woff) format('woff'),
-  url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Light.otf) format('opentype');
+  src: local("Noto Sans CJK JP Light"),
+    url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Light.woff2)
+      format("woff2"),
+    url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Light.woff)
+      format("woff"),
+    url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Light.otf)
+      format("opentype");
 }
 
 // Variables
 @import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
 @import "~font-awesome/scss/font-awesome";
 
-$font-family-sans-serif: "Raleway", "Noto Sans", "Noto Sans CJK JP", -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+$font-family-sans-serif: "Raleway", "Noto Sans", "Noto Sans CJK JP",
+  -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI",
+  "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
 
-$font-family-normal: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-normal: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  "Helvetica Neue", Arial, sans-serif;
 
 body {
   margin: 0;
@@ -63,7 +69,7 @@ body {
   display: inline-block;
   font-size: inherit;
   vertical-align: middle;
-  margin: -.2ex .15em .2ex;
+  margin: -0.2ex 0.15em 0.2ex;
   width: 16px;
   height: 16px;
 

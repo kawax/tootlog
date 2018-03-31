@@ -1,7 +1,7 @@
-import emojione from 'emojione'
+import emojione from "emojione";
 
 export default {
-    toImage(input) {
-        return emojione.toImage(input)
-    }
-}
+  toImage(input) {
+    return emojione.toImage(input);
+  }
+};

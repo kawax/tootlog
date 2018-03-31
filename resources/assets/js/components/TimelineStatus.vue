@@ -40,28 +40,26 @@
 </template>
 
 <script>
-    import format from 'date-fns/format'
-    import parse from 'date-fns/parse'
-    import emoji from '../emoji'
+import format from "date-fns/format";
+import parse from "date-fns/parse";
+import emoji from "../emoji";
 
-    export default {
-        props: [
-            'post',
-        ],
-        methods: {
-            display_name() {
-                return this.post.account.display_name ?
-                    this.emoji(this.post.account.display_name) :
-                    this.post.account.username
-            },
-            emoji(input) {
-//                return input
-                return emoji.toImage(input)
-            },
-            formatDate(date) {
-//                return ''
-                return format(parse(date), 'YYYY-MM-DD HH:mm:ss')
-            }
-        }
+export default {
+  props: ["post"],
+  methods: {
+    display_name() {
+      return this.post.account.display_name
+        ? this.emoji(this.post.account.display_name)
+        : this.post.account.username;
+    },
+    emoji(input) {
+      //                return input
+      return emoji.toImage(input);
+    },
+    formatDate(date) {
+      //                return ''
+      return format(parse(date), "YYYY-MM-DD HH:mm:ss");
     }
+  }
+};
 </script>
