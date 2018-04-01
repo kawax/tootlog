@@ -13,7 +13,7 @@
         <div class="form-group row{{ $errors->has('domain') ? ' has-error' : '' }}">
             {{ Form::label('domain', 'URL', ['class' => 'col-sm-3 col-form-label']) }}
             <div class="col-sm-9">
-                {{ Form::text('domain', '', ['placeholder' => 'https://chitose.moe', 'class' => 'form-control']) }}
+                {{ Form::text('domain', '', ['placeholder' => 'https://', 'class' => 'form-control']) }}
             </div>
         </div>
 
