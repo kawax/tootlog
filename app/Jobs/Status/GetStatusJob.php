@@ -175,18 +175,23 @@ class GetStatusJob implements ShouldQueue
 
         $response = Mastodon::getResponse();
 
-        if ($response->hasHeader('Link')) {
-            $link = Psr7\parse_header($response->getHeader('Link'));
-
-            if (!empty($link)) {
-                $link = array_first($link, function ($value, $key) {
-                    return array_get($value, 'rel') === 'prev';
-                });
-                $link = head($link);
-
-                $since_id = str_before(str_after($link, '&since_id='), '>');
-            }
+        if (!$response->hasHeader('Link')) {
+            return null;
         }
+
+        $link = Psr7\parse_header($response->getHeader('Link'));
+
+        if (empty($link)) {
+            return null;
+        }
+
+        $link = array_first($link, function ($value, $key) {
+            return array_get($value, 'rel') === 'prev';
+        });
+
+        $link = head($link);
+
+        $since_id = str_before(str_after($link, '&since_id='), '>');
 
         return $since_id;
     }
