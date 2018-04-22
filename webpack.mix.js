@@ -19,8 +19,7 @@ mix.js('resources/assets/js/app.js', 'public/js')
         'jquery',
         'lodash',
         'emojione'
-    ])
-    .version();
+    ]);
 
 mix.webpackConfig({
     module: {
