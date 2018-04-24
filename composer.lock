@@ -74,16 +74,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.54.6",
+            "version": "3.55.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "ea86c808c9c8a1cd39dab2baa1b9dd38e03323ec"
+                "reference": "d130bba2e7cae7cabb118a4a912b80cb505e97ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/ea86c808c9c8a1cd39dab2baa1b9dd38e03323ec",
-                "reference": "ea86c808c9c8a1cd39dab2baa1b9dd38e03323ec",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/d130bba2e7cae7cabb118a4a912b80cb505e97ff",
+                "reference": "d130bba2e7cae7cabb118a4a912b80cb505e97ff",
                 "shasum": ""
             },
             "require": {
@@ -150,7 +150,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-04-20T18:14:14+00:00"
+            "time": "2018-04-23T19:32:26+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -4402,16 +4402,16 @@
         },
         {
             "name": "laravel/homestead",
-            "version": "v7.3.0",
+            "version": "v7.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/homestead.git",
-                "reference": "9f3654533723a792df2327b99e127d20be22e725"
+                "reference": "b9e025de9854f9a6386fd4ca7cf33ccf0fd8bb60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/homestead/zipball/9f3654533723a792df2327b99e127d20be22e725",
-                "reference": "9f3654533723a792df2327b99e127d20be22e725",
+                "url": "https://api.github.com/repos/laravel/homestead/zipball/b9e025de9854f9a6386fd4ca7cf33ccf0fd8bb60",
+                "reference": "b9e025de9854f9a6386fd4ca7cf33ccf0fd8bb60",
                 "shasum": ""
             },
             "require": {
@@ -4448,7 +4448,7 @@
                 }
             ],
             "description": "A virtual machine for web artisans.",
-            "time": "2018-03-12T19:16:22+00:00"
+            "time": "2018-04-24T00:18:06+00:00"
         },
         {
             "name": "mockery/mockery",
