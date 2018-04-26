@@ -74,16 +74,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.55.0",
+            "version": "3.55.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "d130bba2e7cae7cabb118a4a912b80cb505e97ff"
+                "reference": "3be3068a3a643f5029f18714b3fe26733a51e07c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/d130bba2e7cae7cabb118a4a912b80cb505e97ff",
-                "reference": "d130bba2e7cae7cabb118a4a912b80cb505e97ff",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/3be3068a3a643f5029f18714b3fe26733a51e07c",
+                "reference": "3be3068a3a643f5029f18714b3fe26733a51e07c",
                 "shasum": ""
             },
             "require": {
@@ -150,7 +150,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-04-23T19:32:26+00:00"
+            "time": "2018-04-25T18:33:29+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1086,16 +1086,16 @@
         },
         {
             "name": "emojione/emojione",
-            "version": "3.1.2",
+            "version": "3.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/emojione/emojione.git",
-                "reference": "f0d00822b25cef78726289c16e379f64e0ea23b6"
+                "reference": "2c5d650ce2728c3e342c94ea6b837b90ad9c894d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/emojione/emojione/zipball/f0d00822b25cef78726289c16e379f64e0ea23b6",
-                "reference": "f0d00822b25cef78726289c16e379f64e0ea23b6",
+                "url": "https://api.github.com/repos/emojione/emojione/zipball/2c5d650ce2728c3e342c94ea6b837b90ad9c894d",
+                "reference": "2c5d650ce2728c3e342c94ea6b837b90ad9c894d",
                 "shasum": ""
             },
             "require": {
@@ -1125,7 +1125,7 @@
                 "smilies",
                 "unicode"
             ],
-            "time": "2017-08-08T16:33:10+00:00"
+            "time": "2018-04-25T18:50:11+00:00"
         },
         {
             "name": "erusev/parsedown",
