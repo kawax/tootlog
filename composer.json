@@ -7,6 +7,12 @@
   ],
   "license": "MIT",
   "type": "project",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/kawax/laravel-http2-server-push"
+    }
+  ],
   "require": {
     "php": ">=7.1.3",
     "artesaos/seotools": "^0.11",
@@ -26,7 +32,7 @@
     "revolution/laravel-mastodon-api": "^1.0",
     "revolution/socialite-mastodon": "^1.0",
     "roumen/sitemap": "^2.6",
-    "tomschlick/laravel-http2-server-push": "dev-master",
+    "tomschlick/laravel-http2-server-push": "dev-dev",
     "torann/json-ld": "~0.0.11"
   },
   "require-dev": {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f634aeff13072e57e4a225e8123f3504",
+    "content-hash": "bb8b8e1c93ff07633c116d8c0f38eda3",
     "packages": [
         {
             "name": "artesaos/seotools",
@@ -3922,16 +3922,16 @@
         },
         {
             "name": "tomschlick/laravel-http2-server-push",
-            "version": "dev-master",
+            "version": "dev-dev",
             "source": {
                 "type": "git",
-                "url": "https://github.com/tomschlick/laravel-http2-server-push.git",
-                "reference": "6f7913961bd81106ac0e0adc82084cb5b326a00b"
+                "url": "https://github.com/kawax/laravel-http2-server-push.git",
+                "reference": "71450921b562e57c714c1b0ce89e025cb37fe8ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tomschlick/laravel-http2-server-push/zipball/6f7913961bd81106ac0e0adc82084cb5b326a00b",
-                "reference": "6f7913961bd81106ac0e0adc82084cb5b326a00b",
+                "url": "https://api.github.com/repos/kawax/laravel-http2-server-push/zipball/71450921b562e57c714c1b0ce89e025cb37fe8ae",
+                "reference": "71450921b562e57c714c1b0ce89e025cb37fe8ae",
                 "shasum": ""
             },
             "require": {
@@ -3960,7 +3960,11 @@
                     "src/helpers.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "TomSchlick\\ServerPush\\Tests\\": "tests/"
+                }
+            },
             "license": [
                 "MIT"
             ],
@@ -3971,7 +3975,10 @@
                 }
             ],
             "description": "A middleware package for Laravel 5 to enable server push for your script, style, and image assets.",
-            "time": "2018-02-08T20:45:34+00:00"
+            "support": {
+                "source": "https://github.com/kawax/laravel-http2-server-push/tree/dev"
+            },
+            "time": "2018-04-28T12:23:55+00:00"
         },
         {
             "name": "torann/json-ld",

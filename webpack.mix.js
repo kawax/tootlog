@@ -1,4 +1,4 @@
-let mix = require('laravel-mix');
+let mix = require('laravel-mix')
 
 /*
  |--------------------------------------------------------------------------
@@ -11,26 +11,27 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-    .sass('resources/assets/sass/app.scss', 'public/css')
-    .extract([
-        'vue',
-        'axios',
-        'jquery',
-        'lodash',
-        'twemoji'
-    ]);
+mix.js('resources/assets/js/app.js', 'public/js').
+  sass('resources/assets/sass/app.scss', 'public/css').
+  extract([
+    'vue',
+    'axios',
+    'jquery',
+    'lodash',
+    'twemoji',
+  ]).
+  version()
 
 mix.webpackConfig({
-    module: {
-        rules: [
-            {
-                test: /\.mp3$/,
-                loader: 'file-loader',
-                options: {
-                    name: '/sounds/[hash].[ext]',
-                }
-            }
-        ]
-    }
-});
+  module: {
+    rules: [
+      {
+        test: /\.mp3$/,
+        loader: 'file-loader',
+        options: {
+          name: '/sounds/[hash].[ext]',
+        },
+      },
+    ],
+  },
+})
