@@ -1,7 +1,7 @@
-import emojione from "emojione";
+import twemoji from "twemoji";
 
 export default {
   toImage(input) {
-    return emojione.toImage(input);
+    return twemoji.parse(input);
   }
 };

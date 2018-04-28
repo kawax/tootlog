@@ -16,7 +16,7 @@
 
             <button class="btn btn-warning btn-sm"
                     type="button"
-                    v-if="post.spoiler_text.length != 0"
+                    v-if="post.spoiler_text.length > 0"
                     v-html="emoji(post.spoiler_text)"
                     @click="post.spoiler_text = ''">
             </button>
@@ -53,11 +53,9 @@ export default {
         : this.post.account.username;
     },
     emoji(input) {
-      //                return input
       return emoji.toImage(input);
     },
     formatDate(date) {
-      //                return ''
       return format(parse(date), "YYYY-MM-DD HH:mm:ss");
     }
   }

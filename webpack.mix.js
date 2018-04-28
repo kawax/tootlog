@@ -18,7 +18,7 @@ mix.js('resources/assets/js/app.js', 'public/js')
         'axios',
         'jquery',
         'lodash',
-        'emojione'
+        'twemoji'
     ]);
 
 mix.webpackConfig({

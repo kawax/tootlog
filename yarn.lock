@@ -2231,10 +2231,6 @@ elliptic@^6.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.0"
 
-emojione@^3.0.1:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/emojione/-/emojione-3.1.2.tgz#991e30c80db4b1cf15eacb257620a7edce9c6ef4"
-
 emojis-list@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/emojis-list/-/emojis-list-2.1.0.tgz#4daa4d9db00f9819880c79fa457ae5b09a1fd389"
@@ -6939,6 +6935,10 @@ tunnel-agent@^0.6.0:
 tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
+
+twemoji@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/twemoji/-/twemoji-2.5.1.tgz#296647c6163c7f047458871c2aebe25ea8ffe834"
 
 type-is@~1.6.15, type-is@~1.6.16:
   version "1.6.16"

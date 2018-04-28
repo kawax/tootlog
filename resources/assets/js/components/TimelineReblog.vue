@@ -23,7 +23,7 @@
 
                 <button class="btn btn-warning btn-sm"
                         type="button"
-                        v-if="post.reblog.spoiler_text.length != 0"
+                        v-if="post.reblog.spoiler_text.length > 0"
                         v-html="emoji(post.reblog.spoiler_text)"
                         @click="post.reblog.spoiler_text = ''">
                 </button>
