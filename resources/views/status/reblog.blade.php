@@ -1,5 +1,5 @@
-<div class="card bg-info">
-    <div class="card-header">
+<div class="card border-info mb-2">
+    <div class="card-header bg-info text-white">
         <img class="rounded-circle toot-icon-small"
              src="{{ $status->account->avatar }}"
              alt="{{ $status->name }}"
@@ -16,14 +16,14 @@
                          title="{{ $status->reblog->name }}">
                 </a>
             </div>
-            <div class="media-body">
+            <div class="media-body ml-3">
                 <h4 class="media-heading">
-                    <a href="{{ $status->reblog->account_url }}" target="_blank" rel="nofollow noopener">{!! LaravelEmojiOne::toImage($status->reblog->name) !!}</a>
+                    <a href="{{ $status->reblog->account_url }}" target="_blank" rel="nofollow noopener">{!! twemoji($status->reblog->name) !!}</a>
                     <small>{{ $status->reblog->acct }}</small>
                 </h4>
 
                 @if(empty($status->reblog->spoiler_text))
-                    {!! LaravelEmojiOne::toImage($status->reblog->content) !!}
+                    {!! twemoji($status->reblog->content) !!}
                 @else
                     <button class="btn btn-warning btn-sm"
                             type="button"
@@ -31,10 +31,10 @@
                             data-target="#cw_{{ $status->id }}"
                             aria-expanded="false"
                             aria-controls="collapse">
-                        {!! LaravelEmojiOne::toImage($status->reblog->spoiler_text) !!}
+                        {!! twemoji($status->reblog->spoiler_text) !!}
                     </button>
                     <div class="collapse" id="cw_{{ $status->id }}">
-                        {!! LaravelEmojiOne::toImage($status->reblog->content) !!}
+                        {!! twemoji($status->reblog->content) !!}
                     </div>
                 @endif
 

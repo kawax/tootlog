@@ -12,14 +12,14 @@
                      title="{{ $acct->name }}">
             </a>
             <div class="media-body ml-3">
-                <h3>{!! LaravelEmojiOne::toImage($acct->name) !!}</h3>
+                <h3>{!! twemoji($acct->name) !!}</h3>
                 <p>
                     <span class="badge badge-pill badge-secondary">{!! $acct->statuses_count !!} posts</span>
                     <span class="badge badge-pill badge-secondary">{!! $acct->following_count !!} follows</span>
                     <span class="badge badge-pill badge-secondary">{!! $acct->followers_count !!} followers</span>
                 </p>
 
-                <p>{!! LaravelEmojiOne::toImage($acct->note) !!}</p>
+                <p>{!! twemoji($acct->note) !!}</p>
 
                 <a href="{{ $acct->url }}" target="_blank" rel="nofollow noopener">
                     {{ $acct->url }}
