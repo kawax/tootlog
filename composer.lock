@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "bb8b8e1c93ff07633c116d8c0f38eda3",
+    "content-hash": "48754e1974bf89dc6c3e753fa8b2347a",
     "packages": [
         {
             "name": "artesaos/seotools",
@@ -3922,7 +3922,7 @@
         },
         {
             "name": "tomschlick/laravel-http2-server-push",
-            "version": "dev-dev",
+            "version": "dev-patch",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kawax/laravel-http2-server-push.git",

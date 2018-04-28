@@ -32,7 +32,7 @@
     "revolution/laravel-mastodon-api": "^1.0",
     "revolution/socialite-mastodon": "^1.0",
     "roumen/sitemap": "^2.6",
-    "tomschlick/laravel-http2-server-push": "dev-dev",
+    "tomschlick/laravel-http2-server-push": "dev-patch",
     "torann/json-ld": "~0.0.11"
   },
   "require-dev": {
