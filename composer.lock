@@ -1086,16 +1086,16 @@
         },
         {
             "name": "emojione/emojione",
-            "version": "3.1.3",
+            "version": "3.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/emojione/emojione.git",
-                "reference": "2c5d650ce2728c3e342c94ea6b837b90ad9c894d"
+                "reference": "eb9741a3bf986d84a3e455efc3e427ab0e885094"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/emojione/emojione/zipball/2c5d650ce2728c3e342c94ea6b837b90ad9c894d",
-                "reference": "2c5d650ce2728c3e342c94ea6b837b90ad9c894d",
+                "url": "https://api.github.com/repos/emojione/emojione/zipball/eb9741a3bf986d84a3e455efc3e427ab0e885094",
+                "reference": "eb9741a3bf986d84a3e455efc3e427ab0e885094",
                 "shasum": ""
             },
             "require": {
@@ -1125,7 +1125,7 @@
                 "smilies",
                 "unicode"
             ],
-            "time": "2018-04-25T18:50:11+00:00"
+            "time": "2018-04-27T15:45:24+00:00"
         },
         {
             "name": "erusev/parsedown",
