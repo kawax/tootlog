@@ -1,20 +1,17 @@
 <?php
 
-use JSila\Twemoji\Twemoji;
-
 if (!function_exists('twemoji')) {
 
     /**
+     * Unicode絵文字をTwemojiに変換。
+     * jsila/emoji-images-phpはなんか違ったのでいいのが見つかるまでは何もしないヘルパー
+     *
      * @param string $text
      *
      * @return string
      */
     function twemoji($text)
     {
-        try {
-            return (new Twemoji)->parseText($text);
-        } catch (\Exception $e) {
-            return $text;
-        }
+        return $text;
     }
 }

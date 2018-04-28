@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e0b6b3217fbaf5a4af830f61c1e1bff5",
+    "content-hash": "f634aeff13072e57e4a225e8123f3504",
     "packages": [
         {
             "name": "artesaos/seotools",
@@ -1383,48 +1383,6 @@
                 }
             ],
             "time": "2015-04-20T18:58:01+00:00"
-        },
-        {
-            "name": "jsila/emoji-images-php",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kawax/Emoji-Images-PHP.git",
-                "reference": "fe1a10e27b2cc5283ca1fb67a0863b65719134f9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kawax/Emoji-Images-PHP/zipball/fe1a10e27b2cc5283ca1fb67a0863b65719134f9",
-                "reference": "fe1a10e27b2cc5283ca1fb67a0863b65719134f9",
-                "shasum": ""
-            },
-            "require-dev": {
-                "phpspec/phpspec": "~2.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "JSila\\Twemoji\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jernej Sila",
-                    "email": "jernej.sila@gmail.com"
-                }
-            ],
-            "description": "Parses text for emoji names and converts them to corresponding images.",
-            "keywords": [
-                "emoji",
-                "twemoji"
-            ],
-            "support": {
-                "source": "https://github.com/kawax/Emoji-Images-PHP/tree/master"
-            },
-            "time": "2018-04-28T05:43:27+00:00"
         },
         {
             "name": "laravel/framework",
@@ -6020,7 +5978,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "jsila/emoji-images-php": 20,
         "tomschlick/laravel-http2-server-push": 20
     },
     "prefer-stable": false,
