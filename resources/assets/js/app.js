@@ -33,3 +33,6 @@ const app = new Vue({
 $(window).resize(function() {
   app.$emit("redrawChart");
 });
+
+import twemoji from "twemoji";
+twemoji.parse(document.body);
