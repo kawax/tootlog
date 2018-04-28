@@ -18,3 +18,4 @@ Vagrantfile
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
 .php-version
+/after.sh
