@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reblog extends Model
 {
+    /**
+     * @var array
+     */
     protected $fillable = [
         'account_id',
         'status_id',
@@ -20,8 +23,14 @@ class Reblog extends Model
         'avatar',
     ];
 
+    /**
+     * @var bool
+     */
     public $timestamps = false;
 
+    /**
+     * @var array
+     */
     protected $dates = [
         'created_at',
     ];
@@ -29,15 +38,18 @@ class Reblog extends Model
     /**
      * 表示用の名前
      *
-     * @return mixed|string
+     * @return string
      */
-    public function getNameAttribute()
+    public function getNameAttribute(): string
     {
         $name = empty($this->display_name) ? $this->username : $this->display_name;
 
         return $name;
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function statuses()
     {
         return $this->hasMany(Status::class);

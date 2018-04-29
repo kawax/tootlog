@@ -10,6 +10,9 @@ class Account extends Model
 {
     use AccountPresenter;
 
+    /**
+     * @var array
+     */
     protected $fillable = [
         'user_id',
         'server_id',
@@ -38,20 +41,19 @@ class Account extends Model
      *
      * @return string
      */
-    public function getAcctAttribute()
+    public function getAcctAttribute(): string
     {
         $domain = parse_url($this->url, PHP_URL_HOST);
 
         return $this->username . '@' . $domain;
     }
 
-
     /**
      * domain
      *
      * @return string
      */
-    public function getDomainAttribute()
+    public function getDomainAttribute(): string
     {
         $domain = parse_url($this->url, PHP_URL_HOST);
 
@@ -59,25 +61,34 @@ class Account extends Model
     }
 
     /**
-     * @return mixed|string
+     * @return string
      */
-    public function getNameAttribute()
+    public function getNameAttribute(): string
     {
         $name = empty($this->display_name) ? $this->username : $this->display_name;
 
         return $name;
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function server()
     {
         return $this->belongsTo(Server::class);
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function statuses()
     {
         return $this->hasMany(Status::class);

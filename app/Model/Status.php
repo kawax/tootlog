@@ -12,6 +12,9 @@ class Status extends Model
     use SoftDeletes;
     use StatusPresenter;
 
+    /**
+     * @var array
+     */
     protected $fillable = [
         'account_id',
         'status_id',
@@ -23,12 +26,18 @@ class Status extends Model
         'reblog_id',
     ];
 
+    /**
+     * @var array
+     */
     protected $dates = [
         'created_at',
         'updated_at',
         'deleted_at',
     ];
 
+    /**
+     * @var array
+     */
     protected $appends = [
         'local_datetime',
         'name',
@@ -39,7 +48,7 @@ class Status extends Model
      *
      * @return string
      */
-    public function getAcctAttribute()
+    public function getAcctAttribute(): string
     {
         $domain = parse_url($this->account->url, PHP_URL_HOST);
 
@@ -49,33 +58,44 @@ class Status extends Model
     /**
      * 表示用の名前
      *
-     * @return mixed|string
+     * @return string
      */
-    public function getNameAttribute()
+    public function getNameAttribute(): string
     {
         $name = $this->account->name;
 
         return $name;
     }
 
+    /**
+     * @return \Carbon\Carbon|mixed|null
+     */
     public function getLocalDatetimeAttribute()
     {
-        //TODO:ローカル時間での表示対応
-        $datetime = $this->created_at;//->setTimezone('Asia/Tokyo')->toDateTimeString();
+        $datetime = $this->created_at;
 
         return $datetime;
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function account()
     {
         return $this->belongsTo(Account::class);
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function reblog()
     {
         return $this->belongsTo(Reblog::class);
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
     public function tags()
     {
         return $this->belongsToMany(Tag::class)->withTimestamps();

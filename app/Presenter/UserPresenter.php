@@ -6,6 +6,10 @@ use App\Model\Tag;
 
 trait UserPresenter
 {
+    /**
+     * @return mixed
+     * @throws \Exception
+     */
     public function tags()
     {
         $tags = cache()->remember('user.tags/' . $this->id, 60, function () {

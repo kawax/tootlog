@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Server extends Model
 {
+    /**
+     * @var array
+     */
     protected $fillable = [
         'app_id',
         'domain',
@@ -17,9 +20,9 @@ class Server extends Model
     /**
      * streaming api url
      *
-     * @return mixed
+     * @return string
      */
-    public function getStreamingAttribute()
+    public function getStreamingAttribute(): string
     {
         $domain = array_get(config('tootlog.streaming'), $this->domain, $this->domain);
         $domain = str_replace('http', 'ws', $domain);
@@ -27,6 +30,9 @@ class Server extends Model
         return $domain;
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function accounts()
     {
         return $this->hasMany(Account::class);

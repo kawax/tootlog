@@ -45,17 +45,26 @@ class User extends Authenticatable
         return 'name';
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function accounts()
     {
         return $this->hasMany(Account::class);
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
+     */
     public function statuses()
     {
         return $this->hasManyThrough(Status::class, Account::class);
     }
 
-    public function isAdmin()
+    /**
+     * @return bool
+     */
+    public function isAdmin(): bool
     {
         return $this->id === 1;
     }
