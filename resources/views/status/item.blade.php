@@ -12,7 +12,7 @@
                 <div class="media-body ml-3">
                     <h4>
                         <a href="{{ $status->account->url }}" target="_blank"
-                           rel="nofollow noopener">{!! twemoji($status->name) !!} </a>
+                           rel="nofollow noopener">{!! $status->name !!} </a>
                         <small class="text-muted">
                             {{ $status->acct }}
                             @if($status->account->locked)
@@ -22,12 +22,13 @@
                     </h4>
 
                     @if(empty($status->spoiler_text))
-                        {!! twemoji($status->content) !!}
+                        {!! $status->content !!}
                     @else
                         <details>
-                            <summary
-                                    class="btn btn-warning">{!! twemoji($status->spoiler_text) !!}</summary>
-                            {!! twemoji($status->content) !!}
+                            <summary class="btn btn-warning">
+                                {!! $status->spoiler_text !!}
+                            </summary>
+                            {!! $status->content !!}
                         </details>
                     @endif
 
