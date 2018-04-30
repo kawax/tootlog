@@ -4,8 +4,6 @@ namespace App\Http\ViewComposers;
 
 use Illuminate\View\View;
 
-use Cache;
-
 use App\Model\Server;
 use App\Model\Status;
 use App\Model\Account;
@@ -21,15 +19,15 @@ class FooterComposer
     {
         $minutes = 60;
 
-        $footer_servers = Cache::remember('footer_servers', $minutes, function () {
+        $footer_servers = cache()->remember('footer_servers', $minutes, function () {
             return Server::count();
         });
 
-        $footer_accounts = Cache::remember('footer_accounts', $minutes, function () {
+        $footer_accounts = cache()->remember('footer_accounts', $minutes, function () {
             return Account::count();
         });
 
-        $footer_statuses = Cache::remember('footer_statuses', $minutes, function () {
+        $footer_statuses = cache()->remember('footer_statuses', $minutes, function () {
             return Status::count();
         });
 
