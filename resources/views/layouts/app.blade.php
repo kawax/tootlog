@@ -11,7 +11,7 @@
 
     <meta name="description" content="@yield('description', 'Mastodon log archives service.')">
 
-    @inline('css/app.css')
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
     @yield('open_graph')
 
@@ -31,9 +31,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 &nbsp; @auth
                     <li class="nav-item"><a href="{{ url('home') }}" class="nav-link">Home</a></li>
@@ -41,10 +39,8 @@
                 @endauth
             </ul>
 
-            <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
 
-                <!-- Authentication Links -->
                 @if (Auth::guest())
                     <li class="nav-item"><a href="{{ route('login') }}" class="nav-link" ref="nofollow">Login</a></li>
                     <li class="nav-item"><a href="{{ route('register') }}" class="nav-link" ref="nofollow">Register</a>
@@ -90,7 +86,6 @@
 
 </div>
 
-<!-- Scripts -->
 <script src="{{ mix('js/manifest.js') }}" defer></script>
 <script src="{{ mix('js/vendor.js') }}" defer></script>
 <script src="{{ mix('js/app.js') }}" defer></script>
