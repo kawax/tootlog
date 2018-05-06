@@ -52,8 +52,7 @@
                                            class="form-control" name="special_key"
                                            value="{{ request()->user()->special_key }}">
                                     <span class="text-muted">
-                                        Get key from <a href="https://enty.jp/kawax" target="_blank">Enty</a> or <a
-                                                href="https://fantia.jp/kawax" target="_blank">fantia</a>(Japanese). <a href="https://enty.jp/en/kawax" target="_blank">Enty(English)</a>
+                                        Get key from <a href="https://www.pixiv.net/fanbox/creator/762638" target="_blank" rel="noopener">pixiv FANBOX</a>.
                                     </span>
 
                                     @if ($errors->has('special_key'))
