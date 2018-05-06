@@ -62,7 +62,7 @@ class EloquentServerRepository implements ServerRepositoryInterface
      *
      * @return mixed
      */
-    public function instanceList($page)
+    public function instanceList(int $page = 10)
     {
         return Server::withCount('accounts')
                      ->orderBy('accounts_count', 'DESC')

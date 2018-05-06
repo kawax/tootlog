@@ -15,7 +15,7 @@ class InstanceController extends Controller
      */
     public function __invoke(ServerRepository $repository)
     {
-        $instances = $repository->instanceList(10);
+        $instances = $repository->instanceList();
 
         return view('instance.list')->with(compact('instances'));
     }

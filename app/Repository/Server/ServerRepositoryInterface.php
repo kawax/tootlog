@@ -40,5 +40,5 @@ interface ServerRepositoryInterface
      *
      * @return mixed
      */
-    public function instanceList($page);
+    public function instanceList(int $page = 10);
 }
