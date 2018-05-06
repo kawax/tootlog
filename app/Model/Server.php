@@ -31,6 +31,14 @@ class Server extends Model
     }
 
     /**
+     * @return string
+     */
+    public function getFaviconAttribute(): string
+    {
+        return $this->domain . '/' . array_get(config('tootlog.favicon'), $this->domain, 'favicon.ico');
+    }
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function accounts()

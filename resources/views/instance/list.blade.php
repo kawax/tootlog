@@ -15,6 +15,9 @@
                            target="_blank"
                            rel="noopener">
 
+                            <img src="{{ $instance->favicon }}" width="{{ config('tootlog.favicon_size') }}"
+                                 class="rounded-circle mr-1" alt="favicon">
+
                             {{ $instance->domain }}
 
                             <span class="badge badge-pill badge-secondary ml-auto">{{ $instance->accounts_count }}</span>
