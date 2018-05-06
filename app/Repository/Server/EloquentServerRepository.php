@@ -56,4 +56,16 @@ class EloquentServerRepository implements ServerRepositoryInterface
 
         return $server->toArray();
     }
+
+    /**
+     * @param int $page
+     *
+     * @return mixed
+     */
+    public function instanceList($page)
+    {
+        return Server::withCount('accounts')
+                     ->orderBy('accounts_count', 'DESC')
+                     ->paginate($page);
+    }
 }

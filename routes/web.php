@@ -65,6 +65,9 @@ Route::namespace('Api')->prefix('api')->group(function () {
 });
 
 
+Route::name('instances')->get('instances', 'InstanceController');
+
+
 Route::get('sitemaps', 'SitemapController');
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')
