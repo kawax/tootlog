@@ -6,9 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 use App\Presenter\AccountPresenter;
 
+use Revolution\Mastodon\Traits\Mastodon;
+
 class Account extends Model
 {
     use AccountPresenter;
+
+    use Mastodon;
 
     /**
      * @var array
@@ -92,5 +96,21 @@ class Account extends Model
     public function statuses()
     {
         return $this->hasMany(Status::class);
+    }
+
+    /**
+     * @return string
+     */
+    protected function mastodonDomain()
+    {
+        return $this->server->domain;
+    }
+
+    /**
+     * @return string
+     */
+    protected function mastodonToken()
+    {
+        return $this->token;
     }
 }

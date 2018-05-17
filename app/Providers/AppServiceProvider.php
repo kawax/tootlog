@@ -22,6 +22,10 @@ class AppServiceProvider extends ServiceProvider
         \Gate::define('admin-logs', function ($user) {
             return $user->isAdmin();
         });
+
+        \Mastodon::macro('instance', function () {
+            return $this->get('/instance');
+        });
     }
 
     /**
@@ -31,8 +35,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        \Mastodon::macro('instance', function () {
-            return $this->get('/instance');
-        });
+        //
     }
 }

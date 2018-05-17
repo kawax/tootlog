@@ -129,16 +129,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.56.0",
+            "version": "3.56.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "ae1ee1d4c8a5c571afc6e33e210297e44c1ed2ea"
+                "reference": "b4a2ac39a00eef77c1da5fa3807e7ec54982dddd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/ae1ee1d4c8a5c571afc6e33e210297e44c1ed2ea",
-                "reference": "ae1ee1d4c8a5c571afc6e33e210297e44c1ed2ea",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/b4a2ac39a00eef77c1da5fa3807e7ec54982dddd",
+                "reference": "b4a2ac39a00eef77c1da5fa3807e7ec54982dddd",
                 "shasum": ""
             },
             "require": {
@@ -205,7 +205,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-05-14T21:08:08+00:00"
+            "time": "2018-05-16T18:29:09+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -2852,16 +2852,16 @@
         },
         {
             "name": "revolution/laravel-mastodon-api",
-            "version": "1.4.0",
+            "version": "1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kawax/laravel-mastodon-api.git",
-                "reference": "b7f73b5cfe0f89a79041f3503f071bf6bde437b5"
+                "reference": "5fd8083599174da4fe4d15e7386d670fe5f0099b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kawax/laravel-mastodon-api/zipball/b7f73b5cfe0f89a79041f3503f071bf6bde437b5",
-                "reference": "b7f73b5cfe0f89a79041f3503f071bf6bde437b5",
+                "url": "https://api.github.com/repos/kawax/laravel-mastodon-api/zipball/5fd8083599174da4fe4d15e7386d670fe5f0099b",
+                "reference": "5fd8083599174da4fe4d15e7386d670fe5f0099b",
                 "shasum": ""
             },
             "require": {
@@ -2871,6 +2871,7 @@
             },
             "require-dev": {
                 "mockery/mockery": "^1.0",
+                "orchestra/testbench": "~3.5",
                 "phpunit/phpunit": "6.*"
             },
             "type": "library",
@@ -2904,7 +2905,7 @@
                 "laravel",
                 "mastodon"
             ],
-            "time": "2017-11-11T09:00:27+00:00"
+            "time": "2018-05-17T06:29:25+00:00"
         },
         {
             "name": "revolution/socialite-mastodon",
@@ -4357,16 +4358,16 @@
         },
         {
             "name": "laravel/homestead",
-            "version": "v7.4.2",
+            "version": "v7.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/homestead.git",
-                "reference": "3c73add39c20e027e18e3a1269a99a48850c066e"
+                "reference": "860e3cde271e5af46f82c3308f018b1f258dd014"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/homestead/zipball/3c73add39c20e027e18e3a1269a99a48850c066e",
-                "reference": "3c73add39c20e027e18e3a1269a99a48850c066e",
+                "url": "https://api.github.com/repos/laravel/homestead/zipball/860e3cde271e5af46f82c3308f018b1f258dd014",
+                "reference": "860e3cde271e5af46f82c3308f018b1f258dd014",
                 "shasum": ""
             },
             "require": {
@@ -4403,7 +4404,7 @@
                 }
             ],
             "description": "A virtual machine for web artisans.",
-            "time": "2018-05-09T13:01:46+00:00"
+            "time": "2018-05-16T14:35:23+00:00"
         },
         {
             "name": "mockery/mockery",

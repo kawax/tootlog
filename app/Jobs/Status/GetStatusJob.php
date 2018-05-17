@@ -157,13 +157,12 @@ class GetStatusJob implements ShouldQueue
      */
     protected function get()
     {
-        return Mastodon::domain($this->account->server->domain)
-                       ->token($this->account->token)
-                       ->statuses(
-                           $this->account->account_id,
-                           40,
-                           $this->account->since_id
-                       );
+        return $this->account->mastodon()
+                             ->statuses(
+                                 $this->account->account_id,
+                                 40,
+                                 $this->account->since_id
+                             );
     }
 
     /**
