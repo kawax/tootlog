@@ -42,7 +42,7 @@ class Reblog extends Model
      */
     public function getNameAttribute(): ?string
     {
-        $name = empty($this->display_name) ? $this->username : $this->display_name;
+        $name = $this->display_name ?? $this->username ?? '';
 
         return $name;
     }
