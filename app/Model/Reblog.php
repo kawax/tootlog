@@ -38,9 +38,9 @@ class Reblog extends Model
     /**
      * 表示用の名前
      *
-     * @return string
+     * @return string|null
      */
-    public function getNameAttribute(): string
+    public function getNameAttribute(): ?string
     {
         $name = empty($this->display_name) ? $this->username : $this->display_name;
 
