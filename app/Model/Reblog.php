@@ -38,11 +38,11 @@ class Reblog extends Model
     /**
      * 表示用の名前
      *
-     * @return string|null
+     * @return string
      */
-    public function getNameAttribute(): ?string
+    public function getNameAttribute(): string
     {
-        $name = $this->display_name ?? $this->username ?? '';
+        $name = $this->display_name ?? '';
 
         return $name;
     }
