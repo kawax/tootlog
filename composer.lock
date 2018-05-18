@@ -129,16 +129,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.56.2",
+            "version": "3.56.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "b4a2ac39a00eef77c1da5fa3807e7ec54982dddd"
+                "reference": "20b60eafa13b8996d468558e86b14261de731e5f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/b4a2ac39a00eef77c1da5fa3807e7ec54982dddd",
-                "reference": "b4a2ac39a00eef77c1da5fa3807e7ec54982dddd",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/20b60eafa13b8996d468558e86b14261de731e5f",
+                "reference": "20b60eafa13b8996d468558e86b14261de731e5f",
                 "shasum": ""
             },
             "require": {
@@ -205,7 +205,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-05-16T18:29:09+00:00"
+            "time": "2018-05-17T21:37:37+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1710,16 +1710,16 @@
         },
         {
             "name": "laravel/tinker",
-            "version": "v1.0.6",
+            "version": "v1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/tinker.git",
-                "reference": "b22fe905fcefdffae76b011e27c7ac09e07e052b"
+                "reference": "e3086ee8cb1f54a39ae8dcb72d1c37d10128997d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/tinker/zipball/b22fe905fcefdffae76b011e27c7ac09e07e052b",
-                "reference": "b22fe905fcefdffae76b011e27c7ac09e07e052b",
+                "url": "https://api.github.com/repos/laravel/tinker/zipball/e3086ee8cb1f54a39ae8dcb72d1c37d10128997d",
+                "reference": "e3086ee8cb1f54a39ae8dcb72d1c37d10128997d",
                 "shasum": ""
             },
             "require": {
@@ -1769,7 +1769,7 @@
                 "laravel",
                 "psysh"
             ],
-            "time": "2018-04-16T12:10:37+00:00"
+            "time": "2018-05-17T13:42:07+00:00"
         },
         {
             "name": "laravelcollective/html",
