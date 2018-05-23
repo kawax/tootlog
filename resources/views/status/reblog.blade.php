@@ -31,7 +31,7 @@
                             data-target="#cw_{{ $status->id }}"
                             aria-expanded="false"
                             aria-controls="collapse">
-                        {!! $status->reblog->spoiler_text !!}
+                        {{ $status->reblog->spoiler_text }}
                     </button>
                     <div class="collapse" id="cw_{{ $status->id }}">
                         {!! $status->reblog->content !!}

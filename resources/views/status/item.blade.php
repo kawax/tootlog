@@ -26,7 +26,7 @@
                     @else
                         <details>
                             <summary class="btn btn-warning">
-                                {!! $status->spoiler_text !!}
+                                {{ $status->spoiler_text }}
                             </summary>
                             {!! $status->content !!}
                         </details>
