@@ -12,7 +12,7 @@
                 <div class="media-body ml-3">
                     <h4>
                         <a href="{{ $status->account->url }}" target="_blank"
-                           rel="nofollow noopener">{!! $status->name !!} </a>
+                           rel="nofollow noopener">{{ $status->name }} </a>
                         <small class="text-muted">
                             {{ $status->acct }}
                             @if($status->account->locked)

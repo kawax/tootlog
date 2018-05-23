@@ -18,7 +18,7 @@
             </div>
             <div class="media-body ml-3">
                 <h4 class="media-heading">
-                    <a href="{{ $status->reblog->account_url }}" target="_blank" rel="nofollow noopener">{!! $status->reblog->name !!}</a>
+                    <a href="{{ $status->reblog->account_url }}" target="_blank" rel="nofollow noopener">{{ $status->reblog->name }}</a>
                     <small>{{ $status->reblog->acct }}</small>
                 </h4>
 
