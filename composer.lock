@@ -129,16 +129,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.56.6",
+            "version": "3.57.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "9e4d40ca435d7bda7874e9b4e57b3a5de7c50c58"
+                "reference": "795332f5f3a81474e85653e62d1d7b306bd4eeae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/9e4d40ca435d7bda7874e9b4e57b3a5de7c50c58",
-                "reference": "9e4d40ca435d7bda7874e9b4e57b3a5de7c50c58",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/795332f5f3a81474e85653e62d1d7b306bd4eeae",
+                "reference": "795332f5f3a81474e85653e62d1d7b306bd4eeae",
                 "shasum": ""
             },
             "require": {
@@ -205,20 +205,20 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-05-22T22:08:15+00:00"
+            "time": "2018-05-25T21:34:30+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
-            "version": "v3.1.4",
+            "version": "v3.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-debugbar.git",
-                "reference": "7a91480cc6e597caed5117a3c5d685f06d35c5a1"
+                "reference": "d3cdca2ad6cc6e67735b4a63e7551c690a497f5f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/7a91480cc6e597caed5117a3c5d685f06d35c5a1",
-                "reference": "7a91480cc6e597caed5117a3c5d685f06d35c5a1",
+                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/d3cdca2ad6cc6e67735b4a63e7551c690a497f5f",
+                "reference": "d3cdca2ad6cc6e67735b4a63e7551c690a497f5f",
                 "shasum": ""
             },
             "require": {
@@ -273,7 +273,7 @@
                 "profiler",
                 "webprofiler"
             ],
-            "time": "2018-03-06T08:35:31+00:00"
+            "time": "2018-05-03T18:27:04+00:00"
         },
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -3073,7 +3073,7 @@
         },
         {
             "name": "symfony/class-loader",
-            "version": "v3.4.10",
+            "version": "v3.4.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/class-loader.git",
@@ -3129,7 +3129,7 @@
         },
         {
             "name": "symfony/console",
-            "version": "v4.0.10",
+            "version": "v4.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
@@ -3197,7 +3197,7 @@
         },
         {
             "name": "symfony/css-selector",
-            "version": "v4.0.10",
+            "version": "v4.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
@@ -3250,7 +3250,7 @@
         },
         {
             "name": "symfony/debug",
-            "version": "v4.0.10",
+            "version": "v4.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
@@ -3306,7 +3306,7 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v4.0.10",
+            "version": "v4.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
@@ -3369,7 +3369,7 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v4.0.10",
+            "version": "v4.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
@@ -3418,16 +3418,16 @@
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v4.0.10",
+            "version": "v4.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "39f2b7c681fa6c323e43b8e30ccb6e714e7d2f00"
+                "reference": "277b757a2d3960170d99d372e171a8a18916467a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/39f2b7c681fa6c323e43b8e30ccb6e714e7d2f00",
-                "reference": "39f2b7c681fa6c323e43b8e30ccb6e714e7d2f00",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/277b757a2d3960170d99d372e171a8a18916467a",
+                "reference": "277b757a2d3960170d99d372e171a8a18916467a",
                 "shasum": ""
             },
             "require": {
@@ -3467,20 +3467,20 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2018-05-16T09:05:32+00:00"
+            "time": "2018-05-25T11:08:56+00:00"
         },
         {
             "name": "symfony/http-kernel",
-            "version": "v4.0.10",
+            "version": "v4.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "aeae9c66976daf8a33c7be7c5e6314b39092b1b0"
+                "reference": "450a1bda817f2dce25a9e13f0f011336743f2a48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/aeae9c66976daf8a33c7be7c5e6314b39092b1b0",
-                "reference": "aeae9c66976daf8a33c7be7c5e6314b39092b1b0",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/450a1bda817f2dce25a9e13f0f011336743f2a48",
+                "reference": "450a1bda817f2dce25a9e13f0f011336743f2a48",
                 "shasum": ""
             },
             "require": {
@@ -3554,7 +3554,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2018-05-21T14:02:31+00:00"
+            "time": "2018-05-25T13:32:52+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -3727,7 +3727,7 @@
         },
         {
             "name": "symfony/process",
-            "version": "v4.0.10",
+            "version": "v4.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
@@ -3776,7 +3776,7 @@
         },
         {
             "name": "symfony/routing",
-            "version": "v4.0.10",
+            "version": "v4.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/routing.git",
@@ -3854,7 +3854,7 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v4.0.10",
+            "version": "v4.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
@@ -3922,7 +3922,7 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v4.0.10",
+            "version": "v4.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
@@ -4042,12 +4042,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kawax/laravel-http2-server-push.git",
-                "reference": "71450921b562e57c714c1b0ce89e025cb37fe8ae"
+                "reference": "7ad38a18329e54034f395da21df49417913ca1d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kawax/laravel-http2-server-push/zipball/71450921b562e57c714c1b0ce89e025cb37fe8ae",
-                "reference": "71450921b562e57c714c1b0ce89e025cb37fe8ae",
+                "url": "https://api.github.com/repos/kawax/laravel-http2-server-push/zipball/7ad38a18329e54034f395da21df49417913ca1d7",
+                "reference": "7ad38a18329e54034f395da21df49417913ca1d7",
                 "shasum": ""
             },
             "require": {
@@ -4092,22 +4092,22 @@
             ],
             "description": "A middleware package for Laravel 5 to enable server push for your script, style, and image assets.",
             "support": {
-                "source": "https://github.com/kawax/laravel-http2-server-push/tree/dev"
+                "source": "https://github.com/kawax/laravel-http2-server-push/tree/patch"
             },
-            "time": "2018-04-28T12:23:55+00:00"
+            "time": "2018-05-27T03:58:13+00:00"
         },
         {
             "name": "torann/json-ld",
-            "version": "0.0.11",
+            "version": "0.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Torann/json-ld.git",
-                "reference": "36fa7fa53c14e6e4d5ffea15f9d550c204c3403e"
+                "reference": "6eb23818946b30772cc68b906aae4ecf369ec7f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Torann/json-ld/zipball/36fa7fa53c14e6e4d5ffea15f9d550c204c3403e",
-                "reference": "36fa7fa53c14e6e4d5ffea15f9d550c204c3403e",
+                "url": "https://api.github.com/repos/Torann/json-ld/zipball/6eb23818946b30772cc68b906aae4ecf369ec7f9",
+                "reference": "6eb23818946b30772cc68b906aae4ecf369ec7f9",
                 "shasum": ""
             },
             "require": {
@@ -4145,7 +4145,7 @@
                 "schema",
                 "structured-data"
             ],
-            "time": "2018-02-01T19:55:55+00:00"
+            "time": "2018-05-24T14:57:16+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -4414,16 +4414,16 @@
         },
         {
             "name": "laravel/homestead",
-            "version": "v7.6.0",
+            "version": "v7.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/homestead.git",
-                "reference": "860e3cde271e5af46f82c3308f018b1f258dd014"
+                "reference": "848a4f6abbb3ac64c84691867d30d5f6f765889c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/homestead/zipball/860e3cde271e5af46f82c3308f018b1f258dd014",
-                "reference": "860e3cde271e5af46f82c3308f018b1f258dd014",
+                "url": "https://api.github.com/repos/laravel/homestead/zipball/848a4f6abbb3ac64c84691867d30d5f6f765889c",
+                "reference": "848a4f6abbb3ac64c84691867d30d5f6f765889c",
                 "shasum": ""
             },
             "require": {
@@ -4460,7 +4460,7 @@
                 }
             ],
             "description": "A virtual machine for web artisans.",
-            "time": "2018-05-16T14:35:23+00:00"
+            "time": "2018-05-26T14:25:04+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -5952,7 +5952,7 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v4.0.10",
+            "version": "v4.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
