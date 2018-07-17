@@ -129,16 +129,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.63.1",
+            "version": "3.63.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "d67dc8846739f4a1f93f25ce5d5cbfb3a555530d"
+                "reference": "ee02c24ba420d971c6e3c204e8fec5c9e3c9bd8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/d67dc8846739f4a1f93f25ce5d5cbfb3a555530d",
-                "reference": "d67dc8846739f4a1f93f25ce5d5cbfb3a555530d",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/ee02c24ba420d971c6e3c204e8fec5c9e3c9bd8d",
+                "reference": "ee02c24ba420d971c6e3c204e8fec5c9e3c9bd8d",
                 "shasum": ""
             },
             "require": {
@@ -205,7 +205,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-07-13T21:46:58+00:00"
+            "time": "2018-07-17T15:31:13+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1311,16 +1311,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.6.27",
+            "version": "v5.6.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "2fe661f2444410a576aa40054ad9b7fe0bb5cee5"
+                "reference": "40ba2ee0e61cb4bc3c9f1dab04908e6acf06b86f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/2fe661f2444410a576aa40054ad9b7fe0bb5cee5",
-                "reference": "2fe661f2444410a576aa40054ad9b7fe0bb5cee5",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/40ba2ee0e61cb4bc3c9f1dab04908e6acf06b86f",
+                "reference": "40ba2ee0e61cb4bc3c9f1dab04908e6acf06b86f",
                 "shasum": ""
             },
             "require": {
@@ -1446,7 +1446,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2018-07-10T13:47:01+00:00"
+            "time": "2018-07-17T14:15:36+00:00"
         },
         {
             "name": "laravel/horizon",
@@ -2668,16 +2668,16 @@
         },
         {
             "name": "rap2hpoutre/laravel-log-viewer",
-            "version": "v0.18.0",
+            "version": "v0.19.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rap2hpoutre/laravel-log-viewer.git",
-                "reference": "41b91a1058fa779982a9a21c6a29537699e50d82"
+                "reference": "3790892b2b912e7ebaf9ce9868bbe93d542309c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rap2hpoutre/laravel-log-viewer/zipball/41b91a1058fa779982a9a21c6a29537699e50d82",
-                "reference": "41b91a1058fa779982a9a21c6a29537699e50d82",
+                "url": "https://api.github.com/repos/rap2hpoutre/laravel-log-viewer/zipball/3790892b2b912e7ebaf9ce9868bbe93d542309c7",
+                "reference": "3790892b2b912e7ebaf9ce9868bbe93d542309c7",
                 "shasum": ""
             },
             "require": {
@@ -2719,7 +2719,7 @@
                 "logging",
                 "lumen"
             ],
-            "time": "2018-07-16T09:18:23+00:00"
+            "time": "2018-07-17T21:31:45+00:00"
         },
         {
             "name": "revolution/laravel-mastodon-api",
