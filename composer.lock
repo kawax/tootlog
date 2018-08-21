@@ -129,16 +129,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.64.15",
+            "version": "3.65.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "22ad993c1ed7a85d660768d30d773babbc7d38bd"
+                "reference": "0daae6292e8355156a9be73bc1cc4dd7075cac0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/22ad993c1ed7a85d660768d30d773babbc7d38bd",
-                "reference": "22ad993c1ed7a85d660768d30d773babbc7d38bd",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/0daae6292e8355156a9be73bc1cc4dd7075cac0d",
+                "reference": "0daae6292e8355156a9be73bc1cc4dd7075cac0d",
                 "shasum": ""
             },
             "require": {
@@ -205,7 +205,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-08-17T20:48:05+00:00"
+            "time": "2018-08-20T20:24:35+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -2669,16 +2669,16 @@
         },
         {
             "name": "rap2hpoutre/laravel-log-viewer",
-            "version": "v0.19.1",
+            "version": "v0.20.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rap2hpoutre/laravel-log-viewer.git",
-                "reference": "3790892b2b912e7ebaf9ce9868bbe93d542309c7"
+                "reference": "201db49dac4c8dc359c4ceea86d2a2dc4097142f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rap2hpoutre/laravel-log-viewer/zipball/3790892b2b912e7ebaf9ce9868bbe93d542309c7",
-                "reference": "3790892b2b912e7ebaf9ce9868bbe93d542309c7",
+                "url": "https://api.github.com/repos/rap2hpoutre/laravel-log-viewer/zipball/201db49dac4c8dc359c4ceea86d2a2dc4097142f",
+                "reference": "201db49dac4c8dc359c4ceea86d2a2dc4097142f",
                 "shasum": ""
             },
             "require": {
@@ -2720,7 +2720,7 @@
                 "logging",
                 "lumen"
             ],
-            "time": "2018-07-17T21:31:45+00:00"
+            "time": "2018-08-18T02:18:50+00:00"
         },
         {
             "name": "revolution/laravel-mastodon-api",
@@ -4300,16 +4300,16 @@
         },
         {
             "name": "laravel/homestead",
-            "version": "v7.14.2",
+            "version": "v7.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/homestead.git",
-                "reference": "59dfd90d59891d49b1024ad6d84b9c3c1d920bf3"
+                "reference": "e682ec04c2c618776fbfa103b5ecec6063a7f244"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/homestead/zipball/59dfd90d59891d49b1024ad6d84b9c3c1d920bf3",
-                "reference": "59dfd90d59891d49b1024ad6d84b9c3c1d920bf3",
+                "url": "https://api.github.com/repos/laravel/homestead/zipball/e682ec04c2c618776fbfa103b5ecec6063a7f244",
+                "reference": "e682ec04c2c618776fbfa103b5ecec6063a7f244",
                 "shasum": ""
             },
             "require": {
@@ -4347,7 +4347,7 @@
                 }
             ],
             "description": "A virtual machine for web artisans.",
-            "time": "2018-08-01T12:36:07+00:00"
+            "time": "2018-08-20T18:43:30+00:00"
         },
         {
             "name": "mockery/mockery",
