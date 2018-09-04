@@ -32,7 +32,7 @@
     "rap2hpoutre/laravel-log-viewer": "0.*",
     "revolution/laravel-mastodon-api": "^1.0",
     "revolution/socialite-mastodon": "^1.0",
-    "roumen/sitemap": "^2.6",
+    "laravelium/sitemap": "^2.8",
     "tomschlick/laravel-http2-server-push": "dev-patch",
     "torann/json-ld": "~0.0.11"
   },
