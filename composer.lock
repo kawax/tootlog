@@ -129,16 +129,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.67.5",
+            "version": "3.67.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "fa7689ba2865e9e00ac44efefc2c3f2ea8424c63"
+                "reference": "b74a9e68b44f25215093b3fd480ee6cf3657e9df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/fa7689ba2865e9e00ac44efefc2c3f2ea8424c63",
-                "reference": "fa7689ba2865e9e00ac44efefc2c3f2ea8424c63",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/b74a9e68b44f25215093b3fd480ee6cf3657e9df",
+                "reference": "b74a9e68b44f25215093b3fd480ee6cf3657e9df",
                 "shasum": ""
             },
             "require": {
@@ -205,7 +205,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-09-04T21:04:34+00:00"
+            "time": "2018-09-07T20:09:11+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -277,16 +277,16 @@
         },
         {
             "name": "barryvdh/laravel-ide-helper",
-            "version": "v2.5.0",
+            "version": "v2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-ide-helper.git",
-                "reference": "09db8c9a76711e98c61af0795934fb15955223fb"
+                "reference": "7db1843473e1562d8e0490b51db847d3a1415140"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/09db8c9a76711e98c61af0795934fb15955223fb",
-                "reference": "09db8c9a76711e98c61af0795934fb15955223fb",
+                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/7db1843473e1562d8e0490b51db847d3a1415140",
+                "reference": "7db1843473e1562d8e0490b51db847d3a1415140",
                 "shasum": ""
             },
             "require": {
@@ -347,7 +347,7 @@
                 "phpstorm",
                 "sublime"
             ],
-            "time": "2018-08-31T13:28:09+00:00"
+            "time": "2018-09-06T18:41:09+00:00"
         },
         {
             "name": "barryvdh/reflection-docblock",
@@ -1821,16 +1821,16 @@
         },
         {
             "name": "laravel/horizon",
-            "version": "v1.3.1",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "342c4ddf6dda7c7ed21e57566f202b96e28afb6b"
+                "reference": "0fb52858974e08e26fc214441a90aec652bc1204"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/342c4ddf6dda7c7ed21e57566f202b96e28afb6b",
-                "reference": "342c4ddf6dda7c7ed21e57566f202b96e28afb6b",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/0fb52858974e08e26fc214441a90aec652bc1204",
+                "reference": "0fb52858974e08e26fc214441a90aec652bc1204",
                 "shasum": ""
             },
             "require": {
@@ -1885,7 +1885,7 @@
                 "laravel",
                 "queue"
             ],
-            "time": "2018-06-21T09:19:40+00:00"
+            "time": "2018-09-07T11:08:22+00:00"
         },
         {
             "name": "laravel/socialite",
@@ -2945,16 +2945,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.9.7",
+            "version": "v0.9.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "4f5b6c090948773a8bfeea6a0f07ab7d0b24e932"
+                "reference": "ed3c32c4304e1a678a6e0f9dc11dd2d927d89555"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/4f5b6c090948773a8bfeea6a0f07ab7d0b24e932",
-                "reference": "4f5b6c090948773a8bfeea6a0f07ab7d0b24e932",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/ed3c32c4304e1a678a6e0f9dc11dd2d927d89555",
+                "reference": "ed3c32c4304e1a678a6e0f9dc11dd2d927d89555",
                 "shasum": ""
             },
             "require": {
@@ -3015,7 +3015,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2018-08-11T15:54:43+00:00"
+            "time": "2018-09-05T11:40:09+00:00"
         },
         {
             "name": "ramsey/uuid",
@@ -3101,21 +3101,25 @@
         },
         {
             "name": "rap2hpoutre/laravel-log-viewer",
-            "version": "v0.21.0",
+            "version": "v0.22.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rap2hpoutre/laravel-log-viewer.git",
-                "reference": "253dfd468708de8130a08d1d7ba160df88cbce8a"
+                "reference": "748a3e283a891f911b8d7e4e9f6e6fde9a4dd6ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rap2hpoutre/laravel-log-viewer/zipball/253dfd468708de8130a08d1d7ba160df88cbce8a",
-                "reference": "253dfd468708de8130a08d1d7ba160df88cbce8a",
+                "url": "https://api.github.com/repos/rap2hpoutre/laravel-log-viewer/zipball/748a3e283a891f911b8d7e4e9f6e6fde9a4dd6ff",
+                "reference": "748a3e283a891f911b8d7e4e9f6e6fde9a4dd6ff",
                 "shasum": ""
             },
             "require": {
                 "illuminate/support": "4.2.*|5.*",
                 "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.6",
+                "phpunit/phpunit": "^7"
             },
             "type": "laravel-package",
             "extra": {
@@ -3152,7 +3156,7 @@
                 "logging",
                 "lumen"
             ],
-            "time": "2018-08-21T21:58:49+00:00"
+            "time": "2018-09-05T23:00:16+00:00"
         },
         {
             "name": "revolution/laravel-mastodon-api",
@@ -4391,18 +4395,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kawax/laravel-http2-server-push.git",
-                "reference": "7ad38a18329e54034f395da21df49417913ca1d7"
+                "reference": "5849ba481afcb34d941f34d40670adbdedac1ce8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kawax/laravel-http2-server-push/zipball/7ad38a18329e54034f395da21df49417913ca1d7",
-                "reference": "7ad38a18329e54034f395da21df49417913ca1d7",
+                "url": "https://api.github.com/repos/kawax/laravel-http2-server-push/zipball/5849ba481afcb34d941f34d40670adbdedac1ce8",
+                "reference": "5849ba481afcb34d941f34d40670adbdedac1ce8",
                 "shasum": ""
             },
             "require": {
-                "illuminate/contracts": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*",
-                "illuminate/http": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*",
-                "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*",
+                "illuminate/contracts": "^5.5",
+                "illuminate/http": "^5.5",
+                "illuminate/support": "^5.5",
                 "php": ">=7.0"
             },
             "require-dev": {
@@ -4443,7 +4447,7 @@
             "support": {
                 "source": "https://github.com/kawax/laravel-http2-server-push/tree/patch"
             },
-            "time": "2018-05-27T03:58:13+00:00"
+            "time": "2018-09-05T01:32:52+00:00"
         },
         {
             "name": "torann/json-ld",
@@ -5607,16 +5611,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "7.3.3",
+            "version": "7.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "1bd5629cccfb2c0a9ef5474b4ff772349e1ec898"
+                "reference": "7b331efabbb628c518c408fdfcaf571156775de2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/1bd5629cccfb2c0a9ef5474b4ff772349e1ec898",
-                "reference": "1bd5629cccfb2c0a9ef5474b4ff772349e1ec898",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/7b331efabbb628c518c408fdfcaf571156775de2",
+                "reference": "7b331efabbb628c518c408fdfcaf571156775de2",
                 "shasum": ""
             },
             "require": {
@@ -5687,7 +5691,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-09-01T15:49:55+00:00"
+            "time": "2018-09-08T15:14:29+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
