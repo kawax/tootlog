@@ -4,8 +4,9 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
+
+use Illuminate\Foundation\Testing\RefreshDatabase;
+
 use App\Repository\Status\EloquentStatusRepository as StatusRepository;
 use App\Repository\Account\EloquentAccountRepository as AccountRepository;
 
@@ -20,7 +21,7 @@ use Illuminate\Support\Facades\Bus;
 
 class ArtisanTest extends TestCase
 {
-    use DatabaseMigrations;
+    use RefreshDatabase;
 
     /**
      * @var User
@@ -36,11 +37,6 @@ class ArtisanTest extends TestCase
      * @var Account
      */
     protected $account;
-
-    /**
-     * @var Status
-     */
-    protected $statuses;
 
     /**
      * @var StatusRepository

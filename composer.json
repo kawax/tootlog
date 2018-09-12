@@ -23,16 +23,16 @@
     "cakephp/chronos": "^1.1",
     "doctrine/dbal": "~2.3",
     "fideloper/proxy": "~4.0",
-    "laravel/framework": "5.6.*",
+    "laravel/framework": "5.7.*",
     "laravel/horizon": "^1.0",
     "laravel/tinker": "~1.0",
-    "laravelcollective/html": "^5.6",
+    "laravelcollective/html": "^5.7",
     "league/csv": "^9.0",
     "predis/predis": "^1.1",
     "rap2hpoutre/laravel-log-viewer": "0.*",
     "revolution/laravel-mastodon-api": "^1.0",
     "revolution/socialite-mastodon": "^1.0",
-    "laravelium/sitemap": "^2.8",
+    "laravelium/sitemap": "^3.0",
     "tomschlick/laravel-http2-server-push": "dev-patch",
     "torann/json-ld": "~0.0.11"
   },
@@ -43,6 +43,7 @@
     "laravel/homestead": "^7.0",
     "mockery/mockery": "^1.0",
     "phpunit/phpunit": "~7.0",
+    "beyondcode/laravel-dump-server": "^1.0",
     "pda/pheanstalk": "^3.1"
   },
   "autoload": {

@@ -4,8 +4,8 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
+
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 use Mockery as m;
 
@@ -30,7 +30,7 @@ use Illuminate\Support\Facades\Bus;
 
 class OAuthTest extends TestCase
 {
-    use DatabaseMigrations;
+    use RefreshDatabase;
 
     /**
      * @var User

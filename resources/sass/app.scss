@@ -15,9 +15,9 @@
 @import "variables";
 
 // Bootstrap
-@import "~bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
-@import "~font-awesome/scss/font-awesome";
+@import "../../node_modules/font-awesome/scss/font-awesome";
 
 $font-family-sans-serif: "Raleway", "Noto Sans", "Noto Sans CJK JP",
 -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI",
