@@ -129,16 +129,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.67.18",
+            "version": "3.67.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "590d47c6f2b07d665737e02ef3b6cee3155e12a8"
+                "reference": "6c8bc0f42ba73bab85da67c3af9131e455c3f14c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/590d47c6f2b07d665737e02ef3b6cee3155e12a8",
-                "reference": "590d47c6f2b07d665737e02ef3b6cee3155e12a8",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/6c8bc0f42ba73bab85da67c3af9131e455c3f14c",
+                "reference": "6c8bc0f42ba73bab85da67c3af9131e455c3f14c",
                 "shasum": ""
             },
             "require": {
@@ -205,7 +205,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-09-24T21:19:19+00:00"
+            "time": "2018-09-26T20:06:30+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1191,16 +1191,16 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "2.1.5",
+            "version": "2.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "54859fabea8b3beecbb1a282888d5c990036b9e3"
+                "reference": "0578b32b30b22de3e8664f797cf846fc9246f786"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/54859fabea8b3beecbb1a282888d5c990036b9e3",
-                "reference": "54859fabea8b3beecbb1a282888d5c990036b9e3",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/0578b32b30b22de3e8664f797cf846fc9246f786",
+                "reference": "0578b32b30b22de3e8664f797cf846fc9246f786",
                 "shasum": ""
             },
             "require": {
@@ -1244,7 +1244,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2018-08-16T20:49:45+00:00"
+            "time": "2018-09-25T20:47:26+00:00"
         },
         {
             "name": "erusev/parsedown",
@@ -1682,16 +1682,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.7.5",
+            "version": "v5.7.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "ddb87a87471b452456fbbe1365e1b9ae55483515"
+                "reference": "93e761bb5367166ce98ba908d5eb0edd6be76792"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/ddb87a87471b452456fbbe1365e1b9ae55483515",
-                "reference": "ddb87a87471b452456fbbe1365e1b9ae55483515",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/93e761bb5367166ce98ba908d5eb0edd6be76792",
+                "reference": "93e761bb5367166ce98ba908d5eb0edd6be76792",
                 "shasum": ""
             },
             "require": {
@@ -1819,7 +1819,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2018-09-20T14:03:45+00:00"
+            "time": "2018-09-25T14:29:00+00:00"
         },
         {
             "name": "laravel/horizon",
