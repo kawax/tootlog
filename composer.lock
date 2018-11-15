@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0dd1c063c7c6d029356e2612ba821ef6",
+    "content-hash": "3526960d16015cfd632750127d45f6fc",
     "packages": [
         {
             "name": "appstract/laravel-blade-directives",
@@ -129,16 +129,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.71.4",
+            "version": "3.71.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "18f0f1c2224610b473c80690f0df0bac116da957"
+                "reference": "59e2efc13ce4c8d58351cda27696c16e15662f8c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/18f0f1c2224610b473c80690f0df0bac116da957",
-                "reference": "18f0f1c2224610b473c80690f0df0bac116da957",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/59e2efc13ce4c8d58351cda27696c16e15662f8c",
+                "reference": "59e2efc13ce4c8d58351cda27696c16e15662f8c",
                 "shasum": ""
             },
             "require": {
@@ -208,7 +208,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-11-12T22:58:19+00:00"
+            "time": "2018-11-14T22:36:13+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -2559,16 +2559,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.34.2",
+            "version": "1.35.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "6689b51b1dd5b1471c0f2c6df426037824114acc"
+                "reference": "5c05a2be472b22f63291d192410df9f0e0de3b19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/6689b51b1dd5b1471c0f2c6df426037824114acc",
-                "reference": "6689b51b1dd5b1471c0f2c6df426037824114acc",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/5c05a2be472b22f63291d192410df9f0e0de3b19",
+                "reference": "5c05a2be472b22f63291d192410df9f0e0de3b19",
                 "shasum": ""
             },
             "require": {
@@ -2613,7 +2613,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-11-12T22:45:42+00:00"
+            "time": "2018-11-14T21:55:58+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -4952,16 +4952,16 @@
         },
         {
             "name": "laravel/telescope",
-            "version": "v0.1.8",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/telescope.git",
-                "reference": "96e23e08c5de5748b7ea38573da13b3a1f3fc141"
+                "reference": "1d43752cb2ec59906869fa14391329b291c5e8ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/telescope/zipball/96e23e08c5de5748b7ea38573da13b3a1f3fc141",
-                "reference": "96e23e08c5de5748b7ea38573da13b3a1f3fc141",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/1d43752cb2ec59906869fa14391329b291c5e8ec",
+                "reference": "1d43752cb2ec59906869fa14391329b291c5e8ec",
                 "shasum": ""
             },
             "require": {
@@ -5011,7 +5011,7 @@
                 "laravel",
                 "monitoring"
             ],
-            "time": "2018-11-09T14:19:41+00:00"
+            "time": "2018-11-14T14:46:50+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -5859,16 +5859,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "7.4.3",
+            "version": "7.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "c151651fb6ed264038d486ea262e243af72e5e64"
+                "reference": "b1be2c8530c4c29c3519a052c9fb6cee55053bbd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c151651fb6ed264038d486ea262e243af72e5e64",
-                "reference": "c151651fb6ed264038d486ea262e243af72e5e64",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/b1be2c8530c4c29c3519a052c9fb6cee55053bbd",
+                "reference": "b1be2c8530c4c29c3519a052c9fb6cee55053bbd",
                 "shasum": ""
             },
             "require": {
@@ -5939,7 +5939,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-10-23T05:57:41+00:00"
+            "time": "2018-11-14T16:52:02+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
