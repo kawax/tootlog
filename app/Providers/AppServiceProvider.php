@@ -26,10 +26,6 @@ class AppServiceProvider extends ServiceProvider
         \Mastodon::macro('instance', function () {
             return $this->get('/instance');
         });
-
-        if ($this->app->environment('local')) {
-            $this->app->register(TelescopeServiceProvider::class);
-        }
     }
 
     /**
@@ -39,6 +35,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        if ($this->app->isLocal()) {
+            $this->app->register(TelescopeServiceProvider::class);
+        }
     }
 }
