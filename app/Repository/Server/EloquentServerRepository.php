@@ -40,19 +40,27 @@ class EloquentServerRepository implements ServerRepositoryInterface
 
         if ($this->has($domain)) {
             $server = $this->get($domain);
-        } else {
-            $client_name = config('app.name');
-            $redirect_uris = config('services.mastodon.redirect');
-            $scopes = implode(' ', config('services.mastodon.scope'));
 
-            $info = Mastodon::domain($domain)
-                            ->createApp($client_name, $redirect_uris, $scopes);
-
-            $info['app_id'] = $info['id'];
-            $info['domain'] = $domain;
-
-            $server = $this->create($info);
+            //redirect_uriが旧ドメインの場合はAppを作り直す。
+            if (!str_start($server->redirect_uri, 'https://tootlog.com/')) {
+                return $server->toArray();
+            }
         }
+
+        $client_name = config('app.name');
+        $redirect_uris = config('services.mastodon.redirect');
+        $scopes = implode(' ', config('services.mastodon.scope'));
+
+        $info = Mastodon::domain($domain)
+                        ->createApp($client_name, $redirect_uris, $scopes, config('app.url'));
+
+        $info['app_id'] = $info['id'];
+        $info['domain'] = $domain;
+
+        $server = Server::updateOrCreate(
+            ['domain' => $domain],
+            $info
+        );
 
         return $server->toArray();
     }
