@@ -108,8 +108,8 @@
 
                         <p>&nbsp;</p>
 
-                        <p><code>https://tootlog.com/@{user}</code>が公開用URLなので人に教える時はこれを教えます。<br/>
-                            例：<a class="uri" href="https://tootlog.com/@tootlog">https://tootlog.com/@tootlog</a></p>
+                        <p><code>https://tootlog.net/@{user}</code>が公開用URLなので人に教える時はこれを教えます。<br/>
+                            例：<a class="uri" href="{{ url('/@tootlog') }}">{{ url('/@tootlog') }}</a></p>
 
                         <h2>よくあるかもしれない質問</h2>
 
@@ -123,7 +123,7 @@
 
                         <p>ここでメールアドレスを入力すれば再発行のためのメールが送信されます。<br/>
                             <a class="uri"
-                               href="https://tootlog.com/password/reset">https://tootlog.com/password/reset</a></p>
+                               href="{{ url('/password/reset') }}">{{ url('/password/reset') }}</a></p>
 
                         <p>
                             <img alt=""
@@ -135,7 +135,7 @@
                         <h3>フォントが細くて読みにくい</h3>
 
                         <p>ユーザー設定からノーマルなフォントに変更できます。<br/>
-                            <a class="uri" href="https://tootlog.com/preferences">https://tootlog.com/preferences</a>
+                            <a class="uri" href="{{ url('/preferences') }}">{{ url('/preferences') }}</a>
                         </p>
 
                         <p>
