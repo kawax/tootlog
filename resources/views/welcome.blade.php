@@ -46,7 +46,7 @@
                 <h2>Sample</h2>
                 <div class="card">
                     <div class="card-body">
-                        <a href="https://tootlog.com/@tootlog">https://tootlog.com/@tootlog</a>
+                        <a href="https://tootlog.net/@tootlog">https://tootlog.net/@tootlog</a>
                     </div>
                 </div>
             </div>

@@ -1,2 +1,2 @@
 Thanks.
-https://tootlog.com/
+https://tootlog.net/
