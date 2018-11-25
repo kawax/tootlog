@@ -1,5 +1,5 @@
 // Fonts
-@import url(//fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url(//fonts.googleapis.com/css?family=Nunito:200,600);
 
 @font-face {
   font-family: "Noto Sans CJK JP";
@@ -19,7 +19,7 @@
 
 @import "../../node_modules/font-awesome/scss/font-awesome";
 
-$font-family-sans-serif: "Raleway", "Noto Sans", "Noto Sans CJK JP",
+$font-family-sans-serif: "Nunito", "Noto Sans", "Noto Sans CJK JP",
 -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI",
 "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
 

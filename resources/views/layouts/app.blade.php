@@ -19,7 +19,7 @@
 
     <meta name="google-site-verification" content="AjfwegofAkFuyDlrRBsMo8k4y6rpfEri5Qjd7uz3PbQ">
 </head>
-<body class="theme-{{ auth()->user()->theme ?? 'normal' }}">
+<body class="theme-{{ auth()->user()->theme ?? 'thin' }}">
 <div id="app">
     <nav class="navbar navbar-expand-lg navbar-light navbar-laravel bg-white border-bottom navbar-static-top mb-2">
         <a class="navbar-brand" href="{{ url('/') }}">

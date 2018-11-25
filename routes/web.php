@@ -16,9 +16,9 @@
 //});
 
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
-Route::middleware('auth')->namespace('Home')->group(function () {
+Route::middleware(['auth'])->namespace('Home')->group(function () {
     Route::name('accounts.add')->post('accounts', 'AccountController@redirect');
     Route::get('accounts/callback', 'AccountController@callback');
 
@@ -28,7 +28,7 @@ Route::middleware('auth')->namespace('Home')->group(function () {
     Route::name('preferences.index')->get('preferences', 'PreferencesController@index');
     Route::name('preferences.update')->post('preferences', 'PreferencesController@update');
 
-    Route::name('export.csv')->post('export/csv', 'ExportController@csv');
+    Route::name('export.csv')->post('export/csv', 'ExportController@csv')->middleware('verified');
 
     Route::name('home')->get('home', 'HomeController@index');
 });
@@ -36,8 +36,6 @@ Route::middleware('auth')->namespace('Home')->group(function () {
 Route::middleware('auth')->namespace('Api')->prefix('api')->group(function () {
     Route::delete('status/hide/{status}', 'StatusController@hide');
     Route::put('status/show/{status}', 'StatusController@show');
-
-    Route::get('accounts', 'AccountController@index');
 });
 
 

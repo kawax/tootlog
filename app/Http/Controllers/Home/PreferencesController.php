@@ -27,11 +27,15 @@ class PreferencesController extends Controller
     {
         $user = $request->user();
 
-        $user->update($request->only([
+        if ($user->email !== $request->email) {
+            $user->email_verified_at = null;
+        }
+
+        $user->fill($request->only([
             'email',
             'theme',
             'special_key',
-        ]));
+        ]))->save();
 
         return view('prefs.index');
     }
