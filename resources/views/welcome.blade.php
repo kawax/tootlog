@@ -36,7 +36,7 @@
 
                 <div class="card mb-2">
                     <div class="card-header">
-                       Add Mastodon Account
+                        Add Mastodon Account
                     </div>
                     <div class="card-body">
                         Enter Mastodon instance's url. Authorize by OAuth.

@@ -25,8 +25,6 @@
                                  width="800">
                         </p>
 
-                        <p>&nbsp;</p>
-
                         <ul>
                             <li>Name: ユーザー名。英数字と<code>_</code> <code>-</code>のみ使用可。URLの一部なので後から変更できません。</li>
                             <li>E-Mail Address: メール(Gmail推奨)</li>
