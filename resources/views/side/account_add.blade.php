@@ -12,12 +12,13 @@
 
         <div class="form-group row{{ $errors->has('domain') ? ' has-error' : '' }}">
             {{ Form::label('domain', 'URL', ['class' => 'col-sm-3 col-form-label']) }}
-            <div class="col-sm-9">
+            <div class="input-group col-sm-9">
                 {{ Form::text('domain', '', ['placeholder' => 'https://', 'class' => 'form-control']) }}
+                <div class="input-group-append">
+                    {{ Form::submit('Add', ['class' => 'btn btn-primary']) }}
+                </div>
             </div>
         </div>
-
-        {{ Form::submit('Add!', ['class' => 'btn btn-primary btn-block']) }}
 
         {{ Form::close() }}
     </div>
