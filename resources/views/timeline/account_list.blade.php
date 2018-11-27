@@ -8,13 +8,13 @@
                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
 
                     @if($account->fails >= config('tootlog.account_fails'))
-                        <i class="fa fa-ban text-danger" aria-hidden="true"></i>
+                        <i class="fa fa-ban fa-2x text-danger mr-1" aria-hidden="true"></i>
+                        <del>{{ $account->acct }}</del>
                     @else
                         <img src="{{ $account->favicon }}" width="{{ config('tootlog.favicon_size') }}"
                              class="rounded-circle mr-1" alt="favicon">
+                        {{ $account->acct }}
                     @endif
-
-                    {{ $account->acct }}
 
                     @if($account->locked)
                         <i class="fa fa-lock ml-1" aria-hidden="true"></i>
