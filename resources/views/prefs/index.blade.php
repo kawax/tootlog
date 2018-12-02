@@ -12,7 +12,11 @@
                             {{ csrf_field() }}
 
                             <div class="form-group row{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <label for="email" class="col-md-4 col-form-label">E-Mail Address</label>
+                                <label for="email" class="col-md-4 col-form-label">E-Mail Address
+                                    @if(request()->user()->hasVerifiedEmail())
+                                        <span class="badge badge-pill badge-success">Verified</span>
+                                    @endif
+                                </label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email"
@@ -24,6 +28,8 @@
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                     @endif
+
+
                                 </div>
                             </div>
 
@@ -52,7 +58,8 @@
                                            class="form-control" name="special_key"
                                            value="{{ request()->user()->special_key }}">
                                     <span class="text-muted">
-                                        Get key from <a href="https://www.pixiv.net/fanbox/creator/762638" target="_blank" rel="noopener">pixiv FANBOX</a>.
+                                        Get key from <a href="https://www.pixiv.net/fanbox/creator/762638"
+                                                        target="_blank" rel="noopener">pixiv FANBOX</a>.
                                     </span>
 
                                     @if ($errors->has('special_key'))
