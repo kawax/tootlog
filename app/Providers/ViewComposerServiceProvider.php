@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\View;
 
 class ViewComposerServiceProvider extends ServiceProvider
 {
@@ -14,19 +13,23 @@ class ViewComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer(
-            'open.account_list', \App\Http\ViewComposers\AccountComposer::class
+        view()->composer(
+            'open.account_list',
+            \App\Http\ViewComposers\AccountComposer::class
         );
-        View::composer(
-            'side.recents', \App\Http\ViewComposers\RecentComposer::class
-        );
-
-        View::composer(
-            'side.tags', \App\Http\ViewComposers\TagComposer::class
+        view()->composer(
+            'side.recents',
+            \App\Http\ViewComposers\RecentComposer::class
         );
 
-        View::composer(
-            'layouts.footer', \App\Http\ViewComposers\FooterComposer::class
+        view()->composer(
+            'side.tags',
+            \App\Http\ViewComposers\TagComposer::class
+        );
+
+        view()->composer(
+            'layouts.footer',
+            \App\Http\ViewComposers\FooterComposer::class
         );
     }
 
