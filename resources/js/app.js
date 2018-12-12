@@ -17,14 +17,14 @@ Vue.use(VueCharts);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component("tt-status-toggle", require("./components/StatusToggle.vue"));
+Vue.component("tt-status-toggle", require("./components/StatusToggle.vue").default);
 
-Vue.component("tt-user-timeline", require("./components/UserTimeline.vue"));
-Vue.component("tt-timeline-status", require("./components/TimelineStatus.vue"));
-Vue.component("tt-timeline-reblog", require("./components/TimelineReblog.vue"));
-Vue.component("tt-calendar", require("./components/Calendar.vue"));
+Vue.component("tt-user-timeline", require("./components/UserTimeline.vue").default);
+Vue.component("tt-timeline-status", require("./components/TimelineStatus.vue").default);
+Vue.component("tt-timeline-reblog", require("./components/TimelineReblog.vue").default);
+Vue.component("tt-calendar", require("./components/Calendar.vue").default);
 
-Vue.component("tt-card", require("./components/Card.vue"));
+Vue.component("tt-card", require("./components/Card.vue").default);
 
 const app = new Vue({
   el: "#app"
