@@ -14,6 +14,31 @@ return [
     */
 
     'use' => 'default',
+    /*
+    |--------------------------------------------------------------------------
+    | Horizon Redis Prefix
+    |--------------------------------------------------------------------------
+    |
+    | This prefix will be used when storing all Horizon data in Redis. You
+    | may modify the prefix when you are running multiple installations
+    | of Horizon on the same server so that they don't have problems.
+    |
+    */
+
+    'prefix' => env('HORIZON_PREFIX', 'horizon-tootlog:'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Horizon Route Middleware
+    |--------------------------------------------------------------------------
+    |
+    | These middleware will get attached onto each Horizon route, giving you
+    | the chance to add your own middleware to this list or change any of
+    | the existing middleware. Or, you can simply stick with this list.
+    |
+    */
+
+    'middleware' => ['web'],
 
     /*
     |--------------------------------------------------------------------------
@@ -32,6 +57,37 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Job Trimming Times
+    |--------------------------------------------------------------------------
+    |
+    | Here you can configure for how long (in minutes) you desire Horizon to
+    | persist the recent and failed jobs. Typically, recent jobs are kept
+    | for one hour while all failed jobs are stored for an entire week.
+    |
+    */
+
+    'trim' => [
+        'recent' => 60,
+        'failed' => 10080,
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Fast Termination
+    |--------------------------------------------------------------------------
+    |
+    | When this option is enabled, Horizon's "terminate" command will not
+    | wait on all of the workers to terminate unless the --wait option
+    | is provided. Fast termination can shorten deployment delay by
+    | allowing a new instance of Horizon to start while the last
+    | instance will continue to terminate each of its workers.
+    |
+    */
+
+    'fast_termination' => false,
+
+    /*
+    |--------------------------------------------------------------------------
     | Queue Worker Configuration
     |--------------------------------------------------------------------------
     |
@@ -45,20 +101,20 @@ return [
         'production' => [
             'supervisor-1' => [
                 'connection' => 'redis',
-                'queue' => ['tootlog'],
-                'balance' => 'auto',
-                'processes' => 3,
-                'tries' => 3,
+                'queue'      => ['tootlog'],
+                'balance'    => 'auto',
+                'processes'  => 3,
+                'tries'      => 3,
             ],
         ],
 
         'local' => [
             'supervisor-1' => [
                 'connection' => 'redis',
-                'queue' => ['tootlog'],
-                'balance' => 'simple',
-                'processes' => 3,
-                'tries' => 3,
+                'queue'      => ['tootlog'],
+                'balance'    => 'simple',
+                'processes'  => 3,
+                'tries'      => 3,
             ],
         ],
     ],

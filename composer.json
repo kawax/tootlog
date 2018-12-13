@@ -24,7 +24,7 @@
     "doctrine/dbal": "~2.3",
     "fideloper/proxy": "~4.0",
     "laravel/framework": "5.7.*",
-    "laravel/horizon": "^1.0",
+    "laravel/horizon": "^2.0",
     "laravel/tinker": "~1.0",
     "laravelcollective/html": "^5.7",
     "league/csv": "^9.0",
