@@ -38,14 +38,14 @@ class EloquentServerRepository implements ServerRepositoryInterface
     {
         $domain = trim($domain, "/\t\n\r\0\x0B");
 
-        if ($this->has($domain)) {
-            $server = $this->get($domain);
-
-            //redirect_uriが旧ドメインの場合はAppを作り直す。
-            if (!str_start($server->redirect_uri, 'https://tootlog.com/')) {
-                return $server->toArray();
-            }
-        }
+        //        if ($this->has($domain)) {
+        //            $server = $this->get($domain);
+        //
+        //            //redirect_uriが旧ドメインの場合はAppを作り直す。
+        //            if (!str_start($server->redirect_uri, 'https://tootlog.com/')) {
+        //                return $server->toArray();
+        //            }
+        //        }
 
         $client_name = config('app.name');
         $redirect_uris = config('services.mastodon.redirect');
