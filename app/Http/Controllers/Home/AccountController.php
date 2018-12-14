@@ -38,6 +38,8 @@ class AccountController extends Controller
         config(['services.mastodon.client_id' => $info['client_id']]);
         config(['services.mastodon.client_secret' => $info['client_secret']]);
 
+        info(config('services.mastodon.redirect'));
+
         session(['mastodon_domain' => $domain]);
 
         return Socialite::driver('mastodon')
@@ -62,6 +64,8 @@ class AccountController extends Controller
         config(['services.mastodon.domain' => $domain]);
         config(['services.mastodon.client_id' => $info['client_id']]);
         config(['services.mastodon.client_secret' => $info['client_secret']]);
+
+        info(config('services.mastodon.redirect'));
 
         try {
             $user = Socialite::driver('mastodon')->user();
