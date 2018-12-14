@@ -42,7 +42,7 @@ class EloquentServerRepository implements ServerRepositoryInterface
             $server = $this->get($domain);
 
             //redirect_uriが旧ドメインの場合はAppを作り直す。
-            if (!str_start($server->redirect_uri, 'https://tootlog.com/')) {
+            if (str_start($server->redirect_uri, url('/'))) {
                 return $server->toArray();
             }
         }
