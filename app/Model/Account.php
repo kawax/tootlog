@@ -69,7 +69,7 @@ class Account extends Model
      */
     public function getNameAttribute(): string
     {
-        $name = $this->display_name ?? $this->username ?? '';
+        $name = filled($this->display_name) ? $this->display_name : $this->username;
 
         return $name;
     }
