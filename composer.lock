@@ -3725,21 +3725,22 @@
         },
         {
             "name": "revolution/socialite-mastodon",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kawax/socialite-mastodon.git",
-                "reference": "2c5f26cee466fabf5797de46f8a55b5537abfe17"
+                "reference": "dbc5918bcfd72d46798761e3c6e3ec2392b82fb2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kawax/socialite-mastodon/zipball/2c5f26cee466fabf5797de46f8a55b5537abfe17",
-                "reference": "2c5f26cee466fabf5797de46f8a55b5537abfe17",
+                "url": "https://api.github.com/repos/kawax/socialite-mastodon/zipball/dbc5918bcfd72d46798761e3c6e3ec2392b82fb2",
+                "reference": "dbc5918bcfd72d46798761e3c6e3ec2392b82fb2",
                 "shasum": ""
             },
             "require": {
+                "ext-json": "*",
                 "laravel/socialite": "*",
-                "php": ">=7.0.0."
+                "php": ">=7.0.0"
             },
             "require-dev": {
                 "mockery/mockery": "^1.0",
@@ -3774,7 +3775,7 @@
                 "mastodon",
                 "socialite"
             ],
-            "time": "2018-05-10T03:45:17+00:00"
+            "time": "2018-12-16T08:51:43+00:00"
         },
         {
             "name": "seld/jsonlint",
