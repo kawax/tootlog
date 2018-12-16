@@ -6,7 +6,7 @@
 
         <div class="form-group{{ $errors->has('search') ? ' has-error' : '' }}">
             <div class="input-group col-sm-12">
-                {{ Form::text('search', request('search'), ['placeholder' => 'Search...', 'class' => 'form-control']) }}
+                {{ Form::text('search', request('search'), ['placeholder' => 'Search...', 'class' => 'form-control', 'type' => 'search']) }}
                 <div class="input-group-append">
                     {{ Form::submit('Search', ['class' => 'btn btn-primary']) }}
                 </div>
