@@ -129,16 +129,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.82.1",
+            "version": "3.82.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "f3c38c0d74fba49fdaa1ce856412ea1017513002"
+                "reference": "015d5f3a24054f773df1d3fc16bba49f8c05987e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/f3c38c0d74fba49fdaa1ce856412ea1017513002",
-                "reference": "f3c38c0d74fba49fdaa1ce856412ea1017513002",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/015d5f3a24054f773df1d3fc16bba49f8c05987e",
+                "reference": "015d5f3a24054f773df1d3fc16bba49f8c05987e",
                 "shasum": ""
             },
             "require": {
@@ -208,7 +208,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-12-19T22:35:44+00:00"
+            "time": "2018-12-20T23:01:17+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -2019,16 +2019,16 @@
         },
         {
             "name": "laravel/socialite",
-            "version": "v4.0.0",
+            "version": "v4.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/socialite.git",
-                "reference": "ecc3ccfdcbbcee9e19468539985f0d0fddd4dbde"
+                "reference": "ad71c2691b04d843e24608ca13d9e004a34907d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/socialite/zipball/ecc3ccfdcbbcee9e19468539985f0d0fddd4dbde",
-                "reference": "ecc3ccfdcbbcee9e19468539985f0d0fddd4dbde",
+                "url": "https://api.github.com/repos/laravel/socialite/zipball/ad71c2691b04d843e24608ca13d9e004a34907d0",
+                "reference": "ad71c2691b04d843e24608ca13d9e004a34907d0",
                 "shasum": ""
             },
             "require": {
@@ -2079,7 +2079,7 @@
                 "laravel",
                 "oauth"
             ],
-            "time": "2018-12-18T13:42:49+00:00"
+            "time": "2018-12-20T11:14:43+00:00"
         },
         {
             "name": "laravel/tinker",
