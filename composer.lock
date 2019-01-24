@@ -129,16 +129,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.86.3",
+            "version": "3.87.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "0f38d6b5625c4e6ea8891abd6a75e3d35e3ef465"
+                "reference": "415d86ea583aa5bb69ec6ab83f81ea501af0c4da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/0f38d6b5625c4e6ea8891abd6a75e3d35e3ef465",
-                "reference": "0f38d6b5625c4e6ea8891abd6a75e3d35e3ef465",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/415d86ea583aa5bb69ec6ab83f81ea501af0c4da",
+                "reference": "415d86ea583aa5bb69ec6ab83f81ea501af0c4da",
                 "shasum": ""
             },
             "require": {
@@ -208,7 +208,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-01-21T22:52:28+00:00"
+            "time": "2019-01-23T23:06:01+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1837,16 +1837,16 @@
         },
         {
             "name": "laravel/horizon",
-            "version": "v2.0.2",
+            "version": "v2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "2a420af4bb3d79785ef7ff7cd27f75a1c027ab19"
+                "reference": "104a43c49b77c9f3b6b378d8d3d0514ceef6723f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/2a420af4bb3d79785ef7ff7cd27f75a1c027ab19",
-                "reference": "2a420af4bb3d79785ef7ff7cd27f75a1c027ab19",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/104a43c49b77c9f3b6b378d8d3d0514ceef6723f",
+                "reference": "104a43c49b77c9f3b6b378d8d3d0514ceef6723f",
                 "shasum": ""
             },
             "require": {
@@ -1901,7 +1901,7 @@
                 "laravel",
                 "queue"
             ],
-            "time": "2019-01-10T14:44:03+00:00"
+            "time": "2019-01-22T14:26:48+00:00"
         },
         {
             "name": "laravel/nexmo-notification-channel",
@@ -2799,16 +2799,16 @@
         },
         {
             "name": "nexmo/client",
-            "version": "1.6.0",
+            "version": "1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Nexmo/nexmo-php.git",
-                "reference": "01809cc1e17a5af275913c49bb5d444eb6cc06d4"
+                "reference": "3dc03ca1dab726a23b757110897740e54304fc65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Nexmo/nexmo-php/zipball/01809cc1e17a5af275913c49bb5d444eb6cc06d4",
-                "reference": "01809cc1e17a5af275913c49bb5d444eb6cc06d4",
+                "url": "https://api.github.com/repos/Nexmo/nexmo-php/zipball/3dc03ca1dab726a23b757110897740e54304fc65",
+                "reference": "3dc03ca1dab726a23b757110897740e54304fc65",
                 "shasum": ""
             },
             "require": {
@@ -2843,7 +2843,7 @@
                 }
             ],
             "description": "PHP Client for using Nexmo's API.",
-            "time": "2018-12-17T10:47:50+00:00"
+            "time": "2019-01-02T09:06:47+00:00"
         },
         {
             "name": "nikic/php-parser",
