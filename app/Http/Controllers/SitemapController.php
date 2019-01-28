@@ -22,9 +22,11 @@ class SitemapController extends Controller
             }
 
             foreach (Account::where('locked', false)->latest()->cursor() as $account) {
-                $sitemap->add(route('open.account.index',
-                    ['user' => $account->user, 'username' => $account->username, 'domain' => $account->domain]),
-                    $account->updated_at, '0.5', 'hourly');
+                $sitemap->add(route('open.account.index', [
+                    'user'     => $account->user,
+                    'username' => $account->username,
+                    'domain'   => $account->domain,
+                ]), $account->updated_at, '0.5', 'hourly');
             }
         }
 

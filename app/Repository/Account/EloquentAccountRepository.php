@@ -4,7 +4,7 @@ namespace App\Repository\Account;
 
 use App\Model\User;
 use App\Model\Account;
-use Cake\Chronos\Chronos;
+use Carbon\Carbon;
 
 use Mastodon;
 
@@ -107,7 +107,7 @@ class EloquentAccountRepository implements AccountRepositoryInterface
         $data = $user->user;
 
         $data['account_id'] = $data['id'];
-        $data['account_created_at'] = Chronos::parse($data['created_at']);
+        $data['account_created_at'] = Carbon::parse($data['created_at']);
         $data['token'] = $user->token;
         $data['server_id'] = $server['id'];
 

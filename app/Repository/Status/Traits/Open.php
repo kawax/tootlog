@@ -2,8 +2,6 @@
 
 namespace App\Repository\Status\Traits;
 
-use Cake\Chronos\Chronos;
-
 use App\Model\Account;
 use App\Model\User;
 use App\Model\Tag;
@@ -58,7 +56,7 @@ trait Open
      */
     public function openRecents(User $user)
     {
-        $recents = cache()->remember('recents/' . $user->id, 60, function () use ($user) {
+        $recents = cache()->remember('recents/' . $user->id, now()->addMinutes(60), function () use ($user) {
             return $user->statuses()
                         ->where('accounts.locked', false)
                         ->latest()
@@ -77,7 +75,7 @@ trait Open
      */
     public function openArchives(User $user)
     {
-        $archives = cache()->remember('archives/' . $user->id, 60, function () use ($user) {
+        $archives = cache()->remember('archives/' . $user->id, now()->addMinutes(60), function () use ($user) {
             return $user->statuses()
                         ->where('accounts.locked', false)
                         ->latest()
@@ -134,7 +132,7 @@ trait Open
      */
     public function openCalendar(User $user)
     {
-        $from_date = Chronos::now()->startOfYear()->format('Y-m-d');
+        $from_date = now()->startOfYear()->format('Y-m-d');
 
         $statuses = $user->statuses()
                          ->whereDate('statuses.created_at', '>=', $from_date)
@@ -159,7 +157,7 @@ trait Open
      */
     public function openAcctCalendar(Account $account)
     {
-        $from_date = Chronos::now()->startOfYear()->format('Y-m-d');
+        $from_date = now()->startOfYear()->format('Y-m-d');
 
         $statuses = $account->statuses()
                             ->whereDate('statuses.created_at', '>=', $from_date)

@@ -11,7 +11,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 
 use GuzzleHttp\Psr7;
 
-use Cake\Chronos\Chronos;
+use Carbon\Carbon;
 
 use App\Model\Account;
 use App\Model\Reblog;
@@ -142,7 +142,7 @@ class GetStatusJob implements ShouldQueue
             'url',
         ]);
 
-        $date = Chronos::parse($data['created_at'], 'UTC');
+        $date = Carbon::parse($data['created_at'], 'UTC');
 
         $data['created_at'] = $date->toDateTimeString();
 
@@ -203,7 +203,7 @@ class GetStatusJob implements ShouldQueue
     protected function reblog(array $reblog)
     {
         $data = [
-            'created_at'   => Chronos::parse($reblog['created_at'], 'UTC'),
+            'created_at'   => Carbon::parse($reblog['created_at'], 'UTC'),
             'status_id'    => $reblog['id'],
             'acct'         => $reblog['account']['acct'],
             'display_name' => $reblog['account']['display_name'],

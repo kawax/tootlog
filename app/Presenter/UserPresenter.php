@@ -12,7 +12,7 @@ trait UserPresenter
      */
     public function tags()
     {
-        $tags = cache()->remember('user.tags/' . $this->id, 60, function () {
+        $tags = cache()->remember('user.tags/' . $this->id, now()->addMinutes(60), function () {
             $status_id = $this->statuses()
                               ->where('accounts.locked', false)
                               ->pluck('statuses.id');

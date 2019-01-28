@@ -17,7 +17,7 @@ class FooterComposer
 
     public function compose(View $view)
     {
-        $minutes = 60;
+        $minutes = now()->addMinutes(60);
 
         $footer_servers = cache()->remember('footer_servers', $minutes, function () {
             return Server::count();

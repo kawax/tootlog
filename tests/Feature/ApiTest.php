@@ -11,7 +11,7 @@ use App\Model\User;
 use App\Model\Server;
 use App\Model\Account;
 use App\Model\Status;
-use Cake\Chronos\Chronos;
+use Carbon\Carbon;
 
 class ApiTest extends TestCase
 {
@@ -41,7 +41,7 @@ class ApiTest extends TestCase
     {
         parent::setUp();
 
-        Chronos::setTestNow(Chronos::parse('2017-04-24'));
+        Carbon::setTestNow(Carbon::parse('2017-04-24'));
 
         $this->user = factory(User::class)->create([
             'name' => 'test',
@@ -60,7 +60,7 @@ class ApiTest extends TestCase
 
         $this->statuses = factory(Status::class, 10)->create([
             'account_id' => $this->account->id,
-            'created_at' => Chronos::now(),
+            'created_at' => now(),
         ]);
     }
 
