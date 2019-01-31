@@ -124,11 +124,32 @@ class UserTest extends TestCase
         $response->assertSee('<tt-user-timeline');
     }
 
+    public function testTimelineAcct()
+    {
+        $response = $this->actingAs($this->user)
+                         ->get('/timeline/test@example.com');
+
+        $response->assertSee('Timeline');
+        $response->assertSee('<tt-user-timeline');
+    }
+
     public function testDontSeeTimeline()
     {
         $response = $this->get('/timeline');
 
         $response->assertRedirect('/login');
+    }
+
+    public function testTimelineAnother()
+    {
+        $user2 = factory(User::class)->create([
+            'name' => 'test2',
+        ]);
+
+        $response = $this->actingAs($user2)
+                         ->get('/timeline/test@example.com');
+
+        $response->assertStatus(403);
     }
 
     public function testUser()
