@@ -8,41 +8,45 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 
-use App\Repository\Server\ServerRepositoryInterface as ServerRepository;
 use Revolution\Mastodon\Facades\Mastodon;
+
+use App\Model\Server;
 
 class InstanceVersionJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     /**
+     * @var Server
+     */
+    protected $server;
+
+    /**
      * Create a new job instance.
+     *
+     * @param Server $server
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($server)
     {
-        //
+        $this->server = $server;
     }
 
     /**
      * Execute the job.
      *
-     * @param ServerRepository $repository
-     *
      * @return void
      */
-    public function handle(ServerRepository $repository)
+    public function handle()
     {
-        $repository->all()->each(function ($server) {
-            rescue(function () use ($server) {
-                $instance = Mastodon::domain($server->domain)->instance();
+        rescue(function () {
+            $instance = Mastodon::domain($this->server->domain)->instance();
 
-                $server->fill([
-                    'version'   => data_get($instance, 'version', ''),
-                    'streaming' => data_get($instance, 'urls.streaming_api', ''),
-                ])->save();
-            });
+            $this->server->fill([
+                'version'   => data_get($instance, 'version', ''),
+                'streaming' => data_get($instance, 'urls.streaming_api', ''),
+            ])->save();
         });
     }
 }

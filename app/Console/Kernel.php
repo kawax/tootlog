@@ -37,9 +37,9 @@ class Kernel extends ConsoleKernel
                  ->dailyAt('08:00')
                  ->when(!app()->isLocal());
 
-        $schedule->job(InstanceVersionJob::class)
+        $schedule->command('toot:version')
                  ->timezone('Asia/Tokyo')
-                 ->dailyAt('23:05');
+                 ->dailyAt('23:20');
 
         $schedule->command('horizon:snapshot')->everyFiveMinutes();
     }
