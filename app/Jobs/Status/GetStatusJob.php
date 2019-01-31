@@ -20,7 +20,7 @@ use App\Model\Tag;
 use App\Repository\Status\StatusRepositoryInterface as StatusRepository;
 use App\Repository\Account\AccountRepositoryInterface as AccountRepository;
 
-use Mastodon;
+use Revolution\Mastodon\Facades\Mastodon;
 
 class GetStatusJob implements ShouldQueue
 {

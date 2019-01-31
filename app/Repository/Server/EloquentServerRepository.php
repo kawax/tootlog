@@ -18,6 +18,14 @@ class EloquentServerRepository implements ServerRepositoryInterface
     /**
      * @inheritDoc
      */
+    public function all()
+    {
+        return Server::all();
+    }
+
+    /**
+     * @inheritDoc
+     */
     public function has(string $domain): bool
     {
         return Server::where('domain', '=', $domain)->exists();

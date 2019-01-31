@@ -15,12 +15,19 @@
                            target="_blank"
                            rel="noopener">
 
-                            <img src="{{ $instance->favicon }}" width="{{ config('tootlog.favicon_size') }}"
-                                 class="rounded-circle mr-1" alt="favicon">
+                            <div class="text-left">
+                                <img src="{{ $instance->favicon }}" width="{{ config('tootlog.favicon_size') }}"
+                                     class="rounded-circle mr-1" alt="favicon">
 
-                            {{ $instance->domain }}
+                                {{ $instance->domain }}
+                            </div>
 
-                            <span class="badge badge-pill badge-secondary ml-auto">{{ $instance->accounts_count }}</span>
+                            <div class="text-right">
+                                <span
+                                    class="badge badge-pill badge-secondary">{{ $instance->accounts_count }} users</span>
+                                <span class="badge badge-pill badge-secondary">{{ $instance->version }}</span>
+                            </div>
+
                         </a>
                     @endforeach
                 </div>

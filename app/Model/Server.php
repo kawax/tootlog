@@ -15,15 +15,23 @@ class Server extends Model
         'redirect_uri',
         'client_id',
         'client_secret',
+        'version',
+        'streaming',
     ];
 
     /**
      * streaming api url
      *
+     * @param string $streaming
+     *
      * @return string
      */
-    public function getStreamingAttribute(): string
+    public function getStreamingAttribute($streaming): string
     {
+        if (!is_null($streaming)) {
+            return $streaming;
+        }
+
         $domain = array_get(config('tootlog.streaming'), $this->domain, $this->domain);
         $domain = str_replace('http', 'ws', $domain);
 

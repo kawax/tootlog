@@ -10,9 +10,14 @@ interface ServerRepositoryInterface
     /**
      * @param string $domain
      *
-     * @return array
+     * @return mixed
      */
     public function get(string $domain);
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function all();
 
     /**
      * @param string $domain

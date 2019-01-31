@@ -5,6 +5,8 @@ namespace App\Console;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
+use App\Jobs\InstanceVersionJob;
+
 class Kernel extends ConsoleKernel
 {
     /**
@@ -34,6 +36,9 @@ class Kernel extends ConsoleKernel
         $schedule->command('toot:info')
                  ->dailyAt('08:00')
                  ->when(!app()->isLocal());
+
+        $schedule->job(InstanceVersionJob::class)
+                 ->dailyAt('23:00');
 
         $schedule->command('horizon:snapshot')->everyFiveMinutes();
     }
