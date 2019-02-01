@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "appstract/laravel-blade-directives",
-            "version": "1.3.0",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/appstract/laravel-blade-directives.git",
-                "reference": "63fc430b2eb3ed654a4b6e489775dc18c5d7570f"
+                "reference": "575666fd336be0fd0deed5ac4c5979e384372db1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/appstract/laravel-blade-directives/zipball/63fc430b2eb3ed654a4b6e489775dc18c5d7570f",
-                "reference": "63fc430b2eb3ed654a4b6e489775dc18c5d7570f",
+                "url": "https://api.github.com/repos/appstract/laravel-blade-directives/zipball/575666fd336be0fd0deed5ac4c5979e384372db1",
+                "reference": "575666fd336be0fd0deed5ac4c5979e384372db1",
                 "shasum": ""
             },
             "require": {
@@ -59,7 +59,7 @@
                 "appstract",
                 "laravel-blade-directives"
             ],
-            "time": "2018-11-08T11:59:53+00:00"
+            "time": "2019-01-31T09:35:40+00:00"
         },
         {
             "name": "artesaos/seotools",
