@@ -14,13 +14,11 @@ trait AccountPresenter
      */
     public function jsonLd()
     {
-        $url = route('open.account.index',
-            [
-                $this->user,
-                $this->username,
-                $this->domain,
-            ]
-        );
+        $url = route('open.account.index', [
+            $this->user,
+            $this->username,
+            $this->domain,
+        ]);
 
         return Context::create(Person::class, [
             'name'        => $this->name,
@@ -37,6 +35,6 @@ trait AccountPresenter
     public function getFaviconAttribute(): string
     {
         return $this->server->domain . '/' .
-            array_get(config('tootlog.favicon'), $this->server->domain, 'favicon.ico');
+            data_get(config('tootlog.favicon'), $this->server->domain, 'favicon.ico');
     }
 }

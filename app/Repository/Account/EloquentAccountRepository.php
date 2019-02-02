@@ -2,6 +2,8 @@
 
 namespace App\Repository\Account;
 
+use Illuminate\Support\Arr;
+
 use App\Model\User;
 use App\Model\Account;
 use Carbon\Carbon;
@@ -111,7 +113,7 @@ class EloquentAccountRepository implements AccountRepositoryInterface
         $data['token'] = $user->token;
         $data['server_id'] = $server['id'];
 
-        $cond = array_only($data, ['account_id', 'username', 'server_id']);
+        $cond = Arr::only($data, ['account_id', 'username', 'server_id']);
 
         $account = request()->user()
                             ->accounts()

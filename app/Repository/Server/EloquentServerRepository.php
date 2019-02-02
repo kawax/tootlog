@@ -2,6 +2,8 @@
 
 namespace App\Repository\Server;
 
+use Illuminate\Support\Str;
+
 use App\Model\Server;
 use Mastodon;
 
@@ -50,7 +52,7 @@ class EloquentServerRepository implements ServerRepositoryInterface
             $server = $this->get($domain);
 
             //redirect_uriが旧ドメインの場合はAppを作り直す。
-            if (str_start($server->redirect_uri, url('/'))) {
+            if (Str::start($server->redirect_uri, url('/'))) {
                 return $server->toArray();
             }
         }

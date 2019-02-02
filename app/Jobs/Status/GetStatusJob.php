@@ -9,6 +9,9 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 
+use Illuminate\Support\Str;
+use Illuminate\Support\Arr;
+
 use GuzzleHttp\Psr7;
 
 use Carbon\Carbon;
@@ -133,7 +136,7 @@ class GetStatusJob implements ShouldQueue
      */
     protected function status(array $status): array
     {
-        $data = array_only($status, [
+        $data = Arr::only($status, [
             'id',
             'created_at',
             'content',
@@ -146,8 +149,8 @@ class GetStatusJob implements ShouldQueue
 
         $data['created_at'] = $date->toDateTimeString();
 
-        $data = array_add($data, 'status_id', $data['id']);
-        $data = array_add($data, 'account_id', $this->account->id);
+        $data = Arr::add($data, 'status_id', $data['id']);
+        $data = Arr::add($data, 'account_id', $this->account->id);
 
         return $data;
     }
@@ -184,13 +187,13 @@ class GetStatusJob implements ShouldQueue
             return null;
         }
 
-        $link = array_first($link, function ($value, $key) {
-            return array_get($value, 'rel') === 'prev';
+        $link = Arr::first($link, function ($value, $key) {
+            return data_get($value, 'rel') === 'prev';
         });
 
         $link = head($link);
 
-        $since_id = str_before(str_after($link, '&since_id='), '>');
+        $since_id = Str::before(Str::after($link, '&since_id='), '>');
 
         return $since_id;
     }

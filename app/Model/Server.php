@@ -32,7 +32,7 @@ class Server extends Model
             return $streaming;
         }
 
-        $domain = array_get(config('tootlog.streaming'), $this->domain, $this->domain);
+        $domain = data_get(config('tootlog.streaming'), $this->domain, $this->domain);
         $domain = str_replace('http', 'ws', $domain);
 
         return $domain;
@@ -43,7 +43,7 @@ class Server extends Model
      */
     public function getFaviconAttribute(): string
     {
-        return $this->domain . '/' . array_get(config('tootlog.favicon'), $this->domain, 'favicon.ico');
+        return $this->domain . '/' . data_get(config('tootlog.favicon'), $this->domain, 'favicon.ico');
     }
 
     /**
