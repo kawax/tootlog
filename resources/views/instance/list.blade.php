@@ -13,7 +13,7 @@
                         <a href="{{ $instance->domain }}"
                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
                            target="_blank"
-                           rel="noopener">
+                           rel="noopener noreferrer">
 
                             <div class="text-left">
                                 <img src="{{ $instance->favicon }}" width="{{ config('tootlog.favicon_size') }}"
