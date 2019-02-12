@@ -129,16 +129,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.87.7",
+            "version": "3.87.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "52e0590429cf6a80909a93636fed9c929224a2f6"
+                "reference": "28f117c221ee53dc2486ffcbf7288a9af6d21612"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/52e0590429cf6a80909a93636fed9c929224a2f6",
-                "reference": "52e0590429cf6a80909a93636fed9c929224a2f6",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/28f117c221ee53dc2486ffcbf7288a9af6d21612",
+                "reference": "28f117c221ee53dc2486ffcbf7288a9af6d21612",
                 "shasum": ""
             },
             "require": {
@@ -207,7 +207,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-02-08T22:10:20+00:00"
+            "time": "2019-02-11T23:07:51+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -402,16 +402,16 @@
         },
         {
             "name": "cakephp/chronos",
-            "version": "1.2.3",
+            "version": "1.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/chronos.git",
-                "reference": "395110125ff577f080fa064dca5c5608a4e77ee1"
+                "reference": "ebda7326d4a65e53bc5bb915ebbbeee98f1926b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/chronos/zipball/395110125ff577f080fa064dca5c5608a4e77ee1",
-                "reference": "395110125ff577f080fa064dca5c5608a4e77ee1",
+                "url": "https://api.github.com/repos/cakephp/chronos/zipball/ebda7326d4a65e53bc5bb915ebbbeee98f1926b0",
+                "reference": "ebda7326d4a65e53bc5bb915ebbbeee98f1926b0",
                 "shasum": ""
             },
             "require": {
@@ -455,7 +455,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-10-18T22:02:21+00:00"
+            "time": "2019-02-11T02:08:31+00:00"
         },
         {
             "name": "composer/ca-bundle",
@@ -515,16 +515,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "1.8.3",
+            "version": "1.8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "a6a3b44581398b7135c7baa0557b7c5b10808b47"
+                "reference": "bc364c2480c17941e2135cfc568fa41794392534"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/a6a3b44581398b7135c7baa0557b7c5b10808b47",
-                "reference": "a6a3b44581398b7135c7baa0557b7c5b10808b47",
+                "url": "https://api.github.com/repos/composer/composer/zipball/bc364c2480c17941e2135cfc568fa41794392534",
+                "reference": "bc364c2480c17941e2135cfc568fa41794392534",
                 "shasum": ""
             },
             "require": {
@@ -591,7 +591,7 @@
                 "dependency",
                 "package"
             ],
-            "time": "2019-01-30T07:31:34+00:00"
+            "time": "2019-02-11T09:52:10+00:00"
         },
         {
             "name": "composer/semver",
@@ -1836,16 +1836,16 @@
         },
         {
             "name": "laravel/horizon",
-            "version": "v2.0.3",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "104a43c49b77c9f3b6b378d8d3d0514ceef6723f"
+                "reference": "fa9e68f33b19a3577f3acb6d7c1cc4f05227f4b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/104a43c49b77c9f3b6b378d8d3d0514ceef6723f",
-                "reference": "104a43c49b77c9f3b6b378d8d3d0514ceef6723f",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/fa9e68f33b19a3577f3acb6d7c1cc4f05227f4b4",
+                "reference": "fa9e68f33b19a3577f3acb6d7c1cc4f05227f4b4",
                 "shasum": ""
             },
             "require": {
@@ -1900,7 +1900,7 @@
                 "laravel",
                 "queue"
             ],
-            "time": "2019-01-22T14:26:48+00:00"
+            "time": "2019-02-11T18:25:13+00:00"
         },
         {
             "name": "laravel/nexmo-notification-channel",
