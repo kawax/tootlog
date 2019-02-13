@@ -129,16 +129,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.87.8",
+            "version": "3.87.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "28f117c221ee53dc2486ffcbf7288a9af6d21612"
+                "reference": "3508f119723b7ee69929c102e350ea26f3c5ff2d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/28f117c221ee53dc2486ffcbf7288a9af6d21612",
-                "reference": "28f117c221ee53dc2486ffcbf7288a9af6d21612",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/3508f119723b7ee69929c102e350ea26f3c5ff2d",
+                "reference": "3508f119723b7ee69929c102e350ea26f3c5ff2d",
                 "shasum": ""
             },
             "require": {
@@ -207,7 +207,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-02-11T23:07:51+00:00"
+            "time": "2019-02-12T23:15:22+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1690,16 +1690,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.7.25",
+            "version": "v5.7.26",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "f8fb354878064b94a3ff09a6ffd48ee9a8d712cf"
+                "reference": "ca3bc9769969e8af3bd9878a3e0242051c74dae4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/f8fb354878064b94a3ff09a6ffd48ee9a8d712cf",
-                "reference": "f8fb354878064b94a3ff09a6ffd48ee9a8d712cf",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/ca3bc9769969e8af3bd9878a3e0242051c74dae4",
+                "reference": "ca3bc9769969e8af3bd9878a3e0242051c74dae4",
                 "shasum": ""
             },
             "require": {
@@ -1832,39 +1832,39 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2019-02-05T14:28:43+00:00"
+            "time": "2019-02-12T14:52:21+00:00"
         },
         {
             "name": "laravel/horizon",
-            "version": "v2.1.0",
+            "version": "v2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "fa9e68f33b19a3577f3acb6d7c1cc4f05227f4b4"
+                "reference": "9ecf2c8e1ccda442a7e338b8d5b0459f7f9e054b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/fa9e68f33b19a3577f3acb6d7c1cc4f05227f4b4",
-                "reference": "fa9e68f33b19a3577f3acb6d7c1cc4f05227f4b4",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/9ecf2c8e1ccda442a7e338b8d5b0459f7f9e054b",
+                "reference": "9ecf2c8e1ccda442a7e338b8d5b0459f7f9e054b",
                 "shasum": ""
             },
             "require": {
                 "cakephp/chronos": "^1.0",
                 "ext-pcntl": "*",
                 "ext-posix": "*",
-                "illuminate/contracts": "~5.5",
-                "illuminate/queue": "~5.5",
-                "illuminate/support": "~5.5",
+                "illuminate/contracts": "~5.5.0|~5.6.0|~5.7.0|~5.8.0",
+                "illuminate/queue": "~5.5.0|~5.6.0|~5.7.0|~5.8.0",
+                "illuminate/support": "~5.5.0|~5.6.0|~5.7.0|~5.8.0",
                 "php": ">=7.1.0",
                 "predis/predis": "^1.1",
                 "ramsey/uuid": "^3.5",
                 "symfony/debug": "~3.3|~4.0"
             },
             "require-dev": {
-                "mockery/mockery": "~1.0",
-                "orchestra/database": "~3.5",
-                "orchestra/testbench": "~3.5",
-                "phpunit/phpunit": "~6.0"
+                "mockery/mockery": "^1.0",
+                "orchestra/database": "^3.7",
+                "orchestra/testbench": "^3.7",
+                "phpunit/phpunit": "^7.0"
             },
             "type": "library",
             "extra": {
@@ -1900,7 +1900,7 @@
                 "laravel",
                 "queue"
             ],
-            "time": "2019-02-11T18:25:13+00:00"
+            "time": "2019-02-12T15:39:05+00:00"
         },
         {
             "name": "laravel/nexmo-notification-channel",
