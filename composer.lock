@@ -129,16 +129,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.87.11",
+            "version": "3.87.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "0f2cfafe6e635319cb2104b6bb0c15dd35cebf25"
+                "reference": "2f3f01d43a8d90b68e6fa0a17257d16fa7f07c47"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/0f2cfafe6e635319cb2104b6bb0c15dd35cebf25",
-                "reference": "0f2cfafe6e635319cb2104b6bb0c15dd35cebf25",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/2f3f01d43a8d90b68e6fa0a17257d16fa7f07c47",
+                "reference": "2f3f01d43a8d90b68e6fa0a17257d16fa7f07c47",
                 "shasum": ""
             },
             "require": {
@@ -207,7 +207,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-02-14T19:13:09+00:00"
+            "time": "2019-02-15T19:08:26+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1836,16 +1836,16 @@
         },
         {
             "name": "laravel/horizon",
-            "version": "v2.2.0",
+            "version": "v2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "9ecf2c8e1ccda442a7e338b8d5b0459f7f9e054b"
+                "reference": "f1f830e8de84c2827c9e155a6abd5cc4576b498e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/9ecf2c8e1ccda442a7e338b8d5b0459f7f9e054b",
-                "reference": "9ecf2c8e1ccda442a7e338b8d5b0459f7f9e054b",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/f1f830e8de84c2827c9e155a6abd5cc4576b498e",
+                "reference": "f1f830e8de84c2827c9e155a6abd5cc4576b498e",
                 "shasum": ""
             },
             "require": {
@@ -1900,7 +1900,7 @@
                 "laravel",
                 "queue"
             ],
-            "time": "2019-02-12T15:39:05+00:00"
+            "time": "2019-02-15T14:14:01+00:00"
         },
         {
             "name": "laravel/nexmo-notification-channel",
@@ -6330,16 +6330,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "7.5.4",
+            "version": "7.5.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "2896657da5fb237bc316bdfc18c2650efeee0dc0"
+                "reference": "23a200a60552cb9ba483a8d1e106c70fb0be0bb9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/2896657da5fb237bc316bdfc18c2650efeee0dc0",
-                "reference": "2896657da5fb237bc316bdfc18c2650efeee0dc0",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/23a200a60552cb9ba483a8d1e106c70fb0be0bb9",
+                "reference": "23a200a60552cb9ba483a8d1e106c70fb0be0bb9",
                 "shasum": ""
             },
             "require": {
@@ -6410,7 +6410,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2019-02-07T14:15:04+00:00"
+            "time": "2019-02-15T14:00:34+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
