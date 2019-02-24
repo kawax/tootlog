@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bbe594cd3cff44dd7921451d8a5c3a55",
+    "content-hash": "f1807c942ebbfdc4db6074b84cb53651",
     "packages": [
         {
             "name": "appstract/laravel-blade-directives",
@@ -3609,16 +3609,16 @@
         },
         {
             "name": "rap2hpoutre/laravel-log-viewer",
-            "version": "v0.22.1",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rap2hpoutre/laravel-log-viewer.git",
-                "reference": "fd0821b073771f3e7256664417055a8bbb091059"
+                "reference": "68d1f3be193931214d1fa8ced88eed1e33b0e9ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rap2hpoutre/laravel-log-viewer/zipball/fd0821b073771f3e7256664417055a8bbb091059",
-                "reference": "fd0821b073771f3e7256664417055a8bbb091059",
+                "url": "https://api.github.com/repos/rap2hpoutre/laravel-log-viewer/zipball/68d1f3be193931214d1fa8ced88eed1e33b0e9ee",
+                "reference": "68d1f3be193931214d1fa8ced88eed1e33b0e9ee",
                 "shasum": ""
             },
             "require": {
@@ -3664,7 +3664,7 @@
                 "logging",
                 "lumen"
             ],
-            "time": "2018-10-01T09:01:30+00:00"
+            "time": "2019-01-02T21:10:18+00:00"
         },
         {
             "name": "revolution/laravel-mastodon-api",
