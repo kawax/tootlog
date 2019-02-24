@@ -12,7 +12,6 @@ use Mockery as m;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Response;
 
-use Cake\Chronos\Chronos;
 use Faker\Factory as Faker;
 
 use App\Model\User;
@@ -173,7 +172,7 @@ class StatusTest extends TestCase
             'content'    => 'test',
             'reblog'     => [
                 'id'           => 2,
-                'created_at'   => Chronos::now()->toDateTimeString(),
+                'created_at'   => now()->toDateTimeString(),
                 'account'      => [
                     'acct'         => $faker->userName,
                     'display_name' => $faker->name,
