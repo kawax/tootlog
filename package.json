@@ -27,8 +27,8 @@
     "sass-loader": "7.*",
     "twemoji": "^2.5.1",
     "vue": "^2.5.13",
-    "vue-bootstrap-toggle": "^1.0.4",
     "vue-charts": "^0.2.1",
+    "vue-js-toggle-button": "^1.3.2",
     "vue-template-compiler": "^2.6.7"
   }
 }

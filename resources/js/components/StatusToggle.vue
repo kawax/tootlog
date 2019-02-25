@@ -1,6 +1,17 @@
 <template>
     <div>
-        <bootstrap-toggle v-model="check" :options="options"></bootstrap-toggle>
+        <toggle-button
+            v-model="check"
+            :labels="{
+                checked: 'Show',
+                unchecked: 'Hide'
+            }"
+            :color="{
+                checked: '#2b90d9',
+                unchecked: '#6c757d'
+            }"
+            width="80"
+        ></toggle-button>
 
         <div class="alert alert-danger" v-if="errors.length > 0">
             <p><strong>Whoops!</strong> Something went wrong!</p>
@@ -12,20 +23,17 @@
 </template>
 
 <script>
-import BootstrapToggle from "vue-bootstrap-toggle";
+import { ToggleButton } from "vue-js-toggle-button";
 
 export default {
-    components: { BootstrapToggle },
+    components: {
+        ToggleButton
+    },
     data() {
         return {
             message: "",
             errors: [],
-            check: this.checked,
-            options: {
-                off: '<i class="fa fa-eye-slash" aria-hidden="true"></i> Hide',
-                on: '<i class="fa fa-eye" aria-hidden="true"></i> Show',
-                size: "small"
-            }
+            check: this.checked
         };
     },
     props: {
