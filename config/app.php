@@ -214,8 +214,8 @@ return [
         'URL'          => Illuminate\Support\Facades\URL::class,
         'Validator'    => Illuminate\Support\Facades\Validator::class,
         'View'         => Illuminate\Support\Facades\View::class,
-
-        'LaravelEmojiOne' => ChristofferOK\LaravelEmojiOne\LaravelEmojiOneFacade::class,
+        'Str'          => \Illuminate\Support\Str::class,
+        'Arr'          => \Illuminate\Support\Arr::class,
 
         'SEOMeta'   => Artesaos\SEOTools\Facades\SEOMeta::class,
         'OpenGraph' => Artesaos\SEOTools\Facades\OpenGraph::class,
