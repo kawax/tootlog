@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f1807c942ebbfdc4db6074b84cb53651",
+    "content-hash": "dd278ec89ccfb0fb3dceb2b785e9cd03",
     "packages": [
         {
             "name": "appstract/laravel-blade-directives",
@@ -129,16 +129,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.87.19",
+            "version": "3.87.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "79366d3335649960f49694eb052cbdac6616f843"
+                "reference": "6d313ff80b1b6084adc088e000dac1eefadd4f83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/79366d3335649960f49694eb052cbdac6616f843",
-                "reference": "79366d3335649960f49694eb052cbdac6616f843",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/6d313ff80b1b6084adc088e000dac1eefadd4f83",
+                "reference": "6d313ff80b1b6084adc088e000dac1eefadd4f83",
                 "shasum": ""
             },
             "require": {
@@ -207,7 +207,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-02-26T19:08:43+00:00"
+            "time": "2019-02-27T19:20:03+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1836,29 +1836,31 @@
         },
         {
             "name": "laravel/horizon",
-            "version": "v2.2.2",
+            "version": "v3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "b79bb2762ed3f234125892c811d3a73d13bf66cc"
+                "reference": "11acb6eafee4a0ea3bea87c6277f4342ebd2e1e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/b79bb2762ed3f234125892c811d3a73d13bf66cc",
-                "reference": "b79bb2762ed3f234125892c811d3a73d13bf66cc",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/11acb6eafee4a0ea3bea87c6277f4342ebd2e1e3",
+                "reference": "11acb6eafee4a0ea3bea87c6277f4342ebd2e1e3",
                 "shasum": ""
             },
             "require": {
                 "cakephp/chronos": "^1.0",
+                "ext-json": "*",
                 "ext-pcntl": "*",
                 "ext-posix": "*",
-                "illuminate/contracts": "~5.5.0|~5.6.0|~5.7.0|~5.8.0",
-                "illuminate/queue": "~5.5.0|~5.6.0|~5.7.0|~5.8.0",
-                "illuminate/support": "~5.5.0|~5.6.0|~5.7.0|~5.8.0",
+                "illuminate/contracts": "~5.7.0|~5.8.0",
+                "illuminate/queue": "~5.7.0|~5.8.0",
+                "illuminate/support": "~5.7.0|~5.8.0",
                 "php": ">=7.1.0",
                 "predis/predis": "^1.1",
                 "ramsey/uuid": "^3.5",
-                "symfony/debug": "~3.3|~4.0"
+                "symfony/debug": "^4.2",
+                "symfony/process": "^4.2"
             },
             "require-dev": {
                 "mockery/mockery": "^1.0",
@@ -1869,7 +1871,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0-dev"
+                    "dev-master": "3.0-dev"
                 },
                 "laravel": {
                     "providers": [
@@ -1900,7 +1902,7 @@
                 "laravel",
                 "queue"
             ],
-            "time": "2019-02-21T19:56:21+00:00"
+            "time": "2019-02-27T15:44:24+00:00"
         },
         {
             "name": "laravel/nexmo-notification-channel",
@@ -3609,16 +3611,16 @@
         },
         {
             "name": "rap2hpoutre/laravel-log-viewer",
-            "version": "v1.0.0",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rap2hpoutre/laravel-log-viewer.git",
-                "reference": "68d1f3be193931214d1fa8ced88eed1e33b0e9ee"
+                "reference": "98a333e4174f9d08ab1667b5da027d88f51523de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rap2hpoutre/laravel-log-viewer/zipball/68d1f3be193931214d1fa8ced88eed1e33b0e9ee",
-                "reference": "68d1f3be193931214d1fa8ced88eed1e33b0e9ee",
+                "url": "https://api.github.com/repos/rap2hpoutre/laravel-log-viewer/zipball/98a333e4174f9d08ab1667b5da027d88f51523de",
+                "reference": "98a333e4174f9d08ab1667b5da027d88f51523de",
                 "shasum": ""
             },
             "require": {
@@ -3626,7 +3628,7 @@
                 "php": ">=5.4.0"
             },
             "require-dev": {
-                "orchestra/testbench": "^3.6",
+                "orchestra/testbench": "3.7.*",
                 "phpunit/phpunit": "^7"
             },
             "type": "laravel-package",
@@ -3664,7 +3666,7 @@
                 "logging",
                 "lumen"
             ],
-            "time": "2019-01-02T21:10:18+00:00"
+            "time": "2019-02-27T15:48:50+00:00"
         },
         {
             "name": "revolution/laravel-mastodon-api",
