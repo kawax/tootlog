@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Support\Str;
+use Faker\Generator as Faker;
+
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -12,37 +15,37 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\Model\User::class, function (Faker\Generator $faker) {
+$factory->define(App\Model\User::class, function (Faker $faker) {
     static $password;
 
     return [
         'name'              => $faker->unique()->name,
         'email'             => $faker->unique()->safeEmail,
-        'password'          => $password ?: $password = bcrypt('secret'),
-        'remember_token'    => str_random(10),
+        'password'          => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+        'remember_token'    => Str::random(10),
         'email_verified_at' => $faker->dateTime,
     ];
 });
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\Model\Server::class, function (Faker\Generator $faker) {
+$factory->define(App\Model\Server::class, function (Faker $faker) {
     return [
         'app_id'        => $faker->randomNumber(),
         'domain'        => 'https://' . $faker->unique()->domainName,
         'redirect_uri'  => $faker->unique()->url,
-        'client_id'     => str_random(20),
-        'client_secret' => str_random(20),
+        'client_id'     => Str::random(20),
+        'client_secret' => Str::random(20),
     ];
 });
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\Model\Account::class, function (Faker\Generator $faker) {
+$factory->define(App\Model\Account::class, function (Faker $faker) {
     return [
         'user_id'            => $faker->randomNumber(),
         'server_id'          => $faker->randomNumber(),
         'account_id'         => $faker->randomNumber(),
         'since_id'           => $faker->randomNumber(),
-        'token'              => str_random(20),
+        'token'              => Str::random(20),
         'username'           => $faker->userName,
         'acct'               => $faker->userName,
         'display_name'       => $faker->name,
@@ -61,7 +64,7 @@ $factory->define(App\Model\Account::class, function (Faker\Generator $faker) {
 });
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\Model\Status::class, function (Faker\Generator $faker) {
+$factory->define(App\Model\Status::class, function (Faker $faker) {
     return [
         'account_id'   => $faker->randomNumber(),
         'status_id'    => $faker->randomNumber(),
@@ -73,7 +76,7 @@ $factory->define(App\Model\Status::class, function (Faker\Generator $faker) {
 });
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\Model\Tag::class, function (Faker\Generator $faker) {
+$factory->define(App\Model\Tag::class, function (Faker $faker) {
     return [
         'name' => $faker->word,
     ];
