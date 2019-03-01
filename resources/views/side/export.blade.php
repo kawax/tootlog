@@ -2,11 +2,12 @@
     <div class="card-header bg-white">Export</div>
 
     <div class="card-body">
-        {{ Form::open(['route' => 'export.csv', 'class' => 'form-horizontal']) }}
+        <form method="POST" action="{{ route('export.csv') }}" accept-charset="UTF-8" class="form-horizontal">
+            @csrf
 
-        {{ Form::submit('CSV Export', ['class' => 'btn btn-primary btn-block']) }}
+            <input class="btn btn-primary btn-block" type="submit" value="CSV Export">
 
-        {{ Form::close() }}
+        </form>
 
         <div>
             @if (session('export'))

@@ -8,18 +8,21 @@
     <div class="card-header bg-white">Add Account</div>
 
     <div class="card-body">
-        {{ Form::open(['route' => 'accounts.add', 'class' => 'form-horizontal']) }}
+        <form method="POST" action="{{ route('accounts.add') }}" accept-charset="UTF-8" class="form-horizontal">
+            @csrf
 
-        <div class="form-group row{{ $errors->has('domain') ? ' has-error' : '' }}">
-            {{ Form::label('domain', 'URL', ['class' => 'col-sm-3 col-form-label']) }}
-            <div class="input-group col-sm-9">
-                {{ Form::text('domain', '', ['placeholder' => 'https://', 'class' => 'form-control']) }}
-                <div class="input-group-append">
-                    {{ Form::submit('Add', ['class' => 'btn btn-primary']) }}
+            <div class="form-group row{{ $errors->has('domain') ? ' has-error' : '' }}">
+                <label for="domain" class="col-sm-3 col-form-label">URL</label>
+                <div class="input-group col-sm-9">
+                    <input placeholder="https://" class="form-control" name="domain" type="text" value="" id="domain">
+
+                    <div class="input-group-append">
+                        <input class="btn btn-primary" type="submit" value="Add">
+
+                    </div>
                 </div>
             </div>
-        </div>
 
-        {{ Form::close() }}
+        </form>
     </div>
 </div>
