@@ -16,19 +16,20 @@
             <div class="col-md-8 order-md-last">
                 <nav aria-label="breadcrumb">
 
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('open.user', $user) }}">{{ '@' . $user->name  }}</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">{{ $acct->acct  }}</li>
-                </ol>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a
+                                href="{{ route('open.user', $user) }}">{{ '@' . $user->name  }}</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{{ $acct->acct  }}</li>
+                    </ol>
                 </nav>
 
                 @include('open.acct.profile')
 
                 @include('home.search', [
-                'search_route' => ['open.account.index', $user, $acct->username, $acct->domain],
+                'search_route' => 'open.account.index',
+                'search_param' => [$user, $acct->username, $acct->domain],
                 'search_in' => $acct->acct
                 ])
-
 
                 <tt-calendar user="{{ $user->name }}" acct="{{ $acct->acct }}"></tt-calendar>
 

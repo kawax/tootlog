@@ -13,18 +13,19 @@
             <div class="col-md-8 order-md-last">
                 <nav aria-label="breadcrumb">
 
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('open.user', $user) }}">{{ '@' . $user->name  }}</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('tags.index', $user) }}">tags</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">#{{ $tag->name  }}</li>
-                </ol>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a
+                                href="{{ route('open.user', $user) }}">{{ '@' . $user->name  }}</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('tags.index', $user) }}">tags</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">#{{ $tag->name  }}</li>
+                    </ol>
                 </nav>
 
                 @include('home.search', [
-                'search_route' => ['tags.show', $user, $tag],
+                'search_route' => 'tags.show',
+                'search_param' => [$user, $tag],
                 'search_in' => '#' . $tag->name
                 ])
-
 
                 {{ $statuses->appends(['search' => request('search')])->links() }}
 

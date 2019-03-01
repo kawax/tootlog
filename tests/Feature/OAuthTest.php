@@ -72,7 +72,7 @@ class OAuthTest extends TestCase
      */
     protected $serverRepository;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -102,7 +102,7 @@ class OAuthTest extends TestCase
         );
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         m::close();
     }

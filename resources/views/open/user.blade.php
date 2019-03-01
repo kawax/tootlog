@@ -24,7 +24,8 @@
                 </nav>
 
                 @include('home.search', [
-                'search_route' => ['open.user', $user],
+                'search_route' => 'open.user',
+                'search_param' => [$user],
                 'search_in' => '@' . $user->name
                 ])
 

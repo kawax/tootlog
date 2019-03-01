@@ -65,7 +65,7 @@ class StatusTest extends TestCase
      */
     protected $response;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -91,7 +91,7 @@ class StatusTest extends TestCase
         $this->accountRepository = m::mock(AccountRepository::class)->makePartial();
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         m::close();
     }

@@ -48,7 +48,7 @@ class ArtisanTest extends TestCase
      */
     protected $accountRepository;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 

@@ -37,10 +37,12 @@
                                 <label for="theme" class="col-md-4 col-form-label">Font</label>
 
                                 <div class="col-md-6">
-                                    {{ Form::select('theme', [
-                                    'thin' => 'Thin',
-                                    'normal' => 'Normal'
-                                    ], request()->user()->theme, ['class' => 'form-control']) }}
+                                    <select class="form-control" name="theme">
+                                        <option value="thin" @if(request()->user()->theme === 'thin')selected="selected"@endif>Thin
+                                        </option>
+                                        <option value="normal" @if(request()->user()->theme === 'normal')selected="selected"@endif>Normal
+                                        </option>
+                                    </select>
 
                                     @if ($errors->has('theme'))
                                         <span class="help-block">
