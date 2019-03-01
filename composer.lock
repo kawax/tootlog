@@ -129,16 +129,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.87.20",
+            "version": "3.87.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "6d313ff80b1b6084adc088e000dac1eefadd4f83"
+                "reference": "266641679eea15075ea13c088f9737460351f7ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/6d313ff80b1b6084adc088e000dac1eefadd4f83",
-                "reference": "6d313ff80b1b6084adc088e000dac1eefadd4f83",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/266641679eea15075ea13c088f9737460351f7ab",
+                "reference": "266641679eea15075ea13c088f9737460351f7ab",
                 "shasum": ""
             },
             "require": {
@@ -207,7 +207,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-02-27T19:20:03+00:00"
+            "time": "2019-02-28T20:02:04+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -3728,16 +3728,16 @@
         },
         {
             "name": "revolution/socialite-mastodon",
-            "version": "1.2.2",
+            "version": "1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kawax/socialite-mastodon.git",
-                "reference": "dbc5918bcfd72d46798761e3c6e3ec2392b82fb2"
+                "reference": "61e2af4018df49116df9cf0917b54ca45b5a9077"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kawax/socialite-mastodon/zipball/dbc5918bcfd72d46798761e3c6e3ec2392b82fb2",
-                "reference": "dbc5918bcfd72d46798761e3c6e3ec2392b82fb2",
+                "url": "https://api.github.com/repos/kawax/socialite-mastodon/zipball/61e2af4018df49116df9cf0917b54ca45b5a9077",
+                "reference": "61e2af4018df49116df9cf0917b54ca45b5a9077",
                 "shasum": ""
             },
             "require": {
@@ -3778,7 +3778,7 @@
                 "mastodon",
                 "socialite"
             ],
-            "time": "2018-12-16T08:51:43+00:00"
+            "time": "2019-02-28T09:22:35+00:00"
         },
         {
             "name": "seld/jsonlint",
