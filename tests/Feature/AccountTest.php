@@ -73,7 +73,8 @@ class AccountTest extends TestCase
             'id' => $this->account->id,
         ]);
 
-        $response->assertRedirect('home');
+        $response->assertRedirect('home')
+                 ->assertSessionHas('message');
     }
 
     public function testDestroyAnother()
