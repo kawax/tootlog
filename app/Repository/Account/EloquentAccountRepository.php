@@ -170,4 +170,12 @@ class EloquentAccountRepository implements AccountRepositoryInterface
     {
         return Account::where('url', $url)->exists();
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function destroy(int $id): void
+    {
+        Account::destroy($id);
+    }
 }

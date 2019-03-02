@@ -33,4 +33,16 @@ class AccountPolicy
     {
         return (int)$user->id === (int)$account->user_id;
     }
+
+    /**
+     *
+     * @param  User    $user
+     * @param  Account $account
+     *
+     * @return bool
+     */
+    public function delete(User $user, Account $account)
+    {
+        return (int)$user->id === (int)$account->user_id;
+    }
 }

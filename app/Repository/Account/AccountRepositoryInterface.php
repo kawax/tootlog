@@ -79,7 +79,7 @@ interface AccountRepositoryInterface
     public function updateSince(Account $account, $since_id);
 
     /**
-     * @param $user
+     * @param       $user
      * @param array $server
      *
      * @return mixed
@@ -99,4 +99,9 @@ interface AccountRepositoryInterface
      * @return bool
      */
     public function exists(string $url): bool;
+
+    /**
+     * @param int $id
+     */
+    public function destroy(int $id): void;
 }

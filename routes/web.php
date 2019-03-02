@@ -22,6 +22,8 @@ Route::middleware(['auth'])->namespace('Home')->group(function () {
     Route::name('accounts.add')->post('accounts', 'AccountController@redirect');
     Route::get('accounts/callback', 'AccountController@callback');
 
+    Route::name('accounts.delete')->delete('accounts/delete/{id}', 'AccountDeleteController');
+
     Route::name('timeline')->get('timeline', 'TimelineController@index');
     Route::name('timeline.account')->get('timeline/{username}@{domain}', 'TimelineController@acct');
 

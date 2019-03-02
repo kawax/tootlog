@@ -1,6 +1,16 @@
 <div class="card mb-3">
     <div class="card-header bg-white">
         Profile
+
+        @can('delete', $acct)
+            <button type="button"
+                    class="btn btn-outline-danger btn-sm float-right"
+                    data-toggle="modal" data-target="#deleteModal">
+                Delete...
+            </button>
+            @include('open.acct.delete')
+        @endcan
+
     </div>
     <div class="card-body">
 

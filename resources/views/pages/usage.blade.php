@@ -107,7 +107,7 @@
                         <p>&nbsp;</p>
 
                         <p><code>https://tootlog.net/@{user}</code>が公開用URLなので人に教える時はこれを教えます。<br/>
-                            例：<a class="uri" href="{{ url('/@tootlog') }}">{{ url('/@tootlog') }}</a></p>
+                            例：<a href="{{ url('/@tootlog') }}">{{ url('/@tootlog') }}</a></p>
 
                         <h2>よくあるかもしれない質問</h2>
 
@@ -120,8 +120,7 @@
                         <h3>パスワードを忘れた</h3>
 
                         <p>ここでメールアドレスを入力すれば再発行のためのメールが送信されます。<br/>
-                            <a class="uri"
-                               href="{{ url('/password/reset') }}">{{ url('/password/reset') }}</a></p>
+                            <a href="{{ url('/password/reset') }}">{{ url('/password/reset') }}</a></p>
 
                         <p>
                             <img alt=""
@@ -147,7 +146,7 @@
 
                         <p>CSVエクスポートでCSVファイルとして登録メールに送信されます。</p>
 
-                        <h3 id="mastodontootlog">Mastodonで削除してもtootlogで消えてない</h3>
+                        <h3>Mastodonで削除してもtootlogで消えてない</h3>
 
                         <p>Hideボタンで個別に非表示にしてください。<br/>
                             アカウント単位で非表示にするにはMastodon側で非公開アカウントにします。次の更新時に反映されて非公開になります。</p>
@@ -160,9 +159,9 @@
 
                         <p>Mastodon側の設定&rarr;認証済みアプリで「取消」してください。</p>
 
-                        <h3>tootlogのアカウントを削除したい</h3>
+                        <h3>アカウントを削除したい</h3>
 
-                        <p>削除機能はまだありません。非公開にしたい場合はMastodon側で非公開アカウントにしてください。</p>
+                        <p>マストドンのアカウント単位での削除はできます。個別のプロフィールページからDelete...。データはすべて削除されるので事前にエクスポートを推奨。</p>
 
                         <h3>タイムラインが&hellip;</h3>
 
