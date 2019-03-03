@@ -3211,16 +3211,16 @@
         },
         {
             "name": "rap2hpoutre/laravel-log-viewer",
-            "version": "v1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rap2hpoutre/laravel-log-viewer.git",
-                "reference": "98a333e4174f9d08ab1667b5da027d88f51523de"
+                "reference": "f6acf9779669568e8afce1182e1a5579d5a0ffe5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rap2hpoutre/laravel-log-viewer/zipball/98a333e4174f9d08ab1667b5da027d88f51523de",
-                "reference": "98a333e4174f9d08ab1667b5da027d88f51523de",
+                "url": "https://api.github.com/repos/rap2hpoutre/laravel-log-viewer/zipball/f6acf9779669568e8afce1182e1a5579d5a0ffe5",
+                "reference": "f6acf9779669568e8afce1182e1a5579d5a0ffe5",
                 "shasum": ""
             },
             "require": {
@@ -3266,7 +3266,7 @@
                 "logging",
                 "lumen"
             ],
-            "time": "2019-02-27T15:48:50+00:00"
+            "time": "2019-03-02T15:10:46+00:00"
         },
         {
             "name": "revolution/laravel-mastodon-api",
