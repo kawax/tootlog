@@ -17,6 +17,8 @@ class HorizonServiceProvider extends HorizonApplicationServiceProvider
     {
         parent::boot();
 
+        Horizon::night();
+
         // Horizon::routeSmsNotificationsTo('15556667777');
         // Horizon::routeMailNotificationsTo('example@example.com');
         // Horizon::routeSlackNotificationsTo('slack-webhook-url', '#channel');
@@ -46,6 +48,6 @@ class HorizonServiceProvider extends HorizonApplicationServiceProvider
      */
     public function register()
     {
-        Horizon::night();
+        //Horizon::night();
     }
 }
