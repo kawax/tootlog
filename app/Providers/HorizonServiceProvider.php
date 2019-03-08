@@ -40,14 +40,4 @@ class HorizonServiceProvider extends HorizonApplicationServiceProvider
             //            ]);
         });
     }
-
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //Horizon::night();
-    }
 }
