@@ -129,16 +129,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.90.0",
+            "version": "3.90.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "c4e20a477f2ec8c880a9821f9e81641b8e3bb696"
+                "reference": "3262a84de9428766646223963c944b2be2cd09c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/c4e20a477f2ec8c880a9821f9e81641b8e3bb696",
-                "reference": "c4e20a477f2ec8c880a9821f9e81641b8e3bb696",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/3262a84de9428766646223963c944b2be2cd09c0",
+                "reference": "3262a84de9428766646223963c944b2be2cd09c0",
                 "shasum": ""
             },
             "require": {
@@ -207,7 +207,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-03-11T18:09:51+00:00"
+            "time": "2019-03-12T18:11:23+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1690,16 +1690,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.8.3",
+            "version": "v5.8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "d36d74acd3added5abbe7e7a84342b54bb0b0521"
+                "reference": "d651f8bd25c6baf7ae4913bc51f02849fad4e925"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/d36d74acd3added5abbe7e7a84342b54bb0b0521",
-                "reference": "d36d74acd3added5abbe7e7a84342b54bb0b0521",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/d651f8bd25c6baf7ae4913bc51f02849fad4e925",
+                "reference": "d651f8bd25c6baf7ae4913bc51f02849fad4e925",
                 "shasum": ""
             },
             "require": {
@@ -1833,20 +1833,20 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2019-03-05T13:51:19+00:00"
+            "time": "2019-03-12T13:33:14+00:00"
         },
         {
             "name": "laravel/horizon",
-            "version": "v3.0.4",
+            "version": "v3.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "e4d4b7869a25976a910a76e0503c21d290be6a80"
+                "reference": "07742b81980ca902666fa7d31c453f2647174f00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/e4d4b7869a25976a910a76e0503c21d290be6a80",
-                "reference": "e4d4b7869a25976a910a76e0503c21d290be6a80",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/07742b81980ca902666fa7d31c453f2647174f00",
+                "reference": "07742b81980ca902666fa7d31c453f2647174f00",
                 "shasum": ""
             },
             "require": {
@@ -1902,20 +1902,20 @@
                 "laravel",
                 "queue"
             ],
-            "time": "2019-03-08T14:10:27+00:00"
+            "time": "2019-03-12T16:16:31+00:00"
         },
         {
             "name": "laravel/socialite",
-            "version": "v4.1.0",
+            "version": "4.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/socialite.git",
-                "reference": "7581c57a60742f423a68362c79d507028f989bd7"
+                "reference": "1d470d95c7506eb391c48bc3cda6be5ded3e593f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/socialite/zipball/7581c57a60742f423a68362c79d507028f989bd7",
-                "reference": "7581c57a60742f423a68362c79d507028f989bd7",
+                "url": "https://api.github.com/repos/laravel/socialite/zipball/1d470d95c7506eb391c48bc3cda6be5ded3e593f",
+                "reference": "1d470d95c7506eb391c48bc3cda6be5ded3e593f",
                 "shasum": ""
             },
             "require": {
@@ -1966,7 +1966,7 @@
                 "laravel",
                 "oauth"
             ],
-            "time": "2019-02-14T16:57:39+00:00"
+            "time": "2019-03-12T16:42:59+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -2503,16 +2503,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.14.2",
+            "version": "2.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "a1f4f9abcde8241ce33bf5090896e9c16d0b4232"
+                "reference": "dd16fedc022180ea4292a03aabe95e9895677911"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/a1f4f9abcde8241ce33bf5090896e9c16d0b4232",
-                "reference": "a1f4f9abcde8241ce33bf5090896e9c16d0b4232",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/dd16fedc022180ea4292a03aabe95e9895677911",
+                "reference": "dd16fedc022180ea4292a03aabe95e9895677911",
                 "shasum": ""
             },
             "require": {
@@ -2559,7 +2559,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2019-02-28T09:07:12+00:00"
+            "time": "2019-03-12T09:31:40+00:00"
         },
         {
             "name": "nikic/php-parser",
