@@ -22,11 +22,11 @@
                      title="{{ $acct->name }}">
             </a>
             <div class="media-body ml-3">
-                <h3>{!! $acct->name !!}</h3>
+                <h3>{{ $acct->name }}</h3>
                 <p>
-                    <span class="badge badge-pill badge-secondary">{!! $acct->statuses_count !!} posts</span>
-                    <span class="badge badge-pill badge-secondary">{!! $acct->following_count !!} follows</span>
-                    <span class="badge badge-pill badge-secondary">{!! $acct->followers_count !!} followers</span>
+                    <span class="badge badge-pill badge-secondary">{{ $acct->statuses_count }} posts</span>
+                    <span class="badge badge-pill badge-secondary">{{ $acct->following_count }} follows</span>
+                    <span class="badge badge-pill badge-secondary">{{ $acct->followers_count }} followers</span>
                 </p>
 
                 <p>{!! $acct->note !!}</p>
