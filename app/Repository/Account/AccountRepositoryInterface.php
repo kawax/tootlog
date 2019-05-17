@@ -23,38 +23,38 @@ interface AccountRepositoryInterface
     /**
      * toot:statusesのためのアカウントリスト
      *
-     * @return Account[]
+     * @return array
      */
     public function oldest();
 
     /**
      * toot:statusesのためのアカウントリスト。特典キーが有効な場合。
      *
-     * @return Account[]
+     * @return array
      */
     public function special();
 
     /**
      * ユーザーのアカウント
      *
-     * @return Account[]
+     * @return array
      */
     public function userAccounts();
 
     /**
      * ユーザーのアカウント（公開用）
      *
-     * @param User $user
+     * @param  User  $user
      *
-     * @return Account[]
+     * @return array
      */
     public function openAccounts(User $user);
 
     /**
      * ユーザー名とドメインからアカウント
      *
-     * @param string $username
-     * @param string $domain
+     * @param  string  $username
+     * @param  string  $domain
      *
      * @return Account
      */
@@ -63,7 +63,7 @@ interface AccountRepositoryInterface
     /**
      * アカウント情報を更新
      *
-     * @param Account $account
+     * @param  Account  $account
      *
      * @return mixed
      */
@@ -72,7 +72,7 @@ interface AccountRepositoryInterface
     /**
      * since_idを更新
      *
-     * @param Account $account
+     * @param  Account  $account
      *
      * @return mixed
      */
@@ -80,7 +80,7 @@ interface AccountRepositoryInterface
 
     /**
      * @param       $user
-     * @param array $server
+     * @param  array  $server
      *
      * @return mixed
      */
@@ -94,14 +94,14 @@ interface AccountRepositoryInterface
     public function update($user);
 
     /**
-     * @param string $url
+     * @param  string  $url
      *
      * @return bool
      */
     public function exists(string $url): bool;
 
     /**
-     * @param int $id
+     * @param  int  $id
      */
     public function destroy(int $id): void;
 }

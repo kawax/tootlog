@@ -58,7 +58,7 @@ class ExportCsvJob implements ShouldQueue
     /**
      * Execute the job.
      *
-     * @param StatusRepository $statusRepository
+     * @param  StatusRepository  $statusRepository
      *
      * @return void
      */
@@ -76,13 +76,13 @@ class ExportCsvJob implements ShouldQueue
     }
 
     /**
-     * @param Account $account
+     * @param  Account  $account
      *
      * @return void
      */
     private function write(Account $account)
     {
-        info('Export: ' . $this->user->name . ' / ' . $account->acct);
+        info('Export: '.$this->user->name.' / '.$account->acct);
 
         $this->writer = Writer::createFromFileObject(new \SplTempFileObject());
 
@@ -121,7 +121,7 @@ class ExportCsvJob implements ShouldQueue
             }
         });
 
-        $path = 'csv/' . $this->user->name . '/' . $account->acct . '.csv';
+        $path = 'csv/'.$this->user->name.'/'.$account->acct.'.csv';
 
         if (Storage::put($path, $this->writer)) {
             $this->files[] = $path;

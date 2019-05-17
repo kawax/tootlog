@@ -96,9 +96,9 @@ class EloquentAccountRepository implements AccountRepositoryInterface
      */
     public function getByAcct(string $username, string $domain)
     {
-        $url = '://' . $domain . '/@' . $username;
+        $url = '://'.$domain.'/@'.$username;
 
-        return Account::where('url', 'like', '%' . $url)->firstOrFail();
+        return Account::where('url', 'like', '%'.$url)->firstOrFail();
     }
 
     /**

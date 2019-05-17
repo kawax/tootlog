@@ -34,7 +34,7 @@ trait AccountPresenter
      */
     public function getFaviconAttribute(): string
     {
-        return $this->server->domain . '/' .
+        return $this->server->domain.'/'.
             data_get(config('tootlog.favicon'), $this->server->domain, 'favicon.ico');
     }
 }

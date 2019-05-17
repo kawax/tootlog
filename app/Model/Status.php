@@ -52,7 +52,7 @@ class Status extends Model
     {
         $domain = parse_url($this->account->url, PHP_URL_HOST);
 
-        return $this->account->username . '@' . $domain;
+        return $this->account->username.'@'.$domain;
     }
 
     /**

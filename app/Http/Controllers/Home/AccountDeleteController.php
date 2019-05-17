@@ -11,8 +11,8 @@ use App\Repository\Account\AccountRepositoryInterface as AccountRepository;
 class AccountDeleteController extends Controller
 {
     /**
-     * @param AccountRepository $account
-     * @param int               $id
+     * @param  AccountRepository  $account
+     * @param  int  $id
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      * @throws \Illuminate\Auth\Access\AuthorizationException

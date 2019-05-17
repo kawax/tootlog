@@ -42,7 +42,7 @@ class GetStatusJob implements ShouldQueue
     /**
      * Create a new job instance.
      *
-     * @param Account $account
+     * @param  Account  $account
      */
     public function __construct(Account $account)
     {
@@ -52,21 +52,21 @@ class GetStatusJob implements ShouldQueue
     /**
      * Execute the job.
      *
-     * @param StatusRepository  $statusRepository
-     * @param AccountRepository $accountRepository
+     * @param  StatusRepository  $statusRepository
+     * @param  AccountRepository  $accountRepository
      *
      * @return void
      */
     public function handle(StatusRepository $statusRepository, AccountRepository $accountRepository)
     {
-        info('GetStatusesJob: ' . $this->account->url);
+        info('GetStatusesJob: '.$this->account->url);
 
         $this->statusRepository = $statusRepository;
 
         try {
             $this->account = $accountRepository->refresh($this->account);
         } catch (\Exception $e) {
-            logger()->error('ClientException(refresh): ' . $this->account->url . ' ' . $e->getMessage());
+            logger()->error('ClientException(refresh): '.$this->account->url.' '.$e->getMessage());
 
             $this->account->increment('fails');
 
@@ -78,7 +78,7 @@ class GetStatusJob implements ShouldQueue
 
             $since_id = $this->since();
         } catch (\Exception $e) {
-            logger()->error('ClientException: ' . $this->account->url . ' ' . $e->getMessage());
+            logger()->error('ClientException: '.$this->account->url.' '.$e->getMessage());
 
             $this->account->increment('fails');
 
@@ -89,13 +89,13 @@ class GetStatusJob implements ShouldQueue
 
         $this->create($statuses);
 
-        if (!empty($since_id)) {
+        if (! empty($since_id)) {
             $accountRepository->updateSince($this->account, $since_id);
         }
     }
 
     /**
-     * @param array|null $statuses
+     * @param  array|null  $statuses
      */
     protected function create(?array $statuses)
     {
@@ -130,7 +130,7 @@ class GetStatusJob implements ShouldQueue
     }
 
     /**
-     * @param array $status
+     * @param  array  $status
      *
      * @return array
      */
@@ -169,7 +169,7 @@ class GetStatusJob implements ShouldQueue
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     protected function since()
     {
@@ -177,7 +177,7 @@ class GetStatusJob implements ShouldQueue
 
         $response = Mastodon::getResponse();
 
-        if (!$response->hasHeader('Link')) {
+        if (! $response->hasHeader('Link')) {
             return null;
         }
 
@@ -199,7 +199,7 @@ class GetStatusJob implements ShouldQueue
     }
 
     /**
-     * @param array $reblog
+     * @param  array  $reblog
      *
      * @return \Illuminate\Database\Eloquent\Model
      */
@@ -224,7 +224,7 @@ class GetStatusJob implements ShouldQueue
     }
 
     /**
-     * @param array $tags
+     * @param  array  $tags
      *
      * @return array
      */
@@ -242,7 +242,7 @@ class GetStatusJob implements ShouldQueue
     /**
      * 失敗したジョブの処理
      *
-     * @param  \Exception $exception
+     * @param  \Exception  $exception
      *
      * @return void
      */

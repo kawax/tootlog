@@ -9,7 +9,7 @@ use App\Repository\Server\ServerRepositoryInterface as ServerRepository;
 class InstanceController extends Controller
 {
     /**
-     * @param ServerRepository $repository
+     * @param  ServerRepository  $repository
      *
      * @return \Illuminate\Http\Response|\Illuminate\View\View
      */

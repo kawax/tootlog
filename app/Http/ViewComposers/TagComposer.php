@@ -15,7 +15,7 @@ class TagComposer
 
     public function compose(View $view)
     {
-        if (!is_null(request()->user)) {
+        if (! is_null(request()->user)) {
             $view->with('tags', request()->user->tags()->take(10));
         }
     }

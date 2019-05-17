@@ -17,7 +17,7 @@ class AccountComposer
 
     public function compose(View $view)
     {
-        if (!is_null(request()->user)) {
+        if (! is_null(request()->user)) {
             $view->with('accounts', $this->accountRepository->openAccounts(request()->user));
         }
     }

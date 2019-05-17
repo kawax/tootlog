@@ -28,8 +28,8 @@ class AccountController extends Controller
     /**
      * AccountController constructor.
      *
-     * @param Account $accountRepository
-     * @param Status  $statusRepository
+     * @param  Account  $accountRepository
+     * @param  Status  $statusRepository
      */
     public function __construct(Account $accountRepository, Status $statusRepository)
     {
@@ -38,9 +38,9 @@ class AccountController extends Controller
     }
 
     /**
-     * @param User   $user
-     * @param string $username
-     * @param string $domain
+     * @param  User  $user
+     * @param  string  $username
+     * @param  string  $domain
      *
      * @return mixed
      */
@@ -52,7 +52,7 @@ class AccountController extends Controller
             $this->authorize('show', $acct);
         }
 
-        $title = $acct->acct . ' - ' . config('app.name', 'tootlog');
+        $title = $acct->acct.' - '.config('app.name', 'tootlog');
         OpenGraph::setSiteName(config('app.name', 'tootlog'));
         OpenGraph::setDescription($acct->note);
         OpenGraph::setTitle($title);
@@ -70,10 +70,10 @@ class AccountController extends Controller
     }
 
     /**
-     * @param User   $user
-     * @param string $username
-     * @param string $domain
-     * @param string $status_id
+     * @param  User  $user
+     * @param  string  $username
+     * @param  string  $domain
+     * @param  string  $status_id
      *
      * @return mixed
      */
@@ -90,7 +90,7 @@ class AccountController extends Controller
             $this->authorize('show', $acct);
         }
 
-        $title = $acct->acct . ' - ' . config('app.name', 'tootlog');
+        $title = $acct->acct.' - '.config('app.name', 'tootlog');
 
         OpenGraph::setSiteName(config('app.name', 'tootlog'));
         OpenGraph::setDescription($status->content);

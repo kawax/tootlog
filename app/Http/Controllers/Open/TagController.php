@@ -26,9 +26,9 @@ class TagController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  StatusRepository $statusRepository
+     * @param  StatusRepository  $statusRepository
      * @param  \App\Model\user  $user
-     * @param  \App\Model\Tag   $tag
+     * @param  \App\Model\Tag  $tag
      *
      * @return \Illuminate\Http\Response|\Illuminate\View\View
      */

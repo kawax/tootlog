@@ -13,9 +13,9 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @param Request $request
-     * @param Account $account
-     * @param Status  $status
+     * @param  Request  $request
+     * @param  Account  $account
+     * @param  Status  $status
      *
      * @return \Illuminate\Http\Response|\Illuminate\View\View
      */

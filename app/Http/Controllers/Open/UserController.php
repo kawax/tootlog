@@ -18,7 +18,7 @@ class UserController extends Controller
     {
         $statuses = $statusRepository->openUserStatuses($user);
 
-        $title = $user->name . '@' . config('app.name', 'tootlog');
+        $title = $user->name.'@'.config('app.name', 'tootlog');
 
         OpenGraph::setSiteName(config('app.name', 'tootlog'));
         OpenGraph::setDescription($title);

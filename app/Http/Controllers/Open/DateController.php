@@ -18,7 +18,7 @@ class DateController extends Controller
     /**
      * AccountController constructor.
      *
-     * @param StatusRepository $statusRepository
+     * @param  StatusRepository  $statusRepository
      */
     public function __construct(StatusRepository $statusRepository)
     {
@@ -26,14 +26,14 @@ class DateController extends Controller
     }
 
     /**
-     * @param User   $user
-     * @param string $year
-     * @param string $month
-     * @param string $day
+     * @param  User  $user
+     * @param  string  $year
+     * @param  string  $month
+     * @param  string  $day
      *
      * @return \Illuminate\Http\Response|\Illuminate\View\View
      */
-    public function date(User $user, string $year = null, string $month = null, string $day = null)
+    public function date(User $user, ?string $year = null, ?string $month = null, ?string $day = null)
     {
         if (empty($year)) {
             return redirect(route('open.user', $user));
@@ -41,12 +41,12 @@ class DateController extends Controller
 
         $date = $year;
 
-        if (!empty($month)) {
-            $date .= '-' . $month;
+        if (! empty($month)) {
+            $date .= '-'.$month;
         }
 
-        if (!empty($day)) {
-            $date .= '-' . $day;
+        if (! empty($day)) {
+            $date .= '-'.$day;
         }
 
         $statuses = $this->statusRepository->openUserStatusesByDate($user, $year, $month, $day);
@@ -55,8 +55,8 @@ class DateController extends Controller
     }
 
     /**
-     * @param User   $user
-     * @param string $date
+     * @param  User  $user
+     * @param  string  $date
      *
      * @return \Illuminate\Http\Response|\Illuminate\View\View
      */

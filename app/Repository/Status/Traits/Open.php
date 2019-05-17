@@ -19,7 +19,7 @@ trait Open
                          ->latest('created_at');
 
         if (request()->has('search')) {
-            $statuses = $statuses->where('content', 'like', '%' . request('search') . '%');
+            $statuses = $statuses->where('content', 'like', '%'.request('search').'%');
         }
 
         $statuses = $statuses->paginate(self::PAGINATE);
@@ -36,19 +36,17 @@ trait Open
                       ->where('accounts.locked', false)
                       ->whereYear('statuses.created_at', $year);
 
-        if (!empty($month)) {
+        if (! empty($month)) {
             $query = $query->whereMonth('statuses.created_at', $month);
         }
 
-        if (!empty($day)) {
+        if (! empty($day)) {
             $query = $query->whereDay('statuses.created_at', $day);
         }
 
-        $statuses = $query->with(['account', 'reblog'])
-                          ->latest('created_at')
-                          ->paginate(self::PAGINATE);
-
-        return $statuses;
+        return $query->with(['account', 'reblog'])
+                     ->latest('created_at')
+                     ->paginate(self::PAGINATE);
     }
 
     /**
@@ -56,7 +54,7 @@ trait Open
      */
     public function openRecents(User $user)
     {
-        $recents = cache()->remember('recents/' . $user->id, now()->addMinutes(60), function () use ($user) {
+        return cache()->remember('recents/'.$user->id, now()->addMinutes(60), function () use ($user) {
             return $user->statuses()
                         ->where('accounts.locked', false)
                         ->latest()
@@ -66,8 +64,6 @@ trait Open
                         })
                         ->take(10);
         });
-
-        return $recents;
     }
 
     /**
@@ -75,7 +71,7 @@ trait Open
      */
     public function openArchives(User $user)
     {
-        $archives = cache()->remember('archives/' . $user->id, now()->addMinutes(60), function () use ($user) {
+        return cache()->remember('archives/'.$user->id, now()->addMinutes(60), function () use ($user) {
             return $user->statuses()
                         ->where('accounts.locked', false)
                         ->latest()
@@ -84,8 +80,6 @@ trait Open
                             return $item->created_at->format('Y-m');
                         });
         });
-
-        return $archives;
     }
 
     /**
@@ -101,7 +95,7 @@ trait Open
                         ->latest();
 
         if (request()->has('search')) {
-            $statuses = $statuses->where('content', 'like', '%' . request('search') . '%');
+            $statuses = $statuses->where('content', 'like', '%'.request('search').'%');
         }
 
         $statuses = $statuses->paginate(self::PAGINATE);
@@ -119,7 +113,7 @@ trait Open
                          ->latest('created_at');
 
         if (request()->has('search')) {
-            $statuses = $statuses->where('content', 'like', '%' . request('search') . '%');
+            $statuses = $statuses->where('content', 'like', '%'.request('search').'%');
         }
 
         $statuses = $statuses->paginate(self::PAGINATE);

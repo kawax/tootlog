@@ -22,13 +22,13 @@ class Server extends Model
     /**
      * streaming api url
      *
-     * @param string $streaming
+     * @param  string  $streaming
      *
      * @return string
      */
     public function getStreamingAttribute($streaming): string
     {
-        if (!is_null($streaming)) {
+        if (! is_null($streaming)) {
             return $streaming;
         }
 
@@ -43,7 +43,7 @@ class Server extends Model
      */
     public function getFaviconAttribute(): string
     {
-        return $this->domain . '/' . data_get(config('tootlog.favicon'), $this->domain, 'favicon.ico');
+        return $this->domain.'/'.data_get(config('tootlog.favicon'), $this->domain, 'favicon.ico');
     }
 
     /**

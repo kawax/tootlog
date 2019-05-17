@@ -49,7 +49,7 @@ class Account extends Model
     {
         $domain = parse_url($this->url, PHP_URL_HOST);
 
-        return $this->username . '@' . $domain;
+        return $this->username.'@'.$domain;
     }
 
     /**

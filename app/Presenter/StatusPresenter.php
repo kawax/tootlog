@@ -28,7 +28,7 @@ trait StatusPresenter
                 'url'   => $this->account->url,
             ],
             'articleBody'   => $this->content,
-            'headline'      => $this->spoiler_text ?: $this->content,
+            'headline'      => $this->spoiler_text ?? $this->content ?? '',
             'datePublished' => $this->created_at,
             'url'           => $url,
             //            'sameAs'        => $this->url,

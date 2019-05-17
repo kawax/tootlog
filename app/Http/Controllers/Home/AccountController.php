@@ -20,8 +20,8 @@ class AccountController extends Controller
     /**
      * Redirect to mastodon server.
      *
-     * @param  AccountCreateRequest $request
-     * @param  ServerRepository     $server
+     * @param  AccountCreateRequest  $request
+     * @param  ServerRepository  $server
      *
      * @return \Illuminate\Http\Response
      */
@@ -30,7 +30,7 @@ class AccountController extends Controller
         $domain = $request->input('domain');
         $domain = trim($domain, "/\t\n\r\0\x0B");
         $url = parse_url($domain);
-        $domain = $url['scheme'] . '://' . $url['host'];
+        $domain = $url['scheme'].'://'.$url['host'];
 
         $info = $server->firstOrCreate($domain);
 
@@ -46,9 +46,9 @@ class AccountController extends Controller
     }
 
     /**
-     * @param Request           $request
-     * @param AccountRepository $account
-     * @param ServerRepository  $server
+     * @param  Request  $request
+     * @param  AccountRepository  $account
+     * @param  ServerRepository  $server
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */

@@ -76,7 +76,7 @@ class EloquentServerRepository implements ServerRepositoryInterface
     }
 
     /**
-     * @param int $page
+     * @param  int  $page
      *
      * @return mixed
      */

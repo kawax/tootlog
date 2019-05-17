@@ -23,7 +23,7 @@ class EloquentStatusRepository implements StatusRepositoryInterface
                              ->latest('created_at');
 
         if (request()->has('search')) {
-            $statuses = $statuses->where('content', 'like', '%' . request('search') . '%');
+            $statuses = $statuses->where('content', 'like', '%'.request('search').'%');
         }
 
         $statuses = $statuses->paginate(self::PAGINATE);
@@ -36,7 +36,7 @@ class EloquentStatusRepository implements StatusRepositoryInterface
      */
     public function getByAcct(Account $acct, string $status_id)
     {
-        $key = 'account/' . $acct->id . '/status/' . $status_id;
+        $key = 'account/'.$acct->id.'/status/'.$status_id;
 
         $status = cache()->remember($key, now()->addDay(), function () use ($acct, $status_id) {
             return $acct->statuses()

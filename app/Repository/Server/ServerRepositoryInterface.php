@@ -8,7 +8,7 @@ use App\Model\Server;
 interface ServerRepositoryInterface
 {
     /**
-     * @param string $domain
+     * @param  string  $domain
      *
      * @return mixed
      */
@@ -20,28 +20,28 @@ interface ServerRepositoryInterface
     public function all();
 
     /**
-     * @param string $domain
+     * @param  string  $domain
      *
      * @return bool
      */
     public function has(string $domain): bool;
 
     /**
-     * @param array $data
+     * @param  array  $data
      *
      * @return mixed
      */
     public function create(array $data);
 
     /**
-     * @param string $domain
+     * @param  string  $domain
      *
      * @return array
      */
     public function firstOrCreate(string $domain): array;
 
     /**
-     * @param int $page
+     * @param  int  $page
      *
      * @return mixed
      */

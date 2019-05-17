@@ -21,7 +21,7 @@ class StatusController extends Controller
     /**
      * 非表示
      *
-     * @param Status $status
+     * @param  Status  $status
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -37,7 +37,7 @@ class StatusController extends Controller
     /**
      * 表示
      *
-     * @param string $status
+     * @param  string  $status
      *
      * @return \Illuminate\Http\JsonResponse
      */

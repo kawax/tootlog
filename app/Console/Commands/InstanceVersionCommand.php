@@ -36,7 +36,7 @@ class InstanceVersionCommand extends Command
     /**
      * Execute the console command.
      *
-     * @param ServerRepository $repository
+     * @param  ServerRepository  $repository
      *
      * @return mixed
      */

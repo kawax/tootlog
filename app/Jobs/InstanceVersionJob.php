@@ -24,7 +24,7 @@ class InstanceVersionJob implements ShouldQueue
     /**
      * Create a new job instance.
      *
-     * @param Server $server
+     * @param  Server  $server
      *
      * @return void
      */

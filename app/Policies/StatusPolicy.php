@@ -22,13 +22,13 @@ class StatusPolicy
     }
 
     /**
-     * @param User   $user
-     * @param Status $status
+     * @param  User  $user
+     * @param  Status  $status
      *
      * @return bool
      */
     public function hide(User $user, Status $status)
     {
-        return (int)$user->id === (int)$status->account->user_id;
+        return (int) $user->id === (int) $status->account->user_id;
     }
 }

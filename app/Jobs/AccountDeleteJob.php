@@ -22,7 +22,7 @@ class AccountDeleteJob implements ShouldQueue
     /**
      * Create a new job instance.
      *
-     * @param int $id
+     * @param  int  $id
      *
      * @return void
      */
@@ -34,7 +34,7 @@ class AccountDeleteJob implements ShouldQueue
     /**
      * Execute the job.
      *
-     * @param AccountRepository $account
+     * @param  AccountRepository  $account
      *
      * @return void
      */

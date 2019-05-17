@@ -14,7 +14,7 @@ class SitemapController extends Controller
     {
         $sitemap->setCache('tootlog.sitemaps', 60);
 
-        if (!$sitemap->isCached()) {
+        if (! $sitemap->isCached()) {
             $sitemap->add(url('/'), now(), '0.2', 'weekly');
 
             foreach (User::latest()->cursor() as $user) {

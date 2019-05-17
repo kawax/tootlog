@@ -19,7 +19,7 @@ class ArchiveController extends Controller
     /**
      * AccountController constructor.
      *
-     * @param StatusRepository $statusRepository
+     * @param  StatusRepository  $statusRepository
      */
     public function __construct(StatusRepository $statusRepository)
     {

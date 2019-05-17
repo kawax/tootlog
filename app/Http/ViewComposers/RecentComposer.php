@@ -17,7 +17,7 @@ class RecentComposer
 
     public function compose(View $view)
     {
-        if (!is_null(request()->user)) {
+        if (! is_null(request()->user)) {
             $view->with('recents', $this->statusRepository->openRecents(request()->user));
         }
     }

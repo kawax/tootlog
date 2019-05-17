@@ -25,8 +25,8 @@ class CalendarController extends Controller
     /**
      * AccountController constructor.
      *
-     * @param Account $accountRepository
-     * @param Status  $statusRepository
+     * @param  Account  $accountRepository
+     * @param  Status  $statusRepository
      */
     public function __construct(Account $accountRepository, Status $statusRepository)
     {
@@ -46,7 +46,7 @@ class CalendarController extends Controller
         if ($acct->locked) {
             $this->authorize('show', $acct);
         }
-        
+
         return $this->statusRepository->openAcctCalendar($acct);
     }
 }

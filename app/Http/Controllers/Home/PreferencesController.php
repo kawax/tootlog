@@ -19,7 +19,7 @@ class PreferencesController extends Controller
     }
 
     /**
-     * @param UserUpdateRequest $request
+     * @param  UserUpdateRequest  $request
      *
      * @return \Illuminate\Http\Response|\Illuminate\View\View
      */

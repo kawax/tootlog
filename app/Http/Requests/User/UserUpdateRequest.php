@@ -25,7 +25,7 @@ class UserUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'required|string|email|max:255|unique:users,email,' . auth()->user()->id,
+            'email' => 'required|string|email|max:255|unique:users,email,'.auth()->user()->id,
             'theme' => ['required', 'string', Rule::in(['thin', 'normal'])],
         ];
     }
