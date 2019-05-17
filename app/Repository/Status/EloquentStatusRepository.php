@@ -9,7 +9,7 @@ class EloquentStatusRepository implements StatusRepositoryInterface
 {
     use Traits\Open;
 
-    const PAGINATE = 20;
+    protected const PAGINATE = 20;
 
     /**
      * @inheritDoc
