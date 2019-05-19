@@ -100,18 +100,26 @@ class GetStatusJob implements ShouldQueue
     protected function create(?array $statuses)
     {
         foreach ($statuses as $status) {
-            if (data_get($status, 'visibility') === 'direct') {
-                continue;
-            }
-
-            $data = $this->status($status);
-
-            if (empty($data['uri'])) {
-                continue;
-            }
-
-            $this->newStatus($status, $data);
+            $this->createStatus($status);
         }
+    }
+
+    /**
+     * @param  array|null  $status
+     */
+    protected function createStatus(?array $status)
+    {
+        if (data_get($status, 'visibility') === 'direct') {
+            return;
+        }
+
+        $data = $this->statusData($status);
+
+        if (empty($data['uri'])) {
+            return;
+        }
+
+        $this->newStatus($status, $data);
     }
 
     /**
@@ -119,7 +127,7 @@ class GetStatusJob implements ShouldQueue
      *
      * @return array
      */
-    protected function status(array $status): array
+    protected function statusData(array $status): array
     {
         $data = Arr::only($status, [
             'id',
