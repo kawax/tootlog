@@ -86,16 +86,7 @@ class ExportCsvJob implements ShouldQueue
 
         $this->writer = Writer::createFromFileObject(new \SplTempFileObject());
 
-        $header = [
-            'id',
-            'content',
-            'spoiler_text',
-            'created_at',
-            'uri',
-            'url',
-        ];
-
-        $this->writer->insertOne($header);
+        $this->writer->insertOne($this->header());
 
         $statuses = $this->statusRepository->exportCsv($account);
 
@@ -104,20 +95,7 @@ class ExportCsvJob implements ShouldQueue
              * @var Status $status
              */
             foreach ($chunk_statuses as $status) {
-                $status_line = $status->only([
-                    'status_id',
-                    'content',
-                    'spoiler_text',
-                    'created_at',
-                    'uri',
-                    'url',
-                ]);
-
-                try {
-                    $this->writer->insertOne($status_line);
-                } catch (CannotInsertRecord $e) {
-                    logger()->error($e->getMessage());
-                }
+                $this->insert($status);
             }
         });
 
@@ -125,6 +103,42 @@ class ExportCsvJob implements ShouldQueue
 
         if (Storage::put($path, $this->writer)) {
             $this->files[] = $path;
+        }
+    }
+
+    /**
+     * @return array
+     */
+    protected function header(): array
+    {
+        return [
+            'id',
+            'content',
+            'spoiler_text',
+            'created_at',
+            'uri',
+            'url',
+        ];
+    }
+
+    /**
+     * @param  Status  $status
+     */
+    protected function insert(Status $status)
+    {
+        $status_line = $status->only([
+            'status_id',
+            'content',
+            'spoiler_text',
+            'created_at',
+            'uri',
+            'url',
+        ]);
+
+        try {
+            $this->writer->insertOne($status_line);
+        } catch (CannotInsertRecord $e) {
+            logger()->error($e->getMessage());
         }
     }
 }
