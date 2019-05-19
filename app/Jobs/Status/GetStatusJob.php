@@ -110,22 +110,7 @@ class GetStatusJob implements ShouldQueue
                 continue;
             }
 
-            $attr = [
-                'uri'        => $data['uri'],
-                'account_id' => $this->account->id,
-            ];
-
-            $new_status = $this->statusRepository->updateOrCreate($attr, $data);
-
-            if (filled(data_get($status, 'reblog'))) {
-                $reblog = $this->reblog(data_get($status, 'reblog'));
-                $new_status->reblog()->associate($reblog)->save();
-            }
-
-            if (filled(data_get($status, 'tags'))) {
-                $tags = $this->tag(data_get($status, 'tags'));
-                $new_status->tags()->sync($tags);
-            }
+            $this->newStatus($status, $data);
         }
     }
 
@@ -153,6 +138,30 @@ class GetStatusJob implements ShouldQueue
         $data = Arr::add($data, 'account_id', $this->account->id);
 
         return $data;
+    }
+
+    /**
+     * @param  array  $status
+     * @param  array  $data
+     */
+    protected function newStatus(array $status, array $data)
+    {
+        $attr = [
+            'uri'        => $data['uri'],
+            'account_id' => $this->account->id,
+        ];
+
+        $new_status = $this->statusRepository->updateOrCreate($attr, $data);
+
+        if (filled(data_get($status, 'reblog'))) {
+            $reblog = $this->reblog(data_get($status, 'reblog'));
+            $new_status->reblog()->associate($reblog)->save();
+        }
+
+        if (filled(data_get($status, 'tags'))) {
+            $tags = $this->tag(data_get($status, 'tags'));
+            $new_status->tags()->sync($tags);
+        }
     }
 
     /**
