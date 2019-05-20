@@ -67,7 +67,7 @@ class AccountTest extends TestCase
     public function testDestroy()
     {
         $response = $this->actingAs($this->user)
-                         ->delete('/accounts/delete/1');
+                         ->delete('/accounts/delete/'.$this->account->id);
 
         $this->assertDatabaseMissing('accounts', [
             'id' => $this->account->id,
