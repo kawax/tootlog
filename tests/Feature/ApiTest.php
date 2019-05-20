@@ -72,7 +72,7 @@ class ApiTest extends TestCase
     public function testHide()
     {
         $response = $this->actingAs($this->user)
-                         ->json('DELETE', '/api/status/hide/' . $this->statuses->first()->id);
+                         ->json('DELETE', '/api/status/hide/'.$this->statuses->first()->id);
 
         $response->assertStatus(200)
                  ->assertJson([
@@ -82,7 +82,7 @@ class ApiTest extends TestCase
 
     public function testHideUnauthenticated()
     {
-        $response = $this->json('DELETE', '/api/status/hide/' . $this->statuses->first()->id);
+        $response = $this->json('DELETE', '/api/status/hide/'.$this->statuses->first()->id);
 
         $response->assertStatus(401)
                  ->assertJson([
@@ -97,7 +97,7 @@ class ApiTest extends TestCase
         ]);
 
         $response = $this->actingAs($user2)
-                         ->json('DELETE', '/api/status/hide/' . $this->statuses->first()->id);
+                         ->json('DELETE', '/api/status/hide/'.$this->statuses->first()->id);
 
         $response->assertStatus(403);
     }
@@ -105,7 +105,7 @@ class ApiTest extends TestCase
     public function testShow()
     {
         $response = $this->actingAs($this->user)
-                         ->json('PUT', '/api/status/show/' . $this->statuses->first()->id);
+                         ->json('PUT', '/api/status/show/'.$this->statuses->first()->id);
 
         $response->assertStatus(200)
                  ->assertJson([
@@ -120,7 +120,7 @@ class ApiTest extends TestCase
         ]);
 
         $response = $this->actingAs($user2)
-                         ->json('PUT', '/api/status/show/' . $this->statuses->first()->id);
+                         ->json('PUT', '/api/status/show/'.$this->statuses->first()->id);
 
         $response->assertStatus(403);
     }

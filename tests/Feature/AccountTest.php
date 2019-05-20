@@ -67,7 +67,7 @@ class AccountTest extends TestCase
     public function testDestroy()
     {
         $response = $this->actingAs($this->user)
-                         ->delete('/accounts/delete/'.$this->account->id);
+                         ->delete(route('accounts.delete', $this->account));
 
         $this->assertDatabaseMissing('accounts', [
             'id' => $this->account->id,
@@ -82,7 +82,7 @@ class AccountTest extends TestCase
         $user2 = factory(User::class)->create();
 
         $response = $this->actingAs($user2)
-                         ->delete('/accounts/delete/1');
+                         ->delete(route('accounts.delete', $this->account));
 
         $this->assertDatabaseHas('accounts', [
             'id' => $this->account->id,
