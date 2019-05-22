@@ -45,10 +45,12 @@ class UserTest extends TestCase
         ]);
 
         $this->account = factory(Account::class)->create([
-            'user_id'   => $this->user->id,
-            'server_id' => $this->server->id,
-            'username'  => 'test',
-            'url'       => 'https://example.com/@test',
+            'user_id'      => $this->user->id,
+            'server_id'    => $this->server->id,
+            'username'     => 'test',
+            'display_name' => '<script>test',
+            'note'         => '<p></p>',
+            'url'          => 'https://example.com/@test',
         ]);
     }
 
@@ -182,8 +184,9 @@ class UserTest extends TestCase
         $response = $this->actingAs($this->user)
                          ->get('/@test/test@example.com');
 
-        $response->assertSee('Profile');
-        $response->assertSee('test@example.com');
+        $response->assertSee('Profile')
+                 ->assertSee('test@example.com')
+                 ->assertDontSee('<script>test');
     }
 
     public function testAccountAnother()
@@ -197,7 +200,7 @@ class UserTest extends TestCase
     public function testLockedAccount()
     {
         $accounts = factory(Account::class)->create([
-            'user_id'   => (int)$this->user->id,
+            'user_id'   => (int) $this->user->id,
             'server_id' => $this->server->id,
             'username'  => 'test2',
             'url'       => 'https://example.com/@test2',
@@ -235,14 +238,17 @@ class UserTest extends TestCase
     public function testStatus()
     {
         $statuses = factory(Status::class)->create([
-            'account_id' => $this->account->id,
-            'status_id'  => 1,
+            'account_id'   => $this->account->id,
+            'status_id'    => 1,
+            'content'      => '<p>test</p>',
+            'spoiler_text' => '<script>test',
         ]);
 
         $response = $this->actingAs($this->user)
                          ->get('/@test/test@example.com/1');
 
-        $response->assertSee($statuses->content);
+        $response->assertSee($statuses->content)
+                 ->assertDontSee('<script>test');
     }
 
     public function testLockedStatusAnother()

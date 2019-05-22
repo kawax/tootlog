@@ -21,9 +21,9 @@ trait AccountPresenter
         ]);
 
         return Context::create(Person::class, [
-            'name'        => $this->name,
+            'name'        => e($this->name),
             'image'       => $this->avatar,
-            'description' => $this->note,
+            'description' => e($this->note),
             'url'         => $url,
             //            'sameAs'      => $this->url,
         ]);

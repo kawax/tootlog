@@ -23,12 +23,12 @@ trait StatusPresenter
 
         return Context::create(SocialMediaPosting::class, [
             'author'        => [
-                'name'  => $this->name,
+                'name'  => e($this->name),
                 'image' => $this->account->avatar,
                 'url'   => $this->account->url,
             ],
-            'articleBody'   => $this->content,
-            'headline'      => $this->spoiler_text ?? $this->content ?? '',
+            'articleBody'   => e($this->content),
+            'headline'      => e($this->spoiler_text ?? $this->content ?? ''),
             'datePublished' => $this->created_at,
             'url'           => $url,
             //            'sameAs'        => $this->url,
