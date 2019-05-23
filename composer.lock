@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0dd2c369d1ddb860566697c047dc6908",
+    "content-hash": "7e21bc309258c1d439a78866df7df3a5",
     "packages": [
         {
             "name": "appstract/laravel-blade-directives",
@@ -3274,28 +3274,28 @@
         },
         {
             "name": "revolution/laravel-mastodon-api",
-            "version": "1.5.2",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kawax/laravel-mastodon-api.git",
-                "reference": "781e4138eb42573c9ac0b6eb393feeb8fada1cf6"
+                "reference": "df96b27b5cbd39751b4e1856da2a5bb133162e35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kawax/laravel-mastodon-api/zipball/781e4138eb42573c9ac0b6eb393feeb8fada1cf6",
-                "reference": "781e4138eb42573c9ac0b6eb393feeb8fada1cf6",
+                "url": "https://api.github.com/repos/kawax/laravel-mastodon-api/zipball/df96b27b5cbd39751b4e1856da2a5bb133162e35",
+                "reference": "df96b27b5cbd39751b4e1856da2a5bb133162e35",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "guzzlehttp/guzzle": "^6.2",
-                "illuminate/support": "^5.5",
-                "php": ">=7.0.0"
+                "illuminate/support": "^5.8",
+                "php": ">=7.1.3"
             },
             "require-dev": {
                 "mockery/mockery": "^1.0",
-                "orchestra/testbench": "~3.5",
-                "phpunit/phpunit": "6.*"
+                "orchestra/testbench": "~3.8",
+                "phpunit/phpunit": "^7.5"
             },
             "type": "library",
             "extra": {
@@ -3328,7 +3328,7 @@
                 "laravel",
                 "mastodon"
             ],
-            "time": "2019-02-02T04:42:36+00:00"
+            "time": "2019-02-27T09:45:29+00:00"
         },
         {
             "name": "revolution/socialite-mastodon",
@@ -4142,7 +4142,7 @@
                 },
                 {
                     "name": "Gert de Pagter",
-                    "email": "backendtea@gmail.com"
+                    "email": "BackEndTea@gmail.com"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
