@@ -129,16 +129,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.96.0",
+            "version": "3.97.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "6dff66f544e9d9daeb5b2557ade5091d1caa7f77"
+                "reference": "a01af113c33627ee1a8ba3a681de17240d0adccf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/6dff66f544e9d9daeb5b2557ade5091d1caa7f77",
-                "reference": "6dff66f544e9d9daeb5b2557ade5091d1caa7f77",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/a01af113c33627ee1a8ba3a681de17240d0adccf",
+                "reference": "a01af113c33627ee1a8ba3a681de17240d0adccf",
                 "shasum": ""
             },
             "require": {
@@ -208,7 +208,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-05-28T18:07:15+00:00"
+            "time": "2019-05-29T18:17:02+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -5372,16 +5372,16 @@
         },
         {
             "name": "laravel/homestead",
-            "version": "v8.5.3",
+            "version": "v8.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/homestead.git",
-                "reference": "2be0226dba48ce7a5187f27b27acaadf7b9ddba1"
+                "reference": "fa88ebb8acdd5646d8a52ecc267816099d374d1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/homestead/zipball/2be0226dba48ce7a5187f27b27acaadf7b9ddba1",
-                "reference": "2be0226dba48ce7a5187f27b27acaadf7b9ddba1",
+                "url": "https://api.github.com/repos/laravel/homestead/zipball/fa88ebb8acdd5646d8a52ecc267816099d374d1e",
+                "reference": "fa88ebb8acdd5646d8a52ecc267816099d374d1e",
                 "shasum": ""
             },
             "require": {
@@ -5418,7 +5418,7 @@
                 }
             ],
             "description": "A virtual machine for web artisans.",
-            "time": "2019-05-26T00:33:25+00:00"
+            "time": "2019-05-29T19:15:42+00:00"
         },
         {
             "name": "league/container",
@@ -6552,16 +6552,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "7.0.3",
+            "version": "7.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "0317a769a81845c390e19684d9ba25d7f6aa4707"
+                "reference": "6024c8a6cb962d496b7bd049ed8f48473824176d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/0317a769a81845c390e19684d9ba25d7f6aa4707",
-                "reference": "0317a769a81845c390e19684d9ba25d7f6aa4707",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/6024c8a6cb962d496b7bd049ed8f48473824176d",
+                "reference": "6024c8a6cb962d496b7bd049ed8f48473824176d",
                 "shasum": ""
             },
             "require": {
@@ -6611,7 +6611,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2019-02-26T07:38:26+00:00"
+            "time": "2019-05-29T09:59:31+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
