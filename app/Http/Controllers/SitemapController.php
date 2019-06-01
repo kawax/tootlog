@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Laravelium\Sitemap\Sitemap;
-
 use App\Model\User;
 use App\Model\Account;
+use Laravelium\Sitemap\Sitemap;
 
 class SitemapController extends Controller
 {

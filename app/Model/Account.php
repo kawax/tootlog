@@ -2,10 +2,8 @@
 
 namespace App\Model;
 
-use Illuminate\Database\Eloquent\Model;
-
 use App\Presenter\AccountPresenter;
-
+use Illuminate\Database\Eloquent\Model;
 use Revolution\Mastodon\Traits\Mastodon;
 
 class Account extends Model

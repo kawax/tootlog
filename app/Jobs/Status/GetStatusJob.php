@@ -2,27 +2,21 @@
 
 namespace App\Jobs\Status;
 
+use Carbon\Carbon;
+use App\Model\Tag;
+use GuzzleHttp\Psr7;
+use App\Model\Reblog;
+use App\Model\Account;
+use Illuminate\Support\Str;
+use Illuminate\Support\Arr;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
+use Revolution\Mastodon\Facades\Mastodon;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-
-use Illuminate\Support\Str;
-use Illuminate\Support\Arr;
-
-use GuzzleHttp\Psr7;
-
-use Carbon\Carbon;
-
-use App\Model\Account;
-use App\Model\Reblog;
-use App\Model\Tag;
-
 use App\Repository\Status\StatusRepository;
 use App\Repository\Account\AccountRepository;
-
-use Revolution\Mastodon\Facades\Mastodon;
 
 class GetStatusJob implements ShouldQueue
 {

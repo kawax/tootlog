@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use OpenGraph;
 use Twitter;
+use OpenGraph;
 
 class WelcomeController extends Controller
 {

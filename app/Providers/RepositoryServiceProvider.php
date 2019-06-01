@@ -3,15 +3,12 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-
 use App\Repository\Server\ServerRepository;
-use App\Repository\Server\EloquentServerRepository;
-
-use App\Repository\Account\AccountRepository;
-use App\Repository\Account\EloquentAccountRepository;
-
 use App\Repository\Status\StatusRepository;
+use App\Repository\Account\AccountRepository;
+use App\Repository\Server\EloquentServerRepository;
 use App\Repository\Status\EloquentStatusRepository;
+use App\Repository\Account\EloquentAccountRepository;
 
 class RepositoryServiceProvider extends ServiceProvider
 {

@@ -4,7 +4,6 @@ namespace App\Policies;
 
 use App\Model\User;
 use App\Model\Status;
-
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class StatusPolicy

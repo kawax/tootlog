@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers\Open;
 
-use App\Http\Controllers\Controller;
-
 use App\Model\User;
-
+use App\Http\Controllers\Controller;
 use App\Repository\Status\StatusRepository as Status;
 
 class ArchiveController extends Controller

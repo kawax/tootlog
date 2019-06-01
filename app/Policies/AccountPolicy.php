@@ -4,7 +4,6 @@ namespace App\Policies;
 
 use App\Model\User;
 use App\Model\Account;
-
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class AccountPolicy

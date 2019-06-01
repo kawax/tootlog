@@ -3,9 +3,8 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-
-use App\Repository\Server\ServerRepository;
 use App\Jobs\InstanceVersionJob;
+use App\Repository\Server\ServerRepository;
 
 class InstanceVersionCommand extends Command
 {

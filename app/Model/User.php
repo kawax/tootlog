@@ -2,11 +2,10 @@
 
 namespace App\Model;
 
+use App\Presenter\UserPresenter;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
-use App\Presenter\UserPresenter;
 
 class User extends Authenticatable implements MustVerifyEmail
 {

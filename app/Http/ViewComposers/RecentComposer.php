@@ -3,7 +3,6 @@
 namespace App\Http\ViewComposers;
 
 use Illuminate\View\View;
-
 use App\Repository\Status\StatusRepository as Status;
 
 class RecentComposer

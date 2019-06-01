@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\Home;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
-use App\Repository\Account\AccountRepository as Account;
+use App\Http\Controllers\Controller;
 use App\Repository\Status\StatusRepository as Status;
+use App\Repository\Account\AccountRepository as Account;
 
 class HomeController extends Controller
 {

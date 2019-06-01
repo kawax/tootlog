@@ -2,10 +2,9 @@
 
 namespace App\Repository\Status;
 
+use App\Model\Tag;
 use App\Model\User;
 use App\Model\Account;
-use App\Model\Status;
-use App\Model\Tag;
 
 interface StatusRepository
 {

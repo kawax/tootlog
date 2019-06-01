@@ -2,10 +2,9 @@
 
 namespace App\Repository\Server;
 
-use Illuminate\Support\Str;
-
-use App\Model\Server;
 use Mastodon;
+use App\Model\Server;
+use Illuminate\Support\Str;
 
 class EloquentServerRepository implements ServerRepository
 {

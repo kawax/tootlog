@@ -2,18 +2,14 @@
 
 namespace App\Http\Controllers\Home;
 
-use GuzzleHttp\Exception\ClientException;
-use App\Http\Controllers\Controller;
+use Socialite;
 use Illuminate\Http\Request;
-
+use App\Jobs\Status\GetStatusJob;
+use App\Http\Controllers\Controller;
+use GuzzleHttp\Exception\ClientException;
 use App\Http\Requests\Account\AccountCreateRequest;
-
 use App\Repository\Server\ServerRepository as Server;
 use App\Repository\Account\AccountRepository as Account;
-
-use App\Jobs\Status\GetStatusJob;
-
-use Socialite;
 
 class AccountController extends Controller
 {

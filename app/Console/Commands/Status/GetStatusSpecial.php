@@ -3,10 +3,8 @@
 namespace App\Console\Commands\Status;
 
 use Illuminate\Console\Command;
-
-use App\Repository\Account\AccountRepository as Account;
-
 use App\Jobs\Status\GetStatusJob;
+use App\Repository\Account\AccountRepository as Account;
 
 class GetStatusSpecial extends Command
 {

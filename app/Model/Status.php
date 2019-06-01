@@ -2,10 +2,9 @@
 
 namespace App\Model;
 
+use App\Presenter\StatusPresenter;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
-use App\Presenter\StatusPresenter;
 
 class Status extends Model
 {

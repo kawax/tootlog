@@ -2,9 +2,9 @@
 
 namespace App\Repository\Status\Traits;
 
-use App\Model\Account;
-use App\Model\User;
 use App\Model\Tag;
+use App\Model\User;
+use App\Model\Account;
 
 trait Open
 {

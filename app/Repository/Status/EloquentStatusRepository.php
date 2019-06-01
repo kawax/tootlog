@@ -2,8 +2,8 @@
 
 namespace App\Repository\Status;
 
-use App\Model\Account;
 use App\Model\Status;
+use App\Model\Account;
 
 class EloquentStatusRepository implements StatusRepository
 {

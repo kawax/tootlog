@@ -2,13 +2,11 @@
 
 namespace App\Repository\Account;
 
-use Illuminate\Support\Arr;
-
+use Mastodon;
+use Carbon\Carbon;
 use App\Model\User;
 use App\Model\Account;
-use Carbon\Carbon;
-
-use Mastodon;
+use Illuminate\Support\Arr;
 
 class EloquentAccountRepository implements AccountRepository
 {
