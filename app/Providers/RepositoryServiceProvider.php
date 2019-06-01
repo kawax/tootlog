@@ -10,7 +10,7 @@ use App\Repository\Server\EloquentServerRepository;
 use App\Repository\Account\AccountRepository;
 use App\Repository\Account\EloquentAccountRepository;
 
-use App\Repository\Status\StatusRepositoryInterface;
+use App\Repository\Status\StatusRepository;
 use App\Repository\Status\EloquentStatusRepository;
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -43,7 +43,7 @@ class RepositoryServiceProvider extends ServiceProvider
         );
 
         app()->singleton(
-            StatusRepositoryInterface::class,
+            StatusRepository::class,
             EloquentStatusRepository::class
         );
     }

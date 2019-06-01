@@ -19,7 +19,7 @@ use App\Model\Account;
 use App\Model\Reblog;
 use App\Model\Tag;
 
-use App\Repository\Status\StatusRepositoryInterface as StatusRepository;
+use App\Repository\Status\StatusRepository;
 use App\Repository\Account\AccountRepository;
 
 use Revolution\Mastodon\Facades\Mastodon;

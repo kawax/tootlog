@@ -5,7 +5,7 @@ namespace App\Repository\Status;
 use App\Model\Account;
 use App\Model\Status;
 
-class EloquentStatusRepository implements StatusRepositoryInterface
+class EloquentStatusRepository implements StatusRepository
 {
     use Traits\Open;
 

@@ -4,17 +4,16 @@ namespace App\Http\Controllers\Open;
 
 use App\Model\User;
 use App\Model\Tag;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\Repository\Status\StatusRepositoryInterface as StatusRepository;
+use App\Repository\Status\StatusRepository as Status;
 
 class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response|\Illuminate\View\View
+     * @return \Illuminate\Http\Response
      */
     public function index(User $user)
     {
@@ -26,13 +25,13 @@ class TagController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  StatusRepository  $statusRepository
-     * @param  \App\Model\user  $user
-     * @param  \App\Model\Tag  $tag
+     * @param  Status  $statusRepository
+     * @param  User  $user
+     * @param  Tag  $tag
      *
-     * @return \Illuminate\Http\Response|\Illuminate\View\View
+     * @return \Illuminate\Http\Response
      */
-    public function show(StatusRepository $statusRepository, User $user, Tag $tag)
+    public function show(Status $statusRepository, User $user, Tag $tag)
     {
         $statuses = $statusRepository->openUserTagStatus($user, $tag);
 

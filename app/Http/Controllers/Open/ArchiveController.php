@@ -2,26 +2,25 @@
 
 namespace App\Http\Controllers\Open;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Model\User;
 
-use App\Repository\Status\StatusRepositoryInterface as StatusRepository;
+use App\Repository\Status\StatusRepository as Status;
 
 class ArchiveController extends Controller
 {
     /**
-     * @var StatusRepository
+     * @var Status
      */
     protected $statusRepository;
 
     /**
      * AccountController constructor.
      *
-     * @param  StatusRepository  $statusRepository
+     * @param  Status  $statusRepository
      */
-    public function __construct(StatusRepository $statusRepository)
+    public function __construct(Status $statusRepository)
     {
         $this->statusRepository = $statusRepository;
     }

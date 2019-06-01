@@ -7,9 +7,8 @@ use App\Model\Account;
 use App\Model\Status;
 use App\Model\Tag;
 
-interface StatusRepositoryInterface
+interface StatusRepository
 {
-
     /**
      * ユーザーのステータス
      *

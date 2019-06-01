@@ -17,7 +17,7 @@ use App\Model\User;
 use App\Model\Status;
 use App\Model\Account;
 
-use App\Repository\Status\StatusRepositoryInterface as StatusRepository;
+use App\Repository\Status\StatusRepository;
 
 use App\Mail\Export\CsvExported;
 

@@ -8,7 +8,6 @@ trait UserPresenter
 {
     /**
      * @return mixed
-     * @throws \Exception
      */
     public function tags()
     {
