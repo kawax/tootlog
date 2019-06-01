@@ -16,10 +16,19 @@ class SitemapController extends Controller
             $sitemap->add(url('/'), now(), '0.2', 'weekly');
 
             foreach (User::latest()->cursor() as $user) {
-                $sitemap->add(route('open.user', ['user' => $user]), $user->updated_at, '1.0', 'hourly');
+                $sitemap->add(
+                    route('open.user', ['user' => $user]),
+                    $user->updated_at,
+                    '1.0',
+                    'hourly'
+                );
             }
 
-            foreach (Account::where('locked', false)->latest()->cursor() as $account) {
+            $accounts = Account::where('locked', false)
+                               ->latest()
+                               ->cursor();
+
+            foreach ($accounts as $account) {
                 $sitemap->add(route('open.account.index', [
                     'user'     => $account->user,
                     'username' => $account->username,
