@@ -2,7 +2,6 @@
 
 namespace App\Jobs\Status;
 
-use GuzzleHttp\Exception\ClientException;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
@@ -21,7 +20,7 @@ use App\Model\Reblog;
 use App\Model\Tag;
 
 use App\Repository\Status\StatusRepositoryInterface as StatusRepository;
-use App\Repository\Account\AccountRepositoryInterface as AccountRepository;
+use App\Repository\Account\AccountRepository;
 
 use Revolution\Mastodon\Facades\Mastodon;
 

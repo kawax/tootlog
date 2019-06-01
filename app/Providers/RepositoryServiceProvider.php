@@ -7,7 +7,7 @@ use Illuminate\Support\ServiceProvider;
 use App\Repository\Server\ServerRepositoryInterface;
 use App\Repository\Server\EloquentServerRepository;
 
-use App\Repository\Account\AccountRepositoryInterface;
+use App\Repository\Account\AccountRepository;
 use App\Repository\Account\EloquentAccountRepository;
 
 use App\Repository\Status\StatusRepositoryInterface;
@@ -38,7 +38,7 @@ class RepositoryServiceProvider extends ServiceProvider
         );
 
         app()->singleton(
-            AccountRepositoryInterface::class,
+            AccountRepository::class,
             EloquentAccountRepository::class
         );
 

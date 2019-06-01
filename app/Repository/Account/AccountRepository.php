@@ -5,9 +5,8 @@ namespace App\Repository\Account;
 use App\Model\User;
 use App\Model\Account;
 
-interface AccountRepositoryInterface
+interface AccountRepository
 {
-
     /**
      *
      * @return mixed

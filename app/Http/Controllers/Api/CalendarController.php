@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 
 use App\Model\User;
 
-use App\Repository\Account\AccountRepositoryInterface as Account;
+use App\Repository\Account\AccountRepository as Account;
 use App\Repository\Status\StatusRepositoryInterface as Status;
 
 class CalendarController extends Controller

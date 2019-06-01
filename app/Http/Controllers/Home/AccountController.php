@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Account\AccountCreateRequest;
 
 use App\Repository\Server\ServerRepositoryInterface as ServerRepository;
-use App\Repository\Account\AccountRepositoryInterface as AccountRepository;
+use App\Repository\Account\AccountRepository as Account;
 
 use App\Jobs\Status\GetStatusJob;
 
@@ -47,12 +47,12 @@ class AccountController extends Controller
 
     /**
      * @param  Request  $request
-     * @param  AccountRepository  $account
+     * @param  Account  $account
      * @param  ServerRepository  $server
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function callback(Request $request, AccountRepository $account, ServerRepository $server)
+    public function callback(Request $request, Account $account, ServerRepository $server)
     {
         $domain = session('mastodon_domain');
         session(['mastodon_domain' => null]);

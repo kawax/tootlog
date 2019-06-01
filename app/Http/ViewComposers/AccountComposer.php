@@ -4,7 +4,7 @@ namespace App\Http\ViewComposers;
 
 use Illuminate\View\View;
 
-use App\Repository\Account\AccountRepositoryInterface as AccountRepository;
+use App\Repository\Account\AccountRepository;
 
 class AccountComposer
 {

@@ -4,7 +4,7 @@ namespace App\Console\Commands\Status;
 
 use Illuminate\Console\Command;
 
-use App\Repository\Account\AccountRepositoryInterface as Account;
+use App\Repository\Account\AccountRepository as Account;
 
 use App\Jobs\Status\GetStatusJob;
 

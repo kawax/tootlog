@@ -10,16 +10,14 @@ use Carbon\Carbon;
 
 use Mastodon;
 
-class EloquentAccountRepository implements AccountRepositoryInterface
+class EloquentAccountRepository implements AccountRepository
 {
     /**
      * @inheritDoc
      */
     public function all()
     {
-        $accounts = Account::all();
-
-        return $accounts;
+        return Account::all();
     }
 
     /**

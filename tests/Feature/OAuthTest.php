@@ -90,7 +90,7 @@ class OAuthTest extends TestCase
         $this->accountRepository = m::mock(AccountRepository::class)->makePartial();
 
         $this->app->instance(
-            \App\Repository\Account\AccountRepositoryInterface::class,
+            \App\Repository\Account\AccountRepository::class,
             $this->accountRepository
         );
 

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Repository\Account\AccountRepositoryInterface as Account;
+use App\Repository\Account\AccountRepository as Account;
 use App\Repository\Status\StatusRepositoryInterface as Status;
 
 class HomeController extends Controller

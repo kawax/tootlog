@@ -8,7 +8,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 
-use App\Repository\Account\AccountRepositoryInterface as AccountRepository;
+use App\Repository\Account\AccountRepository as Account;
 
 class AccountDeleteJob implements ShouldQueue
 {
@@ -34,11 +34,11 @@ class AccountDeleteJob implements ShouldQueue
     /**
      * Execute the job.
      *
-     * @param  AccountRepository  $account
+     * @param  Account  $account
      *
      * @return void
      */
-    public function handle(AccountRepository $account)
+    public function handle(Account $account)
     {
         $account->destroy($this->id);
     }
