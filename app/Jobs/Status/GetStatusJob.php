@@ -64,8 +64,8 @@ class GetStatusJob implements ShouldQueue
 
         try {
             $this->account = $accountRepository->refresh($this->account);
-        } catch (\Exception $e) {
-            logger()->error('ClientException(refresh): '.$this->account->url.' '.$e->getMessage());
+        } catch (\Exception $exception) {
+            logger()->error('ClientException(refresh): '.$this->account->url.' '.$exception->getMessage());
 
             $this->account->increment('fails');
 
@@ -76,8 +76,8 @@ class GetStatusJob implements ShouldQueue
             $statuses = $this->get();
 
             $since_id = $this->since();
-        } catch (\Exception $e) {
-            logger()->error('ClientException: '.$this->account->url.' '.$e->getMessage());
+        } catch (\Exception $exception) {
+            logger()->error('ClientException: '.$this->account->url.' '.$exception->getMessage());
 
             $this->account->increment('fails');
 
@@ -203,7 +203,7 @@ class GetStatusJob implements ShouldQueue
             return null;
         }
 
-        $link = Arr::first($link, function ($value, $key) {
+        $link = Arr::first($link, function ($value) {
             return data_get($value, 'rel') === 'prev';
         });
 
@@ -234,9 +234,7 @@ class GetStatusJob implements ShouldQueue
             'url'          => $reblog['url'],
         ];
 
-        $re = Reblog::updateOrCreate(['uri' => $reblog['uri']], $data);
-
-        return $re;
+        return Reblog::updateOrCreate(['uri' => $reblog['uri']], $data);
     }
 
     /**

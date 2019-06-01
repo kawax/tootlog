@@ -11,7 +11,7 @@ trait UserPresenter
      */
     public function tags()
     {
-        $tags = cache()->remember('user.tags/'.$this->id, now()->addMinutes(60), function () {
+        return cache()->remember('user.tags/'.$this->id, now()->addMinutes(60), function () {
             $status_id = $this->statuses()
                               ->where('accounts.locked', false)
                               ->pluck('statuses.id');
@@ -22,13 +22,9 @@ trait UserPresenter
                          ->unique()
                          ->toArray();
 
-            $tags = Tag::withCount('statuses')
-                       ->orderBy('statuses_count', 'desc')
-                       ->find($tag_id);
-
-            return $tags;
+            return Tag::withCount('statuses')
+                      ->orderBy('statuses_count', 'desc')
+                      ->find($tag_id);
         });
-
-        return $tags;
     }
 }

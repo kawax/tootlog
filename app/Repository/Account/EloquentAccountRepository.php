@@ -34,12 +34,10 @@ class EloquentAccountRepository implements AccountRepository
      */
     public function oldest()
     {
-        $accounts = Account::oldest('updated_at')
-                           ->where('fails', '<', config('tootlog.account_fails'))
-                           ->limit(config('tootlog.account_limit', 3))
-                           ->get();
-
-        return $accounts;
+        return Account::oldest('updated_at')
+                      ->where('fails', '<', config('tootlog.account_fails'))
+                      ->limit(config('tootlog.account_limit', 3))
+                      ->get();
     }
 
     /**
@@ -48,15 +46,13 @@ class EloquentAccountRepository implements AccountRepository
      */
     public function special()
     {
-        $accounts = Account::oldest('updated_at')
-                           ->where('fails', '<', config('tootlog.account_fails'))
-                           ->limit(config('tootlog.account_limit_special', 3))
-                           ->whereHas('user', function ($query) {
-                               $query->where('special_key', config('tootlog.special_key'));
-                           })
-                           ->get();
-
-        return $accounts;
+        return Account::oldest('updated_at')
+                      ->where('fails', '<', config('tootlog.account_fails'))
+                      ->limit(config('tootlog.account_limit_special', 3))
+                      ->whereHas('user', function ($query) {
+                          $query->where('special_key', config('tootlog.special_key'));
+                      })
+                      ->get();
     }
 
     /**
@@ -64,14 +60,12 @@ class EloquentAccountRepository implements AccountRepository
      */
     public function userAccounts()
     {
-        $accounts = request()->user()
-                             ->accounts()
-                             ->latest('updated_at')
-                             ->with('server')
-                             ->withCount('statuses')
-                             ->get();
-
-        return $accounts;
+        return request()->user()
+                        ->accounts()
+                        ->latest('updated_at')
+                        ->with('server')
+                        ->withCount('statuses')
+                        ->get();
     }
 
     /**
@@ -79,14 +73,12 @@ class EloquentAccountRepository implements AccountRepository
      */
     public function openAccounts(User $user)
     {
-        $accounts = $user->accounts()
-                         ->where('locked', false)
-                         ->latest('updated_at')
-                         ->with('server')
-                         ->withCount('statuses')
-                         ->get();
-
-        return $accounts;
+        return $user->accounts()
+                    ->where('locked', false)
+                    ->latest('updated_at')
+                    ->with('server')
+                    ->withCount('statuses')
+                    ->get();
     }
 
     /**
@@ -113,11 +105,9 @@ class EloquentAccountRepository implements AccountRepository
 
         $cond = Arr::only($data, ['account_id', 'username', 'server_id']);
 
-        $account = request()->user()
-                            ->accounts()
-                            ->updateOrCreate($cond, $data);
-
-        return $account;
+        return request()->user()
+                        ->accounts()
+                        ->updateOrCreate($cond, $data);
     }
 
     /**

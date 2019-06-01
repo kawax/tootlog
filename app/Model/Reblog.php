@@ -42,9 +42,7 @@ class Reblog extends Model
      */
     public function getNameAttribute(): string
     {
-        $name = $this->display_name ?? '';
-
-        return $name;
+        return $this->display_name ?? '';
     }
 
     /**

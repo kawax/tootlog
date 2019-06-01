@@ -30,7 +30,7 @@ trait Open
     /**
      * @inheritDoc
      */
-    public function openUserStatusesByDate(User $user, string $year, string $month = null, string $day = null)
+    public function openUserStatusesByDate(User $user, string $year, ?string $month = null, ?string $day = null)
     {
         $query = $user->statuses()
                       ->where('accounts.locked', false)
@@ -59,7 +59,7 @@ trait Open
                         ->where('accounts.locked', false)
                         ->latest()
                         ->get()
-                        ->groupBy(function ($item, $key) {
+                        ->groupBy(function ($item) {
                             return $item->created_at->format('Y-m-d');
                         })
                         ->take(10);
@@ -76,7 +76,7 @@ trait Open
                         ->where('accounts.locked', false)
                         ->latest()
                         ->get()
-                        ->groupBy(function ($item, $key) {
+                        ->groupBy(function ($item) {
                             return $item->created_at->format('Y-m');
                         });
         });
@@ -133,7 +133,7 @@ trait Open
                          ->where('accounts.locked', false)
                          ->latest()
                          ->get()
-                         ->groupBy(function ($item, $key) {
+                         ->groupBy(function ($item) {
                              return $item->created_at->format('Y-m-d');
                          });
 
@@ -157,7 +157,7 @@ trait Open
                             ->whereDate('statuses.created_at', '>=', $from_date)
                             ->latest()
                             ->get()
-                            ->groupBy(function ($item, $key) {
+                            ->groupBy(function ($item) {
                                 return $item->created_at->format('Y-m-d');
                             });
 

@@ -26,9 +26,7 @@ class EloquentStatusRepository implements StatusRepository
             $statuses = $statuses->where('content', 'like', '%'.request('search').'%');
         }
 
-        $statuses = $statuses->paginate(self::PAGINATE);
-
-        return $statuses;
+        return $statuses->paginate(self::PAGINATE);
     }
 
     /**
@@ -38,15 +36,13 @@ class EloquentStatusRepository implements StatusRepository
     {
         $key = 'account/'.$acct->id.'/status/'.$status_id;
 
-        $status = cache()->remember($key, now()->addDay(), function () use ($acct, $status_id) {
+        return cache()->remember($key, now()->addDay(), function () use ($acct, $status_id) {
             return $acct->statuses()
                         ->withTrashed()
                         ->where('status_id', $status_id)
                         ->with(['account', 'reblog'])
                         ->firstOrFail();
         });
-
-        return $status;
     }
 
     /**
@@ -54,9 +50,7 @@ class EloquentStatusRepository implements StatusRepository
      */
     public function updateOrCreate(array $attr, array $values)
     {
-        $status = Status::updateOrCreate($attr, $values);
-
-        return $status;
+        return Status::updateOrCreate($attr, $values);
     }
 
     /**

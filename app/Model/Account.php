@@ -59,9 +59,7 @@ class Account extends Model
      */
     public function getDomainAttribute(): string
     {
-        $domain = parse_url($this->url, PHP_URL_HOST);
-
-        return $domain;
+        return parse_url($this->url, PHP_URL_HOST);
     }
 
     /**
@@ -69,9 +67,7 @@ class Account extends Model
      */
     public function getNameAttribute(): string
     {
-        $name = filled($this->display_name) ? $this->display_name : $this->username;
-
-        return $name;
+        return filled($this->display_name) ? $this->display_name : $this->username;
     }
 
     /**

@@ -68,7 +68,7 @@ class ExportCsvJob implements ShouldQueue
 
         $accounts = $this->user->accounts;
 
-        $accounts->each(function ($account, $key) {
+        $accounts->each(function ($account) {
             $this->write($account);
         });
 

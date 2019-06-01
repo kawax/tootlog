@@ -64,8 +64,8 @@ class TootInfoCommand extends Command
             '💬 '.Status::count().' statuses',
         ];
 
-        $response = Mastodon::domain(config('services.mastodon_notify.domain'))
-                            ->token(config('services.mastodon_notify.token'))
-                            ->createStatus(implode(PHP_EOL, $status));
+        Mastodon::domain(config('services.mastodon_notify.domain'))
+                ->token(config('services.mastodon_notify.token'))
+                ->createStatus(implode(PHP_EOL, $status));
     }
 }

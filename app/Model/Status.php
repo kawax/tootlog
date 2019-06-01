@@ -62,9 +62,7 @@ class Status extends Model
      */
     public function getNameAttribute(): string
     {
-        $name = $this->account->name ?? '';
-
-        return $name;
+        return $this->account->name ?? '';
     }
 
     /**
@@ -72,9 +70,7 @@ class Status extends Model
      */
     public function getLocalDatetimeAttribute()
     {
-        $datetime = $this->created_at;
-
-        return $datetime;
+        return $this->created_at;
     }
 
     /**
