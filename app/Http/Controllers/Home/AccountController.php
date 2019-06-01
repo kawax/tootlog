@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests\Account\AccountCreateRequest;
 
-use App\Repository\Server\ServerRepositoryInterface as ServerRepository;
+use App\Repository\Server\ServerRepository as Server;
 use App\Repository\Account\AccountRepository as Account;
 
 use App\Jobs\Status\GetStatusJob;
@@ -21,11 +21,11 @@ class AccountController extends Controller
      * Redirect to mastodon server.
      *
      * @param  AccountCreateRequest  $request
-     * @param  ServerRepository  $server
+     * @param  Server  $server
      *
      * @return \Illuminate\Http\Response
      */
-    public function redirect(AccountCreateRequest $request, ServerRepository $server)
+    public function redirect(AccountCreateRequest $request, Server $server)
     {
         $domain = $request->input('domain');
         $domain = trim($domain, "/\t\n\r\0\x0B");
@@ -48,11 +48,11 @@ class AccountController extends Controller
     /**
      * @param  Request  $request
      * @param  Account  $account
-     * @param  ServerRepository  $server
+     * @param  Server  $server
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function callback(Request $request, Account $account, ServerRepository $server)
+    public function callback(Request $request, Account $account, Server $server)
     {
         $domain = session('mastodon_domain');
         session(['mastodon_domain' => null]);

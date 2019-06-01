@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-use App\Repository\Server\ServerRepositoryInterface;
+use App\Repository\Server\ServerRepository;
 use App\Repository\Server\EloquentServerRepository;
 
 use App\Repository\Account\AccountRepository;
@@ -33,7 +33,7 @@ class RepositoryServiceProvider extends ServiceProvider
     public function register()
     {
         app()->singleton(
-            ServerRepositoryInterface::class,
+            ServerRepository::class,
             EloquentServerRepository::class
         );
 

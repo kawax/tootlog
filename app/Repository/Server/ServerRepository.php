@@ -5,7 +5,7 @@ namespace App\Repository\Server;
 use Illuminate\Database\Query\Builder;
 use App\Model\Server;
 
-interface ServerRepositoryInterface
+interface ServerRepository
 {
     /**
      * @param  string  $domain

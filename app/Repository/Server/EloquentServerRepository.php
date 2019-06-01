@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 use App\Model\Server;
 use Mastodon;
 
-class EloquentServerRepository implements ServerRepositoryInterface
+class EloquentServerRepository implements ServerRepository
 {
     /**
      * @inheritDoc

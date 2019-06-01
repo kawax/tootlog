@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use App\Repository\Server\ServerRepositoryInterface as ServerRepository;
+use App\Repository\Server\ServerRepository;
 
 class InstanceController extends Controller
 {

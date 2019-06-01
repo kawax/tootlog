@@ -4,7 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 
-use App\Repository\Server\ServerRepositoryInterface as ServerRepository;
+use App\Repository\Server\ServerRepository;
 use App\Jobs\InstanceVersionJob;
 
 class InstanceVersionCommand extends Command
