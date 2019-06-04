@@ -19,8 +19,9 @@ cache:
     - vendor
 
 script:
-- vendor/bin/phpunit
-- php artisan insights --no-interaction
+  - php artisan key:generate
+  - vendor/bin/phpunit
+  - php artisan insights --no-interaction
 
 after_script:
   - ./cc-test-reporter after-build  -t clover --exit-code $TRAVIS_TEST_RESULT
