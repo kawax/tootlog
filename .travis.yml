@@ -6,6 +6,8 @@ php:
 
 before_script:
   - travis_retry composer install --no-interaction --prefer-source --no-progress --no-suggest
+  - cp .env.example .env
+  - php artisan key:generate
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
@@ -19,7 +21,6 @@ cache:
     - vendor
 
 script:
-  - php artisan key:generate
   - vendor/bin/phpunit
   - php artisan insights --no-interaction
 
