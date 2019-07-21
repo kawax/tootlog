@@ -129,16 +129,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.107.3",
+            "version": "3.107.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "2ea91e93b9b1d9b01055896ac5e4f2e8448d141f"
+                "reference": "37bacdae146326ed8008e3354e9e2c3547646996"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/2ea91e93b9b1d9b01055896ac5e4f2e8448d141f",
-                "reference": "2ea91e93b9b1d9b01055896ac5e4f2e8448d141f",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/37bacdae146326ed8008e3354e9e2c3547646996",
+                "reference": "37bacdae146326ed8008e3354e9e2c3547646996",
                 "shasum": ""
             },
             "require": {
@@ -208,7 +208,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-07-18T19:28:55+00:00"
+            "time": "2019-07-19T18:14:22+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1207,16 +1207,16 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "2.1.9",
+            "version": "2.1.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "128cc721d771ec2c46ce59698f4ca42b73f71b25"
+                "reference": "a6c8d7101b19a451c1707b1b79bbbc56e4bdb7ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/128cc721d771ec2c46ce59698f4ca42b73f71b25",
-                "reference": "128cc721d771ec2c46ce59698f4ca42b73f71b25",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/a6c8d7101b19a451c1707b1b79bbbc56e4bdb7ec",
+                "reference": "a6c8d7101b19a451c1707b1b79bbbc56e4bdb7ec",
                 "shasum": ""
             },
             "require": {
@@ -1226,7 +1226,8 @@
             "require-dev": {
                 "dominicsayers/isemail": "dev-master",
                 "phpunit/phpunit": "^4.8.35||^5.7||^6.0",
-                "satooshi/php-coveralls": "^1.0.1"
+                "satooshi/php-coveralls": "^1.0.1",
+                "symfony/phpunit-bridge": "^4.4@dev"
             },
             "suggest": {
                 "ext-intl": "PHP Internationalization Libraries are required to use the SpoofChecking validation"
@@ -1260,7 +1261,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2019-06-23T10:14:27+00:00"
+            "time": "2019-07-19T20:52:08+00:00"
         },
         {
             "name": "erusev/parsedown",
@@ -5021,16 +5022,16 @@
         },
         {
             "name": "torann/json-ld",
-            "version": "0.0.17",
+            "version": "0.0.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Torann/json-ld.git",
-                "reference": "b0955b9e7497f61b227b4fd6b6109d04e9868807"
+                "reference": "cc5a562ab96f10c739ff312a43d9deb20c0fb38c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Torann/json-ld/zipball/b0955b9e7497f61b227b4fd6b6109d04e9868807",
-                "reference": "b0955b9e7497f61b227b4fd6b6109d04e9868807",
+                "url": "https://api.github.com/repos/Torann/json-ld/zipball/cc5a562ab96f10c739ff312a43d9deb20c0fb38c",
+                "reference": "cc5a562ab96f10c739ff312a43d9deb20c0fb38c",
                 "shasum": ""
             },
             "require": {
@@ -5068,7 +5069,7 @@
                 "schema",
                 "structured-data"
             ],
-            "time": "2019-05-08T15:50:27+00:00"
+            "time": "2019-07-19T18:29:37+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -5609,16 +5610,16 @@
         },
         {
             "name": "laravel/homestead",
-            "version": "v9.0.3",
+            "version": "v9.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/homestead.git",
-                "reference": "8a673ed889d7c9edb300ccaf645e443cab3f87f8"
+                "reference": "26d287668a51f0efa23662826543972d02bb28ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/homestead/zipball/8a673ed889d7c9edb300ccaf645e443cab3f87f8",
-                "reference": "8a673ed889d7c9edb300ccaf645e443cab3f87f8",
+                "url": "https://api.github.com/repos/laravel/homestead/zipball/26d287668a51f0efa23662826543972d02bb28ba",
+                "reference": "26d287668a51f0efa23662826543972d02bb28ba",
                 "shasum": ""
             },
             "require": {
@@ -5655,7 +5656,7 @@
                 }
             ],
             "description": "A virtual machine for web artisans.",
-            "time": "2019-07-10T00:08:13+00:00"
+            "time": "2019-07-19T14:29:11+00:00"
         },
         {
             "name": "league/container",
