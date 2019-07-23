@@ -129,16 +129,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.107.4",
+            "version": "3.107.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "37bacdae146326ed8008e3354e9e2c3547646996"
+                "reference": "99ec85834bbbeb9365c34a46b792c5421775f021"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/37bacdae146326ed8008e3354e9e2c3547646996",
-                "reference": "37bacdae146326ed8008e3354e9e2c3547646996",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/99ec85834bbbeb9365c34a46b792c5421775f021",
+                "reference": "99ec85834bbbeb9365c34a46b792c5421775f021",
                 "shasum": ""
             },
             "require": {
@@ -208,7 +208,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-07-19T18:14:22+00:00"
+            "time": "2019-07-22T18:31:27+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -5610,16 +5610,16 @@
         },
         {
             "name": "laravel/homestead",
-            "version": "v9.0.6",
+            "version": "v9.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/homestead.git",
-                "reference": "458291eb57f2f841e1d7d735e2ed10060bd130c3"
+                "reference": "0add54057b5a4f8a4adf78a6c382131257aec090"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/homestead/zipball/458291eb57f2f841e1d7d735e2ed10060bd130c3",
-                "reference": "458291eb57f2f841e1d7d735e2ed10060bd130c3",
+                "url": "https://api.github.com/repos/laravel/homestead/zipball/0add54057b5a4f8a4adf78a6c382131257aec090",
+                "reference": "0add54057b5a4f8a4adf78a6c382131257aec090",
                 "shasum": ""
             },
             "require": {
@@ -5656,7 +5656,7 @@
                 }
             ],
             "description": "A virtual machine for web artisans.",
-            "time": "2019-07-21T16:56:33+00:00"
+            "time": "2019-07-22T17:55:23+00:00"
         },
         {
             "name": "league/container",
