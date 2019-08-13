@@ -63,28 +63,27 @@
         },
         {
             "name": "artesaos/seotools",
-            "version": "v0.14.0",
+            "version": "v0.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/artesaos/seotools.git",
-                "reference": "d52b1a23221693ddcde7d1a1141d44cb23023067"
+                "reference": "62b423549166ebf476a8e7e522b61f2d4fda6a25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/artesaos/seotools/zipball/d52b1a23221693ddcde7d1a1141d44cb23023067",
-                "reference": "d52b1a23221693ddcde7d1a1141d44cb23023067",
+                "url": "https://api.github.com/repos/artesaos/seotools/zipball/62b423549166ebf476a8e7e522b61f2d4fda6a25",
+                "reference": "62b423549166ebf476a8e7e522b61f2d4fda6a25",
                 "shasum": ""
             },
             "require": {
-                "illuminate/config": "5.1.* || 5.2.* || 5.3.* || 5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.*",
-                "illuminate/support": "5.1.* || 5.2.* || 5.3.* || 5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.*",
-                "php": ">=7.0"
+                "ext-json": "*",
+                "illuminate/config": "5.8.*",
+                "illuminate/support": "5.8.*",
+                "php": ">=7.1"
             },
             "require-dev": {
-                "mockery/mockery": "~1.0",
-                "orchestra/testbench": "~3.0",
-                "phpspec/phpspec": "~4.0",
-                "phpunit/phpunit": "~6.0"
+                "orchestra/testbench": "~3.8.4",
+                "phpspec/phpspec": "~5.1.1"
             },
             "type": "library",
             "extra": {
@@ -117,6 +116,7 @@
             ],
             "description": "SEO Tools for Laravel and Lumen",
             "keywords": [
+                "JSON-LD",
                 "laravel5",
                 "lumen",
                 "metatags",
@@ -125,20 +125,20 @@
                 "seotools",
                 "webmaster"
             ],
-            "time": "2019-03-08T15:39:06+00:00"
+            "time": "2019-08-12T15:33:05+00:00"
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.109.1",
+            "version": "3.109.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "1fb0ddf20c9b1a82dcc4dbae2362bb6de1392d31"
+                "reference": "bfbf0f0f1e4949747bd3e77dd8de94af47f7fb72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/1fb0ddf20c9b1a82dcc4dbae2362bb6de1392d31",
-                "reference": "1fb0ddf20c9b1a82dcc4dbae2362bb6de1392d31",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/bfbf0f0f1e4949747bd3e77dd8de94af47f7fb72",
+                "reference": "bfbf0f0f1e4949747bd3e77dd8de94af47f7fb72",
                 "shasum": ""
             },
             "require": {
@@ -208,7 +208,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-08-09T18:17:08+00:00"
+            "time": "2019-08-12T18:14:30+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -2590,16 +2590,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.2.2",
+            "version": "v4.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "1bd73cc04c3843ad8d6b0bfc0956026a151fc420"
+                "reference": "e612609022e935f3d0337c1295176505b41188c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/1bd73cc04c3843ad8d6b0bfc0956026a151fc420",
-                "reference": "1bd73cc04c3843ad8d6b0bfc0956026a151fc420",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/e612609022e935f3d0337c1295176505b41188c8",
+                "reference": "e612609022e935f3d0337c1295176505b41188c8",
                 "shasum": ""
             },
             "require": {
@@ -2607,7 +2607,7 @@
                 "php": ">=7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^6.5 || ^7.0"
+                "phpunit/phpunit": "^6.5 || ^7.0 || ^8.0"
             },
             "bin": [
                 "bin/php-parse"
@@ -2637,7 +2637,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2019-05-25T20:07:01+00:00"
+            "time": "2019-08-12T20:17:41+00:00"
         },
         {
             "name": "opis/closure",
