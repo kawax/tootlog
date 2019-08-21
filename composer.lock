@@ -129,16 +129,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.109.7",
+            "version": "3.109.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "e8d3416f9b1e21029fc0eb63df075e325c690187"
+                "reference": "a7948d0de42185cb1af551713a0e99ad593fd962"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/e8d3416f9b1e21029fc0eb63df075e325c690187",
-                "reference": "e8d3416f9b1e21029fc0eb63df075e325c690187",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/a7948d0de42185cb1af551713a0e99ad593fd962",
+                "reference": "a7948d0de42185cb1af551713a0e99ad593fd962",
                 "shasum": ""
             },
             "require": {
@@ -208,7 +208,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-08-19T18:08:45+00:00"
+            "time": "2019-08-20T18:42:25+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1708,16 +1708,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.8.32",
+            "version": "v5.8.33",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "ee16d719516dfd77ed6c9538000bca49ded284e2"
+                "reference": "58b81842cbdcfbbd8302790ac0f98119ea1c56e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/ee16d719516dfd77ed6c9538000bca49ded284e2",
-                "reference": "ee16d719516dfd77ed6c9538000bca49ded284e2",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/58b81842cbdcfbbd8302790ac0f98119ea1c56e5",
+                "reference": "58b81842cbdcfbbd8302790ac0f98119ea1c56e5",
                 "shasum": ""
             },
             "require": {
@@ -1851,20 +1851,20 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2019-08-13T14:11:52+00:00"
+            "time": "2019-08-20T15:45:17+00:00"
         },
         {
             "name": "laravel/horizon",
-            "version": "v3.3.0",
+            "version": "v3.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "f471caa512fb37aecbfb29b588cf55e230d1c30f"
+                "reference": "30528b0a1de4870b53ece136ae4944affb38c7d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/f471caa512fb37aecbfb29b588cf55e230d1c30f",
-                "reference": "f471caa512fb37aecbfb29b588cf55e230d1c30f",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/30528b0a1de4870b53ece136ae4944affb38c7d7",
+                "reference": "30528b0a1de4870b53ece136ae4944affb38c7d7",
                 "shasum": ""
             },
             "require": {
@@ -1920,7 +1920,7 @@
                 "laravel",
                 "queue"
             ],
-            "time": "2019-08-13T14:39:16+00:00"
+            "time": "2019-08-20T18:05:14+00:00"
         },
         {
             "name": "laravel/socialite",
@@ -6107,16 +6107,16 @@
         },
         {
             "name": "nunomaduro/phpinsights",
-            "version": "v1.8.1",
+            "version": "v1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/phpinsights.git",
-                "reference": "4c5247d95f4bddbcab3a7361b785988cb0759686"
+                "reference": "7453929847df79aeaacddc2753186aa6b16cbdb4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/phpinsights/zipball/4c5247d95f4bddbcab3a7361b785988cb0759686",
-                "reference": "4c5247d95f4bddbcab3a7361b785988cb0759686",
+                "url": "https://api.github.com/repos/nunomaduro/phpinsights/zipball/7453929847df79aeaacddc2753186aa6b16cbdb4",
+                "reference": "7453929847df79aeaacddc2753186aa6b16cbdb4",
                 "shasum": ""
             },
             "require": {
@@ -6181,7 +6181,7 @@
                 "quality",
                 "source"
             ],
-            "time": "2019-08-18T21:36:30+00:00"
+            "time": "2019-08-20T14:41:42+00:00"
         },
         {
             "name": "object-calisthenics/phpcs-calisthenics-rules",
