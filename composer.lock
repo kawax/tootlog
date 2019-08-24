@@ -129,16 +129,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.110.0",
+            "version": "3.110.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "39094b2d8e0424184fe9f12f5359d62ce8849b9d"
+                "reference": "b39e6c8c3082f0f1f6672a6bd2aba92cfc38da9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/39094b2d8e0424184fe9f12f5359d62ce8849b9d",
-                "reference": "39094b2d8e0424184fe9f12f5359d62ce8849b9d",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/b39e6c8c3082f0f1f6672a6bd2aba92cfc38da9a",
+                "reference": "b39e6c8c3082f0f1f6672a6bd2aba92cfc38da9a",
                 "shasum": ""
             },
             "require": {
@@ -208,26 +208,26 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-08-21T18:23:39+00:00"
+            "time": "2019-08-23T18:12:25+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-debugbar.git",
-                "reference": "85463ebc4993cfe168cc763ad25ee83074797f9c"
+                "reference": "bf19d9362d0efd1e97c67a76f13f8085953bbbbd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/85463ebc4993cfe168cc763ad25ee83074797f9c",
-                "reference": "85463ebc4993cfe168cc763ad25ee83074797f9c",
+                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/bf19d9362d0efd1e97c67a76f13f8085953bbbbd",
+                "reference": "bf19d9362d0efd1e97c67a76f13f8085953bbbbd",
                 "shasum": ""
             },
             "require": {
-                "illuminate/routing": "5.5.x|5.6.x|5.7.x|5.8.x",
-                "illuminate/session": "5.5.x|5.6.x|5.7.x|5.8.x",
-                "illuminate/support": "5.5.x|5.6.x|5.7.x|5.8.x",
+                "illuminate/routing": "^5.5|^6",
+                "illuminate/session": "^5.5|^6",
+                "illuminate/support": "^5.5|^6",
                 "maximebf/debugbar": "~1.15.0",
                 "php": ">=7.0",
                 "symfony/debug": "^3|^4",
@@ -276,7 +276,7 @@
                 "profiler",
                 "webprofiler"
             ],
-            "time": "2019-08-20T05:28:53+00:00"
+            "time": "2019-08-22T07:52:30+00:00"
         },
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -2182,16 +2182,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.53",
+            "version": "1.0.54",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "08e12b7628f035600634a5e76d95b5eb66cea674"
+                "reference": "c681ed22508947a941f113d6cf51bdcf4b84faf9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/08e12b7628f035600634a5e76d95b5eb66cea674",
-                "reference": "08e12b7628f035600634a5e76d95b5eb66cea674",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/c681ed22508947a941f113d6cf51bdcf4b84faf9",
+                "reference": "c681ed22508947a941f113d6cf51bdcf4b84faf9",
                 "shasum": ""
             },
             "require": {
@@ -2262,7 +2262,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2019-06-18T20:09:29+00:00"
+            "time": "2019-08-23T21:50:05+00:00"
         },
         {
             "name": "league/oauth1-client",
