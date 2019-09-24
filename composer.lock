@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "appstract/laravel-blade-directives",
-            "version": "1.6.0",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/appstract/laravel-blade-directives.git",
-                "reference": "72dbfce8c0a8f421293e211b17cef13e7fa17fc7"
+                "reference": "0ce9f20a747adf5c62d313708d5b3974a585f885"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/appstract/laravel-blade-directives/zipball/72dbfce8c0a8f421293e211b17cef13e7fa17fc7",
-                "reference": "72dbfce8c0a8f421293e211b17cef13e7fa17fc7",
+                "url": "https://api.github.com/repos/appstract/laravel-blade-directives/zipball/0ce9f20a747adf5c62d313708d5b3974a585f885",
+                "reference": "0ce9f20a747adf5c62d313708d5b3974a585f885",
                 "shasum": ""
             },
             "require": {
@@ -59,7 +59,7 @@
                 "appstract",
                 "laravel-blade-directives"
             ],
-            "time": "2019-09-04T09:05:25+00:00"
+            "time": "2019-09-23T12:34:34+00:00"
         },
         {
             "name": "artesaos/seotools",
@@ -129,16 +129,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.112.5",
+            "version": "3.112.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "5c6f05d68576f845a8391b83020b480840eca759"
+                "reference": "8dac6904e89d8fb7dcaf8044b964c7e77f332289"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/5c6f05d68576f845a8391b83020b480840eca759",
-                "reference": "5c6f05d68576f845a8391b83020b480840eca759",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/8dac6904e89d8fb7dcaf8044b964c7e77f332289",
+                "reference": "8dac6904e89d8fb7dcaf8044b964c7e77f332289",
                 "shasum": ""
             },
             "require": {
@@ -208,7 +208,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-09-20T22:08:27+00:00"
+            "time": "2019-09-23T18:11:10+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
