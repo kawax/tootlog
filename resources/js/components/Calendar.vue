@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import parse from "date-fns/parse";
+import { parseISO } from "date-fns";
 
 export default {
     data() {
@@ -96,7 +96,7 @@ export default {
                 .then(res => {
                     //                console.log(res.data)
                     this.rows = _.map(res.data, (value, key) => {
-                        return Array(parse(key), value);
+                        return Array(parseISO(key), value);
                     });
                     //                console.log(this.rows)
                 })

@@ -1,7 +1,7 @@
 <template>
     <div class="media p-1 m-1">
         <a :href="post.account.url" target="_blank" rel="nofollow noopener">
-            <img class="rounded toot-icon" :src="post.account.avatar" />
+            <img class="rounded toot-icon" :src="post.account.avatar"/>
         </a>
 
         <div class="media-body ml-3">
@@ -48,24 +48,23 @@
 </template>
 
 <script>
-import format from "date-fns/format";
-import parse from "date-fns/parse";
-import emoji from "../emoji";
+  import { format, parseISO } from 'date-fns'
+  import emoji from '../emoji'
 
-export default {
-    props: ["post"],
+  export default {
+    props: ['post'],
     methods: {
-        display_name() {
-            return this.post.account.display_name
-                ? this.emoji(this.post.account.display_name)
-                : this.post.account.username;
-        },
-        emoji(input) {
-            return emoji.toImage(input);
-        },
-        formatDate(date) {
-            return format(parse(date), "YYYY-MM-DD HH:mm:ss");
-        }
-    }
-};
+      display_name () {
+        return this.post.account.display_name
+          ? this.emoji(this.post.account.display_name)
+          : this.post.account.username
+      },
+      emoji (input) {
+        return emoji.toImage(input)
+      },
+      formatDate (date) {
+        return format(parseISO(date), 'yyyy-MM-dd HH:mm:ss')
+      },
+    },
+  }
 </script>
