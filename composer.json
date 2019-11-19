@@ -19,7 +19,6 @@
     "laravel/horizon": "^3.0",
     "laravel/tinker": "^1.0",
     "league/csv": "^9.0",
-    "predis/predis": "^1.1",
     "rap2hpoutre/laravel-log-viewer": "^1.0",
     "revolution/laravel-mastodon-api": "^2.0",
     "revolution/socialite-mastodon": "^1.0",
