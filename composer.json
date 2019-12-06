@@ -12,7 +12,6 @@
     "appstract/laravel-blade-directives": "^1.0",
     "artesaos/seotools": "0.*",
     "aws/aws-sdk-php": "^3.0",
-    "barryvdh/laravel-ide-helper": "^2.4",
     "doctrine/dbal": "^2.9",
     "fideloper/proxy": "^4.0",
     "laravel/framework": "^6.0",
@@ -29,10 +28,11 @@
   "require-dev": {
     "facade/ignition": "^1.4",
     "fzaninotto/faker": "^1.4",
-    "laravel/homestead": "^9.0",
+    "laravel/homestead": "^10.0",
     "mockery/mockery": "^1.0",
     "nunomaduro/collision": "^3.0",
     "nunomaduro/phpinsights": "^1.2",
+    "barryvdh/laravel-ide-helper": "^2.4",
     "pda/pheanstalk": "^4.0",
     "phpunit/phpunit": "^8.0"
   },
