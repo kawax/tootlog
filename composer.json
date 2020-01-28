@@ -8,7 +8,7 @@
   "license": "MIT",
   "type": "project",
   "require": {
-    "php": "^7.2",
+    "php": "^7.4",
     "appstract/laravel-blade-directives": "^1.0",
     "artesaos/seotools": "0.*",
     "aws/aws-sdk-php": "^3.0",

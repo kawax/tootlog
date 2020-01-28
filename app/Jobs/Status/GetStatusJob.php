@@ -125,14 +125,17 @@ class GetStatusJob implements ShouldQueue
      */
     protected function statusData(array $status): array
     {
-        $data = Arr::only($status, [
-            'id',
-            'created_at',
-            'content',
-            'spoiler_text',
-            'uri',
-            'url',
-        ]);
+        $data = Arr::only(
+            $status,
+            [
+                'id',
+                'created_at',
+                'content',
+                'spoiler_text',
+                'uri',
+                'url',
+            ]
+        );
 
         $date = Carbon::parse($data['created_at'], 'UTC');
 
@@ -200,15 +203,11 @@ class GetStatusJob implements ShouldQueue
             return null;
         }
 
-        $link = Arr::first($link, function ($value) {
-            return data_get($value, 'rel') === 'prev';
-        });
+        $link = Arr::first($link, fn ($value) => data_get($value, 'rel') === 'prev');
 
         $link = head($link);
 
-        $since_id = Str::before(Str::after($link, '&since_id='), '>');
-
-        return $since_id;
+        return Str::before(Str::after($link, '&since_id='), '>');
     }
 
     /**

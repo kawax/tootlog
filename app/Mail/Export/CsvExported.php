@@ -17,7 +17,7 @@ class CsvExported extends Mailable implements ShouldQueue
     /**
      * Create a new message instance.
      *
-     * @return void
+     * @param  array  $files
      */
     public function __construct(array $files)
     {

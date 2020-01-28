@@ -33,9 +33,8 @@ class Server extends Model
         }
 
         $domain = data_get(config('tootlog.streaming'), $this->domain, $this->domain);
-        $domain = str_replace('http', 'ws', $domain);
 
-        return $domain;
+        return str_replace('http', 'ws', $domain);
     }
 
     /**
