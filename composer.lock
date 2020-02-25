@@ -129,16 +129,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.133.19",
+            "version": "3.133.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "e5a78b0704bba3024abac91a1009dde8f8ec1fa8"
+                "reference": "3501468a7ef894703141d1c4d68caa3b914cbd96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/e5a78b0704bba3024abac91a1009dde8f8ec1fa8",
-                "reference": "e5a78b0704bba3024abac91a1009dde8f8ec1fa8",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/3501468a7ef894703141d1c4d68caa3b914cbd96",
+                "reference": "3501468a7ef894703141d1c4d68caa3b914cbd96",
                 "shasum": ""
             },
             "require": {
@@ -209,7 +209,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-02-20T19:10:17+00:00"
+            "time": "2020-02-24T19:15:07+00:00"
         },
         {
             "name": "cakephp/chronos",
@@ -793,24 +793,24 @@
         },
         {
             "name": "fideloper/proxy",
-            "version": "4.2.2",
+            "version": "4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fideloper/TrustedProxy.git",
-                "reference": "790194d5d3da89a713478875d2e2d05855a90a81"
+                "reference": "ec38ad69ee378a1eec04fb0e417a97cfaf7ed11a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fideloper/TrustedProxy/zipball/790194d5d3da89a713478875d2e2d05855a90a81",
-                "reference": "790194d5d3da89a713478875d2e2d05855a90a81",
+                "url": "https://api.github.com/repos/fideloper/TrustedProxy/zipball/ec38ad69ee378a1eec04fb0e417a97cfaf7ed11a",
+                "reference": "ec38ad69ee378a1eec04fb0e417a97cfaf7ed11a",
                 "shasum": ""
             },
             "require": {
-                "illuminate/contracts": "^5.0|^6.0|^7.0",
+                "illuminate/contracts": "^5.0|^6.0|^7.0|^8.0",
                 "php": ">=5.4.0"
             },
             "require-dev": {
-                "illuminate/http": "^5.0|^6.0|^7.0",
+                "illuminate/http": "^5.0|^6.0|^7.0|^8.0",
                 "mockery/mockery": "^1.0",
                 "phpunit/phpunit": "^6.0"
             },
@@ -843,7 +843,7 @@
                 "proxy",
                 "trusted proxy"
             ],
-            "time": "2019-12-20T13:11:11+00:00"
+            "time": "2020-02-22T01:51:47+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
