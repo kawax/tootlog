@@ -20,9 +20,9 @@ return [
     ],
 
     'ses' => [
-        'key'    => env('AWS_KEY'),
-        'secret' => env('AWS_SECRET'),
-        'region' => 'us-west-2',
+        'key'    => env('AWS_ACCESS_KEY_ID'),
+        'secret' => env('AWS_SECRET_ACCESS_KEY'),
+        'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
     'sparkpost' => [
@@ -45,7 +45,7 @@ return [
     ],
 
     'mastodon_notify' => [
-        'domain'        => env('MASTODON_NOTIFY_DOMAIN', 'https://chitose.moe'),
-        'token'         => env('MASTODON_NOTIFY_TOKEN'),
+        'domain' => env('MASTODON_NOTIFY_DOMAIN', 'https://chitose.moe'),
+        'token'  => env('MASTODON_NOTIFY_TOKEN'),
     ],
 ];
