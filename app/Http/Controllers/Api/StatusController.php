@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Model\Status;
 use App\Http\Controllers\Controller;
+use App\Model\Status;
 
 class StatusController extends Controller
 {
@@ -18,7 +18,7 @@ class StatusController extends Controller
     }
 
     /**
-     * 非表示
+     * 非表示.
      *
      * @param  Status  $status
      *
@@ -34,7 +34,7 @@ class StatusController extends Controller
     }
 
     /**
-     * 表示
+     * 表示.
      *
      * @param  string  $status
      *

@@ -20,7 +20,7 @@ class Server extends Model
     ];
 
     /**
-     * streaming api url
+     * streaming api url.
      *
      * @param  string  $streaming
      *

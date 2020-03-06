@@ -2,16 +2,15 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-
-use App\Model\User;
-use App\Model\Server;
 use App\Model\Account;
+use App\Model\Server;
 use App\Model\Status;
 use App\Model\Tag;
+use App\Model\User;
 use Cake\Chronos\Chronos;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Tests\TestCase;
 
 class UserTest extends TestCase
 {

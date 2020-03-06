@@ -2,23 +2,19 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-
+use App\Jobs\Status\ExportCsvJob;
+use App\Mail\Export\CsvExported;
+use App\Model\Account;
+use App\Model\Server;
+use App\Model\Status;
+use App\Model\User;
+use Cake\Chronos\Chronos;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-
+use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
-
-use App\Mail\Export\CsvExported;
-use App\Jobs\Status\ExportCsvJob;
-
-use App\Model\User;
-use App\Model\Server;
-use App\Model\Account;
-use App\Model\Status;
-use Cake\Chronos\Chronos;
+use Tests\TestCase;
 
 class MailTest extends TestCase
 {
@@ -98,7 +94,6 @@ class MailTest extends TestCase
         });
 
         Storage::disk('local')->assertExists('csv/test/test@example.com.csv');
-
 
         $response->assertSessionHas('export');
     }

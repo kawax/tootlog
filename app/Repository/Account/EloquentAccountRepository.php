@@ -2,16 +2,16 @@
 
 namespace App\Repository\Account;
 
-use Mastodon;
-use Carbon\Carbon;
-use App\Model\User;
 use App\Model\Account;
+use App\Model\User;
+use Carbon\Carbon;
 use Illuminate\Support\Arr;
+use Mastodon;
 
 class EloquentAccountRepository implements AccountRepository
 {
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function all()
     {
@@ -19,7 +19,7 @@ class EloquentAccountRepository implements AccountRepository
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function find($id)
     {
@@ -27,8 +27,7 @@ class EloquentAccountRepository implements AccountRepository
     }
 
     /**
-     *
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function oldest()
     {
@@ -39,8 +38,7 @@ class EloquentAccountRepository implements AccountRepository
     }
 
     /**
-     *
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function special()
     {
@@ -54,7 +52,7 @@ class EloquentAccountRepository implements AccountRepository
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function userAccounts()
     {
@@ -67,7 +65,7 @@ class EloquentAccountRepository implements AccountRepository
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function openAccounts(User $user)
     {
@@ -80,7 +78,7 @@ class EloquentAccountRepository implements AccountRepository
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function getByAcct(string $username, string $domain)
     {
@@ -90,7 +88,7 @@ class EloquentAccountRepository implements AccountRepository
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function store($user, array $server)
     {
@@ -109,7 +107,7 @@ class EloquentAccountRepository implements AccountRepository
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function update($user)
     {
@@ -128,7 +126,7 @@ class EloquentAccountRepository implements AccountRepository
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function refresh(Account $account)
     {
@@ -142,7 +140,7 @@ class EloquentAccountRepository implements AccountRepository
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function updateSince(Account $account, $since_id)
     {
@@ -150,7 +148,7 @@ class EloquentAccountRepository implements AccountRepository
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function exists(string $url): bool
     {
@@ -158,7 +156,7 @@ class EloquentAccountRepository implements AccountRepository
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function destroy(int $id): void
     {

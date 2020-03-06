@@ -2,25 +2,23 @@
 
 namespace App\Repository\Account;
 
-use App\Model\User;
 use App\Model\Account;
+use App\Model\User;
 
 interface AccountRepository
 {
     /**
-     *
      * @return mixed
      */
     public function all();
 
     /**
-     *
      * @return mixed
      */
     public function find($id);
 
     /**
-     * toot:statusesのためのアカウントリスト
+     * toot:statusesのためのアカウントリスト.
      *
      * @return array
      */
@@ -34,14 +32,14 @@ interface AccountRepository
     public function special();
 
     /**
-     * ユーザーのアカウント
+     * ユーザーのアカウント.
      *
      * @return array
      */
     public function userAccounts();
 
     /**
-     * ユーザーのアカウント（公開用）
+     * ユーザーのアカウント（公開用）.
      *
      * @param  User  $user
      *
@@ -50,7 +48,7 @@ interface AccountRepository
     public function openAccounts(User $user);
 
     /**
-     * ユーザー名とドメインからアカウント
+     * ユーザー名とドメインからアカウント.
      *
      * @param  string  $username
      * @param  string  $domain
@@ -60,7 +58,7 @@ interface AccountRepository
     public function getByAcct(string $username, string $domain);
 
     /**
-     * アカウント情報を更新
+     * アカウント情報を更新.
      *
      * @param  Account  $account
      *
@@ -69,7 +67,7 @@ interface AccountRepository
     public function refresh(Account $account);
 
     /**
-     * since_idを更新
+     * since_idを更新.
      *
      * @param  Account  $account
      *

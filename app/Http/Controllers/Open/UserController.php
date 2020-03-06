@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Open;
 
-use Twitter;
-use OpenGraph;
-use App\Model\User;
 use App\Http\Controllers\Controller;
+use App\Model\User;
 use App\Repository\Status\StatusRepository as Status;
+use OpenGraph;
+use Twitter;
 
 class UserController extends Controller
 {

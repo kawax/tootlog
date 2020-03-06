@@ -2,21 +2,21 @@
 
 namespace App\Jobs\Status;
 
-use Carbon\Carbon;
-use App\Model\Tag;
-use GuzzleHttp\Psr7;
-use App\Model\Reblog;
 use App\Model\Account;
-use Illuminate\Support\Str;
-use Illuminate\Support\Arr;
+use App\Model\Reblog;
+use App\Model\Tag;
+use App\Repository\Account\AccountRepository;
+use App\Repository\Status\StatusRepository;
+use Carbon\Carbon;
+use GuzzleHttp\Psr7;
 use Illuminate\Bus\Queueable;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Queue\InteractsWithQueue;
-use Revolution\Mastodon\Facades\Mastodon;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use App\Repository\Status\StatusRepository;
-use App\Repository\Account\AccountRepository;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
+use Revolution\Mastodon\Facades\Mastodon;
 
 class GetStatusJob implements ShouldQueue
 {
@@ -194,13 +194,13 @@ class GetStatusJob implements ShouldQueue
         $response = Mastodon::getResponse();
 
         if (! $response->hasHeader('Link')) {
-            return null;
+            return;
         }
 
         $link = Psr7\parse_header($response->getHeader('Link'));
 
         if (empty($link)) {
-            return null;
+            return;
         }
 
         $link = Arr::first($link, fn ($value) => data_get($value, 'rel') === 'prev');
@@ -250,7 +250,7 @@ class GetStatusJob implements ShouldQueue
     }
 
     /**
-     * 失敗したジョブの処理
+     * 失敗したジョブの処理.
      *
      * @param  \Exception  $exception
      *

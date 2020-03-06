@@ -2,22 +2,17 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-
-use Illuminate\Foundation\Testing\RefreshDatabase;
-
-use App\Repository\Status\EloquentStatusRepository as StatusRepository;
-use App\Repository\Account\EloquentAccountRepository as AccountRepository;
-
 use App\Jobs\Status\GetStatusJob;
-use App\Model\User;
-use App\Model\Server;
 use App\Model\Account;
-
+use App\Model\Server;
+use App\Model\User;
+use App\Repository\Account\EloquentAccountRepository as AccountRepository;
+use App\Repository\Status\EloquentStatusRepository as StatusRepository;
 use Artisan;
-
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Support\Facades\Bus;
+use Tests\TestCase;
 
 class ArtisanTest extends TestCase
 {
@@ -77,7 +72,6 @@ class ArtisanTest extends TestCase
 
         Bus::assertDispatched(GetStatusJob::class);
     }
-
 
     public function testGetStatusesFails()
     {

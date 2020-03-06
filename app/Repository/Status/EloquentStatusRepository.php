@@ -2,8 +2,8 @@
 
 namespace App\Repository\Status;
 
-use App\Model\Status;
 use App\Model\Account;
+use App\Model\Status;
 
 class EloquentStatusRepository implements StatusRepository
 {
@@ -12,7 +12,7 @@ class EloquentStatusRepository implements StatusRepository
     protected const PAGINATE = 20;
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function userStatuses()
     {
@@ -30,7 +30,7 @@ class EloquentStatusRepository implements StatusRepository
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function getByAcct(Account $acct, string $status_id)
     {
@@ -46,7 +46,7 @@ class EloquentStatusRepository implements StatusRepository
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function updateOrCreate(array $attr, array $values)
     {
@@ -54,7 +54,7 @@ class EloquentStatusRepository implements StatusRepository
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function exportCsv(Account $account)
     {

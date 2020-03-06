@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Model\User;
 use App\Http\Controllers\Controller;
-use App\Repository\Status\StatusRepository as Status;
+use App\Model\User;
 use App\Repository\Account\AccountRepository as Account;
+use App\Repository\Status\StatusRepository as Status;
 
 class CalendarController extends Controller
 {

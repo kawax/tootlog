@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
-use App\Model\User;
 use App\Model\Account;
+use App\Model\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class AccountPolicy
@@ -21,7 +21,7 @@ class AccountPolicy
     }
 
     /**
-     * ユーザにより指定されたポストが更新可能か決める
+     * ユーザにより指定されたポストが更新可能か決める.
      *
      * @param  User  $user
      * @param  Account  $account
@@ -34,7 +34,6 @@ class AccountPolicy
     }
 
     /**
-     *
      * @param  User  $user
      * @param  Account  $account
      *

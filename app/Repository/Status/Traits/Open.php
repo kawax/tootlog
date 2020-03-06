@@ -2,14 +2,14 @@
 
 namespace App\Repository\Status\Traits;
 
+use App\Model\Account;
 use App\Model\Tag;
 use App\Model\User;
-use App\Model\Account;
 
 trait Open
 {
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function openUserStatuses(User $user)
     {
@@ -28,7 +28,7 @@ trait Open
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function openUserStatusesByDate(User $user, string $year, ?string $month = null, ?string $day = null)
     {
@@ -50,7 +50,7 @@ trait Open
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function openRecents(User $user)
     {
@@ -67,7 +67,7 @@ trait Open
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function openArchives(User $user)
     {
@@ -83,7 +83,7 @@ trait Open
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function openUserTagStatus(User $user, Tag $tag)
     {
@@ -104,7 +104,7 @@ trait Open
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function openAcctStatuses(Account $acct)
     {
@@ -122,7 +122,7 @@ trait Open
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function openCalendar(User $user)
     {
@@ -147,7 +147,7 @@ trait Open
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function openAcctCalendar(Account $account)
     {

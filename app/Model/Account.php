@@ -9,7 +9,6 @@ use Revolution\Mastodon\Traits\Mastodon;
 class Account extends Model
 {
     use AccountPresenter;
-
     use Mastodon;
 
     /**
@@ -39,7 +38,7 @@ class Account extends Model
     ];
 
     /**
-     * acct
+     * acct.
      *
      * @return string
      */
@@ -51,7 +50,7 @@ class Account extends Model
     }
 
     /**
-     * domain
+     * domain.
      *
      * @return string
      */

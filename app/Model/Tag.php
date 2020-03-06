@@ -14,7 +14,7 @@ class Tag extends Model
     ];
 
     /**
-     * モデルのルートキーの取得
+     * モデルのルートキーの取得.
      *
      * @return string
      */

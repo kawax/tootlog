@@ -2,15 +2,13 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Facades\Bus;
-
 use App\Jobs\InstanceVersionJob;
 use App\Model\Server;
-
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Facades\Bus;
 use Revolution\Mastodon\Facades\Mastodon;
+use Tests\TestCase;
 
 class InstanceTest extends TestCase
 {

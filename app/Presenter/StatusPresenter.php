@@ -2,8 +2,8 @@
 
 namespace App\Presenter;
 
-use JsonLd\Context;
 use App\JsonLd\SocialMediaPosting;
+use JsonLd\Context;
 
 trait StatusPresenter
 {

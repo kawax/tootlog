@@ -2,9 +2,9 @@
 
 namespace App\Console\Commands\Status;
 
-use Illuminate\Console\Command;
 use App\Jobs\Status\GetStatusJob;
 use App\Repository\Account\AccountRepository as Account;
+use Illuminate\Console\Command;
 
 class GetUserStatus extends Command
 {

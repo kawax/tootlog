@@ -7,7 +7,7 @@ use JsonLd\ContextTypes\AbstractContext;
 class SocialMediaPosting extends AbstractContext
 {
     /**
-     * Property structure
+     * Property structure.
      *
      * @var array
      */

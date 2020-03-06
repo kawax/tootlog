@@ -2,29 +2,21 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-
-use Illuminate\Foundation\Testing\RefreshDatabase;
-
-use Mockery as m;
-
+use App\Jobs\Status\GetStatusJob;
+use App\Model\Account;
+use App\Model\Server;
+use App\Model\Status;
+use App\Model\User;
+use App\Repository\Account\EloquentAccountRepository as AccountRepository;
+use App\Repository\Status\EloquentStatusRepository as StatusRepository;
+use Faker\Factory as Faker;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Response;
-
-use Faker\Factory as Faker;
-
-use App\Model\User;
-use App\Model\Server;
-use App\Model\Account;
-use App\Model\Status;
-
-use App\Repository\Status\EloquentStatusRepository as StatusRepository;
-use App\Repository\Account\EloquentAccountRepository as AccountRepository;
-
-use App\Jobs\Status\GetStatusJob;
-
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Mastodon;
+use Mockery as m;
+use Tests\TestCase;
 
 class StatusTest extends TestCase
 {
@@ -117,7 +109,6 @@ class StatusTest extends TestCase
         Mastodon::shouldReceive('statuses')->once()->andReturn([$statuses->toArray()]);
         Mastodon::shouldReceive('getResponse')->once()->andReturn($this->response);
 
-
         $job->handle($this->statusRepository, $this->accountRepository);
 
         $this->assertDatabaseHas('statuses', [
@@ -147,7 +138,6 @@ class StatusTest extends TestCase
         Mastodon::shouldReceive('token')->once()->andReturn(m::self());
         Mastodon::shouldReceive('statuses')->once()->andReturn([$statuses->toArray()]);
         Mastodon::shouldReceive('getResponse')->once()->andReturn($this->response);
-
 
         $job->handle($this->statusRepository, $this->accountRepository);
 
@@ -192,7 +182,6 @@ class StatusTest extends TestCase
         Mastodon::shouldReceive('token')->once()->andReturn(m::self());
         Mastodon::shouldReceive('statuses')->once()->andReturn([$statuses->toArray()]);
         Mastodon::shouldReceive('getResponse')->once()->andReturn($this->response);
-
 
         $job->handle($this->statusRepository, $this->accountRepository);
 
@@ -239,7 +228,6 @@ class StatusTest extends TestCase
         Mastodon::shouldReceive('getResponse')->once()->andReturn($this->response);
 
         $job->handle($this->statusRepository, $this->accountRepository);
-
 
         $this->assertDatabaseHas('tags', [
             'name' => 'tag_test',

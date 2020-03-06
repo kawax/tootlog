@@ -2,14 +2,14 @@
 
 namespace App\Repository\Server;
 
-use Mastodon;
 use App\Model\Server;
 use Illuminate\Support\Str;
+use Mastodon;
 
 class EloquentServerRepository implements ServerRepository
 {
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function get(string $domain)
     {
@@ -17,7 +17,7 @@ class EloquentServerRepository implements ServerRepository
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function all()
     {
@@ -25,7 +25,7 @@ class EloquentServerRepository implements ServerRepository
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function has(string $domain): bool
     {
@@ -33,7 +33,7 @@ class EloquentServerRepository implements ServerRepository
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function create(array $data)
     {
@@ -41,7 +41,7 @@ class EloquentServerRepository implements ServerRepository
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function firstOrCreate(string $domain): array
     {

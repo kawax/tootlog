@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Open;
 
+use App\Http\Controllers\Controller;
 use App\Model\Tag;
 use App\Model\User;
-use App\Http\Controllers\Controller;
 use App\Repository\Status\StatusRepository as Status;
 
 class TagController extends Controller

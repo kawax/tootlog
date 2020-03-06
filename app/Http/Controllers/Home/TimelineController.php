@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Home;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repository\Account\AccountRepository as Account;
+use Illuminate\Http\Request;
 
 class TimelineController extends Controller
 {
