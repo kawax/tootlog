@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use App\Model\Status;
 use App\Model\Account;
+use App\Model\Status;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider

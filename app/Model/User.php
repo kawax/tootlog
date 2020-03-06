@@ -3,9 +3,9 @@
 namespace App\Model;
 
 use App\Presenter\UserPresenter;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -36,7 +36,7 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
     /**
-     * モデルのルートキーの取得
+     * モデルのルートキーの取得.
      *
      * @return string
      */

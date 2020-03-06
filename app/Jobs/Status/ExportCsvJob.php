@@ -2,19 +2,19 @@
 
 namespace App\Jobs\Status;
 
-use Storage;
-use App\Model\User;
-use App\Model\Status;
-use League\Csv\Writer;
-use App\Model\Account;
-use Illuminate\Bus\Queueable;
 use App\Mail\Export\CsvExported;
-use League\Csv\CannotInsertRecord;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Queue\InteractsWithQueue;
+use App\Model\Account;
+use App\Model\Status;
+use App\Model\User;
+use App\Repository\Status\StatusRepository;
+use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use App\Repository\Status\StatusRepository;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
+use League\Csv\CannotInsertRecord;
+use League\Csv\Writer;
+use Storage;
 
 class ExportCsvJob implements ShouldQueue
 {

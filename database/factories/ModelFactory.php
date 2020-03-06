@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Str;
 use Faker\Generator as Faker;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +31,7 @@ $factory->define(App\Model\User::class, function (Faker $faker) {
 $factory->define(App\Model\Server::class, function (Faker $faker) {
     return [
         'app_id'        => $faker->randomNumber(),
-        'domain'        => 'https://' . $faker->unique()->domainName,
+        'domain'        => 'https://'.$faker->unique()->domainName,
         'redirect_uri'  => $faker->unique()->url,
         'client_id'     => Str::random(20),
         'client_secret' => Str::random(20),
@@ -55,7 +55,7 @@ $factory->define(App\Model\Account::class, function (Faker $faker) {
         'following_count'    => $faker->randomNumber(),
         'followers_count'    => $faker->randomNumber(),
         'note'               => $faker->text(),
-        'url'                => 'https://' . $faker->unique()->domainName,
+        'url'                => 'https://'.$faker->unique()->domainName,
         'avatar'             => $faker->imageUrl(),
         'avatar_static'      => $faker->imageUrl(),
         'header'             => $faker->imageUrl(),

@@ -2,11 +2,11 @@
 
 namespace App\Console\Commands;
 
-use Mastodon;
+use App\Model\Account;
 use App\Model\Server;
 use App\Model\Status;
-use App\Model\Account;
 use Illuminate\Console\Command;
+use Mastodon;
 
 class TootInfoCommand extends Command
 {

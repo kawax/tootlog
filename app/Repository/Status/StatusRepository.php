@@ -2,21 +2,21 @@
 
 namespace App\Repository\Status;
 
+use App\Model\Account;
 use App\Model\Tag;
 use App\Model\User;
-use App\Model\Account;
 
 interface StatusRepository
 {
     /**
-     * ユーザーのステータス
+     * ユーザーのステータス.
      *
      * @return array
      */
     public function userStatuses();
 
     /**
-     * ユーザーのステータス（公開用）
+     * ユーザーのステータス（公開用）.
      *
      * @param  User  $user
      *
@@ -25,7 +25,7 @@ interface StatusRepository
     public function openUserStatuses(User $user);
 
     /**
-     * ユーザーの日付別ステータス（公開用）
+     * ユーザーの日付別ステータス（公開用）.
      *
      * @param  User  $user
      * @param  string  $year
@@ -37,7 +37,7 @@ interface StatusRepository
     public function openUserStatusesByDate(User $user, string $year, ?string $month = null, ?string $day = null);
 
     /**
-     * ユーザーの最近のステータス（公開用）
+     * ユーザーの最近のステータス（公開用）.
      *
      * @param  User  $user
      *
@@ -46,7 +46,7 @@ interface StatusRepository
     public function openRecents(User $user);
 
     /**
-     * ユーザーのアーカイブス（公開用）
+     * ユーザーのアーカイブス（公開用）.
      *
      * @param  User  $user
      *
@@ -55,7 +55,7 @@ interface StatusRepository
     public function openArchives(User $user);
 
     /**
-     * ユーザーのタグ別ステータス（公開用）
+     * ユーザーのタグ別ステータス（公開用）.
      *
      * @param  User  $user
      * @param  Tag  $tag
@@ -65,7 +65,7 @@ interface StatusRepository
     public function openUserTagStatus(User $user, Tag $tag);
 
     /**
-     * アカウントのステータス（公開用）
+     * アカウントのステータス（公開用）.
      *
      * @param  Account  $acct
      *
@@ -74,7 +74,7 @@ interface StatusRepository
     public function openAcctStatuses(Account $acct);
 
     /**
-     * アカウントのステータス（公開用）
+     * アカウントのステータス（公開用）.
      *
      * @param  Account  $acct
      * @param  string  $status_id
@@ -84,7 +84,7 @@ interface StatusRepository
     public function getByAcct(Account $acct, string $status_id);
 
     /**
-     * ユーザーのカレンダー（公開）
+     * ユーザーのカレンダー（公開）.
      *
      * @param  User  $user
      *
@@ -93,7 +93,7 @@ interface StatusRepository
     public function openCalendar(User $user);
 
     /**
-     * アカウントのカレンダー（公開）
+     * アカウントのカレンダー（公開）.
      *
      * @param  Account  $acct
      *
@@ -102,7 +102,6 @@ interface StatusRepository
     public function openAcctCalendar(Account $acct);
 
     /**
-     *
      * @param  array  $attr
      * @param  array  $values
      *
@@ -111,7 +110,7 @@ interface StatusRepository
     public function updateOrCreate(array $attr, array $values);
 
     /**
-     * CSVエクスポート
+     * CSVエクスポート.
      *
      * @param  Account  $account
      *

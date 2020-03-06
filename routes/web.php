@@ -15,7 +15,6 @@
 //    return view('welcome');
 //});
 
-
 Auth::routes(['verify' => true]);
 
 Route::middleware(['auth'])->namespace('Home')->group(function () {
@@ -39,7 +38,6 @@ Route::middleware('auth')->namespace('Api')->prefix('api')->group(function () {
     Route::delete('status/hide/{status}', 'StatusController@hide');
     Route::put('status/show/{status}', 'StatusController@show');
 });
-
 
 Route::namespace('Open')->group(function () {
     Route::name('open.user')->get('@{user}', 'UserController@index');
@@ -66,15 +64,12 @@ Route::namespace('Api')->prefix('api')->group(function () {
     Route::get('calendar/{user}/{username}@{domain}', 'CalendarController@acct');
 });
 
-
 Route::name('instances')->get('instances', 'InstanceController');
-
 
 Route::get('sitemaps', 'SitemapController');
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')
      ->middleware('can:admin-logs');
-
 
 Route::name('welcome')->get('/', 'WelcomeController');
 

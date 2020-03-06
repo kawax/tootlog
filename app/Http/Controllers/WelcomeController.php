@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Twitter;
 use OpenGraph;
+use Twitter;
 
 class WelcomeController extends Controller
 {

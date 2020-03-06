@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Home;
 
-use App\Jobs\AccountDeleteJob;
 use App\Http\Controllers\Controller;
+use App\Jobs\AccountDeleteJob;
 use App\Repository\Account\AccountRepository as Account;
 
 class AccountDeleteController extends Controller

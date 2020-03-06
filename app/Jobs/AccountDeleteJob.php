@@ -2,12 +2,12 @@
 
 namespace App\Jobs;
 
+use App\Repository\Account\AccountRepository as Account;
 use Illuminate\Bus\Queueable;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use App\Repository\Account\AccountRepository as Account;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
 
 class AccountDeleteJob implements ShouldQueue
 {

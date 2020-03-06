@@ -36,7 +36,7 @@ class Reblog extends Model
     ];
 
     /**
-     * 表示用の名前
+     * 表示用の名前.
      *
      * @return string
      */

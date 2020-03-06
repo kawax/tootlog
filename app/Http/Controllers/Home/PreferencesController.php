@@ -8,7 +8,6 @@ use App\Http\Requests\User\UserUpdateRequest;
 class PreferencesController extends Controller
 {
     /**
-     *
      * @return \Illuminate\Http\Response|\Illuminate\View\View
      */
     public function index()

@@ -2,31 +2,22 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-
-use Illuminate\Foundation\Testing\RefreshDatabase;
-
-use Mockery as m;
-
-use App\Model\User;
-use App\Model\Server;
+use App\Jobs\Status\GetStatusJob;
 use App\Model\Account;
+use App\Model\Server;
 use App\Model\Status;
-
-use Cake\Chronos\Chronos;
-
-use App\Repository\Status\EloquentStatusRepository as StatusRepository;
+use App\Model\User;
 use App\Repository\Account\EloquentAccountRepository as AccountRepository;
 use App\Repository\Server\EloquentServerRepository as ServerRepository;
-
-use App\Jobs\Status\GetStatusJob;
-
-use Revolution\Mastodon\MastodonClient;
-
-use Socialite;
-
+use App\Repository\Status\EloquentStatusRepository as StatusRepository;
+use Cake\Chronos\Chronos;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Support\Facades\Bus;
+use Mockery as m;
+use Revolution\Mastodon\MastodonClient;
+use Socialite;
+use Tests\TestCase;
 
 class OAuthTest extends TestCase
 {
@@ -147,7 +138,6 @@ class OAuthTest extends TestCase
 //        $this->accountRepository->shouldReceive('exists')->once()->andReturn(true);
         //        $this->accountRepository->shouldReceive('update')->once()->andReturn($account);
 
-
         $response = $this->actingAs($this->user)
                          ->withSession(['mastodon_domain' => 'https://example.com'])
                          ->get('/accounts/callback');
@@ -167,7 +157,6 @@ class OAuthTest extends TestCase
                                ->with('https://example.com')
                                ->once()
                                ->andReturn(['id' => 1, 'client_id' => '', 'client_secret' => '']);
-
 
         Socialite::shouldReceive('driver')->once()->andReturn(m::self());
         Socialite::shouldReceive('user')->once()->andReturn(new class() {
@@ -194,7 +183,6 @@ class OAuthTest extends TestCase
 
         $this->accountRepository->shouldReceive('exists')->once()->andReturn(false);
         //        $this->accountRepository->shouldReceive('store')->once()->andReturn($account);
-
 
         $response = $this->actingAs($this->user)
                          ->withSession(['mastodon_domain' => 'https://example.com'])

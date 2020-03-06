@@ -2,16 +2,14 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-
-use App\Model\User;
-use App\Model\Server;
 use App\Model\Account;
+use App\Model\Server;
 use App\Model\Status;
-
+use App\Model\User;
 use Carbon\Carbon;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class AccountTest extends TestCase
 {

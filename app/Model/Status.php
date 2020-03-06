@@ -43,7 +43,7 @@ class Status extends Model
     ];
 
     /**
-     * acct
+     * acct.
      *
      * @return string
      */
@@ -55,7 +55,7 @@ class Status extends Model
     }
 
     /**
-     * 表示用の名前
+     * 表示用の名前.
      *
      * @return string
      */

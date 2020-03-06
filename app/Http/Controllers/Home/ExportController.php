@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Home;
 
-use Illuminate\Http\Request;
-use App\Jobs\Status\ExportCsvJob;
 use App\Http\Controllers\Controller;
+use App\Jobs\Status\ExportCsvJob;
+use Illuminate\Http\Request;
 
 class ExportController extends Controller
 {
