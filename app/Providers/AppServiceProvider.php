@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
+use Revolution\Mastodon\Facades\Mastodon;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,13 +16,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //laravel-log-viewer表示可能
-        \Gate::define('admin-logs', function ($user) {
-            return $user->isAdmin();
-        });
+        Gate::define('admin-logs', fn ($user) => $user->isAdmin());
 
-        \Mastodon::macro('instance', function () {
-            return $this->get('/instance');
-        });
+        Mastodon::macro('instance', fn () => $this->get('/instance'));
     }
 
     /**
