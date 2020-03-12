@@ -63,27 +63,27 @@
         },
         {
             "name": "artesaos/seotools",
-            "version": "v0.16.0",
+            "version": "v0.17.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/artesaos/seotools.git",
-                "reference": "9e91926d27f46652ba01ff217028aecd97d757b1"
+                "reference": "445c0bf0ddbd7cdc271d2887d25009a0e1ff2cb6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/artesaos/seotools/zipball/9e91926d27f46652ba01ff217028aecd97d757b1",
-                "reference": "9e91926d27f46652ba01ff217028aecd97d757b1",
+                "url": "https://api.github.com/repos/artesaos/seotools/zipball/445c0bf0ddbd7cdc271d2887d25009a0e1ff2cb6",
+                "reference": "445c0bf0ddbd7cdc271d2887d25009a0e1ff2cb6",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "illuminate/config": "5.8.*|^6.0",
-                "illuminate/support": "5.8.*|^6.0",
+                "illuminate/config": "5.8.* || ^6.0 || ^7.0",
+                "illuminate/support": "5.8.* || ^6.0 || ^7.0",
                 "php": ">=7.1"
             },
             "require-dev": {
-                "orchestra/testbench": "~3.8.4|^4.0",
-                "phpspec/phpspec": "~5.1.1"
+                "orchestra/testbench": "~3.8.4 || ^4.0 || ^5.0",
+                "phpspec/phpspec": "~5.1.1 || ^6.0"
             },
             "type": "library",
             "extra": {
@@ -117,7 +117,7 @@
             "description": "SEO Tools for Laravel and Lumen",
             "keywords": [
                 "JSON-LD",
-                "laravel5",
+                "laravel",
                 "lumen",
                 "metatags",
                 "opengraph",
@@ -125,20 +125,20 @@
                 "seotools",
                 "webmaster"
             ],
-            "time": "2019-09-05T13:49:10+00:00"
+            "time": "2020-03-11T16:35:57+00:00"
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.133.33",
+            "version": "3.133.34",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "bdae58163a527d1d03db9a845fe57795c81e2c49"
+                "reference": "02131fd17c9b62f36993bb2da88dd624ce058179"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/bdae58163a527d1d03db9a845fe57795c81e2c49",
-                "reference": "bdae58163a527d1d03db9a845fe57795c81e2c49",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/02131fd17c9b62f36993bb2da88dd624ce058179",
+                "reference": "02131fd17c9b62f36993bb2da88dd624ce058179",
                 "shasum": ""
             },
             "require": {
@@ -209,7 +209,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-03-10T18:14:53+00:00"
+            "time": "2020-03-11T18:17:17+00:00"
         },
         {
             "name": "cakephp/chronos",
