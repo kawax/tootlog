@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\View\Composers\AccountComposer;
+use App\View\Composers\FooterComposer;
+use App\View\Composers\RecentComposer;
+use App\View\Composers\TagComposer;
 use Illuminate\Support\ServiceProvider;
 
 class ViewComposerServiceProvider extends ServiceProvider
@@ -13,33 +17,13 @@ class ViewComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer(
-            'open.account_list',
-            \App\Http\ViewComposers\AccountComposer::class
+        view()->composers(
+            [
+                AccountComposer::class => 'open.account_list',
+                RecentComposer::class  => 'side.recents',
+                TagComposer::class     => 'side.tags',
+                FooterComposer::class  => 'layouts.footer',
+            ]
         );
-        view()->composer(
-            'side.recents',
-            \App\Http\ViewComposers\RecentComposer::class
-        );
-
-        view()->composer(
-            'side.tags',
-            \App\Http\ViewComposers\TagComposer::class
-        );
-
-        view()->composer(
-            'layouts.footer',
-            \App\Http\ViewComposers\FooterComposer::class
-        );
-    }
-
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
     }
 }

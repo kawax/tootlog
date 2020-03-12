@@ -1,13 +1,11 @@
 <?php
 
-namespace App\Http\ViewComposers;
+namespace App\View\Composers;
 
 use Illuminate\View\View;
 
 class TagComposer
 {
-    protected $statusRepository;
-
     public function __construct()
     {
         //

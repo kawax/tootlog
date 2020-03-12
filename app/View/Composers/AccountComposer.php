@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\ViewComposers;
+namespace App\View\Composers;
 
 use App\Repository\Account\AccountRepository;
 use Illuminate\View\View;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\ViewComposers;
+namespace App\View\Composers;
 
 use App\Repository\Status\StatusRepository as Status;
 use Illuminate\View\View;

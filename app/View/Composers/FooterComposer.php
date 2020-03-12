@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\ViewComposers;
+namespace App\View\Composers;
 
 use App\Model\Account;
 use App\Model\Server;
