@@ -2,7 +2,7 @@
 
 namespace App\Model;
 
-use App\Presenter\StatusPresenter;
+use App\Model\Presenter\StatusPresenter;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 

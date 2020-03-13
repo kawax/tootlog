@@ -2,7 +2,7 @@
 
 namespace App\Model;
 
-use App\Presenter\AccountPresenter;
+use App\Model\Presenter\AccountPresenter;
 use Illuminate\Database\Eloquent\Model;
 use Revolution\Mastodon\Traits\Mastodon;
 
