@@ -1,6 +1,20 @@
 <?php
 
 return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | Horizon Domain
+    |--------------------------------------------------------------------------
+    |
+    | This is the subdomain where Horizon will be accessible from. If this
+    | setting is null, Horizon will reside under the same domain as the
+    | application. Otherwise, this value will serve as the subdomain.
+    |
+    */
+
+    'domain' => null,
+
     /*
     |--------------------------------------------------------------------------
     | Horizon Path
@@ -80,7 +94,11 @@ return [
 
     'trim' => [
         'recent' => 60,
+        'pending' => 60,
+        'completed' => 60,
+        'recent_failed' => 10080,
         'failed' => 10080,
+        'monitored' => 10080,
     ],
 
     /*
@@ -97,6 +115,19 @@ return [
     */
 
     'fast_termination' => false,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Memory Limit (MB)
+    |--------------------------------------------------------------------------
+    |
+    | This value describes the maximum amount of memory the Horizon worker
+    | may consume before it is terminated and restarted. You should set
+    | this value according to the resources available to your server.
+    |
+    */
+
+    'memory_limit' => 64,
 
     /*
     |--------------------------------------------------------------------------
