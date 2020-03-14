@@ -164,63 +164,63 @@ class StatusTest extends TestCase
         );
     }
 
-    //    public function testGetStatusJobReblog()
-    //    {
-    //        $job = new GetStatusJob($this->account);
-    //
-    //        $faker = Faker::create();
-    //
-    //        $statuses = factory(Status::class)->make(
-    //            [
-    //                'id'         => 1,
-    //                'account_id' => $this->account->id,
-    //                'visibility' => 'public',
-    //                'created_at' => $faker->dateTime,
-    //                'content'    => 'test',
-    //                'reblog'     => [
-    //                    'id'           => 2,
-    //                    'created_at'   => now()->toDateTimeString(),
-    //                    'account'      => [
-    //                        'acct'         => $faker->userName,
-    //                        'display_name' => $faker->name,
-    //                        'url'          => $faker->url,
-    //                        'avatar'       => $faker->imageUrl,
-    //                    ],
-    //                    'content'      => 'reblog_content',
-    //                    'spoiler_text' => 'spoiler_text',
-    //                    'uri'          => 'uri',
-    //                    'url'          => $faker->url,
-    //                ],
-    //            ]
-    //        );
-    //
-    //        $this->accountRepository->shouldReceive('refresh')->with($this->account)->once()->andReturn($this->account);
-    //
-    //        Mastodon::shouldReceive('domain')->with($this->server->domain)->once()->andReturn(m::self());
-    //        Mastodon::shouldReceive('token')->once()->andReturn(m::self());
-    //        Mastodon::shouldReceive('statuses')->once()->andReturn([$statuses->toArray()]);
-    //        Mastodon::shouldReceive('getResponse')->once()->andReturn($this->response);
-    //
-    //        $job->handle($this->statusRepository, $this->accountRepository);
-    //
-    //        $this->assertDatabaseHas(
-    //            'reblogs',
-    //            [
-    //                'status_id'    => 2,
-    //                'content'      => 'reblog_content',
-    //                'spoiler_text' => 'spoiler_text',
-    //            ]
-    //        );
-    //
-    //        $this->assertDatabaseHas(
-    //            'statuses',
-    //            [
-    //                'account_id' => $this->account->id,
-    //                'status_id'  => 1,
-    //                'reblog_id'  => 1,
-    //            ]
-    //        );
-    //    }
+    public function testGetStatusJobReblog()
+    {
+        $job = new GetStatusJob($this->account);
+
+        $faker = Faker::create();
+
+        $statuses = factory(Status::class)->make(
+            [
+                'id'         => 1,
+                'account_id' => $this->account->id,
+                'visibility' => 'public',
+                'created_at' => $faker->dateTime,
+                'content'    => 'test',
+                'reblog'     => [
+                    'id'           => 2,
+                    'created_at'   => now()->toDateTimeString(),
+                    'account'      => [
+                        'acct'         => $faker->userName,
+                        'display_name' => $faker->name,
+                        'url'          => $faker->url,
+                        'avatar'       => $faker->imageUrl,
+                    ],
+                    'content'      => 'reblog_content',
+                    'spoiler_text' => 'spoiler_text',
+                    'uri'          => 'uri',
+                    'url'          => $faker->url,
+                ],
+            ]
+        );
+
+        $this->accountRepository->shouldReceive('refresh')->with($this->account)->once()->andReturn($this->account);
+
+        Mastodon::shouldReceive('domain')->with($this->server->domain)->once()->andReturn(m::self());
+        Mastodon::shouldReceive('token')->once()->andReturn(m::self());
+        Mastodon::shouldReceive('statuses')->once()->andReturn([$statuses->toArray()]);
+        Mastodon::shouldReceive('getResponse')->once()->andReturn($this->response);
+
+        $job->handle($this->statusRepository, $this->accountRepository);
+
+        $this->assertDatabaseHas(
+            'reblogs',
+            [
+                'status_id'    => 2,
+                'content'      => 'reblog_content',
+                'spoiler_text' => 'spoiler_text',
+            ]
+        );
+
+        $this->assertDatabaseHas(
+            'statuses',
+            [
+                'account_id' => $this->account->id,
+                'status_id'  => 1,
+                'reblog_id'  => 1,
+            ]
+        );
+    }
 
     public function testGetStatusJobTag()
     {
