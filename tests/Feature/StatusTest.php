@@ -177,7 +177,6 @@ class StatusTest extends TestCase
                 'visibility' => 'public',
                 'created_at' => $faker->dateTime,
                 'content'    => 'test',
-                'reblogged'  => true,
                 'reblog'     => [
                     'id'           => 2,
                     'created_at'   => now()->toDateTimeString(),
