@@ -11,11 +11,6 @@ npm-debug.log
 yarn-error.log
 .env
 Vagrantfile
-
-# Elastic Beanstalk Files
-.elasticbeanstalk/*
-!.elasticbeanstalk/config.yml
-!.elasticbeanstalk/*.cfg.yml
-!.elasticbeanstalk/*.global.yml
-.php-version
 /after.sh
+/public/vendor/horizon
+
