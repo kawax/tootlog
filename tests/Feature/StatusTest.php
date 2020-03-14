@@ -61,20 +61,26 @@ class StatusTest extends TestCase
     {
         parent::setUp();
 
-        $this->user = factory(User::class)->create([
-            'name' => 'test',
-        ]);
+        $this->user = factory(User::class)->create(
+            [
+                'name' => 'test',
+            ]
+        );
 
-        $this->server = factory(Server::class)->create([
-            'domain' => 'https://example.com',
-        ]);
+        $this->server = factory(Server::class)->create(
+            [
+                'domain' => 'https://example.com',
+            ]
+        );
 
-        $this->account = factory(Account::class)->create([
-            'user_id'   => $this->user->id,
-            'server_id' => $this->server->id,
-            'username'  => 'test',
-            'url'       => 'https://example.com/@test',
-        ]);
+        $this->account = factory(Account::class)->create(
+            [
+                'user_id'   => $this->user->id,
+                'server_id' => $this->server->id,
+                'username'  => 'test',
+                'url'       => 'https://example.com/@test',
+            ]
+        );
 
         $this->response = new Response(200, [], 'body');
 
@@ -94,13 +100,15 @@ class StatusTest extends TestCase
 
         $faker = Faker::create();
 
-        $statuses = factory(Status::class)->make([
-            'id'         => 1,
-            'account_id' => $this->account->id,
-            'visibility' => 'public',
-            'created_at' => $faker->dateTime,
-            'content'    => 'test',
-        ]);
+        $statuses = factory(Status::class)->make(
+            [
+                'id'         => 1,
+                'account_id' => $this->account->id,
+                'visibility' => 'public',
+                'created_at' => $faker->dateTime,
+                'content'    => 'test',
+            ]
+        );
 
         $this->accountRepository->shouldReceive('refresh')->with($this->account)->once()->andReturn($this->account);
 
@@ -111,11 +119,14 @@ class StatusTest extends TestCase
 
         $job->handle($this->statusRepository, $this->accountRepository);
 
-        $this->assertDatabaseHas('statuses', [
-            'account_id' => $this->account->id,
-            'status_id'  => 1,
-            'content'    => 'test',
-        ]);
+        $this->assertDatabaseHas(
+            'statuses',
+            [
+                'account_id' => $this->account->id,
+                'status_id'  => 1,
+                'content'    => 'test',
+            ]
+        );
     }
 
     public function testGetStatusJobDirect()
@@ -124,13 +135,15 @@ class StatusTest extends TestCase
 
         $faker = Faker::create();
 
-        $statuses = factory(Status::class)->make([
-            'id'         => 1,
-            'account_id' => $this->account->id,
-            'visibility' => 'direct',
-            'created_at' => $faker->dateTime,
-            'content'    => 'test',
-        ]);
+        $statuses = factory(Status::class)->make(
+            [
+                'id'         => 1,
+                'account_id' => $this->account->id,
+                'visibility' => 'direct',
+                'created_at' => $faker->dateTime,
+                'content'    => 'test',
+            ]
+        );
 
         $this->accountRepository->shouldReceive('refresh')->with($this->account)->once()->andReturn($this->account);
 
@@ -141,11 +154,14 @@ class StatusTest extends TestCase
 
         $job->handle($this->statusRepository, $this->accountRepository);
 
-        $this->assertDatabaseMissing('statuses', [
-            'account_id' => $this->account->id,
-            'status_id'  => 1,
-            'content'    => 'test',
-        ]);
+        $this->assertDatabaseMissing(
+            'statuses',
+            [
+                'account_id' => $this->account->id,
+                'status_id'  => 1,
+                'content'    => 'test',
+            ]
+        );
     }
 
     public function testGetStatusJobReblog()
@@ -154,27 +170,30 @@ class StatusTest extends TestCase
 
         $faker = Faker::create();
 
-        $statuses = factory(Status::class)->make([
-            'id'         => 1,
-            'account_id' => $this->account->id,
-            'visibility' => 'public',
-            'created_at' => $faker->dateTime,
-            'content'    => 'test',
-            'reblog'     => [
-                'id'           => 2,
-                'created_at'   => now()->toDateTimeString(),
-                'account'      => [
-                    'acct'         => $faker->userName,
-                    'display_name' => $faker->name,
+        $statuses = factory(Status::class)->make(
+            [
+                'id'         => 1,
+                'account_id' => $this->account->id,
+                'visibility' => 'public',
+                'created_at' => $faker->dateTime,
+                'content'    => 'test',
+                'reblogged'  => true,
+                'reblog'     => [
+                    'id'           => 2,
+                    'created_at'   => now()->toDateTimeString(),
+                    'account'      => [
+                        'acct'         => $faker->userName,
+                        'display_name' => $faker->name,
+                        'url'          => $faker->url,
+                        'avatar'       => $faker->imageUrl,
+                    ],
+                    'content'      => 'reblog_content',
+                    'spoiler_text' => 'spoiler_text',
+                    'uri'          => 'uri',
                     'url'          => $faker->url,
-                    'avatar'       => $faker->imageUrl,
                 ],
-                'content'      => 'reblog_content',
-                'spoiler_text' => 'spoiler_text',
-                'uri'          => 'uri',
-                'url'          => $faker->url,
-            ],
-        ]);
+            ]
+        );
 
         $this->accountRepository->shouldReceive('refresh')->with($this->account)->once()->andReturn($this->account);
 
@@ -185,17 +204,23 @@ class StatusTest extends TestCase
 
         $job->handle($this->statusRepository, $this->accountRepository);
 
-        $this->assertDatabaseHas('reblogs', [
-            'status_id'    => 2,
-            'content'      => 'reblog_content',
-            'spoiler_text' => 'spoiler_text',
-        ]);
+        $this->assertDatabaseHas(
+            'reblogs',
+            [
+                'status_id'    => 2,
+                'content'      => 'reblog_content',
+                'spoiler_text' => 'spoiler_text',
+            ]
+        );
 
-        $this->assertDatabaseHas('statuses', [
-            'account_id' => $this->account->id,
-            'status_id'  => 1,
-            'reblog_id'  => 1,
-        ]);
+        $this->assertDatabaseHas(
+            'statuses',
+            [
+                'account_id' => $this->account->id,
+                'status_id'  => 1,
+                'reblog_id'  => 1,
+            ]
+        );
     }
 
     public function testGetStatusJobTag()
@@ -204,21 +229,23 @@ class StatusTest extends TestCase
 
         $faker = Faker::create();
 
-        $statuses = factory(Status::class)->make([
-            'id'         => 1,
-            'account_id' => $this->account->id,
-            'visibility' => 'public',
-            'created_at' => $faker->dateTime,
-            'content'    => 'test',
-            'tags'       => [
-                [
-                    'name' => 'tag_test',
+        $statuses = factory(Status::class)->make(
+            [
+                'id'         => 1,
+                'account_id' => $this->account->id,
+                'visibility' => 'public',
+                'created_at' => $faker->dateTime,
+                'content'    => 'test',
+                'tags'       => [
+                    [
+                        'name' => 'tag_test',
+                    ],
+                    [
+                        'name' => 'tag_test2',
+                    ],
                 ],
-                [
-                    'name' => 'tag_test2',
-                ],
-            ],
-        ]);
+            ]
+        );
 
         $this->accountRepository->shouldReceive('refresh')->with($this->account)->once()->andReturn($this->account);
 
@@ -229,18 +256,27 @@ class StatusTest extends TestCase
 
         $job->handle($this->statusRepository, $this->accountRepository);
 
-        $this->assertDatabaseHas('tags', [
-            'name' => 'tag_test',
-        ]);
+        $this->assertDatabaseHas(
+            'tags',
+            [
+                'name' => 'tag_test',
+            ]
+        );
 
-        $this->assertDatabaseHas('tags', [
-            'name' => 'tag_test2',
-        ]);
+        $this->assertDatabaseHas(
+            'tags',
+            [
+                'name' => 'tag_test2',
+            ]
+        );
 
-        $this->assertDatabaseHas('statuses', [
-            'account_id' => $this->account->id,
-            'status_id'  => 1,
-        ]);
+        $this->assertDatabaseHas(
+            'statuses',
+            [
+                'account_id' => $this->account->id,
+                'status_id'  => 1,
+            ]
+        );
     }
 
     /**
@@ -258,8 +294,11 @@ class StatusTest extends TestCase
 
         $job->handle($this->statusRepository, $this->accountRepository);
 
-        $this->assertDatabaseHas('accounts', [
-            'fails' => 1,
-        ]);
+        $this->assertDatabaseHas(
+            'accounts',
+            [
+                'fails' => 1,
+            ]
+        );
     }
 }
