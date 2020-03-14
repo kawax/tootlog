@@ -160,9 +160,8 @@ class GetStatusJob implements ShouldQueue
 
         $new_status = $this->statusRepository->updateOrCreate($attr, $data);
 
-        if (data_get($status, 'reblogged') and filled(data_get($status, 'reblog'))) {
+        if (filled(data_get($status, 'reblog'))) {
             $reblog = $this->reblog(data_get($status, 'reblog'));
-            info('reblog', $reblog->toArray());
             $new_status->reblog()->associate($reblog)->save();
         }
 
