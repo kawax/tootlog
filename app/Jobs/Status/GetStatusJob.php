@@ -189,25 +189,31 @@ class GetStatusJob implements ShouldQueue
      */
     protected function since()
     {
-        $since_id = null;
-
         $response = Mastodon::getResponse();
 
         if (! $response->hasHeader('Link')) {
-            return;
+            return '';
         }
 
         $link = Psr7\parse_header($response->getHeader('Link'));
 
         if (empty($link)) {
-            return;
+            return '';
         }
 
         $link = Arr::first($link, fn ($value) => data_get($value, 'rel') === 'prev');
 
         $link = head($link);
 
-        return Str::before(Str::after($link, '&since_id='), '>');
+        if (Str::contains($link, '&since_id=')) {
+            $link = Str::after($link, '&since_id=');
+        } elseif (Str::contains($link, '&min_id=')) {
+            $link = Str::after($link, '&min_id=');
+        } else {
+            $link = '';
+        }
+
+        return Str::before($link, '>');
     }
 
     /**
