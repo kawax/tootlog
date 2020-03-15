@@ -3,8 +3,8 @@
 namespace Tests\Unit;
 
 use App\Support\Header;
-use PHPUnit\Framework\TestCase;
 use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\TestCase;
 
 class HeaderTest extends TestCase
 {
