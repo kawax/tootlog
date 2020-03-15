@@ -7,15 +7,14 @@ use App\Model\Reblog;
 use App\Model\Tag;
 use App\Repository\Account\AccountRepository;
 use App\Repository\Status\StatusRepository;
+use App\Support\Header;
 use Carbon\Carbon;
-use GuzzleHttp\Psr7;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
 use Revolution\Mastodon\Facades\Mastodon;
 
 class GetStatusJob implements ShouldQueue
@@ -191,29 +190,7 @@ class GetStatusJob implements ShouldQueue
     {
         $response = Mastodon::getResponse();
 
-        if (! $response->hasHeader('Link')) {
-            return '';
-        }
-
-        $link = Psr7\parse_header($response->getHeader('Link'));
-
-        if (empty($link)) {
-            return '';
-        }
-
-        $link = Arr::first($link, fn ($value) => data_get($value, 'rel') === 'prev');
-
-        $link = head($link);
-
-        if (Str::contains($link, '&since_id=')) {
-            $link = Str::after($link, '&since_id=');
-        } elseif (Str::contains($link, '&min_id=')) {
-            $link = Str::after($link, '&min_id=');
-        } else {
-            $link = '';
-        }
-
-        return Str::before($link, '>');
+        return Header::since($response);
     }
 
     /**
