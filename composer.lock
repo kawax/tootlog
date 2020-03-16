@@ -2803,16 +2803,16 @@
         },
         {
             "name": "revolution/laravel-server-push",
-            "version": "1.1.5",
+            "version": "1.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kawax/laravel-server-push.git",
-                "reference": "eff88ffa2b32330d02f1987019824c18199dd8b5"
+                "reference": "4ff4fe1baec976de0458abbd8ba9b767598f735a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kawax/laravel-server-push/zipball/eff88ffa2b32330d02f1987019824c18199dd8b5",
-                "reference": "eff88ffa2b32330d02f1987019824c18199dd8b5",
+                "url": "https://api.github.com/repos/kawax/laravel-server-push/zipball/4ff4fe1baec976de0458abbd8ba9b767598f735a",
+                "reference": "4ff4fe1baec976de0458abbd8ba9b767598f735a",
                 "shasum": ""
             },
             "require": {
@@ -2853,7 +2853,7 @@
                 "laravel",
                 "server-push"
             ],
-            "time": "2020-03-08T01:40:33+00:00"
+            "time": "2020-03-15T08:59:58+00:00"
         },
         {
             "name": "revolution/socialite-mastodon",
