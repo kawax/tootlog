@@ -63,16 +63,16 @@
         },
         {
             "name": "artesaos/seotools",
-            "version": "v0.17.1",
+            "version": "v0.17.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/artesaos/seotools.git",
-                "reference": "445c0bf0ddbd7cdc271d2887d25009a0e1ff2cb6"
+                "reference": "ca27cd0edf917e0bc805227013859b8b5a1f01fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/artesaos/seotools/zipball/445c0bf0ddbd7cdc271d2887d25009a0e1ff2cb6",
-                "reference": "445c0bf0ddbd7cdc271d2887d25009a0e1ff2cb6",
+                "url": "https://api.github.com/repos/artesaos/seotools/zipball/ca27cd0edf917e0bc805227013859b8b5a1f01fb",
+                "reference": "ca27cd0edf917e0bc805227013859b8b5a1f01fb",
                 "shasum": ""
             },
             "require": {
@@ -125,20 +125,20 @@
                 "seotools",
                 "webmaster"
             ],
-            "time": "2020-03-11T16:35:57+00:00"
+            "time": "2020-04-02T19:53:38+00:00"
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.134.1",
+            "version": "3.134.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "aefab57896b558634d24342bdc3c6814e8e533f6"
+                "reference": "4fe0b03a2eefb677ce4ca47b7e3c3705f04516c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/aefab57896b558634d24342bdc3c6814e8e533f6",
-                "reference": "aefab57896b558634d24342bdc3c6814e8e533f6",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/4fe0b03a2eefb677ce4ca47b7e3c3705f04516c8",
+                "reference": "4fe0b03a2eefb677ce4ca47b7e3c3705f04516c8",
                 "shasum": ""
             },
             "require": {
@@ -209,7 +209,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-04-01T18:14:23+00:00"
+            "time": "2020-04-02T18:13:41+00:00"
         },
         {
             "name": "cakephp/chronos",
@@ -5248,20 +5248,21 @@
         },
         {
             "name": "doctrine/annotations",
-            "version": "v1.8.0",
+            "version": "1.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "904dca4eb10715b92569fbcd79e201d5c349b6bc"
+                "reference": "5eb79f3dbdffed6544e1fc287572c0f462bd29bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/904dca4eb10715b92569fbcd79e201d5c349b6bc",
-                "reference": "904dca4eb10715b92569fbcd79e201d5c349b6bc",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/5eb79f3dbdffed6544e1fc287572c0f462bd29bb",
+                "reference": "5eb79f3dbdffed6544e1fc287572c0f462bd29bb",
                 "shasum": ""
             },
             "require": {
                 "doctrine/lexer": "1.*",
+                "ext-tokenizer": "*",
                 "php": "^7.1"
             },
             "require-dev": {
@@ -5271,7 +5272,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.7.x-dev"
+                    "dev-master": "1.9.x-dev"
                 }
             },
             "autoload": {
@@ -5312,7 +5313,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2019-10-01T18:55:10+00:00"
+            "time": "2020-04-02T12:33:25+00:00"
         },
         {
             "name": "doctrine/instantiator",
