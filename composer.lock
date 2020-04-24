@@ -128,16 +128,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.135.2",
+            "version": "3.135.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "1810725052836683d0cfd2907d515173058e710e"
+                "reference": "0f6f6e8f4a44193908e18b8c7b8530b02f5bc428"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/1810725052836683d0cfd2907d515173058e710e",
-                "reference": "1810725052836683d0cfd2907d515173058e710e",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/0f6f6e8f4a44193908e18b8c7b8530b02f5bc428",
+                "reference": "0f6f6e8f4a44193908e18b8c7b8530b02f5bc428",
                 "shasum": ""
             },
             "require": {
@@ -208,7 +208,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-04-22T18:11:15+00:00"
+            "time": "2020-04-23T18:18:24+00:00"
         },
         {
             "name": "cakephp/chronos",
@@ -2616,16 +2616,16 @@
         },
         {
             "name": "rap2hpoutre/laravel-log-viewer",
-            "version": "v1.5.1",
+            "version": "v1.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rap2hpoutre/laravel-log-viewer.git",
-                "reference": "52c2a39ffbaafab13afb7e537c6c53f06e0b5cf5"
+                "reference": "337bb72d2af6b0de9b3128e77f13c1ff262bc962"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rap2hpoutre/laravel-log-viewer/zipball/52c2a39ffbaafab13afb7e537c6c53f06e0b5cf5",
-                "reference": "52c2a39ffbaafab13afb7e537c6c53f06e0b5cf5",
+                "url": "https://api.github.com/repos/rap2hpoutre/laravel-log-viewer/zipball/337bb72d2af6b0de9b3128e77f13c1ff262bc962",
+                "reference": "337bb72d2af6b0de9b3128e77f13c1ff262bc962",
                 "shasum": ""
             },
             "require": {
@@ -2671,7 +2671,7 @@
                 "logging",
                 "lumen"
             ],
-            "time": "2020-04-22T20:15:55+00:00"
+            "time": "2020-04-23T19:44:47+00:00"
         },
         {
             "name": "revolution/laravel-mastodon-api",
@@ -7097,16 +7097,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "8.5.3",
+            "version": "8.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "67750516bc02f300e2742fed2f50177f8f37bedf"
+                "reference": "8474e22d7d642f665084ba5ec780626cbd1efd23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/67750516bc02f300e2742fed2f50177f8f37bedf",
-                "reference": "67750516bc02f300e2742fed2f50177f8f37bedf",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/8474e22d7d642f665084ba5ec780626cbd1efd23",
+                "reference": "8474e22d7d642f665084ba5ec780626cbd1efd23",
                 "shasum": ""
             },
             "require": {
@@ -7186,7 +7186,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-03-31T08:52:04+00:00"
+            "time": "2020-04-23T04:39:42+00:00"
         },
         {
             "name": "scrivo/highlight.php",
