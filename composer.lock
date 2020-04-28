@@ -128,16 +128,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.135.4",
+            "version": "3.135.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "fb6f4a12d9ad1b8fc1481aef61ed1f8a9fe2164b"
+                "reference": "a721de5e39eb584aa74611b07564bedba166893c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/fb6f4a12d9ad1b8fc1481aef61ed1f8a9fe2164b",
-                "reference": "fb6f4a12d9ad1b8fc1481aef61ed1f8a9fe2164b",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/a721de5e39eb584aa74611b07564bedba166893c",
+                "reference": "a721de5e39eb584aa74611b07564bedba166893c",
                 "shasum": ""
             },
             "require": {
@@ -208,7 +208,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-04-24T18:14:04+00:00"
+            "time": "2020-04-27T18:11:22+00:00"
         },
         {
             "name": "cakephp/chronos",
@@ -2642,16 +2642,16 @@
         },
         {
             "name": "rap2hpoutre/laravel-log-viewer",
-            "version": "v1.5.2",
+            "version": "v1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rap2hpoutre/laravel-log-viewer.git",
-                "reference": "337bb72d2af6b0de9b3128e77f13c1ff262bc962"
+                "reference": "02023f590b84d11be8716a8c07146c128f9e7b42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rap2hpoutre/laravel-log-viewer/zipball/337bb72d2af6b0de9b3128e77f13c1ff262bc962",
-                "reference": "337bb72d2af6b0de9b3128e77f13c1ff262bc962",
+                "url": "https://api.github.com/repos/rap2hpoutre/laravel-log-viewer/zipball/02023f590b84d11be8716a8c07146c128f9e7b42",
+                "reference": "02023f590b84d11be8716a8c07146c128f9e7b42",
                 "shasum": ""
             },
             "require": {
@@ -2697,26 +2697,26 @@
                 "logging",
                 "lumen"
             ],
-            "time": "2020-04-23T19:44:47+00:00"
+            "time": "2020-04-27T06:40:08+00:00"
         },
         {
             "name": "revolution/laravel-mastodon-api",
-            "version": "2.1.0",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kawax/laravel-mastodon-api.git",
-                "reference": "37151ecfa2c82d0140c94472b712fbdedcfd46f1"
+                "reference": "1a0ed91808a3790a4c5862a0f2275adc67367477"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kawax/laravel-mastodon-api/zipball/37151ecfa2c82d0140c94472b712fbdedcfd46f1",
-                "reference": "37151ecfa2c82d0140c94472b712fbdedcfd46f1",
+                "url": "https://api.github.com/repos/kawax/laravel-mastodon-api/zipball/1a0ed91808a3790a4c5862a0f2275adc67367477",
+                "reference": "1a0ed91808a3790a4c5862a0f2275adc67367477",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "guzzlehttp/guzzle": "^6.3||^7.0",
-                "illuminate/support": "*",
+                "illuminate/support": "^6.0||^7.0",
                 "php": "^7.2||^8.0"
             },
             "require-dev": {
@@ -2755,7 +2755,7 @@
                 "laravel",
                 "mastodon"
             ],
-            "time": "2020-03-04T13:32:01+00:00"
+            "time": "2020-04-27T10:14:35+00:00"
         },
         {
             "name": "revolution/laravel-server-push",
@@ -6559,23 +6559,20 @@
         },
         {
             "name": "phpdocumentor/reflection-common",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionCommon.git",
-                "reference": "63a995caa1ca9e5590304cd845c15ad6d482a62a"
+                "reference": "6568f4687e5b41b054365f9ae03fcb1ed5f2069b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionCommon/zipball/63a995caa1ca9e5590304cd845c15ad6d482a62a",
-                "reference": "63a995caa1ca9e5590304cd845c15ad6d482a62a",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionCommon/zipball/6568f4687e5b41b054365f9ae03fcb1ed5f2069b",
+                "reference": "6568f4687e5b41b054365f9ae03fcb1ed5f2069b",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~6"
             },
             "type": "library",
             "extra": {
@@ -6607,7 +6604,7 @@
                 "reflection",
                 "static analysis"
             ],
-            "time": "2018-08-07T13:53:10+00:00"
+            "time": "2020-04-27T09:25:28+00:00"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
