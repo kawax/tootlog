@@ -128,16 +128,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.137.6",
+            "version": "3.137.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "24cdfb2d9538a2a30744708d75be1e75f302283b"
+                "reference": "d5f278f3b2a65a520ca3317f5099c1dac5ca26d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/24cdfb2d9538a2a30744708d75be1e75f302283b",
-                "reference": "24cdfb2d9538a2a30744708d75be1e75f302283b",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/d5f278f3b2a65a520ca3317f5099c1dac5ca26d8",
+                "reference": "d5f278f3b2a65a520ca3317f5099c1dac5ca26d8",
                 "shasum": ""
             },
             "require": {
@@ -208,7 +208,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-05-08T18:20:12+00:00"
+            "time": "2020-05-11T18:11:25+00:00"
         },
         {
             "name": "cakephp/chronos",
@@ -553,16 +553,16 @@
         },
         {
             "name": "doctrine/inflector",
-            "version": "1.4.0",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/inflector.git",
-                "reference": "ab5de36233a1995f9c776c741b803eb8207aebef"
+                "reference": "4111f6853aea6f28b2b1dcfdde83d12dd3d5e6e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/ab5de36233a1995f9c776c741b803eb8207aebef",
-                "reference": "ab5de36233a1995f9c776c741b803eb8207aebef",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/4111f6853aea6f28b2b1dcfdde83d12dd3d5e6e3",
+                "reference": "4111f6853aea6f28b2b1dcfdde83d12dd3d5e6e3",
                 "shasum": ""
             },
             "require": {
@@ -641,7 +641,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-05-06T11:01:57+00:00"
+            "time": "2020-05-09T15:09:09+00:00"
         },
         {
             "name": "doctrine/lexer",
