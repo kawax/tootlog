@@ -128,16 +128,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.140.3",
+            "version": "3.140.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "aebd17510b6220b6e5b239730b02eaf7b9b2b816"
+                "reference": "298ec070adad5760c4b90348219bb3e6bd7a9322"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/aebd17510b6220b6e5b239730b02eaf7b9b2b816",
-                "reference": "aebd17510b6220b6e5b239730b02eaf7b9b2b816",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/298ec070adad5760c4b90348219bb3e6bd7a9322",
+                "reference": "298ec070adad5760c4b90348219bb3e6bd7a9322",
                 "shasum": ""
             },
             "require": {
@@ -208,7 +208,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-06-08T18:19:35+00:00"
+            "time": "2020-06-09T18:11:16+00:00"
         },
         {
             "name": "cakephp/chronos",
@@ -1089,16 +1089,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v6.18.18",
+            "version": "v6.18.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "9e5226ecc28f960cba1bd38b6d1d82a52e072dc3"
+                "reference": "69321afec31f4a908112e5dc8995fc91024fd971"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/9e5226ecc28f960cba1bd38b6d1d82a52e072dc3",
-                "reference": "9e5226ecc28f960cba1bd38b6d1d82a52e072dc3",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/69321afec31f4a908112e5dc8995fc91024fd971",
+                "reference": "69321afec31f4a908112e5dc8995fc91024fd971",
                 "shasum": ""
             },
             "require": {
@@ -1232,7 +1232,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-06-02T22:32:07+00:00"
+            "time": "2020-06-09T13:59:34+00:00"
         },
         {
             "name": "laravel/horizon",
