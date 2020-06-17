@@ -13,7 +13,6 @@
         <div>
             <a href="https://github.com/kawax/tootlog" target="_blank" rel="noopener noreferrer">GitHub</a> |
             <a href="{{ url('/usage') }}">使い方</a> |
-            <a href="https://www.pixiv.net/fanbox/creator/762638/post/34153" target="_blank" rel="noopener noreferrer">pixivFANBOX</a>
         </div>
     </div>
 </footer>
