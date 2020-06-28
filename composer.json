@@ -14,15 +14,16 @@
     "aws/aws-sdk-php": "^3.0",
     "doctrine/dbal": "^2.9",
     "fideloper/proxy": "^4.0",
+    "guzzlehttp/guzzle": "^6.5",
     "laravel/framework": "^6.0",
     "laravel/horizon": "^3.0",
     "laravel/tinker": "^2.0",
+    "laravelium/sitemap": "^6.0",
     "league/csv": "^9.0",
     "rap2hpoutre/laravel-log-viewer": "^1.0",
     "revolution/laravel-mastodon-api": "^2.0",
-    "revolution/socialite-mastodon": "^1.0",
-    "laravelium/sitemap": "^6.0",
     "revolution/laravel-server-push": "^1.0",
+    "revolution/socialite-mastodon": "^1.0",
     "torann/json-ld": "~0.0.11"
   },
   "require-dev": {
