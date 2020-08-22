@@ -15,7 +15,7 @@ use Illuminate\Support\Str;
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\Model\User::class, function (Faker $faker) {
+$factory->define(App\Models\User::class, function (Faker $faker) {
     static $password;
 
     return [
@@ -28,7 +28,7 @@ $factory->define(App\Model\User::class, function (Faker $faker) {
 });
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\Model\Server::class, function (Faker $faker) {
+$factory->define(App\Models\Server::class, function (Faker $faker) {
     return [
         'app_id'        => $faker->randomNumber(),
         'domain'        => 'https://'.$faker->unique()->domainName,
@@ -39,7 +39,7 @@ $factory->define(App\Model\Server::class, function (Faker $faker) {
 });
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\Model\Account::class, function (Faker $faker) {
+$factory->define(App\Models\Account::class, function (Faker $faker) {
     return [
         'user_id'            => $faker->randomNumber(),
         'server_id'          => $faker->randomNumber(),
@@ -64,7 +64,7 @@ $factory->define(App\Model\Account::class, function (Faker $faker) {
 });
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\Model\Status::class, function (Faker $faker) {
+$factory->define(App\Models\Status::class, function (Faker $faker) {
     return [
         'account_id'   => $faker->randomNumber(),
         'status_id'    => $faker->randomNumber(),
@@ -76,7 +76,7 @@ $factory->define(App\Model\Status::class, function (Faker $faker) {
 });
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\Model\Tag::class, function (Faker $faker) {
+$factory->define(App\Models\Tag::class, function (Faker $faker) {
     return [
         'name' => $faker->word,
     ];

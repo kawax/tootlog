@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Open;
 
 use App\Http\Controllers\Controller;
-use App\Model\User;
+use App\Models\User;
 use App\Repository\Status\StatusRepository as Status;
 
 class DateController extends Controller

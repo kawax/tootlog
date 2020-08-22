@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Model\User;
+use App\Models\User;
 use App\Repository\Account\AccountRepository as Account;
 use App\Repository\Status\StatusRepository as Status;
 

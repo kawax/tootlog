@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\Account;
-use App\Model\User;
+use App\Models\Account;
+use App\Models\User;
 use Laravelium\Sitemap\Sitemap;
 
 class SitemapController extends Controller

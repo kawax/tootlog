@@ -2,10 +2,10 @@
 
 namespace Tests\Feature;
 
-use App\Model\Account;
-use App\Model\Server;
-use App\Model\Status;
-use App\Model\User;
+use App\Models\Account;
+use App\Models\Server;
+use App\Models\Status;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Open;
 
 use App\Http\Controllers\Controller;
-use App\Model\User;
+use App\Models\User;
 use App\Repository\Account\AccountRepository as Account;
 use App\Repository\Status\StatusRepository as Status;
 use OpenGraph;
@@ -78,7 +78,7 @@ class AccountController extends Controller
         $acct = $this->accountRepository->getByAcct($username, $domain);
 
         /**
-         * @var \App\Model\Status $status
+         * @var \App\Models\Status $status
          */
         $status = $this->statusRepository->getByAcct($acct, $status_id);
 

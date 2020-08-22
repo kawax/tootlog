@@ -4,10 +4,10 @@ namespace Tests\Feature;
 
 use App\Jobs\Status\ExportCsvJob;
 use App\Mail\Export\CsvExported;
-use App\Model\Account;
-use App\Model\Server;
-use App\Model\Status;
-use App\Model\User;
+use App\Models\Account;
+use App\Models\Server;
+use App\Models\Status;
+use App\Models\User;
 use Cake\Chronos\Chronos;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;

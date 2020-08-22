@@ -2,8 +2,8 @@
 
 namespace App\Repository\Account;
 
-use App\Model\Account;
-use App\Model\User;
+use App\Models\Account;
+use App\Models\User;
 
 interface AccountRepository
 {

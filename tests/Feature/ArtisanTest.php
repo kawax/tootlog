@@ -3,9 +3,9 @@
 namespace Tests\Feature;
 
 use App\Jobs\Status\GetStatusJob;
-use App\Model\Account;
-use App\Model\Server;
-use App\Model\User;
+use App\Models\Account;
+use App\Models\Server;
+use App\Models\User;
 use App\Repository\Account\EloquentAccountRepository as AccountRepository;
 use App\Repository\Status\EloquentStatusRepository as StatusRepository;
 use Artisan;

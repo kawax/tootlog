@@ -2,9 +2,9 @@
 
 namespace App\Jobs\Status;
 
-use App\Model\Account;
-use App\Model\Reblog;
-use App\Model\Tag;
+use App\Models\Account;
+use App\Models\Reblog;
+use App\Models\Tag;
 use App\Repository\Account\AccountRepository;
 use App\Repository\Status\StatusRepository;
 use App\Support\Header;

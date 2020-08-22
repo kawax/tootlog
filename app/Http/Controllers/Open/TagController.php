@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Open;
 
 use App\Http\Controllers\Controller;
-use App\Model\Tag;
-use App\Model\User;
+use App\Models\Tag;
+use App\Models\User;
 use App\Repository\Status\StatusRepository as Status;
 
 class TagController extends Controller

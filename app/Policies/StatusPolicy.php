@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
-use App\Model\Status;
-use App\Model\User;
+use App\Models\Status;
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class StatusPolicy

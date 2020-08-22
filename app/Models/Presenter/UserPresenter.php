@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Model\Presenter;
+namespace App\Models\Presenter;
 
-use App\Model\Tag;
+use App\Models\Tag;
 
 trait UserPresenter
 {

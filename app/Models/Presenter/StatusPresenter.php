@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Model\Presenter;
+namespace App\Models\Presenter;
 
 use App\JsonLd\SocialMediaPosting;
 use JsonLd\Context;

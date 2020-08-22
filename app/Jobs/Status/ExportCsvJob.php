@@ -3,9 +3,9 @@
 namespace App\Jobs\Status;
 
 use App\Mail\Export\CsvExported;
-use App\Model\Account;
-use App\Model\Status;
-use App\Model\User;
+use App\Models\Account;
+use App\Models\Status;
+use App\Models\User;
 use App\Repository\Status\StatusRepository;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;

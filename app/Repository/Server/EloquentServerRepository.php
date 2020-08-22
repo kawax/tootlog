@@ -2,7 +2,7 @@
 
 namespace App\Repository\Server;
 
-use App\Model\Server;
+use App\Models\Server;
 use Illuminate\Support\Str;
 use Mastodon;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Model\Presenter;
+namespace App\Models\Presenter;
 
 use App\JsonLd\Person;
 use JsonLd\Context;

@@ -3,7 +3,7 @@
 namespace Tests\Feature;
 
 use App\Jobs\InstanceVersionJob;
-use App\Model\Server;
+use App\Models\Server;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Bus;

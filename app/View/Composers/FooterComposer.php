@@ -2,9 +2,9 @@
 
 namespace App\View\Composers;
 
-use App\Model\Account;
-use App\Model\Server;
-use App\Model\Status;
+use App\Models\Account;
+use App\Models\Server;
+use App\Models\Status;
 use Illuminate\View\View;
 
 class FooterComposer

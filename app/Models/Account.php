@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Model;
+namespace App\Models;
 
-use App\Model\Presenter\AccountPresenter;
+use App\Models\Presenter\AccountPresenter;
 use Illuminate\Database\Eloquent\Model;
 use Revolution\Mastodon\Traits\Mastodon;
 
