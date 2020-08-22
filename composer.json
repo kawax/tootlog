@@ -20,6 +20,7 @@
     "laravel/tinker": "^2.0",
     "laravelium/sitemap": "^6.0",
     "league/csv": "^9.0",
+    "predis/predis": "^1.1",
     "rap2hpoutre/laravel-log-viewer": "^1.0",
     "revolution/laravel-mastodon-api": "^2.0",
     "revolution/laravel-server-push": "^1.0",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6a7ea7415141a9d8379e64e3ef46443b",
+    "content-hash": "6ea1ac6d73d413a85065b7749a0db4e3",
     "packages": [
         {
             "name": "appstract/laravel-blade-directives",
@@ -8442,6 +8442,7 @@
             ],
             "description": "FinderFacade is a convenience wrapper for Symfony's Finder component.",
             "homepage": "https://github.com/sebastianbergmann/finder-facade",
+            "abandoned": true,
             "time": "2020-02-08T06:07:58+00:00"
         },
         {
