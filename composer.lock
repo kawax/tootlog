@@ -62,22 +62,22 @@
         },
         {
             "name": "artesaos/seotools",
-            "version": "v0.18.0",
+            "version": "v0.19.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/artesaos/seotools.git",
-                "reference": "91c9fc3ee18db01d220dd47708f303b8eff8078b"
+                "reference": "e1e90fb8f542eb01d16f785a9988915e762f503e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/artesaos/seotools/zipball/91c9fc3ee18db01d220dd47708f303b8eff8078b",
-                "reference": "91c9fc3ee18db01d220dd47708f303b8eff8078b",
+                "url": "https://api.github.com/repos/artesaos/seotools/zipball/e1e90fb8f542eb01d16f785a9988915e762f503e",
+                "reference": "e1e90fb8f542eb01d16f785a9988915e762f503e",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "illuminate/config": "5.8.* || ^6.0 || ^7.0",
-                "illuminate/support": "5.8.* || ^6.0 || ^7.0",
+                "illuminate/config": "5.8.* || ^6.0 || ^7.0 || ^8.0",
+                "illuminate/support": "5.8.* || ^6.0 || ^7.0 || ^8.0",
                 "php": ">=7.1"
             },
             "require-dev": {
@@ -125,20 +125,20 @@
                 "seotools",
                 "webmaster"
             ],
-            "time": "2020-06-19T22:31:46+00:00"
+            "time": "2020-09-14T13:33:11+00:00"
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.154.1",
+            "version": "3.154.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "5651d8a92164d98869b70a15e4c06ce4c14c7c28"
+                "reference": "57be3873ea9a32ccd8467c38d325544c2c064f69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/5651d8a92164d98869b70a15e4c06ce4c14c7c28",
-                "reference": "5651d8a92164d98869b70a15e4c06ce4c14c7c28",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/57be3873ea9a32ccd8467c38d325544c2c064f69",
+                "reference": "57be3873ea9a32ccd8467c38d325544c2c064f69",
                 "shasum": ""
             },
             "require": {
@@ -210,7 +210,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-09-11T18:12:41+00:00"
+            "time": "2020-09-14T19:50:15+00:00"
         },
         {
             "name": "cakephp/chronos",
