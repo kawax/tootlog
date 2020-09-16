@@ -8,24 +8,24 @@
     "packages": [
         {
             "name": "appstract/laravel-blade-directives",
-            "version": "1.9.0",
+            "version": "1.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/appstract/laravel-blade-directives.git",
-                "reference": "c569529da9bf4d87c85157061c5e86b5ee1f8ff4"
+                "reference": "9cff1f2db9718cb932b3b7df8141dcb97e1ab2fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/appstract/laravel-blade-directives/zipball/c569529da9bf4d87c85157061c5e86b5ee1f8ff4",
-                "reference": "c569529da9bf4d87c85157061c5e86b5ee1f8ff4",
+                "url": "https://api.github.com/repos/appstract/laravel-blade-directives/zipball/9cff1f2db9718cb932b3b7df8141dcb97e1ab2fd",
+                "reference": "9cff1f2db9718cb932b3b7df8141dcb97e1ab2fd",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "^5.7|^6.0|^7.0",
+                "laravel/framework": "^5.7|^6.0|^7.0|^8.0",
                 "php": "^7.1.3"
             },
             "require-dev": {
-                "orchestra/testbench": "~3.7|^4.0|^5.0"
+                "orchestra/testbench": "~3.7|^4.0|^5.0|^6.0"
             },
             "type": "library",
             "extra": {
@@ -58,7 +58,7 @@
                 "appstract",
                 "laravel-blade-directives"
             ],
-            "time": "2020-04-14T08:41:18+00:00"
+            "time": "2020-09-15T14:58:47+00:00"
         },
         {
             "name": "artesaos/seotools",
@@ -129,16 +129,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.154.2",
+            "version": "3.154.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "57be3873ea9a32ccd8467c38d325544c2c064f69"
+                "reference": "0001c05c03f2bd354f6b38f6b81b60f45c2514f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/57be3873ea9a32ccd8467c38d325544c2c064f69",
-                "reference": "57be3873ea9a32ccd8467c38d325544c2c064f69",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/0001c05c03f2bd354f6b38f6b81b60f45c2514f8",
+                "reference": "0001c05c03f2bd354f6b38f6b81b60f45c2514f8",
                 "shasum": ""
             },
             "require": {
@@ -210,7 +210,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-09-14T19:50:15+00:00"
+            "time": "2020-09-15T18:15:35+00:00"
         },
         {
             "name": "cakephp/chronos",
@@ -7670,16 +7670,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "9.1.8",
+            "version": "9.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "f98f8466126d83b55b924a94d2244c53c216b8fb"
+                "reference": "cf6582906d4b2502c5f4c6be6a3d0b4cd5b3ef7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/f98f8466126d83b55b924a94d2244c53c216b8fb",
-                "reference": "f98f8466126d83b55b924a94d2244c53c216b8fb",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/cf6582906d4b2502c5f4c6be6a3d0b4cd5b3ef7f",
+                "reference": "cf6582906d4b2502c5f4c6be6a3d0b4cd5b3ef7f",
                 "shasum": ""
             },
             "require": {
@@ -7687,7 +7687,7 @@
                 "ext-libxml": "*",
                 "ext-xmlwriter": "*",
                 "nikic/php-parser": "^4.8",
-                "php": "^7.3 || ^8.0",
+                "php": ">=7.3",
                 "phpunit/php-file-iterator": "^3.0.3",
                 "phpunit/php-text-template": "^2.0.2",
                 "sebastian/code-unit-reverse-lookup": "^2.0.2",
@@ -7739,7 +7739,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-09-07T08:07:10+00:00"
+            "time": "2020-09-15T06:14:11+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
