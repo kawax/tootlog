@@ -129,16 +129,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.158.3",
+            "version": "3.158.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "ac883fef515dc92785136f251a8337b33bff1d54"
+                "reference": "c0c0df79edc0a646a7ccd6b2e8d1723ff4ba88e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/ac883fef515dc92785136f251a8337b33bff1d54",
-                "reference": "ac883fef515dc92785136f251a8337b33bff1d54",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/c0c0df79edc0a646a7ccd6b2e8d1723ff4ba88e2",
+                "reference": "c0c0df79edc0a646a7ccd6b2e8d1723ff4ba88e2",
                 "shasum": ""
             },
             "require": {
@@ -210,7 +210,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-10-06T18:16:08+00:00"
+            "time": "2020-10-07T18:12:22+00:00"
         },
         {
             "name": "cakephp/chronos",
@@ -3094,16 +3094,16 @@
         },
         {
             "name": "revolution/laravel-server-push",
-            "version": "1.1.7",
+            "version": "1.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kawax/laravel-server-push.git",
-                "reference": "26814adc6527776813e04c882666a7bfa69bb832"
+                "reference": "003b94b013f2edd370ac07ab06e3318c85686bb4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kawax/laravel-server-push/zipball/26814adc6527776813e04c882666a7bfa69bb832",
-                "reference": "26814adc6527776813e04c882666a7bfa69bb832",
+                "url": "https://api.github.com/repos/kawax/laravel-server-push/zipball/003b94b013f2edd370ac07ab06e3318c85686bb4",
+                "reference": "003b94b013f2edd370ac07ab06e3318c85686bb4",
                 "shasum": ""
             },
             "require": {
@@ -3112,7 +3112,7 @@
             },
             "require-dev": {
                 "mockery/mockery": "^1.0",
-                "orchestra/testbench": "^4.0||^5.0",
+                "orchestra/testbench": "^4.0||^5.0||^6.0",
                 "phpunit/phpunit": "^8.0||^9.0"
             },
             "type": "library",
@@ -3144,7 +3144,7 @@
                 "laravel",
                 "server-push"
             ],
-            "time": "2020-03-23T10:31:42+00:00"
+            "time": "2020-10-07T04:46:07+00:00"
         },
         {
             "name": "revolution/socialite-mastodon",
