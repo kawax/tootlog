@@ -2,7 +2,7 @@
 
 namespace App\Support;
 
-use GuzzleHttp\Psr7;
+use GuzzleHttp\Psr7\Header as GuzzleHeader;
 use Illuminate\Support\Arr;
 use Psr\Http\Message\ResponseInterface;
 
@@ -19,7 +19,7 @@ class Header
             return '';
         }
 
-        $link = Psr7\parse_header($response->getHeader('Link'));
+        $link = GuzzleHeader::parse($response->getHeader('Link'));
 
         if (empty($link)) {
             return '';
