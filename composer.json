@@ -68,7 +68,10 @@
     "post-autoload-dump": [
       "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
       "@php artisan package:discover --ansi"
-    ]
+    ],
+    "ide-helper:meta": "php artisan ide-helper:meta",
+    "ide-helper:generate": "php artisan ide-helper:generate",
+    "ide-helper:models": "php artisan ide-helper:models -N"
   },
   "config": {
     "preferred-install": "dist",
