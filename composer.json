@@ -21,7 +21,6 @@
     "laravel/horizon": "^5.0",
     "laravel/legacy-factories": "^1.0",
     "laravel/tinker": "^2.0",
-    "laravel/ui": "^3.0",
     "laravelium/sitemap": "^8.0",
     "league/csv": "^9.0",
     "predis/predis": "^1.1",
