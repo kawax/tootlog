@@ -17,8 +17,7 @@ branches:
     - master
 
 script:
-  - vendor/bin/phpunit
-  #- php artisan insights --no-interaction
+  - php artisan test
 
 after_script:
   - ./cc-test-reporter after-build  -t clover --exit-code $TRAVIS_TEST_RESULT
