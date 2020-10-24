@@ -59,7 +59,7 @@ Route::middleware(['auth'])->group(
 
         Route::name('home')
              ->get('home')
-             ->uses([HomeController::class, 'index']);
+             ->uses(HomeController::class);
     }
 );
 

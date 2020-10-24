@@ -16,9 +16,9 @@ class HomeController extends Controller
      * @param  Account  $account
      * @param  Status  $status
      *
-     * @return \Illuminate\Http\Response|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response|\Illuminate\View\View
      */
-    public function index(Request $request, Account $account, Status $status)
+    public function __invoke(Request $request, Account $account, Status $status)
     {
         $user = $request->user();
 

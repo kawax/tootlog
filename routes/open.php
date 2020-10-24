@@ -44,5 +44,6 @@ Route::name('open.user.date.day')
 
 Route::resource('@{user}/tags', TagController::class, ['only' => ['index', 'show']]);
 
-Route::name('open.archives')->get('@{user}/archives')
+Route::name('open.archives')
+     ->get('@{user}/archives')
      ->uses(ArchiveController::class);
