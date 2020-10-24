@@ -1,6 +1,18 @@
 <?php
 
+use App\Http\Controllers\Api\CalendarController;
+use App\Http\Controllers\Api\StatusController;
+use App\Http\Controllers\Home\AccountController;
+use App\Http\Controllers\Home\AccountDeleteController;
+use App\Http\Controllers\Home\ExportController;
+use App\Http\Controllers\Home\HomeController;
+use App\Http\Controllers\Home\PreferencesController;
+use App\Http\Controllers\Home\TimelineController;
+use App\Http\Controllers\InstanceController;
+use App\Http\Controllers\SitemapController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
+use Rap2hpoutre\LaravelLogViewer\LogViewerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,60 +25,75 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware(['auth'])->namespace('Home')->group(function () {
-    Route::name('accounts.add')->post('accounts', 'AccountController@redirect');
-    Route::get('accounts/callback', 'AccountController@callback');
+Route::middleware(['auth'])->group(
+    function () {
+        Route::name('accounts.add')->post('accounts')
+             ->uses([AccountController::class, 'redirect']);
 
-    Route::name('accounts.delete')->delete('accounts/delete/{id}', 'AccountDeleteController');
+        Route::get('accounts/callback')
+             ->uses([AccountController::class, 'callback']);
 
-    Route::name('timeline')->get('timeline', 'TimelineController@index');
-    Route::name('timeline.account')->get('timeline/{username}@{domain}', 'TimelineController@acct');
+        Route::name('accounts.delete')
+             ->delete('accounts/delete/{id}')
+             ->uses(AccountDeleteController::class);
 
-    Route::name('preferences.index')->get('preferences', 'PreferencesController@index');
-    Route::name('preferences.update')->post('preferences', 'PreferencesController@update');
+        Route::name('timeline')
+             ->get('timeline')
+             ->uses([TimelineController::class, 'index']);
 
-    Route::name('export.csv')->post('export/csv', 'ExportController@csv')->middleware('verified');
+        Route::name('timeline.account')
+             ->get('timeline/{username}@{domain}')
+             ->uses([TimelineController::class, 'acct']);
 
-    Route::name('home')->get('home', 'HomeController@index');
-});
+        Route::name('preferences.index')
+             ->get('preferences')
+             ->uses([PreferencesController::class, 'index']);
 
-Route::middleware('auth')->namespace('Api')->prefix('api')->group(function () {
-    Route::delete('status/hide/{status}', 'StatusController@hide');
-    Route::put('status/show/{status}', 'StatusController@show');
-});
+        Route::name('preferences.update')
+             ->post('preferences')
+             ->uses([PreferencesController::class, 'update']);
 
-Route::namespace('Open')->group(function () {
-    Route::name('open.user')->get('@{user}', 'UserController@index');
-    Route::name('open.account.index')->get('@{user}/{username}@{domain}', 'AccountController@index');
-    Route::name('open.account.show')->get('@{user}/{username}@{domain}/{status_id}', 'AccountController@show');
+        Route::name('export.csv')
+             ->post('export/csv')
+             ->uses([ExportController::class, 'csv']);
 
-    Route::name('open.user.date')
-         ->get('@{user}/date/{date}', 'DateController@show')
-         ->where('date', '[0-9]{4}-[0-9]{2}-[0-9]{2}');
+        Route::name('home')
+             ->get('home')
+             ->uses([HomeController::class, 'index']);
+    }
+);
 
-    Route::name('open.user.date.day')
-         ->get('@{user}/date/{year?}/{month?}/{day?}', 'DateController@date')
-         ->where('year', '[0-9]{4}')
-         ->where('month', '[0-9]{2}')
-         ->where('day', '[0-9]{2}');
+Route::middleware('auth')->prefix('api')->group(
+    function () {
+        Route::delete('status/hide/{status}')
+             ->uses([StatusController::class, 'hide']);
+        Route::put('status/show/{status}')
+             ->uses([StatusController::class, 'show']);
+    }
+);
 
-    Route::resource('@{user}/tags', 'TagController', ['only' => ['index', 'show']]);
+Route::prefix('api')->group(
+    function () {
+        Route::get('calendar/{user}')
+             ->uses([CalendarController::class, 'index']);
+        Route::get('calendar/{user}/{username}@{domain}')
+             ->uses([CalendarController::class, 'acct']);
+    }
+);
 
-    Route::name('open.archives')->get('@{user}/archives', 'ArchiveController');
-});
+Route::name('instances')
+     ->get('instances')
+     ->uses(InstanceController::class);
 
-Route::namespace('Api')->prefix('api')->group(function () {
-    Route::get('calendar/{user}', 'CalendarController@index');
-    Route::get('calendar/{user}/{username}@{domain}', 'CalendarController@acct');
-});
+Route::get('sitemaps')
+     ->uses(SitemapController::class);
 
-Route::name('instances')->get('instances', 'InstanceController');
-
-Route::get('sitemaps', 'SitemapController');
-
-Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')
+Route::get('logs')
+     ->uses([LogViewerController::class, 'index'])
      ->middleware('can:admin-logs');
 
-Route::name('welcome')->get('/', 'WelcomeController');
+Route::name('welcome')
+     ->get('/')
+     ->uses(WelcomeController::class);
 
 Route::view('usage', 'pages.usage');
