@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Pagination\Paginator;
 use Revolution\Mastodon\Facades\Mastodon;
 
 class AppServiceProvider extends ServiceProvider
