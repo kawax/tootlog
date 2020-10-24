@@ -8,9 +8,8 @@ use App\Models\Account;
 use App\Models\Server;
 use App\Models\Status;
 use App\Models\User;
-use Cake\Chronos\Chronos;
+use Carbon\Carbon;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
@@ -44,7 +43,7 @@ class MailTest extends TestCase
     {
         parent::setUp();
 
-        Chronos::setTestNow(Chronos::parse('2017-04-24'));
+        $this->travelTo(Carbon::parse('2017-04-24'));
 
         $this->user = factory(User::class)->create([
             'name' => 'test',
@@ -63,7 +62,7 @@ class MailTest extends TestCase
 
         $this->statuses = factory(Status::class, 10)->create([
             'account_id' => $this->account->id,
-            'created_at' => Chronos::now(),
+            'created_at' => now(),
         ]);
     }
 

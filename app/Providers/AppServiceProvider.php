@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Pagination\Paginator;
 use Revolution\Mastodon\Facades\Mastodon;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +20,8 @@ class AppServiceProvider extends ServiceProvider
         Gate::define('admin-logs', fn ($user) => $user->isAdmin());
 
         Mastodon::macro('instance', fn () => $this->get('/instance'));
+
+        Paginator::useBootstrap();
     }
 
     /**

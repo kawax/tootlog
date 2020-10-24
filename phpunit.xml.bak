@@ -2,23 +2,32 @@
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
          bootstrap="vendor/autoload.php"
-         colors="true">
-    <coverage processUncoveredFiles="true">
-        <include>
-            <directory suffix=".php">./app</directory>
-        </include>
-        <report>
-            <clover outputFile="build/logs/clover.xml"/>
-        </report>
-    </coverage>
+         colors="true"
+>
     <testsuites>
         <testsuite name="Feature">
             <directory suffix="Test.php">./tests/Feature</directory>
         </testsuite>
+
         <testsuite name="Unit">
             <directory suffix="Test.php">./tests/Unit</directory>
         </testsuite>
     </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./app</directory>
+            <exclude>
+                <directory suffix=".php">./app/Http/Middleware/</directory>
+                <directory suffix=".php">./app/Providers/</directory>
+                <directory suffix=".php">./app/Notifications/</directory>
+                <directory suffix=".php">./app/Policies/</directory>
+                <directory suffix=".php">./app/JsonLd/</directory>
+                <directory suffix="Interface.php">./app/Repository/</directory>
+                <directory>./app/Http/Kernel.php</directory>
+                <directory>./app/Http/Controllers/Controller.php</directory>
+            </exclude>
+        </whitelist>
+    </filter>
     <php>
         <server name="APP_ENV" value="testing"/>
         <server name="BCRYPT_ROUNDS" value="4"/>
@@ -30,5 +39,7 @@
         <server name="SESSION_DRIVER" value="array"/>
         <server name="TELESCOPE_ENABLED" value="false"/>
     </php>
-    <logging/>
+    <logging>
+        <log type="coverage-clover" target="build/logs/clover.xml"/>
+    </logging>
 </phpunit>

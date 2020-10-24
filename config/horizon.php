@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Str;
+
 return [
 
     /*
@@ -40,6 +42,7 @@ return [
     */
 
     'use' => 'default',
+
     /*
     |--------------------------------------------------------------------------
     | Horizon Redis Prefix
@@ -103,6 +106,24 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Metrics
+    |--------------------------------------------------------------------------
+    |
+    | Here you can configure how many snapshots should be kept to display in
+    | the metrics graph. This will get used in combination with Horizon's
+    | `horizon:snapshot` schedule to define how long to retain metrics.
+    |
+    */
+
+    'metrics' => [
+        'trim_snapshots' => [
+            'job' => 24,
+            'queue' => 24,
+        ],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Fast Termination
     |--------------------------------------------------------------------------
     |
@@ -121,9 +142,9 @@ return [
     | Memory Limit (MB)
     |--------------------------------------------------------------------------
     |
-    | This value describes the maximum amount of memory the Horizon worker
-    | may consume before it is terminated and restarted. You should set
-    | this value according to the resources available to your server.
+    | This value describes the maximum amount of memory the Horizon master
+    | supervisor may consume before it is terminated and restarted. For
+    | configuring these limits on your workers, see the next section.
     |
     */
 
@@ -140,26 +161,31 @@ return [
     |
     */
 
+    'defaults' => [
+        'supervisor-1' => [
+            'connection' => 'redis',
+            'queue' => ['tootlog'],
+            'balance' => 'auto',
+            'maxProcesses' => 1,
+            'memory' => 128,
+            'tries' => 1,
+            'nice' => 0,
+        ],
+    ],
+
     'environments' => [
         'production' => [
             'supervisor-1' => [
-                'connection' => 'redis',
-                'queue'      => ['tootlog'],
-                'balance'    => 'auto',
-                'processes'  => 3,
-                'tries'      => 3,
+                'maxProcesses' => 5,
+                'balanceMaxShift' => 1,
+                'balanceCooldown' => 3,
             ],
         ],
 
         'local' => [
             'supervisor-1' => [
-                'connection' => 'redis',
-                'queue'      => ['tootlog'],
-                'balance'    => 'simple',
-                'processes'  => 3,
-                'tries'      => 3,
+                'maxProcesses' => 3,
             ],
         ],
     ],
-
 ];

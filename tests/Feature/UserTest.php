@@ -7,7 +7,7 @@ use App\Models\Server;
 use App\Models\Status;
 use App\Models\Tag;
 use App\Models\User;
-use Cake\Chronos\Chronos;
+use Carbon\Carbon;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Tests\TestCase;
@@ -100,20 +100,20 @@ class UserTest extends TestCase
         $response = $this->actingAs($this->user)
                          ->get('/home');
 
-        $response->assertSee('<tt-status-toggle checked status');
+        $response->assertSee('<tt-status-toggle checked status', false);
     }
 
     public function testHomeHide()
     {
         $statuses = factory(Status::class)->create([
             'account_id' => $this->account->id,
-            'deleted_at' => Chronos::now(),
+            'deleted_at' => now(),
         ]);
 
         $response = $this->actingAs($this->user)
                          ->get('/home');
 
-        $response->assertSee('<tt-status-toggle status');
+        $response->assertSee('<tt-status-toggle status', false);
     }
 
     public function testTimeline()
@@ -122,7 +122,7 @@ class UserTest extends TestCase
                          ->get('/timeline');
 
         $response->assertSee('Timeline');
-        $response->assertSee('<tt-user-timeline');
+        $response->assertSee('<tt-user-timeline', false);
     }
 
     public function testTimelineAcct()
@@ -131,7 +131,7 @@ class UserTest extends TestCase
                          ->get('/timeline/test@example.com');
 
         $response->assertSee('Timeline');
-        $response->assertSee('<tt-user-timeline');
+        $response->assertSee('<tt-user-timeline', false);
     }
 
     public function testDontSeeTimeline()
@@ -175,7 +175,7 @@ class UserTest extends TestCase
         $response = $this->actingAs($this->user)
                          ->get('/@test');
 
-        $response->assertSee('<tt-calendar user="test"></tt-calendar>');
+        $response->assertSee('<tt-calendar user="test"></tt-calendar>', false);
     }
 
     public function testAccount()
@@ -185,7 +185,7 @@ class UserTest extends TestCase
 
         $response->assertSee('Profile')
                  ->assertSee('test@example.com')
-                 ->assertDontSee('<script>test');
+                 ->assertDontSee('<script>test', false);
     }
 
     public function testAccountAnother()
@@ -247,7 +247,7 @@ class UserTest extends TestCase
                          ->get('/@test/test@example.com/1');
 
         $response->assertSee($statuses->content)
-                 ->assertDontSee('<script>test');
+                 ->assertDontSee('<script>test', false);
     }
 
     public function testLockedStatusAnother()
@@ -276,11 +276,11 @@ class UserTest extends TestCase
 
     public function testDate()
     {
-        Chronos::setTestNow(Chronos::parse('2017-04-24'));
+        Carbon::setTestNow(Carbon::parse('2017-04-24'));
 
         $statuses = factory(Status::class)->create([
             'account_id' => $this->account->id,
-            'created_at' => Chronos::now(),
+            'created_at' => now(),
         ]);
 
         $response = $this->actingAs($this->user)
@@ -291,11 +291,11 @@ class UserTest extends TestCase
 
     public function testDateMonth()
     {
-        Chronos::setTestNow(Chronos::parse('2017-04-24'));
+        Carbon::setTestNow(Carbon::parse('2017-04-24'));
 
         $statuses = factory(Status::class)->create([
             'account_id' => $this->account->id,
-            'created_at' => Chronos::now(),
+            'created_at' => now(),
         ]);
 
         $response = $this->actingAs($this->user)
@@ -306,11 +306,11 @@ class UserTest extends TestCase
 
     public function testDateYear()
     {
-        Chronos::setTestNow(Chronos::parse('2017-04-24'));
+        Carbon::setTestNow(Carbon::parse('2017-04-24'));
 
         $statuses = factory(Status::class)->create([
             'account_id' => $this->account->id,
-            'created_at' => Chronos::now(),
+            'created_at' => now(),
         ]);
 
         $response = $this->actingAs($this->user)
@@ -321,7 +321,7 @@ class UserTest extends TestCase
 
     public function testLockedDate()
     {
-        Chronos::setTestNow(Chronos::parse('2017-04-24'));
+        Carbon::setTestNow(Carbon::parse('2017-04-24'));
 
         $accounts = factory(Account::class)->create([
             'user_id' => $this->user->id,
@@ -330,7 +330,7 @@ class UserTest extends TestCase
 
         $statuses = factory(Status::class)->create([
             'account_id' => $accounts->id,
-            'created_at' => Chronos::now(),
+            'created_at' => now(),
         ]);
 
         $response = $this->actingAs($this->user)
@@ -341,11 +341,11 @@ class UserTest extends TestCase
 
     public function testDateRedirect()
     {
-        Chronos::setTestNow(Chronos::parse('2017-04-24'));
+        Carbon::setTestNow(Carbon::parse('2017-04-24'));
 
         $statuses = factory(Status::class)->create([
             'account_id' => $this->account->id,
-            'created_at' => Chronos::now(),
+            'created_at' => now(),
         ]);
 
         $response = $this->actingAs($this->user)
@@ -505,11 +505,11 @@ class UserTest extends TestCase
 
     public function testArchives()
     {
-        Chronos::setTestNow(Chronos::parse('2017-05-16'));
+        Carbon::setTestNow(Carbon::parse('2017-05-16'));
 
         $statuses = factory(Status::class)->create([
             'account_id' => $this->account->id,
-            'created_at' => Chronos::now(),
+            'created_at' => now(),
         ]);
 
         $response = $this->actingAs($this->user)
