@@ -1,5 +1,4 @@
 <?php
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,12 +11,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now redirect something great!
 |
 */
-
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
-Auth::routes(['verify' => true]);
 
 Route::middleware(['auth'])->namespace('Home')->group(function () {
     Route::name('accounts.add')->post('accounts', 'AccountController@redirect');

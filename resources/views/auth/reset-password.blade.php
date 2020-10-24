@@ -17,13 +17,13 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('password.request') }}">
                         {{ csrf_field() }}
 
-                        <input type="hidden" name="token" value="{{ $token }}">
+                        <input type="hidden" name="token" value="{{ $request->route('token')  }}">
 
                         <div class="form-group row{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 con-form-label">E-Mail Address</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ $email ?? old('email') }}" required autofocus>
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email', $request->email) }}" required autofocus>
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
