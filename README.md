@@ -8,39 +8,8 @@ Mastodon log archives service.
 https://tootlog.net/
 
 ## Requirements
-- Laravel + Vue.js
-- PHP >= 7.2
-
-## Development
-
-```
-git clone https://github.com/kawax/tootlog && cd $_
-composer install
-yarn
-# npm i
-cp .env.example .env
-php artisan key:generate
-```
-
-### Homestead
-https://laravel.com/docs/5.8/homestead#per-project-installation
-
-after.sh for Laravel Horizon
-```
-laravel_worker_block="[program:laravel-worker]
-process_name=%(program_name)s_%(process_num)02d
-command=php /home/vagrant/code/artisan horizon
-autostart=true
-autorestart=true
-user=vagrant
-numprocs=1
-redirect_stderr=true
-stdout_logfile=/home/vagrant/code/storage/logs/queue.log"
-
-sudo sh -c "echo '$laravel_worker_block' > '/etc/supervisor/conf.d/laravel-worker.conf'"
-sudo supervisorctl reread
-sudo supervisorctl update
-```
+- Laravel
+- PHP >= 7.4
 
 ## LICENSE
 MIT
