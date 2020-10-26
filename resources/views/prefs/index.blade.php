@@ -9,7 +9,7 @@
                     <div class="card-body">
                         <form class="form-horizontal" role="form" method="POST"
                               action="{{ route('preferences.update') }}">
-                            {{ csrf_field() }}
+                            @csrf
 
                             <div class="form-group row{{ $errors->has('email') ? ' has-error' : '' }}">
                                 <label for="email" class="col-md-4 col-form-label">E-Mail Address
@@ -29,7 +29,6 @@
                                     </span>
                                     @endif
 
-
                                 </div>
                             </div>
 
@@ -38,35 +37,18 @@
 
                                 <div class="col-md-6">
                                     <select class="form-control" name="theme">
-                                        <option value="thin" @if(request()->user()->theme === 'thin')selected="selected"@endif>Thin
+                                        <option value="thin"
+                                                @if(request()->user()->theme === 'thin')selected="selected"@endif>Thin
                                         </option>
-                                        <option value="normal" @if(request()->user()->theme === 'normal')selected="selected"@endif>Normal
+                                        <option value="normal"
+                                                @if(request()->user()->theme === 'normal')selected="selected"@endif>
+                                            Normal
                                         </option>
                                     </select>
 
                                     @if ($errors->has('theme'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('theme') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="form-group row{{ $errors->has('special_key') ? ' has-error' : '' }}">
-                                <label for="special_key" class="col-md-4 col-form-label">Special Key</label>
-
-                                <div class="col-md-6">
-                                    <input id="special_key" type="text"
-                                           class="form-control" name="special_key"
-                                           value="{{ request()->user()->special_key }}">
-                                    <span class="text-muted">
-                                        Get key from <a href="https://www.pixiv.net/fanbox/creator/762638"
-                                                        target="_blank" rel="noopener">pixiv FANBOX</a>.
-                                    </span>
-
-                                    @if ($errors->has('special_key'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('special_key') }}</strong>
                                     </span>
                                     @endif
                                 </div>
