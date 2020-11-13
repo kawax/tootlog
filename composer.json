@@ -27,6 +27,7 @@
     "rap2hpoutre/laravel-log-viewer": "^1.0",
     "revolution/laravel-mastodon-api": "^2.0",
     "revolution/laravel-namespaced-helpers": "^1.0",
+    "revolution/laravel-server-push": "^1.0",
     "revolution/socialite-mastodon": "^1.0",
     "torann/json-ld": "~0.0.11"
   },
