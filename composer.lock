@@ -193,16 +193,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.164.0",
+            "version": "3.165.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "39ecf57d828eb50ab23fd70255a68b8996392ac9"
+                "reference": "ddc727e18c670ab07c453ceeb5f310bb6b2f1508"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/39ecf57d828eb50ab23fd70255a68b8996392ac9",
-                "reference": "39ecf57d828eb50ab23fd70255a68b8996392ac9",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/ddc727e18c670ab07c453ceeb5f310bb6b2f1508",
+                "reference": "ddc727e18c670ab07c453ceeb5f310bb6b2f1508",
                 "shasum": ""
             },
             "require": {
@@ -277,9 +277,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.164.0"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.165.0"
             },
-            "time": "2020-11-24T19:18:22+00:00"
+            "time": "2020-12-01T19:14:48+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -1581,16 +1581,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.16.1",
+            "version": "v8.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "f7dfc22e6c42e9ed4dda14c05814349af6943206"
+                "reference": "09bd79531d3f958f02fa34f1f14197b1716ef29b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/f7dfc22e6c42e9ed4dda14c05814349af6943206",
-                "reference": "f7dfc22e6c42e9ed4dda14c05814349af6943206",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/09bd79531d3f958f02fa34f1f14197b1716ef29b",
+                "reference": "09bd79531d3f958f02fa34f1f14197b1716ef29b",
                 "shasum": ""
             },
             "require": {
@@ -1744,20 +1744,20 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2020-11-25T15:01:02+00:00"
+            "time": "2020-12-01T15:01:58+00:00"
         },
         {
             "name": "laravel/horizon",
-            "version": "v5.5.0",
+            "version": "v5.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "66743f65a55a71f52b5308de1a09fe5fd8453bcb"
+                "reference": "4e21779357d1f1abc0282a940855be635bf4f1be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/66743f65a55a71f52b5308de1a09fe5fd8453bcb",
-                "reference": "66743f65a55a71f52b5308de1a09fe5fd8453bcb",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/4e21779357d1f1abc0282a940855be635bf4f1be",
+                "reference": "4e21779357d1f1abc0282a940855be635bf4f1be",
                 "shasum": ""
             },
             "require": {
@@ -1819,9 +1819,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/horizon/issues",
-                "source": "https://github.com/laravel/horizon/tree/v5.5.0"
+                "source": "https://github.com/laravel/horizon/tree/v5.6.0"
             },
-            "time": "2020-11-24T17:09:52+00:00"
+            "time": "2020-12-01T15:13:23+00:00"
         },
         {
             "name": "laravel/legacy-factories",
@@ -7603,16 +7603,16 @@
         },
         {
             "name": "laravel/homestead",
-            "version": "v10.16.0",
+            "version": "v10.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/homestead.git",
-                "reference": "049a7ad2c5be490e7b74bbdad98ccad76780bda5"
+                "reference": "a56135e7ff057ad46a005b67ff98a8316403def0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/homestead/zipball/049a7ad2c5be490e7b74bbdad98ccad76780bda5",
-                "reference": "049a7ad2c5be490e7b74bbdad98ccad76780bda5",
+                "url": "https://api.github.com/repos/laravel/homestead/zipball/a56135e7ff057ad46a005b67ff98a8316403def0",
+                "reference": "a56135e7ff057ad46a005b67ff98a8316403def0",
                 "shasum": ""
             },
             "require": {
@@ -7646,9 +7646,9 @@
             "description": "A virtual machine for web artisans.",
             "support": {
                 "issues": "https://github.com/laravel/homestead/issues",
-                "source": "https://github.com/laravel/homestead/tree/v10.16.0"
+                "source": "https://github.com/laravel/homestead/tree/v10.17.0"
             },
-            "time": "2020-11-24T17:47:13+00:00"
+            "time": "2020-12-01T00:47:27+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -8579,16 +8579,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.4.3",
+            "version": "9.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "9fa359ff5ddaa5eb2be2bedb08a6a5787a5807ab"
+                "reference": "6535e637961f0829832621dc1b7308c2d24a799e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/9fa359ff5ddaa5eb2be2bedb08a6a5787a5807ab",
-                "reference": "9fa359ff5ddaa5eb2be2bedb08a6a5787a5807ab",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/6535e637961f0829832621dc1b7308c2d24a799e",
+                "reference": "6535e637961f0829832621dc1b7308c2d24a799e",
                 "shasum": ""
             },
             "require": {
@@ -8666,7 +8666,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.4.3"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.4.4"
             },
             "funding": [
                 {
@@ -8678,7 +8678,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-11-10T12:53:30+00:00"
+            "time": "2020-12-01T04:58:47+00:00"
         },
         {
             "name": "react/promise",
