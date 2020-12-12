@@ -193,16 +193,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.168.2",
+            "version": "3.168.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "1d6a976da857d13b156bd63613ee086c13f6dc29"
+                "reference": "49ef1f905388c8185012c9651b80941b8f2a218d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/1d6a976da857d13b156bd63613ee086c13f6dc29",
-                "reference": "1d6a976da857d13b156bd63613ee086c13f6dc29",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/49ef1f905388c8185012c9651b80941b8f2a218d",
+                "reference": "49ef1f905388c8185012c9651b80941b8f2a218d",
                 "shasum": ""
             },
             "require": {
@@ -277,9 +277,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.168.2"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.168.3"
             },
-            "time": "2020-12-10T19:35:18+00:00"
+            "time": "2020-12-11T19:12:18+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -7375,16 +7375,16 @@
         },
         {
             "name": "fakerphp/faker",
-            "version": "v1.12.0",
+            "version": "v1.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FakerPHP/Faker.git",
-                "reference": "9aa6c9e289860951e6b4d010c7a841802d015cd8"
+                "reference": "841e8bdde345cc1ea9f98e776959e7531cadea0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/9aa6c9e289860951e6b4d010c7a841802d015cd8",
-                "reference": "9aa6c9e289860951e6b4d010c7a841802d015cd8",
+                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/841e8bdde345cc1ea9f98e776959e7531cadea0e",
+                "reference": "841e8bdde345cc1ea9f98e776959e7531cadea0e",
                 "shasum": ""
             },
             "require": {
@@ -7421,9 +7421,9 @@
             ],
             "support": {
                 "issues": "https://github.com/FakerPHP/Faker/issues",
-                "source": "https://github.com/FakerPHP/Faker/tree/v1.12.0"
+                "source": "https://github.com/FakerPHP/Faker/tree/v1.12.1"
             },
-            "time": "2020-11-23T09:33:08+00:00"
+            "time": "2020-12-11T10:39:41+00:00"
         },
         {
             "name": "filp/whoops",
