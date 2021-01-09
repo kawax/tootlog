@@ -16,6 +16,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Arr;
 use Revolution\Mastodon\Facades\Mastodon;
+use Throwable;
 
 class GetStatusJob implements ShouldQueue
 {
@@ -235,11 +236,11 @@ class GetStatusJob implements ShouldQueue
     /**
      * 失敗したジョブの処理.
      *
-     * @param  \Exception  $exception
+     * @param  Throwable  $exception
      *
      * @return void
      */
-    public function failed(\Exception $exception)
+    public function failed(Throwable $exception)
     {
         $this->account->increment('fails');
     }
