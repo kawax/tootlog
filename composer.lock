@@ -135,16 +135,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.173.3",
+            "version": "3.173.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "b805c50f0338180e7328c7ad5bcb0aceae11a75a"
+                "reference": "1400b2d08ded25bd9c6876edb0490b8cb9aeaa60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/b805c50f0338180e7328c7ad5bcb0aceae11a75a",
-                "reference": "b805c50f0338180e7328c7ad5bcb0aceae11a75a",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/1400b2d08ded25bd9c6876edb0490b8cb9aeaa60",
+                "reference": "1400b2d08ded25bd9c6876edb0490b8cb9aeaa60",
                 "shasum": ""
             },
             "require": {
@@ -219,9 +219,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.173.3"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.173.4"
             },
-            "time": "2021-02-04T21:45:53+00:00"
+            "time": "2021-02-05T19:19:35+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -7197,16 +7197,16 @@
         },
         {
             "name": "facade/ignition",
-            "version": "2.5.10",
+            "version": "2.5.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "98154e8b991fb616304c213cd405299ffedc26f5"
+                "reference": "e91d67353054bf827c64687fcac5ea44e4dcec54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/98154e8b991fb616304c213cd405299ffedc26f5",
-                "reference": "98154e8b991fb616304c213cd405299ffedc26f5",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/e91d67353054bf827c64687fcac5ea44e4dcec54",
+                "reference": "e91d67353054bf827c64687fcac5ea44e4dcec54",
                 "shasum": ""
             },
             "require": {
@@ -7270,7 +7270,7 @@
                 "issues": "https://github.com/facade/ignition/issues",
                 "source": "https://github.com/facade/ignition"
             },
-            "time": "2021-02-02T10:15:48+00:00"
+            "time": "2021-02-05T12:52:11+00:00"
         },
         {
             "name": "facade/ignition-contracts",
