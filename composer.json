@@ -60,6 +60,11 @@
       ]
     }
   },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "optimize-autoloader": true
+  },
   "scripts": {
     "post-root-package-install": [
       "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
@@ -76,10 +81,5 @@
     "ide-helper:models": "php artisan ide-helper:models -N",
     "sail:up": "vendor/bin/sail up -d",
     "sail:down": "vendor/bin/sail down"
-  },
-  "config": {
-    "preferred-install": "dist",
-    "sort-packages": true,
-    "optimize-autoloader": true
   }
 }
