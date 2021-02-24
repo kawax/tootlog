@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3a721ad2c4b0060fd3dbdb7c20fbb992",
+    "content-hash": "2c25762ff5caba86fc9070f1c706779a",
     "packages": [
         {
             "name": "artesaos/seotools",
@@ -7570,36 +7570,42 @@
             "time": "2020-05-27T16:41:55+00:00"
         },
         {
-            "name": "laravel/homestead",
-            "version": "v11.4.0",
+            "name": "laravel/sail",
+            "version": "v1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/laravel/homestead.git",
-                "reference": "41a628deed9b601ee80689cf3ae0815195b5040f"
+                "url": "https://github.com/laravel/sail.git",
+                "reference": "87c63c2956749f66e43467d4a730b917ef7428b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/homestead/zipball/41a628deed9b601ee80689cf3ae0815195b5040f",
-                "reference": "41a628deed9b601ee80689cf3ae0815195b5040f",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/87c63c2956749f66e43467d4a730b917ef7428b7",
+                "reference": "87c63c2956749f66e43467d4a730b917ef7428b7",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.4 || ^8.0",
-                "symfony/console": "~5.1",
-                "symfony/process": "~5.1",
-                "symfony/yaml": "~5.1"
-            },
-            "require-dev": {
-                "dms/phpunit-arraysubset-asserts": "^0.2.0",
-                "phpunit/phpunit": "^9"
+                "illuminate/console": "^8.0|^9.0",
+                "illuminate/contracts": "^8.0|^9.0",
+                "illuminate/support": "^8.0|^9.0",
+                "php": "^7.3|^8.0"
             },
             "bin": [
-                "bin/homestead"
+                "bin/sail"
             ],
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Sail\\SailServiceProvider"
+                    ]
+                }
+            },
             "autoload": {
                 "psr-4": {
-                    "Laravel\\Homestead\\": "src/"
+                    "Laravel\\Sail\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -7612,12 +7618,16 @@
                     "email": "taylor@laravel.com"
                 }
             ],
-            "description": "A virtual machine for web artisans.",
+            "description": "Docker files for running a basic Laravel application.",
+            "keywords": [
+                "docker",
+                "laravel"
+            ],
             "support": {
-                "issues": "https://github.com/laravel/homestead/issues",
-                "source": "https://github.com/laravel/homestead/tree/v11.4.0"
+                "issues": "https://github.com/laravel/sail/issues",
+                "source": "https://github.com/laravel/sail"
             },
-            "time": "2020-11-24T17:59:52+00:00"
+            "time": "2021-02-23T22:04:12+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -9835,81 +9845,6 @@
                 }
             ],
             "time": "2021-01-27T10:01:46+00:00"
-        },
-        {
-            "name": "symfony/yaml",
-            "version": "v5.2.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/yaml.git",
-                "reference": "338cddc6d74929f6adf19ca5682ac4b8e109cdb0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/338cddc6d74929f6adf19ca5682ac4b8e109cdb0",
-                "reference": "338cddc6d74929f6adf19ca5682ac4b8e109cdb0",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.2.5",
-                "symfony/deprecation-contracts": "^2.1",
-                "symfony/polyfill-ctype": "~1.8"
-            },
-            "conflict": {
-                "symfony/console": "<4.4"
-            },
-            "require-dev": {
-                "symfony/console": "^4.4|^5.0"
-            },
-            "suggest": {
-                "symfony/console": "For validating YAML files using the lint command"
-            },
-            "bin": [
-                "Resources/bin/yaml-lint"
-            ],
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Yaml\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Loads and dumps YAML files",
-            "homepage": "https://symfony.com",
-            "support": {
-                "source": "https://github.com/symfony/yaml/tree/v5.2.3"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2021-02-03T04:42:09+00:00"
         },
         {
             "name": "theseer/tokenizer",
