@@ -5,13 +5,14 @@ namespace App\Repository\Status;
 use App\Models\Account;
 use App\Models\Tag;
 use App\Models\User;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 interface StatusRepository
 {
     /**
      * ユーザーのステータス.
      *
-     * @return array
+     * @return LengthAwarePaginator
      */
     public function userStatuses();
 
@@ -20,7 +21,7 @@ interface StatusRepository
      *
      * @param  User  $user
      *
-     * @return array
+     * @return LengthAwarePaginator
      */
     public function openUserStatuses(User $user);
 
@@ -32,7 +33,7 @@ interface StatusRepository
      * @param  string|null  $month
      * @param  string|null  $day
      *
-     * @return array
+     * @return LengthAwarePaginator
      */
     public function openUserStatusesByDate(User $user, string $year, ?string $month = null, ?string $day = null);
 
@@ -79,7 +80,7 @@ interface StatusRepository
      * @param  Account  $acct
      * @param  string  $status_id
      *
-     * @return array
+     * @return mixed
      */
     public function getByAcct(Account $acct, string $status_id);
 

@@ -12,7 +12,7 @@ class EloquentStatusRepository implements StatusRepository
     protected const PAGINATE = 20;
 
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      */
     public function userStatuses()
     {
