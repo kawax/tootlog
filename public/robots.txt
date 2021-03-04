@@ -2,3 +2,6 @@ User-agent: *
 Disallow:
 Disallow: /login
 Disallow: /register
+
+User-agent: MJ12bot
+Disallow: /
