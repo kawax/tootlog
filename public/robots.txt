@@ -2,10 +2,10 @@ User-agent: *
 Disallow:
 Disallow: /login
 Disallow: /register
+Crawl-delay: 30
 
 User-agent: MJ12bot
 Disallow: /
 
 User-agent: SemrushBot
 Disallow: /
-
