@@ -6,6 +6,10 @@
     @section('description', strip_tags($statuses->first()->content))
 @endif
 
+@push('scripts')
+    <meta name="robots" content="none">
+@endpush
+
 @section('content')
     <div class="container-fluid">
         <div class="row">

@@ -9,6 +9,10 @@
     {!! Twitter::generate() !!}
 @endsection
 
+@push('scripts')
+    <meta name="robots" content="none">
+@endpush
+
 @section('content')
     <div class="container-fluid">
         <div class="row">
