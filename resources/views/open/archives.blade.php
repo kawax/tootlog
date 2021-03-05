@@ -4,7 +4,7 @@
 
 @section('description', '@' . $user->name . ' archives')
 
-@push('scripts')
+@push('robots')
     <meta name="robots" content="none">
 @endpush
 

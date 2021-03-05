@@ -6,7 +6,7 @@
     @section('description', strip_tags($statuses->first()->content))
 @endif
 
-@push('scripts')
+@push('robots')
     <meta name="robots" content="none">
 @endpush
 

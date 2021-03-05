@@ -12,7 +12,7 @@
     <meta name="description" content="@yield('description', 'Mastodon log archives service.')">
 
     @stack('robots')
-    
+
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
     <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}" sizes="32x32">

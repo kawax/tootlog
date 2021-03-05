@@ -11,7 +11,7 @@
     {!! Twitter::generate() !!}
 @endsection
 
-@push('scripts')
+@push('robots')
     <meta name="robots" content="nofollow">
 @endpush
 
