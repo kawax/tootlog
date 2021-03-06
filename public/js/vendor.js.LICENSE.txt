@@ -16,12 +16,6 @@
  */
 
 /*!
- * Vue.js v2.6.12
- * (c) 2014-2020 Evan You
- * Released under the MIT License.
- */
-
-/*!
  * jQuery JavaScript Library v3.6.0
  * https://jquery.com/
  *
@@ -34,8 +28,6 @@
  *
  * Date: 2021-03-02T17:08Z
  */
-
-/*! Copyright Twitter Inc. and other contributors. Licensed under MIT */
 
 /**
  * @license

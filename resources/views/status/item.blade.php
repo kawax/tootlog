@@ -56,9 +56,6 @@
         @include('status.footer')
 
     </div>
-
-    {!! $status->jsonLd() !!}
-
 @else
     @include('status.reblog')
 @endif

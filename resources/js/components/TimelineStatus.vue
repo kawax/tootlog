@@ -52,7 +52,9 @@
   import emoji from '../emoji'
 
   export default {
-    props: ['post'],
+      props: {
+          post: Object
+      },
     methods: {
       display_name () {
         return this.post.account.display_name
