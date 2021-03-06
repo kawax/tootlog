@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Http\Livewire\StatusToggle;
 use App\Models\Account;
 use App\Models\Server;
 use App\Models\Status;
@@ -9,7 +10,7 @@ use App\Models\Tag;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Livewire\Livewire;
 use Tests\TestCase;
 
 class UserTest extends TestCase
@@ -97,10 +98,15 @@ class UserTest extends TestCase
             'account_id' => $this->account->id,
         ]);
 
+        Livewire::test(StatusToggle::class, [
+            'status' => $statuses,
+        ])
+                ->call('toggle');
+
         $response = $this->actingAs($this->user)
                          ->get('/home');
 
-        $response->assertSee('<tt-status-toggle checked status', false);
+        $response->assertSeeLivewire('status-toggle');
     }
 
     public function testHomeHide()
@@ -110,10 +116,15 @@ class UserTest extends TestCase
             'deleted_at' => now(),
         ]);
 
+        Livewire::test(StatusToggle::class, [
+            'status' => $statuses,
+        ])
+                ->call('toggle');
+
         $response = $this->actingAs($this->user)
                          ->get('/home');
 
-        $response->assertSee('<tt-status-toggle status', false);
+        $response->assertSeeLivewire('status-toggle');
     }
 
     public function testTimeline()

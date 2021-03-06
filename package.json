@@ -25,7 +25,6 @@
     "twemoji": "^12.0",
     "vue": "^2.5.13",
     "vue-charts": "^0.2.1",
-    "vue-js-toggle-button": "^1.3.2",
     "vue-template-compiler": "^2.6.7"
   }
 }

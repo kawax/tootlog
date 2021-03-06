@@ -21,6 +21,8 @@
 
     @include('layouts.google')
 
+    @livewireStyles
+
     <meta name="google-site-verification" content="AjfwegofAkFuyDlrRBsMo8k4y6rpfEri5Qjd7uz3PbQ">
 </head>
 <body class="theme-{{ auth()->user()->theme ?? 'thin' }}">
@@ -93,6 +95,8 @@
 <script src="{{ mix('js/manifest.js') }}" defer></script>
 <script src="{{ mix('js/vendor.js') }}" defer></script>
 <script src="{{ mix('js/app.js') }}" defer></script>
+
+@livewireScripts
 
 <!-- {{ app()->version() }} -->
 
