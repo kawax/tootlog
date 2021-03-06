@@ -1,15 +1,13 @@
-require("./bootstrap");
+require('./bootstrap')
 
-import { createApp } from 'vue';
+import { createApp } from 'vue'
+import UserTimeline from './components/UserTimeline'
+import twemoji from 'twemoji'
 
-const app = createApp({})
+createApp({
+    components: {
+        'tt-user-timeline': UserTimeline,
+    },
+}).mount('#app')
 
-
-app.component("tt-user-timeline", require("./components/UserTimeline.vue").default);
-
-const el = document.getElementById('app');
-
-app.mount(el);
-
-import twemoji from "twemoji";
-twemoji.parse(document.body);
+twemoji.parse(document.body)
