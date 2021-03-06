@@ -2,14 +2,12 @@
 
 namespace App\Models;
 
-use App\Models\Presenter\StatusPresenter;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Status extends Model
 {
     use SoftDeletes;
-    use StatusPresenter;
 
     /**
      * @var array
