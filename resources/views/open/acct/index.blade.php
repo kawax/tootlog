@@ -35,8 +35,6 @@
                 'search_in' => $acct->acct
                 ])
 
-                <tt-calendar user="{{ $user->name }}" acct="{{ $acct->acct }}"></tt-calendar>
-
                 {{ $statuses->links() }}
 
                 @foreach($statuses as $status)

@@ -35,12 +35,6 @@
  * Date: 2021-03-02T17:08Z
  */
 
-/*!
- * vue-charts v0.2.1
- * (c) 2016 Hayden Bickerton
- * Released under the MIT License.
- */
-
 /*! Copyright Twitter Inc. and other contributors. Licensed under MIT */
 
 /**

@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\Api\CalendarController;
-use App\Http\Controllers\Api\StatusController;
 use App\Http\Controllers\Home\AccountController;
 use App\Http\Controllers\Home\AccountDeleteController;
 use App\Http\Controllers\Home\ExportController;
@@ -60,24 +58,6 @@ Route::middleware(['auth'])->group(
         Route::name('home')
              ->get('home')
              ->uses(HomeController::class);
-    }
-);
-
-Route::middleware('auth')->prefix('api')->group(
-    function () {
-        Route::delete('status/hide/{status}')
-             ->uses([StatusController::class, 'hide']);
-        Route::put('status/show/{status}')
-             ->uses([StatusController::class, 'show']);
-    }
-);
-
-Route::prefix('api')->group(
-    function () {
-        Route::get('calendar/{user}')
-             ->uses([CalendarController::class, 'index']);
-        Route::get('calendar/{user}/{username}@{domain}')
-             ->uses([CalendarController::class, 'acct']);
     }
 );
 

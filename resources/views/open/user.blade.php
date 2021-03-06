@@ -33,8 +33,6 @@
                 'search_in' => '@' . $user->name
                 ])
 
-                <tt-calendar user="{{ $user->name }}"></tt-calendar>
-
                 {{ $statuses->appends(['search' => request('search')])->links() }}
 
                 @foreach($statuses as $status)

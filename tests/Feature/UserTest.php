@@ -181,14 +181,6 @@ class UserTest extends TestCase
         $response->assertStatus(404);
     }
 
-    public function testUserCalender()
-    {
-        $response = $this->actingAs($this->user)
-                         ->get('/@test');
-
-        $response->assertSee('<tt-calendar user="test"></tt-calendar>', false);
-    }
-
     public function testAccount()
     {
         $response = $this->actingAs($this->user)
