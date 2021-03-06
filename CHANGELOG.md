@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## v1.13.0 (2021-03-06)
+- StatusToggle(Show/Hide)変更
+- Calendar削除
+- Vue3に更新
+- JSON-LD削除
+
 ## v1.12.0 (2020-10-24)
 - Laravel 8.0
 
