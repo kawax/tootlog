@@ -15,6 +15,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\DB;
 use Revolution\Mastodon\Facades\Mastodon;
 use Throwable;
 
@@ -115,7 +116,9 @@ class GetStatusJob implements ShouldQueue
             return;
         }
 
-        $this->newStatus($status, $data);
+        DB::transaction(function () use ($status, $data) {
+            $this->newStatus($status, $data);
+        });
     }
 
     /**
