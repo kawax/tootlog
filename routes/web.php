@@ -23,7 +23,7 @@ use Rap2hpoutre\LaravelLogViewer\LogViewerController;
 |
 */
 
-Route::middleware(['auth'])->group(
+Route::middleware(['auth', 'verified'])->group(
     function () {
         Route::name('accounts.add')->post('accounts')
              ->uses([AccountController::class, 'redirect']);
