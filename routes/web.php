@@ -68,10 +68,6 @@ Route::name('instances')
 Route::get('sitemaps')
      ->uses(SitemapController::class);
 
-Route::get('logs')
-     ->uses([LogViewerController::class, 'index'])
-     ->middleware('can:admin-logs');
-
 Route::name('welcome')
      ->get('/')
      ->uses(WelcomeController::class);
