@@ -10,7 +10,6 @@ use App\Http\Controllers\InstanceController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
-use Rap2hpoutre\LaravelLogViewer\LogViewerController;
 
 /*
 |--------------------------------------------------------------------------
