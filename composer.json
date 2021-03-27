@@ -25,7 +25,8 @@
     "livewire/livewire": "^2.4",
     "revolution/laravel-mastodon-api": "^2.0",
     "revolution/laravel-namespaced-helpers": "^1.0",
-    "revolution/socialite-mastodon": "^1.0"
+    "revolution/socialite-mastodon": "^1.0",
+    "predis/predis": "^1.1"
   },
   "require-dev": {
     "facade/ignition": "^2.3.6",
