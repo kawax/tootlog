@@ -33,13 +33,9 @@
 
         <Card>
             <div v-for="post in activePosts">
-                <TimelineReblog
-                    :post="post"
-                    v-if="post.reblog"
-                ></TimelineReblog>
+                <TimelineReblog :post="post" v-if="post.reblog"></TimelineReblog>
 
                 <TimelineStatus :post="post" v-else></TimelineStatus>
-
                 <hr/>
             </div>
         </Card>
