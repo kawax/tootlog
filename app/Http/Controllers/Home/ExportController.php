@@ -10,7 +10,7 @@ class ExportController extends Controller
 {
     public function csv(Request $request)
     {
-        ExportCsvJob::dispatchAfterResponse($request->user());
+        ExportCsvJob::dispatch($request->user());
 
         return back()->with('export', 'Sending files, please wait...');
     }
