@@ -69,7 +69,7 @@ class AccountController extends Controller
                 $acct = $account->store($user, $info);
             }
 
-            dispatch_now(new GetStatusJob($acct));
+            GetStatusJob::dispatchSync($acct);
         } catch (ClientException $e) {
             logger()->error($e->getMessage());
         }
