@@ -29,7 +29,7 @@ class Kernel extends ConsoleKernel
                  ->hourlyAt(10);
 
         $schedule->command('toot:statuses')
-                 ->everyFifteenMinutes();
+                 ->hourlyAt(30);
 
         $schedule->command('toot:info')
                  ->dailyAt('08:00')
