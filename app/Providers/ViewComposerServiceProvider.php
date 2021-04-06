@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use App\View\Composers\AccountComposer;
-use App\View\Composers\FooterComposer;
 use App\View\Composers\RecentComposer;
 use App\View\Composers\TagComposer;
 use Illuminate\Support\ServiceProvider;
@@ -22,7 +21,6 @@ class ViewComposerServiceProvider extends ServiceProvider
                 AccountComposer::class => 'open.account_list',
                 RecentComposer::class  => 'side.recents',
                 // TagComposer::class     => 'side.tags',
-                FooterComposer::class  => 'layouts.footer',
             ]
         );
     }
