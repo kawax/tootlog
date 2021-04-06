@@ -32,21 +32,14 @@ trait Open
      */
     public function openUserStatusesByDate(User $user, string $year, ?string $month = null, ?string $day = null)
     {
-        $query = $user->statuses()
-                      ->where('accounts.locked', false)
-                      ->whereYear('statuses.created_at', $year);
-
-        if (! empty($month)) {
-            $query = $query->whereMonth('statuses.created_at', $month);
-        }
-
-        if (! empty($day)) {
-            $query = $query->whereDay('statuses.created_at', $day);
-        }
-
-        return $query->with(['account', 'reblog'])
-                     ->latest('created_at')
-                     ->paginate(self::PAGINATE);
+        return $user->statuses()
+                    ->where('accounts.locked', false)
+                    ->whereYear('statuses.created_at', $year)
+                    ->when(filled($month), fn ($query) => $query->whereMonth('statuses.created_at', $month))
+                    ->when(filled($day), fn ($query) => $query->whereDay('statuses.created_at', $day))
+                    ->with(['account', 'reblog'])
+                    ->latest()
+                    ->simplePaginate(self::PAGINATE);
     }
 
     /**
@@ -59,9 +52,7 @@ trait Open
                         ->where('accounts.locked', false)
                         ->latest()
                         ->get()
-                        ->groupBy(function ($item) {
-                            return $item->created_at->format('Y-m-d');
-                        })
+                        ->groupBy(fn ($item) => $item->created_at->format('Y-m-d'))
                         ->take(10);
         });
     }
@@ -76,9 +67,7 @@ trait Open
                         ->where('accounts.locked', false)
                         ->latest()
                         ->get()
-                        ->groupBy(function ($item) {
-                            return $item->created_at->format('Y-m');
-                        });
+                        ->groupBy(fn ($item) => $item->created_at->format('Y-m'));
         });
     }
 
@@ -98,7 +87,7 @@ trait Open
             $statuses = $statuses->where('content', 'like', '%'.request('search').'%');
         }
 
-        $statuses = $statuses->paginate(self::PAGINATE);
+        $statuses = $statuses->simplePaginate(self::PAGINATE);
 
         return $statuses;
     }
@@ -133,9 +122,7 @@ trait Open
                          ->where('accounts.locked', false)
                          ->latest()
                          ->get()
-                         ->groupBy(function ($item) {
-                             return $item->created_at->format('Y-m-d');
-                         });
+                         ->groupBy(fn ($item) => $item->created_at->format('Y-m-d'));
 
         $cal = collect([]);
 
@@ -157,9 +144,7 @@ trait Open
                             ->whereDate('statuses.created_at', '>=', $from_date)
                             ->latest()
                             ->get()
-                            ->groupBy(function ($item) {
-                                return $item->created_at->format('Y-m-d');
-                            });
+                            ->groupBy(fn ($item) => $item->created_at->format('Y-m-d'));
 
         $cal = collect([]);
 
