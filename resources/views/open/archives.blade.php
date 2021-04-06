@@ -22,6 +22,7 @@
                 </nav>
 
                 <h2>Archives</h2>
+                <div>Only up to 10000 items are displayed here.</div>
 
                 <div class="list-group">
 
