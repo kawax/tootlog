@@ -21,7 +21,7 @@ class ViewComposerServiceProvider extends ServiceProvider
             [
                 AccountComposer::class => 'open.account_list',
                 RecentComposer::class  => 'side.recents',
-                TagComposer::class     => 'side.tags',
+                // TagComposer::class     => 'side.tags',
                 FooterComposer::class  => 'layouts.footer',
             ]
         );

@@ -47,7 +47,7 @@ trait Open
      */
     public function openRecents(User $user)
     {
-        return cache()->remember('recents/'.$user->id, now()->addMinutes(60), function () use ($user) {
+        return cache()->remember('recents/'.$user->id, now()->addDay(), function () use ($user) {
             return $user->statuses()
                         ->where('accounts.locked', false)
                         ->latest()
