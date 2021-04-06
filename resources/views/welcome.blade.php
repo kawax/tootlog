@@ -16,7 +16,7 @@
                     <h1>tootlog</h1>
                     <p>Mastodon log archives service.</p>
                     <p>
-                        <a class="btn btn-primary btn-lg" href="{{ route('login') }}" role="button">Login</a>
+                        <a class="btn btn-primary btn-lg mr-1" href="{{ route('login') }}" role="button">Login</a>
                         <a class="btn btn-primary btn-lg" href="{{ route('register') }}" role="button">Register</a>
                     </p>
                     <small>

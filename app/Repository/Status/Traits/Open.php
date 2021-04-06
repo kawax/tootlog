@@ -49,12 +49,15 @@ trait Open
     {
         return cache()->remember('recents/'.$user->id, now()->addDay(), function () use ($user) {
             return $user->statuses()
+                        ->select(['statuses.id', 'statuses.created_at', 'statuses.account_id'])
+                        ->selectRaw("DATE_FORMAT(statuses.created_at,'%Y-%m-%d') as date")
+                        ->with(['account:id,locked'])
                         ->where('accounts.locked', false)
-                        ->latest()
-                        ->take(100)
-                        ->get()
-                        ->groupBy(fn ($item) => $item->created_at->format('Y-m-d'))
-                        ->take(10);
+                        ->latest('date')
+                        ->cursor()
+                        ->groupBy('date')
+                        ->take(10)
+                        ->collect();
         });
     }
 
@@ -65,12 +68,14 @@ trait Open
     {
         return cache()->remember('archives/'.$user->id, now()->addDay(), function () use ($user) {
             return $user->statuses()
-                        ->with(['account'])
+                        ->select(['statuses.id', 'statuses.created_at', 'statuses.account_id'])
+                        ->selectRaw("DATE_FORMAT(statuses.created_at,'%Y-%m') as date")
+                        ->with(['account:id,locked'])
                         ->where('accounts.locked', false)
-                        ->latest()
-                        ->take(10000)
-                        ->get()
-                        ->groupBy(fn ($item) => $item->created_at->format('Y-m'));
+                        ->latest('date')
+                        ->cursor()
+                        ->groupBy('date')
+                        ->collect();
         });
     }
 
