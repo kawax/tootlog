@@ -51,6 +51,7 @@ trait Open
             return $user->statuses()
                         ->where('accounts.locked', false)
                         ->latest()
+                        ->take(100)
                         ->get()
                         ->groupBy(fn ($item) => $item->created_at->format('Y-m-d'))
                         ->take(10);
@@ -62,10 +63,12 @@ trait Open
      */
     public function openArchives(User $user)
     {
-        return cache()->remember('archives/'.$user->id, now()->addMinutes(60), function () use ($user) {
+        return cache()->remember('archives/'.$user->id, now()->addDay(), function () use ($user) {
             return $user->statuses()
+                        ->with(['account'])
                         ->where('accounts.locked', false)
                         ->latest()
+                        ->take(10000)
                         ->get()
                         ->groupBy(fn ($item) => $item->created_at->format('Y-m'));
         });
