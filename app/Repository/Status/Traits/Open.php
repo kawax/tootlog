@@ -48,9 +48,13 @@ trait Open
     public function openRecents(User $user)
     {
         return cache()->remember('recents/'.$user->id, now()->addDay(), function () use ($user) {
+            $date_format = app()->runningUnitTests()
+                ? 'STRFTIME("%Y-%m-%d", statuses.created_at)'
+                : 'DATE_FORMAT(statuses.created_at,"%Y-%m-%d")';
+
             return $user->statuses()
                         ->select(['statuses.id', 'statuses.created_at', 'statuses.account_id'])
-                        ->selectRaw("DATE_FORMAT(statuses.created_at,'%Y-%m-%d') as date")
+                        ->selectRaw($date_format.' as date')
                         ->with(['account:id,locked'])
                         ->where('accounts.locked', false)
                         ->latest('date')
@@ -67,9 +71,13 @@ trait Open
     public function openArchives(User $user)
     {
         return cache()->remember('archives/'.$user->id, now()->addDay(), function () use ($user) {
+            $date_format = app()->runningUnitTests()
+                ? 'STRFTIME("%Y-%m", statuses.created_at)'
+                : 'DATE_FORMAT(statuses.created_at,"%Y-%m")';
+
             return $user->statuses()
                         ->select(['statuses.id', 'statuses.created_at', 'statuses.account_id'])
-                        ->selectRaw("DATE_FORMAT(statuses.created_at,'%Y-%m') as date")
+                        ->selectRaw($date_format.' as date')
                         ->with(['account:id,locked'])
                         ->where('accounts.locked', false)
                         ->latest('date')
