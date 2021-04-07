@@ -36,7 +36,7 @@
                             <i class="fa fa-calendar mr-1" aria-hidden="true"></i>
                             {{ $date }}
 
-                            <span class="badge badge-pill badge-secondary ml-auto">{{ $archive->count() }}</span>
+                            <span class="badge badge-pill badge-secondary ml-auto">{{ $archive }}</span>
 
                         </a>
 

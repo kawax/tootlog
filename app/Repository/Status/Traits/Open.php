@@ -61,6 +61,9 @@ trait Open
                         ->cursor()
                         ->groupBy('date')
                         ->take(10)
+                        ->map(function ($item) {
+                            return $item->count();
+                        })
                         ->collect();
         });
     }
@@ -70,7 +73,7 @@ trait Open
      */
     public function openArchives(User $user)
     {
-        return cache()->store('file')->remember('archives/'.$user->id, now()->addDay(), function () use ($user) {
+        return cache()->remember('archives/'.$user->id, now()->addDay(), function () use ($user) {
             $date_format = app()->runningUnitTests()
                 ? 'STRFTIME("%Y-%m", statuses.created_at)'
                 : 'DATE_FORMAT(statuses.created_at,"%Y-%m")';
@@ -83,6 +86,9 @@ trait Open
                         ->latest('date')
                         ->cursor()
                         ->groupBy('date')
+                        ->map(function ($item) {
+                            return $item->count();
+                        })
                         ->collect();
         });
     }
