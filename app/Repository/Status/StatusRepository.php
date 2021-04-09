@@ -78,11 +78,11 @@ interface StatusRepository
      * アカウントのステータス（公開用）.
      *
      * @param  Account  $acct
-     * @param  string  $status_id
+     * @param  int  $status_id
      *
      * @return mixed
      */
-    public function getByAcct(Account $acct, string $status_id);
+    public function getByAcct(Account $acct, int $status_id);
 
     /**
      * ユーザーのカレンダー（公開）.

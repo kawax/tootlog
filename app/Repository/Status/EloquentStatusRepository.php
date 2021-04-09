@@ -32,7 +32,7 @@ class EloquentStatusRepository implements StatusRepository
     /**
      * {@inheritdoc}
      */
-    public function getByAcct(Account $acct, string $status_id)
+    public function getByAcct(Account $acct, int $status_id)
     {
         $key = 'account/'.$acct->id.'/status/'.$status_id;
 

@@ -67,9 +67,9 @@ class AccountController extends Controller
         /**
          * @var \App\Models\Status $status
          */
-        $status = $this->statusRepository->getByAcct($acct, $status_id);
+        $status = $this->statusRepository->getByAcct($acct, (int) $status_id);
 
-        if ($acct->locked or $status->trashed()) {
+        if ($acct->locked || $status->trashed()) {
             $this->authorize('show', $acct);
         }
 
