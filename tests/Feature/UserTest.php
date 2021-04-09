@@ -249,7 +249,7 @@ class UserTest extends TestCase
         $response = $this->actingAs($this->user)
                          ->get('/@test/test@example.com/1');
 
-        $response->assertSee($statuses->content)
+        $response->assertSee($statuses->content, false)
                  ->assertDontSee('<script>test', false);
     }
 

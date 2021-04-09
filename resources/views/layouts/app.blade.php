@@ -17,8 +17,6 @@
 
     <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}" sizes="32x32">
 
-    @yield('open_graph')
-
     @include('layouts.google')
 
     @livewireStyles

@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Open;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Repository\Status\StatusRepository as Status;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Routing\Redirector;
 
 class DateController extends Controller
 {
@@ -25,11 +28,11 @@ class DateController extends Controller
 
     /**
      * @param  User  $user
-     * @param  string  $year
-     * @param  string  $month
-     * @param  string  $day
+     * @param  string|null  $year
+     * @param  string|null  $month
+     * @param  string|null  $day
      *
-     * @return \Illuminate\Http\Response|\Illuminate\View\View
+     * @return Application|RedirectResponse|Redirector
      */
     public function date(User $user, ?string $year = null, ?string $month = null, ?string $day = null)
     {
@@ -56,7 +59,7 @@ class DateController extends Controller
      * @param  User  $user
      * @param  string  $date
      *
-     * @return \Illuminate\Http\Response|\Illuminate\View\View
+     * @return Application|RedirectResponse|Redirector
      */
     public function show(User $user, string $date)
     {

@@ -6,20 +6,18 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Repository\Account\AccountRepository as Account;
 use App\Repository\Status\StatusRepository as Status;
-use OpenGraph;
-use Twitter;
 
 class AccountController extends Controller
 {
     /**
      * @var Account
      */
-    protected $accountRepository;
+    protected Account $accountRepository;
 
     /**
      * @var Status
      */
-    protected $statusRepository;
+    protected Status $statusRepository;
 
     /**
      * AccountController constructor.
@@ -48,17 +46,6 @@ class AccountController extends Controller
             $this->authorize('show', $acct);
         }
 
-        $title = $acct->acct.' - '.config('app.name', 'tootlog');
-        OpenGraph::setSiteName(config('app.name', 'tootlog'));
-        OpenGraph::setDescription($acct->note);
-        OpenGraph::setTitle($title);
-        OpenGraph::setUrl(route('open.account.index', [$user, $acct->username, $acct->domain]));
-        OpenGraph::addProperty('type', 'profile');
-        OpenGraph::addImage($acct->avatar);
-
-        Twitter::setTitle($title);
-        Twitter::setType('summary');
-
         $statuses = $this->statusRepository->openAcctStatuses($acct);
         $accounts = $this->accountRepository->openAccounts($user);
 
@@ -85,18 +72,6 @@ class AccountController extends Controller
         if ($acct->locked or $status->trashed()) {
             $this->authorize('show', $acct);
         }
-
-        $title = $acct->acct.' - '.config('app.name', 'tootlog');
-
-        OpenGraph::setSiteName(config('app.name', 'tootlog'));
-        OpenGraph::setDescription($status->content);
-        OpenGraph::setTitle($title);
-        OpenGraph::setUrl(route('open.account.show', [$user, $acct->username, $acct->domain, $status_id]));
-        OpenGraph::addProperty('type', 'article');
-        OpenGraph::addImage($acct->avatar);
-
-        Twitter::setTitle($title);
-        Twitter::setType('summary');
 
         return view('open.acct.show')->with(compact('user', 'acct', 'status'));
     }

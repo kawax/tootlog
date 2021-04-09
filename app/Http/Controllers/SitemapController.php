@@ -8,6 +8,11 @@ use Laravelium\Sitemap\Sitemap;
 
 class SitemapController extends Controller
 {
+    /**
+     * @param  Sitemap  $sitemap
+     *
+     * @return mixed
+     */
     public function __invoke(Sitemap $sitemap)
     {
         $sitemap->setCache('tootlog.sitemaps', 60);

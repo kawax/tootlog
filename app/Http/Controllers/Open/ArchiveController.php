@@ -11,7 +11,7 @@ class ArchiveController extends Controller
     /**
      * @var Status
      */
-    protected $statusRepository;
+    protected Status $statusRepository;
 
     /**
      * AccountController constructor.

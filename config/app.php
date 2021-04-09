@@ -152,10 +152,6 @@ return [
          * Package Service Providers...
          */
 
-        Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
-
-        Revolution\Socialite\Mastodon\MastodonServiceProvider::class,
-
         /*
          * Application Service Providers...
          */

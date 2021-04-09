@@ -6,11 +6,6 @@
     @section('description', strip_tags($statuses->first()->content))
 @endif
 
-@section('open_graph')
-    {!! OpenGraph::generate() !!}
-    {!! Twitter::generate() !!}
-@endsection
-
 @push('robots')
     <meta name="robots" content="nofollow">
 @endpush

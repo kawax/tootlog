@@ -4,11 +4,6 @@
 
 @section('description', strip_tags($acct->note))
 
-@section('open_graph')
-    {!! OpenGraph::generate() !!}
-    {!! Twitter::generate() !!}
-@endsection
-
 @push('robots')
     <meta name="robots" content="nofollow">
 @endpush
