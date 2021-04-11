@@ -17,7 +17,7 @@ branches:
     - master
 
 script:
-  - php artisan test --parallel --processes=4
+  - php artisan test
 
 after_script:
   - ./cc-test-reporter after-build  -t clover --exit-code $TRAVIS_TEST_RESULT
