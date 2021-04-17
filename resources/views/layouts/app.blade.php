@@ -17,8 +17,6 @@
 
     <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}" sizes="32x32">
 
-    @include('layouts.google')
-
     @livewireStyles
 
     <meta name="google-site-verification" content="AjfwegofAkFuyDlrRBsMo8k4y6rpfEri5Qjd7uz3PbQ">
