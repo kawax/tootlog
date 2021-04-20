@@ -12,6 +12,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Mail;
 use League\Csv\CannotInsertRecord;
 use League\Csv\Writer;
 use Storage;
@@ -23,34 +24,19 @@ class ExportCsvJob implements ShouldQueue
     use Queueable;
     use SerializesModels;
 
-    /**
-     * @var User
-     */
-    protected $user;
+    protected StatusRepository $statusRepository;
 
-    /**
-     * @var StatusRepository
-     */
-    protected $statusRepository;
+    protected Writer $writer;
 
-    /**
-     * @var Writer
-     */
-    protected $writer;
-
-    /**
-     * @var array
-     */
-    protected $files = [];
+    protected array $files = [];
 
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct(User $user)
+    public function __construct(protected User $user)
     {
-        $this->user = $user;
     }
 
     /**
@@ -66,17 +52,16 @@ class ExportCsvJob implements ShouldQueue
 
         $accounts = $this->user->accounts;
 
-        $accounts->each(function ($account) {
-            $this->write($account);
-        });
+        $accounts->each(fn ($account) => $this->write($account));
 
-        \Mail::to($this->user)->send(new CsvExported($this->files));
+        Mail::to($this->user)->send(new CsvExported($this->files));
     }
 
     /**
      * @param  Account  $account
      *
      * @return void
+     * @throws CannotInsertRecord
      */
     private function write(Account $account)
     {

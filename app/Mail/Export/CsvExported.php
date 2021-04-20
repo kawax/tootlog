@@ -12,16 +12,13 @@ class CsvExported extends Mailable implements ShouldQueue
     use Queueable;
     use SerializesModels;
 
-    public $files;
-
     /**
      * Create a new message instance.
      *
      * @param  array  $files
      */
-    public function __construct(array $files)
+    public function __construct(public array $files)
     {
-        $this->files = $files;
     }
 
     /**

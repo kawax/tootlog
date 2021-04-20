@@ -7,9 +7,5 @@ Mastodon log archives service.
 
 https://tootlog.net/
 
-## Requirements
-- Laravel
-- PHP >= 7.4
-
 ## LICENSE
 MIT

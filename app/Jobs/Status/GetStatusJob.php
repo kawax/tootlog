@@ -26,24 +26,15 @@ class GetStatusJob implements ShouldQueue
     use Queueable;
     use SerializesModels;
 
-    /**
-     * @var Account
-     */
-    protected $account;
-
-    /**
-     * @var StatusRepository
-     */
-    protected $statusRepository;
+    protected StatusRepository $statusRepository;
 
     /**
      * Create a new job instance.
      *
      * @param  Account  $account
      */
-    public function __construct(Account $account)
+    public function __construct(protected Account $account)
     {
-        $this->account = $account;
     }
 
     /**
@@ -145,9 +136,8 @@ class GetStatusJob implements ShouldQueue
         $data['created_at'] = $date->toDateTimeString();
 
         $data = Arr::add($data, 'status_id', $data['id']);
-        $data = Arr::add($data, 'account_id', $this->account->id);
 
-        return $data;
+        return Arr::add($data, 'account_id', $this->account->id);
     }
 
     /**
@@ -177,7 +167,7 @@ class GetStatusJob implements ShouldQueue
     /**
      * @return array
      */
-    protected function get()
+    protected function get(): array
     {
         return $this->account->mastodon()
                              ->statuses(
@@ -190,7 +180,7 @@ class GetStatusJob implements ShouldQueue
     /**
      * @return string|null
      */
-    protected function since()
+    protected function since(): ?string
     {
         $response = Mastodon::getResponse();
 
@@ -225,7 +215,7 @@ class GetStatusJob implements ShouldQueue
      *
      * @return array
      */
-    protected function tag(array $tags)
+    protected function tag(array $tags): array
     {
         $ids = [];
 

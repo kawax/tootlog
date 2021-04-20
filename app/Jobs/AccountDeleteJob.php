@@ -17,20 +17,14 @@ class AccountDeleteJob implements ShouldQueue
     use SerializesModels;
 
     /**
-     * @var int
-     */
-    protected $id;
-
-    /**
      * Create a new job instance.
      *
      * @param  int  $id
      *
      * @return void
      */
-    public function __construct($id)
+    public function __construct(protected int $id)
     {
-        $this->id = $id;
     }
 
     /**

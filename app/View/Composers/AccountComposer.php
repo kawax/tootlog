@@ -7,11 +7,8 @@ use Illuminate\View\View;
 
 class AccountComposer
 {
-    protected $accountRepository;
-
-    public function __construct(AccountRepository $accountRepository)
+    public function __construct(protected AccountRepository $accountRepository)
     {
-        $this->accountRepository = $accountRepository;
     }
 
     public function compose(View $view)

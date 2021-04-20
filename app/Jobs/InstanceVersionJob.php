@@ -18,20 +18,14 @@ class InstanceVersionJob implements ShouldQueue
     use SerializesModels;
 
     /**
-     * @var Server
-     */
-    protected $server;
-
-    /**
      * Create a new job instance.
      *
      * @param  Server  $server
      *
      * @return void
      */
-    public function __construct($server)
+    public function __construct(protected Server $server)
     {
-        $this->server = $server;
     }
 
     /**

@@ -7,11 +7,8 @@ use Illuminate\View\View;
 
 class RecentComposer
 {
-    protected $statusRepository;
-
-    public function __construct(Status $statusRepository)
+    public function __construct(protected Status $statusRepository)
     {
-        $this->statusRepository = $statusRepository;
     }
 
     public function compose(View $view)
