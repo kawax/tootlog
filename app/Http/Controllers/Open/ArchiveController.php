@@ -9,18 +9,12 @@ use App\Repository\Status\StatusRepository as Status;
 class ArchiveController extends Controller
 {
     /**
-     * @var Status
-     */
-    protected Status $statusRepository;
-
-    /**
      * AccountController constructor.
      *
      * @param  Status  $statusRepository
      */
-    public function __construct(Status $statusRepository)
+    public function __construct(protected Status $statusRepository)
     {
-        $this->statusRepository = $statusRepository;
     }
 
     public function __invoke(User $user)

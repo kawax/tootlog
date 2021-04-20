@@ -10,25 +10,15 @@ use App\Repository\Status\StatusRepository as Status;
 class AccountController extends Controller
 {
     /**
-     * @var Account
-     */
-    protected Account $accountRepository;
-
-    /**
-     * @var Status
-     */
-    protected Status $statusRepository;
-
-    /**
      * AccountController constructor.
      *
      * @param  Account  $accountRepository
      * @param  Status  $statusRepository
      */
-    public function __construct(Account $accountRepository, Status $statusRepository)
-    {
-        $this->accountRepository = $accountRepository;
-        $this->statusRepository = $statusRepository;
+    public function __construct(
+        protected Account $accountRepository,
+        protected Status $statusRepository
+    ) {
     }
 
     /**

@@ -12,18 +12,12 @@ use Illuminate\Routing\Redirector;
 class DateController extends Controller
 {
     /**
-     * @var Status
-     */
-    protected $statusRepository;
-
-    /**
      * AccountController constructor.
      *
      * @param  Status  $statusRepository
      */
-    public function __construct(Status $statusRepository)
+    public function __construct(protected Status $statusRepository)
     {
-        $this->statusRepository = $statusRepository;
     }
 
     /**
