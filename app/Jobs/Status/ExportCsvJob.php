@@ -13,9 +13,9 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 use League\Csv\CannotInsertRecord;
 use League\Csv\Writer;
-use Storage;
 
 class ExportCsvJob implements ShouldQueue
 {
@@ -71,16 +71,12 @@ class ExportCsvJob implements ShouldQueue
 
         $this->writer->insertOne($this->header());
 
-        $statuses = $this->statusRepository->exportCsv($account);
-
-        $statuses->chunk(1000, function ($chunk_statuses) {
-            /**
-             * @var Status $status
-             */
-            foreach ($chunk_statuses as $status) {
+        $this->statusRepository
+            ->exportCsv($account)
+            ->lazy()
+            ->each(function ($status) {
                 $this->insert($status);
-            }
-        });
+            });
 
         $path = 'csv/'.$this->user->name.'/'.$account->acct.'.csv';
 
