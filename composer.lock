@@ -64,16 +64,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.179.0",
+            "version": "3.179.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "59b0ceab1dfafa7c606ee8b940a42dc66921d11f"
+                "reference": "f4f2c01b53f71379a1ed8ccccf4305949a69ccbe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/59b0ceab1dfafa7c606ee8b940a42dc66921d11f",
-                "reference": "59b0ceab1dfafa7c606ee8b940a42dc66921d11f",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/f4f2c01b53f71379a1ed8ccccf4305949a69ccbe",
+                "reference": "f4f2c01b53f71379a1ed8ccccf4305949a69ccbe",
                 "shasum": ""
             },
             "require": {
@@ -148,9 +148,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.179.0"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.179.1"
             },
-            "time": "2021-04-28T18:14:15+00:00"
+            "time": "2021-04-29T18:17:25+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -3601,16 +3601,16 @@
         },
         {
             "name": "revolution/laravel-namespaced-helpers",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kawax/laravel-namespaced-helpers.git",
-                "reference": "3f6b27639ea4b67fe6e2591ca986b7face97757e"
+                "reference": "da5728453524201fdb39823c650810eadaae466d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kawax/laravel-namespaced-helpers/zipball/3f6b27639ea4b67fe6e2591ca986b7face97757e",
-                "reference": "3f6b27639ea4b67fe6e2591ca986b7face97757e",
+                "url": "https://api.github.com/repos/kawax/laravel-namespaced-helpers/zipball/da5728453524201fdb39823c650810eadaae466d",
+                "reference": "da5728453524201fdb39823c650810eadaae466d",
                 "shasum": ""
             },
             "require": {
@@ -3646,9 +3646,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kawax/laravel-namespaced-helpers/issues",
-                "source": "https://github.com/kawax/laravel-namespaced-helpers/tree/1.2.0"
+                "source": "https://github.com/kawax/laravel-namespaced-helpers/tree/1.2.1"
             },
-            "time": "2021-04-14T05:17:17+00:00"
+            "time": "2021-04-29T04:50:10+00:00"
         },
         {
             "name": "revolution/socialite-mastodon",
@@ -6967,16 +6967,16 @@
         },
         {
             "name": "facade/ignition",
-            "version": "2.8.3",
+            "version": "2.8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "a8201d51aae83addceaef9344592a3b068b5d64d"
+                "reference": "87fb348dab0ae1a7c206c3e902a5a44ba541742f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/a8201d51aae83addceaef9344592a3b068b5d64d",
-                "reference": "a8201d51aae83addceaef9344592a3b068b5d64d",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/87fb348dab0ae1a7c206c3e902a5a44ba541742f",
+                "reference": "87fb348dab0ae1a7c206c3e902a5a44ba541742f",
                 "shasum": ""
             },
             "require": {
@@ -7040,7 +7040,7 @@
                 "issues": "https://github.com/facade/ignition/issues",
                 "source": "https://github.com/facade/ignition"
             },
-            "time": "2021-04-09T20:45:59+00:00"
+            "time": "2021-04-29T13:55:26+00:00"
         },
         {
             "name": "facade/ignition-contracts",
