@@ -64,16 +64,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.179.1",
+            "version": "3.179.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "f4f2c01b53f71379a1ed8ccccf4305949a69ccbe"
+                "reference": "7d3490e35878d0884905fa0c1ab43ecf178c8d9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/f4f2c01b53f71379a1ed8ccccf4305949a69ccbe",
-                "reference": "f4f2c01b53f71379a1ed8ccccf4305949a69ccbe",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/7d3490e35878d0884905fa0c1ab43ecf178c8d9b",
+                "reference": "7d3490e35878d0884905fa0c1ab43ecf178c8d9b",
                 "shasum": ""
             },
             "require": {
@@ -148,9 +148,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.179.1"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.179.2"
             },
-            "time": "2021-04-29T18:17:25+00:00"
+            "time": "2021-04-30T19:46:52+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -6902,16 +6902,16 @@
         },
         {
             "name": "facade/flare-client-php",
-            "version": "1.7.0",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/flare-client-php.git",
-                "reference": "6bf380035890cb0a09b9628c491ae3866b858522"
+                "reference": "69742118c037f34ee1ef86dc605be4a105d9e984"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/flare-client-php/zipball/6bf380035890cb0a09b9628c491ae3866b858522",
-                "reference": "6bf380035890cb0a09b9628c491ae3866b858522",
+                "url": "https://api.github.com/repos/facade/flare-client-php/zipball/69742118c037f34ee1ef86dc605be4a105d9e984",
+                "reference": "69742118c037f34ee1ef86dc605be4a105d9e984",
                 "shasum": ""
             },
             "require": {
@@ -6955,7 +6955,7 @@
             ],
             "support": {
                 "issues": "https://github.com/facade/flare-client-php/issues",
-                "source": "https://github.com/facade/flare-client-php/tree/1.7.0"
+                "source": "https://github.com/facade/flare-client-php/tree/1.8.0"
             },
             "funding": [
                 {
@@ -6963,7 +6963,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-04-12T09:30:36+00:00"
+            "time": "2021-04-30T11:11:50+00:00"
         },
         {
             "name": "facade/ignition",
