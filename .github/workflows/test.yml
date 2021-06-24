@@ -1,0 +1,31 @@
+name: test
+
+on:
+  push:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup PHP, with composer and extensions
+        uses: shivammathur/setup-php@v2 #https://github.com/shivammathur/setup-php
+        with:
+          php-version: '8.0'
+          extensions: mbstring, bcmath
+          coverage: xdebug
+      - name: Install Composer dependencies
+        run: composer install --no-interaction --no-progress  --optimize-autoloader
+      - name: env
+        run: |
+          cp .env.example .env
+          php artisan key:generate
+      - name: Test with phpunit
+        run: vendor/bin/phpunit
+      - name: forge
+        if: success() && (github.event_name != 'pull_request')
+        run: curl -s ${{ secrets.FORGE }}
