@@ -59,10 +59,7 @@
   "config": {
     "preferred-install": "dist",
     "sort-packages": true,
-    "optimize-autoloader": true,
-    "platform": {
-      "ext-pcntl": "1.0.0"
-    }
+    "optimize-autoloader": true
   },
   "scripts": {
     "post-root-package-install": [
