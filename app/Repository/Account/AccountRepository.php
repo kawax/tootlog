@@ -76,7 +76,7 @@ interface AccountRepository
     public function updateSince(Account $account, $since_id);
 
     /**
-     * @param       $user
+     * @param  $user
      * @param  array  $server
      *
      * @return mixed
