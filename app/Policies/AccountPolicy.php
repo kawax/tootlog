@@ -25,7 +25,6 @@ class AccountPolicy
      *
      * @param  User  $user
      * @param  Account  $account
-     *
      * @return bool
      */
     public function show(User $user, Account $account)
@@ -36,7 +35,6 @@ class AccountPolicy
     /**
      * @param  User  $user
      * @param  Account  $account
-     *
      * @return bool
      */
     public function delete(User $user, Account $account)

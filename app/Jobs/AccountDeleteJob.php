@@ -20,7 +20,6 @@ class AccountDeleteJob implements ShouldQueue
      * Create a new job instance.
      *
      * @param  int  $id
-     *
      * @return void
      */
     public function __construct(protected int $id)
@@ -31,7 +30,6 @@ class AccountDeleteJob implements ShouldQueue
      * Execute the job.
      *
      * @param  Account  $account
-     *
      * @return void
      */
     public function handle(Account $account)

@@ -15,7 +15,6 @@ class HomeController extends Controller
      * @param  Request  $request
      * @param  Account  $account
      * @param  Status  $status
-     *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function __invoke(Request $request, Account $account, Status $status)
