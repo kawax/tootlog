@@ -25,7 +25,6 @@ class DateController extends Controller
      * @param  string|null  $year
      * @param  string|null  $month
      * @param  string|null  $day
-     *
      * @return Application|RedirectResponse|Redirector
      */
     public function date(User $user, ?string $year = null, ?string $month = null, ?string $day = null)
@@ -52,7 +51,6 @@ class DateController extends Controller
     /**
      * @param  User  $user
      * @param  string  $date
-     *
      * @return Application|RedirectResponse|Redirector
      */
     public function show(User $user, string $date)

@@ -23,7 +23,6 @@ class Server extends Model
      * streaming api url.
      *
      * @param  string  $streaming
-     *
      * @return string
      */
     public function getStreamingAttribute($streaming): string

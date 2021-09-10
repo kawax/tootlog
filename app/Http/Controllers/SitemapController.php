@@ -10,7 +10,6 @@ class SitemapController extends Controller
 {
     /**
      * @param  Sitemap  $sitemap
-     *
      * @return mixed
      */
     public function __invoke(Sitemap $sitemap)

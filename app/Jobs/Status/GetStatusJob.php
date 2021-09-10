@@ -42,7 +42,6 @@ class GetStatusJob implements ShouldQueue
      *
      * @param  StatusRepository  $statusRepository
      * @param  AccountRepository  $accountRepository
-     *
      * @return void
      */
     public function handle(StatusRepository $statusRepository, AccountRepository $accountRepository)
@@ -114,7 +113,6 @@ class GetStatusJob implements ShouldQueue
 
     /**
      * @param  array  $status
-     *
      * @return array
      */
     protected function statusData(array $status): array
@@ -189,7 +187,6 @@ class GetStatusJob implements ShouldQueue
 
     /**
      * @param  array  $reblog
-     *
      * @return \Illuminate\Database\Eloquent\Model
      */
     protected function reblog(array $reblog)
@@ -212,7 +209,6 @@ class GetStatusJob implements ShouldQueue
 
     /**
      * @param  array  $tags
-     *
      * @return array
      */
     protected function tag(array $tags): array
@@ -230,7 +226,6 @@ class GetStatusJob implements ShouldQueue
      * 失敗したジョブの処理.
      *
      * @param  Throwable  $exception
-     *
      * @return void
      */
     public function failed(Throwable $exception)

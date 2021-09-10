@@ -42,7 +42,6 @@ interface AccountRepository
      * ユーザーのアカウント（公開用）.
      *
      * @param  User  $user
-     *
      * @return array
      */
     public function openAccounts(User $user);
@@ -52,7 +51,6 @@ interface AccountRepository
      *
      * @param  string  $username
      * @param  string  $domain
-     *
      * @return Account
      */
     public function getByAcct(string $username, string $domain);
@@ -61,7 +59,6 @@ interface AccountRepository
      * アカウント情報を更新.
      *
      * @param  Account  $account
-     *
      * @return mixed
      */
     public function refresh(Account $account);
@@ -70,7 +67,6 @@ interface AccountRepository
      * since_idを更新.
      *
      * @param  Account  $account
-     *
      * @return mixed
      */
     public function updateSince(Account $account, $since_id);
@@ -78,21 +74,18 @@ interface AccountRepository
     /**
      * @param  $user
      * @param  array  $server
-     *
      * @return mixed
      */
     public function store($user, array $server);
 
     /**
      * @param $user
-     *
      * @return mixed
      */
     public function update($user);
 
     /**
      * @param  string  $url
-     *
      * @return bool
      */
     public function exists(string $url): bool;

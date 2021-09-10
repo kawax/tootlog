@@ -76,7 +76,6 @@ class EloquentServerRepository implements ServerRepository
 
     /**
      * @param  int  $page
-     *
      * @return mixed
      */
     public function instanceList(int $page = 20)

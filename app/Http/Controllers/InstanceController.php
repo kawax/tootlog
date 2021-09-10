@@ -11,7 +11,6 @@ class InstanceController extends Controller
 {
     /**
      * @param  ServerRepository  $repository
-     *
      * @return Application|Factory|View
      */
     public function __invoke(ServerRepository $repository)

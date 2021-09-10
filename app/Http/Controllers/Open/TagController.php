@@ -30,7 +30,6 @@ class TagController extends Controller
      * @param  Status  $statusRepository
      * @param  User  $user
      * @param  Tag  $tag
-     *
      * @return Application|Factory|View
      */
     public function show(Status $statusRepository, User $user, Tag $tag)

@@ -14,7 +14,6 @@ class UserController extends Controller
     /**
      * @param  User  $user
      * @param  Status  $statusRepository
-     *
      * @return Application|Factory|View
      */
     public function index(User $user, Status $statusRepository)
