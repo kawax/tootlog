@@ -10,7 +10,6 @@ class Header
 {
     /**
      * @param  ResponseInterface  $response
-     *
      * @return string
      */
     public static function since(ResponseInterface $response): string

@@ -17,7 +17,6 @@ class PreferencesController extends Controller
 
     /**
      * @param  UserUpdateRequest  $request
-     *
      * @return \Illuminate\Http\Response|\Illuminate\View\View
      */
     public function update(UserUpdateRequest $request)

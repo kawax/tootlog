@@ -20,7 +20,6 @@ interface StatusRepository
      * ユーザーのステータス（公開用）.
      *
      * @param  User  $user
-     *
      * @return LengthAwarePaginator
      */
     public function openUserStatuses(User $user);
@@ -32,7 +31,6 @@ interface StatusRepository
      * @param  string  $year
      * @param  string|null  $month
      * @param  string|null  $day
-     *
      * @return LengthAwarePaginator
      */
     public function openUserStatusesByDate(User $user, string $year, ?string $month = null, ?string $day = null);
@@ -41,7 +39,6 @@ interface StatusRepository
      * ユーザーの最近のステータス（公開用）.
      *
      * @param  User  $user
-     *
      * @return mixed
      */
     public function openRecents(User $user);
@@ -50,7 +47,6 @@ interface StatusRepository
      * ユーザーのアーカイブス（公開用）.
      *
      * @param  User  $user
-     *
      * @return mixed
      */
     public function openArchives(User $user);
@@ -60,7 +56,6 @@ interface StatusRepository
      *
      * @param  User  $user
      * @param  Tag  $tag
-     *
      * @return array
      */
     public function openUserTagStatus(User $user, Tag $tag);
@@ -69,7 +64,6 @@ interface StatusRepository
      * アカウントのステータス（公開用）.
      *
      * @param  Account  $acct
-     *
      * @return array
      */
     public function openAcctStatuses(Account $acct);
@@ -79,7 +73,6 @@ interface StatusRepository
      *
      * @param  Account  $acct
      * @param  int  $status_id
-     *
      * @return mixed
      */
     public function getByAcct(Account $acct, int $status_id);
@@ -88,7 +81,6 @@ interface StatusRepository
      * ユーザーのカレンダー（公開）.
      *
      * @param  User  $user
-     *
      * @return mixed
      */
     public function openCalendar(User $user);
@@ -97,7 +89,6 @@ interface StatusRepository
      * アカウントのカレンダー（公開）.
      *
      * @param  Account  $acct
-     *
      * @return mixed
      */
     public function openAcctCalendar(Account $acct);
@@ -105,7 +96,6 @@ interface StatusRepository
     /**
      * @param  array  $attr
      * @param  array  $values
-     *
      * @return mixed
      */
     public function updateOrCreate(array $attr, array $values);
@@ -114,7 +104,6 @@ interface StatusRepository
      * CSVエクスポート.
      *
      * @param  Account  $account
-     *
      * @return mixed
      */
     public function exportCsv(Account $account);

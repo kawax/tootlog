@@ -25,7 +25,6 @@ class AccountController extends Controller
      * @param  User  $user
      * @param  string  $username
      * @param  string  $domain
-     *
      * @return mixed
      */
     public function index(User $user, string $username, string $domain)
@@ -47,7 +46,6 @@ class AccountController extends Controller
      * @param  string  $username
      * @param  string  $domain
      * @param  string  $status_id
-     *
      * @return mixed
      */
     public function show(User $user, string $username, string $domain, string $status_id)

@@ -18,7 +18,6 @@ class AccountController extends Controller
      *
      * @param  AccountCreateRequest  $request
      * @param  Server  $server
-     *
      * @return \Illuminate\Http\Response
      */
     public function redirect(AccountCreateRequest $request, Server $server)
@@ -45,7 +44,6 @@ class AccountController extends Controller
      * @param  Request  $request
      * @param  Account  $account
      * @param  Server  $server
-     *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function callback(Request $request, Account $account, Server $server)

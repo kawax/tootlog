@@ -21,7 +21,6 @@ class InstanceVersionJob implements ShouldQueue
      * Create a new job instance.
      *
      * @param  Server  $server
-     *
      * @return void
      */
     public function __construct(protected Server $server)

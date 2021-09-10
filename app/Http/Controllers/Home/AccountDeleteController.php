@@ -11,8 +11,8 @@ class AccountDeleteController extends Controller
     /**
      * @param  Account  $account
      * @param  int  $id
-     *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     *
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function __invoke(Account $account, int $id)
