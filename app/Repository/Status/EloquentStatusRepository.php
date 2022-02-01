@@ -50,7 +50,7 @@ class EloquentStatusRepository implements StatusRepository
      */
     public function updateOrCreate(array $attr, array $values)
     {
-        return Status::updateOrCreate($attr, $values);
+        return Status::withTrashed()->updateOrCreate($attr, $values);
     }
 
     /**
