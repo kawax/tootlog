@@ -38,9 +38,9 @@ class InstanceVersionJob implements ShouldQueue
             $instance = Mastodon::domain($this->server->domain)->instance();
 
             $this->server->fill([
-                'version'   => data_get($instance, 'version', ''),
+                'version' => data_get($instance, 'version', ''),
                 'streaming' => data_get($instance, 'urls.streaming_api', ''),
             ])->save();
-        });
+        }, report: false);
     }
 }
