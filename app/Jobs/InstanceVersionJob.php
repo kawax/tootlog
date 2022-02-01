@@ -9,7 +9,6 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Revolution\Mastodon\Facades\Mastodon;
-use Throwable;
 
 class InstanceVersionJob implements ShouldQueue
 {
@@ -26,6 +25,7 @@ class InstanceVersionJob implements ShouldQueue
      */
     public function __construct(protected Server $server)
     {
+        //
     }
 
     /**
