@@ -3,9 +3,9 @@
 namespace Tests\Feature;
 
 use App\Jobs\InstanceVersionJob;
+use App\Models\Account;
 use App\Models\Server;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Bus;
 use Revolution\Mastodon\Facades\Mastodon;
 use Tests\TestCase;
@@ -32,7 +32,7 @@ class InstanceTest extends TestCase
 
         Mastodon::shouldReceive('domain->instance')->andReturn([
             'version' => 1,
-            'urls'    => [
+            'urls' => [
                 'streaming_api' => 'url',
             ],
         ]);
@@ -40,7 +40,7 @@ class InstanceTest extends TestCase
         $job->handle();
 
         $this->assertDatabaseHas('servers', [
-            'version'   => 1,
+            'version' => 1,
             'streaming' => 'url',
         ]);
     }
@@ -50,6 +50,10 @@ class InstanceTest extends TestCase
         Bus::fake();
 
         $server = factory(Server::class)->create();
+
+        $account = factory(Account::class)->create([
+            'server_id' => $server->id,
+        ]);
 
         $this->artisan('toot:version')
              ->assertExitCode(0);
