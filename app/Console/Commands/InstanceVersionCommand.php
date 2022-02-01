@@ -37,7 +37,7 @@ class InstanceVersionCommand extends Command
      * Execute the console command.
      *
      * @param  ServerRepository  $repository
-     * @return mixed
+     * @return void
      */
     public function handle(ServerRepository $repository)
     {
