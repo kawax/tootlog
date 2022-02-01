@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Jobs\InstanceVersionJob;
+use App\Models\Server;
 use App\Repository\Server\ServerRepository;
 use Illuminate\Console\Command;
 
@@ -40,8 +41,10 @@ class InstanceVersionCommand extends Command
      */
     public function handle(ServerRepository $repository)
     {
-        $repository->all()->each(function ($server) {
-            InstanceVersionJob::dispatch($server);
+        $repository->all()->each(function (Server $server) {
+            if ($server->accounts()->where('fails', '<', 10)->exists()) {
+                InstanceVersionJob::dispatch($server);
+            }
         });
     }
 }
