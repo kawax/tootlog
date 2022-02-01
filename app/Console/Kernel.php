@@ -39,6 +39,8 @@ class Kernel extends ConsoleKernel
                  ->dailyAt('23:20');
 
         $schedule->command('horizon:snapshot')->everyFiveMinutes();
+
+        $schedule->command('queue:prune-failed', ['--hours' => 48])->hourly();
     }
 
     /**
