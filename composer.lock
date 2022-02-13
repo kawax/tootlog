@@ -2124,6 +2124,7 @@
                 "source": "https://github.com/Laravelium/laravel-sitemap",
                 "wiki": "https://github.com/Laravelium/laravel-sitemap/wiki"
             },
+            "abandoned": true,
             "time": "2020-09-10T20:49:55+00:00"
         },
         {
@@ -5607,12 +5608,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Mbstring\\": ""
-                },
                 "files": [
                     "bootstrap.php"
-                ]
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Mbstring\\": ""
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
