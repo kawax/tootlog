@@ -19,17 +19,23 @@ class FooterInfo extends Component
     {
         $minutes = now()->addDay();
 
-        $this->footer_servers = cache()->remember('footer_servers', $minutes, function () {
-            return Server::count();
-        });
+        $this->footer_servers = cache()->remember(
+            'footer_servers',
+            $minutes,
+            fn () => Server::count()
+        );
 
-        $this->footer_accounts = cache()->remember('footer_accounts', $minutes, function () {
-            return Account::count();
-        });
+        $this->footer_accounts = cache()->remember(
+            'footer_accounts',
+            $minutes,
+            fn () => Account::count()
+        );
 
-        $this->footer_statuses = cache()->remember('footer_statuses', $minutes, function () {
-            return Status::count();
-        });
+        $this->footer_statuses = cache()->remember(
+            'footer_statuses',
+            $minutes,
+            fn () => Status::count()
+        );
     }
 
     public function render()

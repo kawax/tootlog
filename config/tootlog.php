@@ -3,7 +3,7 @@
 use function Revolution\Illuminate\Support\env;
 
 return [
-    'version'       => 'v1.14.0',
+    'version'       => 'v1.15.0',
 
     //一度に更新するアカウント数
     'account_limit' => 3,
@@ -12,9 +12,7 @@ return [
     'account_fails' => 10,
 
     //streaming api用のURLが違う場合
-    'streaming'     => [
-        'https://qiitadon.com' => 'wss://streaming.qiitadon.com:4000',
-    ],
+    'streaming'     => [],
 
     'favicon_size' => 24,
 
