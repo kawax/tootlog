@@ -4,43 +4,47 @@ namespace App\Http\Controllers;
 
 use App\Models\Account;
 use App\Models\User;
-use Laravelium\Sitemap\Sitemap;
+use Illuminate\Http\Request;
+use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\Tags\Url;
 
 class SitemapController extends Controller
 {
-    /**
-     * @param  Sitemap  $sitemap
-     * @return mixed
-     */
-    public function __invoke(Sitemap $sitemap)
+    public function __invoke(Request $request)
     {
-        $sitemap->setCache('tootlog.sitemaps', 60);
+        $sitemap = Sitemap::create();
 
-        if (! $sitemap->isCached()) {
-            $sitemap->add(url('/'), now(), '0.2', 'weekly');
+        $sitemap->add(
+            Url::create(url('/'))
+               ->setLastModificationDate(now())
+               ->setPriority(0.2)
+               ->setChangeFrequency('weekly')
+        );
 
-            foreach (User::latest()->cursor() as $user) {
-                $sitemap->add(
-                    route('open.user', ['user' => $user]),
-                    $user->updated_at,
-                    '1.0',
-                    'hourly'
-                );
-            }
-
-            $accounts = Account::where('locked', false)
-                               ->latest()
-                               ->cursor();
-
-            foreach ($accounts as $account) {
-                $sitemap->add(route('open.account.index', [
-                    'user'     => $account->user,
-                    'username' => $account->username,
-                    'domain'   => $account->domain,
-                ]), $account->updated_at, '0.5', 'hourly');
-            }
+        foreach (User::latest()->cursor() as $user) {
+            $sitemap->add(
+                Url::create(route('open.user', ['user' => $user]))
+                   ->setLastModificationDate($user->updated_at)
+                   ->setPriority(1.0)
+                   ->setChangeFrequency('hourly')
+            );
         }
 
-        return $sitemap->render('xml');
+        $accounts = Account::where('locked', false)
+                           ->latest()
+                           ->cursor();
+
+        foreach ($accounts as $account) {
+            $sitemap->add(
+                Url::create(route('open.account.index', [
+                    'user' => $account->user,
+                    'username' => $account->username,
+                    'domain' => $account->domain,
+                ]))->setLastModificationDate($account->updated_at)
+                   ->setPriority(0.5)
+                   ->setChangeFrequency('hourly'));
+        }
+
+        return $sitemap->toResponse($request);
     }
 }

@@ -8,7 +8,6 @@ use App\Http\Controllers\Home\PreferencesController;
 use App\Http\Controllers\Home\TimelineController;
 use App\Http\Controllers\InstanceController;
 use App\Http\Controllers\SitemapController;
-use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,43 +21,41 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware(['auth', 'verified'])->group(
-    function () {
-        Route::name('accounts.add')->post('accounts')
-             ->uses([AccountController::class, 'redirect']);
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::name('accounts.add')->post('accounts')
+         ->uses([AccountController::class, 'redirect']);
 
-        Route::get('accounts/callback')
-             ->uses([AccountController::class, 'callback']);
+    Route::get('accounts/callback')
+         ->uses([AccountController::class, 'callback']);
 
-        Route::name('accounts.delete')
-             ->delete('accounts/delete/{id}')
-             ->uses(AccountDeleteController::class);
+    Route::name('accounts.delete')
+         ->delete('accounts/delete/{id}')
+         ->uses(AccountDeleteController::class);
 
-        Route::name('timeline')
-             ->get('timeline')
-             ->uses([TimelineController::class, 'index']);
+    Route::name('timeline')
+         ->get('timeline')
+         ->uses([TimelineController::class, 'index']);
 
-        Route::name('timeline.account')
-             ->get('timeline/{username}@{domain}')
-             ->uses([TimelineController::class, 'acct']);
+    Route::name('timeline.account')
+         ->get('timeline/{username}@{domain}')
+         ->uses([TimelineController::class, 'acct']);
 
-        Route::name('preferences.index')
-             ->get('preferences')
-             ->uses([PreferencesController::class, 'index']);
+    Route::name('preferences.index')
+         ->get('preferences')
+         ->uses([PreferencesController::class, 'index']);
 
-        Route::name('preferences.update')
-             ->post('preferences')
-             ->uses([PreferencesController::class, 'update']);
+    Route::name('preferences.update')
+         ->post('preferences')
+         ->uses([PreferencesController::class, 'update']);
 
-        Route::name('export.csv')
-             ->post('export/csv')
-             ->uses([ExportController::class, 'csv']);
+    Route::name('export.csv')
+         ->post('export/csv')
+         ->uses([ExportController::class, 'csv']);
 
-        Route::name('home')
-             ->get('home')
-             ->uses(HomeController::class);
-    }
-);
+    Route::name('home')
+         ->get('home')
+         ->uses(HomeController::class);
+});
 
 Route::name('instances')
      ->get('instances')
@@ -67,8 +64,6 @@ Route::name('instances')
 Route::get('sitemaps')
      ->uses(SitemapController::class);
 
-Route::name('welcome')
-     ->get('/')
-     ->uses(WelcomeController::class);
+Route::view('/', 'welcome')->name('welcome');
 
 Route::view('usage', 'pages.usage');

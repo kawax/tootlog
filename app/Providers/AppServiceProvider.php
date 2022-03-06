@@ -21,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
 
         Mastodon::macro('instance', fn () => $this->get('/instance'));
 
-        Paginator::useBootstrap();
+        Paginator::useBootstrapFour();
     }
 
     /**
