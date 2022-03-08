@@ -32,7 +32,7 @@ class Kernel extends ConsoleKernel
 
         $schedule->command('toot:info')
                  ->dailyAt('08:00')
-                 ->when(! app()->isLocal());
+                 ->when(app()->isProduction());
 
         $schedule->command('toot:version')
                  ->timezone('Asia/Tokyo')
