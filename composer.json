@@ -10,6 +10,7 @@
   "require": {
     "php": "^8.0.2",
     "aws/aws-sdk-php": "^3.212",
+    "biscolab/laravel-recaptcha": "^5.3",
     "doctrine/dbal": "^3.3",
     "guzzlehttp/guzzle": "^7.4",
     "laravel/fortify": "^1.11",

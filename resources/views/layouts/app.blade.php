@@ -19,6 +19,8 @@
 
     @livewireStyles
 
+    {!! htmlScriptTagJsApi() !!}
+
     <meta name="google-site-verification" content="AjfwegofAkFuyDlrRBsMo8k4y6rpfEri5Qjd7uz3PbQ">
 </head>
 <body class="theme-{{ auth()->user()->theme ?? 'thin' }}">
