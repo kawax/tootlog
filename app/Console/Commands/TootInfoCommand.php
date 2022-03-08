@@ -57,9 +57,9 @@ class TootInfoCommand extends Command
         ]);
 
         $status = [
-            '🌐 '.Server::count().' instances',
-            $faces->random().' '.Account::count().' accounts',
-            '💬 '.Status::count().' statuses',
+            '🌐 '.Server::count('id').' instances',
+            $faces->random().' '.Account::count('id').' accounts',
+            '💬 '.Status::count('id').' statuses',
         ];
 
         Mastodon::domain(config('services.mastodon_notify.domain'))
