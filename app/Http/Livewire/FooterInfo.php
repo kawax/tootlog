@@ -22,19 +22,19 @@ class FooterInfo extends Component
         $this->footer_servers = cache()->remember(
             'footer_servers',
             $minutes,
-            fn () => Server::count()
+            fn () => Server::count('id')
         );
 
         $this->footer_accounts = cache()->remember(
             'footer_accounts',
             $minutes,
-            fn () => Account::count()
+            fn () => Account::count('id')
         );
 
         $this->footer_statuses = cache()->remember(
             'footer_statuses',
             $minutes,
-            fn () => Status::count()
+            fn () => Status::count('id')
         );
     }
 
