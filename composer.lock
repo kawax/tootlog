@@ -4494,16 +4494,16 @@
         },
         {
             "name": "spatie/crawler",
-            "version": "7.1.1",
+            "version": "7.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/crawler.git",
-                "reference": "31f7eb8661340bc878f7e32a8ece90308ec713ae"
+                "reference": "aafde8073204e237958ae24cc81c67a7fd4d849b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/crawler/zipball/31f7eb8661340bc878f7e32a8ece90308ec713ae",
-                "reference": "31f7eb8661340bc878f7e32a8ece90308ec713ae",
+                "url": "https://api.github.com/repos/spatie/crawler/zipball/aafde8073204e237958ae24cc81c67a7fd4d849b",
+                "reference": "aafde8073204e237958ae24cc81c67a7fd4d849b",
                 "shasum": ""
             },
             "require": {
@@ -4517,6 +4517,7 @@
                 "symfony/dom-crawler": "^5.2|^6.0"
             },
             "require-dev": {
+                "pestphp/pest": "^1.21",
                 "phpunit/phpunit": "^9.5"
             },
             "type": "library",
@@ -4545,7 +4546,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/crawler/issues",
-                "source": "https://github.com/spatie/crawler/tree/7.1.1"
+                "source": "https://github.com/spatie/crawler/tree/7.1.2"
             },
             "funding": [
                 {
@@ -4557,7 +4558,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-03-20T17:08:21+00:00"
+            "time": "2022-05-30T08:30:32+00:00"
         },
         {
             "name": "spatie/image",
