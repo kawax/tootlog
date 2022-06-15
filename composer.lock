@@ -58,16 +58,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.225.3",
+            "version": "3.225.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "ee717ffeb6d7c6bd0278b51b9f070b3571ac4eb0"
+                "reference": "ddfe35918317380245c376a3b2b97b7428135ae1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/ee717ffeb6d7c6bd0278b51b9f070b3571ac4eb0",
-                "reference": "ee717ffeb6d7c6bd0278b51b9f070b3571ac4eb0",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/ddfe35918317380245c376a3b2b97b7428135ae1",
+                "reference": "ddfe35918317380245c376a3b2b97b7428135ae1",
                 "shasum": ""
             },
             "require": {
@@ -143,9 +143,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.225.3"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.225.4"
             },
-            "time": "2022-06-13T18:56:48+00:00"
+            "time": "2022-06-14T18:32:31+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -3360,16 +3360,16 @@
         },
         {
             "name": "paragonie/constant_time_encoding",
-            "version": "v2.6.2",
+            "version": "v2.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/constant_time_encoding.git",
-                "reference": "c1b1d82d109846ba58a4664dc5480c69ad2fc097"
+                "reference": "58c3f47f650c94ec05a151692652a868995d2938"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/constant_time_encoding/zipball/c1b1d82d109846ba58a4664dc5480c69ad2fc097",
-                "reference": "c1b1d82d109846ba58a4664dc5480c69ad2fc097",
+                "url": "https://api.github.com/repos/paragonie/constant_time_encoding/zipball/58c3f47f650c94ec05a151692652a868995d2938",
+                "reference": "58c3f47f650c94ec05a151692652a868995d2938",
                 "shasum": ""
             },
             "require": {
@@ -3423,7 +3423,7 @@
                 "issues": "https://github.com/paragonie/constant_time_encoding/issues",
                 "source": "https://github.com/paragonie/constant_time_encoding"
             },
-            "time": "2022-06-13T05:29:16+00:00"
+            "time": "2022-06-14T06:56:20+00:00"
         },
         {
             "name": "phpoption/phpoption",
