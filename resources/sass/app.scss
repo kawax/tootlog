@@ -15,9 +15,9 @@
 @import "variables";
 
 // Bootstrap
-@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "bootstrap/scss/bootstrap";
 
-@import "../../node_modules/font-awesome/scss/font-awesome";
+//@import "font-awesome/scss/font-awesome";
 
 $font-family-sans-serif: "Nunito", "Noto Sans", "Noto Sans CJK JP",
 -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Yu Gothic", sans-serif;

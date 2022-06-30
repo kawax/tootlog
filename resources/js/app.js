@@ -1,8 +1,7 @@
-require('./bootstrap')
-
-import { createApp } from 'vue'
-import UserTimeline from './components/UserTimeline'
-import twemoji from 'twemoji'
+import'./bootstrap';
+import { createApp } from 'vue';
+import UserTimeline from './components/UserTimeline.vue';
+import twemoji from 'twemoji';
 
 createApp({
     components: {

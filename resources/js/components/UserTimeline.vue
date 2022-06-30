@@ -44,9 +44,9 @@
 
 <script>
 import { format, parseISO } from 'date-fns'
-import TimelineReblog from './TimelineReblog'
-import TimelineStatus from './TimelineStatus'
-import Card from './Card'
+import TimelineReblog from './TimelineReblog.vue'
+import TimelineStatus from './TimelineStatus.vue'
+import Card from './Card.vue'
 
 export default {
     components: {

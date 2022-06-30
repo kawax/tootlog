@@ -13,7 +13,7 @@
 
     @stack('robots')
 
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
     <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}" sizes="32x32">
 
@@ -89,10 +89,6 @@
 
 
 </div>
-
-<script src="{{ mix('js/manifest.js') }}"></script>
-<script src="{{ mix('js/vendor.js') }}"></script>
-<script src="{{ mix('js/app.js') }}"></script>
 
 @livewireScripts
 
