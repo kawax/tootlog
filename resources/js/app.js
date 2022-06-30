@@ -1,12 +1,12 @@
 import'./bootstrap';
-import { createApp } from 'vue';
+import { createApp } from 'vue/dist/vue.esm-bundler.js';
 import UserTimeline from './components/UserTimeline.vue';
 import twemoji from 'twemoji';
 
-createApp({
-    components: {
-        'tt-user-timeline': UserTimeline,
-    },
-}).mount('#app')
+const app = createApp({});
 
-twemoji.parse(document.body)
+app.component('tt-user-timeline', UserTimeline);
+
+app.mount('#app');
+
+twemoji.parse(document.body);

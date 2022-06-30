@@ -13,13 +13,13 @@
 
     @stack('robots')
 
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-
     <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}" sizes="32x32">
 
     @livewireStyles
 
     {!! htmlScriptTagJsApi() !!}
+
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
     <meta name="google-site-verification" content="AjfwegofAkFuyDlrRBsMo8k4y6rpfEri5Qjd7uz3PbQ">
 </head>
