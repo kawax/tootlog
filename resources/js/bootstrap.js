@@ -1,11 +1,11 @@
 import lodash from 'lodash';
-import popper from 'popper.js';
+// import popper from 'popper.js';
 import jquery from 'jquery';
 import 'bootstrap';
 import axios from 'axios';
 
 window._ = lodash;
-window.Popper = popper.default;
+// window.Popper = popper.default;
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -28,6 +28,7 @@ window.axios = axios;
 window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 
 import 'font-awesome/scss/font-awesome.scss';
+import '../sass/app.scss';
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening

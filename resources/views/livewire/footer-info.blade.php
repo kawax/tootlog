@@ -1,5 +1,5 @@
-<div>
-    <div wire:init="loadInfo">
+<div wire:init="loadInfo">
+    <div>
     <span class="badge badge-pill badge-secondary">
         <a href="{{ route('instances') }}" class="text-white">
             {{ $footer_servers }} instances
