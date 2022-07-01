@@ -10,9 +10,9 @@
                 'month' => explode('-', $date)[1],
                 'day' => explode('-', $date)[2]]) }}"
                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                    <i class="fa fa-calendar-o mr-1" aria-hidden="true"></i>
+                    <i class="fa fa-calendar-o me-1" aria-hidden="true"></i>
                     {{ $date }}
-                    <span class="badge badge-pill badge-secondary ml-auto">{{ $recent }}</span>
+                    <span class="badge rounded-pill bg-secondary ms-auto">{{ $recent }}</span>
                 </a>
             @endforeach
         </div>

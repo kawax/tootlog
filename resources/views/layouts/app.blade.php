@@ -26,11 +26,13 @@
 <body class="theme-{{ auth()->user()->theme ?? 'thin' }}">
 <div id="app">
     <nav class="navbar navbar-expand-lg navbar-light navbar-laravel bg-white border-bottom navbar-static-top mb-2">
+        <div class="container-fluid">
+
         <a class="navbar-brand" href="{{ url('/') }}">
             {{ config('app.name', 'Laravel') }}
         </a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -43,7 +45,7 @@
                 @endauth
             </ul>
 
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ms-auto">
 
                 @if (Auth::guest())
                     <li class="nav-item"><a href="{{ route('login') }}" class="nav-link" ref="nofollow">Login</a></li>
@@ -51,7 +53,7 @@
                     </li>
                 @else
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false" v-pre>
 
                             {{ Auth::user()->name }} <span class="caret"></span>
@@ -80,6 +82,7 @@
                 @endif
             </ul>
 
+        </div>
         </div>
     </nav>
 

@@ -1,10 +1,12 @@
 <template>
-    <div class="media p-1 m-1">
-        <a :href="post.account.url" target="_blank" rel="nofollow noopener">
-            <img class="rounded toot-icon" :src="post.account.avatar"/>
-        </a>
+    <div class="d-flex p-1 m-1">
+        <div class="flex-shrink-0">
+            <a :href="post.account.url" target="_blank" rel="nofollow noopener">
+                <img class="rounded toot-icon" :src="post.account.avatar"/>
+            </a>
+        </div>
 
-        <div class="media-body ml-3">
+        <div class="flex-grow-1 ms-3">
             <h4>
                 <a
                     :href="post.account.url"
@@ -48,25 +50,25 @@
 </template>
 
 <script>
-  import { format, parseISO } from 'date-fns'
-  import emoji from '../emoji'
+import { format, parseISO } from 'date-fns'
+import emoji from '../emoji'
 
-  export default {
-      props: {
-          post: Object
-      },
-    methods: {
-      display_name () {
-        return this.post.account.display_name
-          ? this.emoji(this.post.account.display_name)
-          : this.post.account.username
-      },
-      emoji (input) {
-        return emoji.toImage(input)
-      },
-      formatDate (date) {
-        return format(parseISO(date), 'yyyy-MM-dd HH:mm:ss')
-      },
+export default {
+    props: {
+        post: Object,
     },
-  }
+    methods: {
+        display_name () {
+            return this.post.account.display_name
+                ? this.emoji(this.post.account.display_name)
+                : this.post.account.username
+        },
+        emoji (input) {
+            return emoji.toImage(input)
+        },
+        formatDate (date) {
+            return format(parseISO(date), 'yyyy-MM-dd HH:mm:ss')
+        },
+    },
+}
 </script>

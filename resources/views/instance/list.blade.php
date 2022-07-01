@@ -17,15 +17,15 @@
 
                             <div class="text-left">
                                 <img src="{{ $instance->favicon }}" width="{{ config('tootlog.favicon_size') }}"
-                                     class="rounded-circle mr-1" alt="favicon">
+                                     class="rounded-circle me-1" alt="favicon">
 
                                 {{ $instance->domain }}
                             </div>
 
                             <div class="text-right">
                                 <span
-                                    class="badge badge-pill badge-secondary">{{ $instance->accounts_count }} users</span>
-                                <span class="badge badge-pill badge-secondary">{{ $instance->version }}</span>
+                                    class="badge rounded-pill text-bg-secondary">{{ $instance->accounts_count }} users</span>
+                                <span class="badge rounded-pill text-bg-secondary">{{ $instance->version }}</span>
                             </div>
 
                         </a>

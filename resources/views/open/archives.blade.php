@@ -33,10 +33,10 @@
                         'month' => explode('-', $date)[1]]) }}"
                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
 
-                            <i class="fa fa-calendar mr-1" aria-hidden="true"></i>
+                            <i class="fa fa-calendar me-1" aria-hidden="true"></i>
                             {{ $date }}
 
-                            <span class="badge badge-pill badge-secondary ml-auto">{{ $archive }}</span>
+                            <span class="badge rounded-pill bg-secondary ms-auto">{{ $archive }}</span>
 
                         </a>
 

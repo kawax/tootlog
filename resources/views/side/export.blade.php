@@ -5,7 +5,7 @@
         <form method="POST" action="{{ route('export.csv') }}" accept-charset="UTF-8" class="form-horizontal">
             @csrf
 
-            <input class="btn btn-primary btn-block" type="submit" value="CSV Export">
+            <input class="btn btn-primary" type="submit" value="CSV Export">
 
         </form>
 

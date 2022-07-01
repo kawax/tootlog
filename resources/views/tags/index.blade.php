@@ -27,7 +27,7 @@
                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                             <i class="fa fa-tag" aria-hidden="true"></i>
                             #{{ $tag->name }}
-                            <span class="badge badge-pill badge-secondary ml-auto">{{ $tag->statuses_count }}</span>
+                            <span class="badge rounded-pill bg-secondary ms-auto">{{ $tag->statuses_count }}</span>
 
                         </a>
                     @endforeach
