@@ -6,11 +6,11 @@
     <div class="container-fluid">
         <div class="row py-3 justify-content-md-center">
             <div class="col-md-8">
-                <div class="jumbotron">
+                <div class="p-4 mb-3 bg-light border rounded-3">
                     <h1>tootlog</h1>
                     <p>Mastodon log archives service.</p>
-                    <p>
-                        <a class="btn btn-primary btn-lg mr-1" href="{{ route('login') }}" role="button">Login</a>
+                    <p class="d-flex flex-row gap-2">
+                        <a class="btn btn-primary btn-lg" href="{{ route('login') }}" role="button">Login</a>
                         <a class="btn btn-primary btn-lg" href="{{ route('register') }}" role="button">Register</a>
                     </p>
                     <small>

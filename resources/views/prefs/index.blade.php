@@ -7,14 +7,13 @@
                 <div class="card">
                     <div class="card-header bg-white">User Preferences</div>
                     <div class="card-body">
-                        <form class="form-horizontal" role="form" method="POST"
-                              action="{{ route('preferences.update') }}">
+                        <form role="form" method="POST" action="{{ route('preferences.update') }}">
                             @csrf
 
-                            <div class="form-group row{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <div class="mb-3 row{{ $errors->has('email') ? ' has-error' : '' }}">
                                 <label for="email" class="col-md-4 col-form-label">E-Mail Address
                                     @if(request()->user()->hasVerifiedEmail())
-                                        <span class="badge badge-pill badge-success">Verified</span>
+                                        <span class="badge rounded-pill bg-success">Verified</span>
                                     @endif
                                 </label>
 
@@ -32,7 +31,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row{{ $errors->has('theme') ? ' has-error' : '' }}">
+                            <div class="mb-3 row{{ $errors->has('theme') ? ' has-error' : '' }}">
                                 <label for="theme" class="col-md-4 col-form-label">Font</label>
 
                                 <div class="col-md-6">
@@ -54,9 +53,9 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row">
-                                <div class="col">
-                                    <button type="submit" class="btn btn-primary btn-block">
+                            <div class="row">
+                                <div class="col d-grid">
+                                    <button type="submit" class="btn btn-primary">
                                         Save
                                     </button>
                                 </div>

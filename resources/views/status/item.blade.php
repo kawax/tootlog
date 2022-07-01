@@ -2,14 +2,16 @@
     <div class="card mb-2">
         <div class="card-body">
 
-            <div class="media">
-                <a href="{{ $status->account->url }}" target="_blank" rel="nofollow noopener">
-                    <img class="rounded toot-icon"
-                         src="{{ $status->account->avatar }}"
-                         alt="{{ $status->name }}"
-                         title="{{ $status->name }}">
-                </a>
-                <div class="media-body ml-3">
+            <div class="d-flex">
+                <div class="flex-shrink-0">
+                    <a href="{{ $status->account->url }}" target="_blank" rel="nofollow noopener">
+                        <img class="rounded toot-icon"
+                             src="{{ $status->account->avatar }}"
+                             alt="{{ $status->name }}"
+                             title="{{ $status->name }}">
+                    </a>
+                </div>
+                <div class="flex-grow-1 ms-3">
                     <h4>
                         <a href="{{ $status->account->url }}" target="_blank"
                            rel="nofollow noopener">{{ $status->name }} </a>

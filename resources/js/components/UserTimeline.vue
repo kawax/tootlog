@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="btn-toolbar mb-2" role="toolbar" aria-label="toolbar">
-            <div class="btn-group pr-1" role="group">
+            <div class="btn-group pe-1" role="group">
                 <button
                     type="button"
                     class="btn btn-secondary"

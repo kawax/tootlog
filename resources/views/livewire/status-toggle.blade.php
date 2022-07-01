@@ -1,12 +1,13 @@
-<div class="custom-control custom-switch">
+<div class="form-check form-switch">
     <input type="checkbox"
-           class="custom-control-input"
-           id="customSwitch{{ $status->id }}"
+           role="switch"
+           class="form-check-input"
+           id="SwitchCheck{{ $status->id }}"
            wire:click="toggle"
-           @unless($status->trashed()) checked @endunless
+           @checked(! $status->trashed())
     >
-    <label class="custom-control-label text-muted"
-           for="customSwitch{{ $status->id }}"
+    <label class="form-check-label text-muted"
+           for="SwitchCheck{{ $status->id }}"
     >
         @unless($status->trashed()) Show @else Hide @endunless
     </label>

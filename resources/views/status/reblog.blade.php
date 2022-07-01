@@ -7,8 +7,8 @@
         {{ $status->name }} reblogged at {{ $status->local_datetime->diffForHumans() }}</div>
 
     <div class="card-body">
-        <div class="media">
-            <div class="media-left">
+        <div class="d-flex">
+            <div class="flex-shrink-0">
                 <a href="{{ $status->reblog->account_url }}" target="_blank" rel="nofollow noopener">
                     <img class="media-object rounded toot-icon"
                          src="{{ $status->reblog->avatar }}"
@@ -16,10 +16,10 @@
                          title="{{ $status->reblog->name }}">
                 </a>
             </div>
-            <div class="media-body ml-3">
+            <div class="flex-grow-1 ms-3">
                 <h4 class="media-heading">
                     <a href="{{ $status->reblog->account_url }}" target="_blank" rel="nofollow noopener">{{ $status->reblog->name }}</a>
-                    <small>{{ $status->reblog->acct }}</small>
+                    <small class="text-muted">{{ $status->reblog->acct }}</small>
                 </h4>
 
                 @if(empty($status->reblog->spoiler_text))
