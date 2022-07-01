@@ -1,11 +1,9 @@
 import lodash from 'lodash';
-// import popper from 'popper.js';
 import jquery from 'jquery';
 import 'bootstrap';
 import axios from 'axios';
 
 window._ = lodash;
-// window.Popper = popper.default;
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -27,7 +25,11 @@ window.axios = axios;
 
 window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 
-import 'font-awesome/scss/font-awesome.scss';
+import '@fortawesome/fontawesome-free/scss/fontawesome.scss'
+import '@fortawesome/fontawesome-free/scss/regular.scss'
+import '@fortawesome/fontawesome-free/scss/solid.scss'
+import '@fortawesome/fontawesome-free/scss/v4-shims.scss'
+
 import '../sass/app.scss';
 
 /**

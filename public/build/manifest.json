@@ -1,17 +1,22 @@
 {
   "resources/js/app.js": {
-    "file": "assets/app.94b5caf1.js",
+    "file": "assets/app.f5b8e5b2.js",
     "src": "resources/js/app.js",
     "isEntry": true,
+    "imports": [
+      "_vendor.09d1595c.js"
+    ],
     "css": [
-      "assets/app.96ef9da0.css"
+      "assets/app.e501d0a0.css"
     ],
     "assets": [
-      "assets/fontawesome-webfont.7bfcab6d.eot",
-      "assets/fontawesome-webfont.2adefcbc.woff2",
-      "assets/fontawesome-webfont.ba0c59de.woff",
-      "assets/fontawesome-webfont.aa58f33f.ttf",
-      "assets/fontawesome-webfont.ad615792.svg"
+      "assets/fa-regular-400.6a274e76.woff2",
+      "assets/fa-regular-400.4e96a7e0.ttf",
+      "assets/fa-solid-900.d76fb4e8.woff2",
+      "assets/fa-solid-900.03f2986c.ttf"
     ]
+  },
+  "_vendor.09d1595c.js": {
+    "file": "assets/vendor.09d1595c.js"
   }
 }
