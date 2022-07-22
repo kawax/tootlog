@@ -1,5 +1,5 @@
 import'./bootstrap';
-import { createApp } from 'vue/dist/vue.esm-bundler.js';
+import { createApp } from 'vue';
 import UserTimeline from './components/UserTimeline.vue';
 import twemoji from 'twemoji';
 
