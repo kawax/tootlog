@@ -58,16 +58,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.234.6",
+            "version": "3.235.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "c0ae9fbc8295678502a8fde6a2ecc49f2bd39580"
+                "reference": "03294ecd13463d4ac46ac866ed918b4aad186bd4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/c0ae9fbc8295678502a8fde6a2ecc49f2bd39580",
-                "reference": "c0ae9fbc8295678502a8fde6a2ecc49f2bd39580",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/03294ecd13463d4ac46ac866ed918b4aad186bd4",
+                "reference": "03294ecd13463d4ac46ac866ed918b4aad186bd4",
                 "shasum": ""
             },
             "require": {
@@ -144,9 +144,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.234.6"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.235.0"
             },
-            "time": "2022-08-30T20:25:10+00:00"
+            "time": "2022-09-01T18:19:51+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -10439,16 +10439,16 @@
         },
         {
             "name": "spatie/laravel-ignition",
-            "version": "1.4.0",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-ignition.git",
-                "reference": "71c627a0838f107562e89bc2b0201a81f26e9011"
+                "reference": "29deea5d9cf921590184be6956e657c4f4566440"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/71c627a0838f107562e89bc2b0201a81f26e9011",
-                "reference": "71c627a0838f107562e89bc2b0201a81f26e9011",
+                "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/29deea5d9cf921590184be6956e657c4f4566440",
+                "reference": "29deea5d9cf921590184be6956e657c4f4566440",
                 "shasum": ""
             },
             "require": {
@@ -10525,7 +10525,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-08-26T13:28:24+00:00"
+            "time": "2022-09-01T11:31:14+00:00"
         },
         {
             "name": "theseer/tokenizer",
