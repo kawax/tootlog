@@ -58,16 +58,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.252.6",
+            "version": "3.253.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "92b929f7552c2ed65d52875dbf1c5ce9833d567d"
+                "reference": "1fc9d166dd8ee7c2a187cf8f3ed9342863208865"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/92b929f7552c2ed65d52875dbf1c5ce9833d567d",
-                "reference": "92b929f7552c2ed65d52875dbf1c5ce9833d567d",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/1fc9d166dd8ee7c2a187cf8f3ed9342863208865",
+                "reference": "1fc9d166dd8ee7c2a187cf8f3ed9342863208865",
                 "shasum": ""
             },
             "require": {
@@ -146,9 +146,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.252.6"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.253.0"
             },
-            "time": "2022-12-09T19:21:09+00:00"
+            "time": "2022-12-12T19:23:54+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -8364,16 +8364,16 @@
         },
         {
             "name": "itsgoingd/clockwork",
-            "version": "v5.1.11",
+            "version": "v5.1.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itsgoingd/clockwork.git",
-                "reference": "a790200347f0c6d07e2fca252ccb446df87520c6"
+                "reference": "c9dbdbb1f0efd19bb80f1080ef63f1b9b1bc3b1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itsgoingd/clockwork/zipball/a790200347f0c6d07e2fca252ccb446df87520c6",
-                "reference": "a790200347f0c6d07e2fca252ccb446df87520c6",
+                "url": "https://api.github.com/repos/itsgoingd/clockwork/zipball/c9dbdbb1f0efd19bb80f1080ef63f1b9b1bc3b1b",
+                "reference": "c9dbdbb1f0efd19bb80f1080ef63f1b9b1bc3b1b",
                 "shasum": ""
             },
             "require": {
@@ -8420,7 +8420,7 @@
             ],
             "support": {
                 "issues": "https://github.com/itsgoingd/clockwork/issues",
-                "source": "https://github.com/itsgoingd/clockwork/tree/v5.1.11"
+                "source": "https://github.com/itsgoingd/clockwork/tree/v5.1.12"
             },
             "funding": [
                 {
@@ -8428,7 +8428,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-11-02T21:11:04+00:00"
+            "time": "2022-12-13T00:04:12+00:00"
         },
         {
             "name": "laravel/legacy-factories",
