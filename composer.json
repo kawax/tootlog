@@ -84,6 +84,8 @@
         ],
         "ide-helper:meta": "php artisan ide-helper:meta",
         "ide-helper:generate": "php artisan ide-helper:generate",
+        "sail:up": "vendor/bin/sail up -d",
+        "sail:down": "vendor/bin/sail down",
         "sail:backup": "vendor/bin/sail art sail:backup:mysql"
     }
 }
