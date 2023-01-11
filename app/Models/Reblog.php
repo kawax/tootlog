@@ -31,8 +31,8 @@ class Reblog extends Model
     /**
      * @var array
      */
-    protected $dates = [
-        'created_at',
+    protected $casts = [
+        'created_at' => 'datetime',
     ];
 
     /**
