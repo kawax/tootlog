@@ -14,7 +14,7 @@ use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Response;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Revolution\Mastodon\Facades\Mastodon;
+use Mastodon;
 use Mockery as m;
 use Tests\TestCase;
 
