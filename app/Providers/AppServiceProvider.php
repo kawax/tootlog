@@ -19,9 +19,9 @@ class AppServiceProvider extends ServiceProvider
         //laravel-log-viewer表示可能
         Gate::define('admin-logs', fn ($user) => $user->isAdmin());
 
-        Mastodon::macro('instance', fn () => $this->get('/instance'));
+        Mastodon::macro('instance', fn (): array => $this->get('/instance'));
 
-        Paginator::useBootstrapFour();
+        Paginator::useBootstrapFive();
     }
 
     /**

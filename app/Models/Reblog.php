@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Reblog extends Model
 {
@@ -46,9 +47,9 @@ class Reblog extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
-    public function statuses()
+    public function statuses(): HasMany
     {
         return $this->hasMany(Status::class);
     }

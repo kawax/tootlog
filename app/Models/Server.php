@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Server extends Model
 {
@@ -45,9 +46,9 @@ class Server extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
-    public function accounts()
+    public function accounts(): HasMany
     {
         return $this->hasMany(Account::class);
     }

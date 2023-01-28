@@ -4,6 +4,8 @@ namespace App\Models;
 
 use App\Models\Presenter\AccountPresenter;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Revolution\Mastodon\Traits\Mastodon;
 
 class Account extends Model
@@ -68,25 +70,25 @@ class Account extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
-    public function user()
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
-    public function server()
+    public function server(): BelongsTo
     {
         return $this->belongsTo(Server::class);
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
-    public function statuses()
+    public function statuses(): HasMany
     {
         return $this->hasMany(Status::class);
     }
@@ -94,7 +96,7 @@ class Account extends Model
     /**
      * @return string
      */
-    protected function mastodonDomain()
+    protected function mastodonDomain(): string
     {
         return $this->server->domain;
     }
@@ -102,7 +104,7 @@ class Account extends Model
     /**
      * @return string
      */
-    protected function mastodonToken()
+    protected function mastodonToken(): string
     {
         return $this->token;
     }

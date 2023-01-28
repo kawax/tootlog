@@ -5,6 +5,8 @@ namespace App\Models;
 use App\Models\Presenter\UserPresenter;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -41,23 +43,23 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @return string
      */
-    public function getRouteKeyName()
+    public function getRouteKeyName(): string
     {
         return 'name';
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
-    public function accounts()
+    public function accounts(): HasMany
     {
         return $this->hasMany(Account::class);
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
+     * @return HasManyThrough
      */
-    public function statuses()
+    public function statuses(): HasManyThrough
     {
         return $this->hasManyThrough(Status::class, Account::class);
     }
