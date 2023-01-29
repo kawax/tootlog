@@ -4486,26 +4486,26 @@
         },
         {
             "name": "revolution/socialite-mastodon",
-            "version": "1.3.3",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kawax/socialite-mastodon.git",
-                "reference": "e0f99cdca7ab012ae7f9511b27f2af5dfa8e4c0e"
+                "reference": "7e926091af7b81b0f3948ddc1b9379d074584515"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kawax/socialite-mastodon/zipball/e0f99cdca7ab012ae7f9511b27f2af5dfa8e4c0e",
-                "reference": "e0f99cdca7ab012ae7f9511b27f2af5dfa8e4c0e",
+                "url": "https://api.github.com/repos/kawax/socialite-mastodon/zipball/7e926091af7b81b0f3948ddc1b9379d074584515",
+                "reference": "7e926091af7b81b0f3948ddc1b9379d074584515",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "laravel/socialite": "*",
-                "php": "^7.2||^8.0"
+                "php": "^8.0"
             },
             "require-dev": {
                 "mockery/mockery": "^1.0",
-                "orchestra/testbench": "^7.0",
+                "orchestra/testbench": "^7.0||^8.0",
                 "phpunit/phpunit": "^9.5"
             },
             "type": "library",
@@ -4539,9 +4539,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kawax/socialite-mastodon/issues",
-                "source": "https://github.com/kawax/socialite-mastodon/tree/1.3.3"
+                "source": "https://github.com/kawax/socialite-mastodon/tree/1.4.0"
             },
-            "time": "2022-11-16T01:16:01+00:00"
+            "time": "2023-01-29T01:06:31+00:00"
         },
         {
             "name": "spatie/browsershot",
