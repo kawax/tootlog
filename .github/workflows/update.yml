@@ -1,4 +1,4 @@
-name: composer update
+name: update
 
 on:
   schedule:
