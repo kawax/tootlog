@@ -87,5 +87,7 @@
         "sail:up": "vendor/bin/sail up -d",
         "sail:down": "vendor/bin/sail down",
         "sail:backup": "vendor/bin/sail art sail:backup:mysql"
-    }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }

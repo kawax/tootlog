@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2267fa4408d449fbba715c19ba7bf2f7",
+    "content-hash": "5187a445c64f3035b498deefa867f1a2",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -58,16 +58,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.258.6",
+            "version": "3.258.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "5284c04bc409dfafc7751d9b80a8e2217aaca68a"
+                "reference": "09808d51cdb3cf01df1564dda4236da61ed9c804"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/5284c04bc409dfafc7751d9b80a8e2217aaca68a",
-                "reference": "5284c04bc409dfafc7751d9b80a8e2217aaca68a",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/09808d51cdb3cf01df1564dda4236da61ed9c804",
+                "reference": "09808d51cdb3cf01df1564dda4236da61ed9c804",
                 "shasum": ""
             },
             "require": {
@@ -146,9 +146,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.258.6"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.258.7"
             },
-            "time": "2023-02-08T19:25:07+00:00"
+            "time": "2023-02-09T19:23:14+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -10954,7 +10954,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": [],
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^8.0.2"
