@@ -3,7 +3,7 @@
 use function Revolution\Illuminate\Support\env;
 
 return [
-    'version'       => 'v1.15.0',
+    'version'       => 'v1.16.0',
 
     //一度に更新するアカウント数
     'account_limit' => 3,
