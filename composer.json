@@ -36,7 +36,7 @@
         "mockery/mockery": "^1.5",
         "nunomaduro/collision": "^7.0",
         "phpunit/phpunit": "^10.0",
-        "revolution/sail-db-backup": "^1.0"
+        "revolution/sail-db-backup": "^2.0"
     },
     "autoload": {
         "classmap": [
