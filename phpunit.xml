@@ -4,10 +4,12 @@
          bootstrap="vendor/autoload.php"
          colors="true"
          cacheDirectory=".phpunit.cache">
-    <coverage>
+    <source>
         <include>
-            <directory suffix=".php">./app</directory>
+            <directory suffix=".php">src/</directory>
         </include>
+    </source>
+    <coverage>
         <report>
             <clover outputFile="build/logs/clover.xml"/>
         </report>
