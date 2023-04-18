@@ -4,24 +4,19 @@
          bootstrap="vendor/autoload.php"
          colors="true"
          cacheDirectory=".phpunit.cache">
-    <source>
-        <include>
-            <directory suffix=".php">src/</directory>
-        </include>
-    </source>
-    <coverage>
-        <report>
-            <clover outputFile="build/logs/clover.xml"/>
-        </report>
-    </coverage>
     <testsuites>
-        <testsuite name="Feature">
-            <directory suffix="Test.php">./tests/Feature</directory>
-        </testsuite>
         <testsuite name="Unit">
             <directory suffix="Test.php">./tests/Unit</directory>
         </testsuite>
+        <testsuite name="Feature">
+            <directory suffix="Test.php">./tests/Feature</directory>
+        </testsuite>
     </testsuites>
+    <source>
+        <include>
+            <directory suffix=".php">./app</directory>
+        </include>
+    </source>
     <php>
         <env name="APP_ENV" value="testing"/>
         <env name="BCRYPT_ROUNDS" value="4"/>
@@ -36,5 +31,4 @@
         <env name="RECAPTCHA_SITE_KEY" value="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"/>
         <env name="RECAPTCHA_SECRET_KEY" value="6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe"/>
     </php>
-    <logging/>
 </phpunit>
