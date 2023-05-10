@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.269.8",
+            "version": "3.269.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "9e9dc24c3c748c91ee5a8c9e058b5ce95fa19dc4"
+                "reference": "18aec5f307bd95588ff5d1fa970eac5b0075a977"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/9e9dc24c3c748c91ee5a8c9e058b5ce95fa19dc4",
-                "reference": "9e9dc24c3c748c91ee5a8c9e058b5ce95fa19dc4",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/18aec5f307bd95588ff5d1fa970eac5b0075a977",
+                "reference": "18aec5f307bd95588ff5d1fa970eac5b0075a977",
                 "shasum": ""
             },
             "require": {
@@ -151,9 +151,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.269.8"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.269.9"
             },
-            "time": "2023-05-08T18:20:53+00:00"
+            "time": "2023-05-09T18:20:58+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -1726,16 +1726,16 @@
         },
         {
             "name": "laravel/fortify",
-            "version": "v1.17.1",
+            "version": "v1.17.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/fortify.git",
-                "reference": "76908639d6c58a4996ce8bbacea9ec7f610b2ec6"
+                "reference": "fc4b9b00b0d657dd035751b286f412976596ba32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/fortify/zipball/76908639d6c58a4996ce8bbacea9ec7f610b2ec6",
-                "reference": "76908639d6c58a4996ce8bbacea9ec7f610b2ec6",
+                "url": "https://api.github.com/repos/laravel/fortify/zipball/fc4b9b00b0d657dd035751b286f412976596ba32",
+                "reference": "fc4b9b00b0d657dd035751b286f412976596ba32",
                 "shasum": ""
             },
             "require": {
@@ -1786,20 +1786,20 @@
                 "issues": "https://github.com/laravel/fortify/issues",
                 "source": "https://github.com/laravel/fortify"
             },
-            "time": "2023-04-19T15:48:59+00:00"
+            "time": "2023-04-26T13:35:07+00:00"
         },
         {
             "name": "laravel/framework",
-            "version": "v10.9.0",
+            "version": "v10.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "35078125f61ef0b125edf524de934f108d4b47fd"
+                "reference": "0da22a8d179f79b49d4e71f4822f759651f35012"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/35078125f61ef0b125edf524de934f108d4b47fd",
-                "reference": "35078125f61ef0b125edf524de934f108d4b47fd",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/0da22a8d179f79b49d4e71f4822f759651f35012",
+                "reference": "0da22a8d179f79b49d4e71f4822f759651f35012",
                 "shasum": ""
             },
             "require": {
@@ -1986,20 +1986,20 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2023-04-25T13:47:18+00:00"
+            "time": "2023-05-09T13:08:05+00:00"
         },
         {
             "name": "laravel/horizon",
-            "version": "v5.15.0",
+            "version": "v5.15.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "b49be302566365e0e4d517aac9995a8fe20b580e"
+                "reference": "952c2a0caa79b3fdc513e8db668029004f3a0f35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/b49be302566365e0e4d517aac9995a8fe20b580e",
-                "reference": "b49be302566365e0e4d517aac9995a8fe20b580e",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/952c2a0caa79b3fdc513e8db668029004f3a0f35",
+                "reference": "952c2a0caa79b3fdc513e8db668029004f3a0f35",
                 "shasum": ""
             },
             "require": {
@@ -2062,9 +2062,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/horizon/issues",
-                "source": "https://github.com/laravel/horizon/tree/v5.15.0"
+                "source": "https://github.com/laravel/horizon/tree/v5.15.1"
             },
-            "time": "2023-03-07T17:45:21+00:00"
+            "time": "2023-04-26T16:00:44+00:00"
         },
         {
             "name": "laravel/serializable-closure",
@@ -8593,23 +8593,23 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.21.5",
+            "version": "v1.22.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "27af207bb1c53faddcba34c7528b3e969f6a646d"
+                "reference": "923e1e112b6a8598664dbb0ee79dd3137f1c9d56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/27af207bb1c53faddcba34c7528b3e969f6a646d",
-                "reference": "27af207bb1c53faddcba34c7528b3e969f6a646d",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/923e1e112b6a8598664dbb0ee79dd3137f1c9d56",
+                "reference": "923e1e112b6a8598664dbb0ee79dd3137f1c9d56",
                 "shasum": ""
             },
             "require": {
                 "illuminate/console": "^8.0|^9.0|^10.0",
                 "illuminate/contracts": "^8.0|^9.0|^10.0",
                 "illuminate/support": "^8.0|^9.0|^10.0",
-                "php": "^7.3|^8.0",
+                "php": "^8.0",
                 "symfony/yaml": "^6.0"
             },
             "require-dev": {
@@ -8654,7 +8654,7 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
-            "time": "2023-04-24T13:29:38+00:00"
+            "time": "2023-05-04T14:52:56+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -10758,16 +10758,16 @@
         },
         {
             "name": "spatie/laravel-ignition",
-            "version": "2.1.1",
+            "version": "2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-ignition.git",
-                "reference": "802c7e27754456e45134f1a9d29ab7df4b6cb9e4"
+                "reference": "2f99fa6b732a6049e78ed34e4608ce589605ae54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/802c7e27754456e45134f1a9d29ab7df4b6cb9e4",
-                "reference": "802c7e27754456e45134f1a9d29ab7df4b6cb9e4",
+                "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/2f99fa6b732a6049e78ed34e4608ce589605ae54",
+                "reference": "2f99fa6b732a6049e78ed34e4608ce589605ae54",
                 "shasum": ""
             },
             "require": {
@@ -10846,7 +10846,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-05-04T13:54:49+00:00"
+            "time": "2023-05-09T07:19:31+00:00"
         },
         {
             "name": "symfony/yaml",
