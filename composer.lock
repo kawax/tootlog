@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.271.0",
+            "version": "3.271.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "4812b557b375e2d2c8107730c43dfff90c3cf103"
+                "reference": "707552cfb1fa37e8e501d2c70afa9bc2e61104c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/4812b557b375e2d2c8107730c43dfff90c3cf103",
-                "reference": "4812b557b375e2d2c8107730c43dfff90c3cf103",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/707552cfb1fa37e8e501d2c70afa9bc2e61104c0",
+                "reference": "707552cfb1fa37e8e501d2c70afa9bc2e61104c0",
                 "shasum": ""
             },
             "require": {
@@ -151,9 +151,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.271.0"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.271.1"
             },
-            "time": "2023-05-23T19:11:46+00:00"
+            "time": "2023-05-24T18:20:35+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -1983,16 +1983,16 @@
         },
         {
             "name": "laravel/horizon",
-            "version": "v5.15.1",
+            "version": "v5.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "952c2a0caa79b3fdc513e8db668029004f3a0f35"
+                "reference": "4f762b1bd47b51f0557da84873a208410de9eece"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/952c2a0caa79b3fdc513e8db668029004f3a0f35",
-                "reference": "952c2a0caa79b3fdc513e8db668029004f3a0f35",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/4f762b1bd47b51f0557da84873a208410de9eece",
+                "reference": "4f762b1bd47b51f0557da84873a208410de9eece",
                 "shasum": ""
             },
             "require": {
@@ -2055,9 +2055,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/horizon/issues",
-                "source": "https://github.com/laravel/horizon/tree/v5.15.1"
+                "source": "https://github.com/laravel/horizon/tree/v5.16.0"
             },
-            "time": "2023-04-26T16:00:44+00:00"
+            "time": "2023-05-18T14:11:32+00:00"
         },
         {
             "name": "laravel/serializable-closure",
