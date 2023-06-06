@@ -4532,16 +4532,16 @@
         },
         {
             "name": "revolution/laravel-mastodon-api",
-            "version": "3.0.2",
+            "version": "3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kawax/laravel-mastodon-api.git",
-                "reference": "eb20cefed6a4bc1e245560d02d1a6ca753739e50"
+                "reference": "b093f818d63f8da6a64114ce8ad2bcb636c40791"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kawax/laravel-mastodon-api/zipball/eb20cefed6a4bc1e245560d02d1a6ca753739e50",
-                "reference": "eb20cefed6a4bc1e245560d02d1a6ca753739e50",
+                "url": "https://api.github.com/repos/kawax/laravel-mastodon-api/zipball/b093f818d63f8da6a64114ce8ad2bcb636c40791",
+                "reference": "b093f818d63f8da6a64114ce8ad2bcb636c40791",
                 "shasum": ""
             },
             "require": {
@@ -4587,9 +4587,9 @@
                 "mastodon"
             ],
             "support": {
-                "source": "https://github.com/kawax/laravel-mastodon-api/tree/3.0.2"
+                "source": "https://github.com/kawax/laravel-mastodon-api/tree/3.0.3"
             },
-            "time": "2023-06-06T01:23:41+00:00"
+            "time": "2023-06-06T04:27:19+00:00"
         },
         {
             "name": "revolution/laravel-namespaced-helpers",
