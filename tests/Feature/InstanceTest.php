@@ -30,7 +30,8 @@ class InstanceTest extends TestCase
 
         $job = new InstanceVersionJob($server);
 
-        Mastodon::shouldReceive('domain->instance')->andReturn([
+        Mastodon::shouldReceive('domain')->andReturnSelf();
+        Mastodon::shouldReceive('instance')->andReturn([
             'version' => 1,
             'urls' => [
                 'streaming_api' => 'url',
