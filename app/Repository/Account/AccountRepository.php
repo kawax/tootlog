@@ -79,7 +79,7 @@ interface AccountRepository
     public function store($user, array $server);
 
     /**
-     * @param $user
+     * @param  $user
      * @return mixed
      */
     public function update($user);
