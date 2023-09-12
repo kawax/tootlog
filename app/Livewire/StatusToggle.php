@@ -8,7 +8,7 @@ use Livewire\WithPagination;
 
 class StatusToggle extends Component
 {
-    //use WithPagination;
+    use WithPagination;
 
     public Status $status;
 
