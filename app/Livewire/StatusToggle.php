@@ -1,25 +1,23 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use App\Models\Status;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class StatusToggle extends Component
 {
+    //use WithPagination;
+
     public Status $status;
 
-    public function toggle()
+    public function toggle(): void
     {
         if ($this->status->trashed()) {
             $this->status->restore();
         } else {
             $this->status->delete();
         }
-    }
-
-    public function render()
-    {
-        return view('livewire.status-toggle');
     }
 }

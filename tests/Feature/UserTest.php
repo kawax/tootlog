@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Http\Livewire\StatusToggle;
+use App\Livewire\StatusToggle;
 use App\Models\Account;
 use App\Models\Server;
 use App\Models\Status;

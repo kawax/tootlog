@@ -18,7 +18,7 @@
         "laravel/horizon": "^5.9",
         "laravel/tinker": "^2.7",
         "league/csv": "^9.8",
-        "livewire/livewire": "^2.10",
+        "livewire/livewire": "^3.0",
         "revolution/laravel-mastodon-api": "^3.0",
         "revolution/laravel-namespaced-helpers": "^2.0",
         "revolution/socialite-mastodon": "^1.3",

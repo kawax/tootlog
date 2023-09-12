@@ -2,7 +2,7 @@
     <div class="container text-center">
         <div class="text-muted">tootlog {{ config('tootlog.version') }}</div>
 
-        <livewire:footer-info></livewire:footer-info>
+        <livewire:footer-info lazy></livewire:footer-info>
 
         <div>
             <a href="https://github.com/kawax/tootlog" target="_blank" rel="noopener noreferrer">GitHub</a> |

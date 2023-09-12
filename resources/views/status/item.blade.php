@@ -40,7 +40,7 @@
                             'username' => $status->account->username,
                             'domain' => $status->account->domain,
                             'status_id' => $status->status_id
-                            ]) }}">
+                            ]) }}" class="pe-1">
                             <time title="{{ $status->local_datetime->toAtomString() }}"
                                   datetime="{{ $status->local_datetime->toAtomString() }}">
                                 {{ $status->local_datetime->diffForHumans() }}

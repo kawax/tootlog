@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use App\Models\Account;
 use App\Models\Server;
@@ -15,7 +15,7 @@ class FooterInfo extends Component
 
     public int $footer_statuses = 0;
 
-    public function loadInfo()
+    public function mount(): void
     {
         $minutes = now()->addDay();
 
@@ -36,10 +36,5 @@ class FooterInfo extends Component
             $minutes,
             fn () => Status::count('id')
         );
-    }
-
-    public function render()
-    {
-        return view('livewire.footer-info');
     }
 }
