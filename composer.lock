@@ -11168,5 +11168,5 @@
     "platform-overrides": {
         "ext-exif": "1.0.0"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
