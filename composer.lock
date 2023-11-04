@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.283.18",
+            "version": "3.284.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "0263a41920f77a521660fb128701d9c9c6312756"
+                "reference": "1b7e926acc990509e3d13fa708cdede686b40d90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/0263a41920f77a521660fb128701d9c9c6312756",
-                "reference": "0263a41920f77a521660fb128701d9c9c6312756",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/1b7e926acc990509e3d13fa708cdede686b40d90",
+                "reference": "1b7e926acc990509e3d13fa708cdede686b40d90",
                 "shasum": ""
             },
             "require": {
@@ -151,9 +151,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.283.18"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.284.0"
             },
-            "time": "2023-11-02T18:16:01+00:00"
+            "time": "2023-11-03T18:13:48+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -2947,16 +2947,16 @@
         },
         {
             "name": "livewire/livewire",
-            "version": "v3.0.10",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/livewire.git",
-                "reference": "cae998aa9a474dc0de81869ab1536014c7b31a64"
+                "reference": "db1e02c645ae12a7cdee9b1ea0d65bf3aafc0f08"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/livewire/zipball/cae998aa9a474dc0de81869ab1536014c7b31a64",
-                "reference": "cae998aa9a474dc0de81869ab1536014c7b31a64",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/db1e02c645ae12a7cdee9b1ea0d65bf3aafc0f08",
+                "reference": "db1e02c645ae12a7cdee9b1ea0d65bf3aafc0f08",
                 "shasum": ""
             },
             "require": {
@@ -3009,7 +3009,7 @@
             "description": "A front-end framework for Laravel.",
             "support": {
                 "issues": "https://github.com/livewire/livewire/issues",
-                "source": "https://github.com/livewire/livewire/tree/v3.0.10"
+                "source": "https://github.com/livewire/livewire/tree/v3.1.0"
             },
             "funding": [
                 {
@@ -3017,7 +3017,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-18T11:18:12+00:00"
+            "time": "2023-11-03T15:05:18+00:00"
         },
         {
             "name": "masterminds/html5",
@@ -5031,28 +5031,28 @@
         },
         {
             "name": "spatie/image-optimizer",
-            "version": "1.7.1",
+            "version": "1.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/image-optimizer.git",
-                "reference": "af179994e2d2413e4b3ba2d348d06b4eaddbeb30"
+                "reference": "62f7463483d1bd975f6f06025d89d42a29608fe1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/image-optimizer/zipball/af179994e2d2413e4b3ba2d348d06b4eaddbeb30",
-                "reference": "af179994e2d2413e4b3ba2d348d06b4eaddbeb30",
+                "url": "https://api.github.com/repos/spatie/image-optimizer/zipball/62f7463483d1bd975f6f06025d89d42a29608fe1",
+                "reference": "62f7463483d1bd975f6f06025d89d42a29608fe1",
                 "shasum": ""
             },
             "require": {
                 "ext-fileinfo": "*",
                 "php": "^7.3|^8.0",
                 "psr/log": "^1.0 | ^2.0 | ^3.0",
-                "symfony/process": "^4.2|^5.0|^6.0"
+                "symfony/process": "^4.2|^5.0|^6.0|^7.0"
             },
             "require-dev": {
                 "pestphp/pest": "^1.21",
                 "phpunit/phpunit": "^8.5.21|^9.4.4",
-                "symfony/var-dumper": "^4.2|^5.0|^6.0"
+                "symfony/var-dumper": "^4.2|^5.0|^6.0|^7.0"
             },
             "type": "library",
             "autoload": {
@@ -5080,9 +5080,9 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/image-optimizer/issues",
-                "source": "https://github.com/spatie/image-optimizer/tree/1.7.1"
+                "source": "https://github.com/spatie/image-optimizer/tree/1.7.2"
             },
-            "time": "2023-07-27T07:57:32+00:00"
+            "time": "2023-11-03T10:08:02+00:00"
         },
         {
             "name": "spatie/laravel-package-tools",
@@ -8528,16 +8528,16 @@
         },
         {
             "name": "filp/whoops",
-            "version": "2.15.3",
+            "version": "2.15.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "c83e88a30524f9360b11f585f71e6b17313b7187"
+                "reference": "a139776fa3f5985a50b509f2a02ff0f709d2a546"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/c83e88a30524f9360b11f585f71e6b17313b7187",
-                "reference": "c83e88a30524f9360b11f585f71e6b17313b7187",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/a139776fa3f5985a50b509f2a02ff0f709d2a546",
+                "reference": "a139776fa3f5985a50b509f2a02ff0f709d2a546",
                 "shasum": ""
             },
             "require": {
@@ -8587,7 +8587,7 @@
             ],
             "support": {
                 "issues": "https://github.com/filp/whoops/issues",
-                "source": "https://github.com/filp/whoops/tree/2.15.3"
+                "source": "https://github.com/filp/whoops/tree/2.15.4"
             },
             "funding": [
                 {
@@ -8595,7 +8595,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-07-13T12:00:00+00:00"
+            "time": "2023-11-03T12:00:00+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
