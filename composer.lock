@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.287.0",
+            "version": "3.287.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "06978bfc63111fccd78b364238bf214b4ade8d18"
+                "reference": "efe7b6e370cf12af6c2ee9503aa2aba61350ed03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/06978bfc63111fccd78b364238bf214b4ade8d18",
-                "reference": "06978bfc63111fccd78b364238bf214b4ade8d18",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/efe7b6e370cf12af6c2ee9503aa2aba61350ed03",
+                "reference": "efe7b6e370cf12af6c2ee9503aa2aba61350ed03",
                 "shasum": ""
             },
             "require": {
@@ -151,9 +151,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.287.0"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.287.1"
             },
-            "time": "2023-11-17T20:03:36+00:00"
+            "time": "2023-11-20T20:12:54+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -2947,16 +2947,16 @@
         },
         {
             "name": "livewire/livewire",
-            "version": "v3.2.0",
+            "version": "v3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/livewire.git",
-                "reference": "36fefba41947fa8b0cf0161330f5edb4ec7c23ca"
+                "reference": "95083c0b61c1910ad28c4628e0dfa9c227eb1c41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/livewire/zipball/36fefba41947fa8b0cf0161330f5edb4ec7c23ca",
-                "reference": "36fefba41947fa8b0cf0161330f5edb4ec7c23ca",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/95083c0b61c1910ad28c4628e0dfa9c227eb1c41",
+                "reference": "95083c0b61c1910ad28c4628e0dfa9c227eb1c41",
                 "shasum": ""
             },
             "require": {
@@ -3009,7 +3009,7 @@
             "description": "A front-end framework for Laravel.",
             "support": {
                 "issues": "https://github.com/livewire/livewire/issues",
-                "source": "https://github.com/livewire/livewire/tree/v3.2.0"
+                "source": "https://github.com/livewire/livewire/tree/v3.2.1"
             },
             "funding": [
                 {
@@ -3017,7 +3017,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-11-19T13:30:45+00:00"
+            "time": "2023-11-20T17:05:06+00:00"
         },
         {
             "name": "masterminds/html5",
