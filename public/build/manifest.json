@@ -1,40 +1,40 @@
 {
-  "_vendor-e56da348.js": {
-    "file": "assets/vendor-e56da348.js"
+  "_vendor-133b4ac0.js": {
+    "file": "assets/vendor-133b4ac0.js"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf": {
-    "file": "assets/fa-regular-400-12dea17b.ttf",
+    "file": "assets/fa-regular-400-5d02dc9b.ttf",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2": {
-    "file": "assets/fa-regular-400-7ba24c41.woff2",
+    "file": "assets/fa-regular-400-2bccecf0.woff2",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf": {
-    "file": "assets/fa-solid-900-67a880b4.ttf",
+    "file": "assets/fa-solid-900-fbbf06d7.ttf",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2": {
-    "file": "assets/fa-solid-900-e2c5cf54.woff2",
+    "file": "assets/fa-solid-900-9fc85f3a.woff2",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2"
   },
   "resources/js/app.css": {
-    "file": "assets/app-a14ae119.css",
+    "file": "assets/app-922a3845.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.js": {
     "assets": [
-      "assets/fa-regular-400-7ba24c41.woff2",
-      "assets/fa-regular-400-12dea17b.ttf",
-      "assets/fa-solid-900-e2c5cf54.woff2",
-      "assets/fa-solid-900-67a880b4.ttf"
+      "assets/fa-regular-400-2bccecf0.woff2",
+      "assets/fa-regular-400-5d02dc9b.ttf",
+      "assets/fa-solid-900-9fc85f3a.woff2",
+      "assets/fa-solid-900-fbbf06d7.ttf"
     ],
     "css": [
-      "assets/app-a14ae119.css"
+      "assets/app-922a3845.css"
     ],
-    "file": "assets/app-7e8323c8.js",
+    "file": "assets/app-e64ca205.js",
     "imports": [
-      "_vendor-e56da348.js"
+      "_vendor-133b4ac0.js"
     ],
     "isEntry": true,
     "src": "resources/js/app.js"
