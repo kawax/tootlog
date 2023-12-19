@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.294.1",
+            "version": "3.294.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "63c720229a9c9cdedff6bac98d6e72be8cc241f1"
+                "reference": "e6a63e39fed0fd9fb553af42e99aaf8d7c104c88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/63c720229a9c9cdedff6bac98d6e72be8cc241f1",
-                "reference": "63c720229a9c9cdedff6bac98d6e72be8cc241f1",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/e6a63e39fed0fd9fb553af42e99aaf8d7c104c88",
+                "reference": "e6a63e39fed0fd9fb553af42e99aaf8d7c104c88",
                 "shasum": ""
             },
             "require": {
@@ -151,9 +151,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.294.1"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.294.2"
             },
-            "time": "2023-12-15T19:25:52+00:00"
+            "time": "2023-12-18T19:11:16+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -4905,16 +4905,16 @@
         },
         {
             "name": "spatie/browsershot",
-            "version": "3.60.1",
+            "version": "3.60.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/browsershot.git",
-                "reference": "8779b2cd10dcd9dab4abd0127429e5578da3f9ab"
+                "reference": "406cbbca39cf1d5f4a86f00fa0784ccf3b5864ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/browsershot/zipball/8779b2cd10dcd9dab4abd0127429e5578da3f9ab",
-                "reference": "8779b2cd10dcd9dab4abd0127429e5578da3f9ab",
+                "url": "https://api.github.com/repos/spatie/browsershot/zipball/406cbbca39cf1d5f4a86f00fa0784ccf3b5864ea",
+                "reference": "406cbbca39cf1d5f4a86f00fa0784ccf3b5864ea",
                 "shasum": ""
             },
             "require": {
@@ -4922,7 +4922,7 @@
                 "php": "^8.0",
                 "spatie/image": "^1.5.3|^2.0",
                 "spatie/temporary-directory": "^1.1|^2.0",
-                "symfony/process": "^4.2|^5.0|^6.0"
+                "symfony/process": "^4.2|^5.0|^6.0|^7.0"
             },
             "require-dev": {
                 "pestphp/pest": "^1.20",
@@ -4959,7 +4959,7 @@
                 "webpage"
             ],
             "support": {
-                "source": "https://github.com/spatie/browsershot/tree/3.60.1"
+                "source": "https://github.com/spatie/browsershot/tree/3.60.2"
             },
             "funding": [
                 {
@@ -4967,7 +4967,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-11-28T10:50:45+00:00"
+            "time": "2023-12-18T14:14:03+00:00"
         },
         {
             "name": "spatie/crawler",
