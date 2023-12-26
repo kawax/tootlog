@@ -130,9 +130,9 @@ class OAuthTest extends TestCase
         });
 
         $account = factory(Account::class)->create([
-            'user_id'  => $this->user->id,
+            'user_id' => $this->user->id,
             'username' => 'test',
-            'url'      => 'https://example.com/@test',
+            'url' => 'https://example.com/@test',
         ]);
 
 //        $this->accountRepository->shouldReceive('exists')->once()->andReturn(true);
@@ -162,21 +162,21 @@ class OAuthTest extends TestCase
         Socialite::shouldReceive('user')->once()->andReturn(new class()
         {
             public $user = [
-                'id'              => '1',
-                'url'             => 'https://example.com/@test',
-                'username'        => 'test',
-                'acct'            => 'test',
-                'display_name'    => 'test',
-                'locked'          => '0',
-                'statuses_count'  => '0',
+                'id' => '1',
+                'url' => 'https://example.com/@test',
+                'username' => 'test',
+                'acct' => 'test',
+                'display_name' => 'test',
+                'locked' => '0',
+                'statuses_count' => '0',
                 'following_count' => '0',
                 'followers_count' => '0',
-                'note'            => 'note',
-                'avatar'          => '',
-                'avatar_static'   => '',
-                'header'          => '',
-                'header_static'   => '',
-                'created_at'      => '2017-05-01 00:00:00',
+                'note' => 'note',
+                'avatar' => '',
+                'avatar_static' => '',
+                'header' => '',
+                'header_static' => '',
+                'created_at' => '2017-05-01 00:00:00',
             ];
 
             public $token = 'test';

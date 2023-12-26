@@ -22,7 +22,7 @@ return [
     ],
 
     'ses' => [
-        'key'    => env('AWS_ACCESS_KEY_ID'),
+        'key' => env('AWS_ACCESS_KEY_ID'),
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
@@ -32,22 +32,22 @@ return [
     ],
 
     'stripe' => [
-        'model'  => App\Models\User::class,
-        'key'    => env('STRIPE_KEY'),
+        'model' => App\Models\User::class,
+        'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
 
     'mastodon' => [
-        'domain'        => env('MASTODON_DOMAIN', 'https://chitose.moe'),
-        'client_id'     => env('MASTODON_ID'),
+        'domain' => env('MASTODON_DOMAIN', 'https://chitose.moe'),
+        'client_id' => env('MASTODON_ID'),
         'client_secret' => env('MASTODON_SECRET'),
-        'redirect'      => env('MASTODON_REDIRECT'),
+        'redirect' => env('MASTODON_REDIRECT'),
         //'read', 'write', 'follow'
-        'scope'         => ['read'],
+        'scope' => ['read'],
     ],
 
     'mastodon_notify' => [
         'domain' => env('MASTODON_NOTIFY_DOMAIN', 'https://chitose.moe'),
-        'token'  => env('MASTODON_NOTIFY_TOKEN'),
+        'token' => env('MASTODON_NOTIFY_TOKEN'),
     ],
 ];

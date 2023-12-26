@@ -19,7 +19,7 @@ class ViewComposerServiceProvider extends ServiceProvider
         view()->composers(
             [
                 AccountComposer::class => 'open.account_list',
-                RecentComposer::class  => 'side.recents',
+                RecentComposer::class => 'side.recents',
                 // TagComposer::class     => 'side.tags',
             ]
         );
