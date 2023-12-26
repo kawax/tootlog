@@ -145,7 +145,7 @@ class GetStatusJob implements ShouldQueue
     protected function newStatus(array $status, array $data)
     {
         $attr = [
-            'uri'        => $data['uri'],
+            'uri' => $data['uri'],
             'account_id' => $this->account->id,
         ];
 
@@ -192,16 +192,16 @@ class GetStatusJob implements ShouldQueue
     protected function reblog(array $reblog)
     {
         $data = [
-            'created_at'   => Carbon::parse($reblog['created_at'], 'UTC'),
-            'status_id'    => $reblog['id'],
-            'acct'         => $reblog['account']['acct'],
+            'created_at' => Carbon::parse($reblog['created_at'], 'UTC'),
+            'status_id' => $reblog['id'],
+            'acct' => $reblog['account']['acct'],
             'display_name' => $reblog['account']['display_name'],
-            'account_url'  => $reblog['account']['url'],
-            'avatar'       => $reblog['account']['avatar'],
-            'content'      => $reblog['content'],
+            'account_url' => $reblog['account']['url'],
+            'avatar' => $reblog['account']['avatar'],
+            'content' => $reblog['content'],
             'spoiler_text' => $reblog['spoiler_text'],
-            'uri'          => $reblog['uri'],
-            'url'          => $reblog['url'],
+            'uri' => $reblog['uri'],
+            'url' => $reblog['url'],
         ];
 
         return Reblog::updateOrCreate(['uri' => $reblog['uri']], $data);

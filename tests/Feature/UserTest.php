@@ -45,12 +45,12 @@ class UserTest extends TestCase
         ]);
 
         $this->account = factory(Account::class)->create([
-            'user_id'      => $this->user->id,
-            'server_id'    => $this->server->id,
-            'username'     => 'test',
+            'user_id' => $this->user->id,
+            'server_id' => $this->server->id,
+            'username' => 'test',
             'display_name' => '<script>test',
-            'note'         => '<p></p>',
-            'url'          => 'https://example.com/@test',
+            'note' => '<p></p>',
+            'url' => 'https://example.com/@test',
         ]);
     }
 
@@ -202,11 +202,11 @@ class UserTest extends TestCase
     public function testLockedAccount()
     {
         $accounts = factory(Account::class)->create([
-            'user_id'   => (int) $this->user->id,
+            'user_id' => (int) $this->user->id,
             'server_id' => $this->server->id,
-            'username'  => 'test2',
-            'url'       => 'https://example.com/@test2',
-            'locked'    => true,
+            'username' => 'test2',
+            'url' => 'https://example.com/@test2',
+            'locked' => true,
         ]);
 
         $response = $this->actingAs($this->user)
@@ -224,11 +224,11 @@ class UserTest extends TestCase
         ]);
 
         $accounts = factory(Account::class)->create([
-            'user_id'   => $this->user->id,
+            'user_id' => $this->user->id,
             'server_id' => $this->server->id,
-            'username'  => 'test2',
-            'url'       => 'https://example.com/@test2',
-            'locked'    => true,
+            'username' => 'test2',
+            'url' => 'https://example.com/@test2',
+            'locked' => true,
         ]);
 
         $response = $this->actingAs($user2)->get('/@test/test2@example.com');
@@ -240,9 +240,9 @@ class UserTest extends TestCase
     public function testStatus()
     {
         $statuses = factory(Status::class)->create([
-            'account_id'   => $this->account->id,
-            'status_id'    => 1,
-            'content'      => '<p>test</p>',
+            'account_id' => $this->account->id,
+            'status_id' => 1,
+            'content' => '<p>test</p>',
             'spoiler_text' => '<script>test',
         ]);
 
@@ -258,16 +258,16 @@ class UserTest extends TestCase
         $user2 = factory(User::class)->create();
 
         $account = factory(Account::class)->create([
-            'user_id'   => $this->user->id,
+            'user_id' => $this->user->id,
             'server_id' => $this->server->id,
-            'username'  => 'test2',
-            'url'       => 'https://example.com/@test2',
-            'locked'    => true,
+            'username' => 'test2',
+            'url' => 'https://example.com/@test2',
+            'locked' => true,
         ]);
 
         $statuses = factory(Status::class)->create([
             'account_id' => $account->id,
-            'status_id'  => 1,
+            'status_id' => 1,
         ]);
 
         $response = $this->actingAs($user2)
@@ -328,7 +328,7 @@ class UserTest extends TestCase
 
         $accounts = factory(Account::class)->create([
             'user_id' => $this->user->id,
-            'locked'  => true,
+            'locked' => true,
         ]);
 
         $statuses = factory(Status::class)->create([
@@ -384,8 +384,8 @@ class UserTest extends TestCase
     {
         $response = $this->actingAs($this->user)
                          ->post('/preferences', [
-                             'email'       => 'test@example.com',
-                             'theme'       => 'normal',
+                             'email' => 'test@example.com',
+                             'theme' => 'normal',
                              'special_ley' => 'test',
                          ]);
 
@@ -408,7 +408,7 @@ class UserTest extends TestCase
     {
         $statuses = factory(Status::class)->create([
             'account_id' => $this->account->id,
-            'content'    => 'test',
+            'content' => 'test',
         ]);
 
         $response = $this->actingAs($this->user)
@@ -421,7 +421,7 @@ class UserTest extends TestCase
     {
         $statuses = factory(Status::class)->create([
             'account_id' => $this->account->id,
-            'content'    => '',
+            'content' => '',
         ]);
 
         $response = $this->actingAs($this->user)
@@ -435,7 +435,7 @@ class UserTest extends TestCase
     {
         $statuses = factory(Status::class)->create([
             'account_id' => $this->account->id,
-            'content'    => 'test',
+            'content' => 'test',
         ]);
 
         $response = $this->actingAs($this->user)
@@ -467,7 +467,7 @@ class UserTest extends TestCase
     {
         $statuses = factory(Status::class)->create([
             'account_id' => $this->account->id,
-            'content'    => 'test',
+            'content' => 'test',
         ]);
 
         $tag = factory(Tag::class)->create([
@@ -487,7 +487,7 @@ class UserTest extends TestCase
     {
         $accounts = factory(Account::class)->create([
             'user_id' => $this->user->id,
-            'locked'  => true,
+            'locked' => true,
         ]);
 
         $statuses = factory(Status::class)->create([

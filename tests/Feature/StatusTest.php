@@ -75,10 +75,10 @@ class StatusTest extends TestCase
 
         $this->account = factory(Account::class)->create(
             [
-                'user_id'   => $this->user->id,
+                'user_id' => $this->user->id,
                 'server_id' => $this->server->id,
-                'username'  => 'test',
-                'url'       => 'https://example.com/@test',
+                'username' => 'test',
+                'url' => 'https://example.com/@test',
             ]
         );
 
@@ -102,11 +102,11 @@ class StatusTest extends TestCase
 
         $statuses = factory(Status::class)->make(
             [
-                'id'         => 1,
+                'id' => 1,
                 'account_id' => $this->account->id,
                 'visibility' => 'public',
                 'created_at' => $faker->dateTime,
-                'content'    => 'test',
+                'content' => 'test',
             ]
         );
 
@@ -123,8 +123,8 @@ class StatusTest extends TestCase
             'statuses',
             [
                 'account_id' => $this->account->id,
-                'status_id'  => 1,
-                'content'    => 'test',
+                'status_id' => 1,
+                'content' => 'test',
             ]
         );
     }
@@ -137,11 +137,11 @@ class StatusTest extends TestCase
 
         $statuses = factory(Status::class)->make(
             [
-                'id'         => 1,
+                'id' => 1,
                 'account_id' => $this->account->id,
                 'visibility' => 'direct',
                 'created_at' => $faker->dateTime,
-                'content'    => 'test',
+                'content' => 'test',
             ]
         );
 
@@ -158,8 +158,8 @@ class StatusTest extends TestCase
             'statuses',
             [
                 'account_id' => $this->account->id,
-                'status_id'  => 1,
-                'content'    => 'test',
+                'status_id' => 1,
+                'content' => 'test',
             ]
         );
     }
@@ -172,24 +172,24 @@ class StatusTest extends TestCase
 
         $statuses = factory(Status::class)->make(
             [
-                'id'         => 1,
+                'id' => 1,
                 'account_id' => $this->account->id,
                 'visibility' => 'public',
                 'created_at' => $faker->dateTime,
-                'content'    => 'test',
-                'reblog'     => [
-                    'id'           => 2,
-                    'created_at'   => now()->toDateTimeString(),
-                    'account'      => [
-                        'acct'         => $faker->userName,
+                'content' => 'test',
+                'reblog' => [
+                    'id' => 2,
+                    'created_at' => now()->toDateTimeString(),
+                    'account' => [
+                        'acct' => $faker->userName,
                         'display_name' => $faker->name,
-                        'url'          => $faker->url,
-                        'avatar'       => $faker->imageUrl,
+                        'url' => $faker->url,
+                        'avatar' => $faker->imageUrl,
                     ],
-                    'content'      => 'reblog_content',
+                    'content' => 'reblog_content',
                     'spoiler_text' => 'spoiler_text',
-                    'uri'          => 'uri',
-                    'url'          => $faker->url,
+                    'uri' => 'uri',
+                    'url' => $faker->url,
                 ],
             ]
         );
@@ -206,8 +206,8 @@ class StatusTest extends TestCase
         $this->assertDatabaseHas(
             'reblogs',
             [
-                'status_id'    => 2,
-                'content'      => 'reblog_content',
+                'status_id' => 2,
+                'content' => 'reblog_content',
                 'spoiler_text' => 'spoiler_text',
             ]
         );
@@ -216,8 +216,8 @@ class StatusTest extends TestCase
             'statuses',
             [
                 'account_id' => $this->account->id,
-                'status_id'  => 1,
-                'reblog_id'  => 1,
+                'status_id' => 1,
+                'reblog_id' => 1,
             ]
         );
     }
@@ -230,12 +230,12 @@ class StatusTest extends TestCase
 
         $statuses = factory(Status::class)->make(
             [
-                'id'         => 1,
+                'id' => 1,
                 'account_id' => $this->account->id,
                 'visibility' => 'public',
                 'created_at' => $faker->dateTime,
-                'content'    => 'test',
-                'tags'       => [
+                'content' => 'test',
+                'tags' => [
                     [
                         'name' => 'tag_test',
                     ],
@@ -273,7 +273,7 @@ class StatusTest extends TestCase
             'statuses',
             [
                 'account_id' => $this->account->id,
-                'status_id'  => 1,
+                'status_id' => 1,
             ]
         );
     }

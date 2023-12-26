@@ -3,7 +3,7 @@
 use function Revolution\Illuminate\Support\env;
 
 return [
-    'version'       => 'v1.16.0',
+    'version' => 'v1.16.0',
 
     //一度に更新するアカウント数
     'account_limit' => 3,
@@ -12,19 +12,19 @@ return [
     'account_fails' => 10,
 
     //streaming api用のURLが違う場合
-    'streaming'     => [],
+    'streaming' => [],
 
     'favicon_size' => 24,
 
     //faviconが違う場合
-    'favicon'      => [
+    'favicon' => [
         'https://pawoo.net' => 'favicon.png',
     ],
 
-    'analytics'             => env('GOOGLE_ANALYTICS'),
+    'analytics' => env('GOOGLE_ANALYTICS'),
 
     //特典キー
-    'special_key'           => env('SPECIAL_KEY', ''),
+    'special_key' => env('SPECIAL_KEY', ''),
 
     //一度に更新するアカウント数。special版
     'account_limit_special' => 3,
