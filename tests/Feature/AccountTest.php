@@ -50,10 +50,10 @@ class AccountTest extends TestCase
         ]);
 
         $this->account = factory(Account::class)->create([
-            'user_id'   => $this->user->id,
+            'user_id' => $this->user->id,
             'server_id' => $this->server->id,
-            'username'  => 'test',
-            'url'       => 'https://example.com/@test',
+            'username' => 'test',
+            'url' => 'https://example.com/@test',
         ]);
 
         $this->statuses = factory(Status::class, 10)->create([
