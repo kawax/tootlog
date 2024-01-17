@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.296.1",
+            "version": "3.296.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "38e47bbd3b5f76f008dd71c8a68545f9e4e47b6b"
+                "reference": "74dda6a5bf570ae4b394c2ed54edd573883426cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/38e47bbd3b5f76f008dd71c8a68545f9e4e47b6b",
-                "reference": "38e47bbd3b5f76f008dd71c8a68545f9e4e47b6b",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/74dda6a5bf570ae4b394c2ed54edd573883426cc",
+                "reference": "74dda6a5bf570ae4b394c2ed54edd573883426cc",
                 "shasum": ""
             },
             "require": {
@@ -151,9 +151,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.296.1"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.296.2"
             },
-            "time": "2024-01-14T05:20:33+00:00"
+            "time": "2024-01-16T19:10:36+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -1799,30 +1799,30 @@
         },
         {
             "name": "laravel/fortify",
-            "version": "v1.19.1",
+            "version": "v1.20.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/fortify.git",
-                "reference": "1dde858a520f679b4a2f453fa68f8a0e98751875"
+                "reference": "587a55f906ae4f8448a19019a4b2ee7002d5c001"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/fortify/zipball/1dde858a520f679b4a2f453fa68f8a0e98751875",
-                "reference": "1dde858a520f679b4a2f453fa68f8a0e98751875",
+                "url": "https://api.github.com/repos/laravel/fortify/zipball/587a55f906ae4f8448a19019a4b2ee7002d5c001",
+                "reference": "587a55f906ae4f8448a19019a4b2ee7002d5c001",
                 "shasum": ""
             },
             "require": {
                 "bacon/bacon-qr-code": "^2.0",
                 "ext-json": "*",
-                "illuminate/support": "^8.82|^9.0|^10.0",
-                "php": "^7.3|^8.0",
-                "pragmarx/google2fa": "^7.0|^8.0"
+                "illuminate/support": "^10.0|^11.0",
+                "php": "^8.1",
+                "pragmarx/google2fa": "^8.0"
             },
             "require-dev": {
                 "mockery/mockery": "^1.0",
-                "orchestra/testbench": "^6.34|^7.31|^8.11",
+                "orchestra/testbench": "^8.16|^9.0",
                 "phpstan/phpstan": "^1.10",
-                "phpunit/phpunit": "^9.3"
+                "phpunit/phpunit": "^10.4"
             },
             "type": "library",
             "extra": {
@@ -1859,20 +1859,20 @@
                 "issues": "https://github.com/laravel/fortify/issues",
                 "source": "https://github.com/laravel/fortify"
             },
-            "time": "2023-12-11T16:16:45+00:00"
+            "time": "2024-01-15T20:07:11+00:00"
         },
         {
             "name": "laravel/framework",
-            "version": "v10.40.0",
+            "version": "v10.41.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "7a9470071dac9579ebf29ad1b9d73e4b8eb586fc"
+                "reference": "da31969bd35e6ee0bbcd9e876f88952dc754b012"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/7a9470071dac9579ebf29ad1b9d73e4b8eb586fc",
-                "reference": "7a9470071dac9579ebf29ad1b9d73e4b8eb586fc",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/da31969bd35e6ee0bbcd9e876f88952dc754b012",
+                "reference": "da31969bd35e6ee0bbcd9e876f88952dc754b012",
                 "shasum": ""
             },
             "require": {
@@ -2064,40 +2064,40 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2024-01-09T11:46:47+00:00"
+            "time": "2024-01-16T15:23:58+00:00"
         },
         {
             "name": "laravel/horizon",
-            "version": "v5.21.5",
+            "version": "v5.22.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "081422577fb49608ed68a3b284bcecd0c5860ce6"
+                "reference": "151f7fc544fd7711499512b736b30036dfaa5bc0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/081422577fb49608ed68a3b284bcecd0c5860ce6",
-                "reference": "081422577fb49608ed68a3b284bcecd0c5860ce6",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/151f7fc544fd7711499512b736b30036dfaa5bc0",
+                "reference": "151f7fc544fd7711499512b736b30036dfaa5bc0",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "ext-pcntl": "*",
                 "ext-posix": "*",
-                "illuminate/contracts": "^8.17|^9.0|^10.0",
-                "illuminate/queue": "^8.17|^9.0|^10.0",
-                "illuminate/support": "^8.17|^9.0|^10.0",
+                "illuminate/contracts": "^8.17|^9.0|^10.0|^11.0",
+                "illuminate/queue": "^8.17|^9.0|^10.0|^11.0",
+                "illuminate/support": "^8.17|^9.0|^10.0|^11.0",
                 "nesbot/carbon": "^2.17",
                 "php": "^7.3|^8.0",
                 "ramsey/uuid": "^4.0",
-                "symfony/error-handler": "^5.0|^6.0",
-                "symfony/process": "^5.0|^6.0"
+                "symfony/error-handler": "^5.0|^6.0|^7.0",
+                "symfony/process": "^5.0|^6.0|^7.0"
             },
             "require-dev": {
                 "mockery/mockery": "^1.0",
-                "orchestra/testbench": "^6.0|^7.0|^8.0",
+                "orchestra/testbench": "^6.0|^7.0|^8.0|^9.0",
                 "phpstan/phpstan": "^1.10",
-                "phpunit/phpunit": "^9.0",
+                "phpunit/phpunit": "^9.0|^10.4",
                 "predis/predis": "^1.1|^2.0"
             },
             "suggest": {
@@ -2140,9 +2140,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/horizon/issues",
-                "source": "https://github.com/laravel/horizon/tree/v5.21.5"
+                "source": "https://github.com/laravel/horizon/tree/v5.22.0"
             },
-            "time": "2023-12-29T22:22:23+00:00"
+            "time": "2024-01-16T15:06:40+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -8796,22 +8796,22 @@
         },
         {
             "name": "laravel/legacy-factories",
-            "version": "v1.3.2",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/legacy-factories.git",
-                "reference": "cc6720da81094c82ea9f4737d615dd3d71f7f43d"
+                "reference": "6cb79f668fc36b8b396ada1da3ba45867889c30f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/legacy-factories/zipball/cc6720da81094c82ea9f4737d615dd3d71f7f43d",
-                "reference": "cc6720da81094c82ea9f4737d615dd3d71f7f43d",
+                "url": "https://api.github.com/repos/laravel/legacy-factories/zipball/6cb79f668fc36b8b396ada1da3ba45867889c30f",
+                "reference": "6cb79f668fc36b8b396ada1da3ba45867889c30f",
                 "shasum": ""
             },
             "require": {
-                "illuminate/macroable": "^8.0|^9.0|^10.0",
+                "illuminate/macroable": "^8.0|^9.0|^10.0|^11.0",
                 "php": "^7.3|^8.0",
-                "symfony/finder": "^3.4|^4.0|^5.0|^6.0"
+                "symfony/finder": "^3.4|^4.0|^5.0|^6.0|^7.0"
             },
             "type": "library",
             "extra": {
@@ -8848,20 +8848,20 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2023-01-09T14:49:00+00:00"
+            "time": "2024-01-15T13:55:14+00:00"
         },
         {
             "name": "laravel/sail",
-            "version": "v1.27.0",
+            "version": "v1.27.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "65a7764af5daadbd122e3b0d67be371d158a9b9a"
+                "reference": "9dc648978e4276f2bfd37a076a52e3bd9394777f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/65a7764af5daadbd122e3b0d67be371d158a9b9a",
-                "reference": "65a7764af5daadbd122e3b0d67be371d158a9b9a",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/9dc648978e4276f2bfd37a076a52e3bd9394777f",
+                "reference": "9dc648978e4276f2bfd37a076a52e3bd9394777f",
                 "shasum": ""
             },
             "require": {
@@ -8913,7 +8913,7 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
-            "time": "2024-01-03T14:07:34+00:00"
+            "time": "2024-01-13T18:46:48+00:00"
         },
         {
             "name": "mockery/mockery",
