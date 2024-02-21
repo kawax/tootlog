@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.300.0",
+            "version": "3.300.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "67a0c22a70bdcc99ca41028b78be3d5496481c14"
+                "reference": "fb67a49453c2b1a51268156b70adeba6c619e743"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/67a0c22a70bdcc99ca41028b78be3d5496481c14",
-                "reference": "67a0c22a70bdcc99ca41028b78be3d5496481c14",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/fb67a49453c2b1a51268156b70adeba6c619e743",
+                "reference": "fb67a49453c2b1a51268156b70adeba6c619e743",
                 "shasum": ""
             },
             "require": {
@@ -151,9 +151,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.300.0"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.300.1"
             },
-            "time": "2024-02-19T19:08:33+00:00"
+            "time": "2024-02-20T19:05:00+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -1863,16 +1863,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v10.44.0",
+            "version": "v10.45.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "1199dbe361787bbe9648131a79f53921b4148cf6"
+                "reference": "8b08d8cd79f8093eb51a8c59e21647bedfbf05f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/1199dbe361787bbe9648131a79f53921b4148cf6",
-                "reference": "1199dbe361787bbe9648131a79f53921b4148cf6",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/8b08d8cd79f8093eb51a8c59e21647bedfbf05f2",
+                "reference": "8b08d8cd79f8093eb51a8c59e21647bedfbf05f2",
                 "shasum": ""
             },
             "require": {
@@ -2065,20 +2065,20 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2024-02-13T16:01:16+00:00"
+            "time": "2024-02-20T15:32:48+00:00"
         },
         {
             "name": "laravel/horizon",
-            "version": "v5.23.0",
+            "version": "v5.23.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "0b1bf46b21c397fdbe80b1ab54451fd227934508"
+                "reference": "7475de7eb5b465c2da84218002fe1a62b8175da0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/0b1bf46b21c397fdbe80b1ab54451fd227934508",
-                "reference": "0b1bf46b21c397fdbe80b1ab54451fd227934508",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/7475de7eb5b465c2da84218002fe1a62b8175da0",
+                "reference": "7475de7eb5b465c2da84218002fe1a62b8175da0",
                 "shasum": ""
             },
             "require": {
@@ -2141,9 +2141,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/horizon/issues",
-                "source": "https://github.com/laravel/horizon/tree/v5.23.0"
+                "source": "https://github.com/laravel/horizon/tree/v5.23.1"
             },
-            "time": "2024-02-12T18:36:34+00:00"
+            "time": "2024-02-20T15:14:10+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -2588,16 +2588,16 @@
         },
         {
             "name": "league/csv",
-            "version": "9.14.0",
+            "version": "9.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/csv.git",
-                "reference": "34bf0df7340b60824b9449b5c526fcc3325070d5"
+                "reference": "fa7e2441c0bc9b2360f4314fd6c954f7ff40d435"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/csv/zipball/34bf0df7340b60824b9449b5c526fcc3325070d5",
-                "reference": "34bf0df7340b60824b9449b5c526fcc3325070d5",
+                "url": "https://api.github.com/repos/thephpleague/csv/zipball/fa7e2441c0bc9b2360f4314fd6c954f7ff40d435",
+                "reference": "fa7e2441c0bc9b2360f4314fd6c954f7ff40d435",
                 "shasum": ""
             },
             "require": {
@@ -2612,12 +2612,12 @@
                 "ext-xdebug": "*",
                 "friendsofphp/php-cs-fixer": "^v3.22.0",
                 "phpbench/phpbench": "^1.2.15",
-                "phpstan/phpstan": "^1.10.50",
+                "phpstan/phpstan": "^1.10.57",
                 "phpstan/phpstan-deprecation-rules": "^1.1.4",
                 "phpstan/phpstan-phpunit": "^1.3.15",
                 "phpstan/phpstan-strict-rules": "^1.5.2",
-                "phpunit/phpunit": "^10.5.3",
-                "symfony/var-dumper": "^6.4.0"
+                "phpunit/phpunit": "^10.5.9",
+                "symfony/var-dumper": "^6.4.2"
             },
             "suggest": {
                 "ext-dom": "Required to use the XMLConverter and the HTMLConverter classes",
@@ -2673,7 +2673,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-12-29T07:34:53+00:00"
+            "time": "2024-02-20T20:00:00+00:00"
         },
         {
             "name": "league/flysystem",
@@ -3024,16 +3024,16 @@
         },
         {
             "name": "livewire/livewire",
-            "version": "v3.4.5",
+            "version": "v3.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/livewire.git",
-                "reference": "266ee3dcaef540f666d4eee19a314025aba5c6e4"
+                "reference": "7e7d638183b34fb61621455891869f5abfd55a82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/livewire/zipball/266ee3dcaef540f666d4eee19a314025aba5c6e4",
-                "reference": "266ee3dcaef540f666d4eee19a314025aba5c6e4",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/7e7d638183b34fb61621455891869f5abfd55a82",
+                "reference": "7e7d638183b34fb61621455891869f5abfd55a82",
                 "shasum": ""
             },
             "require": {
@@ -3087,7 +3087,7 @@
             "description": "A front-end framework for Laravel.",
             "support": {
                 "issues": "https://github.com/livewire/livewire/issues",
-                "source": "https://github.com/livewire/livewire/tree/v3.4.5"
+                "source": "https://github.com/livewire/livewire/tree/v3.4.6"
             },
             "funding": [
                 {
@@ -3095,7 +3095,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-02-19T14:52:03+00:00"
+            "time": "2024-02-20T14:04:25+00:00"
         },
         {
             "name": "masterminds/html5",
@@ -4737,28 +4737,28 @@
         },
         {
             "name": "revolution/laravel-mastodon-api",
-            "version": "3.0.3",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kawax/laravel-mastodon-api.git",
-                "reference": "b093f818d63f8da6a64114ce8ad2bcb636c40791"
+                "reference": "4c3c5aefc458de736b26714cacd79a079d52a923"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kawax/laravel-mastodon-api/zipball/b093f818d63f8da6a64114ce8ad2bcb636c40791",
-                "reference": "b093f818d63f8da6a64114ce8ad2bcb636c40791",
+                "url": "https://api.github.com/repos/kawax/laravel-mastodon-api/zipball/4c3c5aefc458de736b26714cacd79a079d52a923",
+                "reference": "4c3c5aefc458de736b26714cacd79a079d52a923",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "guzzlehttp/guzzle": "^7.5",
-                "illuminate/support": "^9.0||^10.0",
-                "php": "^8.0"
+                "illuminate/support": "^10.0||^11.0",
+                "php": "^8.1"
             },
             "require-dev": {
                 "mockery/mockery": "^1.6",
-                "orchestra/testbench": "^7.0||^8.0",
-                "phpunit/phpunit": "^9.5"
+                "orchestra/testbench": "^8.0",
+                "phpunit/phpunit": "^10.0"
             },
             "type": "library",
             "extra": {
@@ -4792,26 +4792,26 @@
                 "mastodon"
             ],
             "support": {
-                "source": "https://github.com/kawax/laravel-mastodon-api/tree/3.0.3"
+                "source": "https://github.com/kawax/laravel-mastodon-api/tree/3.1.0"
             },
-            "time": "2023-06-06T04:27:19+00:00"
+            "time": "2024-02-20T05:25:40+00:00"
         },
         {
             "name": "revolution/laravel-namespaced-helpers",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kawax/laravel-namespaced-helpers.git",
-                "reference": "f52898cdb8988d3364159e545531423f15faff43"
+                "reference": "72505e8fe4f362b774baca912fe7d6cdbb42c24e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kawax/laravel-namespaced-helpers/zipball/f52898cdb8988d3364159e545531423f15faff43",
-                "reference": "f52898cdb8988d3364159e545531423f15faff43",
+                "url": "https://api.github.com/repos/kawax/laravel-namespaced-helpers/zipball/72505e8fe4f362b774baca912fe7d6cdbb42c24e",
+                "reference": "72505e8fe4f362b774baca912fe7d6cdbb42c24e",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "^10.0",
+                "illuminate/support": "^10.0||^11.0",
                 "php": "^8.1"
             },
             "require-dev": {
@@ -4843,9 +4843,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kawax/laravel-namespaced-helpers/issues",
-                "source": "https://github.com/kawax/laravel-namespaced-helpers/tree/2.0.0"
+                "source": "https://github.com/kawax/laravel-namespaced-helpers/tree/2.1.0"
             },
-            "time": "2023-01-28T08:59:48+00:00"
+            "time": "2024-02-20T04:59:08+00:00"
         },
         {
             "name": "revolution/socialite-mastodon",
@@ -8829,16 +8829,16 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.27.4",
+            "version": "v1.28.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "3047e1a157fad968cc5f6e620d5cbe5c0867fffd"
+                "reference": "a05861ca9b04558b1ec1f36cff521a271a259b6c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/3047e1a157fad968cc5f6e620d5cbe5c0867fffd",
-                "reference": "3047e1a157fad968cc5f6e620d5cbe5c0867fffd",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/a05861ca9b04558b1ec1f36cff521a271a259b6c",
+                "reference": "a05861ca9b04558b1ec1f36cff521a271a259b6c",
                 "shasum": ""
             },
             "require": {
@@ -8887,7 +8887,7 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
-            "time": "2024-02-08T15:24:21+00:00"
+            "time": "2024-02-20T15:11:00+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -9820,23 +9820,23 @@
         },
         {
             "name": "revolution/sail-db-backup",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kawax/sail-db-backup.git",
-                "reference": "5b88d4d86e31a2dcac22b9a46fbe13470353ba2c"
+                "reference": "da35c15bc34bb74e810c3d5fb3cf3edaf326c024"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kawax/sail-db-backup/zipball/5b88d4d86e31a2dcac22b9a46fbe13470353ba2c",
-                "reference": "5b88d4d86e31a2dcac22b9a46fbe13470353ba2c",
+                "url": "https://api.github.com/repos/kawax/sail-db-backup/zipball/da35c15bc34bb74e810c3d5fb3cf3edaf326c024",
+                "reference": "da35c15bc34bb74e810c3d5fb3cf3edaf326c024",
                 "shasum": ""
             },
             "require": {
-                "illuminate/console": "^10.0",
-                "illuminate/filesystem": "^10.0",
-                "illuminate/process": "^10.0",
-                "illuminate/support": "^10.0",
+                "illuminate/console": "^10.0||^11.0",
+                "illuminate/filesystem": "^10.0||^11.0",
+                "illuminate/process": "^10.0||^11.0",
+                "illuminate/support": "^10.0||^11.0",
                 "php": "^8.1"
             },
             "require-dev": {
@@ -9875,9 +9875,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kawax/sail-db-backup/issues",
-                "source": "https://github.com/kawax/sail-db-backup/tree/2.0.0"
+                "source": "https://github.com/kawax/sail-db-backup/tree/2.1.0"
             },
-            "time": "2023-02-26T00:17:11+00:00"
+            "time": "2024-02-20T05:14:53+00:00"
         },
         {
             "name": "sebastian/cli-parser",
