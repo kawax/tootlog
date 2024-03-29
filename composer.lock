@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.301.9",
+            "version": "3.301.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "23eda9eeb6c44a3ed6a12951b61020dc6048f7f5"
+                "reference": "f84a262c28bedf88d8aab5b9dad0adbc5faa0094"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/23eda9eeb6c44a3ed6a12951b61020dc6048f7f5",
-                "reference": "23eda9eeb6c44a3ed6a12951b61020dc6048f7f5",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/f84a262c28bedf88d8aab5b9dad0adbc5faa0094",
+                "reference": "f84a262c28bedf88d8aab5b9dad0adbc5faa0094",
                 "shasum": ""
             },
             "require": {
@@ -151,9 +151,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.301.9"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.301.10"
             },
-            "time": "2024-03-27T18:26:04+00:00"
+            "time": "2024-03-28T18:13:20+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -9736,16 +9736,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "10.5.15",
+            "version": "10.5.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "86376e05e8745ed81d88232ff92fee868247b07b"
+                "reference": "18f8d4a5f52b61fdd9370aaae3167daa0eeb69cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/86376e05e8745ed81d88232ff92fee868247b07b",
-                "reference": "86376e05e8745ed81d88232ff92fee868247b07b",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/18f8d4a5f52b61fdd9370aaae3167daa0eeb69cd",
+                "reference": "18f8d4a5f52b61fdd9370aaae3167daa0eeb69cd",
                 "shasum": ""
             },
             "require": {
@@ -9817,7 +9817,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.15"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.16"
             },
             "funding": [
                 {
@@ -9833,7 +9833,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-03-22T04:17:47+00:00"
+            "time": "2024-03-28T10:08:10+00:00"
         },
         {
             "name": "revolution/sail-db-backup",
@@ -10945,16 +10945,16 @@
         },
         {
             "name": "spatie/ignition",
-            "version": "1.12.0",
+            "version": "1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/ignition.git",
-                "reference": "5b6f801c605a593106b623e45ca41496a6e7d56d"
+                "reference": "e385d778f770580c00ef200be5ab749c3c907147"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/ignition/zipball/5b6f801c605a593106b623e45ca41496a6e7d56d",
-                "reference": "5b6f801c605a593106b623e45ca41496a6e7d56d",
+                "url": "https://api.github.com/repos/spatie/ignition/zipball/e385d778f770580c00ef200be5ab749c3c907147",
+                "reference": "e385d778f770580c00ef200be5ab749c3c907147",
                 "shasum": ""
             },
             "require": {
@@ -11024,7 +11024,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-01-03T15:49:39+00:00"
+            "time": "2024-03-28T14:23:58+00:00"
         },
         {
             "name": "spatie/laravel-ignition",
