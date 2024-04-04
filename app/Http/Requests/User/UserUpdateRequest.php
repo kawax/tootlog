@@ -31,12 +31,12 @@ class UserUpdateRequest extends FormRequest
                 'string',
                 'email',
                 'max:255',
-                Rule::unique(User::class, 'email')->ignore($this->user()->id)
+                Rule::unique(User::class, 'email')->ignore($this->user()->id),
             ],
             'theme' => [
                 'required',
                 'string',
-                Rule::in(['thin', 'normal'])
+                Rule::in(['thin', 'normal']),
             ],
         ];
     }
