@@ -6,7 +6,7 @@ use App\Models\Account;
 use App\Models\Server;
 use App\Models\Status;
 use Illuminate\Console\Command;
-use Mastodon;
+use Revolution\Mastodon\Facades\Mastodon;
 
 class TootInfoCommand extends Command
 {
@@ -36,10 +36,8 @@ class TootInfoCommand extends Command
 
     /**
      * Execute the console command.
-     *
-     * @return mixed
      */
-    public function handle()
+    public function handle(): int
     {
         info(self::class);
 
@@ -63,7 +61,9 @@ class TootInfoCommand extends Command
         ];
 
         Mastodon::domain(config('services.mastodon_notify.domain'))
-                ->token(config('services.mastodon_notify.token'))
-                ->createStatus(implode(PHP_EOL, $status));
+            ->token(config('services.mastodon_notify.token'))
+            ->createStatus(implode(PHP_EOL, $status));
+
+        return 0;
     }
 }
