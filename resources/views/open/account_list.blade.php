@@ -1,5 +1,5 @@
 <div class="card mb-2">
-    <div class="card-header bg-white"><a href="{{ route('open.user', $user) }}">{{ '@' . $user->name }} Account List</a>
+    <div class="card-header bg-white"><a href="{{ route('open.user', $user) }}" class="text-decoration-none">{{ '@' . $user->name }} Account List</a>
     </div>
 
     <div class="card-body">

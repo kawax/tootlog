@@ -4,7 +4,7 @@
 
             <div class="d-flex">
                 <div class="flex-shrink-0">
-                    <a href="{{ $status->account->url }}" target="_blank" rel="nofollow noopener">
+                    <a href="{{ $status->account->url }}" class="text-decoration-none" target="_blank" rel="nofollow noopener">
                         <img class="rounded toot-icon"
                              src="{{ $status->account->avatar }}"
                              alt="{{ $status->name }}"
@@ -14,7 +14,7 @@
                 <div class="flex-grow-1 ms-3">
                     <h4>
                         <a href="{{ $status->account->url }}" target="_blank"
-                           rel="nofollow noopener">{{ $status->name }} </a>
+                           rel="nofollow noopener" class="text-decoration-none">{{ $status->name }} </a>
                         <small class="text-muted">
                             {{ $status->acct }}
                             @if($status->account->locked)
@@ -40,7 +40,7 @@
                             'username' => $status->account->username,
                             'domain' => $status->account->domain,
                             'status_id' => $status->status_id
-                            ]) }}" class="pe-1">
+                            ]) }}" class="pe-1 text-decoration-none">
                             <time title="{{ $status->local_datetime->toAtomString() }}"
                                   datetime="{{ $status->local_datetime->toAtomString() }}">
                                 {{ $status->local_datetime->diffForHumans() }}

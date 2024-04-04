@@ -19,7 +19,7 @@
     </div>
 
     <div class="card-footer">
-        <a href="{{ route('open.archives', $user) }}">Archives</a>
+        <a href="{{ route('open.archives', $user) }}" class="text-decoration-none">Archives</a>
     </div>
 
 </div>

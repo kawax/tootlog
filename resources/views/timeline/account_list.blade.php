@@ -1,5 +1,5 @@
 <div class="card">
-    <div class="card-header bg-white"><a href="{{ route('timeline') }}">Timeline</a></div>
+    <div class="card-header bg-white"><a href="{{ route('timeline') }}" class="text-decoration-none">Timeline</a></div>
 
     <div class="card-body">
         <div class="list-group">

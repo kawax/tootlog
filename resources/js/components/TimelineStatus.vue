@@ -1,7 +1,7 @@
 <template>
     <div class="d-flex p-1 m-1">
         <div class="flex-shrink-0">
-            <a :href="post.account.url" target="_blank" rel="nofollow noopener">
+            <a :href="post.account.url" target="_blank" rel="nofollow noopener" class="text-decoration-none">
                 <img class="rounded toot-icon" :src="post.account.avatar"/>
             </a>
         </div>
@@ -13,6 +13,7 @@
                     v-html="display_name()"
                     target="_blank"
                     rel="nofollow noopener"
+                    class="text-decoration-none"
                 >
                 </a>
                 <small class="text-muted"> @{{ post.account.acct }} </small>
@@ -32,7 +33,7 @@
                 v-if="post.media_attachments"
                 v-for="media in post.media_attachments"
             >
-                <a :href="media.url" target="_blank" ref="nofollow noopener">
+                <a :href="media.url" target="_blank" ref="nofollow noopener" class="text-decoration-none">
                     <img
                         :src="media.preview_url"
                         class="img-responsive img-thumbnail"
@@ -41,7 +42,7 @@
             </div>
 
             <div>
-                <a :href="post.url" target="_blank" ref="nofollow noopener">
+                <a :href="post.url" target="_blank" ref="nofollow noopener" class="text-decoration-none">
                     {{ formatDate(post.created_at) }}
                 </a>
             </div>

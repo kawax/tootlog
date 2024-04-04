@@ -8,7 +8,7 @@
 
                 <div class="col-md-8 order-md-last">
                     <h2>
-                        <a href="{{ $accounts->first()->server->domain }}" target="_blank" rel="nofollow noopener">
+                        <a href="{{ $accounts->first()->server->domain }}" target="_blank" rel="nofollow noopener" class="text-decoration-none">
                             {{ $accounts->first()->acct }}
                         </a>
                     </h2>

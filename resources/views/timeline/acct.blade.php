@@ -7,7 +7,7 @@
 
             <div class="col-md-8 order-md-last">
                 <h2>
-                    <a href="{{ $acct->server->domain }}" target="_blank" rel="nofollow noopener">
+                    <a href="{{ $acct->server->domain }}" target="_blank" rel="nofollow noopener" class="text-decoration-none">
                         {{ $acct->acct }}
                     </a>
                 </h2>

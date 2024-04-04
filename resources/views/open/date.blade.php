@@ -19,8 +19,8 @@
 
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a
-                                    href="{{ route('open.user', $user) }}">{{ '@' . $user->name  }}</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('open.archives', $user) }}">archives</a></li>
+                                    href="{{ route('open.user', $user) }}" class="text-decoration-none">{{ '@' . $user->name  }}</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('open.archives', $user) }}" class="text-decoration-none">archives</a></li>
                         <li class="breadcrumb-item active" aria-current="page">{{ $date  }}</li>
                     </ol>
                 </nav>

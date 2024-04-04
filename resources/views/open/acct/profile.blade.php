@@ -5,7 +5,7 @@
         @can('delete', $acct)
             <button type="button"
                     class="btn btn-outline-danger btn-sm float-end"
-                    data-toggle="modal" data-target="#deleteModal">
+                    data-bs-toggle="modal" data-bs-target="#deleteModal">
                 Delete...
             </button>
             @include('open.acct.delete')
@@ -16,7 +16,7 @@
 
         <div class="d-flex">
             <div class="flex-shrink-0">
-            <a href="{{ $acct->url }}" target="_blank" rel="nofollow noopener">
+            <a href="{{ $acct->url }}" target="_blank" rel="nofollow noopener" class="text-decoration-none">
                 <img class="rounded-circle toot-icon"
                      src="{{ $acct->avatar }}"
                      alt="{{ $acct->name }}"
@@ -33,7 +33,7 @@
 
                 <p>{!! $acct->note !!}</p>
 
-                <a href="{{ $acct->url }}" target="_blank" rel="nofollow noopener">
+                <a href="{{ $acct->url }}" target="_blank" rel="nofollow noopener" class="text-decoration-none">
                     {{ $acct->url }}
                 </a>
             </div>

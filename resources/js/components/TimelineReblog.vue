@@ -14,6 +14,7 @@
                     :href="post.reblog.account.url"
                     target="_blank"
                     rel="nofollow noopener"
+                    class="text-decoration-none"
                 >
                     <img
                         class="rounded toot-icon"
@@ -28,6 +29,7 @@
                         v-html="reblog_display_name()"
                         target="_blank"
                         rel="nofollow noopener"
+                        class="text-decoration-none"
                     >
                     </a>
                     <small class="text-muted">
@@ -56,6 +58,7 @@
                         :href="media.url"
                         target="_blank"
                         ref="nofollow noopener"
+                        class="text-decoration-none"
                     >
                         <img
                             :src="media.preview_url"
@@ -69,6 +72,7 @@
                         :href="post.reblog.url"
                         target="_blank"
                         ref="nofollow noopener"
+                        class="text-decoration-none"
                     >
                         {{ formatDate(post.reblog.created_at) }}
                     </a>

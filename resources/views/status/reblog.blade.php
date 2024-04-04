@@ -9,7 +9,7 @@
     <div class="card-body">
         <div class="d-flex">
             <div class="flex-shrink-0">
-                <a href="{{ $status->reblog->account_url }}" target="_blank" rel="nofollow noopener">
+                <a href="{{ $status->reblog->account_url }}" class="text-decoration-none" target="_blank" rel="nofollow noopener">
                     <img class="media-object rounded toot-icon"
                          src="{{ $status->reblog->avatar }}"
                          alt="{{ $status->reblog->name }}"
@@ -18,7 +18,7 @@
             </div>
             <div class="flex-grow-1 ms-3">
                 <h4 class="media-heading">
-                    <a href="{{ $status->reblog->account_url }}" target="_blank" rel="nofollow noopener">{{ $status->reblog->name }}</a>
+                    <a href="{{ $status->reblog->account_url }}" class="text-decoration-none" target="_blank" rel="nofollow noopener">{{ $status->reblog->name }}</a>
                     <small class="text-muted">{{ $status->reblog->acct }}</small>
                 </h4>
 
@@ -39,7 +39,7 @@
                 @endif
 
                 <div>
-                    <a href="{{ $status->reblog->url }}" target="_blank" rel="nofollow noopener">
+                    <a href="{{ $status->reblog->url }}" target="_blank" rel="nofollow noopener" class="text-decoration-none">
                         <time datetime="{{ $status->reblog->created_at->toAtomString() }}">
                             {{ $status->reblog->created_at->diffForHumans() }}
                         </time>
@@ -52,7 +52,7 @@
                             'username' => $status->account->username,
                             'domain' => $status->account->domain,
                             'status_id' => $status->status_id
-                            ]) }}">
+                            ]) }}" class="text-decoration-none">
                         {{ $status->account->acct . '/' . $status->status_id }}
 
                     </a>

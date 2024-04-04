@@ -10,8 +10,8 @@
                     <h1>tootlog</h1>
                     <p>Mastodon log archives service.</p>
                     <p class="d-flex flex-row gap-2">
-                        <a class="btn btn-primary btn-lg" href="{{ route('login') }}" role="button">Login</a>
-                        <a class="btn btn-primary btn-lg" href="{{ route('register') }}" role="button">Register</a>
+                        <a class="btn btn-secondary" href="{{ route('login') }}" role="button">Login</a>
+                        <a class="btn btn-secondary" href="{{ route('register') }}" role="button">Register</a>
                     </p>
                     <small>
                         {{ config('tootlog.version') }}
@@ -40,7 +40,7 @@
                 <h2>Sample</h2>
                 <div class="card">
                     <div class="card-body">
-                        <a href="https://tootlog.net/@tootlog">https://tootlog.net/@tootlog</a>
+                        <a href="https://tootlog.net/@tootlog" class="text-decoration-none">https://tootlog.net/@tootlog</a>
                     </div>
                 </div>
             </div>
