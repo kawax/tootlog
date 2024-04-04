@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\User;
 
+use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
@@ -12,7 +13,7 @@ class UserUpdateRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
         return true;
     }
@@ -22,11 +23,21 @@ class UserUpdateRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(): array
     {
         return [
-            'email' => 'required|string|email|max:255|unique:users,email,'.auth()->user()->id,
-            'theme' => ['required', 'string', Rule::in(['thin', 'normal'])],
+            'email' => [
+                'required',
+                'string',
+                'email',
+                'max:255',
+                Rule::unique(User::class, 'email')->ignore($this->user()->id)
+            ],
+            'theme' => [
+                'required',
+                'string',
+                Rule::in(['thin', 'normal'])
+            ],
         ];
     }
 }

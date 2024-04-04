@@ -11,10 +11,9 @@
         "php": "^8.1",
         "aws/aws-sdk-php": "^3.212",
         "biscolab/laravel-recaptcha": "^6.0",
-        "doctrine/dbal": "^3.3",
         "guzzlehttp/guzzle": "^7.4",
         "laravel/fortify": "^1.11",
-        "laravel/framework": "^10.0",
+        "laravel/framework": "^11.0",
         "laravel/horizon": "^5.9",
         "laravel/tinker": "^2.7",
         "league/csv": "^9.8",
@@ -22,21 +21,21 @@
         "revolution/laravel-mastodon-api": "^3.0",
         "revolution/laravel-namespaced-helpers": "^2.0",
         "revolution/socialite-mastodon": "^1.3",
-        "spatie/laravel-sitemap": "^6.1",
-        "symfony/http-client": "^6.0",
-        "symfony/mailgun-mailer": "^6.0"
+        "spatie/laravel-sitemap": "^7.2",
+        "symfony/http-client": "^7.0",
+        "symfony/mailgun-mailer": "^7.0"
     },
     "require-dev": {
-        "barryvdh/laravel-ide-helper": "^2.12",
+        "barryvdh/laravel-ide-helper": "^3.0",
         "spatie/laravel-ignition": "^2.0",
         "fakerphp/faker": "^1.9.1",
         "itsgoingd/clockwork": "^5.0",
         "laravel/legacy-factories": "^1.3",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.5",
-        "nunomaduro/collision": "^7.0",
-        "phpunit/phpunit": "^10.0",
-        "revolution/sail-db-backup": "^2.0"
+        "nunomaduro/collision": "^8.0",
+        "phpunit/phpunit": "^11.0",
+        "revolution/sail-db-backup": "^3.0"
     },
     "autoload": {
         "classmap": [

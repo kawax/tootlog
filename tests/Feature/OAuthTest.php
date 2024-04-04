@@ -94,18 +94,20 @@ class OAuthTest extends TestCase
 
     public function tearDown(): void
     {
+        parent::tearDown();
+
         m::close();
     }
 
     public function testAccountAddRedirect()
     {
         $this->serverRepository->shouldReceive('firstOrCreate')
-                               ->with('https://example.com')
-                               ->once()
-                               ->andReturn(['client_id' => '', 'client_secret' => '']);
+            ->with('https://example.com')
+            ->once()
+            ->andReturn(['client_id' => '', 'client_secret' => '']);
 
         $response = $this->actingAs($this->user)
-                         ->post('/accounts', ['domain' => 'https://example.com']);
+            ->post('/accounts', ['domain' => 'https://example.com']);
 
         $response->assertStatus(302)->assertSessionHas('mastodon_domain');
     }
@@ -115,13 +117,12 @@ class OAuthTest extends TestCase
         Bus::fake();
 
         $this->serverRepository->shouldReceive('firstOrCreate')
-                               ->with('https://example.com')
-                               ->once()
-                               ->andReturn(['client_id' => '', 'client_secret' => '']);
+            ->with('https://example.com')
+            ->once()
+            ->andReturn(['client_id' => '', 'client_secret' => '']);
 
         Socialite::shouldReceive('driver')->once()->andReturn(m::self());
-        Socialite::shouldReceive('user')->once()->andReturn(new class()
-        {
+        Socialite::shouldReceive('user')->once()->andReturn(new class() {
             public $user = [
                 'url' => 'https://example.com/@test',
             ];
@@ -139,8 +140,8 @@ class OAuthTest extends TestCase
         //        $this->accountRepository->shouldReceive('update')->once()->andReturn($account);
 
         $response = $this->actingAs($this->user)
-                         ->withSession(['mastodon_domain' => 'https://example.com'])
-                         ->get('/accounts/callback');
+            ->withSession(['mastodon_domain' => 'https://example.com'])
+            ->get('/accounts/callback');
 
         //        dd($response);
 
@@ -154,13 +155,12 @@ class OAuthTest extends TestCase
         Bus::fake();
 
         $this->serverRepository->shouldReceive('firstOrCreate')
-                               ->with('https://example.com')
-                               ->once()
-                               ->andReturn(['id' => 1, 'client_id' => '', 'client_secret' => '']);
+            ->with('https://example.com')
+            ->once()
+            ->andReturn(['id' => 1, 'client_id' => '', 'client_secret' => '']);
 
         Socialite::shouldReceive('driver')->once()->andReturn(m::self());
-        Socialite::shouldReceive('user')->once()->andReturn(new class()
-        {
+        Socialite::shouldReceive('user')->once()->andReturn(new class() {
             public $user = [
                 'id' => '1',
                 'url' => 'https://example.com/@test',
@@ -186,8 +186,8 @@ class OAuthTest extends TestCase
         //        $this->accountRepository->shouldReceive('store')->once()->andReturn($account);
 
         $response = $this->actingAs($this->user)
-                         ->withSession(['mastodon_domain' => 'https://example.com'])
-                         ->get('/accounts/callback');
+            ->withSession(['mastodon_domain' => 'https://example.com'])
+            ->get('/accounts/callback');
 
         Bus::assertDispatched(GetStatusJob::class);
 

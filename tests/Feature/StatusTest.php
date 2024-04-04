@@ -91,6 +91,8 @@ class StatusTest extends TestCase
 
     public function tearDown(): void
     {
+        parent::tearDown();
+
         m::close();
     }
 

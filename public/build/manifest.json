@@ -1,42 +1,47 @@
 {
-  "_vendor-133b4ac0.js": {
-    "file": "assets/vendor-133b4ac0.js"
+  "_vendor-!~{002}~.js": {
+    "file": "assets/vendor-pxrDaSd6.css",
+    "src": "_vendor-!~{002}~.js"
+  },
+  "_vendor-SW9p2_fb.js": {
+    "file": "assets/vendor-SW9p2_fb.js",
+    "name": "vendor",
+    "css": [
+      "assets/vendor-pxrDaSd6.css"
+    ],
+    "assets": [
+      "assets/fa-regular-400-9VThgXHM.woff2",
+      "assets/fa-regular-400-C54-fRIQ.ttf",
+      "assets/fa-solid-900-QWY35r5r.woff2",
+      "assets/fa-solid-900-Cm9M9sZB.ttf"
+    ]
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf": {
-    "file": "assets/fa-regular-400-5d02dc9b.ttf",
+    "file": "assets/fa-regular-400-C54-fRIQ.ttf",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2": {
-    "file": "assets/fa-regular-400-2bccecf0.woff2",
+    "file": "assets/fa-regular-400-9VThgXHM.woff2",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf": {
-    "file": "assets/fa-solid-900-fbbf06d7.ttf",
+    "file": "assets/fa-solid-900-Cm9M9sZB.ttf",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2": {
-    "file": "assets/fa-solid-900-9fc85f3a.woff2",
+    "file": "assets/fa-solid-900-QWY35r5r.woff2",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2"
   },
-  "resources/js/app.css": {
-    "file": "assets/app-922a3845.css",
-    "src": "resources/js/app.css"
-  },
   "resources/js/app.js": {
-    "assets": [
-      "assets/fa-regular-400-2bccecf0.woff2",
-      "assets/fa-regular-400-5d02dc9b.ttf",
-      "assets/fa-solid-900-9fc85f3a.woff2",
-      "assets/fa-solid-900-fbbf06d7.ttf"
+    "file": "assets/app-Dg5cByDO.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "imports": [
+      "_vendor-SW9p2_fb.js"
     ],
     "css": [
-      "assets/app-922a3845.css"
-    ],
-    "file": "assets/app-e64ca205.js",
-    "imports": [
-      "_vendor-133b4ac0.js"
-    ],
-    "isEntry": true,
-    "src": "resources/js/app.js"
+      "assets/app-CpzyypDn.css"
+    ]
   }
 }

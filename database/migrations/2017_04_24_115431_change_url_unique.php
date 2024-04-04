@@ -14,7 +14,7 @@ class ChangeUrlUnique extends Migration
     public function up()
     {
         Schema::table('accounts', function (Blueprint $table) {
-            $table->unique('url');
+            $table->string('url')->unique('url')->change();
         });
     }
 

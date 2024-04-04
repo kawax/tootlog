@@ -14,7 +14,7 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         //laravel-log-viewer表示可能
         Gate::define('admin-logs', fn ($user) => $user->isAdmin());
