@@ -7,11 +7,11 @@
                 <div class="card">
                     <div class="card-header bg-white">User Preferences</div>
                     <div class="card-body">
-                        <form role="form" method="POST" action="{{ route('preferences.update') }}">
+                        <form method="POST" action="{{ route('preferences.update') }}">
                             @csrf
 
-                            <div class="mb-3 row{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <label for="email" class="col-md-4 col-form-label">E-Mail Address
+                            <div class="mb-3 row">
+                                <label for="email" class="col-md-4 col-form-label text-md-end">E-Mail Address
                                     @if(request()->user()->hasVerifiedEmail())
                                         <span class="badge rounded-pill bg-success">Verified</span>
                                     @endif
@@ -19,23 +19,23 @@
 
                                 <div class="col-md-6">
                                     <input id="email" type="email"
-                                           class="form-control" name="email"
+                                           class="form-control @error('email') is-invalid @enderror" name="email"
                                            value="{{ request()->user()->email }}" required>
 
-                                    @if ($errors->has('email'))
-                                        <span class="help-block">
+                                    @error('email')
+                                    <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
-                                    @endif
+                                    @enderror
 
                                 </div>
                             </div>
 
                             <div class="mb-3 row{{ $errors->has('theme') ? ' has-error' : '' }}">
-                                <label for="theme" class="col-md-4 col-form-label">Font</label>
+                                <label for="theme" class="col-md-4 col-form-label text-md-end">Font</label>
 
                                 <div class="col-md-6">
-                                    <select class="form-control" name="theme">
+                                    <select class="form-control @error('theme') is-invalid @enderror" name="theme">
                                         <option value="thin"
                                                 @if(request()->user()->theme === 'thin')selected="selected"@endif>Thin
                                         </option>
@@ -45,17 +45,17 @@
                                         </option>
                                     </select>
 
-                                    @if ($errors->has('theme'))
-                                        <span class="help-block">
+                                    @error('theme')
+                                    <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('theme') }}</strong>
                                     </span>
-                                    @endif
+                                    @enderror
                                 </div>
                             </div>
 
-                            <div class="row">
-                                <div class="col d-grid">
-                                    <button type="submit" class="btn btn-primary">
+                            <div class="row mb-0">
+                                <div class="col-md-6 offset-md-4">
+                                    <button type="submit" class="btn btn-primary px-3">
                                         Save
                                     </button>
                                 </div>
