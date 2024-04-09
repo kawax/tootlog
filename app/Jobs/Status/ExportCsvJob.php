@@ -42,9 +42,6 @@ class ExportCsvJob implements ShouldQueue
 
     /**
      * Execute the job.
-     *
-     * @param  StatusRepository  $statusRepository
-     * @return void
      */
     public function handle(StatusRepository $statusRepository): void
     {
@@ -58,9 +55,6 @@ class ExportCsvJob implements ShouldQueue
     }
 
     /**
-     * @param  Account  $account
-     * @return void
-     *
      * @throws CannotInsertRecord
      * @throws Exception
      */
@@ -86,9 +80,6 @@ class ExportCsvJob implements ShouldQueue
         }
     }
 
-    /**
-     * @return array
-     */
     protected function header(): array
     {
         return [
@@ -102,7 +93,6 @@ class ExportCsvJob implements ShouldQueue
     }
 
     /**
-     * @param  Status  $status
      * @throws Exception
      */
     protected function insert(Status $status): void
