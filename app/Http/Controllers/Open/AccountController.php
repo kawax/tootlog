@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Repository\Account\AccountRepository as Account;
 use App\Repository\Status\StatusRepository as Status;
+use Illuminate\Support\Facades\Gate;
 
 class AccountController extends Controller
 {
@@ -32,7 +33,7 @@ class AccountController extends Controller
         $acct = $this->accountRepository->getByAcct($username, $domain);
 
         if ($acct->locked) {
-            $this->authorize('show', $acct);
+            Gate::authorize('show', $acct);
         }
 
         $statuses = $this->statusRepository->openAcctStatuses($acct);
@@ -58,7 +59,7 @@ class AccountController extends Controller
         $status = $this->statusRepository->getByAcct($acct, (int) $status_id);
 
         if ($acct->locked || $status->trashed()) {
-            $this->authorize('show', $acct);
+            Gate::authorize('show', $acct);
         }
 
         return view('open.acct.show')->with(compact('user', 'acct', 'status'));

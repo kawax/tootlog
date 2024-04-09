@@ -10,7 +10,7 @@
         </form>
 
         <div>
-            @if (session('export'))
+            @if(session('export'))
                 {{ session('export') }}
             @else
                 Send files by mail.

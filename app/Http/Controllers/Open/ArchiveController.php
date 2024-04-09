@@ -8,18 +8,9 @@ use App\Repository\Status\StatusRepository as Status;
 
 class ArchiveController extends Controller
 {
-    /**
-     * AccountController constructor.
-     *
-     * @param  Status  $statusRepository
-     */
-    public function __construct(protected Status $statusRepository)
+    public function __invoke(User $user, Status $statusRepository)
     {
-    }
-
-    public function __invoke(User $user)
-    {
-        $archives = $this->statusRepository->openArchives($user);
+        $archives = $statusRepository->openArchives($user);
 
         return view('open.archives')->with(compact('user', 'archives'));
     }

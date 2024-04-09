@@ -17,9 +17,9 @@
 
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a
-                                    href="{{ route('open.user', $user) }}">{{ '@' . $user->name  }}</a></li>
+                                    href="{{ route('open.user', $user) }}" class="text-decoration-none">{{ '@' . $user->name  }}</a></li>
                         <li class="breadcrumb-item">
-                            <a href="{{ route('open.account.index', [$user, $acct->username, $acct->domain]) }}">{{ $acct->acct  }}</a>
+                            <a href="{{ route('open.account.index', [$user, $acct->username, $acct->domain]) }}" class="text-decoration-none">{{ $acct->acct  }}</a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">{{ $status->status_id }}</li>
                     </ol>

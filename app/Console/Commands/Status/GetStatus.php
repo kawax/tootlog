@@ -34,10 +34,8 @@ class GetStatus extends Command
 
     /**
      * Execute the console command.
-     *
-     * @return void
      */
-    public function handle(Account $account)
+    public function handle(Account $account): int
     {
         info('toot:statuses start');
 
@@ -46,5 +44,7 @@ class GetStatus extends Command
         foreach ($accounts as $account) {
             GetStatusJob::dispatch($account);
         }
+
+        return 0;
     }
 }

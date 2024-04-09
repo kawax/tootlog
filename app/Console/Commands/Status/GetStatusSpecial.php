@@ -34,10 +34,8 @@ class GetStatusSpecial extends Command
 
     /**
      * Execute the console command.
-     *
-     * @return mixed
      */
-    public function handle(Account $account)
+    public function handle(Account $account): int
     {
         info('toot:statuses-special start');
 
@@ -46,5 +44,7 @@ class GetStatusSpecial extends Command
         foreach ($accounts as $account) {
             GetStatusJob::dispatch($account);
         }
+
+        return 0;
     }
 }

@@ -35,16 +35,15 @@ class InstanceVersionCommand extends Command
 
     /**
      * Execute the console command.
-     *
-     * @param  ServerRepository  $repository
-     * @return void
      */
-    public function handle(ServerRepository $repository)
+    public function handle(ServerRepository $repository): int
     {
         $repository->all()->each(function (Server $server) {
             if ($server->accounts()->where('fails', '<', 10)->exists()) {
                 InstanceVersionJob::dispatch($server);
             }
         });
+
+        return 0;
     }
 }

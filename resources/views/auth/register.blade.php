@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <div class="row py-3 justify-content-md-center">
+        <div class="row py-5 justify-content-md-center">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header bg-white">Register</div>

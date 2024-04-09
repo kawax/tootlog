@@ -67,3 +67,5 @@ Route::get('sitemaps')
 Route::view('/', 'welcome')->name('welcome');
 
 Route::view('usage', 'pages.usage');
+
+require __DIR__ . '/open.php';

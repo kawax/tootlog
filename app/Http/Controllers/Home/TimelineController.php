@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use App\Repository\Account\AccountRepository as Account;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class TimelineController extends Controller
 {
@@ -25,7 +26,7 @@ class TimelineController extends Controller
 
         $acct = $account->getByAcct($username, $domain);
 
-        $this->authorize('show', $acct);
+        Gate::authorize('show', $acct);
 
         return view('timeline.acct')->with(compact('user', 'accounts', 'acct'));
     }

@@ -6,6 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Storage;
 
 class CsvExported extends Mailable implements ShouldQueue
 {
@@ -23,13 +24,11 @@ class CsvExported extends Mailable implements ShouldQueue
 
     /**
      * Build the message.
-     *
-     * @return $this
      */
-    public function build()
+    public function build(): static
     {
         foreach ($this->files as $file) {
-            $this->attach(storage_path('app/'.$file));
+            $this->attach(Storage::path($file));
         }
 
         return $this->subject('[tootlog] export')

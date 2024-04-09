@@ -7,18 +7,11 @@ use App\Http\Requests\User\UserUpdateRequest;
 
 class PreferencesController extends Controller
 {
-    /**
-     * @return \Illuminate\Http\Response|\Illuminate\View\View
-     */
     public function index()
     {
         return view('prefs.index');
     }
 
-    /**
-     * @param  UserUpdateRequest  $request
-     * @return \Illuminate\Http\Response|\Illuminate\View\View
-     */
     public function update(UserUpdateRequest $request)
     {
         $user = $request->user();
