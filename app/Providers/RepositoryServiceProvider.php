@@ -14,34 +14,17 @@ class RepositoryServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
-     *
-     * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         //
     }
 
     /**
      * Register the application services.
-     *
-     * @return void
      */
-    public function register()
+    public function register(): void
     {
-        app()->singleton(
-            ServerRepository::class,
-            EloquentServerRepository::class
-        );
-
-        app()->singleton(
-            AccountRepository::class,
-            EloquentAccountRepository::class
-        );
-
-        app()->singleton(
-            StatusRepository::class,
-            EloquentStatusRepository::class
-        );
+        //
     }
 }

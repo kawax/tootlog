@@ -33,7 +33,7 @@ class InstanceVersionJob implements ShouldQueue
      *
      * @return void
      */
-    public function handle()
+    public function handle(): void
     {
         rescue(function () {
             $instance = Mastodon::domain($this->server->domain)->instance();

@@ -44,7 +44,7 @@ class GetStatusJob implements ShouldQueue
      * @param  AccountRepository  $accountRepository
      * @return void
      */
-    public function handle(StatusRepository $statusRepository, AccountRepository $accountRepository)
+    public function handle(StatusRepository $statusRepository, AccountRepository $accountRepository): void
     {
         info('GetStatusesJob: '.$this->account->url);
 
@@ -84,7 +84,7 @@ class GetStatusJob implements ShouldQueue
     /**
      * @param  array|null  $statuses
      */
-    protected function create(?array $statuses)
+    protected function create(?array $statuses): void
     {
         foreach ($statuses as $status) {
             $this->createStatus($status);
@@ -94,7 +94,7 @@ class GetStatusJob implements ShouldQueue
     /**
      * @param  array|null  $status
      */
-    protected function createStatus(?array $status)
+    protected function createStatus(?array $status): void
     {
         if (data_get($status, 'visibility') === 'direct') {
             return;
@@ -142,7 +142,7 @@ class GetStatusJob implements ShouldQueue
      * @param  array  $status
      * @param  array  $data
      */
-    protected function newStatus(array $status, array $data)
+    protected function newStatus(array $status, array $data): void
     {
         $attr = [
             'uri' => $data['uri'],
@@ -228,7 +228,7 @@ class GetStatusJob implements ShouldQueue
      * @param  Throwable  $exception
      * @return void
      */
-    public function failed(Throwable $exception)
+    public function failed(Throwable $exception): void
     {
         $this->account->increment('fails');
     }

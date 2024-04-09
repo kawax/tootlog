@@ -15,6 +15,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use League\Csv\CannotInsertRecord;
+use League\Csv\Exception;
 use League\Csv\Writer;
 
 class ExportCsvJob implements ShouldQueue
@@ -45,7 +46,7 @@ class ExportCsvJob implements ShouldQueue
      * @param  StatusRepository  $statusRepository
      * @return void
      */
-    public function handle(StatusRepository $statusRepository)
+    public function handle(StatusRepository $statusRepository): void
     {
         $this->statusRepository = $statusRepository;
 
@@ -61,8 +62,9 @@ class ExportCsvJob implements ShouldQueue
      * @return void
      *
      * @throws CannotInsertRecord
+     * @throws Exception
      */
-    private function write(Account $account)
+    private function write(Account $account): void
     {
         info('Export: '.$this->user->name.' / '.$account->acct);
 
@@ -101,8 +103,9 @@ class ExportCsvJob implements ShouldQueue
 
     /**
      * @param  Status  $status
+     * @throws Exception
      */
-    protected function insert(Status $status)
+    protected function insert(Status $status): void
     {
         $status_line = $status->only([
             'status_id',

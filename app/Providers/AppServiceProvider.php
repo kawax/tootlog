@@ -2,23 +2,29 @@
 
 namespace App\Providers;
 
+use App\Repository\Account\AccountRepository;
+use App\Repository\Account\EloquentAccountRepository;
+use App\Repository\Server\EloquentServerRepository;
+use App\Repository\Server\ServerRepository;
+use App\Repository\Status\EloquentStatusRepository;
+use App\Repository\Status\StatusRepository;
 use Illuminate\Pagination\Paginator;
-use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 use Revolution\Mastodon\Facades\Mastodon;
 
 class AppServiceProvider extends ServiceProvider
 {
+    public array $singletons = [
+        ServerRepository::class => EloquentServerRepository::class,
+        AccountRepository::class => EloquentAccountRepository::class,
+        StatusRepository::class => EloquentStatusRepository::class,
+    ];
+
     /**
      * Bootstrap any application services.
-     *
-     * @return void
      */
     public function boot(): void
     {
-        //laravel-log-viewer表示可能
-        Gate::define('admin-logs', fn ($user) => $user->isAdmin());
-
         Mastodon::macro('instance', fn (): array => $this->get('/instance'));
 
         Paginator::useBootstrapFive();
@@ -26,8 +32,6 @@ class AppServiceProvider extends ServiceProvider
 
     /**
      * Register any application services.
-     *
-     * @return void
      */
     public function register()
     {

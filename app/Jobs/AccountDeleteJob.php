@@ -32,7 +32,7 @@ class AccountDeleteJob implements ShouldQueue
      * @param  Account  $account
      * @return void
      */
-    public function handle(Account $account)
+    public function handle(Account $account): void
     {
         $account->destroy($this->id);
     }

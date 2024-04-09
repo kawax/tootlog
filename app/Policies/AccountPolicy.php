@@ -12,32 +12,18 @@ class AccountPolicy
 
     /**
      * Create a new policy instance.
-     *
-     * @return void
      */
     public function __construct()
     {
         //
     }
 
-    /**
-     * ユーザにより指定されたポストが更新可能か決める.
-     *
-     * @param  User  $user
-     * @param  Account  $account
-     * @return bool
-     */
-    public function show(User $user, Account $account)
+    public function show(User $user, Account $account): bool
     {
         return (int) $user->id === (int) $account->user_id;
     }
 
-    /**
-     * @param  User  $user
-     * @param  Account  $account
-     * @return bool
-     */
-    public function delete(User $user, Account $account)
+    public function delete(User $user, Account $account): bool
     {
         return (int) $user->id === (int) $account->user_id;
     }
