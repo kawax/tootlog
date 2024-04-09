@@ -8,6 +8,8 @@ use App\Repository\Server\EloquentServerRepository;
 use App\Repository\Server\ServerRepository;
 use App\Repository\Status\EloquentStatusRepository;
 use App\Repository\Status\StatusRepository;
+use App\View\Composers\AccountComposer;
+use App\View\Composers\RecentComposer;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 use Revolution\Mastodon\Facades\Mastodon;
@@ -28,6 +30,14 @@ class AppServiceProvider extends ServiceProvider
         Mastodon::macro('instance', fn (): array => $this->get('/instance'));
 
         Paginator::useBootstrapFive();
+
+        view()->composers(
+            [
+                AccountComposer::class => 'open.account_list',
+                RecentComposer::class => 'side.recents',
+                // TagComposer::class     => 'side.tags',
+            ]
+        );
     }
 
     /**

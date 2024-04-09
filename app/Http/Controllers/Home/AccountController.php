@@ -72,6 +72,6 @@ class AccountController extends Controller
             logger()->error($e->getMessage());
         }
 
-        return redirect('/home');
+        return to_route('home');
     }
 }

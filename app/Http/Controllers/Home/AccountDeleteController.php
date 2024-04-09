@@ -21,6 +21,6 @@ class AccountDeleteController extends Controller
 
         AccountDeleteJob::dispatch($id);
 
-        return redirect('home')->with('message', 'Account delete : start');
+        return to_route('home')->with('message', 'Account delete : start');
     }
 }
