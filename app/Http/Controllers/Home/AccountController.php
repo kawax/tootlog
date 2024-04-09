@@ -22,10 +22,7 @@ class AccountController extends Controller
     {
         $domain = $request->string('domain')
             ->trim("/\t\n\r\0\x0B")
-            ->pipe(function (Stringable $domain) {
-                $url = parse_url($domain->value());
-                return $url['scheme'].'://'.$url['host'];
-            })
+            ->pipe(fn (Stringable $domain) => collect(parse_url($domain->value()))->only(['scheme', 'host'])->join('://'))
             ->value();
 
         $info = $server->firstOrCreate($domain);

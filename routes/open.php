@@ -7,43 +7,32 @@ use App\Http\Controllers\Open\TagController;
 use App\Http\Controllers\Open\UserController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now redirect something great!
-|
-*/
-
 Route::name('open.user')
-     ->get('@{user}')
-     ->uses([UserController::class, 'index']);
+    ->get('@{user}')
+    ->uses([UserController::class, 'index']);
 
 Route::name('open.account.index')
-     ->get('@{user}/{username}@{domain}')
-     ->uses([AccountController::class, 'index']);
+    ->get('@{user}/{username}@{domain}')
+    ->uses([AccountController::class, 'index']);
 
 Route::name('open.account.show')
-     ->get('@{user}/{username}@{domain}/{status_id}')
-     ->uses([AccountController::class, 'show']);
+    ->get('@{user}/{username}@{domain}/{status_id}')
+    ->uses([AccountController::class, 'show']);
 
 Route::name('open.user.date')
-     ->get('@{user}/date/{date}')
-     ->uses([DateController::class, 'show'])
-     ->where('date', '[0-9]{4}-[0-9]{2}-[0-9]{2}');
+    ->get('@{user}/date/{date}')
+    ->uses([DateController::class, 'show'])
+    ->where('date', '[0-9]{4}-[0-9]{2}-[0-9]{2}');
 
 Route::name('open.user.date.day')
-     ->get('@{user}/date/{year?}/{month?}/{day?}')
-     ->uses([DateController::class, 'date'])
-     ->where('year', '[0-9]{4}')
-     ->where('month', '[0-9]{2}')
-     ->where('day', '[0-9]{2}');
+    ->get('@{user}/date/{year?}/{month?}/{day?}')
+    ->uses([DateController::class, 'date'])
+    ->where('year', '[0-9]{4}')
+    ->where('month', '[0-9]{2}')
+    ->where('day', '[0-9]{2}');
 
 Route::resource('@{user}/tags', TagController::class, ['only' => ['index', 'show']]);
 
 Route::name('open.archives')
-     ->get('@{user}/archives')
-     ->uses(ArchiveController::class);
+    ->get('@{user}/archives')
+    ->uses(ArchiveController::class);
