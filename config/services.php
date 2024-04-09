@@ -27,16 +27,6 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
-    'sparkpost' => [
-        'secret' => env('SPARKPOST_SECRET'),
-    ],
-
-    'stripe' => [
-        'model' => App\Models\User::class,
-        'key' => env('STRIPE_KEY'),
-        'secret' => env('STRIPE_SECRET'),
-    ],
-
     'mastodon' => [
         'domain' => env('MASTODON_DOMAIN', 'https://chitose.moe'),
         'client_id' => env('MASTODON_ID'),
