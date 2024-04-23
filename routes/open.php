@@ -7,32 +7,32 @@ use App\Http\Controllers\Open\TagController;
 use App\Http\Controllers\Open\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::name('open.user')
-    ->get('@{user}')
-    ->uses([UserController::class, 'index']);
+Route::get('@{user}')
+    ->uses([UserController::class, 'index'])
+    ->name('open.user');
 
-Route::name('open.account.index')
-    ->get('@{user}/{username}@{domain}')
-    ->uses([AccountController::class, 'index']);
+Route::get('@{user}/{username}@{domain}')
+    ->uses([AccountController::class, 'index'])
+    ->name('open.account.index');
 
-Route::name('open.account.show')
-    ->get('@{user}/{username}@{domain}/{status_id}')
-    ->uses([AccountController::class, 'show']);
+Route::get('@{user}/{username}@{domain}/{status_id}')
+    ->uses([AccountController::class, 'show'])
+    ->name('open.account.show');
 
-Route::name('open.user.date')
-    ->get('@{user}/date/{date}')
+Route::get('@{user}/date/{date}')
     ->uses([DateController::class, 'show'])
+    ->name('open.user.date')
     ->where('date', '[0-9]{4}-[0-9]{2}-[0-9]{2}');
 
-Route::name('open.user.date.day')
-    ->get('@{user}/date/{year?}/{month?}/{day?}')
+Route::get('@{user}/date/{year?}/{month?}/{day?}')
     ->uses([DateController::class, 'date'])
+    ->name('open.user.date.day')
     ->where('year', '[0-9]{4}')
     ->where('month', '[0-9]{2}')
     ->where('day', '[0-9]{2}');
 
-Route::resource('@{user}/tags', TagController::class, ['only' => ['index', 'show']]);
+Route::resource('@{user}/tags', TagController::class)
+    ->only(['index', 'show']);
 
-Route::name('open.archives')
-    ->get('@{user}/archives')
-    ->uses(ArchiveController::class);
+Route::get('@{user}/archives', ArchiveController::class)
+    ->name('open.archives');
