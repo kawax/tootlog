@@ -62,8 +62,8 @@
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a href="{{ route('preferences.index') }}" class="dropdown-item">Preferences</a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a href="{{ route('preferences.show') }}" class="dropdown-item">Preferences</a>
                                 </li>
 
                                 <li role="separator" class="dropdown-divider"></li>

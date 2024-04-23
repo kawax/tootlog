@@ -383,7 +383,7 @@ class UserTest extends TestCase
     public function testUpdatePreferences()
     {
         $response = $this->actingAs($this->user)
-                         ->post('/preferences', [
+                         ->put('/preferences', [
                              'email' => 'test@example.com',
                              'theme' => 'normal',
                              'special_ley' => 'test',
@@ -396,7 +396,7 @@ class UserTest extends TestCase
     public function testUpdatePreferencesFail()
     {
         $response = $this->actingAs($this->user)
-                         ->post('/preferences', [
+                         ->put('/preferences', [
                              'email' => 'test@example.com',
                          ]);
 

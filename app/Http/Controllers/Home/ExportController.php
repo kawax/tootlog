@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class ExportController extends Controller
 {
-    public function csv(Request $request): RedirectResponse
+    public function __invoke(Request $request): RedirectResponse
     {
         ExportCsvJob::dispatch($request->user());
 

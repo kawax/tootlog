@@ -11,47 +11,26 @@ use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::name('accounts.add')->post('accounts')
-        ->uses([AccountController::class, 'redirect']);
+    Route::post('accounts', [AccountController::class, 'redirect'])->name('accounts.add');
 
-    Route::get('accounts/callback')
-        ->uses([AccountController::class, 'callback']);
+    Route::get('accounts/callback', [AccountController::class, 'callback']);
 
-    Route::name('accounts.delete')
-        ->delete('accounts/delete/{id}')
-        ->uses(AccountDeleteController::class);
+    Route::delete('accounts/delete/{id}', AccountDeleteController::class)->name('accounts.delete');
 
-    Route::name('timeline')
-        ->get('timeline')
-        ->uses([TimelineController::class, 'index']);
+    Route::get('timeline', [TimelineController::class, 'index'])->name('timeline');
 
-    Route::name('timeline.account')
-        ->get('timeline/{username}@{domain}')
-        ->uses([TimelineController::class, 'acct']);
+    Route::get('timeline/{username}@{domain}', [TimelineController::class, 'acct'])->name('timeline.account');
 
-    Route::name('preferences.index')
-        ->get('preferences')
-        ->uses([PreferencesController::class, 'index']);
+    Route::singleton('preferences', PreferencesController::class)->except('edit');
 
-    Route::name('preferences.update')
-        ->post('preferences')
-        ->uses([PreferencesController::class, 'update']);
+    Route::post('export/csv', ExportController::class)->name('export.csv');
 
-    Route::name('export.csv')
-        ->post('export/csv')
-        ->uses([ExportController::class, 'csv']);
-
-    Route::name('home')
-        ->get('home')
-        ->uses(HomeController::class);
+    Route::get('home', HomeController::class)->name('home');
 });
 
-Route::name('instances')
-    ->get('instances')
-    ->uses(InstanceController::class);
+Route::get('instances', InstanceController::class)->name('instances');
 
-Route::get('sitemaps')
-    ->uses(SitemapController::class);
+Route::get('sitemaps', SitemapController::class);
 
 Route::view('/', 'welcome')->name('welcome');
 

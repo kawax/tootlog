@@ -7,7 +7,7 @@ use App\Http\Requests\User\UserUpdateRequest;
 
 class PreferencesController extends Controller
 {
-    public function index()
+    public function show()
     {
         return view('prefs.index');
     }
