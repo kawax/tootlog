@@ -4,5 +4,7 @@
 
 https://tootlog.net/
 
+元はLaravel5.4の時代に作った古いコードなので参考にしてはいけない。
+
 ## LICENSE
 MIT
