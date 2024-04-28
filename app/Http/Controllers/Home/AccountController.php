@@ -12,6 +12,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Stringable;
 use Laravel\Socialite\Facades\Socialite;
+use Laravel\Socialite\Two\User;
 
 class AccountController extends Controller
 {
@@ -50,6 +51,9 @@ class AccountController extends Controller
         config(['services.mastodon.client_secret' => $info['client_secret']]);
 
         try {
+            /**
+             * @var User $user
+             */
             $user = Socialite::driver('mastodon')->user();
 
             if ($account->exists($user->user['url'])) {

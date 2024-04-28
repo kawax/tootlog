@@ -4,94 +4,54 @@ namespace App\Repository\Account;
 
 use App\Models\Account;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Collection;
 
 interface AccountRepository
 {
-    /**
-     * @return mixed
-     */
-    public function all();
+    public function all(): Collection;
 
-    /**
-     * @return mixed
-     */
-    public function find($id);
+    public function find(int $id): Account;
 
     /**
      * toot:statusesのためのアカウントリスト.
-     *
-     * @return array
      */
-    public function oldest();
+    public function oldest(): Collection;
 
     /**
      * toot:statusesのためのアカウントリスト。特典キーが有効な場合。
-     *
-     * @return array
      */
-    public function special();
+    public function special(): Collection;
 
     /**
      * ユーザーのアカウント.
-     *
-     * @return array
      */
-    public function userAccounts();
+    public function userAccounts(): Collection;
 
     /**
      * ユーザーのアカウント（公開用）.
-     *
-     * @param  User  $user
-     * @return array
      */
-    public function openAccounts(User $user);
+    public function openAccounts(User $user): Collection;
 
     /**
      * ユーザー名とドメインからアカウント.
-     *
-     * @param  string  $username
-     * @param  string  $domain
-     * @return Account
      */
-    public function getByAcct(string $username, string $domain);
+    public function getByAcct(string $username, string $domain): Account;
 
     /**
      * アカウント情報を更新.
-     *
-     * @param  Account  $account
-     * @return mixed
      */
-    public function refresh(Account $account);
+    public function refresh(Account $account): Account;
 
     /**
      * since_idを更新.
-     *
-     * @param  Account  $account
-     * @return mixed
      */
-    public function updateSince(Account $account, $since_id);
+    public function updateSince(Account $account, int $since_id): void;
 
-    /**
-     * @param  $user
-     * @param  array  $server
-     * @return mixed
-     */
-    public function store($user, array $server);
+    public function store(mixed $user, array $server): Account;
 
-    /**
-     * @param  $user
-     * @return mixed
-     */
-    public function update($user);
+    public function update(mixed $user): Account;
 
-    /**
-     * @param  string  $url
-     * @return bool
-     */
     public function exists(string $url): bool;
 
-    /**
-     * @param  int  $id
-     */
     public function destroy(int $id): void;
 }

@@ -4,93 +4,70 @@ namespace App\Repository\Account;
 
 use App\Models\Account;
 use App\Models\User;
-use Carbon\Carbon;
+use Illuminate\Support\Carbon;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Arr;
-use Mastodon;
+use Revolution\Mastodon\Facades\Mastodon;
 
 class EloquentAccountRepository implements AccountRepository
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function all()
+    public function all(): Collection
     {
         return Account::all();
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function find($id)
+    public function find(int $id): Account
     {
         return Account::find($id);
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function oldest()
+    public function oldest(): Collection
     {
         return Account::oldest('updated_at')
-                      ->where('fails', '<', config('tootlog.account_fails'))
-                      ->limit(config('tootlog.account_limit', 3))
-                      ->get();
+            ->where('fails', '<', config('tootlog.account_fails'))
+            ->limit(config('tootlog.account_limit', 3))
+            ->get();
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function special()
+    public function special(): Collection
     {
         return Account::oldest('updated_at')
-                      ->where('fails', '<', config('tootlog.account_fails'))
-                      ->limit(config('tootlog.account_limit_special', 3))
-                      ->whereHas('user', function ($query) {
-                          $query->where('special_key', config('tootlog.special_key'));
-                      })
-                      ->get();
+            ->where('fails', '<', config('tootlog.account_fails'))
+            ->limit(config('tootlog.account_limit_special', 3))
+            ->whereHas('user', function ($query) {
+                $query->where('special_key', config('tootlog.special_key'));
+            })
+            ->get();
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function userAccounts()
+    public function userAccounts(): Collection
     {
         return request()->user()
-                        ->accounts()
-                        ->latest('updated_at')
-                        ->with('server')
-                        ->withCount('statuses')
-                        ->get();
+            ->accounts()
+            ->latest('updated_at')
+            ->with('server')
+            ->withCount('statuses')
+            ->get();
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function openAccounts(User $user)
+    public function openAccounts(User $user): Collection
     {
         return $user->accounts()
-                    ->where('locked', false)
-                    ->latest('updated_at')
-                    ->with('server')
-                    ->withCount('statuses')
-                    ->get();
+            ->where('locked', false)
+            ->latest('updated_at')
+            ->with('server')
+            ->withCount('statuses')
+            ->get();
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getByAcct(string $username, string $domain)
+    public function getByAcct(string $username, string $domain): Account
     {
         $url = '://'.$domain.'/@'.$username;
 
         return Account::where('url', 'like', '%'.$url)->firstOrFail();
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function store($user, array $server)
+    public function store(mixed $user, array $server): Account
     {
         $data = $user->user;
 
@@ -102,14 +79,11 @@ class EloquentAccountRepository implements AccountRepository
         $cond = Arr::only($data, ['account_id', 'username', 'server_id']);
 
         return request()->user()
-                        ->accounts()
-                        ->updateOrCreate($cond, $data);
+            ->accounts()
+            ->updateOrCreate($cond, $data);
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function update($user)
+    public function update(mixed $user): Account
     {
         $data = [];
 
@@ -117,47 +91,35 @@ class EloquentAccountRepository implements AccountRepository
         $data['fails'] = 0;
 
         $account = Account::where('url', $user->user['url'])
-                          ->where('user_id', request()->user()->id)
-                          ->firstOrFail();
+            ->where('user_id', request()->user()->id)
+            ->firstOrFail();
 
         $account->fill($data)->save();
 
         return $account;
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function refresh(Account $account)
+    public function refresh(Account $account): Account
     {
         $data = Mastodon::domain($account->server->domain)
-                        ->token($account->token)
-                        ->verifyCredentials();
+            ->token($account->token)
+            ->verifyCredentials();
 
         $account->fill($data)->save();
 
         return $account;
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function updateSince(Account $account, $since_id)
+    public function updateSince(Account $account, int $since_id): void
     {
         $account->fill(['since_id' => $since_id])->save();
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function exists(string $url): bool
     {
         return Account::where('url', $url)->exists();
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function destroy(int $id): void
     {
         Account::destroy($id);
