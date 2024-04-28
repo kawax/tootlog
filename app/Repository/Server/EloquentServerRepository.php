@@ -61,14 +61,14 @@ class EloquentServerRepository implements ServerRepository
         $scopes = implode(' ', config('services.mastodon.scope'));
 
         $info = Mastodon::domain($domain)
-                        ->createApp($client_name, $redirect_uris, $scopes, config('app.url'));
+            ->createApp($client_name, $redirect_uris, $scopes, config('app.url'));
 
         $info['app_id'] = $info['id'];
         $info['domain'] = $domain;
 
         $server = Server::updateOrCreate(
             ['domain' => $domain],
-            $info
+            $info,
         );
 
         return $server->toArray();
@@ -81,7 +81,7 @@ class EloquentServerRepository implements ServerRepository
     public function instanceList(int $page = 20)
     {
         return Server::withCount('accounts')
-                     ->orderBy('accounts_count', 'DESC')
-                     ->paginate($page);
+            ->orderByDesc('accounts_count')
+            ->paginate($page);
     }
 }
