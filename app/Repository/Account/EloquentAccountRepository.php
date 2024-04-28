@@ -4,9 +4,9 @@ namespace App\Repository\Account;
 
 use App\Models\Account;
 use App\Models\User;
-use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Carbon;
 use Revolution\Mastodon\Facades\Mastodon;
 
 class EloquentAccountRepository implements AccountRepository
