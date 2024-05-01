@@ -8,6 +8,7 @@ use App\Models\Account;
 use App\Models\Server;
 use App\Models\Status;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Carbon;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Bus;
@@ -25,7 +26,7 @@ class MailTest extends TestCase
 
     protected Account $account;
 
-    protected mixed $statuses;
+    protected Collection $statuses;
 
     public function setUp(): void
     {
