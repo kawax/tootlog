@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
@@ -22,32 +23,29 @@ class Server extends Model
 
     /**
      * streaming api url.
-     *
-     * @param  string  $streaming
-     * @return string
      */
-    public function getStreamingAttribute($streaming): string
+    public function streaming(): Attribute
     {
-        if (! is_null($streaming)) {
-            return $streaming;
-        }
+        return Attribute::make(
+            get: function ($streaming) {
+                if (! is_null($streaming)) {
+                    return $streaming;
+                }
 
-        $domain = data_get(config('tootlog.streaming', []), $this->domain, $this->domain);
+                $domain = data_get(config('tootlog.streaming', []), $this->domain, $this->domain);
 
-        return str_replace('http', 'ws', $domain);
+                return str_replace('http', 'ws', $domain);
+            },
+        );
     }
 
-    /**
-     * @return string
-     */
-    public function getFaviconAttribute(): string
+    public function favicon(): Attribute
     {
-        return $this->domain.'/'.data_get(config('tootlog.favicon', []), $this->domain, 'favicon.ico');
+        return Attribute::make(
+            get: fn () => $this->domain.'/'.data_get(config('tootlog.favicon', []), $this->domain, 'favicon.ico'),
+        );
     }
 
-    /**
-     * @return HasMany
-     */
     public function accounts(): HasMany
     {
         return $this->hasMany(Account::class);

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
@@ -29,26 +30,20 @@ class Reblog extends Model
      */
     public $timestamps = false;
 
-    /**
-     * @var array
-     */
-    protected $casts = [
-        'created_at' => 'datetime',
-    ];
-
-    /**
-     * 表示用の名前.
-     *
-     * @return string
-     */
-    public function getNameAttribute(): string
+    protected function casts(): array
     {
-        return $this->display_name ?? '';
+        return [
+            'created_at' => 'datetime',
+        ];
     }
 
-    /**
-     * @return HasMany
-     */
+    public function name(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => $this->display_name ?? '',
+        );
+    }
+
     public function statuses(): HasMany
     {
         return $this->hasMany(Status::class);

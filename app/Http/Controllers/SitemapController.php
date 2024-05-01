@@ -7,10 +7,11 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
+use Symfony\Component\HttpFoundation\Response;
 
 class SitemapController extends Controller
 {
-    public function __invoke(Request $request)
+    public function __invoke(Request $request): Response
     {
         $sitemap = Sitemap::create();
 

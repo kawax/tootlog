@@ -2,19 +2,15 @@
 
 namespace App\View\Composers;
 
-use App\Repository\Status\StatusRepository as Status;
+use Illuminate\Support\Facades\Request;
 use Illuminate\View\View;
 
 class RecentComposer
 {
-    public function __construct(protected Status $statusRepository)
+    public function compose(View $view): void
     {
-    }
-
-    public function compose(View $view)
-    {
-        if (! is_null(request()->user)) {
-            $view->with('recents', $this->statusRepository->openRecents(request()->user));
+        if (Request::route()->hasParameter('user')) {
+            $view->with('recents', request()->route('user')->openRecents());
         }
     }
 }

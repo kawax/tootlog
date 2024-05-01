@@ -4,13 +4,12 @@ namespace App\Http\Controllers\Open;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use App\Repository\Status\StatusRepository as Status;
 
 class ArchiveController extends Controller
 {
-    public function __invoke(User $user, Status $statusRepository)
+    public function __invoke(User $user)
     {
-        $archives = $statusRepository->openArchives($user);
+        $archives = $user->openArchives();
 
         return view('open.archives')->with(compact('user', 'archives'));
     }

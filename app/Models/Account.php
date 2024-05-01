@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use App\Models\Presenter\AccountPresenter;
+use App\Casts\Favicon;
+use App\Models\Concerns\WithAccountStatus;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -11,8 +13,8 @@ use Revolution\Mastodon\Traits\Mastodon;
 
 class Account extends Model
 {
-    use AccountPresenter;
     use Mastodon;
+    use WithAccountStatus;
 
     /**
      * @var array
@@ -40,6 +42,11 @@ class Account extends Model
         'header_static',
     ];
 
+    protected function casts(): array
+    {
+        return [];
+    }
+
     public function scopeByAcct(Builder $query, string $username, string $domain): void
     {
         $url = '://'.$domain.'/@'.$username;
@@ -47,71 +54,54 @@ class Account extends Model
         $query->where('url', 'like', '%'.$url);
     }
 
-    /**
-     * acct.
-     *
-     * @return string
-     */
-    public function getAcctAttribute(): string
+    public function acct(): Attribute
     {
-        $domain = parse_url($this->url, PHP_URL_HOST);
-
-        return $this->username.'@'.$domain;
+        return Attribute::make(
+            get: fn () => $this->username.'@'.parse_url($this->url, PHP_URL_HOST),
+        );
     }
 
-    /**
-     * domain.
-     *
-     * @return string
-     */
-    public function getDomainAttribute(): string
+    public function domain(): Attribute
     {
-        return parse_url($this->url, PHP_URL_HOST);
+        return Attribute::make(
+            get: fn () => parse_url($this->url, PHP_URL_HOST),
+        );
     }
 
-    /**
-     * @return string
-     */
-    public function getNameAttribute(): string
+    public function favicon(): Attribute
     {
-        return filled($this->display_name) ? $this->display_name : $this->username;
+        return Attribute::make(
+            get: fn () => $this->server->domain.'/'.data_get(config('tootlog.favicon', []), $this->server->domain, 'favicon.ico'),
+        );
     }
 
-    /**
-     * @return BelongsTo
-     */
+    public function name(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => filled($this->display_name) ? $this->display_name : $this->username,
+        );
+    }
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    /**
-     * @return BelongsTo
-     */
     public function server(): BelongsTo
     {
         return $this->belongsTo(Server::class);
     }
 
-    /**
-     * @return HasMany
-     */
     public function statuses(): HasMany
     {
         return $this->hasMany(Status::class);
     }
 
-    /**
-     * @return string
-     */
     protected function mastodonDomain(): string
     {
         return $this->server->domain;
     }
 
-    /**
-     * @return string
-     */
     protected function mastodonToken(): string
     {
         return $this->token;

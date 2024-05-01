@@ -11,11 +11,12 @@ use App\Repository\Status\EloquentStatusRepository as StatusRepository;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Support\Facades\Bus;
+use Laravel\Socialite\Facades\Socialite;
+use Laravel\Socialite\Two\User as SocialiteUser;
 use Mockery as m;
 use Revolution\Mastodon\Facades\Mastodon;
 use Revolution\Mastodon\MastodonClient;
-use Laravel\Socialite\Facades\Socialite;
-use Laravel\Socialite\Two\User as SocialiteUser;
+
 use Tests\TestCase;
 
 class OAuthTest extends TestCase

@@ -4,8 +4,8 @@ namespace App\Jobs\Status;
 
 use App\Models\Account;
 use App\Models\Reblog;
+use App\Models\Status;
 use App\Models\Tag;
-use App\Repository\Status\StatusRepository;
 use App\Support\Header;
 use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
@@ -25,8 +25,6 @@ class GetStatusJob implements ShouldQueue
     use Queueable;
     use SerializesModels;
 
-    protected StatusRepository $statusRepository;
-
     /**
      * Create a new job instance.
      *
@@ -39,11 +37,9 @@ class GetStatusJob implements ShouldQueue
     /**
      * Execute the job.
      */
-    public function handle(StatusRepository $statusRepository): void
+    public function handle(): void
     {
         info('GetStatusesJob: '.$this->account->url);
-
-        $this->statusRepository = $statusRepository;
 
         try {
             $this->account = $this->refresh($this->account);
@@ -155,7 +151,7 @@ class GetStatusJob implements ShouldQueue
             'account_id' => $this->account->id,
         ];
 
-        $new_status = $this->statusRepository->updateOrCreate($attr, $data);
+        $new_status = Status::withTrashed()->updateOrCreate($attr, $data);
 
         if (filled(data_get($status, 'reblog'))) {
             $reblog = $this->reblog(data_get($status, 'reblog'));

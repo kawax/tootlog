@@ -6,7 +6,6 @@ use App\Mail\Export\CsvExported;
 use App\Models\Account;
 use App\Models\Status;
 use App\Models\User;
-use App\Repository\Status\StatusRepository;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -25,8 +24,6 @@ class ExportCsvJob implements ShouldQueue
     use Queueable;
     use SerializesModels;
 
-    protected StatusRepository $statusRepository;
-
     protected Writer $writer;
 
     protected array $files = [];
@@ -43,10 +40,8 @@ class ExportCsvJob implements ShouldQueue
     /**
      * Execute the job.
      */
-    public function handle(StatusRepository $statusRepository): void
+    public function handle(): void
     {
-        $this->statusRepository = $statusRepository;
-
         $accounts = $this->user->accounts;
 
         $accounts->each(fn ($account) => $this->write($account));
@@ -66,8 +61,11 @@ class ExportCsvJob implements ShouldQueue
 
         $this->writer->insertOne($this->header());
 
-        $this->statusRepository
-            ->exportCsv($account)
+        $account->statuses()
+            ->withTrashed()
+            ->where('reblog_id', null)
+            ->with('account')
+            ->latest()
             ->lazy()
             ->each(function ($status) {
                 $this->insert($status);

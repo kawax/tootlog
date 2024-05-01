@@ -3,8 +3,6 @@
 namespace App\Providers;
 
 use App\Models\User;
-use App\Repository\Status\EloquentStatusRepository;
-use App\Repository\Status\StatusRepository;
 use App\View\Composers\AccountComposer;
 use App\View\Composers\RecentComposer;
 use Illuminate\Pagination\Paginator;
@@ -14,10 +12,6 @@ use Revolution\Mastodon\Facades\Mastodon;
 
 class AppServiceProvider extends ServiceProvider
 {
-    public array $singletons = [
-        StatusRepository::class => EloquentStatusRepository::class,
-    ];
-
     /**
      * Bootstrap any application services.
      */
@@ -27,13 +21,10 @@ class AppServiceProvider extends ServiceProvider
 
         Paginator::useBootstrapFive();
 
-        view()->composers(
-            [
-                AccountComposer::class => 'open.account_list',
-                RecentComposer::class => 'side.recents',
-                // TagComposer::class     => 'side.tags',
-            ],
-        );
+        view()->composers([
+            AccountComposer::class => 'open.account_list',
+            RecentComposer::class => 'side.recents',
+        ]);
 
         Gate::define('admin', fn (User $user) => $user->id === 1);
     }

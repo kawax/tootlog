@@ -5,17 +5,12 @@ namespace App\Http\Controllers\Open;
 use App\Http\Controllers\Controller;
 use App\Models\Tag;
 use App\Models\User;
-use App\Repository\Status\StatusRepository as Status;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
 
 class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return Application|Factory|View
      */
     public function index(User $user)
     {
@@ -26,15 +21,10 @@ class TagController extends Controller
 
     /**
      * Display the specified resource.
-     *
-     * @param  Status  $statusRepository
-     * @param  User  $user
-     * @param  Tag  $tag
-     * @return Application|Factory|View
      */
-    public function show(Status $statusRepository, User $user, Tag $tag)
+    public function show(Request $request, User $user, Tag $tag)
     {
-        $statuses = $statusRepository->openUserTagStatus($user, $tag);
+        $statuses = $user->openTagStatuses($tag, $request->query('search'))->simplePaginate();
 
         return view('tags.show')->with(compact('user', 'tag', 'statuses'));
     }

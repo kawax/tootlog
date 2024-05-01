@@ -2,9 +2,11 @@
 
 namespace App\Models;
 
-use App\Models\Presenter\UserPresenter;
+use App\Models\Concerns\WithUserAccount;
+use App\Models\Concerns\WithUserArchives;
+use App\Models\Concerns\WithUserStatus;
+use App\Models\Concerns\WithUserTag;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
@@ -14,7 +16,10 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
-    use UserPresenter;
+    use WithUserAccount;
+    use WithUserStatus;
+    use WithUserArchives;
+    use WithUserTag;
 
     /**
      * The attributes that are mass assignable.
@@ -42,31 +47,6 @@ class User extends Authenticatable implements MustVerifyEmail
     public function getRouteKeyName(): string
     {
         return 'name';
-    }
-
-    /**
-     * ユーザーのアカウント.
-     */
-    public function allAccounts(): Collection
-    {
-        return $this->accounts()
-            ->latest('updated_at')
-            ->with('server')
-            ->withCount('statuses')
-            ->get();
-    }
-
-    /**
-     * ユーザーのアカウント（公開用）.
-     */
-    public function openAccounts(): Collection
-    {
-        return $this->accounts()
-            ->where('locked', false)
-            ->latest('updated_at')
-            ->with('server')
-            ->withCount('statuses')
-            ->get();
     }
 
     public function accounts(): HasMany

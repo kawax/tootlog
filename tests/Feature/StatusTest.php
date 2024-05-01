@@ -7,7 +7,6 @@ use App\Models\Account;
 use App\Models\Server;
 use App\Models\Status;
 use App\Models\User;
-use App\Repository\Status\EloquentStatusRepository as StatusRepository;
 use Faker\Factory as Faker;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Response;
@@ -42,11 +41,6 @@ class StatusTest extends TestCase
     protected $statuses;
 
     /**
-     * @var StatusRepository
-     */
-    protected $statusRepository;
-
-    /**
      * @var Response
      */
     protected $response;
@@ -77,8 +71,6 @@ class StatusTest extends TestCase
         );
 
         $this->response = new Response(200, [], 'body');
-
-        $this->statusRepository = m::mock(StatusRepository::class)->makePartial();
     }
 
     public function tearDown(): void
@@ -115,7 +107,7 @@ class StatusTest extends TestCase
         Mastodon::shouldReceive('statuses')->once()->andReturn([$statuses->toArray()]);
         Mastodon::shouldReceive('getResponse')->once()->andReturn($this->response);
 
-        $job->handle($this->statusRepository);
+        $job->handle();
 
         $this->assertDatabaseHas(
             'statuses',
@@ -154,7 +146,7 @@ class StatusTest extends TestCase
         Mastodon::shouldReceive('statuses')->once()->andReturn([$statuses->toArray()]);
         Mastodon::shouldReceive('getResponse')->once()->andReturn($this->response);
 
-        $job->handle($this->statusRepository);
+        $job->handle();
 
         $this->assertDatabaseMissing(
             'statuses',
@@ -207,7 +199,7 @@ class StatusTest extends TestCase
         Mastodon::shouldReceive('statuses')->once()->andReturn([$statuses->toArray()]);
         Mastodon::shouldReceive('getResponse')->once()->andReturn($this->response);
 
-        $job->handle($this->statusRepository);
+        $job->handle();
 
         $this->assertDatabaseHas(
             'reblogs',
@@ -263,7 +255,7 @@ class StatusTest extends TestCase
         Mastodon::shouldReceive('statuses')->once()->andReturn([$statuses->toArray()]);
         Mastodon::shouldReceive('getResponse')->once()->andReturn($this->response);
 
-        $job->handle($this->statusRepository);
+        $job->handle();
 
         $this->assertDatabaseHas(
             'tags',
@@ -305,7 +297,7 @@ class StatusTest extends TestCase
         Mastodon::shouldReceive('token')->once()->andReturn(m::self());
         Mastodon::shouldReceive('statuses')->once()->andThrow(m::mock(ClientException::class));
 
-        $job->handle($this->statusRepository);
+        $job->handle();
 
         $this->assertDatabaseHas(
             'accounts',
