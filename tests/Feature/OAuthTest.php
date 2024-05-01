@@ -7,7 +7,6 @@ use App\Models\Account;
 use App\Models\Server;
 use App\Models\Status;
 use App\Models\User;
-use App\Repository\Status\EloquentStatusRepository as StatusRepository;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Support\Facades\Bus;
@@ -16,42 +15,21 @@ use Laravel\Socialite\Two\User as SocialiteUser;
 use Mockery as m;
 use Revolution\Mastodon\Facades\Mastodon;
 use Revolution\Mastodon\MastodonClient;
-
 use Tests\TestCase;
 
 class OAuthTest extends TestCase
 {
     use RefreshDatabase;
 
-    /**
-     * @var User
-     */
-    protected $user;
+    protected User $user;
 
-    /**
-     * @var Server
-     */
-    protected $server;
+    protected Server $server;
 
-    /**
-     * @var Account
-     */
-    protected $account;
+    protected Account $account;
 
-    /**
-     * @var Status
-     */
-    protected $statuses;
+    protected Status $statuses;
 
-    /**
-     * @var MastodonClient
-     */
-    protected $mastodon;
-
-    /**
-     * @var StatusRepository
-     */
-    protected $statusRepository;
+    protected MastodonClient $mastodon;
 
     public function setUp(): void
     {
@@ -71,7 +49,7 @@ class OAuthTest extends TestCase
         $this->mastodon = m::mock(MastodonClient::class);
 
         $this->app->instance(
-            \Revolution\Mastodon\MastodonClient::class,
+            MastodonClient::class,
             $this->mastodon,
         );
     }
