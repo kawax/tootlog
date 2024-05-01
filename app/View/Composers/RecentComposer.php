@@ -11,6 +11,8 @@ class RecentComposer
     {
         if (Request::route()->hasParameter('user')) {
             $view->with('recents', request()->route('user')->openRecents());
+        } elseif (auth()->check()) {
+            $view->with('recents', request()->user()->openRecents());
         }
     }
 }

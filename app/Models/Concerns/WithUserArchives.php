@@ -7,11 +7,11 @@ use Illuminate\Support\Collection;
 trait WithUserArchives
 {
     /**
-     * Recentパーツ用.
+     * Recentパーツ（公開用）.
      */
     public function openRecents(): Collection
     {
-        return cache()->remember('recents/'.$this->id, now()->addDay(), function () {
+        return cache()->remember('recents/open/'.$this->id, now()->addDay(), function () {
             $date_format = app()->runningUnitTests()
                 ? 'STRFTIME("%Y-%m-%d", statuses.created_at)'
                 : 'DATE_FORMAT(statuses.created_at,"%Y-%m-%d")';
