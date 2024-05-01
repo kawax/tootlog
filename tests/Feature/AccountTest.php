@@ -7,6 +7,7 @@ use App\Models\Server;
 use App\Models\Status;
 use App\Models\User;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -15,25 +16,13 @@ class AccountTest extends TestCase
 {
     use RefreshDatabase;
 
-    /**
-     * @var User
-     */
-    protected $user;
+    protected User $user;
 
-    /**
-     * @var Server
-     */
-    protected $server;
+    protected Server $server;
 
-    /**
-     * @var Account
-     */
-    protected $account;
+    protected Account $account;
 
-    /**
-     * @var Status
-     */
-    protected $statuses;
+    protected Collection $statuses;
 
     public function setUp(): void
     {
