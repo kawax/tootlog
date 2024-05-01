@@ -16,15 +16,9 @@ class ArtisanTest extends TestCase
 {
     use RefreshDatabase;
 
-    /**
-     * @var User
-     */
-    protected $user;
+    protected User $user;
 
-    /**
-     * @var Server
-     */
-    protected $server;
+    protected Server $server;
 
     public function setUp(): void
     {
