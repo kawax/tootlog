@@ -20,30 +20,15 @@ class StatusTest extends TestCase
 {
     use RefreshDatabase;
 
-    /**
-     * @var User
-     */
-    protected $user;
+    protected User $user;
 
-    /**
-     * @var Server
-     */
-    protected $server;
+    protected Server $server;
 
-    /**
-     * @var Account
-     */
-    protected $account;
+    protected Account $account;
 
-    /**
-     * @var Status
-     */
-    protected $statuses;
+    protected Status $statuses;
 
-    /**
-     * @var Response
-     */
-    protected $response;
+    protected Response $response;
 
     public function setUp(): void
     {
