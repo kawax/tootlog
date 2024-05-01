@@ -8,8 +8,8 @@ use App\Models\Server;
 use App\Models\Status;
 use App\Models\Tag;
 use App\Models\User;
-use Illuminate\Support\Carbon;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Carbon;
 use Livewire\Livewire;
 use Tests\TestCase;
 
