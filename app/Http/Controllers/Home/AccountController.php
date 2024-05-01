@@ -5,14 +5,16 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Account\AccountCreateRequest;
 use App\Jobs\Status\GetStatusJob;
-use App\Repository\Account\AccountRepository as Account;
+use App\Models\Account;
 use App\Repository\Server\ServerRepository as Server;
 use GuzzleHttp\Exception\ClientException;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Stringable;
 use Laravel\Socialite\Facades\Socialite;
-use Laravel\Socialite\Two\User;
+use Laravel\Socialite\Two\User as SocialiteUser;
 
 class AccountController extends Controller
 {
@@ -39,7 +41,7 @@ class AccountController extends Controller
             ->redirect();
     }
 
-    public function callback(Request $request, Account $account, Server $server): RedirectResponse
+    public function callback(Request $request, Server $server): RedirectResponse
     {
         $domain = session('mastodon_domain');
         session()->forget('mastodon_domain');
@@ -52,21 +54,53 @@ class AccountController extends Controller
 
         try {
             /**
-             * @var User $user
+             * @var SocialiteUser $user
              */
             $user = Socialite::driver('mastodon')->user();
 
-            if ($account->exists($user->user['url'])) {
-                $acct = $account->update($user);
-            } else {
-                $acct = $account->store($user, $info);
+            $account = Account::whereUrl($user->user['url'])
+                ->where('user_id', $request->user()->id)
+                ->firstOr(fn () => $this->store($user, $info));
+
+            if ($account?->exists() && ! $account->wasRecentlyCreated) {
+                $account = $this->update($user, $account);
             }
 
-            GetStatusJob::dispatchSync($acct);
+            GetStatusJob::dispatchSync($account);
         } catch (ClientException $e) {
             logger()->error($e->getMessage());
         }
 
         return to_route('home');
+    }
+
+    /**
+     * Update Account.
+     */
+    protected function update(SocialiteUser $user, Account $account): Account
+    {
+        $account->fill([
+            'token' => $user->token,
+            'fails' => 0,
+        ])->save();
+
+        return $account;
+    }
+
+    /**
+     * Create new Account.
+     */
+    protected function store(SocialiteUser $user, array $info): Account
+    {
+        $data = $user->user;
+
+        $data['account_id'] = $data['id'];
+        $data['account_created_at'] = Carbon::parse($data['created_at']);
+        $data['token'] = $user->token;
+        $data['server_id'] = $info['id'];
+
+        $cond = Arr::only($data, ['account_id', 'username', 'server_id']);
+
+        return request()->user()->accounts()->updateOrCreate($cond, $data);
     }
 }

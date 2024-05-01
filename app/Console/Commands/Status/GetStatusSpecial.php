@@ -3,8 +3,9 @@
 namespace App\Console\Commands\Status;
 
 use App\Jobs\Status\GetStatusJob;
-use App\Repository\Account\AccountRepository as Account;
+use App\Models\Account;
 use Illuminate\Console\Command;
+use Illuminate\Contracts\Database\Query\Builder;
 
 class GetStatusSpecial extends Command
 {
@@ -35,15 +36,19 @@ class GetStatusSpecial extends Command
     /**
      * Execute the console command.
      */
-    public function handle(Account $account): int
+    public function handle(): int
     {
         info('toot:statuses-special start');
 
-        $accounts = $account->special();
-
-        foreach ($accounts as $account) {
-            GetStatusJob::dispatch($account);
-        }
+        Account::oldest('updated_at')
+            ->where('fails', '<', config('tootlog.account_fails'))
+            ->limit(config('tootlog.account_limit_special', 3))
+            ->whereHas('user', function (Builder $query) {
+                $query->where('special_key', config('tootlog.special_key'));
+            })
+            ->each(function (Account $account) {
+                GetStatusJob::dispatch($account);
+            });
 
         return 0;
     }

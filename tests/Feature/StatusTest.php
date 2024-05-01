@@ -7,15 +7,14 @@ use App\Models\Account;
 use App\Models\Server;
 use App\Models\Status;
 use App\Models\User;
-use App\Repository\Account\EloquentAccountRepository as AccountRepository;
 use App\Repository\Status\EloquentStatusRepository as StatusRepository;
 use Faker\Factory as Faker;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Response;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Mastodon;
 use Mockery as m;
+use Revolution\Mastodon\Facades\Mastodon;
 use Tests\TestCase;
 
 class StatusTest extends TestCase
@@ -48,11 +47,6 @@ class StatusTest extends TestCase
     protected $statusRepository;
 
     /**
-     * @var AccountRepository
-     */
-    protected $accountRepository;
-
-    /**
      * @var Response
      */
     protected $response;
@@ -64,13 +58,13 @@ class StatusTest extends TestCase
         $this->user = factory(User::class)->create(
             [
                 'name' => 'test',
-            ]
+            ],
         );
 
         $this->server = factory(Server::class)->create(
             [
                 'domain' => 'https://example.com',
-            ]
+            ],
         );
 
         $this->account = factory(Account::class)->create(
@@ -79,21 +73,19 @@ class StatusTest extends TestCase
                 'server_id' => $this->server->id,
                 'username' => 'test',
                 'url' => 'https://example.com/@test',
-            ]
+            ],
         );
 
         $this->response = new Response(200, [], 'body');
 
         $this->statusRepository = m::mock(StatusRepository::class)->makePartial();
-
-        $this->accountRepository = m::mock(AccountRepository::class)->makePartial();
     }
 
     public function tearDown(): void
     {
-        parent::tearDown();
-
         m::close();
+
+        parent::tearDown();
     }
 
     public function testGetStatusJob()
@@ -109,17 +101,21 @@ class StatusTest extends TestCase
                 'visibility' => 'public',
                 'created_at' => $faker->dateTime,
                 'content' => 'test',
-            ]
+            ],
         );
 
-        $this->accountRepository->shouldReceive('refresh')->with($this->account)->once()->andReturn($this->account);
+        Mastodon::shouldReceive('domain')->once()->andReturn(m::self());
+        Mastodon::shouldReceive('token')->once()->andReturn(m::self());
+        Mastodon::shouldReceive('verifyCredentials')->andReturn([
+
+        ]);
 
         Mastodon::shouldReceive('domain')->with($this->server->domain)->once()->andReturn(m::self());
         Mastodon::shouldReceive('token')->once()->andReturn(m::self());
         Mastodon::shouldReceive('statuses')->once()->andReturn([$statuses->toArray()]);
         Mastodon::shouldReceive('getResponse')->once()->andReturn($this->response);
 
-        $job->handle($this->statusRepository, $this->accountRepository);
+        $job->handle($this->statusRepository);
 
         $this->assertDatabaseHas(
             'statuses',
@@ -127,7 +123,7 @@ class StatusTest extends TestCase
                 'account_id' => $this->account->id,
                 'status_id' => 1,
                 'content' => 'test',
-            ]
+            ],
         );
     }
 
@@ -144,17 +140,21 @@ class StatusTest extends TestCase
                 'visibility' => 'direct',
                 'created_at' => $faker->dateTime,
                 'content' => 'test',
-            ]
+            ],
         );
 
-        $this->accountRepository->shouldReceive('refresh')->with($this->account)->once()->andReturn($this->account);
+        Mastodon::shouldReceive('domain')->once()->andReturn(m::self());
+        Mastodon::shouldReceive('token')->once()->andReturn(m::self());
+        Mastodon::shouldReceive('verifyCredentials')->andReturn([
+
+        ]);
 
         Mastodon::shouldReceive('domain')->with($this->server->domain)->once()->andReturn(m::self());
         Mastodon::shouldReceive('token')->once()->andReturn(m::self());
         Mastodon::shouldReceive('statuses')->once()->andReturn([$statuses->toArray()]);
         Mastodon::shouldReceive('getResponse')->once()->andReturn($this->response);
 
-        $job->handle($this->statusRepository, $this->accountRepository);
+        $job->handle($this->statusRepository);
 
         $this->assertDatabaseMissing(
             'statuses',
@@ -162,7 +162,7 @@ class StatusTest extends TestCase
                 'account_id' => $this->account->id,
                 'status_id' => 1,
                 'content' => 'test',
-            ]
+            ],
         );
     }
 
@@ -193,17 +193,21 @@ class StatusTest extends TestCase
                     'uri' => 'uri',
                     'url' => $faker->url,
                 ],
-            ]
+            ],
         );
 
-        $this->accountRepository->shouldReceive('refresh')->with($this->account)->once()->andReturn($this->account);
+        Mastodon::shouldReceive('domain')->once()->andReturn(m::self());
+        Mastodon::shouldReceive('token')->once()->andReturn(m::self());
+        Mastodon::shouldReceive('verifyCredentials')->andReturn([
+
+        ]);
 
         Mastodon::shouldReceive('domain')->with($this->server->domain)->once()->andReturn(m::self());
         Mastodon::shouldReceive('token')->once()->andReturn(m::self());
         Mastodon::shouldReceive('statuses')->once()->andReturn([$statuses->toArray()]);
         Mastodon::shouldReceive('getResponse')->once()->andReturn($this->response);
 
-        $job->handle($this->statusRepository, $this->accountRepository);
+        $job->handle($this->statusRepository);
 
         $this->assertDatabaseHas(
             'reblogs',
@@ -211,7 +215,7 @@ class StatusTest extends TestCase
                 'status_id' => 2,
                 'content' => 'reblog_content',
                 'spoiler_text' => 'spoiler_text',
-            ]
+            ],
         );
 
         $this->assertDatabaseHas(
@@ -220,7 +224,7 @@ class StatusTest extends TestCase
                 'account_id' => $this->account->id,
                 'status_id' => 1,
                 'reblog_id' => 1,
-            ]
+            ],
         );
     }
 
@@ -245,30 +249,34 @@ class StatusTest extends TestCase
                         'name' => 'tag_test2',
                     ],
                 ],
-            ]
+            ],
         );
 
-        $this->accountRepository->shouldReceive('refresh')->with($this->account)->once()->andReturn($this->account);
+        Mastodon::shouldReceive('domain')->once()->andReturn(m::self());
+        Mastodon::shouldReceive('token')->once()->andReturn(m::self());
+        Mastodon::shouldReceive('verifyCredentials')->andReturn([
+
+        ]);
 
         Mastodon::shouldReceive('domain')->with($this->server->domain)->once()->andReturn(m::self());
         Mastodon::shouldReceive('token')->once()->andReturn(m::self());
         Mastodon::shouldReceive('statuses')->once()->andReturn([$statuses->toArray()]);
         Mastodon::shouldReceive('getResponse')->once()->andReturn($this->response);
 
-        $job->handle($this->statusRepository, $this->accountRepository);
+        $job->handle($this->statusRepository);
 
         $this->assertDatabaseHas(
             'tags',
             [
                 'name' => 'tag_test',
-            ]
+            ],
         );
 
         $this->assertDatabaseHas(
             'tags',
             [
                 'name' => 'tag_test2',
-            ]
+            ],
         );
 
         $this->assertDatabaseHas(
@@ -276,7 +284,7 @@ class StatusTest extends TestCase
             [
                 'account_id' => $this->account->id,
                 'status_id' => 1,
-            ]
+            ],
         );
     }
 
@@ -287,19 +295,23 @@ class StatusTest extends TestCase
     {
         $job = new GetStatusJob($this->account);
 
-        $this->accountRepository->shouldReceive('refresh')->with($this->account)->once()->andReturn($this->account);
+        Mastodon::shouldReceive('domain')->once()->andReturn(m::self());
+        Mastodon::shouldReceive('token')->once()->andReturn(m::self());
+        Mastodon::shouldReceive('verifyCredentials')->andReturn([
+
+        ]);
 
         Mastodon::shouldReceive('domain')->with($this->server->domain)->once()->andReturn(m::self());
         Mastodon::shouldReceive('token')->once()->andReturn(m::self());
         Mastodon::shouldReceive('statuses')->once()->andThrow(m::mock(ClientException::class));
 
-        $job->handle($this->statusRepository, $this->accountRepository);
+        $job->handle($this->statusRepository);
 
         $this->assertDatabaseHas(
             'accounts',
             [
                 'fails' => 1,
-            ]
+            ],
         );
     }
 }

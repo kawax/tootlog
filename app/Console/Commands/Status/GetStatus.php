@@ -3,7 +3,7 @@
 namespace App\Console\Commands\Status;
 
 use App\Jobs\Status\GetStatusJob;
-use App\Repository\Account\AccountRepository as Account;
+use App\Models\Account;
 use Illuminate\Console\Command;
 
 class GetStatus extends Command
@@ -35,15 +35,16 @@ class GetStatus extends Command
     /**
      * Execute the console command.
      */
-    public function handle(Account $account): int
+    public function handle(): int
     {
         info('toot:statuses start');
 
-        $accounts = $account->oldest();
-
-        foreach ($accounts as $account) {
-            GetStatusJob::dispatch($account);
-        }
+        Account::oldest('updated_at')
+            ->where('fails', '<', config('tootlog.account_fails'))
+            ->limit(config('tootlog.account_limit', 3))
+            ->each(function (Account $account) {
+                GetStatusJob::dispatch($account);
+            });
 
         return 0;
     }

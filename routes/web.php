@@ -15,7 +15,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('accounts/callback', [AccountController::class, 'callback']);
 
-    Route::delete('accounts/delete/{id}', AccountDeleteController::class)->name('accounts.delete');
+    Route::delete('accounts/delete/{account}', AccountDeleteController::class)->name('accounts.delete');
 
     Route::get('timeline', [TimelineController::class, 'index'])->name('timeline');
 

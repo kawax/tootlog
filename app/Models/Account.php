@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Presenter\AccountPresenter;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -38,6 +39,13 @@ class Account extends Model
         'header',
         'header_static',
     ];
+
+    public function scopeByAcct(Builder $query, string $username, string $domain): void
+    {
+        $url = '://'.$domain.'/@'.$username;
+
+        $query->where('url', 'like', '%'.$url);
+    }
 
     /**
      * acct.

@@ -3,7 +3,7 @@
 namespace App\Console\Commands\Status;
 
 use App\Jobs\Status\GetStatusJob;
-use App\Repository\Account\AccountRepository as Account;
+use App\Models\Account;
 use Illuminate\Console\Command;
 
 class GetUserStatus extends Command
@@ -35,11 +35,11 @@ class GetUserStatus extends Command
     /**
      * Execute the console command.
      */
-    public function handle(Account $account): int
+    public function handle(): int
     {
         info('toot:user-statuses start');
 
-        $account = $account->find($this->argument('account'));
+        $account = Account::findOrFail($this->argument('account'));
 
         GetStatusJob::dispatch($account);
 

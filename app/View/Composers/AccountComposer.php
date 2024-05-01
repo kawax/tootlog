@@ -2,19 +2,18 @@
 
 namespace App\View\Composers;
 
-use App\Repository\Account\AccountRepository;
 use Illuminate\View\View;
 
 class AccountComposer
 {
-    public function __construct(protected AccountRepository $accountRepository)
+    public function __construct()
     {
     }
 
-    public function compose(View $view)
+    public function compose(View $view): void
     {
         if (! is_null(request()->user)) {
-            $view->with('accounts', $this->accountRepository->openAccounts(request()->user));
+            $view->with('accounts', request()->user()->allAccounts());
         }
     }
 }

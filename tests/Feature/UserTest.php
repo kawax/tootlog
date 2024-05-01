@@ -487,6 +487,7 @@ class UserTest extends TestCase
     {
         $accounts = factory(Account::class)->create([
             'user_id' => $this->user->id,
+            'server_id' => $this->server->id,
             'locked' => true,
         ]);
 

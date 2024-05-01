@@ -6,9 +6,7 @@ use App\Jobs\Status\GetStatusJob;
 use App\Models\Account;
 use App\Models\Server;
 use App\Models\User;
-use App\Repository\Account\EloquentAccountRepository as AccountRepository;
-use App\Repository\Status\EloquentStatusRepository as StatusRepository;
-use Artisan;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Support\Facades\Bus;
@@ -28,21 +26,6 @@ class ArtisanTest extends TestCase
      */
     protected $server;
 
-    /**
-     * @var Account
-     */
-    protected $account;
-
-    /**
-     * @var StatusRepository
-     */
-    protected $statusRepository;
-
-    /**
-     * @var AccountRepository
-     */
-    protected $accountRepository;
-
     public function setUp(): void
     {
         parent::setUp();
@@ -60,7 +43,7 @@ class ArtisanTest extends TestCase
     {
         Bus::fake();
 
-        $this->account = factory(Account::class, 5)->create([
+        $account = factory(Account::class, 5)->create([
             'user_id' => $this->user->id,
             'server_id' => $this->server->id,
             'locked' => false,
@@ -77,7 +60,7 @@ class ArtisanTest extends TestCase
     {
         Bus::fake();
 
-        $this->account = factory(Account::class, 5)->create([
+        $account = factory(Account::class, 5)->create([
             'user_id' => $this->user->id,
             'server_id' => $this->server->id,
             'fails' => 10,

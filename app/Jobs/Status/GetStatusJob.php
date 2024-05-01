@@ -5,7 +5,6 @@ namespace App\Jobs\Status;
 use App\Models\Account;
 use App\Models\Reblog;
 use App\Models\Tag;
-use App\Repository\Account\AccountRepository;
 use App\Repository\Status\StatusRepository;
 use App\Support\Header;
 use Carbon\Carbon;
@@ -39,19 +38,15 @@ class GetStatusJob implements ShouldQueue
 
     /**
      * Execute the job.
-     *
-     * @param  StatusRepository  $statusRepository
-     * @param  AccountRepository  $accountRepository
-     * @return void
      */
-    public function handle(StatusRepository $statusRepository, AccountRepository $accountRepository): void
+    public function handle(StatusRepository $statusRepository): void
     {
         info('GetStatusesJob: '.$this->account->url);
 
         $this->statusRepository = $statusRepository;
 
         try {
-            $this->account = $accountRepository->refresh($this->account);
+            $this->account = $this->refresh($this->account);
         } catch (\Exception $exception) {
             logger()->error('ClientException(refresh): '.$this->account->url.' '.$exception->getMessage());
 
@@ -77,8 +72,19 @@ class GetStatusJob implements ShouldQueue
         $this->create($statuses);
 
         if (! empty($since_id)) {
-            $accountRepository->updateSince($this->account, $since_id);
+            $this->account->fill(['since_id' => $since_id])->save();
         }
+    }
+
+    protected function refresh(Account $account): Account
+    {
+        $data = Mastodon::domain($account->server->domain)
+            ->token($account->token)
+            ->verifyCredentials();
+
+        $account->fill($data)->save();
+
+        return $account;
     }
 
     /**
@@ -126,7 +132,7 @@ class GetStatusJob implements ShouldQueue
                 'spoiler_text',
                 'uri',
                 'url',
-            ]
+            ],
         );
 
         $date = Carbon::parse($data['created_at'], 'UTC');
@@ -168,11 +174,11 @@ class GetStatusJob implements ShouldQueue
     protected function get(): array
     {
         return $this->account->mastodon()
-                             ->statuses(
-                                 $this->account->account_id,
-                                 40,
-                                 $this->account->since_id
-                             );
+            ->statuses(
+                $this->account->account_id,
+                40,
+                $this->account->since_id,
+            );
     }
 
     /**

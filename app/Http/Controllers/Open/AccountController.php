@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Open;
 
 use App\Http\Controllers\Controller;
+use App\Models\Account;
 use App\Models\User;
-use App\Repository\Account\AccountRepository as Account;
 use App\Repository\Status\StatusRepository as Status;
 use Illuminate\Support\Facades\Gate;
 
@@ -17,7 +17,6 @@ class AccountController extends Controller
      * @param  Status  $statusRepository
      */
     public function __construct(
-        protected Account $accountRepository,
         protected Status $statusRepository
     ) {
     }
@@ -30,14 +29,14 @@ class AccountController extends Controller
      */
     public function index(User $user, string $username, string $domain)
     {
-        $acct = $this->accountRepository->getByAcct($username, $domain);
+        $acct = Account::byAcct($username, $domain)->firstOrFail();
 
         if ($acct->locked) {
             Gate::authorize('show', $acct);
         }
 
         $statuses = $this->statusRepository->openAcctStatuses($acct);
-        $accounts = $this->accountRepository->openAccounts($user);
+        $accounts = $user->openAccounts();
 
         return view('open.acct.index')->with(compact('user', 'acct', 'accounts', 'statuses'));
     }
@@ -51,7 +50,7 @@ class AccountController extends Controller
      */
     public function show(User $user, string $username, string $domain, string $status_id)
     {
-        $acct = $this->accountRepository->getByAcct($username, $domain);
+        $acct = Account::byAcct($username, $domain)->firstOrFail();
 
         /**
          * @var \App\Models\Status $status

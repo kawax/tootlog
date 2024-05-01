@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Presenter\UserPresenter;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
@@ -38,37 +39,43 @@ class User extends Authenticatable implements MustVerifyEmail
         'remember_token',
     ];
 
-    /**
-     * モデルのルートキーの取得.
-     *
-     * @return string
-     */
     public function getRouteKeyName(): string
     {
         return 'name';
     }
 
     /**
-     * @return HasMany
+     * ユーザーのアカウント.
      */
+    public function allAccounts(): Collection
+    {
+        return $this->accounts()
+            ->latest('updated_at')
+            ->with('server')
+            ->withCount('statuses')
+            ->get();
+    }
+
+    /**
+     * ユーザーのアカウント（公開用）.
+     */
+    public function openAccounts(): Collection
+    {
+        return $this->accounts()
+            ->where('locked', false)
+            ->latest('updated_at')
+            ->with('server')
+            ->withCount('statuses')
+            ->get();
+    }
+
     public function accounts(): HasMany
     {
         return $this->hasMany(Account::class);
     }
 
-    /**
-     * @return HasManyThrough
-     */
     public function statuses(): HasManyThrough
     {
         return $this->hasManyThrough(Status::class, Account::class);
-    }
-
-    /**
-     * @return bool
-     */
-    public function isAdmin(): bool
-    {
-        return $this->id === 1;
     }
 }
