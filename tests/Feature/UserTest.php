@@ -8,7 +8,7 @@ use App\Models\Server;
 use App\Models\Status;
 use App\Models\Tag;
 use App\Models\User;
-use Carbon\Carbon;
+use Illuminate\Support\Carbon;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Livewire\Livewire;
 use Tests\TestCase;
@@ -17,20 +17,11 @@ class UserTest extends TestCase
 {
     use RefreshDatabase;
 
-    /**
-     * @var User
-     */
-    protected $user;
+    protected User $user;
 
-    /**
-     * @var Server
-     */
-    protected $server;
+    protected Server $server;
 
-    /**
-     * @var Account
-     */
-    protected $account;
+    protected Account $account;
 
     public function setUp(): void
     {
