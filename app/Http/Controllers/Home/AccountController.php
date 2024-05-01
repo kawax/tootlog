@@ -6,33 +6,35 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Account\AccountCreateRequest;
 use App\Jobs\Status\GetStatusJob;
 use App\Models\Account;
-use App\Repository\Server\ServerRepository as Server;
+use App\Models\Server;
 use GuzzleHttp\Exception\ClientException;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Str;
 use Illuminate\Support\Stringable;
 use Laravel\Socialite\Facades\Socialite;
 use Laravel\Socialite\Two\User as SocialiteUser;
+use Revolution\Mastodon\Facades\Mastodon;
 
 class AccountController extends Controller
 {
     /**
      * Redirect to mastodon server.
      */
-    public function redirect(AccountCreateRequest $request, Server $server)
+    public function redirect(AccountCreateRequest $request)
     {
         $domain = $request->string('domain')
-            ->trim("/\t\n\r\0\x0B")
+            ->trim()
             ->pipe(fn (Stringable $domain) => collect(parse_url($domain->value()))->only(['scheme', 'host'])->join('://'))
             ->value();
 
-        $info = $server->firstOrCreate($domain);
+        $server = $this->server($domain);
 
         config(['services.mastodon.domain' => $domain]);
-        config(['services.mastodon.client_id' => $info['client_id']]);
-        config(['services.mastodon.client_secret' => $info['client_secret']]);
+        config(['services.mastodon.client_id' => $server->client_id]);
+        config(['services.mastodon.client_secret' => $server->client_secret]);
 
         session(['mastodon_domain' => $domain]);
 
@@ -41,16 +43,15 @@ class AccountController extends Controller
             ->redirect();
     }
 
-    public function callback(Request $request, Server $server): RedirectResponse
+    public function callback(Request $request): RedirectResponse
     {
-        $domain = session('mastodon_domain');
-        session()->forget('mastodon_domain');
+        $domain = session()->pull('mastodon_domain');
 
-        $info = $server->firstOrCreate($domain);
+        $server = $this->server($domain);
 
         config(['services.mastodon.domain' => $domain]);
-        config(['services.mastodon.client_id' => $info['client_id']]);
-        config(['services.mastodon.client_secret' => $info['client_secret']]);
+        config(['services.mastodon.client_id' => $server->client_id]);
+        config(['services.mastodon.client_secret' => $server->client_secret]);
 
         try {
             /**
@@ -60,7 +61,7 @@ class AccountController extends Controller
 
             $account = Account::whereUrl($user->user['url'])
                 ->where('user_id', $request->user()->id)
-                ->firstOr(fn () => $this->store($user, $info));
+                ->firstOr(fn () => $this->store($user, $server));
 
             if ($account?->exists() && ! $account->wasRecentlyCreated) {
                 $account = $this->update($user, $account);
@@ -90,17 +91,46 @@ class AccountController extends Controller
     /**
      * Create new Account.
      */
-    protected function store(SocialiteUser $user, array $info): Account
+    protected function store(SocialiteUser $user, Server $server): Account
     {
         $data = $user->user;
 
         $data['account_id'] = $data['id'];
         $data['account_created_at'] = Carbon::parse($data['created_at']);
         $data['token'] = $user->token;
-        $data['server_id'] = $info['id'];
+        $data['server_id'] = $server->id;
 
         $cond = Arr::only($data, ['account_id', 'username', 'server_id']);
+        Arr::forget($data, ['account_id', 'username', 'server_id']);
 
         return request()->user()->accounts()->updateOrCreate($cond, $data);
+    }
+
+    /**
+     * Server info.
+     */
+    protected function server(string $domain): Server
+    {
+        $domain = Str::trim($domain);
+
+        $server = Server::whereDomain($domain)->first();
+
+        if ($server?->exists() && Str::startsWith($server->redirect_uri, url('/'))) {
+            return $server;
+        }
+
+        $client_name = config('app.name');
+        $redirect_uris = config('services.mastodon.redirect');
+        $scopes = implode(' ', config('services.mastodon.scope'));
+
+        $info = Mastodon::domain($domain)
+            ->createApp($client_name, $redirect_uris, $scopes, config('app.url'));
+
+        $info['app_id'] = $info['id'];
+
+        return Server::updateOrCreate(
+            ['domain' => $domain],
+            $info,
+        );
     }
 }

@@ -7,12 +7,12 @@ use App\Models\Account;
 use App\Models\Server;
 use App\Models\Status;
 use App\Models\User;
-use App\Repository\Server\EloquentServerRepository as ServerRepository;
 use App\Repository\Status\EloquentStatusRepository as StatusRepository;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Support\Facades\Bus;
 use Mockery as m;
+use Revolution\Mastodon\Facades\Mastodon;
 use Revolution\Mastodon\MastodonClient;
 use Laravel\Socialite\Facades\Socialite;
 use Laravel\Socialite\Two\User as SocialiteUser;
@@ -52,11 +52,6 @@ class OAuthTest extends TestCase
      */
     protected $statusRepository;
 
-    /**
-     * @var ServerRepository
-     */
-    protected $serverRepository;
-
     public function setUp(): void
     {
         parent::setUp();
@@ -65,18 +60,18 @@ class OAuthTest extends TestCase
             'name' => 'test',
         ]);
 
+        $this->server = factory(Server::class)->create(
+            [
+                'domain' => 'https://example.com',
+                'redirect_uri' => route('accounts.callback'),
+            ],
+        );
+
         $this->mastodon = m::mock(MastodonClient::class);
 
         $this->app->instance(
             \Revolution\Mastodon\MastodonClient::class,
             $this->mastodon,
-        );
-
-        $this->serverRepository = m::mock(ServerRepository::class)->makePartial();
-
-        $this->app->instance(
-            \App\Repository\Server\ServerRepository::class,
-            $this->serverRepository,
         );
     }
 
@@ -89,25 +84,32 @@ class OAuthTest extends TestCase
 
     public function testAccountAddRedirect()
     {
-        $this->serverRepository->shouldReceive('firstOrCreate')
-            ->with('https://example.com')
-            ->once()
-            ->andReturn(['client_id' => '', 'client_secret' => '']);
+        $response = $this->actingAs($this->user)
+            ->post(route('accounts.add'), ['domain' => 'https://example.com']);
+
+        $response->assertStatus(302)->assertSessionHas('mastodon_domain');
+    }
+
+    public function testAccountAddRedirectNewServer()
+    {
+        Mastodon::shouldReceive('domain')->once()->andReturn(m::self());
+        Mastodon::shouldReceive('createApp')->andReturn([
+            'id' => 1,
+            'redirect_uri' => '',
+            'client_id' => '',
+            'client_secret' => '',
+        ]);
 
         $response = $this->actingAs($this->user)
-            ->post('/accounts', ['domain' => 'https://example.com']);
+            ->post(route('accounts.add'), ['domain' => 'https://example.org']);
 
+        //dd($response);
         $response->assertStatus(302)->assertSessionHas('mastodon_domain');
     }
 
     public function testAccountAddCallbackUpdate()
     {
         Bus::fake();
-
-        $this->serverRepository->shouldReceive('firstOrCreate')
-            ->with('https://example.com')
-            ->once()
-            ->andReturn(['client_id' => '', 'client_secret' => '']);
 
         Socialite::shouldReceive('driver')->once()->andReturn(m::self());
         Socialite::shouldReceive('user')->once()->andReturn(
@@ -125,7 +127,7 @@ class OAuthTest extends TestCase
 
         $response = $this->actingAs($this->user)
             ->withSession(['mastodon_domain' => 'https://example.com'])
-            ->get('/accounts/callback');
+            ->get(route('accounts.callback'));
 
         Bus::assertDispatched(GetStatusJob::class);
 
@@ -135,11 +137,6 @@ class OAuthTest extends TestCase
     public function testAccountAddCallbackStore()
     {
         Bus::fake();
-
-        $this->serverRepository->shouldReceive('firstOrCreate')
-            ->with('https://example.com')
-            ->once()
-            ->andReturn(['id' => 1, 'client_id' => '', 'client_secret' => '']);
 
         Socialite::shouldReceive('driver')->once()->andReturn(m::self());
         Socialite::shouldReceive('user')->once()->andReturn(
@@ -165,7 +162,7 @@ class OAuthTest extends TestCase
 
         $response = $this->actingAs($this->user)
             ->withSession(['mastodon_domain' => 'https://example.com'])
-            ->get('/accounts/callback');
+            ->get(route('accounts.callback'));
 
         Bus::assertDispatched(GetStatusJob::class);
 

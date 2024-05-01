@@ -3,8 +3,6 @@
 namespace App\Providers;
 
 use App\Models\User;
-use App\Repository\Server\EloquentServerRepository;
-use App\Repository\Server\ServerRepository;
 use App\Repository\Status\EloquentStatusRepository;
 use App\Repository\Status\StatusRepository;
 use App\View\Composers\AccountComposer;
@@ -17,7 +15,6 @@ use Revolution\Mastodon\Facades\Mastodon;
 class AppServiceProvider extends ServiceProvider
 {
     public array $singletons = [
-        ServerRepository::class => EloquentServerRepository::class,
         StatusRepository::class => EloquentStatusRepository::class,
     ];
 

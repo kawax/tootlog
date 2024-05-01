@@ -2,20 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Repository\Server\ServerRepository;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
+use App\Models\Server;
 
 class InstanceController extends Controller
 {
-    /**
-     * @param  ServerRepository  $repository
-     * @return Application|Factory|View
-     */
-    public function __invoke(ServerRepository $repository)
+    public function __invoke()
     {
-        $instances = $repository->instanceList();
+        $instances = Server::withCount('accounts')
+            ->orderByDesc('accounts_count')
+            ->paginate(20);
 
         return view('instance.list')->with(compact('instances'));
     }

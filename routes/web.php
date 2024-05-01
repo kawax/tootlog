@@ -11,9 +11,11 @@ use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::post('accounts', [AccountController::class, 'redirect'])->name('accounts.add');
+    Route::post('accounts', [AccountController::class, 'redirect'])
+        ->name('accounts.add');
 
-    Route::get('accounts/callback', [AccountController::class, 'callback']);
+    Route::get('accounts/callback', [AccountController::class, 'callback'])
+        ->name('accounts.callback');
 
     Route::delete('accounts/delete/{account}', AccountDeleteController::class)->name('accounts.delete');
 
