@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
-use App\Jobs\Status\ExportCsvJob;
+use App\Jobs\ExportCsvJob;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 

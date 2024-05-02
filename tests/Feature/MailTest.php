@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Jobs\Status\ExportCsvJob;
+use App\Jobs\ExportCsvJob;
 use App\Mail\Export\CsvExported;
 use App\Models\Account;
 use App\Models\Server;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Jobs\Status;
+namespace App\Jobs;
 
 use App\Mail\Export\CsvExported;
 use App\Models\Account;
