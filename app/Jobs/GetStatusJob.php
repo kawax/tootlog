@@ -7,7 +7,8 @@ use App\Models\Reblog;
 use App\Models\Status;
 use App\Models\Tag;
 use App\Support\Header;
-use Carbon\Carbon;
+use Illuminate\Support\Carbon;
+use Exception;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -16,7 +17,6 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use Revolution\Mastodon\Facades\Mastodon;
-use Throwable;
 
 class GetStatusJob implements ShouldQueue
 {
@@ -41,7 +41,7 @@ class GetStatusJob implements ShouldQueue
 
         try {
             $this->account = $this->refresh($this->account);
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             logger()->error('ClientException(refresh): '.$this->account->url.' '.$exception->getMessage());
 
             $this->account->increment('fails');
@@ -53,7 +53,7 @@ class GetStatusJob implements ShouldQueue
             $statuses = $this->get();
 
             $since_id = $this->since();
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             logger()->error('ClientException: '.$this->account->url.' '.$exception->getMessage());
 
             $this->account->increment('fails');
@@ -107,17 +107,14 @@ class GetStatusJob implements ShouldQueue
 
     protected function statusData(array $status): array
     {
-        $data = Arr::only(
-            $status,
-            [
-                'id',
-                'created_at',
-                'content',
-                'spoiler_text',
-                'uri',
-                'url',
-            ],
-        );
+        $data = Arr::only($status, [
+            'id',
+            'created_at',
+            'content',
+            'spoiler_text',
+            'uri',
+            'url',
+        ]);
 
         $date = Carbon::parse($data['created_at'], 'UTC');
 
@@ -152,9 +149,9 @@ class GetStatusJob implements ShouldQueue
     {
         return $this->account->mastodon()
             ->statuses(
-                $this->account->account_id,
-                40,
-                $this->account->since_id,
+                account_id: $this->account->account_id,
+                limit: 40,
+                since_id: $this->account->since_id,
             );
     }
 
