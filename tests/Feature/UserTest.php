@@ -8,9 +8,9 @@ use App\Models\Server;
 use App\Models\Status;
 use App\Models\Tag;
 use App\Models\User;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 use Livewire\Livewire;
 use Tests\TestCase;
 
@@ -50,7 +50,7 @@ class UserTest extends TestCase
     public function testWelcome()
     {
         $response = $this->actingAs($this->user)
-                         ->get('/');
+            ->get('/');
 
         $response->assertSee('Home');
         $response->assertSee('Timeline');
@@ -66,7 +66,7 @@ class UserTest extends TestCase
     public function testHome()
     {
         $response = $this->actingAs($this->user)
-                         ->get('/home');
+            ->get('/home');
 
         $response->assertSee('Home');
         $response->assertSee('@test Account List');
@@ -89,10 +89,10 @@ class UserTest extends TestCase
         Livewire::test(StatusToggle::class, [
             'status' => $statuses,
         ])
-                ->call('toggle');
+            ->call('toggle');
 
         $response = $this->actingAs($this->user)
-                         ->get('/home');
+            ->get('/home');
 
         $response->assertSeeLivewire('status-toggle');
     }
@@ -107,10 +107,10 @@ class UserTest extends TestCase
         Livewire::test(StatusToggle::class, [
             'status' => $statuses,
         ])
-                ->call('toggle');
+            ->call('toggle');
 
         $response = $this->actingAs($this->user)
-                         ->get('/home');
+            ->get('/home');
 
         $response->assertSeeLivewire('status-toggle');
     }
@@ -118,7 +118,7 @@ class UserTest extends TestCase
     public function testTimeline()
     {
         $response = $this->actingAs($this->user)
-                         ->get('/timeline');
+            ->get('/timeline');
 
         $response->assertSee('Timeline');
         $response->assertSee('<tt-user-timeline', false);
@@ -127,7 +127,7 @@ class UserTest extends TestCase
     public function testTimelineAcct()
     {
         $response = $this->actingAs($this->user)
-                         ->get('/timeline/test@example.com');
+            ->get('/timeline/test@example.com');
 
         $response->assertSee('Timeline');
         $response->assertSee('<tt-user-timeline', false);
@@ -147,7 +147,7 @@ class UserTest extends TestCase
         ]);
 
         $response = $this->actingAs($user2)
-                         ->get('/timeline/test@example.com');
+            ->get('/timeline/test@example.com');
 
         $response->assertStatus(403);
     }
@@ -155,7 +155,7 @@ class UserTest extends TestCase
     public function testUser()
     {
         $response = $this->actingAs($this->user)
-                         ->get('/@test');
+            ->get('/@test');
 
         $response->assertSee('@test Account List');
         $response->assertSee('Recent');
@@ -172,11 +172,11 @@ class UserTest extends TestCase
     public function testAccount()
     {
         $response = $this->actingAs($this->user)
-                         ->get('/@test/test@example.com');
+            ->get('/@test/test@example.com');
 
         $response->assertSee('Profile')
-                 ->assertSee('test@example.com')
-                 ->assertDontSee('<script>test', false);
+            ->assertSee('test@example.com')
+            ->assertDontSee('<script>test', false);
     }
 
     public function testAccountAnother()
@@ -198,7 +198,7 @@ class UserTest extends TestCase
         ]);
 
         $response = $this->actingAs($this->user)
-                         ->get('/@test/test2@example.com');
+            ->get('/@test/test2@example.com');
 
         $response->assertStatus(200);
         $response->assertSee('Profile');
@@ -235,10 +235,10 @@ class UserTest extends TestCase
         ]);
 
         $response = $this->actingAs($this->user)
-                         ->get('/@test/test@example.com/1');
+            ->get('/@test/test@example.com/1');
 
         $response->assertSee($statuses->content, false)
-                 ->assertDontSee('<script>test', false);
+            ->assertDontSee('<script>test', false);
     }
 
     public function testLockedStatusAnother()
@@ -259,7 +259,7 @@ class UserTest extends TestCase
         ]);
 
         $response = $this->actingAs($user2)
-                         ->get('/@test/test2@example.com/1');
+            ->get('/@test/test2@example.com/1');
 
         $response->assertStatus(403);
         //        $response->assertDontSee('Profile');
@@ -275,7 +275,7 @@ class UserTest extends TestCase
         ]);
 
         $response = $this->actingAs($this->user)
-                         ->get('/@test/date/2017/04/24');
+            ->get('/@test/date/2017/04/24');
 
         $response->assertSee($statuses->content);
     }
@@ -290,7 +290,7 @@ class UserTest extends TestCase
         ]);
 
         $response = $this->actingAs($this->user)
-                         ->get('/@test/date/2017/04');
+            ->get('/@test/date/2017/04');
 
         $response->assertSee($statuses->content);
     }
@@ -305,7 +305,7 @@ class UserTest extends TestCase
         ]);
 
         $response = $this->actingAs($this->user)
-                         ->get('/@test/date/2017');
+            ->get('/@test/date/2017');
 
         $response->assertSee($statuses->content);
     }
@@ -325,7 +325,7 @@ class UserTest extends TestCase
         ]);
 
         $response = $this->actingAs($this->user)
-                         ->get('/@test/date/2017-04-24');
+            ->get('/@test/date/2017-04-24');
 
         $response->assertDontSee($statuses->content);
     }
@@ -340,10 +340,10 @@ class UserTest extends TestCase
         ]);
 
         $response = $this->actingAs($this->user)
-                         ->get('/@test/date');
+            ->get('/@test/date');
 
         $response->assertDontSee($statuses->content)
-                 ->assertRedirect('/@test');
+            ->assertRedirect('/@test');
     }
 
     public function testSitemap()
@@ -356,7 +356,7 @@ class UserTest extends TestCase
     public function testPreferences()
     {
         $response = $this->actingAs($this->user)
-                         ->get('/preferences');
+            ->get('/preferences');
 
         $response->assertSee('User Preferences');
     }
@@ -371,25 +371,25 @@ class UserTest extends TestCase
     public function testUpdatePreferences()
     {
         $response = $this->actingAs($this->user)
-                         ->put('/preferences', [
-                             'email' => 'test@example.com',
-                             'theme' => 'normal',
-                             'special_ley' => 'test',
-                         ]);
+            ->put('/preferences', [
+                'email' => 'test@example.com',
+                'theme' => 'normal',
+                'special_ley' => 'test',
+            ]);
 
         $response->assertSuccessful()
-                 ->assertSee('User Preferences');
+            ->assertSee('User Preferences');
     }
 
     public function testUpdatePreferencesFail()
     {
         $response = $this->actingAs($this->user)
-                         ->put('/preferences', [
-                             'email' => 'test@example.com',
-                         ]);
+            ->put('/preferences', [
+                'email' => 'test@example.com',
+            ]);
 
         $response->assertStatus(302)
-                 ->assertSessionHasErrors(['theme']);
+            ->assertSessionHasErrors(['theme']);
     }
 
     public function testSearchHome()
@@ -400,7 +400,7 @@ class UserTest extends TestCase
         ]);
 
         $response = $this->actingAs($this->user)
-                         ->get('/home?search=test');
+            ->get('/home?search=test');
 
         $response->assertViewHas('statuses');
     }
@@ -413,7 +413,7 @@ class UserTest extends TestCase
         ]);
 
         $response = $this->actingAs($this->user)
-                         ->get('/home?search=test');
+            ->get('/home?search=test');
 
         $response->assertStatus(200);
         $response->assertDontSee('class="media"');
@@ -427,7 +427,7 @@ class UserTest extends TestCase
         ]);
 
         $response = $this->actingAs($this->user)
-                         ->get('/@test/test@example.com?search=test');
+            ->get('/@test/test@example.com?search=test');
 
         $response->assertViewHas('statuses');
     }
@@ -445,7 +445,7 @@ class UserTest extends TestCase
         DB::table('status_tag')->insert(['status_id' => $statuses->id, 'tag_id' => $tag->id]);
 
         $response = $this->actingAs($this->user)
-                         ->get('/@test/tags');
+            ->get('/@test/tags');
 
         $response->assertViewHas('tags');
         $response->assertSee('test_tag');
@@ -465,7 +465,7 @@ class UserTest extends TestCase
         DB::table('status_tag')->insert(['status_id' => $statuses->id, 'tag_id' => $tag->id]);
 
         $response = $this->actingAs($this->user)
-                         ->get('/@test/tags/test?search=test');
+            ->get('/@test/tags/test?search=test');
 
         $response->assertViewHas('tag');
         $response->assertSee($statuses->content);
@@ -490,7 +490,7 @@ class UserTest extends TestCase
         DB::table('status_tag')->insert(['status_id' => $statuses->id, 'tag_id' => $tag->id]);
 
         $response = $this->actingAs($this->user)
-                         ->get('/@test/tags/test');
+            ->get('/@test/tags/test');
 
         $response->assertDontSee($statuses->content);
     }
@@ -505,7 +505,7 @@ class UserTest extends TestCase
         ]);
 
         $response = $this->actingAs($this->user)
-                         ->get('/@test/archives');
+            ->get('/@test/archives');
 
         $response->assertSee('2017-05');
         $response->assertSee('2017-05-16');
