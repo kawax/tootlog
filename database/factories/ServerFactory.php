@@ -19,8 +19,8 @@ class ServerFactory extends Factory
     {
         return [
             'app_id' => fake()->randomNumber(),
-            'domain' => 'https://example.com',
-            'redirect_uri' => 'http://localhost',
+            'domain' => 'https://'.fake()->domainName(),
+            'redirect_uri' => fake()->url(),
             'client_id' => Str::random(20),
             'client_secret' => Str::random(20),
         ];

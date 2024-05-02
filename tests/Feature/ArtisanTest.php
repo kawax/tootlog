@@ -24,13 +24,9 @@ class ArtisanTest extends TestCase
     {
         parent::setUp();
 
-        $this->user = User::factory()->create([
-            'name' => 'test',
-        ]);
+        $this->user = User::first();
 
-        $this->server = Server::factory()->create([
-            'domain' => 'https://example.com',
-        ]);
+        $this->server = Server::first();
     }
 
     public function testGetStatuses()

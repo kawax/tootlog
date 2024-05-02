@@ -14,7 +14,6 @@ use Laravel\Socialite\Facades\Socialite;
 use Laravel\Socialite\Two\User as SocialiteUser;
 use Mockery as m;
 use Revolution\Mastodon\Facades\Mastodon;
-use Revolution\Mastodon\MastodonClient;
 use Tests\TestCase;
 
 class OAuthTest extends TestCase
@@ -29,29 +28,13 @@ class OAuthTest extends TestCase
 
     protected Status $statuses;
 
-    protected MastodonClient $mastodon;
-
     public function setUp(): void
     {
         parent::setUp();
 
-        $this->user = User::factory()->create([
-            'name' => 'test',
-        ]);
+        $this->user = User::first();
 
-        $this->server = Server::factory()->create(
-            [
-                'domain' => 'https://example.com',
-                'redirect_uri' => route('accounts.callback'),
-            ],
-        );
-
-        $this->mastodon = m::mock(MastodonClient::class);
-
-        $this->app->instance(
-            MastodonClient::class,
-            $this->mastodon,
-        );
+        $this->server = Server::first();
     }
 
     public function tearDown(): void

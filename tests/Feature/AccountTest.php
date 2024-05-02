@@ -30,13 +30,9 @@ class AccountTest extends TestCase
 
         Carbon::setTestNow(Carbon::parse('2019-03-02'));
 
-        $this->user = User::factory()->create([
-            'name' => 'test',
-        ]);
+        $this->user = User::first();
 
-        $this->server = Server::factory()->create([
-            'domain' => 'https://example.com',
-        ]);
+        $this->server = Server::first();
 
         $this->account = Account::factory()->create([
             'user_id' => $this->user->id,

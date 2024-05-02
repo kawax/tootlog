@@ -7,7 +7,6 @@ use App\Models\Account;
 use App\Models\Server;
 use App\Models\Status;
 use App\Models\User;
-use Faker\Factory as Faker;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Response;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -34,17 +33,9 @@ class StatusTest extends TestCase
     {
         parent::setUp();
 
-        $this->user = User::factory()->create(
-            [
-                'name' => 'test',
-            ],
-        );
+        $this->user = User::first();
 
-        $this->server = Server::factory()->create(
-            [
-                'domain' => 'https://example.com',
-            ],
-        );
+        $this->server = Server::first();
 
         $this->account = Account::factory()->create(
             [

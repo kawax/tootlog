@@ -32,7 +32,7 @@ class AccountFactory extends Factory
             'following_count' => fake()->randomNumber(),
             'followers_count' => fake()->randomNumber(),
             'note' => fake()->text(),
-            'url' => 'https://'.fake()->unique()->domainName,
+            'url' => 'https://'.fake()->unique()->domainName.'/test',
             'avatar' => fake()->imageUrl(),
             'avatar_static' => fake()->imageUrl(),
             'header' => fake()->imageUrl(),

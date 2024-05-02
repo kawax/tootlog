@@ -16,17 +16,15 @@ class InstanceTest extends TestCase
 
     public function testHttp()
     {
-        $server = Server::factory()->create();
-
         $response = $this->get(route('instances'));
 
         $response->assertSuccessful()
-                 ->assertViewHas('instances');
+            ->assertViewHas('instances');
     }
 
     public function testJob()
     {
-        $server = Server::factory()->create();
+        $server = Server::first();
 
         $job = new InstanceVersionJob($server);
 
@@ -50,14 +48,14 @@ class InstanceTest extends TestCase
     {
         Bus::fake();
 
-        $server = Server::factory()->create();
+        $server = Server::first();
 
         $account = Account::factory()->create([
             'server_id' => $server->id,
         ]);
 
         $this->artisan('toot:version')
-             ->assertExitCode(0);
+            ->assertExitCode(0);
 
         Bus::assertDispatched(InstanceVersionJob::class);
     }

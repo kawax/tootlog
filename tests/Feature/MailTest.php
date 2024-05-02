@@ -34,13 +34,9 @@ class MailTest extends TestCase
 
         $this->travelTo(Carbon::parse('2017-04-24'));
 
-        $this->user = User::factory()->create([
-            'name' => 'test',
-        ]);
+        $this->user = User::first();
 
-        $this->server = Server::factory()->create([
-            'domain' => 'https://example.com',
-        ]);
+        $this->server = Server::first();
 
         $this->account = Account::factory()->create([
             'user_id' => $this->user->id,
@@ -60,7 +56,7 @@ class MailTest extends TestCase
         Bus::fake();
 
         $response = $this->actingAs($this->user)
-                         ->post('/export/csv');
+            ->post('/export/csv');
 
         Bus::assertDispatched(ExportCsvJob::class);
 
@@ -73,7 +69,7 @@ class MailTest extends TestCase
         Storage::fake('local');
 
         $response = $this->actingAs($this->user)
-                         ->post('/export/csv');
+            ->post('/export/csv');
 
         $user = $this->user;
 
