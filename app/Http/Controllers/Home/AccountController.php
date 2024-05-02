@@ -119,12 +119,13 @@ class AccountController extends Controller
             return $server;
         }
 
-        $client_name = config('app.name');
-        $redirect_uris = config('services.mastodon.redirect');
-        $scopes = implode(' ', config('services.mastodon.scope'));
-
         $info = Mastodon::domain($domain)
-            ->createApp($client_name, $redirect_uris, $scopes, config('app.url'));
+            ->createApp(
+                client_name: config('app.name'),
+                redirect_uris: config('services.mastodon.redirect'),
+                scopes: implode(' ', config('services.mastodon.scope')),
+                website: config('app.url'),
+            );
 
         $info['app_id'] = $info['id'];
 
