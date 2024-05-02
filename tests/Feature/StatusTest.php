@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Jobs\Status\GetStatusJob;
+use App\Jobs\GetStatusJob;
 use App\Models\Account;
 use App\Models\Server;
 use App\Models\Status;
@@ -10,7 +10,6 @@ use App\Models\User;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Response;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Mockery as m;
 use Revolution\Mastodon\Facades\Mastodon;
 use Tests\TestCase;

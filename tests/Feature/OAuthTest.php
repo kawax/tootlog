@@ -2,13 +2,12 @@
 
 namespace Tests\Feature;
 
-use App\Jobs\Status\GetStatusJob;
+use App\Jobs\GetStatusJob;
 use App\Models\Account;
 use App\Models\Server;
 use App\Models\Status;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Support\Facades\Bus;
 use Laravel\Socialite\Facades\Socialite;
 use Laravel\Socialite\Two\User as SocialiteUser;

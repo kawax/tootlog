@@ -2,12 +2,11 @@
 
 namespace Tests\Feature;
 
-use App\Jobs\Status\GetStatusJob;
+use App\Jobs\GetStatusJob;
 use App\Models\Account;
 use App\Models\Server;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Bus;
 use Tests\TestCase;

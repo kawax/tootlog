@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands\Status;
 
-use App\Jobs\Status\GetStatusJob;
+use App\Jobs\GetStatusJob;
 use App\Models\Account;
 use Illuminate\Console\Command;
 

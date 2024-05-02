@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Jobs\Status;
+namespace App\Jobs;
 
 use App\Models\Account;
 use App\Models\Reblog;
@@ -27,8 +27,6 @@ class GetStatusJob implements ShouldQueue
 
     /**
      * Create a new job instance.
-     *
-     * @param  Account  $account
      */
     public function __construct(protected Account $account)
     {
@@ -83,9 +81,6 @@ class GetStatusJob implements ShouldQueue
         return $account;
     }
 
-    /**
-     * @param  array|null  $statuses
-     */
     protected function create(?array $statuses): void
     {
         foreach ($statuses as $status) {
@@ -93,9 +88,6 @@ class GetStatusJob implements ShouldQueue
         }
     }
 
-    /**
-     * @param  array|null  $status
-     */
     protected function createStatus(?array $status): void
     {
         if (data_get($status, 'visibility') === 'direct') {
@@ -113,10 +105,6 @@ class GetStatusJob implements ShouldQueue
         });
     }
 
-    /**
-     * @param  array  $status
-     * @return array
-     */
     protected function statusData(array $status): array
     {
         $data = Arr::only(
@@ -140,10 +128,6 @@ class GetStatusJob implements ShouldQueue
         return Arr::add($data, 'account_id', $this->account->id);
     }
 
-    /**
-     * @param  array  $status
-     * @param  array  $data
-     */
     protected function newStatus(array $status, array $data): void
     {
         $attr = [
@@ -164,9 +148,6 @@ class GetStatusJob implements ShouldQueue
         }
     }
 
-    /**
-     * @return array
-     */
     protected function get(): array
     {
         return $this->account->mastodon()
@@ -177,9 +158,6 @@ class GetStatusJob implements ShouldQueue
             );
     }
 
-    /**
-     * @return string|null
-     */
     protected function since(): ?string
     {
         $response = Mastodon::getResponse();
@@ -187,11 +165,7 @@ class GetStatusJob implements ShouldQueue
         return Header::since($response);
     }
 
-    /**
-     * @param  array  $reblog
-     * @return \Illuminate\Database\Eloquent\Model
-     */
-    protected function reblog(array $reblog)
+    protected function reblog(array $reblog): Reblog
     {
         $data = [
             'created_at' => Carbon::parse($reblog['created_at'], 'UTC'),
@@ -209,10 +183,6 @@ class GetStatusJob implements ShouldQueue
         return Reblog::updateOrCreate(['uri' => $reblog['uri']], $data);
     }
 
-    /**
-     * @param  array  $tags
-     * @return array
-     */
     protected function tag(array $tags): array
     {
         $ids = [];
@@ -224,13 +194,7 @@ class GetStatusJob implements ShouldQueue
         return $ids;
     }
 
-    /**
-     * 失敗したジョブの処理.
-     *
-     * @param  Throwable  $exception
-     * @return void
-     */
-    public function failed(Throwable $exception): void
+    public function failed(): void
     {
         $this->account->increment('fails');
     }

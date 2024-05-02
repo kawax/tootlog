@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Account\AccountCreateRequest;
-use App\Jobs\Status\GetStatusJob;
+use App\Jobs\GetStatusJob;
 use App\Models\Account;
 use App\Models\Server;
 use GuzzleHttp\Exception\ClientException;
