@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ba13ef04313c1f1ba637c17a9f925a67",
+    "content-hash": "1b1f7f8d5f67008f72f9b403d90431df",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.305.6",
+            "version": "3.305.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "3ce65364cc318ae36fc2c61c87a7aa5c83ee626f"
+                "reference": "f4108b0222fdc0f0d96c5dbc8055b957d06f1cae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/3ce65364cc318ae36fc2c61c87a7aa5c83ee626f",
-                "reference": "3ce65364cc318ae36fc2c61c87a7aa5c83ee626f",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/f4108b0222fdc0f0d96c5dbc8055b957d06f1cae",
+                "reference": "f4108b0222fdc0f0d96c5dbc8055b957d06f1cae",
                 "shasum": ""
             },
             "require": {
@@ -151,9 +151,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.305.6"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.305.7"
             },
-            "time": "2024-04-30T18:08:11+00:00"
+            "time": "2024-05-01T18:05:51+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -8461,62 +8461,6 @@
                 }
             ],
             "time": "2024-04-14T10:49:22+00:00"
-        },
-        {
-            "name": "laravel/legacy-factories",
-            "version": "v1.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/legacy-factories.git",
-                "reference": "6cb79f668fc36b8b396ada1da3ba45867889c30f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/legacy-factories/zipball/6cb79f668fc36b8b396ada1da3ba45867889c30f",
-                "reference": "6cb79f668fc36b8b396ada1da3ba45867889c30f",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/macroable": "^8.0|^9.0|^10.0|^11.0",
-                "php": "^7.3|^8.0",
-                "symfony/finder": "^3.4|^4.0|^5.0|^6.0|^7.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                },
-                "laravel": {
-                    "providers": [
-                        "Illuminate\\Database\\Eloquent\\LegacyFactoryServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "files": [
-                    "helpers.php"
-                ],
-                "psr-4": {
-                    "Illuminate\\Database\\Eloquent\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylor@laravel.com"
-                }
-            ],
-            "description": "The legacy version of the Laravel Eloquent factories.",
-            "homepage": "http://laravel.com",
-            "support": {
-                "issues": "https://github.com/laravel/framework/issues",
-                "source": "https://github.com/laravel/framework"
-            },
-            "time": "2024-01-15T13:55:14+00:00"
         },
         {
             "name": "laravel/sail",

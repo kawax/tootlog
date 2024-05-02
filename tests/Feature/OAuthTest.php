@@ -35,11 +35,11 @@ class OAuthTest extends TestCase
     {
         parent::setUp();
 
-        $this->user = factory(User::class)->create([
+        $this->user = User::factory()->create([
             'name' => 'test',
         ]);
 
-        $this->server = factory(Server::class)->create(
+        $this->server = Server::factory()->create(
             [
                 'domain' => 'https://example.com',
                 'redirect_uri' => route('accounts.callback'),
@@ -98,7 +98,7 @@ class OAuthTest extends TestCase
                 ])->setToken('test'),
         );
 
-        $account = factory(Account::class)->create([
+        $account = Account::factory()->create([
             'user_id' => $this->user->id,
             'username' => 'test',
             'url' => 'https://example.com/@test',

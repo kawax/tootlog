@@ -34,19 +34,19 @@ class StatusTest extends TestCase
     {
         parent::setUp();
 
-        $this->user = factory(User::class)->create(
+        $this->user = User::factory()->create(
             [
                 'name' => 'test',
             ],
         );
 
-        $this->server = factory(Server::class)->create(
+        $this->server = Server::factory()->create(
             [
                 'domain' => 'https://example.com',
             ],
         );
 
-        $this->account = factory(Account::class)->create(
+        $this->account = Account::factory()->create(
             [
                 'user_id' => $this->user->id,
                 'server_id' => $this->server->id,
@@ -69,14 +69,12 @@ class StatusTest extends TestCase
     {
         $job = new GetStatusJob($this->account);
 
-        $faker = Faker::create();
-
-        $statuses = factory(Status::class)->make(
+        $statuses = Status::factory()->make(
             [
                 'id' => 1,
                 'account_id' => $this->account->id,
                 'visibility' => 'public',
-                'created_at' => $faker->dateTime,
+                'created_at' => fake()->dateTime,
                 'content' => 'test',
             ],
         );
@@ -108,14 +106,12 @@ class StatusTest extends TestCase
     {
         $job = new GetStatusJob($this->account);
 
-        $faker = Faker::create();
-
-        $statuses = factory(Status::class)->make(
+        $statuses = Status::factory()->make(
             [
                 'id' => 1,
                 'account_id' => $this->account->id,
                 'visibility' => 'direct',
-                'created_at' => $faker->dateTime,
+                'created_at' => fake()->dateTime,
                 'content' => 'test',
             ],
         );
@@ -147,28 +143,26 @@ class StatusTest extends TestCase
     {
         $job = new GetStatusJob($this->account);
 
-        $faker = Faker::create();
-
-        $statuses = factory(Status::class)->make(
+        $statuses = Status::factory()->make(
             [
                 'id' => 1,
                 'account_id' => $this->account->id,
                 'visibility' => 'public',
-                'created_at' => $faker->dateTime,
+                'created_at' => fake()->dateTime,
                 'content' => 'test',
                 'reblog' => [
                     'id' => 2,
                     'created_at' => now()->toDateTimeString(),
                     'account' => [
-                        'acct' => $faker->userName,
-                        'display_name' => $faker->name,
-                        'url' => $faker->url,
-                        'avatar' => $faker->imageUrl,
+                        'acct' => fake()->userName,
+                        'display_name' => fake()->name,
+                        'url' => fake()->url,
+                        'avatar' => fake()->imageUrl,
                     ],
                     'content' => 'reblog_content',
                     'spoiler_text' => 'spoiler_text',
                     'uri' => 'uri',
-                    'url' => $faker->url,
+                    'url' => fake()->url,
                 ],
             ],
         );
@@ -209,14 +203,12 @@ class StatusTest extends TestCase
     {
         $job = new GetStatusJob($this->account);
 
-        $faker = Faker::create();
-
-        $statuses = factory(Status::class)->make(
+        $statuses = Status::factory()->make(
             [
                 'id' => 1,
                 'account_id' => $this->account->id,
                 'visibility' => 'public',
-                'created_at' => $faker->dateTime,
+                'created_at' => fake()->dateTime,
                 'content' => 'test',
                 'tags' => [
                     [

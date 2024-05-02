@@ -30,22 +30,22 @@ class AccountTest extends TestCase
 
         Carbon::setTestNow(Carbon::parse('2019-03-02'));
 
-        $this->user = factory(User::class)->create([
+        $this->user = User::factory()->create([
             'name' => 'test',
         ]);
 
-        $this->server = factory(Server::class)->create([
+        $this->server = Server::factory()->create([
             'domain' => 'https://example.com',
         ]);
 
-        $this->account = factory(Account::class)->create([
+        $this->account = Account::factory()->create([
             'user_id' => $this->user->id,
             'server_id' => $this->server->id,
             'username' => 'test',
             'url' => 'https://example.com/@test',
         ]);
 
-        $this->statuses = factory(Status::class, 10)->create([
+        $this->statuses = Status::factory(10)->create([
             'account_id' => $this->account->id,
             'created_at' => now(),
         ]);
@@ -54,22 +54,22 @@ class AccountTest extends TestCase
     public function testDestroy()
     {
         $response = $this->actingAs($this->user)
-                         ->delete(route('accounts.delete', $this->account));
+            ->delete(route('accounts.delete', $this->account));
 
         $this->assertDatabaseMissing('accounts', [
             'id' => $this->account->id,
         ]);
 
         $response->assertRedirect('home')
-                 ->assertSessionHas('message');
+            ->assertSessionHas('message');
     }
 
     public function testDestroyAnother()
     {
-        $user2 = factory(User::class)->create();
+        $user2 = User::factory()->create();
 
         $response = $this->actingAs($user2)
-                         ->delete(route('accounts.delete', $this->account));
+            ->delete(route('accounts.delete', $this->account));
 
         $this->assertDatabaseHas('accounts', [
             'id' => $this->account->id,

@@ -24,11 +24,11 @@ class ArtisanTest extends TestCase
     {
         parent::setUp();
 
-        $this->user = factory(User::class)->create([
+        $this->user = User::factory()->create([
             'name' => 'test',
         ]);
 
-        $this->server = factory(Server::class)->create([
+        $this->server = Server::factory()->create([
             'domain' => 'https://example.com',
         ]);
     }
@@ -37,7 +37,7 @@ class ArtisanTest extends TestCase
     {
         Bus::fake();
 
-        $account = factory(Account::class, 5)->create([
+        $account = Account::factory(5)->create([
             'user_id' => $this->user->id,
             'server_id' => $this->server->id,
             'locked' => false,
@@ -54,7 +54,7 @@ class ArtisanTest extends TestCase
     {
         Bus::fake();
 
-        $account = factory(Account::class, 5)->create([
+        $account = Account::factory(5)->create([
             'user_id' => $this->user->id,
             'server_id' => $this->server->id,
             'fails' => 10,

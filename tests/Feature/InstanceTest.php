@@ -16,7 +16,7 @@ class InstanceTest extends TestCase
 
     public function testHttp()
     {
-        $server = factory(Server::class)->create();
+        $server = Server::factory()->create();
 
         $response = $this->get(route('instances'));
 
@@ -26,7 +26,7 @@ class InstanceTest extends TestCase
 
     public function testJob()
     {
-        $server = factory(Server::class)->create();
+        $server = Server::factory()->create();
 
         $job = new InstanceVersionJob($server);
 
@@ -50,9 +50,9 @@ class InstanceTest extends TestCase
     {
         Bus::fake();
 
-        $server = factory(Server::class)->create();
+        $server = Server::factory()->create();
 
-        $account = factory(Account::class)->create([
+        $account = Account::factory()->create([
             'server_id' => $server->id,
         ]);
 

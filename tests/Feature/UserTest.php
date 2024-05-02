@@ -8,6 +8,7 @@ use App\Models\Server;
 use App\Models\Status;
 use App\Models\Tag;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Carbon;
 use Livewire\Livewire;
@@ -27,15 +28,15 @@ class UserTest extends TestCase
     {
         parent::setUp();
 
-        $this->user = factory(User::class)->create([
+        $this->user = User::factory()->create([
             'name' => 'test',
         ]);
 
-        $this->server = factory(Server::class)->create([
+        $this->server = Server::factory()->create([
             'domain' => 'https://example.com',
         ]);
 
-        $this->account = factory(Account::class)->create([
+        $this->account = Account::factory()->create([
             'user_id' => $this->user->id,
             'server_id' => $this->server->id,
             'username' => 'test',
@@ -85,7 +86,7 @@ class UserTest extends TestCase
 
     public function testHomeShow()
     {
-        $statuses = factory(Status::class)->create([
+        $statuses = Status::factory()->create([
             'account_id' => $this->account->id,
         ]);
 
@@ -102,7 +103,7 @@ class UserTest extends TestCase
 
     public function testHomeHide()
     {
-        $statuses = factory(Status::class)->create([
+        $statuses = Status::factory()->create([
             'account_id' => $this->account->id,
             'deleted_at' => now(),
         ]);
@@ -145,7 +146,7 @@ class UserTest extends TestCase
 
     public function testTimelineAnother()
     {
-        $user2 = factory(User::class)->create([
+        $user2 = User::factory()->create([
             'name' => 'test2',
         ]);
 
@@ -192,7 +193,7 @@ class UserTest extends TestCase
 
     public function testLockedAccount()
     {
-        $accounts = factory(Account::class)->create([
+        $accounts = Account::factory()->create([
             'user_id' => (int) $this->user->id,
             'server_id' => $this->server->id,
             'username' => 'test2',
@@ -210,11 +211,11 @@ class UserTest extends TestCase
 
     public function testLockedAccountAnother()
     {
-        $user2 = factory(User::class)->create([
+        $user2 = User::factory()->create([
             'name' => 'test2',
         ]);
 
-        $accounts = factory(Account::class)->create([
+        $accounts = Account::factory()->create([
             'user_id' => $this->user->id,
             'server_id' => $this->server->id,
             'username' => 'test2',
@@ -230,7 +231,7 @@ class UserTest extends TestCase
 
     public function testStatus()
     {
-        $statuses = factory(Status::class)->create([
+        $statuses = Status::factory()->create([
             'account_id' => $this->account->id,
             'status_id' => 1,
             'content' => '<p>test</p>',
@@ -246,9 +247,9 @@ class UserTest extends TestCase
 
     public function testLockedStatusAnother()
     {
-        $user2 = factory(User::class)->create();
+        $user2 = User::factory()->create();
 
-        $account = factory(Account::class)->create([
+        $account = Account::factory()->create([
             'user_id' => $this->user->id,
             'server_id' => $this->server->id,
             'username' => 'test2',
@@ -256,7 +257,7 @@ class UserTest extends TestCase
             'locked' => true,
         ]);
 
-        $statuses = factory(Status::class)->create([
+        $statuses = Status::factory()->create([
             'account_id' => $account->id,
             'status_id' => 1,
         ]);
@@ -272,7 +273,7 @@ class UserTest extends TestCase
     {
         Carbon::setTestNow(Carbon::parse('2017-04-24'));
 
-        $statuses = factory(Status::class)->create([
+        $statuses = Status::factory()->create([
             'account_id' => $this->account->id,
             'created_at' => now(),
         ]);
@@ -287,7 +288,7 @@ class UserTest extends TestCase
     {
         Carbon::setTestNow(Carbon::parse('2017-04-24'));
 
-        $statuses = factory(Status::class)->create([
+        $statuses = Status::factory()->create([
             'account_id' => $this->account->id,
             'created_at' => now(),
         ]);
@@ -302,7 +303,7 @@ class UserTest extends TestCase
     {
         Carbon::setTestNow(Carbon::parse('2017-04-24'));
 
-        $statuses = factory(Status::class)->create([
+        $statuses = Status::factory()->create([
             'account_id' => $this->account->id,
             'created_at' => now(),
         ]);
@@ -317,12 +318,12 @@ class UserTest extends TestCase
     {
         Carbon::setTestNow(Carbon::parse('2017-04-24'));
 
-        $accounts = factory(Account::class)->create([
+        $accounts = Account::factory()->create([
             'user_id' => $this->user->id,
             'locked' => true,
         ]);
 
-        $statuses = factory(Status::class)->create([
+        $statuses = Status::factory()->create([
             'account_id' => $accounts->id,
             'created_at' => now(),
         ]);
@@ -337,7 +338,7 @@ class UserTest extends TestCase
     {
         Carbon::setTestNow(Carbon::parse('2017-04-24'));
 
-        $statuses = factory(Status::class)->create([
+        $statuses = Status::factory()->create([
             'account_id' => $this->account->id,
             'created_at' => now(),
         ]);
@@ -397,7 +398,7 @@ class UserTest extends TestCase
 
     public function testSearchHome()
     {
-        $statuses = factory(Status::class)->create([
+        $statuses = Status::factory()->create([
             'account_id' => $this->account->id,
             'content' => 'test',
         ]);
@@ -410,7 +411,7 @@ class UserTest extends TestCase
 
     public function testSearchHomeEmpty()
     {
-        $statuses = factory(Status::class)->create([
+        $statuses = Status::factory()->create([
             'account_id' => $this->account->id,
             'content' => '',
         ]);
@@ -424,7 +425,7 @@ class UserTest extends TestCase
 
     public function testSearchAccount()
     {
-        $statuses = factory(Status::class)->create([
+        $statuses = Status::factory()->create([
             'account_id' => $this->account->id,
             'content' => 'test',
         ]);
@@ -437,15 +438,15 @@ class UserTest extends TestCase
 
     public function testUserTags()
     {
-        $statuses = factory(Status::class)->create([
+        $statuses = Status::factory()->create([
             'account_id' => $this->account->id,
         ]);
 
-        $tag = factory(Tag::class)->create([
+        $tag = Tag::factory()->create([
             'name' => 'test_tag',
         ]);
 
-        \DB::table('status_tag')->insert(['status_id' => $statuses->id, 'tag_id' => $tag->id]);
+        DB::table('status_tag')->insert(['status_id' => $statuses->id, 'tag_id' => $tag->id]);
 
         $response = $this->actingAs($this->user)
                          ->get('/@test/tags');
@@ -456,16 +457,16 @@ class UserTest extends TestCase
 
     public function testTag()
     {
-        $statuses = factory(Status::class)->create([
+        $statuses = Status::factory()->create([
             'account_id' => $this->account->id,
             'content' => 'test',
         ]);
 
-        $tag = factory(Tag::class)->create([
+        $tag = Tag::factory()->create([
             'name' => 'test',
         ]);
 
-        \DB::table('status_tag')->insert(['status_id' => $statuses->id, 'tag_id' => $tag->id]);
+        DB::table('status_tag')->insert(['status_id' => $statuses->id, 'tag_id' => $tag->id]);
 
         $response = $this->actingAs($this->user)
                          ->get('/@test/tags/test?search=test');
@@ -476,21 +477,21 @@ class UserTest extends TestCase
 
     public function testLockedTag()
     {
-        $accounts = factory(Account::class)->create([
+        $accounts = Account::factory()->create([
             'user_id' => $this->user->id,
             'server_id' => $this->server->id,
             'locked' => true,
         ]);
 
-        $statuses = factory(Status::class)->create([
+        $statuses = Status::factory()->create([
             'account_id' => $accounts->id,
         ]);
 
-        $tag = factory(Tag::class)->create([
+        $tag = Tag::factory()->create([
             'name' => 'test',
         ]);
 
-        \DB::table('status_tag')->insert(['status_id' => $statuses->id, 'tag_id' => $tag->id]);
+        DB::table('status_tag')->insert(['status_id' => $statuses->id, 'tag_id' => $tag->id]);
 
         $response = $this->actingAs($this->user)
                          ->get('/@test/tags/test');
@@ -502,7 +503,7 @@ class UserTest extends TestCase
     {
         Carbon::setTestNow(Carbon::parse('2017-05-16'));
 
-        $statuses = factory(Status::class)->create([
+        $statuses = Status::factory()->create([
             'account_id' => $this->account->id,
             'created_at' => now(),
         ]);
