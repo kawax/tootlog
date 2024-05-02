@@ -19,9 +19,6 @@ class InstanceVersionJob implements ShouldQueue
 
     /**
      * Create a new job instance.
-     *
-     * @param  Server  $server
-     * @return void
      */
     public function __construct(protected Server $server)
     {
@@ -30,8 +27,6 @@ class InstanceVersionJob implements ShouldQueue
 
     /**
      * Execute the job.
-     *
-     * @return void
      */
     public function handle(): void
     {
