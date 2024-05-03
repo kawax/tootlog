@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Open;
 use App\Http\Controllers\Controller;
 use App\Models\Tag;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
 
 class TagController extends Controller
 {
