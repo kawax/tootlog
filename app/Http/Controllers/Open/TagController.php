@@ -5,24 +5,19 @@ namespace App\Http\Controllers\Open;
 use App\Http\Controllers\Controller;
 use App\Models\Tag;
 use App\Models\User;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class TagController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index(User $user)
+    public function index(User $user): View
     {
         $tags = $user->tags()->take(100);
 
         return view('tags.index')->with(compact('user', 'tags'));
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Request $request, User $user, Tag $tag)
+    public function show(Request $request, User $user, Tag $tag): View
     {
         $statuses = $user->openTagStatuses($tag, $request->query('search'))->simplePaginate();
 

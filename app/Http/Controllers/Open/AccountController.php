@@ -5,12 +5,13 @@ namespace App\Http\Controllers\Open;
 use App\Http\Controllers\Controller;
 use App\Models\Account;
 use App\Models\User;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 
 class AccountController extends Controller
 {
-    public function index(Request $request, User $user, string $username, string $domain)
+    public function index(Request $request, User $user, string $username, string $domain): View
     {
         $acct = Account::byAcct($username, $domain)->firstOrFail();
 
@@ -24,7 +25,7 @@ class AccountController extends Controller
         return view('open.acct.index')->with(compact('user', 'acct', 'accounts', 'statuses'));
     }
 
-    public function show(User $user, string $username, string $domain, string $status_id)
+    public function show(User $user, string $username, string $domain, string $status_id): View
     {
         $acct = Account::byAcct($username, $domain)->firstOrFail();
 

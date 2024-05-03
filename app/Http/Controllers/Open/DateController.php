@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Open;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Carbon;
 
 class DateController extends Controller
 {
-    public function date(User $user, ?string $year = null, ?string $month = null, ?string $day = null)
+    public function date(User $user, ?string $year = null, ?string $month = null, ?string $day = null): View|RedirectResponse
     {
         if (empty($year)) {
             return to_route('open.user', $user);
@@ -24,7 +26,7 @@ class DateController extends Controller
     /**
      * YYYY-MM-DD形式を現在のURLにリダイレクト.
      */
-    public function show(User $user, string $date)
+    public function show(User $user, string $date): RedirectResponse
     {
         $year = explode('-', $date)[0];
         $month = explode('-', $date)[1];

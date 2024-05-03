@@ -4,15 +4,16 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\UserUpdateRequest;
+use Illuminate\Contracts\View\View;
 
 class PreferencesController extends Controller
 {
-    public function show()
+    public function show(): View
     {
         return view('prefs.index');
     }
 
-    public function update(UserUpdateRequest $request)
+    public function update(UserUpdateRequest $request): View
     {
         $user = $request->user();
 
