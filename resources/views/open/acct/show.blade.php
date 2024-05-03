@@ -4,10 +4,6 @@
 
 @section('description', strip_tags($status->content))
 
-@push('robots')
-    <meta name="robots" content="none">
-@endpush
-
 @section('content')
     <div class="container-fluid">
         <div class="row">

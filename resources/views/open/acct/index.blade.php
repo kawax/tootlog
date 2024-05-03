@@ -4,10 +4,6 @@
 
 @section('description', strip_tags($acct->note))
 
-@push('robots')
-    <meta name="robots" content="nofollow">
-@endpush
-
 @section('content')
     <div class="container-fluid">
         <div class="row">
