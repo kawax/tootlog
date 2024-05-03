@@ -36,7 +36,7 @@
 
                     <div>
                         <a href="{{ route('open.account.show', [
-                            'user' => $user,
+                            'user' => $status->account->user,
                             'username' => $status->account->username,
                             'domain' => $status->account->domain,
                             'status_id' => $status->status_id

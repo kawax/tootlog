@@ -43,6 +43,10 @@ class Account extends Model
         'header_static',
     ];
 
+    protected $with = [
+        'user',
+    ];
+
     protected function casts(): array
     {
         return [];

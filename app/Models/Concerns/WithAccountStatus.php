@@ -15,7 +15,6 @@ trait WithAccountStatus
         return $this->statuses()
             ->withTrashed()
             ->where('status_id', $id)
-            ->with(['account', 'reblog'])
             ->firstOrFail();
     }
 
@@ -28,7 +27,6 @@ trait WithAccountStatus
             ->when(filled($search), function (Builder $query) use ($search) {
                 $query->where('content', 'like', '%'.$search.'%');
             })
-            ->with(['account', 'reblog'])
             ->latest();
     }
 }

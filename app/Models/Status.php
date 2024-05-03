@@ -30,6 +30,11 @@ class Status extends Model
         'reblog_id',
     ];
 
+    protected $with = [
+        'account',
+        'reblog',
+    ];
+
     /**
      * @var array
      */
