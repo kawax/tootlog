@@ -88,6 +88,8 @@ class Status extends Model
 
     public function tags(): BelongsToMany
     {
-        return $this->belongsToMany(Tag::class)->withTimestamps();
+        return $this->belongsToMany(Tag::class)
+            ->using(StatusTag::class)
+            ->withTimestamps();
     }
 }

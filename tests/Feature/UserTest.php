@@ -6,11 +6,9 @@ use App\Livewire\StatusToggle;
 use App\Models\Account;
 use App\Models\Server;
 use App\Models\Status;
-use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\DB;
 use Livewire\Livewire;
 use Tests\TestCase;
 
@@ -434,35 +432,29 @@ class UserTest extends TestCase
 
     public function testUserTags()
     {
-        $statuses = Status::factory()->create([
-            'account_id' => $this->account->id,
-        ]);
-
-        $tag = Tag::factory()->create([
-            'name' => 'test_tag',
-        ]);
-
-        DB::table('status_tag')->insert(['status_id' => $statuses->id, 'tag_id' => $tag->id]);
+        $statuses = Status::factory()
+            ->hasTags(1)
+            ->create([
+                'account_id' => $this->account->id,
+            ]);
 
         $response = $this->actingAs($this->user)
             ->get('/@test/tags');
 
         $response->assertViewHas('tags');
-        $response->assertSee('test_tag');
+        $response->assertSee($statuses->tags()->first()->name);
     }
 
     public function testTag()
     {
-        $statuses = Status::factory()->create([
-            'account_id' => $this->account->id,
-            'content' => 'test',
-        ]);
-
-        $tag = Tag::factory()->create([
-            'name' => 'test',
-        ]);
-
-        DB::table('status_tag')->insert(['status_id' => $statuses->id, 'tag_id' => $tag->id]);
+        $statuses = Status::factory()
+            ->hasTags(1, [
+                'name' => 'test',
+            ])
+            ->create([
+                'account_id' => $this->account->id,
+                'content' => 'test',
+            ]);
 
         $response = $this->actingAs($this->user)
             ->get('/@test/tags/test?search=test');
@@ -479,15 +471,12 @@ class UserTest extends TestCase
             'locked' => true,
         ]);
 
-        $statuses = Status::factory()->create([
-            'account_id' => $accounts->id,
-        ]);
-
-        $tag = Tag::factory()->create([
-            'name' => 'test',
-        ]);
-
-        DB::table('status_tag')->insert(['status_id' => $statuses->id, 'tag_id' => $tag->id]);
+        $statuses = Status::factory()
+            ->hasTags(1, [
+                'name' => 'test',
+            ])->create([
+                'account_id' => $accounts->id,
+            ]);
 
         $response = $this->actingAs($this->user)
             ->get('/@test/tags/test');

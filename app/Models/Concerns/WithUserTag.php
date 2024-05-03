@@ -2,8 +2,8 @@
 
 namespace App\Models\Concerns;
 
+use App\Models\StatusTag;
 use App\Models\Tag;
-use Illuminate\Support\Facades\DB;
 
 trait WithUserTag
 {
@@ -14,8 +14,7 @@ trait WithUserTag
                 ->where('accounts.locked', false)
                 ->pluck('statuses.id');
 
-            $tag_id = DB::table('status_tag')
-                ->whereIn('status_id', $status_id)
+            $tag_id = StatusTag::whereIn('status_id', $status_id)
                 ->pluck('tag_id')
                 ->unique()
                 ->toArray();
