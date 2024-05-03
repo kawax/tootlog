@@ -3,11 +3,10 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
-
-
             <div class="col-md-8 order-md-last">
                 <h2>
-                    <a href="{{ $acct->server->domain }}" target="_blank" rel="nofollow noopener" class="text-decoration-none">
+                    <a href="{{ $acct->server->domain }}" target="_blank" rel="nofollow noopener"
+                       class="text-decoration-none">
                         {{ $acct->acct }}
                     </a>
                 </h2>

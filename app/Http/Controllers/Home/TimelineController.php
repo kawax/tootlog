@@ -19,22 +19,23 @@ class TimelineController extends Controller
 
         $accounts = $user->allAccounts();
 
-        return view('timeline.index')->with(compact('user', 'accounts'));
+        return view('timeline.index')->with(compact('accounts'));
     }
 
     public function acct(Request $request, string $username, string $domain)
     {
-        /**
-         * @var User $user
-         */
-        $user = $request->user();
 
         $acct = Account::byAcct($username, $domain)->firstOrFail();
 
         Gate::authorize('show', $acct);
 
+        /**
+         * @var User $user
+         */
+        $user = $request->user();
+
         $accounts = $user->allAccounts();
 
-        return view('timeline.acct')->with(compact('user', 'accounts', 'acct'));
+        return view('timeline.acct')->with(compact('accounts', 'acct'));
     }
 }
