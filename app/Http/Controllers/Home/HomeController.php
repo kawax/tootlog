@@ -17,7 +17,9 @@ class HomeController extends Controller
         $user = $request->user();
 
         $accounts = $user->allAccounts();
-        $statuses = $user->allStatuses($request->query('search'))->paginate();
+        $statuses = $user->allStatuses($request->query('search'))
+            ->paginate()
+            ->appends(['search' => $request->query('search')]);
 
         return view('home')->with(compact('user', 'accounts', 'statuses'));
     }

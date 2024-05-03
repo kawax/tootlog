@@ -13,13 +13,13 @@
                 'search_in' => 'Home'
                 ])
 
-                {{ $statuses->appends(['search' => request('search')])->links() }}
+                {{ $statuses->links() }}
 
                 @foreach($statuses as $status)
                     @include('status.item')
                 @endforeach
 
-                {{ $statuses->appends(['search' => request('search')])->links() }}
+                {{ $statuses->links() }}
 
             </div>
 
