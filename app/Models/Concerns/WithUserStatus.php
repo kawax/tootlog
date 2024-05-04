@@ -46,6 +46,9 @@ trait WithUserStatus
             ->latest();
     }
 
+    /**
+     * タグのポスト.
+     */
     public function openTagStatuses(Tag $tag, ?string $search = null): Builder
     {
         $accounts = $this->accounts()->where('locked', false)->pluck('id');

@@ -4,10 +4,14 @@ namespace App\Models\Concerns;
 
 use App\Models\StatusTag;
 use App\Models\Tag;
+use Illuminate\Database\Eloquent\Collection;
 
 trait WithUserTag
 {
-    public function tags()
+    /**
+     * ユーザーのタグリスト.
+     */
+    public function tags(): Collection
     {
         return cache()->remember('user.tags/'.$this->id, now()->addHours(12), function () {
             $status_id = $this->statuses()
