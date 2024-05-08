@@ -9,6 +9,7 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 use Revolution\Mastodon\Facades\Mastodon;
+use Revolution\Mastodon\MastodonClient;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -17,7 +18,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Mastodon::macro('instance', fn (): array => $this->get('/instance'));
+        Mastodon::macro('instance', fn (): array => /** @var MastodonClient $this */ $this->get('/instance'));
 
         Paginator::useBootstrapFive();
 
