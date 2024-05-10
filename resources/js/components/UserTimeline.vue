@@ -39,14 +39,6 @@ const activePosts = computed(() => {
 
 onMounted(() => get())
 
-function endpoint() {
-    return props.domain + api_version
-}
-
-function streaming_url() {
-    return props.streaming + api_version
-}
-
 function get(type = 'public:local') {
     steam_close()
 
@@ -130,6 +122,14 @@ function media_check(post) {
     }
 
     return true
+}
+
+function endpoint() {
+    return props.domain + api_version
+}
+
+function streaming_url() {
+    return props.streaming + api_version
 }
 </script>
 
