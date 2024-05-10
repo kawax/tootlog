@@ -32,10 +32,10 @@
     "file": "assets/fa-solid-900-QWY35r5r.woff2",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2"
   },
-  "resources/js/app.js": {
+  "resources/js/app.ts": {
     "file": "assets/app-Cf3xfK3S.js",
     "name": "app",
-    "src": "resources/js/app.js",
+    "src": "resources/js/app.ts",
     "isEntry": true,
     "imports": [
       "_vendor-Dsmaf9Hx.js"

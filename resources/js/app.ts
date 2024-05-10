@@ -1,9 +1,9 @@
 import'./bootstrap';
-import { createApp } from 'vue';
+import {App, createApp} from 'vue';
 import UserTimeline from './components/UserTimeline.vue';
 import emoji from './emoji';
 
-const app = createApp({});
+const app: App<Element> = createApp({});
 
 app.component('tt-user-timeline', UserTimeline);
 
