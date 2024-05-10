@@ -1,19 +1,21 @@
-<script setup>
+<script setup lang="ts">
 import {ref} from "vue";
 
-const emit = defineEmits(['mediaChanged'])
+const emit = defineEmits<{
+    changed: [media: string]
+}>()
 
-const active_media = ref('normal');
+const active_media = ref<string>('normal');
 
-const medias = {
+const medias: Object = {
     normal: '<i class="fa fa-file-image-o" aria-hidden="true"></i> Media Default',
     only: '<i class="fa fa-picture-o" aria-hidden="true"></i> Only',
     except: '<i class="fa fa-commenting-o" aria-hidden="true"></i> Except',
 };
 
-function mediaChanged(media) {
+function change(media: string): void {
     active_media.value = media;
-    emit('mediaChanged', media);
+    emit('changed', media);
 }
 </script>
 
@@ -24,7 +26,7 @@ function mediaChanged(media) {
             class="btn btn-secondary"
             v-for="(text, media) in medias"
             :class="{ active: active_media === media }"
-            @click="mediaChanged(media)"
+            @click="change(media)"
             v-html="text"
         ></button>
     </div>

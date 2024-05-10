@@ -131,9 +131,9 @@ function streaming_url() {
 <template>
     <div>
         <div class="btn-toolbar mb-2" role="toolbar" aria-label="toolbar">
-            <TypeSwitch @type-changed="get"/>
+            <TypeSwitch @changed="get"/>
 
-            <MediaSwitch @media-changed="(media) => active_media = media"/>
+            <MediaSwitch @changed="(media) => active_media = media"/>
         </div>
 
         <div class="alert alert-danger" v-if="errors.length > 0">

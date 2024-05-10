@@ -1,19 +1,21 @@
-<script setup>
+<script setup lang="ts">
 import {ref} from "vue";
 
-const emit = defineEmits(['typeChanged'])
+const emit = defineEmits<{
+    changed: [type: string]
+}>()
 
-const active_type = ref('public:local');
+const active_type = ref<string>('public:local');
 
-const types = {
+const types: Object = {
     user: '<i class="fa fa-home" aria-hidden="true"></i> User',
     'public:local': '<i class="fa fa-users" aria-hidden="true"></i> Local',
     public: '<i class="fa fa-globe" aria-hidden="true"></i> Federated',
 };
 
-function typeChanged(type) {
+function change(type: string): void {
     active_type.value = type;
-    emit('typeChanged', type);
+    emit('changed', type);
 }
 </script>
 
@@ -24,7 +26,7 @@ function typeChanged(type) {
             class="btn btn-secondary"
             v-for="(text, type) in types"
             :class="{ active: active_type === type }"
-            @click="typeChanged(type)"
+            @click="change(type)"
             v-html="text"
         ></button>
     </div>
