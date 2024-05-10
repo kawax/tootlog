@@ -31,11 +31,11 @@ class InstanceVersionJob implements ShouldQueue
     public function handle(): void
     {
         rescue(function () {
-            $instance = Mastodon::domain($this->server->domain)->instance();
+            $instance = Mastodon::domain($this->server->domain)->apiVersion('v2')->instance();
 
             $this->server->fill([
                 'version' => data_get($instance, 'version', ''),
-                'streaming' => data_get($instance, 'urls.streaming_api', ''),
+                'streaming' => data_get($instance, 'configuration.urls.streaming', ''),
             ])->save();
         }, report: false);
     }
