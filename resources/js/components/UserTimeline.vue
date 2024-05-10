@@ -34,28 +34,28 @@ const activePosts = computed(() => {
 
 onMounted(() => get())
 
-function get(type = 'public:local') {
+async function get(type = 'public:local') {
     steam_close()
 
     active_type.value = type
 
-    axios.get(endpoint() + '/timelines/' + timelines[type] + '?limit=20', {
-        headers: {Authorization: 'Bearer ' + props.token},
-    }).then(res => {
-        //console.log(res.data)
-        posts.value = res.data
+    try {
+        const response = await fetch(endpoint() + '/timelines/' + timelines[type] + '?limit=20', {
+            headers: {
+                Authorization: 'Bearer ' + props.token
+            }
+        });
 
-        stream(type)
-    }).catch(error => {
-        console.log(error)
-        if (typeof error.response.data === 'object') {
-            errors.value = _.flatten(_.toArray(error.response.data))
-        } else {
-            errors.value = [
-                'Something went wrong. Please try again.',
-            ]
+        if (!response.ok) {
+            throw new Error(response.status + ' ' + response.statusText);
         }
-    })
+
+        posts.value = await response.json();
+        stream(type);
+    } catch (error) {
+        console.error(error);
+        errors.value.push(error);
+    }
 }
 
 function stream(type = 'public:local') {
@@ -81,13 +81,7 @@ function stream(type = 'public:local') {
 }
 
 function steam_open(streamType, onData) {
-    ws = new WebSocket(
-        streaming_url() +
-        '/streaming?access_token=' +
-        props.token +
-        '&stream=' +
-        streamType,
-    )
+    ws = new WebSocket(streaming_url() + '/streaming?access_token=' + props.token + '&stream=' + streamType)
 
     ws.onmessage = event => {
         console.log('Got Data from Stream ' + streamType)
@@ -102,21 +96,21 @@ function steam_open(streamType, onData) {
 }
 
 function steam_close() {
-    if (!_.isNull(ws)) {
+    if (ws !== null) {
         ws.close()
         posts.value = []
     }
 }
 
 function media_check(post) {
-    if (active_media.value === 'only') {
-        //console.log(post)
-        return !_.isEmpty(post.media_attachments)
-    } else if (active_media.value === 'except') {
-        return _.isEmpty(post.media_attachments)
+    switch (active_media.value) {
+        case 'only':
+            return post.media_attachments.length
+        case 'except':
+            return !post.media_attachments.length
+        default:
+            return true
     }
-
-    return true
 }
 
 function endpoint() {
