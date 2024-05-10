@@ -6,8 +6,6 @@ import display_name from '../display'
 const props = defineProps({
     post: Object
 })
-
-const account = props.post.reblog.account;
 </script>
 
 <template>
@@ -23,29 +21,29 @@ const account = props.post.reblog.account;
         <div class="d-flex m-1 p-1">
             <div class="flex-shrink-0">
                 <a
-                    :href="account.url"
+                    :href="post.reblog.account.url"
                     target="_blank"
                     rel="nofollow noopener"
                     class="text-decoration-none"
                 >
                     <img
                         class="rounded toot-icon"
-                        :src="account.avatar"
+                        :src="post.reblog.account.avatar"
                     />
                 </a>
             </div>
             <div class="flex-grow-1 ms-3">
                 <h4>
                     <a
-                        :href="account.url"
-                        v-html="display_name(account)"
+                        :href="post.reblog.account.url"
+                        v-html="display_name(post.reblog.account)"
                         target="_blank"
                         rel="nofollow noopener"
                         class="text-decoration-none"
                     >
                     </a>
                     <small class="text-muted">
-                        @{{ account.acct }}
+                        @{{ post.reblog.account.acct }}
                     </small>
                 </h4>
 
