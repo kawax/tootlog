@@ -6,27 +6,29 @@ import display_name from '../display'
 const props = defineProps({
     post: Object
 })
+
+const account = props.post.account
 </script>
 
 <template>
     <div class="d-flex p-1 m-1">
         <div class="flex-shrink-0">
-            <a :href="post.account.url" target="_blank" rel="nofollow noopener" class="text-decoration-none">
-                <img class="rounded toot-icon" :src="post.account.avatar"/>
+            <a :href="account.url" target="_blank" rel="nofollow noopener" class="text-decoration-none">
+                <img class="rounded toot-icon" :src="account.avatar"/>
             </a>
         </div>
 
         <div class="flex-grow-1 ms-3">
             <h4>
                 <a
-                    :href="post.account.url"
-                    v-html="display_name(post.account)"
+                    :href="account.url"
+                    v-html="display_name(account)"
                     target="_blank"
                     rel="nofollow noopener"
                     class="text-decoration-none"
                 >
                 </a>
-                <small class="text-muted"> @{{ post.account.acct }} </small>
+                <small class="text-muted"> @{{ account.acct }} </small>
             </h4>
 
             <button

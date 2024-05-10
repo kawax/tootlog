@@ -6,6 +6,9 @@ import display_name from '../display'
 const props = defineProps({
     post: Object
 })
+
+const reblog = props.post.reblog
+const account = props.post.reblog.account
 </script>
 
 <template>
@@ -21,48 +24,48 @@ const props = defineProps({
         <div class="d-flex m-1 p-1">
             <div class="flex-shrink-0">
                 <a
-                    :href="post.reblog.account.url"
+                    :href="account.url"
                     target="_blank"
                     rel="nofollow noopener"
                     class="text-decoration-none"
                 >
                     <img
                         class="rounded toot-icon"
-                        :src="post.reblog.account.avatar"
+                        :src="account.avatar"
                     />
                 </a>
             </div>
             <div class="flex-grow-1 ms-3">
                 <h4>
                     <a
-                        :href="post.reblog.account.url"
-                        v-html="display_name(post.reblog.account)"
+                        :href="account.url"
+                        v-html="display_name(account)"
                         target="_blank"
                         rel="nofollow noopener"
                         class="text-decoration-none"
                     >
                     </a>
                     <small class="text-muted">
-                        @{{ post.reblog.account.acct }}
+                        @{{ account.acct }}
                     </small>
                 </h4>
 
                 <button
                     class="btn btn-warning btn-sm"
                     type="button"
-                    v-if="post.reblog.spoiler_text.length > 0"
-                    v-html="emoji(post.reblog.spoiler_text)"
-                    @click="post.reblog.spoiler_text = '';"
+                    v-if="reblog.spoiler_text.length > 0"
+                    v-html="emoji(reblog.spoiler_text)"
+                    @click="reblog.spoiler_text = '';"
                 ></button>
 
                 <div
-                    v-if="!post.reblog.spoiler_text"
-                    v-html="emoji(post.reblog.content)"
+                    v-if="!reblog.spoiler_text"
+                    v-html="emoji(reblog.content)"
                 ></div>
 
                 <div
-                    v-if="post.reblog.media_attachments"
-                    v-for="media in post.reblog.media_attachments"
+                    v-if="reblog.media_attachments"
+                    v-for="media in reblog.media_attachments"
                 >
                     <a
                         :href="media.url"
@@ -79,12 +82,12 @@ const props = defineProps({
 
                 <div>
                     <a
-                        :href="post.reblog.url"
+                        :href="reblog.url"
                         target="_blank"
                         ref="nofollow noopener"
                         class="text-decoration-none"
                     >
-                        {{ formatDate(post.reblog.created_at) }}
+                        {{ formatDate(reblog.created_at) }}
                     </a>
                 </div>
             </div>

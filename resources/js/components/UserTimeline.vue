@@ -144,7 +144,7 @@ function streaming_url() {
         </div>
 
         <Card>
-            <div v-for="post in activePosts">
+            <div v-for="post in activePosts" :key="post.id">
                 <TimelineReblog :post="post" v-if="post.reblog"></TimelineReblog>
 
                 <TimelineStatus :post="post" v-else></TimelineStatus>
