@@ -1,14 +1,15 @@
-<script setup>
+<script setup lang="ts">
 import formatDate from '../date'
 import emoji from '../emoji'
 import display_name from '../display'
+import type {Post, Account} from "../types";
 
-const props = defineProps({
-    post: Object
-})
+const props = defineProps<{
+    post: Post
+}>()
 
-const reblog = props.post.reblog
-const account = props.post.reblog.account
+const reblog: Post = props.post.reblog
+const account: Account = props.post.reblog.account
 </script>
 
 <template>
