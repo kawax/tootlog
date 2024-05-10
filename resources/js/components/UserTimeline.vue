@@ -14,10 +14,11 @@ const props = defineProps({
 });
 
 const api_version = '/api/v1';
-
-let ws = null;
+const max = 50;
 
 const active_type = ref('public:local');
+const active_media = ref('normal');
+const posts = ref([]);
 
 const timelines = {
     user: 'home',
@@ -25,13 +26,8 @@ const timelines = {
     public: 'public',
 };
 
-const active_media = ref('normal');
-
-const posts = ref([]);
-
-const max = 50;
-
 let errors = [];
+let ws = null;
 
 const activePosts = computed(() => {
     return posts.value.filter(post => media_check(post))
