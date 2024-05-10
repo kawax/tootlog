@@ -4,7 +4,7 @@ export interface Post {
     spoiler_text: string,
     media_attachments: Array<Media>,
     url: string,
-    created_at: Date,
+    created_at: string,
     reblog?: Post,
 }
 
