@@ -23,7 +23,7 @@ const types = {
         '<i class="fa fa-globe" aria-hidden="true"></i> Federated',
 };
 
-let active_type = 'public:local';
+const active_type = ref('public:local');
 
 const timelines = {
     user: 'home',
@@ -39,7 +39,7 @@ const media = {
         '<i class="fa fa-commenting-o" aria-hidden="true"></i> Except',
 };
 
-let active_media = 'normal';
+const active_media = ref('normal');
 
 const posts = ref([]);
 
@@ -51,7 +51,7 @@ const activePosts = computed(() => {
     return posts.value.filter(post => media_check(post))
 })
 
-onMounted(() => get(active_type))
+onMounted(() => get(active_type.value))
 
 function endpoint() {
     return props.domain + api_version
@@ -64,11 +64,9 @@ function streaming_url() {
 function get(type = 'public:local') {
     steam_close()
 
-    active_type = type
+    active_type.value = type
 
-    const timeline = timelines[type]
-
-    axios.get(endpoint() + '/timelines/' + timeline + '?limit=20', {
+    axios.get(endpoint() + '/timelines/' + timelines[type] + '?limit=20', {
         headers: {Authorization: 'Bearer ' + props.token},
     }).then(res => {
         //console.log(res)
@@ -138,10 +136,10 @@ function steam_close() {
 }
 
 function media_check(post) {
-    if (active_media === 'only') {
+    if (active_media.value === 'only') {
         //console.log(post)
         return !_.isEmpty(post.media_attachments)
-    } else if (active_media === 'except') {
+    } else if (active_media.value === 'except') {
         return _.isEmpty(post.media_attachments)
     }
 
