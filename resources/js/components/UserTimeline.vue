@@ -4,6 +4,7 @@ import {ref, onMounted, computed} from "vue";
 import TimelineReblog from './TimelineReblog.vue'
 import TimelineStatus from './TimelineStatus.vue'
 import Card from './Card.vue'
+import MediaSwitch from "./MediaSwitch.vue";
 
 const props = defineProps({
     domain: String,
@@ -29,14 +30,6 @@ const timelines = {
     user: 'home',
     'public:local': 'public?local=true',
     public: 'public',
-};
-
-const media = {
-    normal:
-        '<i class="fa fa-file-image-o" aria-hidden="true"></i> Media Default',
-    only: '<i class="fa fa-picture-o" aria-hidden="true"></i> Only',
-    except:
-        '<i class="fa fa-commenting-o" aria-hidden="true"></i> Except',
 };
 
 const active_media = ref('normal');
@@ -161,16 +154,7 @@ function media_check(post) {
                 ></button>
             </div>
 
-            <div class="btn-group" role="group">
-                <button
-                    type="button"
-                    class="btn btn-secondary"
-                    v-for="(text, type) in media"
-                    :class="{ active: active_media === type }"
-                    @click="active_media = type;"
-                    v-html="text"
-                ></button>
-            </div>
+            <MediaSwitch @media-changed="(media) => active_media = media" />
         </div>
 
         <div class="alert alert-danger" v-if="errors.length > 0">
