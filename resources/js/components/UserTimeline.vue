@@ -1,10 +1,10 @@
 <script setup>
-import {ref, onMounted, computed} from "vue";
+import {ref, onMounted, computed} from 'vue';
 import TimelineReblog from './TimelineReblog.vue'
 import TimelineStatus from './TimelineStatus.vue'
 import Card from './Card.vue'
-import TypeSwitch from "./TypeSwitch.vue";
-import MediaSwitch from "./MediaSwitch.vue";
+import TypeSwitch from './TypeSwitch.vue';
+import MediaSwitch from './MediaSwitch.vue';
 
 const props = defineProps({
     domain: String,
