@@ -1,3 +1,165 @@
+
+<script setup>
+import {ref, onMounted, computed} from "vue";
+import TimelineReblog from './TimelineReblog.vue'
+import TimelineStatus from './TimelineStatus.vue'
+import Card from './Card.vue'
+
+const props = defineProps({
+    domain: String,
+    streaming: String,
+    token: String,
+});
+
+const api_version = '/api/v1';
+
+let ws = null;
+
+const types = {
+    user: '<i class="fa fa-home" aria-hidden="true"></i> User',
+    'public:local':
+        '<i class="fa fa-users" aria-hidden="true"></i> Local',
+    public:
+        '<i class="fa fa-globe" aria-hidden="true"></i> Federated',
+};
+
+let active_type = 'public:local';
+
+const timelines = {
+    user: 'home',
+    'public:local': 'public?local=true',
+    public: 'public',
+};
+
+const titles = {
+    mention: 'mentioned you',
+    reblog: 'boosted your status',
+    favourite: 'favourited your status',
+    follow: 'followed you',
+};
+
+const media = {
+    normal:
+        '<i class="fa fa-file-image-o" aria-hidden="true"></i> Media Default',
+    only: '<i class="fa fa-picture-o" aria-hidden="true"></i> Only',
+    except:
+        '<i class="fa fa-commenting-o" aria-hidden="true"></i> Except',
+};
+
+let active_media = 'normal';
+
+const posts = ref([]);
+
+const max = 50;
+
+let errors = [];
+
+const activePosts = computed(() => {
+    return posts.value.filter(post => media_check(post))
+})
+
+onMounted(() => get(active_type))
+
+function endpoint() {
+    return props.domain + api_version
+}
+
+function streaming_url() {
+    return props.streaming + api_version
+}
+
+function get(type = 'public:local') {
+    steam_close()
+
+    active_type = type
+
+    const timeline = timelines[type]
+
+    axios.get(endpoint() + '/timelines/' + timeline + '?limit=20', {
+        headers: {Authorization: 'Bearer ' + props.token},
+    }).then(res => {
+        //console.log(res)
+        posts.value = res.data
+
+        stream(type)
+    }).catch(error => {
+        console.log(error)
+        if (typeof error.response.data === 'object') {
+            errors = _.flatten(_.toArray(error.response.data))
+        } else {
+            errors = [
+                'Something went wrong. Please try again.',
+            ]
+        }
+    })
+}
+
+function stream(type = 'public:local') {
+    steam_open(type, data => {
+        // data is an object containing two entries
+        // event determines which type of data you got
+        // payload is the actual data
+        // event can be notification or update
+        if (data.event === 'notification') {
+            // data.payload is a notification
+            console.log(data)
+        } else if (data.event === 'update') {
+            // status update for one of your timelines
+            //console.log(data.payload)
+
+            posts.value.unshift(data.payload)
+
+            posts.value.splice(max)
+        } else {
+            // probably an error
+        }
+    })
+}
+
+function steam_open(streamType, onData) {
+    ws = new WebSocket(
+        streaming_url() +
+        '/streaming?access_token=' +
+        props.token +
+        '&stream=' +
+        streamType,
+    )
+
+    ws.onmessage = event => {
+        console.log('Got Data from Stream ' + streamType)
+        event = JSON.parse(event.data)
+        event.payload = JSON.parse(event.payload)
+        onData(event)
+    }
+
+    ws.onclose = event => {
+        console.log('WebSocket Close ' + streamType)
+    }
+}
+
+function steam_close() {
+    if (!_.isNull(ws)) {
+        ws.close()
+        posts.value = []
+    }
+}
+
+function media_check(post) {
+    if (active_media === 'only') {
+        //console.log(post)
+        return !_.isEmpty(post.media_attachments)
+    } else if (active_media === 'except') {
+        return _.isEmpty(post.media_attachments)
+    }
+
+    return true
+}
+
+function notificationTitle(type, name) {
+    return name + ' ' + titles[type]
+}
+</script>
+
 <template>
     <div>
         <div class="btn-toolbar mb-2" role="toolbar" aria-label="toolbar">
@@ -41,194 +203,3 @@
         </Card>
     </div>
 </template>
-
-<script>
-import { format, parseISO } from 'date-fns'
-import TimelineReblog from './TimelineReblog.vue'
-import TimelineStatus from './TimelineStatus.vue'
-import Card from './Card.vue'
-
-export default {
-    components: {
-        TimelineReblog,
-        TimelineStatus,
-        Card,
-    },
-    data () {
-        return {
-            api_version: '/api/v1',
-            ws: null,
-            types: {
-                user: '<i class="fa fa-home" aria-hidden="true"></i> User',
-                'public:local':
-                    '<i class="fa fa-users" aria-hidden="true"></i> Local',
-                public:
-                    '<i class="fa fa-globe" aria-hidden="true"></i> Federated',
-            },
-            active_type: 'public:local',
-            timelines: {
-                user: 'home',
-                'public:local': 'public?local=true',
-                public: 'public',
-            },
-            titles: {
-                mention: 'mentioned you',
-                reblog: 'boosted your status',
-                favourite: 'favourited your status',
-                follow: 'followed you',
-            },
-            media: {
-                normal:
-                    '<i class="fa fa-file-image-o" aria-hidden="true"></i> Media Default',
-                only: '<i class="fa fa-picture-o" aria-hidden="true"></i> Only',
-                except:
-                    '<i class="fa fa-commenting-o" aria-hidden="true"></i> Except',
-            },
-            active_media: 'normal',
-            posts: [],
-            count: 0,
-            max: 50,
-            errors: [],
-        }
-    },
-    computed: {
-        endpoint () {
-            return this.domain + this.api_version
-        },
-        streaming_url () {
-            return this.streaming + this.api_version
-        },
-        activePosts () {
-            return this.posts.filter(post => this.media_check(post))
-        },
-    },
-    props: {
-        domain: String,
-        streaming: String,
-        token: String,
-    },
-    mounted () {
-        this.get(this.active_type)
-    },
-    methods: {
-        get (type = 'public:local') {
-            this.steam_close()
-
-            this.active_type = type
-
-            const timeline = this.timelines[type]
-
-            axios.get(this.endpoint + '/timelines/' + timeline + '?limit=20', {
-                headers: {Authorization: 'Bearer ' + this.token},
-            }).then(res => {
-                console.log(res)
-                this.posts = res.data
-
-                this.stream(type)
-            }).catch(error => {
-                console.log(error)
-                if (typeof error.response.data === 'object') {
-                    this.errors = _.flatten(_.toArray(error.response.data))
-                }
-                else {
-                    this.errors = [
-                        'Something went wrong. Please try again.',
-                    ]
-                }
-            })
-        },
-        stream (type = 'public:local') {
-            this.steam_open(type, data => {
-                // data is an object containing two entries
-                // event determines which type of data you got
-                // payload is the actual data
-                // event can be notification or update
-                if (data.event === 'notification') {
-                    // data.payload is a notification
-                    console.log(data)
-
-                    let name = _.isEmpty(data.payload.account.display_name)
-                        ? data.payload.account.username
-                        : data.payload.account.display_name
-                    let title = this.notificationTitle(data.payload.type, name)
-                    let body = _.isEmpty(data.payload.status.spoiler_text)
-                        ? data.payload.status.content
-                        : data.payload.status.spoiler_text
-                    body = $('<p>').html(body).text()
-
-                    if ('Notification' in window) {
-                        if ('Audio' in window) {
-                            let sound = new Audio(
-                                require('../../sounds/boop2.mp3'),
-                            )
-                            sound.play()
-                        }
-
-                        Notification.requestPermission().then(() => {
-                            new Notification(title, {
-                                body,
-                                icon: data.payload.account.avatar,
-                                tag: data.payload.id,
-                            })
-                        })
-                    }
-                }
-                else if (data.event === 'update') {
-                    // status update for one of your timelines
-                    //                        console.log(data.payload)
-
-                    this.posts.unshift(data.payload)
-
-                    this.posts.splice(this.max)
-                }
-                else {
-                    // probably an error
-                }
-            })
-        },
-        steam_open (streamType, onData) {
-            this.ws = new WebSocket(
-                this.streaming_url +
-                '/streaming?access_token=' +
-                this.token +
-                '&stream=' +
-                streamType,
-            )
-
-            this.ws.onmessage = event => {
-                console.log('Got Data from Stream ' + streamType)
-                event = JSON.parse(event.data)
-                event.payload = JSON.parse(event.payload)
-                onData(event)
-            }
-
-            this.ws.onclose = event => {
-                console.log('WebSocket Close ' + streamType)
-            }
-        },
-        steam_close () {
-            if (!_.isNull(this.ws)) {
-                this.ws.close()
-                this.posts = []
-            }
-        },
-        media_check (post) {
-            if (this.active_media === 'only') {
-                console.log(post)
-                return !_.isEmpty(post.media_attachments)
-            }
-            else if (this.active_media === 'except') {
-                return _.isEmpty(post.media_attachments)
-            }
-
-            return true
-        },
-        notificationTitle (type, name) {
-            return name + ' ' + this.titles[type]
-        },
-        formatDate (date) {
-            return format(parseISO(date), 'yyyy-MM-dd HH:mm:ss')
-        },
-    },
-}
-</script>
