@@ -4,6 +4,7 @@ import {ref, onMounted, computed} from "vue";
 import TimelineReblog from './TimelineReblog.vue'
 import TimelineStatus from './TimelineStatus.vue'
 import Card from './Card.vue'
+import TypeSwitch from "./TypeSwitch.vue";
 import MediaSwitch from "./MediaSwitch.vue";
 
 const props = defineProps({
@@ -15,14 +16,6 @@ const props = defineProps({
 const api_version = '/api/v1';
 
 let ws = null;
-
-const types = {
-    user: '<i class="fa fa-home" aria-hidden="true"></i> User',
-    'public:local':
-        '<i class="fa fa-users" aria-hidden="true"></i> Local',
-    public:
-        '<i class="fa fa-globe" aria-hidden="true"></i> Federated',
-};
 
 const active_type = ref('public:local');
 
@@ -44,7 +37,7 @@ const activePosts = computed(() => {
     return posts.value.filter(post => media_check(post))
 })
 
-onMounted(() => get(active_type.value))
+onMounted(() => get())
 
 function endpoint() {
     return props.domain + api_version
@@ -143,16 +136,7 @@ function media_check(post) {
 <template>
     <div>
         <div class="btn-toolbar mb-2" role="toolbar" aria-label="toolbar">
-            <div class="btn-group pe-1" role="group">
-                <button
-                    type="button"
-                    class="btn btn-secondary"
-                    v-for="(text, type) in types"
-                    :class="{ active: active_type === type }"
-                    @click="get(type);"
-                    v-html="text"
-                ></button>
-            </div>
+            <TypeSwitch @type-changed="get" />
 
             <MediaSwitch @media-changed="(media) => active_media = media" />
         </div>
