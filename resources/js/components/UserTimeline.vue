@@ -47,7 +47,7 @@ function get(type = 'public:local') {
     axios.get(endpoint() + '/timelines/' + timelines[type] + '?limit=20', {
         headers: {Authorization: 'Bearer ' + props.token},
     }).then(res => {
-        //console.log(res)
+        //console.log(res.data)
         posts.value = res.data
 
         stream(type)
