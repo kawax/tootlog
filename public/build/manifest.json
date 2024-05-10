@@ -3,8 +3,8 @@
     "file": "assets/vendor-pxrDaSd6.css",
     "src": "_vendor-!~{002}~.js"
   },
-  "_vendor-BlQWxjpd.js": {
-    "file": "assets/vendor-BlQWxjpd.js",
+  "_vendor-Cn_lBVkY.js": {
+    "file": "assets/vendor-Cn_lBVkY.js",
     "name": "vendor",
     "css": [
       "assets/vendor-pxrDaSd6.css"
@@ -33,12 +33,12 @@
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2"
   },
   "resources/js/app.js": {
-    "file": "assets/app-zfplV9GN.js",
+    "file": "assets/app-C5QXxVuK.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "imports": [
-      "_vendor-BlQWxjpd.js"
+      "_vendor-Cn_lBVkY.js"
     ],
     "css": [
       "assets/app-CpzyypDn.css"

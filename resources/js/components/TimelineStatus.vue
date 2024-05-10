@@ -1,3 +1,13 @@
+<script setup>
+import formatDate from '../date'
+import emoji from '../emoji'
+import display_name from '../display'
+
+const props = defineProps({
+    post: Object
+})
+</script>
+
 <template>
     <div class="d-flex p-1 m-1">
         <div class="flex-shrink-0">
@@ -10,7 +20,7 @@
             <h4>
                 <a
                     :href="post.account.url"
-                    v-html="display_name()"
+                    v-html="display_name(post.account)"
                     target="_blank"
                     rel="nofollow noopener"
                     class="text-decoration-none"
@@ -49,27 +59,3 @@
         </div>
     </div>
 </template>
-
-<script>
-import { format, parseISO } from 'date-fns'
-import emoji from '../emoji'
-
-export default {
-    props: {
-        post: Object,
-    },
-    methods: {
-        display_name () {
-            return this.post.account.display_name
-                ? this.emoji(this.post.account.display_name)
-                : this.post.account.username
-        },
-        emoji (input) {
-            return emoji.toImage(input)
-        },
-        formatDate (date) {
-            return format(parseISO(date), 'yyyy-MM-dd HH:mm:ss')
-        },
-    },
-}
-</script>

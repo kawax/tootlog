@@ -1,3 +1,13 @@
+<script setup>
+import formatDate from '../date'
+import emoji from '../emoji'
+import display_name from '../display'
+
+const props = defineProps({
+    post: Object
+})
+</script>
+
 <template>
     <div>
         <span class="badge bg-info ms-1">
@@ -5,7 +15,7 @@
                 class="rounded-circle toot-icon-small"
                 :src="post.account.avatar"
             />
-            <span v-html="display_name()"></span> reblogged
+            <span v-html="display_name(post.account)"></span> reblogged
         </span>
 
         <div class="d-flex m-1 p-1">
@@ -26,7 +36,7 @@
                 <h4>
                     <a
                         :href="post.reblog.account.url"
-                        v-html="reblog_display_name()"
+                        v-html="display_name(post.reblog.account)"
                         target="_blank"
                         rel="nofollow noopener"
                         class="text-decoration-none"
@@ -81,32 +91,3 @@
         </div>
     </div>
 </template>
-
-<script>
-import { format, parseISO } from 'date-fns'
-import emoji from '../emoji'
-
-export default {
-    props: {
-        post: Object,
-    },
-    methods: {
-        display_name () {
-            return this.post.account.display_name.length > 0
-                ? this.emoji(this.post.account.display_name)
-                : this.post.account.username
-        },
-        reblog_display_name () {
-            return this.post.reblog.account.display_name
-                ? this.emoji(this.post.reblog.account.display_name)
-                : this.post.reblog.account.username
-        },
-        emoji (input) {
-            return emoji.toImage(input)
-        },
-        formatDate (date) {
-            return format(parseISO(date), 'yyyy-MM-dd HH:mm:ss')
-        },
-    },
-}
-</script>

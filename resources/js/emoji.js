@@ -1,7 +1,5 @@
 import twemoji from "@twemoji/api";
 
-export default {
-  toImage(input) {
+export default function emoji(input) {
     return twemoji.parse(input);
-  }
-};
+}
