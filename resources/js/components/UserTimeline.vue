@@ -31,13 +31,6 @@ const timelines = {
     public: 'public',
 };
 
-const titles = {
-    mention: 'mentioned you',
-    reblog: 'boosted your status',
-    favourite: 'favourited your status',
-    follow: 'followed you',
-};
-
 const media = {
     normal:
         '<i class="fa fa-file-image-o" aria-hidden="true"></i> Media Default',
@@ -153,10 +146,6 @@ function media_check(post) {
     }
 
     return true
-}
-
-function notificationTitle(type, name) {
-    return name + ' ' + titles[type]
 }
 </script>
 
