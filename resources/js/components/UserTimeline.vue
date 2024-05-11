@@ -1,10 +1,11 @@
 <script setup>
-import {ref, onMounted, computed} from 'vue';
+import {ref, computed} from 'vue';
 import TimelineReblog from './TimelineReblog.vue'
 import TimelineStatus from './TimelineStatus.vue'
 import Card from './Card.vue'
 import TypeSwitch from './TypeSwitch.vue';
 import MediaSwitch from './MediaSwitch.vue';
+import {useStream} from "../useStream";
 
 const props = defineProps({
     domain: String,
@@ -12,95 +13,14 @@ const props = defineProps({
     token: String,
 });
 
-const api_version = '/api/v1';
-const max = 50;
-
 const active_type = ref('public:local');
 const active_media = ref('normal');
-const posts = ref([]);
-const errors = ref([]);
-
-const timelines = {
-    user: 'home',
-    'public:local': 'public?local=true',
-    public: 'public',
-};
-
-let ws = null;
 
 const activePosts = computed(() => {
     return posts.value.filter(post => media_check(post))
 })
 
-onMounted(() => get())
-
-async function get(type = 'public:local') {
-    steam_close()
-
-    active_type.value = type
-
-    try {
-        const response = await fetch(endpoint() + '/timelines/' + timelines[type] + '?limit=20', {
-            headers: {
-                Authorization: 'Bearer ' + props.token
-            }
-        });
-
-        if (!response.ok) {
-            throw new Error(response.status + ' ' + response.statusText);
-        }
-
-        posts.value = await response.json();
-        stream(type);
-    } catch (error) {
-        console.error(error);
-        errors.value.push(error);
-    }
-}
-
-function stream(type = 'public:local') {
-    steam_open(type, data => {
-        // data is an object containing two entries
-        // event determines which type of data you got
-        // payload is the actual data
-        // event can be notification or update
-        if (data.event === 'notification') {
-            // data.payload is a notification
-            console.log(data)
-        } else if (data.event === 'update') {
-            // status update for one of your timelines
-            //console.log(data.payload)
-
-            posts.value.unshift(data.payload)
-
-            posts.value.splice(max)
-        } else {
-            // probably an error
-        }
-    })
-}
-
-function steam_open(streamType, onData) {
-    ws = new WebSocket(streaming_url() + '/streaming?access_token=' + props.token + '&stream=' + streamType)
-
-    ws.onmessage = event => {
-        console.log('Got Data from Stream ' + streamType)
-        event = JSON.parse(event.data)
-        event.payload = JSON.parse(event.payload)
-        onData(event)
-    }
-
-    ws.onclose = event => {
-        console.log('WebSocket Close ' + streamType)
-    }
-}
-
-function steam_close() {
-    if (ws !== null) {
-        ws.close()
-        posts.value = []
-    }
-}
+const {posts, errors} = useStream(props.domain, props.token, props.streaming, active_type)
 
 function media_check(post) {
     switch (active_media.value) {
@@ -112,20 +32,12 @@ function media_check(post) {
             return true
     }
 }
-
-function endpoint() {
-    return props.domain + api_version
-}
-
-function streaming_url() {
-    return props.streaming + api_version
-}
 </script>
 
 <template>
     <div>
         <div class="btn-toolbar mb-2" role="toolbar" aria-label="toolbar">
-            <TypeSwitch @changed="get"/>
+            <TypeSwitch @changed="(type) => active_type = type"/>
 
             <MediaSwitch @changed="(media) => active_media = media"/>
         </div>
