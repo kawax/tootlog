@@ -5,7 +5,8 @@ import TimelineStatus from './TimelineStatus.vue'
 import Card from './Card.vue'
 import TypeSwitch from './TypeSwitch.vue';
 import MediaSwitch from './MediaSwitch.vue';
-import {useStream} from "../useStream";
+import {useStream} from '../useStream';
+import {media_check} from '../media_check';
 
 const props = defineProps({
     domain: String,
@@ -16,22 +17,11 @@ const props = defineProps({
 const active_type = ref('public:local');
 const active_media = ref('normal');
 
-const activePosts = computed(() => {
-    return posts.value.filter(post => media_check(post))
-})
-
 const {posts, errors} = useStream(props.domain, props.token, props.streaming, active_type)
 
-function media_check(post) {
-    switch (active_media.value) {
-        case 'only':
-            return post.media_attachments.length
-        case 'except':
-            return !post.media_attachments.length
-        default:
-            return true
-    }
-}
+const activePosts = computed(() => {
+    return posts.value.filter(post => media_check(post, active_media.value))
+})
 </script>
 
 <template>

@@ -1,7 +1,7 @@
 import'./bootstrap';
 import {App, createApp} from 'vue';
 import UserTimeline from './components/UserTimeline.vue';
-import emoji from './emoji';
+import {emoji} from './emoji';
 
 const app: App<Element> = createApp({});
 

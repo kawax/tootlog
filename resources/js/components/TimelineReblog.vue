@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import formatDate from '../date'
-import emoji from '../emoji'
-import display_name from '../display'
+import {formatDate} from '../date'
+import {emoji} from '../emoji'
+import {display_name} from '../display'
 import type {Post, Account} from '../types';
 
 const props = defineProps<{

@@ -1,10 +1,11 @@
 import {ref, watchEffect, toValue} from 'vue';
+import {Post} from './types';
 
 export function useStream(domain: string, token: string, streaming: string, type: any) {
     const api_version = '/api/v1';
     const max = 50;
-    const posts = ref([]);
-    const errors = ref([]);
+    const posts = ref<Post[]>([]);
+    const errors = ref<string[]>([]);
     let ws: WebSocket = null;
 
     const timelines = {
