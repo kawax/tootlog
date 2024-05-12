@@ -45,18 +45,6 @@ export function useStream(domain: string, token: string, streaming: string, type
                     posts.value.unshift(event.payload);
                     posts.value.splice(max);
                     break;
-                case 'announcement':
-                    console.debug(event);
-                    break;
-                case 'notification':
-                    console.debug(event);
-                    break;
-                case 'delete':
-                    console.debug(event);
-                    break;
-                case 'status.update':
-                    console.debug(event);
-                    break;
                 default:
                     console.debug(event);
             }
