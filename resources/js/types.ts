@@ -1,4 +1,4 @@
-export interface Post {
+export type Post = {
     account: Account,
     content: string,
     spoiler_text: string,
@@ -8,7 +8,7 @@ export interface Post {
     reblog?: Post,
 }
 
-export interface Account {
+export type Account = {
     url: string,
     avatar: string,
     acct: string,
@@ -16,7 +16,12 @@ export interface Account {
     username: string,
 }
 
-export interface Media {
+export type Media = {
     url: string,
     preview_url: string,
+}
+
+export type StreamEvent = {
+    event: string,
+    payload: any,
 }

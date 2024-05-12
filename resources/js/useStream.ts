@@ -1,5 +1,5 @@
 import {ref, watchEffect, toValue} from 'vue';
-import {Post} from './types';
+import type {Post, StreamEvent} from './types';
 
 export function useStream(domain: string, token: string, streaming: string, type: any) {
     const api_version = '/api/v1';
@@ -8,17 +8,17 @@ export function useStream(domain: string, token: string, streaming: string, type
     const errors = ref<string[]>([]);
     let ws: WebSocket = null;
 
-    const timelines = {
+    const timelines: Object = {
         user: 'home',
         'public:local': 'public?local=true',
         public: 'public',
     };
 
-    watchEffect(() => {
+    watchEffect((): void => {
         start()
     })
 
-    function start() {
+    function start(): void {
         steam_close()
 
         fetch(endpoint() + '/timelines/' + timelines[toValue(type)] + '?limit=20', {
@@ -37,51 +37,59 @@ export function useStream(domain: string, token: string, streaming: string, type
             })
     }
 
-    function stream() {
-        steam_open(data => {
-            if (data.event === 'notification') {
-                // data.payload is a notification
-                console.log(data)
-            } else if (data.event === 'update') {
-                // status update for one of your timelines
-                //console.log(data.payload)
-
-                posts.value.unshift(data.payload)
-
-                posts.value.splice(max)
-            } else {
-                // probably an error
+    function stream(): void {
+        steam_open((event: StreamEvent): void => {
+            switch (event.event) {
+                case 'update':
+                    //console.log(event.payload)
+                    posts.value.unshift(event.payload);
+                    posts.value.splice(max);
+                    break;
+                case 'announcement':
+                    console.debug(event);
+                    break;
+                case 'notification':
+                    console.debug(event);
+                    break;
+                case 'delete':
+                    console.debug(event);
+                    break;
+                case 'status.update':
+                    console.debug(event);
+                    break;
+                default:
+                    console.debug(event);
             }
         })
     }
 
-    function steam_open(onData: any) {
+    function steam_open(onData: (event: StreamEvent) => void): void {
         ws = new WebSocket(streaming_url() + '/streaming?access_token=' + token + '&stream=' + toValue(type))
 
-        ws.onmessage = event => {
-            console.log('Got Data from Stream ' + toValue(type))
-            let ev = JSON.parse(event.data)
-            ev.payload = JSON.parse(ev.payload)
-            onData(ev)
+        ws.onmessage = (ev: MessageEvent<any>): void => {
+            console.debug('Got Data from Stream ' + toValue(type))
+            let event: StreamEvent = JSON.parse(ev.data)
+            event.payload = JSON.parse(event.payload)
+            onData(event)
         }
 
-        ws.onclose = event => {
+        ws.onclose = (ev: CloseEvent): void => {
             console.log('WebSocket Close ' + toValue(type))
         }
     }
 
-    function steam_close() {
+    function steam_close(): void {
         if (ws !== null) {
             ws.close()
             posts.value = []
         }
     }
 
-    function endpoint() {
+    function endpoint(): string {
         return domain + api_version
     }
 
-    function streaming_url() {
+    function streaming_url(): string {
         return streaming + api_version
     }
 

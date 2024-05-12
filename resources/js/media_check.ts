@@ -1,4 +1,4 @@
-import {Post} from './types';
+import type {Post} from './types';
 
 export function media_check(post: Post, active: string) {
     switch (active) {
