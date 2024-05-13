@@ -1,7 +1,7 @@
 import {ref, watchEffect, toValue} from 'vue';
 import type {Post, StreamEvent} from './types';
 
-export function useStream(domain: string, token: string, streaming: string, type: any) {
+export function useStream(domain: string, streaming: string, token: string, type: any) {
     const api_version = '/api/v1';
     const max = 50;
     const posts = ref<Post[]>([]);
@@ -21,11 +21,15 @@ export function useStream(domain: string, token: string, streaming: string, type
     function start(): void {
         steam_close()
 
-        fetch(endpoint() + '/timelines/' + timelines[toValue(type)] + '?limit=20', {
+        const url: string = endpoint() + '/timelines/' + timelines[toValue(type)] + '?limit=20';
+
+        const options: RequestInit = {
             headers: {
                 Authorization: 'Bearer ' + token
             }
-        })
+        }
+
+        fetch(url, options)
             .then(res => res.json())
             .then(function (json) {
                 posts.value = json;
@@ -52,7 +56,9 @@ export function useStream(domain: string, token: string, streaming: string, type
     }
 
     function steam_open(onData: (event: StreamEvent) => void): void {
-        ws = new WebSocket(streaming_url() + '/streaming?access_token=' + token + '&stream=' + toValue(type))
+        const url: string = streaming_url() + '/streaming?access_token=' + token + '&stream=' + toValue(type);
+
+        ws = new WebSocket(url)
 
         ws.onmessage = (ev: MessageEvent<any>): void => {
             console.debug('Got Data from Stream ' + toValue(type))

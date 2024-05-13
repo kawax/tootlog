@@ -1,4 +1,5 @@
 export type Post = {
+    id: string,
     account: Account,
     content: string,
     spoiler_text: string,

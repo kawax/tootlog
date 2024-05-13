@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import {ref, computed} from 'vue';
 import TimelineReblog from './TimelineReblog.vue'
 import TimelineStatus from './TimelineStatus.vue'
@@ -8,16 +8,16 @@ import MediaSwitch from './MediaSwitch.vue';
 import {useStream} from '../useStream';
 import {media_check} from '../media_check';
 
-const props = defineProps({
-    domain: String,
-    streaming: String,
-    token: String,
-});
+const props = defineProps<{
+    domain: string,
+    streaming: string,
+    token: string
+}>();
 
-const active_type = ref('public:local');
-const active_media = ref('normal');
+const active_type = ref<string>('public:local');
+const active_media = ref<string>('normal');
 
-const {posts, errors} = useStream(props.domain, props.token, props.streaming, active_type)
+const {posts, errors} = useStream(props.domain, props.streaming, props.token, active_type)
 
 const activePosts = computed(() => {
     return posts.value.filter(post => media_check(post, active_media.value))
