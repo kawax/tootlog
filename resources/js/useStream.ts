@@ -61,8 +61,12 @@ export function useStream(domain: string, token: string, streaming: string, type
             onData(event)
         }
 
+        ws.onopen = () => {
+            console.debug('WebSocket Open ' + domain + ' ' + toValue(type))
+        }
+
         ws.onclose = (ev: CloseEvent): void => {
-            console.log('WebSocket Close ' + toValue(type))
+            console.debug('WebSocket Close ' + domain + ' ' + toValue(type))
         }
     }
 
