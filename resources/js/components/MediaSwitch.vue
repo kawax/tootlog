@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {ref} from 'vue';
+import {TimelineMedia} from '../types';
 
 const emit = defineEmits<{
     changed: [media: string]
@@ -7,11 +8,11 @@ const emit = defineEmits<{
 
 const active_media = ref<string>('normal');
 
-const medias: Object = {
+const medias: TimelineMedia = {
     normal: '<i class="fa fa-file-image-o" aria-hidden="true"></i> Media Default',
     only: '<i class="fa fa-picture-o" aria-hidden="true"></i> Only',
     except: '<i class="fa fa-commenting-o" aria-hidden="true"></i> Except',
-};
+} as const;
 
 function change(media: string): void {
     active_media.value = media;
