@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {ref, computed, ComputedRef} from 'vue';
+import {ref, computed} from 'vue';
 import TimelineReblog from './TimelineReblog.vue';
 import TimelineStatus from './TimelineStatus.vue';
 import Card from './Card.vue';
