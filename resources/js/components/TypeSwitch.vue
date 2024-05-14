@@ -3,7 +3,7 @@ import {ref} from 'vue';
 
 const emit = defineEmits<{
     changed: [type: string]
-}>()
+}>();
 
 const active_type = ref<string>('public:local');
 

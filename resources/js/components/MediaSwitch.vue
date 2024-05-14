@@ -3,7 +3,7 @@ import {ref} from 'vue';
 
 const emit = defineEmits<{
     changed: [media: string]
-}>()
+}>();
 
 const active_media = ref<string>('normal');
 

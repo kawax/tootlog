@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import {ref, computed} from 'vue';
-import TimelineReblog from './TimelineReblog.vue'
-import TimelineStatus from './TimelineStatus.vue'
-import Card from './Card.vue'
+import TimelineReblog from './TimelineReblog.vue';
+import TimelineStatus from './TimelineStatus.vue';
+import Card from './Card.vue';
 import TypeSwitch from './TypeSwitch.vue';
 import MediaSwitch from './MediaSwitch.vue';
 import {useStream} from '../useStream';
