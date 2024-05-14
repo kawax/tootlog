@@ -7,7 +7,6 @@ import TypeSwitch from './TypeSwitch.vue';
 import MediaSwitch from './MediaSwitch.vue';
 import {useStream} from '../useStream';
 import {media_check} from '../media_check';
-import {Post} from "../types";
 
 const props = defineProps<{
     domain: string,
@@ -20,7 +19,7 @@ const active_media = ref<string>('normal');
 
 const {posts, errors} = useStream(props.domain, props.streaming, props.token, active_type)
 
-const active_posts: ComputedRef<Post[]> = computed(() => {
+const active_posts = computed(() => {
     return posts.value.filter(post => media_check(post, active_media.value))
 })
 </script>
