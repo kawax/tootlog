@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {ref, computed} from 'vue';
+import {ref, computed, ComputedRef} from 'vue';
 import TimelineReblog from './TimelineReblog.vue';
 import TimelineStatus from './TimelineStatus.vue';
 import Card from './Card.vue';
@@ -7,6 +7,7 @@ import TypeSwitch from './TypeSwitch.vue';
 import MediaSwitch from './MediaSwitch.vue';
 import {useStream} from '../useStream';
 import {media_check} from '../media_check';
+import {Post} from "../types";
 
 const props = defineProps<{
     domain: string,
@@ -19,7 +20,7 @@ const active_media = ref<string>('normal');
 
 const {posts, errors} = useStream(props.domain, props.streaming, props.token, active_type)
 
-const activePosts = computed(() => {
+const active_posts: ComputedRef<Post[]> = computed(() => {
     return posts.value.filter(post => media_check(post, active_media.value))
 })
 </script>
@@ -40,7 +41,7 @@ const activePosts = computed(() => {
         </div>
 
         <Card>
-            <div v-for="post in activePosts" :key="post.id">
+            <div v-for="post in active_posts" :key="post.id">
                 <TimelineReblog :post="post" v-if="post.reblog"></TimelineReblog>
 
                 <TimelineStatus :post="post" v-else></TimelineStatus>
