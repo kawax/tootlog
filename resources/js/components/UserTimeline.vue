@@ -7,6 +7,7 @@ import TypeSwitch from './TypeSwitch.vue';
 import MediaSwitch from './MediaSwitch.vue';
 import {useStream} from '../useStream';
 import {media_check} from '../support/media_check';
+import {MediaKey, TypeKey} from "../types";
 
 const props = defineProps<{
     domain: string,
@@ -14,8 +15,8 @@ const props = defineProps<{
     token: string
 }>();
 
-const active_type = ref<string>('public:local');
-const active_media = ref<string>('normal');
+const active_type = ref<TypeKey>('public:local');
+const active_media = ref<MediaKey>('normal');
 
 const {posts, errors} = useStream(props.domain, props.streaming, props.token, active_type)
 
