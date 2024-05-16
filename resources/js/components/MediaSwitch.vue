@@ -22,10 +22,10 @@ watchEffect(() => emit('changed', active_media.value))
         <button
             type="button"
             class="btn btn-secondary"
-            v-for="(text, media) in medias"
+            v-for="(html, media) in medias"
             :class="{ active: active_media === media }"
             @click="active_media = media"
-            v-html="text"
+            v-html="html"
         ></button>
     </div>
 </template>
