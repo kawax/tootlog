@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import {ref, watchEffect} from 'vue';
-import {TimelineMedia} from '../types';
+import {MediaKey, TimelineMedia} from '../types';
 
 const emit = defineEmits<{
-    changed: [media: string]
+    changed: [media: MediaKey]
 }>();
 
-const active_media = ref<string>('normal');
+const active_media = ref<MediaKey>('normal');
 
 const medias: TimelineMedia = {
     normal: '<i class="fa fa-file-image-o" aria-hidden="true"></i> Text and Media',
