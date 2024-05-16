@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {ref} from 'vue';
+import {ref, watchEffect} from 'vue';
 import {TimelineType} from '../types';
 
 const emit = defineEmits<{
@@ -12,12 +12,9 @@ const types: TimelineType = {
     user: '<i class="fa fa-home" aria-hidden="true"></i> User',
     'public:local': '<i class="fa fa-users" aria-hidden="true"></i> Local',
     public: '<i class="fa fa-globe" aria-hidden="true"></i> Federated',
-} as const;
+};
 
-function change(type: string): void {
-    active_type.value = type;
-    emit('changed', type);
-}
+watchEffect(() => emit('changed', active_type.value))
 </script>
 
 <template>
@@ -27,7 +24,7 @@ function change(type: string): void {
             class="btn btn-secondary"
             v-for="(text, type) in types"
             :class="{ active: active_type === type }"
-            @click="change(type)"
+            @click="active_type = type"
             v-html="text"
         ></button>
     </div>
