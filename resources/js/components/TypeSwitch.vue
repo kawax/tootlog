@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import {ref, watchEffect} from 'vue';
-import {TimelineType} from '../types';
+import {TypeKey, TimelineType} from '../types';
 
 const emit = defineEmits<{
-    changed: [type: string]
+    changed: [type: TypeKey]
 }>();
 
-const active_type = ref<string>('public:local');
+const active_type = ref<TypeKey>('public:local');
 
 const types: TimelineType = {
     user: '<i class="fa fa-home" aria-hidden="true"></i> User',
