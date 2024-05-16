@@ -1,14 +1,14 @@
-import {ref, watchEffect, toValue} from 'vue';
-import type {Post, StreamEvent} from './types';
+import {ref, watchEffect, toValue, Ref} from 'vue';
+import type {Post, StreamEvent, TimelineType, TypeKey} from './types';
 
-export function useStream(domain: string, streaming: string, token: string, type: any) {
+export function useStream(domain: string, streaming: string, token: string, type: Ref<TypeKey>) {
     const api_version = '/api/v1';
     const max = 50;
     const posts = ref<Post[]>([]);
     const errors = ref<string[]>([]);
     let ws: WebSocket = null;
 
-    const timelines: Object = {
+    const timelines: TimelineType = {
         user: 'home',
         'public:local': 'public?local=true',
         public: 'public',
