@@ -16,7 +16,7 @@ export function useStream(domain: string, streaming: string, token: string, type
 
     watchEffect((): void => {
         start()
-    })
+    });
 
     function start(): void {
         steam_close()

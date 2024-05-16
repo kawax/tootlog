@@ -1,5 +1,5 @@
 import {emoji} from './emoji.js';
-import type {Account} from './types';
+import type {Account} from '../types';
 
 export function display_name(account: Account): string {
     return account.display_name

@@ -6,7 +6,7 @@ import Card from './Card.vue';
 import TypeSwitch from './TypeSwitch.vue';
 import MediaSwitch from './MediaSwitch.vue';
 import {useStream} from '../useStream';
-import {media_check} from '../media_check';
+import {media_check} from '../support/media_check';
 
 const props = defineProps<{
     domain: string,
