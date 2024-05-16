@@ -9,9 +9,9 @@ const emit = defineEmits<{
 const active_media = ref<string>('normal');
 
 const medias: TimelineMedia = {
-    normal: '<i class="fa fa-file-image-o" aria-hidden="true"></i> Media Default',
-    only: '<i class="fa fa-picture-o" aria-hidden="true"></i> Only',
-    except: '<i class="fa fa-commenting-o" aria-hidden="true"></i> Except',
+    normal: '<i class="fa fa-file-image-o" aria-hidden="true"></i> Text and Media',
+    only: '<i class="fa fa-picture-o" aria-hidden="true"></i> Media',
+    except: '<i class="fa fa-commenting-o" aria-hidden="true"></i> Text',
 };
 
 watchEffect(() => emit('changed', active_media.value))
