@@ -22,10 +22,10 @@ watchEffect(() => emit('changed', active_type.value))
         <button
             type="button"
             class="btn btn-secondary"
-            v-for="(text, type) in types"
+            v-for="(html, type) in types"
             :class="{ active: active_type === type }"
             @click="active_type = type"
-            v-html="text"
+            v-html="html"
         ></button>
     </div>
 </template>
