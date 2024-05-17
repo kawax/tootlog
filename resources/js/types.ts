@@ -3,7 +3,7 @@ export type Post = {
     account: Account,
     content: string,
     spoiler_text: string,
-    media_attachments: Array<MediaAttachment>,
+    media_attachments: MediaAttachment[],
     url: string,
     created_at: string,
     reblog?: Post,
