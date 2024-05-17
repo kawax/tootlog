@@ -1,4 +1,6 @@
-import {ref, watchEffect, toValue, Ref} from 'vue';
+import {onMounted, ref, Ref, toValue, watch} from 'vue';
+import {useFetch, useWebSocket} from '@vueuse/core'
+
 import type {Post, StreamEvent, TimelineType, TypeKey} from './types';
 
 export function useStream(domain: string, streaming: string, token: string, type: Ref<TypeKey>) {
@@ -6,7 +8,7 @@ export function useStream(domain: string, streaming: string, token: string, type
     const max = 50;
     const posts = ref<Post[]>([]);
     const errors = ref<string[]>([]);
-    let ws: WebSocket = null;
+    let ws_close = null;
 
     const timelines: TimelineType = {
         user: 'home',
@@ -14,47 +16,58 @@ export function useStream(domain: string, streaming: string, token: string, type
         public: 'public',
     };
 
-    watchEffect((): void => {
+    onMounted(() => start());
+
+    watch(type, (): void => {
         stream_close();
         start();
     });
 
     function start(): void {
-        const options: RequestInit = {
-            headers: {
-                Authorization: 'Bearer ' + token
-            }
-        }
+        const {onFetchResponse, onFetchError} = useFetch(timelines_url(), {
+            async beforeFetch({options}) {
+                options.headers = {
+                    ...options.headers,
+                    Authorization: `Bearer ${token}`,
+                }
 
-        fetch(timelines_url(), options)
-            .then(res => res.json())
-            .then(function (json) {
-                posts.value = json;
-                stream_open();
-            })
-            .catch(function (error) {
-                console.error(error);
-                errors.value.push(error);
-            })
+                return {
+                    options,
+                }
+            },
+        });
+
+        onFetchResponse(async (response: Response) => {
+            posts.value = await response.json();
+            stream_open();
+        });
+
+        onFetchError((error) => {
+            console.error(error);
+            errors.value.push(error);
+        });
     }
 
     function stream_open(): void {
-        ws = new WebSocket(streaming_url())
+        const {close} = useWebSocket(streaming_url(), {
+            autoClose: false,
+            onMessage: (ws: WebSocket, ev: MessageEvent) => {
+                let event: StreamEvent = JSON.parse(ev.data)
+                event.payload = JSON.parse(event.payload)
+                stream_event(event)
+            },
+            onConnected(ws) {
+                console.debug('WebSocket Open ' + domain + ' ' + toValue(type))
+            },
+            onDisconnected(ws, event) {
+                console.debug('WebSocket Close ' + domain)
+            },
+            onError(ws, event) {
+                console.debug('WebSocket Error ' + domain + ' ' + toValue(type))
+            },
+        });
 
-        ws.onmessage = (ev: MessageEvent<any>): void => {
-            console.debug('Got Data from Stream ' + toValue(type))
-            let event: StreamEvent = JSON.parse(ev.data)
-            event.payload = JSON.parse(event.payload)
-            stream_event(event)
-        }
-
-        ws.onopen = (): void => {
-            console.debug('WebSocket Open ' + domain + ' ' + toValue(type))
-        }
-
-        ws.onclose = (): void => {
-            console.debug('WebSocket Close ' + domain + ' ' + toValue(type))
-        }
+        ws_close = close;
     }
 
     function stream_event(event: StreamEvent): void {
@@ -70,10 +83,10 @@ export function useStream(domain: string, streaming: string, token: string, type
     }
 
     function stream_close(): void {
-        if (ws !== null) {
-            ws.close()
-            posts.value = []
+        if (ws_close !== null) {
+            ws_close();
         }
+        posts.value = [];
     }
 
     function timelines_url(): string {
