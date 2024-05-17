@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {ref, watchEffect} from 'vue';
-import {MediaKey, TimelineMedia} from '../types';
+import type {MediaKey, TimelineMedia} from '../types';
 
 const emit = defineEmits<{
     changed: [media: MediaKey]

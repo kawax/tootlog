@@ -7,7 +7,7 @@ import TypeSwitch from './TypeSwitch.vue';
 import MediaSwitch from './MediaSwitch.vue';
 import {useStream} from '../useStream';
 import {media_check} from '../support/media_check';
-import {MediaKey, TypeKey} from "../types";
+import type {MediaKey, TypeKey} from '../types';
 
 const props = defineProps<{
     domain: string,

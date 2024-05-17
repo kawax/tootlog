@@ -1,6 +1,5 @@
 import {onMounted, ref, Ref, toValue, watch} from 'vue';
-import {useFetch, useWebSocket} from '@vueuse/core'
-
+import {useFetch, useWebSocket} from '@vueuse/core';
 import type {Post, StreamEvent, TimelineType, TypeKey} from './types';
 
 export function useStream(domain: string, streaming: string, token: string, type: Ref<TypeKey>) {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {ref, watchEffect} from 'vue';
-import {TypeKey, TimelineType} from '../types';
+import type {TypeKey, TimelineType} from '../types';
 
 const emit = defineEmits<{
     changed: [type: TypeKey]
