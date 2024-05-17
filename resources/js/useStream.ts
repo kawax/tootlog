@@ -15,25 +15,22 @@ export function useStream(domain: string, streaming: string, token: string, type
     };
 
     watchEffect((): void => {
-        start()
+        stream_close();
+        start();
     });
 
     function start(): void {
-        steam_close()
-
-        const url: string = endpoint() + '/timelines/' + timelines[toValue(type)] + '?limit=20';
-
         const options: RequestInit = {
             headers: {
                 Authorization: 'Bearer ' + token
             }
         }
 
-        fetch(url, options)
+        fetch(timelines_url(), options)
             .then(res => res.json())
             .then(function (json) {
                 posts.value = json;
-                stream();
+                stream_open();
             })
             .catch(function (error) {
                 console.error(error);
@@ -41,30 +38,14 @@ export function useStream(domain: string, streaming: string, token: string, type
             })
     }
 
-    function stream(): void {
-        steam_open((event: StreamEvent): void => {
-            switch (event.event) {
-                case 'update':
-                    //console.log(event.payload)
-                    posts.value.unshift(event.payload);
-                    posts.value.splice(max);
-                    break;
-                default:
-                    console.debug(event);
-            }
-        })
-    }
-
-    function steam_open(onData: (event: StreamEvent) => void): void {
-        const url: string = streaming_url() + '/streaming?access_token=' + token + '&stream=' + toValue(type);
-
-        ws = new WebSocket(url)
+    function stream_open(): void {
+        ws = new WebSocket(streaming_url())
 
         ws.onmessage = (ev: MessageEvent<any>): void => {
             console.debug('Got Data from Stream ' + toValue(type))
             let event: StreamEvent = JSON.parse(ev.data)
             event.payload = JSON.parse(event.payload)
-            onData(event)
+            stream_event(event)
         }
 
         ws.onopen = (): void => {
@@ -76,19 +57,31 @@ export function useStream(domain: string, streaming: string, token: string, type
         }
     }
 
-    function steam_close(): void {
+    function stream_event(event: StreamEvent): void {
+        switch (event.event) {
+            case 'update':
+                //console.log(event.payload)
+                posts.value.unshift(event.payload);
+                posts.value.splice(max);
+                break;
+            default:
+                console.debug(event);
+        }
+    }
+
+    function stream_close(): void {
         if (ws !== null) {
             ws.close()
             posts.value = []
         }
     }
 
-    function endpoint(): string {
-        return domain + api_version
+    function timelines_url(): string {
+        return domain + api_version + '/timelines/' + timelines[toValue(type)] + '?limit=20'
     }
 
     function streaming_url(): string {
-        return streaming + api_version
+        return streaming + api_version + '/streaming?access_token=' + token + '&stream=' + toValue(type)
     }
 
     return {
