@@ -3,8 +3,8 @@ import {useFetch, useWebSocket} from '@vueuse/core';
 import type {Post, StreamEvent, TimelineType, TypeKey} from './types';
 
 export function useStream(domain: string, streaming: string, token: string, type: Ref<TypeKey>) {
-    const api_version = '/api/v1';
-    const max = 50;
+    const API_VERSION = '/api/v1';
+    const POST_LIMIT = 50;
     const posts = ref<Post[]>([]);
     const errors = ref<string[]>([]);
     let ws_close = null;
@@ -17,12 +17,12 @@ export function useStream(domain: string, streaming: string, token: string, type
 
     onMounted(() => start());
 
-    watch(type, (): void => {
+    watch(type, () => {
         stream_close();
         start();
     });
 
-    function start(): void {
+    function start() {
         const {onFetchResponse, onFetchError} = useFetch(timelines_url(), {
             async beforeFetch({options}) {
                 options.headers = {
@@ -41,13 +41,13 @@ export function useStream(domain: string, streaming: string, token: string, type
             stream_open();
         });
 
-        onFetchError((error) => {
+        onFetchError(error => {
             console.error(error);
             errors.value.push(error);
         });
     }
 
-    function stream_open(): void {
+    function stream_open() {
         const {close} = useWebSocket(streaming_url(), {
             autoClose: false,
             onMessage: (ws: WebSocket, ev: MessageEvent) => {
@@ -69,19 +69,19 @@ export function useStream(domain: string, streaming: string, token: string, type
         ws_close = close;
     }
 
-    function stream_event(event: StreamEvent): void {
+    function stream_event(event: StreamEvent) {
         switch (event.event) {
             case 'update':
                 //console.log(event.payload)
                 posts.value.unshift(event.payload);
-                posts.value.splice(max);
+                posts.value.splice(POST_LIMIT);
                 break;
             default:
                 console.debug(event);
         }
     }
 
-    function stream_close(): void {
+    function stream_close() {
         if (ws_close !== null) {
             ws_close();
         }
@@ -89,11 +89,11 @@ export function useStream(domain: string, streaming: string, token: string, type
     }
 
     function timelines_url(): string {
-        return domain + api_version + '/timelines/' + timelines[toValue(type)] + '?limit=20'
+        return domain + API_VERSION + '/timelines/' + timelines[toValue(type)] + '?limit=20'
     }
 
     function streaming_url(): string {
-        return streaming + api_version + '/streaming?access_token=' + token + '&stream=' + toValue(type)
+        return streaming + API_VERSION + '/streaming?access_token=' + token + '&stream=' + toValue(type)
     }
 
     return {
