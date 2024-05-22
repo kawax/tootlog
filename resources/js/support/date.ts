@@ -1,5 +1,5 @@
-import {format, parseISO} from 'date-fns';
+import {useDateFormat} from '@vueuse/core'
 
 export function formatDate(date: string): string {
-    return format(parseISO(date), 'yyyy-MM-dd HH:mm:ss')
+    return useDateFormat(date, 'YYYY-MM-DD HH:mm:ss').value
 }
