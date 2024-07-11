@@ -87,16 +87,25 @@ class Account extends Model
         );
     }
 
+    /**
+     * @return BelongsTo<User, $this>
+     */
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
+    /**
+     * @return BelongsTo<Server, $this>
+     */
     public function server(): BelongsTo
     {
         return $this->belongsTo(Server::class);
     }
 
+    /**
+     * @return HasMany<Status, $this>
+     */
     public function statuses(): HasMany
     {
         return $this->hasMany(Status::class);

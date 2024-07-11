@@ -22,6 +22,9 @@ class Tag extends Model
         return 'name';
     }
 
+    /**
+     * @return BelongsToMany<Status, StatusTag, $this>
+     */
     public function statuses(): BelongsToMany
     {
         return $this->belongsToMany(Status::class)

@@ -44,6 +44,9 @@ class Reblog extends Model
         );
     }
 
+    /**
+     * @return HasMany<Status, $this>
+     */
     public function statuses(): HasMany
     {
         return $this->hasMany(Status::class);

@@ -76,16 +76,25 @@ class Status extends Model
         );
     }
 
+    /**
+     * @return BelongsTo<Account, $this>
+     */
     public function account(): BelongsTo
     {
         return $this->belongsTo(Account::class);
     }
 
+    /**
+     * @return BelongsTo<Reblog, $this>
+     */
     public function reblog(): BelongsTo
     {
         return $this->belongsTo(Reblog::class);
     }
 
+    /**
+     * @return BelongsToMany<Tag, StatusTag, $this>
+     */
     public function tags(): BelongsToMany
     {
         return $this->belongsToMany(Tag::class)

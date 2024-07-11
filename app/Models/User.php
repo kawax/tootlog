@@ -50,11 +50,17 @@ class User extends Authenticatable implements MustVerifyEmail
         return 'name';
     }
 
+    /**
+     * @return HasMany<Account, $this>
+     */
     public function accounts(): HasMany
     {
         return $this->hasMany(Account::class);
     }
 
+    /**
+     * @return HasManyThrough<Status, Account, $this>
+     */
     public function statuses(): HasManyThrough
     {
         return $this->hasManyThrough(Status::class, Account::class);
