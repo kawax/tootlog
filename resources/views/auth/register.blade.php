@@ -7,7 +7,7 @@
                 <div class="card">
                     <div class="card-header bg-white">Register</div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('register') }}" id="{{ getFormId() }}">
+                        <form method="POST" action="{{ route('register') }}">
                             @csrf
 
                             <div class="row mb-3">
@@ -73,9 +73,7 @@
                             <div class="row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit"
-                                            class="btn btn-primary g-recaptcha"
-                                            data-callback="biscolabLaravelReCaptcha"
-                                            data-sitekey="{{ config('recaptcha.api_site_key') }}">
+                                            class="btn btn-primary">
                                         Register
                                     </button>
                                 </div>
