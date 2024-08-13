@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.319.2",
+            "version": "3.319.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "99b75502221af095f0a5a72b0df7ec44e865e699"
+                "reference": "4f29bf3c43ff32732e105ac8bcff325f7db86bd0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/99b75502221af095f0a5a72b0df7ec44e865e699",
-                "reference": "99b75502221af095f0a5a72b0df7ec44e865e699",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/4f29bf3c43ff32732e105ac8bcff325f7db86bd0",
+                "reference": "4f29bf3c43ff32732e105ac8bcff325f7db86bd0",
                 "shasum": ""
             },
             "require": {
@@ -154,9 +154,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.319.2"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.319.3"
             },
-            "time": "2024-08-09T18:32:29+00:00"
+            "time": "2024-08-12T18:06:14+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -9620,16 +9620,16 @@
         },
         {
             "name": "sebastian/comparator",
-            "version": "6.0.1",
+            "version": "6.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/comparator.git",
-                "reference": "131942b86d3587291067a94f295498ab6ac79c20"
+                "reference": "450d8f237bd611c45b5acf0733ce43e6bb280f81"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/131942b86d3587291067a94f295498ab6ac79c20",
-                "reference": "131942b86d3587291067a94f295498ab6ac79c20",
+                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/450d8f237bd611c45b5acf0733ce43e6bb280f81",
+                "reference": "450d8f237bd611c45b5acf0733ce43e6bb280f81",
                 "shasum": ""
             },
             "require": {
@@ -9685,7 +9685,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/comparator/issues",
                 "security": "https://github.com/sebastianbergmann/comparator/security/policy",
-                "source": "https://github.com/sebastianbergmann/comparator/tree/6.0.1"
+                "source": "https://github.com/sebastianbergmann/comparator/tree/6.0.2"
             },
             "funding": [
                 {
@@ -9693,7 +9693,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-07-03T04:48:07+00:00"
+            "time": "2024-08-12T06:07:25+00:00"
         },
         {
             "name": "sebastian/complexity",
