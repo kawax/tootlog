@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.320.5",
+            "version": "3.320.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "afda5aefd59da90208d2f59427ce81e91535b1f2"
+                "reference": "73c66ce8f9d593a08409f564cd796abe6976f1b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/afda5aefd59da90208d2f59427ce81e91535b1f2",
-                "reference": "afda5aefd59da90208d2f59427ce81e91535b1f2",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/73c66ce8f9d593a08409f564cd796abe6976f1b4",
+                "reference": "73c66ce8f9d593a08409f564cd796abe6976f1b4",
                 "shasum": ""
             },
             "require": {
@@ -154,9 +154,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.320.5"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.320.6"
             },
-            "time": "2024-08-21T18:14:31+00:00"
+            "time": "2024-08-22T18:28:28+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -4518,16 +4518,16 @@
         },
         {
             "name": "spatie/browsershot",
-            "version": "4.2.1",
+            "version": "4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/browsershot.git",
-                "reference": "6fc6c0c7c9c720d2d0429c853c7b573bf51e58d2"
+                "reference": "601f2758191d8c46b2ea587eea935a87da4f39e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/browsershot/zipball/6fc6c0c7c9c720d2d0429c853c7b573bf51e58d2",
-                "reference": "6fc6c0c7c9c720d2d0429c853c7b573bf51e58d2",
+                "url": "https://api.github.com/repos/spatie/browsershot/zipball/601f2758191d8c46b2ea587eea935a87da4f39e8",
+                "reference": "601f2758191d8c46b2ea587eea935a87da4f39e8",
                 "shasum": ""
             },
             "require": {
@@ -4540,6 +4540,7 @@
             "require-dev": {
                 "pestphp/pest": "^1.20",
                 "spatie/image": "^3.6",
+                "spatie/pdf-to-text": "^1.52",
                 "spatie/phpunit-snapshot-assertions": "^4.2.3"
             },
             "type": "library",
@@ -4573,7 +4574,7 @@
                 "webpage"
             ],
             "support": {
-                "source": "https://github.com/spatie/browsershot/tree/4.2.1"
+                "source": "https://github.com/spatie/browsershot/tree/4.3.0"
             },
             "funding": [
                 {
@@ -4581,7 +4582,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-08-20T15:23:47+00:00"
+            "time": "2024-08-22T09:14:07+00:00"
         },
         {
             "name": "spatie/crawler",
@@ -8970,32 +8971,32 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "11.0.5",
+            "version": "11.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "19b6365ab8b59a64438c0c3f4241feeb480c9861"
+                "reference": "ebdffc9e09585dafa71b9bffcdb0a229d4704c45"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/19b6365ab8b59a64438c0c3f4241feeb480c9861",
-                "reference": "19b6365ab8b59a64438c0c3f4241feeb480c9861",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/ebdffc9e09585dafa71b9bffcdb0a229d4704c45",
+                "reference": "ebdffc9e09585dafa71b9bffcdb0a229d4704c45",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-libxml": "*",
                 "ext-xmlwriter": "*",
-                "nikic/php-parser": "^5.0",
+                "nikic/php-parser": "^5.1.0",
                 "php": ">=8.2",
-                "phpunit/php-file-iterator": "^5.0",
-                "phpunit/php-text-template": "^4.0",
-                "sebastian/code-unit-reverse-lookup": "^4.0",
-                "sebastian/complexity": "^4.0",
-                "sebastian/environment": "^7.0",
-                "sebastian/lines-of-code": "^3.0",
-                "sebastian/version": "^5.0",
-                "theseer/tokenizer": "^1.2.0"
+                "phpunit/php-file-iterator": "^5.0.1",
+                "phpunit/php-text-template": "^4.0.1",
+                "sebastian/code-unit-reverse-lookup": "^4.0.1",
+                "sebastian/complexity": "^4.0.1",
+                "sebastian/environment": "^7.2.0",
+                "sebastian/lines-of-code": "^3.0.1",
+                "sebastian/version": "^5.0.1",
+                "theseer/tokenizer": "^1.2.3"
             },
             "require-dev": {
                 "phpunit/phpunit": "^11.0"
@@ -9007,7 +9008,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "11.0-dev"
+                    "dev-main": "11.0.x-dev"
                 }
             },
             "autoload": {
@@ -9036,7 +9037,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
                 "security": "https://github.com/sebastianbergmann/php-code-coverage/security/policy",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/11.0.5"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/11.0.6"
             },
             "funding": [
                 {
@@ -9044,7 +9045,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-07-03T05:05:37+00:00"
+            "time": "2024-08-22T04:37:56+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
