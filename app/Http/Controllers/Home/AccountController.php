@@ -32,13 +32,13 @@ class AccountController extends Controller
 
         $server = $this->server($domain);
 
-        config(['services.mastodon.domain' => $domain]);
-        config(['services.mastodon.client_id' => $server->client_id]);
-        config(['services.mastodon.client_secret' => $server->client_secret]);
-
         session(['mastodon_domain' => $domain]);
 
         return Socialite::driver('mastodon')
+            ->with([
+                'domain' => $domain,
+                'client_id' => $server->client_id,
+            ])
             ->setScopes(config('services.mastodon.scope', ['read']))
             ->redirect();
     }
@@ -49,15 +49,17 @@ class AccountController extends Controller
 
         $server = $this->server($domain);
 
-        config(['services.mastodon.domain' => $domain]);
-        config(['services.mastodon.client_id' => $server->client_id]);
-        config(['services.mastodon.client_secret' => $server->client_secret]);
-
         try {
             /**
              * @var SocialiteUser $user
              */
-            $user = Socialite::driver('mastodon')->user();
+            $user = Socialite::driver('mastodon')
+                ->with([
+                    'domain' => $domain,
+                    'client_id' => $server->client_id,
+                    'client_secret' => $server->client_secret,
+                ])
+                ->user();
 
             $account = Account::whereUrl($user->user['url'])
                 ->where('user_id', $request->user()->id)
