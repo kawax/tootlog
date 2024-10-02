@@ -28,16 +28,16 @@ return [
     ],
 
     'mastodon' => [
-        'domain' => env('MASTODON_DOMAIN', 'https://chitose.moe'),
+        'domain' => env('MASTODON_DOMAIN'),
         'client_id' => env('MASTODON_ID'),
         'client_secret' => env('MASTODON_SECRET'),
         'redirect' => env('MASTODON_REDIRECT'),
-        //'read', 'write', 'follow'
+        //'read', 'write', 'push'
         'scope' => ['read'],
     ],
 
     'mastodon_notify' => [
-        'domain' => env('MASTODON_NOTIFY_DOMAIN', 'https://chitose.moe'),
+        'domain' => env('MASTODON_NOTIFY_DOMAIN'),
         'token' => env('MASTODON_NOTIFY_TOKEN'),
     ],
 ];
