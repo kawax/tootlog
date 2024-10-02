@@ -72,8 +72,7 @@ class OAuthTest extends TestCase
     {
         Bus::fake();
 
-        Socialite::shouldReceive('driver')->once()->andReturn(m::self());
-        Socialite::shouldReceive('user')->once()->andReturn(
+        Socialite::shouldReceive('driver->with->user')->once()->andReturn(
             (new SocialiteUser())
                 ->setRaw([
                     'url' => 'https://example.com/@test',
@@ -99,8 +98,7 @@ class OAuthTest extends TestCase
     {
         Bus::fake();
 
-        Socialite::shouldReceive('driver')->once()->andReturn(m::self());
-        Socialite::shouldReceive('user')->once()->andReturn(
+        Socialite::shouldReceive('driver->with->user')->once()->andReturn(
             (new SocialiteUser())
                 ->setRaw([
                     'id' => '1',
