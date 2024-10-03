@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.322.9",
+            "version": "3.322.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "0bd7513a7dd9b5330cb92575da99d9057f79b39c"
+                "reference": "0adb58bc7989068b489d320970951163847b520b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/0bd7513a7dd9b5330cb92575da99d9057f79b39c",
-                "reference": "0bd7513a7dd9b5330cb92575da99d9057f79b39c",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/0adb58bc7989068b489d320970951163847b520b",
+                "reference": "0adb58bc7989068b489d320970951163847b520b",
                 "shasum": ""
             },
             "require": {
@@ -154,9 +154,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.322.9"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.322.10"
             },
-            "time": "2024-10-01T18:23:10+00:00"
+            "time": "2024-10-02T18:14:16+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -4356,22 +4356,22 @@
         },
         {
             "name": "revolution/laravel-mastodon-api",
-            "version": "3.1.5",
+            "version": "3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kawax/laravel-mastodon-api.git",
-                "reference": "093a85cba6c7ba20b470b3011ccaf8893fe56c04"
+                "reference": "89845c2a881233aae138d133d2f6cedee66d37b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kawax/laravel-mastodon-api/zipball/093a85cba6c7ba20b470b3011ccaf8893fe56c04",
-                "reference": "093a85cba6c7ba20b470b3011ccaf8893fe56c04",
+                "url": "https://api.github.com/repos/kawax/laravel-mastodon-api/zipball/89845c2a881233aae138d133d2f6cedee66d37b5",
+                "reference": "89845c2a881233aae138d133d2f6cedee66d37b5",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "illuminate/http": "^10.0||^11.0",
-                "php": "^8.1"
+                "php": "^8.2"
             },
             "require-dev": {
                 "orchestra/testbench": "^8.0||^9.0"
@@ -4408,9 +4408,9 @@
                 "mastodon"
             ],
             "support": {
-                "source": "https://github.com/kawax/laravel-mastodon-api/tree/3.1.5"
+                "source": "https://github.com/kawax/laravel-mastodon-api/tree/3.2.0"
             },
-            "time": "2024-10-02T03:10:52+00:00"
+            "time": "2024-10-03T01:35:08+00:00"
         },
         {
             "name": "revolution/laravel-namespaced-helpers",
@@ -4465,16 +4465,16 @@
         },
         {
             "name": "revolution/socialite-mastodon",
-            "version": "1.5.1",
+            "version": "1.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kawax/socialite-mastodon.git",
-                "reference": "35bb3250d44b3750c9629edd08e5cd93ab4deffb"
+                "reference": "2013943f9258b247215dc342504c016c33535e8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kawax/socialite-mastodon/zipball/35bb3250d44b3750c9629edd08e5cd93ab4deffb",
-                "reference": "35bb3250d44b3750c9629edd08e5cd93ab4deffb",
+                "url": "https://api.github.com/repos/kawax/socialite-mastodon/zipball/2013943f9258b247215dc342504c016c33535e8e",
+                "reference": "2013943f9258b247215dc342504c016c33535e8e",
                 "shasum": ""
             },
             "require": {
@@ -4516,9 +4516,9 @@
                 "socialite"
             ],
             "support": {
-                "source": "https://github.com/kawax/socialite-mastodon/tree/1.5.1"
+                "source": "https://github.com/kawax/socialite-mastodon/tree/1.5.2"
             },
-            "time": "2024-10-02T03:16:09+00:00"
+            "time": "2024-10-02T08:20:07+00:00"
         },
         {
             "name": "spatie/browsershot",
@@ -10806,13 +10806,13 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^8.2"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "platform-overrides": {
         "ext-exif": "1.0.0"
     },
