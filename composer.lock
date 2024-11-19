@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.328.0",
+            "version": "3.328.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "a99b58e166ae367f2b067937afb04e843e900745"
+                "reference": "52d8219935146c3261181de2da4d36bf04c76298"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/a99b58e166ae367f2b067937afb04e843e900745",
-                "reference": "a99b58e166ae367f2b067937afb04e843e900745",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/52d8219935146c3261181de2da4d36bf04c76298",
+                "reference": "52d8219935146c3261181de2da4d36bf04c76298",
                 "shasum": ""
             },
             "require": {
@@ -154,9 +154,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.328.0"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.328.1"
             },
-            "time": "2024-11-15T19:06:57+00:00"
+            "time": "2024-11-18T19:13:28+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -4663,16 +4663,16 @@
         },
         {
             "name": "spatie/laravel-package-tools",
-            "version": "1.16.5",
+            "version": "1.16.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-package-tools.git",
-                "reference": "c7413972cf22ffdff97b68499c22baa04eddb6a2"
+                "reference": "1f26942dc1e5c49eacfced34fdbc29ed234bd7b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/c7413972cf22ffdff97b68499c22baa04eddb6a2",
-                "reference": "c7413972cf22ffdff97b68499c22baa04eddb6a2",
+                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/1f26942dc1e5c49eacfced34fdbc29ed234bd7b3",
+                "reference": "1f26942dc1e5c49eacfced34fdbc29ed234bd7b3",
                 "shasum": ""
             },
             "require": {
@@ -4711,7 +4711,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-package-tools/issues",
-                "source": "https://github.com/spatie/laravel-package-tools/tree/1.16.5"
+                "source": "https://github.com/spatie/laravel-package-tools/tree/1.16.6"
             },
             "funding": [
                 {
@@ -4719,7 +4719,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-08-27T18:56:10+00:00"
+            "time": "2024-11-18T15:02:02+00:00"
         },
         {
             "name": "spatie/laravel-sitemap",
@@ -10310,16 +10310,16 @@
         },
         {
             "name": "spatie/backtrace",
-            "version": "1.6.2",
+            "version": "1.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/backtrace.git",
-                "reference": "1a9a145b044677ae3424693f7b06479fc8c137a9"
+                "reference": "7c18db2bc667ac84e5d7c18e33f16c38ff2d8838"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/backtrace/zipball/1a9a145b044677ae3424693f7b06479fc8c137a9",
-                "reference": "1a9a145b044677ae3424693f7b06479fc8c137a9",
+                "url": "https://api.github.com/repos/spatie/backtrace/zipball/7c18db2bc667ac84e5d7c18e33f16c38ff2d8838",
+                "reference": "7c18db2bc667ac84e5d7c18e33f16c38ff2d8838",
                 "shasum": ""
             },
             "require": {
@@ -10357,7 +10357,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/backtrace/tree/1.6.2"
+                "source": "https://github.com/spatie/backtrace/tree/1.6.3"
             },
             "funding": [
                 {
@@ -10369,7 +10369,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2024-07-22T08:21:24+00:00"
+            "time": "2024-11-18T14:58:58+00:00"
         },
         {
             "name": "spatie/error-solutions",
