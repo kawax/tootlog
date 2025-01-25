@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.338.1",
+            "version": "3.338.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "20f57e432a4696054598921e24734834ed034f5e"
+                "reference": "7a52364e053d74363f9976dfb4473bace5b7790e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/20f57e432a4696054598921e24734834ed034f5e",
-                "reference": "20f57e432a4696054598921e24734834ed034f5e",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/7a52364e053d74363f9976dfb4473bace5b7790e",
+                "reference": "7a52364e053d74363f9976dfb4473bace5b7790e",
                 "shasum": ""
             },
             "require": {
@@ -154,9 +154,9 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.338.1"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.338.2"
             },
-            "time": "2025-01-23T19:07:00+00:00"
+            "time": "2025-01-24T19:09:22+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -1440,16 +1440,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v11.39.1",
+            "version": "v11.40.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "3d693dd36e78121bcd51fc02eda4bc137d2a17f2"
+                "reference": "599a28196d284fee158cc10086fd56ac625ad7a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/3d693dd36e78121bcd51fc02eda4bc137d2a17f2",
-                "reference": "3d693dd36e78121bcd51fc02eda4bc137d2a17f2",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/599a28196d284fee158cc10086fd56ac625ad7a3",
+                "reference": "599a28196d284fee158cc10086fd56ac625ad7a3",
                 "shasum": ""
             },
             "require": {
@@ -1475,7 +1475,7 @@
                 "league/flysystem-local": "^3.25.1",
                 "league/uri": "^7.5.1",
                 "monolog/monolog": "^3.0",
-                "nesbot/carbon": "^2.72.2|^3.4",
+                "nesbot/carbon": "^2.72.6|^3.8.4",
                 "nunomaduro/termwind": "^2.0",
                 "php": "^8.2",
                 "psr/container": "^1.1.1|^2.0.1",
@@ -1550,6 +1550,7 @@
                 "fakerphp/faker": "^1.24",
                 "guzzlehttp/promises": "^2.0.3",
                 "guzzlehttp/psr7": "^2.4",
+                "laravel/pint": "^1.18",
                 "league/flysystem-aws-s3-v3": "^3.25.1",
                 "league/flysystem-ftp": "^3.25.1",
                 "league/flysystem-path-prefixing": "^3.25.1",
@@ -1650,7 +1651,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2025-01-22T17:01:46+00:00"
+            "time": "2025-01-24T16:17:42+00:00"
         },
         {
             "name": "laravel/horizon",
