@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.339.3",
+            "version": "3.339.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "2ceb0a5b4c0dcd3c5ca6ea7480f3da62bd4fd588"
+                "reference": "ea62ad03645ef7a1d3f1cda2de49f0869de3c582"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/2ceb0a5b4c0dcd3c5ca6ea7480f3da62bd4fd588",
-                "reference": "2ceb0a5b4c0dcd3c5ca6ea7480f3da62bd4fd588",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/ea62ad03645ef7a1d3f1cda2de49f0869de3c582",
+                "reference": "ea62ad03645ef7a1d3f1cda2de49f0869de3c582",
                 "shasum": ""
             },
             "require": {
@@ -154,9 +154,9 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.339.3"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.339.4"
             },
-            "time": "2025-01-30T19:18:55+00:00"
+            "time": "2025-01-31T19:04:39+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -4904,16 +4904,16 @@
         },
         {
             "name": "spatie/laravel-sitemap",
-            "version": "7.3.3",
+            "version": "7.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-sitemap.git",
-                "reference": "9423e3bb82d9e83fa8969a2a30dcea309d802e7e"
+                "reference": "5606b9e7b1cb2785218999a6f2ee11e0dbdcfb56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-sitemap/zipball/9423e3bb82d9e83fa8969a2a30dcea309d802e7e",
-                "reference": "9423e3bb82d9e83fa8969a2a30dcea309d802e7e",
+                "url": "https://api.github.com/repos/spatie/laravel-sitemap/zipball/5606b9e7b1cb2785218999a6f2ee11e0dbdcfb56",
+                "reference": "5606b9e7b1cb2785218999a6f2ee11e0dbdcfb56",
                 "shasum": ""
             },
             "require": {
@@ -4965,7 +4965,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-sitemap/tree/7.3.3"
+                "source": "https://github.com/spatie/laravel-sitemap/tree/7.3.4"
             },
             "funding": [
                 {
@@ -4973,20 +4973,20 @@
                     "type": "custom"
                 }
             ],
-            "time": "2025-01-27T09:44:53+00:00"
+            "time": "2025-01-31T08:53:45+00:00"
         },
         {
             "name": "spatie/robots-txt",
-            "version": "2.3.0",
+            "version": "2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/robots-txt.git",
-                "reference": "acc7f4438813989d0427624f7901232084916170"
+                "reference": "58ed7b61c2a59e72f57b46e4d025967dd5f16000"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/robots-txt/zipball/acc7f4438813989d0427624f7901232084916170",
-                "reference": "acc7f4438813989d0427624f7901232084916170",
+                "url": "https://api.github.com/repos/spatie/robots-txt/zipball/58ed7b61c2a59e72f57b46e4d025967dd5f16000",
+                "reference": "58ed7b61c2a59e72f57b46e4d025967dd5f16000",
                 "shasum": ""
             },
             "require": {
@@ -5021,7 +5021,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/robots-txt/issues",
-                "source": "https://github.com/spatie/robots-txt/tree/2.3.0"
+                "source": "https://github.com/spatie/robots-txt/tree/2.3.1"
             },
             "funding": [
                 {
@@ -5033,7 +5033,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-01-27T10:15:34+00:00"
+            "time": "2025-01-31T09:33:25+00:00"
         },
         {
             "name": "spatie/temporary-directory",
@@ -9212,16 +9212,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "11.5.5",
+            "version": "11.5.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "b9a975972f580c0491f834eb0818ad2b32fd8bba"
+                "reference": "3c3ae14c90f244cdda95028c3e469028e8d1c02c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/b9a975972f580c0491f834eb0818ad2b32fd8bba",
-                "reference": "b9a975972f580c0491f834eb0818ad2b32fd8bba",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3c3ae14c90f244cdda95028c3e469028e8d1c02c",
+                "reference": "3c3ae14c90f244cdda95028c3e469028e8d1c02c",
                 "shasum": ""
             },
             "require": {
@@ -9293,7 +9293,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.5"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.6"
             },
             "funding": [
                 {
@@ -9309,7 +9309,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-01-29T14:01:11+00:00"
+            "time": "2025-01-31T07:03:30+00:00"
         },
         {
             "name": "revolution/sail-db-backup",
