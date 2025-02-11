@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.339.9",
+            "version": "3.339.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "e443779facb8cd0bba30383753a7a451db83acd6"
+                "reference": "85b90f70f88739f4f363c1af7c230e294af3dbd0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/e443779facb8cd0bba30383753a7a451db83acd6",
-                "reference": "e443779facb8cd0bba30383753a7a451db83acd6",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/85b90f70f88739f4f363c1af7c230e294af3dbd0",
+                "reference": "85b90f70f88739f4f363c1af7c230e294af3dbd0",
                 "shasum": ""
             },
             "require": {
@@ -153,9 +153,9 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.339.9"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.339.10"
             },
-            "time": "2025-02-07T19:14:31+00:00"
+            "time": "2025-02-10T19:24:07+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -4707,16 +4707,16 @@
         },
         {
             "name": "spatie/browsershot",
-            "version": "5.0.5",
+            "version": "5.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/browsershot.git",
-                "reference": "c0fa14c2386df2b4444e803ddc11e592b16d3a20"
+                "reference": "0bb1832bdc2ed7d7d61e99c66ece817385d3b46c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/browsershot/zipball/c0fa14c2386df2b4444e803ddc11e592b16d3a20",
-                "reference": "c0fa14c2386df2b4444e803ddc11e592b16d3a20",
+                "url": "https://api.github.com/repos/spatie/browsershot/zipball/0bb1832bdc2ed7d7d61e99c66ece817385d3b46c",
+                "reference": "0bb1832bdc2ed7d7d61e99c66ece817385d3b46c",
                 "shasum": ""
             },
             "require": {
@@ -4763,7 +4763,7 @@
                 "webpage"
             ],
             "support": {
-                "source": "https://github.com/spatie/browsershot/tree/5.0.5"
+                "source": "https://github.com/spatie/browsershot/tree/5.0.6"
             },
             "funding": [
                 {
@@ -4771,7 +4771,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-12-30T12:56:36+00:00"
+            "time": "2025-02-10T09:10:30+00:00"
         },
         {
             "name": "spatie/crawler",
@@ -8390,16 +8390,16 @@
         },
         {
             "name": "itsgoingd/clockwork",
-            "version": "v5.3.3",
+            "version": "v5.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itsgoingd/clockwork.git",
-                "reference": "f5b14e5c871f5b5552ec8f8c146794f0aaae8b4c"
+                "reference": "c27ad77a08a9e58bf0049de46969fa4fe3b506e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itsgoingd/clockwork/zipball/f5b14e5c871f5b5552ec8f8c146794f0aaae8b4c",
-                "reference": "f5b14e5c871f5b5552ec8f8c146794f0aaae8b4c",
+                "url": "https://api.github.com/repos/itsgoingd/clockwork/zipball/c27ad77a08a9e58bf0049de46969fa4fe3b506e5",
+                "reference": "c27ad77a08a9e58bf0049de46969fa4fe3b506e5",
                 "shasum": ""
             },
             "require": {
@@ -8454,7 +8454,7 @@
             ],
             "support": {
                 "issues": "https://github.com/itsgoingd/clockwork/issues",
-                "source": "https://github.com/itsgoingd/clockwork/tree/v5.3.3"
+                "source": "https://github.com/itsgoingd/clockwork/tree/v5.3.4"
             },
             "funding": [
                 {
@@ -8462,7 +8462,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-01-12T15:58:56+00:00"
+            "time": "2025-02-09T15:57:21+00:00"
         },
         {
             "name": "laravel/sail",
