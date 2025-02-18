@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.339.14",
+            "version": "3.339.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "532eb5e502c5b1181456023e41d61445b2c7101d"
+                "reference": "46ef2d3734ba8358966af80e4ac181633bd03692"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/532eb5e502c5b1181456023e41d61445b2c7101d",
-                "reference": "532eb5e502c5b1181456023e41d61445b2c7101d",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/46ef2d3734ba8358966af80e4ac181633bd03692",
+                "reference": "46ef2d3734ba8358966af80e4ac181633bd03692",
                 "shasum": ""
             },
             "require": {
@@ -153,9 +153,9 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.339.14"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.339.15"
             },
-            "time": "2025-02-14T19:11:38+00:00"
+            "time": "2025-02-17T19:07:50+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -4599,24 +4599,24 @@
         },
         {
             "name": "revolution/laravel-namespaced-helpers",
-            "version": "2.1.1",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kawax/laravel-namespaced-helpers.git",
-                "reference": "65c4cc7417771bcface1107271afd13980bf60b7"
+                "reference": "96ff685fcc279b4ef7c98bb143adeea3ec670bb4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kawax/laravel-namespaced-helpers/zipball/65c4cc7417771bcface1107271afd13980bf60b7",
-                "reference": "65c4cc7417771bcface1107271afd13980bf60b7",
+                "url": "https://api.github.com/repos/kawax/laravel-namespaced-helpers/zipball/96ff685fcc279b4ef7c98bb143adeea3ec670bb4",
+                "reference": "96ff685fcc279b4ef7c98bb143adeea3ec670bb4",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "^10.0||^11.0",
-                "php": "^8.1"
+                "illuminate/support": "^11.0||^12.0",
+                "php": "^8.2"
             },
             "require-dev": {
-                "orchestra/testbench": "^8.0||^9.0"
+                "orchestra/testbench": "^9.0"
             },
             "type": "library",
             "autoload": {
@@ -4644,9 +4644,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kawax/laravel-namespaced-helpers/issues",
-                "source": "https://github.com/kawax/laravel-namespaced-helpers/tree/2.1.1"
+                "source": "https://github.com/kawax/laravel-namespaced-helpers/tree/2.2.0"
             },
-            "time": "2024-04-04T07:33:19+00:00"
+            "time": "2025-02-18T03:46:38+00:00"
         },
         {
             "name": "revolution/socialite-mastodon",
@@ -4707,16 +4707,16 @@
         },
         {
             "name": "spatie/browsershot",
-            "version": "5.0.7",
+            "version": "5.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/browsershot.git",
-                "reference": "d09837ff17e3d894a4a3cf913bdc03dab6c2d276"
+                "reference": "0102971ae974022ec4a7a149e8924ea355b52cc3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/browsershot/zipball/d09837ff17e3d894a4a3cf913bdc03dab6c2d276",
-                "reference": "d09837ff17e3d894a4a3cf913bdc03dab6c2d276",
+                "url": "https://api.github.com/repos/spatie/browsershot/zipball/0102971ae974022ec4a7a149e8924ea355b52cc3",
+                "reference": "0102971ae974022ec4a7a149e8924ea355b52cc3",
                 "shasum": ""
             },
             "require": {
@@ -4763,7 +4763,7 @@
                 "webpage"
             ],
             "support": {
-                "source": "https://github.com/spatie/browsershot/tree/5.0.7"
+                "source": "https://github.com/spatie/browsershot/tree/5.0.8"
             },
             "funding": [
                 {
@@ -4771,26 +4771,26 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-02-14T13:09:56+00:00"
+            "time": "2025-02-17T09:56:12+00:00"
         },
         {
             "name": "spatie/crawler",
-            "version": "8.4.0",
+            "version": "8.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/crawler.git",
-                "reference": "344e1b90488c19bdf01d76d40d6728994d0951f7"
+                "reference": "906892d266a77f6dfb834559bac24542a49139fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/crawler/zipball/344e1b90488c19bdf01d76d40d6728994d0951f7",
-                "reference": "344e1b90488c19bdf01d76d40d6728994d0951f7",
+                "url": "https://api.github.com/repos/spatie/crawler/zipball/906892d266a77f6dfb834559bac24542a49139fa",
+                "reference": "906892d266a77f6dfb834559bac24542a49139fa",
                 "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": "^7.3",
                 "guzzlehttp/psr7": "^2.0",
-                "illuminate/collections": "^10.0|^11.0",
+                "illuminate/collections": "^10.0|^11.0|^12.0",
                 "nicmart/tree": "^0.9",
                 "php": "^8.1",
                 "spatie/browsershot": "^3.45|^4.0|^5.0",
@@ -4827,7 +4827,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/crawler/issues",
-                "source": "https://github.com/spatie/crawler/tree/8.4.0"
+                "source": "https://github.com/spatie/crawler/tree/8.4.1"
             },
             "funding": [
                 {
@@ -4839,7 +4839,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-12-16T15:32:54+00:00"
+            "time": "2025-02-17T09:24:49+00:00"
         },
         {
             "name": "spatie/laravel-package-tools",
