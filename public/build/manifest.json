@@ -1,47 +1,47 @@
 {
-  "_vendor-!~{002}~.js": {
-    "file": "assets/vendor-pxrDaSd6.css",
-    "src": "_vendor-!~{002}~.js"
-  },
-  "_vendor-bljhhqXi.js": {
-    "file": "assets/vendor-bljhhqXi.js",
+  "_vendor-BwIjtlv8.js": {
+    "file": "assets/vendor-BwIjtlv8.js",
     "name": "vendor",
     "css": [
-      "assets/vendor-pxrDaSd6.css"
+      "assets/vendor-tEMDA4pr.css"
     ],
     "assets": [
-      "assets/fa-regular-400-9VThgXHM.woff2",
-      "assets/fa-regular-400-C54-fRIQ.ttf",
-      "assets/fa-solid-900-QWY35r5r.woff2",
-      "assets/fa-solid-900-Cm9M9sZB.ttf"
+      "assets/fa-regular-400-BjRzuEpd.woff2",
+      "assets/fa-regular-400-DZaxPHgR.ttf",
+      "assets/fa-solid-900-CTAAxXor.woff2",
+      "assets/fa-solid-900-D0aA9rwL.ttf"
     ]
   },
+  "_vendor-tEMDA4pr.css": {
+    "file": "assets/vendor-tEMDA4pr.css",
+    "src": "_vendor-tEMDA4pr.css"
+  },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf": {
-    "file": "assets/fa-regular-400-C54-fRIQ.ttf",
+    "file": "assets/fa-regular-400-DZaxPHgR.ttf",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2": {
-    "file": "assets/fa-regular-400-9VThgXHM.woff2",
+    "file": "assets/fa-regular-400-BjRzuEpd.woff2",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf": {
-    "file": "assets/fa-solid-900-Cm9M9sZB.ttf",
+    "file": "assets/fa-solid-900-D0aA9rwL.ttf",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2": {
-    "file": "assets/fa-solid-900-QWY35r5r.woff2",
+    "file": "assets/fa-solid-900-CTAAxXor.woff2",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2"
   },
   "resources/js/app.ts": {
-    "file": "assets/app-B8eyJJwN.js",
+    "file": "assets/app-DyK3F61G.js",
     "name": "app",
     "src": "resources/js/app.ts",
     "isEntry": true,
     "imports": [
-      "_vendor-bljhhqXi.js"
+      "_vendor-BwIjtlv8.js"
     ],
     "css": [
-      "assets/app-CpzyypDn.css"
+      "assets/app-CmTjmJ-w.css"
     ]
   }
 }
