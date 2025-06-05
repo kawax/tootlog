@@ -18,8 +18,8 @@ class User extends Authenticatable implements MustVerifyEmail
     use HasFactory;
     use Notifiable;
     use WithUserAccount;
-    use WithUserStatus;
     use WithUserArchives;
+    use WithUserStatus;
     use WithUserTag;
 
     /**

@@ -18,8 +18,8 @@ class CreateStatusesTable extends Migration
 
             $table->unsignedInteger('account_id');
             $table->foreign('account_id')
-                  ->references('id')->on('accounts')
-                  ->onDelete('cascade');
+                ->references('id')->on('accounts')
+                ->onDelete('cascade');
 
             $table->unsignedBigInteger('status_id');
             $table->text('content');

@@ -22,7 +22,7 @@ class UserTest extends TestCase
 
     protected Account $account;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -45,7 +45,7 @@ class UserTest extends TestCase
      *
      * @return void
      */
-    public function testWelcome()
+    public function test_welcome()
     {
         $response = $this->actingAs($this->user)
             ->get('/');
@@ -54,14 +54,14 @@ class UserTest extends TestCase
         $response->assertSee('Timeline');
     }
 
-    public function testDontSeeWelcome()
+    public function test_dont_see_welcome()
     {
         $response = $this->get('/');
 
         $response->assertDontSee('Home');
     }
 
-    public function testHome()
+    public function test_home()
     {
         $response = $this->actingAs($this->user)
             ->get('/home');
@@ -70,7 +70,7 @@ class UserTest extends TestCase
         $response->assertSee('@test Account List');
     }
 
-    public function testHomeRedirect()
+    public function test_home_redirect()
     {
         $response = $this->get('/home');
 
@@ -78,7 +78,7 @@ class UserTest extends TestCase
         $response->assertRedirect('/login');
     }
 
-    public function testHomeShow()
+    public function test_home_show()
     {
         $statuses = Status::factory()->create([
             'account_id' => $this->account->id,
@@ -95,7 +95,7 @@ class UserTest extends TestCase
         $response->assertSeeLivewire('status-toggle');
     }
 
-    public function testHomeHide()
+    public function test_home_hide()
     {
         $statuses = Status::factory()->create([
             'account_id' => $this->account->id,
@@ -113,7 +113,7 @@ class UserTest extends TestCase
         $response->assertSeeLivewire('status-toggle');
     }
 
-    public function testTimeline()
+    public function test_timeline()
     {
         $response = $this->actingAs($this->user)
             ->get('/timeline');
@@ -122,7 +122,7 @@ class UserTest extends TestCase
         $response->assertSee('<tt-user-timeline', false);
     }
 
-    public function testTimelineAcct()
+    public function test_timeline_acct()
     {
         $response = $this->actingAs($this->user)
             ->get('/timeline/test@example.com');
@@ -131,14 +131,14 @@ class UserTest extends TestCase
         $response->assertSee('<tt-user-timeline', false);
     }
 
-    public function testDontSeeTimeline()
+    public function test_dont_see_timeline()
     {
         $response = $this->get('/timeline');
 
         $response->assertRedirect('/login');
     }
 
-    public function testTimelineAnother()
+    public function test_timeline_another()
     {
         $user2 = User::factory()->create([
             'name' => 'test2',
@@ -150,7 +150,7 @@ class UserTest extends TestCase
         $response->assertStatus(403);
     }
 
-    public function testUser()
+    public function test_user()
     {
         $response = $this->actingAs($this->user)
             ->get('/@test');
@@ -160,14 +160,14 @@ class UserTest extends TestCase
         $response->assertViewHas('statuses');
     }
 
-    public function testDontSeeUser()
+    public function test_dont_see_user()
     {
         $response = $this->get('/@test2');
 
         $response->assertStatus(404);
     }
 
-    public function testAccount()
+    public function test_account()
     {
         $response = $this->actingAs($this->user)
             ->get('/@test/test@example.com');
@@ -177,7 +177,7 @@ class UserTest extends TestCase
             ->assertDontSee('<script>test', false);
     }
 
-    public function testAccountAnother()
+    public function test_account_another()
     {
         $response = $this->get('/@test/test@example.com');
 
@@ -185,7 +185,7 @@ class UserTest extends TestCase
         $response->assertSee('test@example.com');
     }
 
-    public function testLockedAccount()
+    public function test_locked_account()
     {
         $accounts = Account::factory()->create([
             'user_id' => (int) $this->user->id,
@@ -203,7 +203,7 @@ class UserTest extends TestCase
         $response->assertSee('test2@example.com');
     }
 
-    public function testLockedAccountAnother()
+    public function test_locked_account_another()
     {
         $user2 = User::factory()->create([
             'name' => 'test2',
@@ -223,7 +223,7 @@ class UserTest extends TestCase
         //        $response->assertDontSee('Profile');
     }
 
-    public function testStatus()
+    public function test_status()
     {
         $statuses = Status::factory()->create([
             'account_id' => $this->account->id,
@@ -239,7 +239,7 @@ class UserTest extends TestCase
             ->assertDontSee('<script>test', false);
     }
 
-    public function testLockedStatusAnother()
+    public function test_locked_status_another()
     {
         $user2 = User::factory()->create();
 
@@ -263,7 +263,7 @@ class UserTest extends TestCase
         //        $response->assertDontSee('Profile');
     }
 
-    public function testDate()
+    public function test_date()
     {
         Carbon::setTestNow(Carbon::parse('2017-04-24'));
 
@@ -278,7 +278,7 @@ class UserTest extends TestCase
         $response->assertSee($statuses->content);
     }
 
-    public function testDateMonth()
+    public function test_date_month()
     {
         Carbon::setTestNow(Carbon::parse('2017-04-24'));
 
@@ -293,7 +293,7 @@ class UserTest extends TestCase
         $response->assertSee($statuses->content);
     }
 
-    public function testDateYear()
+    public function test_date_year()
     {
         Carbon::setTestNow(Carbon::parse('2017-04-24'));
 
@@ -308,7 +308,7 @@ class UserTest extends TestCase
         $response->assertSee($statuses->content);
     }
 
-    public function testLockedDate()
+    public function test_locked_date()
     {
         Carbon::setTestNow(Carbon::parse('2017-04-24'));
 
@@ -328,7 +328,7 @@ class UserTest extends TestCase
         $response->assertDontSee($statuses->content);
     }
 
-    public function testDateRedirect()
+    public function test_date_redirect()
     {
         Carbon::setTestNow(Carbon::parse('2017-04-24'));
 
@@ -344,14 +344,14 @@ class UserTest extends TestCase
             ->assertRedirect('/@test');
     }
 
-    public function testSitemap()
+    public function test_sitemap()
     {
         $response = $this->get('/sitemaps');
 
         $response->assertStatus(200);
     }
 
-    public function testPreferences()
+    public function test_preferences()
     {
         $response = $this->actingAs($this->user)
             ->get('/preferences');
@@ -359,14 +359,14 @@ class UserTest extends TestCase
         $response->assertSee('User Preferences');
     }
 
-    public function testDontSeePreferences()
+    public function test_dont_see_preferences()
     {
         $response = $this->get('/preferences');
 
         $response->assertRedirect('/login');
     }
 
-    public function testUpdatePreferences()
+    public function test_update_preferences()
     {
         $response = $this->actingAs($this->user)
             ->put('/preferences', [
@@ -379,7 +379,7 @@ class UserTest extends TestCase
             ->assertSee('User Preferences');
     }
 
-    public function testUpdatePreferencesFail()
+    public function test_update_preferences_fail()
     {
         $response = $this->actingAs($this->user)
             ->put('/preferences', [
@@ -390,7 +390,7 @@ class UserTest extends TestCase
             ->assertSessionHasErrors(['theme']);
     }
 
-    public function testSearchHome()
+    public function test_search_home()
     {
         $statuses = Status::factory()->create([
             'account_id' => $this->account->id,
@@ -403,7 +403,7 @@ class UserTest extends TestCase
         $response->assertViewHas('statuses');
     }
 
-    public function testSearchHomeEmpty()
+    public function test_search_home_empty()
     {
         $statuses = Status::factory()->create([
             'account_id' => $this->account->id,
@@ -417,7 +417,7 @@ class UserTest extends TestCase
         $response->assertDontSee('class="media"');
     }
 
-    public function testSearchAccount()
+    public function test_search_account()
     {
         $statuses = Status::factory()->create([
             'account_id' => $this->account->id,
@@ -430,7 +430,7 @@ class UserTest extends TestCase
         $response->assertViewHas('statuses');
     }
 
-    public function testUserTags()
+    public function test_user_tags()
     {
         $statuses = Status::factory()
             ->hasTags(1)
@@ -445,7 +445,7 @@ class UserTest extends TestCase
         $response->assertSee($statuses->tags()->first()->name);
     }
 
-    public function testTag()
+    public function test_tag()
     {
         $statuses = Status::factory()
             ->hasTags(1, [
@@ -463,7 +463,7 @@ class UserTest extends TestCase
         $response->assertSee($statuses->content);
     }
 
-    public function testLockedTag()
+    public function test_locked_tag()
     {
         $accounts = Account::factory()->create([
             'user_id' => $this->user->id,
@@ -484,7 +484,7 @@ class UserTest extends TestCase
         $response->assertDontSee($statuses->content);
     }
 
-    public function testArchives()
+    public function test_archives()
     {
         Carbon::setTestNow(Carbon::parse('2017-05-16'));
 

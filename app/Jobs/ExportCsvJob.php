@@ -31,9 +31,7 @@ class ExportCsvJob implements ShouldQueue
     /**
      * Create a new job instance.
      */
-    public function __construct(protected User $user)
-    {
-    }
+    public function __construct(protected User $user) {}
 
     /**
      * Execute the job.
@@ -55,7 +53,7 @@ class ExportCsvJob implements ShouldQueue
     {
         info('Export: '.$this->user->name.' / '.$account->acct);
 
-        $this->writer = Writer::createFromFileObject(new \SplTempFileObject());
+        $this->writer = Writer::createFromFileObject(new \SplTempFileObject);
 
         $this->writer->insertOne($this->header());
 

@@ -24,7 +24,7 @@ class AccountTest extends TestCase
 
     protected Collection $statuses;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -47,7 +47,7 @@ class AccountTest extends TestCase
         ]);
     }
 
-    public function testDestroy()
+    public function test_destroy()
     {
         $response = $this->actingAs($this->user)
             ->delete(route('accounts.delete', $this->account));
@@ -60,7 +60,7 @@ class AccountTest extends TestCase
             ->assertSessionHas('message');
     }
 
-    public function testDestroyAnother()
+    public function test_destroy_another()
     {
         $user2 = User::factory()->create();
 

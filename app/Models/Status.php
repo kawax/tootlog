@@ -11,8 +11,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Status extends Model
 {
-    use SoftDeletes;
     use HasFactory;
+    use SoftDeletes;
 
     protected $perPage = 20;
 

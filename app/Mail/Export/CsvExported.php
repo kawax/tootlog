@@ -15,12 +15,8 @@ class CsvExported extends Mailable implements ShouldQueue
 
     /**
      * Create a new message instance.
-     *
-     * @param  array  $files
      */
-    public function __construct(public array $files)
-    {
-    }
+    public function __construct(public array $files) {}
 
     /**
      * Build the message.
@@ -32,6 +28,6 @@ class CsvExported extends Mailable implements ShouldQueue
         }
 
         return $this->subject('[tootlog] export')
-                    ->text('emails.export');
+            ->text('emails.export');
     }
 }

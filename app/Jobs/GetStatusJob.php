@@ -28,9 +28,7 @@ class GetStatusJob implements ShouldQueue
     /**
      * Create a new job instance.
      */
-    public function __construct(protected Account $account)
-    {
-    }
+    public function __construct(protected Account $account) {}
 
     /**
      * Execute the job.

@@ -8,10 +8,6 @@ use Psr\Http\Message\ResponseInterface;
 
 class Header
 {
-    /**
-     * @param  ResponseInterface  $response
-     * @return string
-     */
     public static function since(ResponseInterface $response): string
     {
         if (! $response->hasHeader('Link')) {

@@ -18,12 +18,12 @@ class CreateAccountsTable extends Migration
 
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')
-                  ->references('id')->on('users')
-                  ->onDelete('cascade');
+                ->references('id')->on('users')
+                ->onDelete('cascade');
 
             $table->unsignedInteger('server_id');
             $table->foreign('server_id')
-                  ->references('id')->on('servers');
+                ->references('id')->on('servers');
 
             $table->unsignedInteger('account_id');
             $table->unsignedBigInteger('since_id')->nullable();

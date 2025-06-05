@@ -27,7 +27,7 @@ class OAuthTest extends TestCase
 
     protected Status $statuses;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -36,14 +36,14 @@ class OAuthTest extends TestCase
         $this->server = Server::first();
     }
 
-    public function tearDown(): void
+    protected function tearDown(): void
     {
         m::close();
 
         parent::tearDown();
     }
 
-    public function testAccountAddRedirect()
+    public function test_account_add_redirect()
     {
         $response = $this->actingAs($this->user)
             ->post(route('accounts.add'), ['domain' => 'https://example.com']);
@@ -51,7 +51,7 @@ class OAuthTest extends TestCase
         $response->assertStatus(302)->assertSessionHas('mastodon_domain');
     }
 
-    public function testAccountAddRedirectNewServer()
+    public function test_account_add_redirect_new_server()
     {
         Mastodon::shouldReceive('domain')->once()->andReturn(m::self());
         Mastodon::shouldReceive('createApp')->andReturn([
@@ -64,16 +64,16 @@ class OAuthTest extends TestCase
         $response = $this->actingAs($this->user)
             ->post(route('accounts.add'), ['domain' => 'https://example.org']);
 
-        //dd($response);
+        // dd($response);
         $response->assertStatus(302)->assertSessionHas('mastodon_domain');
     }
 
-    public function testAccountAddCallbackUpdate()
+    public function test_account_add_callback_update()
     {
         Bus::fake();
 
         Socialite::shouldReceive('driver->with->user')->once()->andReturn(
-            (new SocialiteUser())
+            (new SocialiteUser)
                 ->setRaw([
                     'url' => 'https://example.com/@test',
                 ])->setToken('test'),
@@ -94,12 +94,12 @@ class OAuthTest extends TestCase
         $response->assertRedirect('/home');
     }
 
-    public function testAccountAddCallbackStore()
+    public function test_account_add_callback_store()
     {
         Bus::fake();
 
         Socialite::shouldReceive('driver->with->user')->once()->andReturn(
-            (new SocialiteUser())
+            (new SocialiteUser)
                 ->setRaw([
                     'id' => '1',
                     'url' => 'https://example.com/@test',

@@ -14,7 +14,7 @@ class InstanceTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function testHttp()
+    public function test_http()
     {
         $response = $this->get(route('instances'));
 
@@ -22,7 +22,7 @@ class InstanceTest extends TestCase
             ->assertViewHas('instances');
     }
 
-    public function testJob()
+    public function test_job()
     {
         $server = Server::first();
 
@@ -47,7 +47,7 @@ class InstanceTest extends TestCase
         ]);
     }
 
-    public function testCommand()
+    public function test_command()
     {
         Bus::fake();
 

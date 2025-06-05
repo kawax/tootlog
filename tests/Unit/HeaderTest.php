@@ -13,7 +13,7 @@ class HeaderTest extends TestCase
      *
      * @return void
      */
-    public function testSince()
+    public function test_since()
     {
         $response = new Response(
             200,
@@ -24,7 +24,7 @@ class HeaderTest extends TestCase
         $this->assertEquals('7489740', Header::since($response));
     }
 
-    public function testMin()
+    public function test_min()
     {
         $response = new Response(
             200,

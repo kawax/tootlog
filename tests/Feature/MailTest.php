@@ -28,7 +28,7 @@ class MailTest extends TestCase
 
     protected Collection $statuses;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -51,7 +51,7 @@ class MailTest extends TestCase
         ]);
     }
 
-    public function testExportJob()
+    public function test_export_job()
     {
         Bus::fake();
 
@@ -63,7 +63,7 @@ class MailTest extends TestCase
         $response->assertSessionHas('export');
     }
 
-    public function testExportMail()
+    public function test_export_mail()
     {
         Mail::fake();
         Storage::fake('local');
@@ -82,7 +82,7 @@ class MailTest extends TestCase
         $response->assertSessionHas('export');
     }
 
-    public function testDontSeeExport()
+    public function test_dont_see_export()
     {
         $response = $this->post('/export/csv');
 

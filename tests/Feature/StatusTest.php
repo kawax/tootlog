@@ -28,7 +28,7 @@ class StatusTest extends TestCase
 
     protected Response $response;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -48,14 +48,14 @@ class StatusTest extends TestCase
         $this->response = new Response(200, [], 'body');
     }
 
-    public function tearDown(): void
+    protected function tearDown(): void
     {
         m::close();
 
         parent::tearDown();
     }
 
-    public function testGetStatusJob()
+    public function test_get_status_job()
     {
         $job = new GetStatusJob($this->account);
 
@@ -92,7 +92,7 @@ class StatusTest extends TestCase
         );
     }
 
-    public function testGetStatusJobDirect()
+    public function test_get_status_job_direct()
     {
         $job = new GetStatusJob($this->account);
 
@@ -129,7 +129,7 @@ class StatusTest extends TestCase
         );
     }
 
-    public function testGetStatusJobReblog()
+    public function test_get_status_job_reblog()
     {
         $job = new GetStatusJob($this->account);
 
@@ -189,7 +189,7 @@ class StatusTest extends TestCase
         );
     }
 
-    public function testGetStatusJobTag()
+    public function test_get_status_job_tag()
     {
         $job = new GetStatusJob($this->account);
 
@@ -250,7 +250,7 @@ class StatusTest extends TestCase
     /**
      * @expectedException
      */
-    public function testGetStatusJobException()
+    public function test_get_status_job_exception()
     {
         $job = new GetStatusJob($this->account);
 

@@ -19,7 +19,7 @@ class ArtisanTest extends TestCase
 
     protected Server $server;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -28,7 +28,7 @@ class ArtisanTest extends TestCase
         $this->server = Server::first();
     }
 
-    public function testGetStatuses()
+    public function test_get_statuses()
     {
         Bus::fake();
 
@@ -45,7 +45,7 @@ class ArtisanTest extends TestCase
         Bus::assertDispatched(GetStatusJob::class);
     }
 
-    public function testGetStatusesFails()
+    public function test_get_statuses_fails()
     {
         Bus::fake();
 

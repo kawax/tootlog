@@ -16,7 +16,7 @@ class AddReblogToStatuses extends Migration
         Schema::table('statuses', function (Blueprint $table) {
             $table->unsignedBigInteger('reblog_id')->nullable();
             $table->foreign('reblog_id')
-                  ->references('id')->on('reblogs');
+                ->references('id')->on('reblogs');
         });
     }
 
