@@ -1,6 +1,6 @@
 {
-  "_vendor-I_vUZAMc.js": {
-    "file": "assets/vendor-I_vUZAMc.js",
+  "_vendor-mObGwgmz.js": {
+    "file": "assets/vendor-mObGwgmz.js",
     "name": "vendor",
     "css": [
       "assets/vendor-tEMDA4pr.css"
@@ -33,15 +33,15 @@
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2"
   },
   "resources/js/app.ts": {
-    "file": "assets/app-BJbUC31f.js",
+    "file": "assets/app-1q7w1G-u.js",
     "name": "app",
     "src": "resources/js/app.ts",
     "isEntry": true,
     "imports": [
-      "_vendor-I_vUZAMc.js"
+      "_vendor-mObGwgmz.js"
     ],
     "css": [
-      "assets/app-CmTjmJ-w.css"
+      "assets/app-DK_cOU3U.css"
     ]
   }
 }
