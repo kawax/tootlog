@@ -5,7 +5,7 @@ on:
     branches:
       - develop
       - main
-      - mater
+      - master
   pull_request:
     branches:
       - develop
