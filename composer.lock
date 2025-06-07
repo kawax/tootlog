@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.344.1",
+            "version": "3.344.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "7ff4b73f2d6550949be14b8822e100963e068705"
+                "reference": "3a6aaaea75f4605f89aa57ad63b9a077bf01e1e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/7ff4b73f2d6550949be14b8822e100963e068705",
-                "reference": "7ff4b73f2d6550949be14b8822e100963e068705",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/3a6aaaea75f4605f89aa57ad63b9a077bf01e1e5",
+                "reference": "3a6aaaea75f4605f89aa57ad63b9a077bf01e1e5",
                 "shasum": ""
             },
             "require": {
@@ -153,9 +153,9 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.344.1"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.344.2"
             },
-            "time": "2025-06-05T18:09:40+00:00"
+            "time": "2025-06-06T18:14:42+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -4519,25 +4519,28 @@
         },
         {
             "name": "revolution/laravel-mastodon-api",
-            "version": "3.3.0",
+            "version": "3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/invokable/laravel-mastodon-api.git",
-                "reference": "bcea5f540b20300afc61bb8ef4c9e3f0b0a508cc"
+                "reference": "83678c6a3deb0131cbdfc2e2d82178792874678f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/invokable/laravel-mastodon-api/zipball/bcea5f540b20300afc61bb8ef4c9e3f0b0a508cc",
-                "reference": "bcea5f540b20300afc61bb8ef4c9e3f0b0a508cc",
+                "url": "https://api.github.com/repos/invokable/laravel-mastodon-api/zipball/83678c6a3deb0131cbdfc2e2d82178792874678f",
+                "reference": "83678c6a3deb0131cbdfc2e2d82178792874678f",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "illuminate/http": "^11.0||^12.0",
-                "php": "^8.2"
+                "php": "^8.2",
+                "revolution/laravel-notification-mastodon": "^3.5",
+                "revolution/socialite-mastodon": "^1.5"
             },
             "require-dev": {
-                "orchestra/testbench": "^9.0"
+                "laravel/pint": "^1.22",
+                "orchestra/testbench": "^10.0"
             },
             "type": "library",
             "extra": {
@@ -4571,7 +4574,7 @@
                 "mastodon"
             ],
             "support": {
-                "source": "https://github.com/invokable/laravel-mastodon-api/tree/3.3.0"
+                "source": "https://github.com/invokable/laravel-mastodon-api/tree/3.4.0"
             },
             "funding": [
                 {
@@ -4579,7 +4582,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-02-23T03:38:42+00:00"
+            "time": "2025-06-07T02:44:41+00:00"
         },
         {
             "name": "revolution/laravel-namespaced-helpers",
@@ -4638,17 +4641,73 @@
             "time": "2025-02-18T03:46:38+00:00"
         },
         {
-            "name": "revolution/socialite-mastodon",
-            "version": "1.5.2",
+            "name": "revolution/laravel-notification-mastodon",
+            "version": "3.5.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/invokable/socialite-mastodon.git",
-                "reference": "2013943f9258b247215dc342504c016c33535e8e"
+                "url": "https://github.com/invokable/laravel-notification-mastodon.git",
+                "reference": "80a9db9a11f838e689af67490e1b336cb6bd9881"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/invokable/socialite-mastodon/zipball/2013943f9258b247215dc342504c016c33535e8e",
-                "reference": "2013943f9258b247215dc342504c016c33535e8e",
+                "url": "https://api.github.com/repos/invokable/laravel-notification-mastodon/zipball/80a9db9a11f838e689af67490e1b336cb6bd9881",
+                "reference": "80a9db9a11f838e689af67490e1b336cb6bd9881",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/notifications": "^11.0||^12.0",
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.22",
+                "orchestra/testbench": "^10.3",
+                "revolution/laravel-mastodon-api": "^3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Revolution\\Laravel\\Notification\\Mastodon\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "kawax",
+                    "email": "kawaxbiz@gmail.com"
+                }
+            ],
+            "description": "Laravel Notification for Mastodon",
+            "keywords": [
+                "laravel",
+                "mastodon",
+                "notification"
+            ],
+            "support": {
+                "source": "https://github.com/invokable/laravel-notification-mastodon/tree/3.5.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/invokable",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-06-07T02:42:59+00:00"
+        },
+        {
+            "name": "revolution/socialite-mastodon",
+            "version": "1.5.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/invokable/socialite-mastodon.git",
+                "reference": "f27b6dff55d03bc62170c6287b8a1a721e22277e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/invokable/socialite-mastodon/zipball/f27b6dff55d03bc62170c6287b8a1a721e22277e",
+                "reference": "f27b6dff55d03bc62170c6287b8a1a721e22277e",
                 "shasum": ""
             },
             "require": {
@@ -4657,7 +4716,8 @@
                 "php": "^8.0"
             },
             "require-dev": {
-                "orchestra/testbench": "^9.0",
+                "laravel/pint": "^1.22",
+                "orchestra/testbench": "^9.0||^10.0",
                 "revolution/laravel-mastodon-api": "^3.1"
             },
             "type": "library",
@@ -4690,7 +4750,7 @@
                 "socialite"
             ],
             "support": {
-                "source": "https://github.com/invokable/socialite-mastodon/tree/1.5.2"
+                "source": "https://github.com/invokable/socialite-mastodon/tree/1.5.3"
             },
             "funding": [
                 {
@@ -4698,7 +4758,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-10-02T08:20:07+00:00"
+            "time": "2025-06-07T01:38:55+00:00"
         },
         {
             "name": "spatie/browsershot",
