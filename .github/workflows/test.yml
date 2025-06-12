@@ -3,7 +3,6 @@ name: test
 on:
   push:
   pull_request:
-    types: [opened, synchronize]
 
 permissions:
   id-token: write
