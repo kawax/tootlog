@@ -14,3 +14,4 @@ Vagrantfile
 /after.sh
 /public/vendor/horizon
 /.phpunit.cache
+/build
