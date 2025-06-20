@@ -15,3 +15,4 @@ Vagrantfile
 /public/vendor/horizon
 /.phpunit.cache
 /build
+/.claude/settings.local.json
