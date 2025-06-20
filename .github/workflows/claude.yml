@@ -1,4 +1,4 @@
-name: Claude PR Action
+name: Claude Code Action
 
 permissions:
   contents: write
@@ -15,7 +15,7 @@ on:
     types: [opened, assigned]
 
 jobs:
-  claude-pr:
+  claude-code:
     if: |
       (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||
       (github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '@claude')) ||
