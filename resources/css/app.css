@@ -7,9 +7,6 @@
 @import '@fortawesome/fontawesome-free/css/solid.css';
 @import '@fortawesome/fontawesome-free/css/v4-shims.css';
 
-/* Fonts */
-@import url('//fonts.googleapis.com/css?family=Nunito:200,600');
-
 @font-face {
   font-family: "Noto Sans CJK JP";
   font-style: normal;
