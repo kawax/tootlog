@@ -5,7 +5,7 @@
         <livewire:footer-info lazy></livewire:footer-info>
 
         <div class="my-3">
-            <a href="https://github.com/kawax/tootlog" target="_blank" rel="noopener noreferrer">GitHub</a> |
+            <a href="https://github.com/kawax/tootlog" target="_blank">GitHub</a> |
             <a href="{{ route('usage.jp') }}">使い方</a> |
             <a href="{{ route('usage.en') }}">How to Use</a>
         </div>
