@@ -1,6 +1,12 @@
 /* Bootstrap CSS */
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
+/* FontAwesome CSS */
+@import '@fortawesome/fontawesome-free/css/fontawesome.css';
+@import '@fortawesome/fontawesome-free/css/regular.css';
+@import '@fortawesome/fontawesome-free/css/solid.css';
+@import '@fortawesome/fontawesome-free/css/v4-shims.css';
+
 /* Fonts */
 @import url('//fonts.googleapis.com/css?family=Nunito:200,600');
 
