@@ -17,7 +17,7 @@
 
     @livewireStyles
 
-    @vite(['resources/js/app.ts'])
+    @vite(['resources/css/app.css', 'resources/js/app.ts'])
 
     <meta name="google-site-verification" content="AjfwegofAkFuyDlrRBsMo8k4y6rpfEri5Qjd7uz3PbQ">
 </head>
