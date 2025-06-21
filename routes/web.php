@@ -38,4 +38,6 @@ Route::view('/', 'welcome')->name('welcome');
 
 Route::view('usage', 'pages.usage');
 
+Route::view('en/usage', 'pages.en.usage');
+
 require __DIR__.'/open.php';
