@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Tootlog is a Laravel 12.18 application that archives and displays Mastodon statuses. It allows users to authenticate with Mastodon instances, import their toots, and browse them in various ways.
+Tootlog is a Laravel application that archives and displays Mastodon statuses. It allows users to authenticate with Mastodon instances, import their toots, and browse them in various ways.
 
 ## Development Commands
 
