@@ -36,8 +36,8 @@ Route::get('sitemaps', SitemapController::class);
 
 Route::view('/', 'welcome')->name('welcome');
 
-Route::view('usage', 'pages.usage');
+Route::view('usage', 'pages.usage')->name('usage.jp');
 
-Route::view('usage-en', 'pages.en.usage');
+Route::view('en/usage', 'pages.en.usage')->name('usage.en');
 
 require __DIR__.'/open.php';

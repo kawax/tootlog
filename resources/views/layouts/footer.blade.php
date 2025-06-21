@@ -6,8 +6,8 @@
 
         <div>
             <a href="https://github.com/kawax/tootlog" target="_blank" rel="noopener noreferrer">GitHub</a> |
-            <a href="{{ url('/usage') }}">使い方</a> |
-            <a href="{{ url('/usage-en') }}">How to Use</a> |
+            <a href="{{ route('usage.jp') }}">使い方</a> |
+            <a href="{{ route('usage.en') }}">How to Use</a>
         </div>
     </div>
 </footer>
