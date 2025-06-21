@@ -1,4 +1,4 @@
-<footer class="bg-white border-top">
+<footer class="bg-white border-top mb-5">
     <div class="container text-center">
         <div class="text-muted">tootlog {{ config('tootlog.version') }}</div>
 
