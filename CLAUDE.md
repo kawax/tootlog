@@ -64,6 +64,14 @@ Tootlog is a Laravel application that archives and displays Mastodon statuses. I
 - Vite for asset bundling
 - Livewire for server-side reactive components
 
+### Development Tools
+- **Code Style**: Laravel Pint
+- **Testing**: PHPUnit 11+
+- **Local Development**: Laravel Sail
+- **CI/CD**: GitHub Actions
+- **Deployment**: Laravel Forge
+- **Monitoring**: Laravel Horizon for queues
+- 
 ### Key Features
 - Timeline views with infinite scroll
 - Archive browsing by date
