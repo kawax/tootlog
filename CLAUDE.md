@@ -32,6 +32,13 @@ Tootlog is a Laravel application that archives and displays Mastodon statuses. I
 - `php artisan migrate` - Run database migrations
 - `php artisan horizon` - Start Horizon queue worker for processing jobs
 
+### Pre-commit Checks
+**IMPORTANT**: Always run these commands before committing changes:
+- `php artisan test` - Ensure all tests pass
+- `php artisan pint` - Format code according to project standards
+
+These checks help maintain code quality and prevent CI failures.
+
 ## Architecture Overview
 
 ### Core Models
