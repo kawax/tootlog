@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.356.3",
+            "version": "3.356.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "9c61b26408664c76d51101381bb64feda9bcfe2e"
+                "reference": "7bdc3c73897ae576f7d137dad70bddcd03bd4bd6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/9c61b26408664c76d51101381bb64feda9bcfe2e",
-                "reference": "9c61b26408664c76d51101381bb64feda9bcfe2e",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/7bdc3c73897ae576f7d137dad70bddcd03bd4bd6",
+                "reference": "7bdc3c73897ae576f7d137dad70bddcd03bd4bd6",
                 "shasum": ""
             },
             "require": {
@@ -153,9 +153,9 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.356.3"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.356.4"
             },
-            "time": "2025-08-22T18:13:45+00:00"
+            "time": "2025-08-25T18:21:17+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -1373,16 +1373,16 @@
         },
         {
             "name": "laravel/fortify",
-            "version": "v1.28.0",
+            "version": "v1.29.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/fortify.git",
-                "reference": "138d9790081343d4c4357daa5425790cd7f6bd82"
+                "reference": "7f334449341219633acf40993461585ae5178d14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/fortify/zipball/138d9790081343d4c4357daa5425790cd7f6bd82",
-                "reference": "138d9790081343d4c4357daa5425790cd7f6bd82",
+                "url": "https://api.github.com/repos/laravel/fortify/zipball/7f334449341219633acf40993461585ae5178d14",
+                "reference": "7f334449341219633acf40993461585ae5178d14",
                 "shasum": ""
             },
             "require": {
@@ -1434,7 +1434,7 @@
                 "issues": "https://github.com/laravel/fortify/issues",
                 "source": "https://github.com/laravel/fortify"
             },
-            "time": "2025-07-22T15:26:32+00:00"
+            "time": "2025-08-14T21:50:18+00:00"
         },
         {
             "name": "laravel/framework",
@@ -4960,16 +4960,16 @@
         },
         {
             "name": "spatie/laravel-sitemap",
-            "version": "7.3.6",
+            "version": "7.3.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-sitemap.git",
-                "reference": "506b2acdd350c7ff868a7711b4f30e486b20e9b0"
+                "reference": "077b36c64bc4f373f4d95a1ac6ee1c0624acfdd3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-sitemap/zipball/506b2acdd350c7ff868a7711b4f30e486b20e9b0",
-                "reference": "506b2acdd350c7ff868a7711b4f30e486b20e9b0",
+                "url": "https://api.github.com/repos/spatie/laravel-sitemap/zipball/077b36c64bc4f373f4d95a1ac6ee1c0624acfdd3",
+                "reference": "077b36c64bc4f373f4d95a1ac6ee1c0624acfdd3",
                 "shasum": ""
             },
             "require": {
@@ -5021,7 +5021,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-sitemap/tree/7.3.6"
+                "source": "https://github.com/spatie/laravel-sitemap/tree/7.3.7"
             },
             "funding": [
                 {
@@ -5029,7 +5029,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2025-04-10T12:13:41+00:00"
+            "time": "2025-08-25T08:07:09+00:00"
         },
         {
             "name": "spatie/robots-txt",
