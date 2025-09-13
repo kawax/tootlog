@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.356.15",
+            "version": "3.356.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "ee8e1516b950e33c617ac17d6352ec5421253cff"
+                "reference": "d0357fbe2535bb7d832e594a4ff2ff8da29d229c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/ee8e1516b950e33c617ac17d6352ec5421253cff",
-                "reference": "ee8e1516b950e33c617ac17d6352ec5421253cff",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/d0357fbe2535bb7d832e594a4ff2ff8da29d229c",
+                "reference": "d0357fbe2535bb7d832e594a4ff2ff8da29d229c",
                 "shasum": ""
             },
             "require": {
@@ -84,7 +84,7 @@
                 "guzzlehttp/psr7": "^2.4.5",
                 "mtdowling/jmespath.php": "^2.8.0",
                 "php": ">=8.1",
-                "psr/http-message": "^2.0"
+                "psr/http-message": "^1.0 || ^2.0"
             },
             "require-dev": {
                 "andrewsville/php-token-reflection": "^1.4",
@@ -153,9 +153,9 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.356.15"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.356.17"
             },
-            "time": "2025-09-10T18:05:36+00:00"
+            "time": "2025-09-12T18:07:37+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -2184,16 +2184,16 @@
         },
         {
             "name": "league/csv",
-            "version": "9.24.1",
+            "version": "9.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/csv.git",
-                "reference": "e0221a3f16aa2a823047d59fab5809d552e29bc8"
+                "reference": "f856f532866369fb1debe4e7c5a1db185f40ef86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/csv/zipball/e0221a3f16aa2a823047d59fab5809d552e29bc8",
-                "reference": "e0221a3f16aa2a823047d59fab5809d552e29bc8",
+                "url": "https://api.github.com/repos/thephpleague/csv/zipball/f856f532866369fb1debe4e7c5a1db185f40ef86",
+                "reference": "f856f532866369fb1debe4e7c5a1db185f40ef86",
                 "shasum": ""
             },
             "require": {
@@ -2209,7 +2209,7 @@
                 "phpstan/phpstan-deprecation-rules": "^1.2.1",
                 "phpstan/phpstan-phpunit": "^1.4.2",
                 "phpstan/phpstan-strict-rules": "^1.6.2",
-                "phpunit/phpunit": "^10.5.16 || ^11.5.22",
+                "phpunit/phpunit": "^10.5.16 || ^11.5.22 || ^12.3.6",
                 "symfony/var-dumper": "^6.4.8 || ^7.3.0"
             },
             "suggest": {
@@ -2271,7 +2271,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-06-25T14:53:51+00:00"
+            "time": "2025-09-11T08:29:08+00:00"
         },
         {
             "name": "league/flysystem",
@@ -9607,16 +9607,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "11.5.36",
+            "version": "11.5.38",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "264a87c7ef68b1ab9af7172357740dc266df5957"
+                "reference": "5bd0e4f64a2261b7ade7054c51547beaf2d99e43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/264a87c7ef68b1ab9af7172357740dc266df5957",
-                "reference": "264a87c7ef68b1ab9af7172357740dc266df5957",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/5bd0e4f64a2261b7ade7054c51547beaf2d99e43",
+                "reference": "5bd0e4f64a2261b7ade7054c51547beaf2d99e43",
                 "shasum": ""
             },
             "require": {
@@ -9688,7 +9688,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.36"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.38"
             },
             "funding": [
                 {
@@ -9712,7 +9712,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-09-03T06:24:17+00:00"
+            "time": "2025-09-11T10:34:07+00:00"
         },
         {
             "name": "revolution/sail-db-backup",
