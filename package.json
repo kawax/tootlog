@@ -10,7 +10,7 @@
         "@popperjs/core": "^2.11.5",
         "@twemoji/api": "^15.0",
         "@vitejs/plugin-vue": "^6.0.0",
-        "@vueuse/core": "^12.7.0",
+        "@vueuse/core": "^14.0.0",
         "autoprefixer": "^10.4.7",
         "bootstrap": "^5.2.2",
         "laravel-vite-plugin": "^2.0",
