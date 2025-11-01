@@ -69,7 +69,8 @@
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
             "@php artisan ide-helper:meta",
-            "@php artisan ide-helper:generate"
+            "@php artisan ide-helper:generate",
+            "@php artisan boost:update"
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate"
