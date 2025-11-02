@@ -1,11 +1,13 @@
 {
     "agents": [
-        "copilot-cli"
+        "copilot"
     ],
     "editors": [
-        "copilot-cli"
+        "copilot-cli",
+        "phpstorm-copilot"
     ],
     "guidelines": [
-        "laravel/fortify"
+        "laravel/fortify",
+        "revolution/laravel-boost-phpstorm-copilot"
     ]
 }
