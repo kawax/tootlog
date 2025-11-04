@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.359.3",
+            "version": "3.359.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "a32e4c9522f0b61c947fafa1713d3a24b397a757"
+                "reference": "510cb4b7e2fa3ea09ad2154e7a13fe7675c36b30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/a32e4c9522f0b61c947fafa1713d3a24b397a757",
-                "reference": "a32e4c9522f0b61c947fafa1713d3a24b397a757",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/510cb4b7e2fa3ea09ad2154e7a13fe7675c36b30",
+                "reference": "510cb4b7e2fa3ea09ad2154e7a13fe7675c36b30",
                 "shasum": ""
             },
             "require": {
@@ -153,9 +153,9 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.359.3"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.359.4"
             },
-            "time": "2025-10-31T18:15:22+00:00"
+            "time": "2025-11-03T19:18:23+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -9859,16 +9859,16 @@
         },
         {
             "name": "revolution/laravel-boost-copilot-cli",
-            "version": "1.0.4",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/invokable/laravel-boost-copilot-cli.git",
-                "reference": "75ab363b6866507fc70566e126a7e1dc6fae88b7"
+                "reference": "97c00c9692fac5e3c8fb73c12495d442dc051c27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/invokable/laravel-boost-copilot-cli/zipball/75ab363b6866507fc70566e126a7e1dc6fae88b7",
-                "reference": "75ab363b6866507fc70566e126a7e1dc6fae88b7",
+                "url": "https://api.github.com/repos/invokable/laravel-boost-copilot-cli/zipball/97c00c9692fac5e3c8fb73c12495d442dc051c27",
+                "reference": "97c00c9692fac5e3c8fb73c12495d442dc051c27",
                 "shasum": ""
             },
             "require": {
@@ -9916,7 +9916,7 @@
                 "laravel"
             ],
             "support": {
-                "source": "https://github.com/invokable/laravel-boost-copilot-cli/tree/1.0.4"
+                "source": "https://github.com/invokable/laravel-boost-copilot-cli/tree/1.0.5"
             },
             "funding": [
                 {
@@ -9924,7 +9924,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-11-02T02:06:01+00:00"
+            "time": "2025-11-03T12:17:48+00:00"
         },
         {
             "name": "revolution/laravel-boost-phpstorm-copilot",
