@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "52d236516452a6188c2cefab1cc38bde",
+    "content-hash": "ebbf5f4cbdb8ce4d1800fb10ec76e5ed",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -9928,16 +9928,16 @@
         },
         {
             "name": "revolution/laravel-boost-phpstorm-copilot",
-            "version": "0.1.7",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/invokable/laravel-boost-phpstorm-copilot.git",
-                "reference": "c8af128d5a3de65a31355591d1f39aee96938b61"
+                "reference": "c14e7bad5d51950d2f10021f96e979b38c5c14a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/invokable/laravel-boost-phpstorm-copilot/zipball/c8af128d5a3de65a31355591d1f39aee96938b61",
-                "reference": "c8af128d5a3de65a31355591d1f39aee96938b61",
+                "url": "https://api.github.com/repos/invokable/laravel-boost-phpstorm-copilot/zipball/c14e7bad5d51950d2f10021f96e979b38c5c14a5",
+                "reference": "c14e7bad5d51950d2f10021f96e979b38c5c14a5",
                 "shasum": ""
             },
             "require": {
@@ -9986,7 +9986,7 @@
                 "phpstorm"
             ],
             "support": {
-                "source": "https://github.com/invokable/laravel-boost-phpstorm-copilot/tree/0.1.7"
+                "source": "https://github.com/invokable/laravel-boost-phpstorm-copilot/tree/1.0.0"
             },
             "funding": [
                 {
@@ -9994,7 +9994,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-11-05T01:13:58+00:00"
+            "time": "2025-11-05T02:15:30+00:00"
         },
         {
             "name": "revolution/sail-db-backup",
