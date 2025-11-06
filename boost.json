@@ -8,6 +8,7 @@
     ],
     "guidelines": [
         "laravel/fortify",
-        "revolution/laravel-boost-phpstorm-copilot"
+        "revolution/laravel-boost-phpstorm-copilot",
+        "revolution/laravel-boost-copilot-cli"
     ]
 }

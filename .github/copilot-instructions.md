@@ -785,6 +785,19 @@ Fortify is a headless authentication backend that provides authentication routes
 - `Features::resetPasswords()` for password reset via email.
 
 
+=== revolution/laravel-boost-copilot-cli rules ===
+
+## Laravel Boost for GitHub Copilot CLI
+
+### MCP Configuration File Required
+- If you cannot see the `laravel-boost` MCP server or tools, the user has likely forgotten to specify the MCP configuration file when starting Copilot CLI.
+- Instruct the user to restart Copilot CLI with the correct command:
+  ```
+  copilot --additional-mcp-config @.github/mcp-config.json --continue
+  ```
+- The `--additional-mcp-config` option is **required** for every Copilot CLI session to access Laravel Boost MCP tools.
+
+
 === revolution/laravel-boost-phpstorm-copilot rules ===
 
 ## PhpStorm with GitHub Copilot Plugin
