@@ -41,7 +41,7 @@ Welcome to the tootlog project! This guide will help GitHub Copilot understand t
 - **CSS Framework**: Bootstrap 5.2+
 - **JavaScript**: Vue 3 with Vite
 - **Interactive Components**: Livewire 3
-- **Icons**: Font Awesome 6
+- **Icons**: Font Awesome 7
 - **Emoji**: Twemoji API
 
 ### Development Tools
