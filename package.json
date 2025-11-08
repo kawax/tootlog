@@ -8,7 +8,7 @@
     "devDependencies": {
         "@fortawesome/fontawesome-free": "^7.1.0",
         "@popperjs/core": "^2.11.5",
-        "@twemoji/api": "^16.0",
+        "@twemoji/api": "^17.0",
         "@vitejs/plugin-vue": "^6.0.0",
         "@vueuse/core": "^14.0.0",
         "autoprefixer": "^10.4.7",
