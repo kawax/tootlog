@@ -9871,16 +9871,16 @@
         },
         {
             "name": "revolution/laravel-boost-copilot-cli",
-            "version": "1.0.16",
+            "version": "1.0.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/invokable/laravel-boost-copilot-cli.git",
-                "reference": "b49fcc5ad74efb6bf20b3bb0b04fe38a3a520725"
+                "reference": "e8ae47ff8c2dfc495dc61cc0663c575cbd00f57e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/invokable/laravel-boost-copilot-cli/zipball/b49fcc5ad74efb6bf20b3bb0b04fe38a3a520725",
-                "reference": "b49fcc5ad74efb6bf20b3bb0b04fe38a3a520725",
+                "url": "https://api.github.com/repos/invokable/laravel-boost-copilot-cli/zipball/e8ae47ff8c2dfc495dc61cc0663c575cbd00f57e",
+                "reference": "e8ae47ff8c2dfc495dc61cc0663c575cbd00f57e",
                 "shasum": ""
             },
             "require": {
@@ -9929,7 +9929,7 @@
                 "laravel"
             ],
             "support": {
-                "source": "https://github.com/invokable/laravel-boost-copilot-cli/tree/1.0.16"
+                "source": "https://github.com/invokable/laravel-boost-copilot-cli/tree/1.0.17"
             },
             "funding": [
                 {
@@ -9937,20 +9937,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-11-08T02:31:10+00:00"
+            "time": "2025-11-09T04:54:09+00:00"
         },
         {
             "name": "revolution/laravel-boost-phpstorm-copilot",
-            "version": "1.0.2",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/invokable/laravel-boost-phpstorm-copilot.git",
-                "reference": "a227818fd58eea34663c34b1d8cce40ddfb8aaf7"
+                "reference": "89865512d8c376ea5bc417b06dcb13fc92ef62d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/invokable/laravel-boost-phpstorm-copilot/zipball/a227818fd58eea34663c34b1d8cce40ddfb8aaf7",
-                "reference": "a227818fd58eea34663c34b1d8cce40ddfb8aaf7",
+                "url": "https://api.github.com/repos/invokable/laravel-boost-phpstorm-copilot/zipball/89865512d8c376ea5bc417b06dcb13fc92ef62d5",
+                "reference": "89865512d8c376ea5bc417b06dcb13fc92ef62d5",
                 "shasum": ""
             },
             "require": {
@@ -10001,7 +10001,7 @@
                 "phpstorm"
             ],
             "support": {
-                "source": "https://github.com/invokable/laravel-boost-phpstorm-copilot/tree/1.0.2"
+                "source": "https://github.com/invokable/laravel-boost-phpstorm-copilot/tree/1.0.4"
             },
             "funding": [
                 {
@@ -10009,7 +10009,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-11-08T07:20:54+00:00"
+            "time": "2025-11-09T04:06:37+00:00"
         },
         {
             "name": "revolution/sail-db-backup",
