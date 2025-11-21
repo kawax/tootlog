@@ -10,7 +10,7 @@ jobs:
     secrets:
       token: ${{ secrets.GITHUB_TOKEN }}
     with:
-      php: latest
+      php: 8.4
       git-name: kawax
       git-email: 1502086+kawax@users.noreply.github.com
   npm:
