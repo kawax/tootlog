@@ -1,6 +1,6 @@
 <?php
 
-use function Revolution\Illuminate\Support\env;
+use Illuminate\Support\Str;
 
 return [
 
@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('CACHE_DRIVER', 'file'),
+    'default' => env('CACHE_STORE', 'database'),
 
     /*
     |--------------------------------------------------------------------------
@@ -26,8 +26,9 @@ return [
     | well as their drivers. You may even define multiple stores for the
     | same cache driver to group types of items stored in your caches.
     |
-    | Supported drivers: "apc", "array", "database", "file", "memcached",
-    |                    "redis", "dynamodb", "octane", "null"
+    | Supported drivers: "array", "database", "file", "memcached",
+    |                    "redis", "dynamodb", "octane",
+    |                    "failover", "null"
     |
     */
 
@@ -40,9 +41,10 @@ return [
 
         'database' => [
             'driver' => 'database',
-            'table' => env('DB_CACHE_TABLE', 'cache'),
             'connection' => env('DB_CACHE_CONNECTION'),
+            'table' => env('DB_CACHE_TABLE', 'cache'),
             'lock_connection' => env('DB_CACHE_LOCK_CONNECTION'),
+            'lock_table' => env('DB_CACHE_LOCK_TABLE'),
         ],
 
         'file' => [
@@ -89,6 +91,14 @@ return [
             'driver' => 'octane',
         ],
 
+        'failover' => [
+            'driver' => 'failover',
+            'stores' => [
+                'database',
+                'array',
+            ],
+        ],
+
     ],
 
     /*
@@ -96,12 +106,12 @@ return [
     | Cache Key Prefix
     |--------------------------------------------------------------------------
     |
-    | When utilizing a RAM based store such as APC or Memcached, there might
-    | be other applications utilizing the same cache. So, we'll specify a
-    | value to get prefixed to all our keys so we can avoid collisions.
+    | When utilizing the APC, database, memcached, Redis, and DynamoDB cache
+    | stores, there might be other applications using the same cache. For
+    | that reason, you may prefix every cache key to avoid collisions.
     |
     */
 
-    'prefix' => 'tootlog',
+    'prefix' => env('CACHE_PREFIX', Str::slug((string) env('APP_NAME', 'laravel')).'-cache-'),
 
 ];

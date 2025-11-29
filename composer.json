@@ -27,6 +27,7 @@
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^3.0",
         "fakerphp/faker": "^1.9.1",
+        "laravel/pail": "^1.2.2",
         "itsgoingd/clockwork": "^5.0",
         "laravel/pint": "^1.22",
         "laravel/sail": "^1.0.1",
@@ -61,17 +62,36 @@
         "optimize-autoloader": true,
         "platform": {
             "ext-exif": "1.0.0"
+        },
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": true
         }
     },
     "scripts": {
+        "setup": [
+            "composer install",
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
+            "@php artisan key:generate",
+            "@php artisan migrate --force",
+            "npm install",
+            "npm run build"
+        ],
+        "dev": [
+            "Composer\\Config::disableProcessTimeout",
+            "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite --kill-others"
+        ],
+        "test": [
+            "@php artisan config:clear --ansi",
+            "@php artisan test"
+        ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
             "@php artisan ide-helper:meta",
-            "@php artisan ide-helper:generate",
-            "@php artisan boost:update"
+            "@php artisan ide-helper:generate"
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate"
@@ -80,6 +100,10 @@
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
         ],
+        "pre-package-uninstall": [
+            "Illuminate\\Foundation\\ComposerScripts::prePackageUninstall"
+        ],
+        "boost": "@php artisan boost:update --ansi",
         "ide-helper:meta": "php artisan ide-helper:meta",
         "ide-helper:generate": "php artisan ide-helper:generate",
         "ide-helper:models": "sail artisan ide-helper:models -N",

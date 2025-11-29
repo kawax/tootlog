@@ -12,9 +12,9 @@ trait WithUserArchives
     public function openRecents(): Collection
     {
         return cache()->remember('recents/open/'.$this->id, now()->addDay(), function () {
-            $date_format = app()->runningUnitTests()
-                ? 'STRFTIME("%Y-%m-%d", statuses.created_at)'
-                : 'DATE_FORMAT(statuses.created_at,"%Y-%m-%d")';
+            $date_format = app()->isProduction()
+                ? 'DATE_FORMAT(statuses.created_at,"%Y-%m-%d")'
+                : 'STRFTIME("%Y-%m-%d", statuses.created_at)';
 
             return $this->statuses()
                 ->select(['statuses.id', 'statuses.created_at', 'statuses.account_id'])
