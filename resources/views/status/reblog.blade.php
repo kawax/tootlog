@@ -10,7 +10,8 @@
     <div class="p-4">
         <div class="flex gap-3">
             <div class="shrink-0">
-                <a href="{{ $status->reblog->account_url }}" class="no-underline" target="_blank" rel="nofollow noopener">
+                <a href="{{ $status->reblog->account_url }}" class="no-underline" target="_blank"
+                   rel="nofollow noopener">
                     <img class="rounded max-w-24"
                          src="{{ $status->reblog->avatar }}"
                          alt="{{ $status->reblog->name }}"
@@ -19,7 +20,8 @@
             </div>
             <div class="flex-1">
                 <h4 class="text-lg font-semibold mb-1">
-                    <a href="{{ $status->reblog->account_url }}" class="no-underline" target="_blank" rel="nofollow noopener">{{ $status->reblog->name }}</a>
+                    <a href="{{ $status->reblog->account_url }}" class="no-underline" target="_blank"
+                       rel="nofollow noopener">{{ $status->reblog->name }}</a>
                     <small class="text-gray-500 font-normal">{{ $status->reblog->acct }}</small>
                 </h4>
 
@@ -46,17 +48,18 @@
                     </a>
                 </div>
 
-                <div class="text-sm text-gray-600">
-{{--                    <a href="{{ route('open.account.show', [--}}
-{{--                            'user' => $user,--}}
-{{--                            'username' => $status->account->username,--}}
-{{--                            'domain' => $status->account->domain,--}}
-{{--                            'status_id' => $status->status_id--}}
-{{--                            ]) }}" class="no-underline">--}}
-{{--                        {{ $status->account->acct . '/' . $status->status_id }}--}}
-
-{{--                    </a>--}}
-                </div>
+                @if(filled($status->account->user))
+                    <div class="text-sm text-gray-600">
+                        <a href="{{ route('open.account.show', [
+                            'user' => $status->account->user,
+                            'username' => $status->account->username,
+                            'domain' => $status->account->domain,
+                            'status_id' => $status->status_id
+                            ]) }}" class="no-underline">
+                            {{ $status->account->acct . '/' . $status->status_id }}
+                        </a>
+                    </div>
+                @endif
 
             </div>
 

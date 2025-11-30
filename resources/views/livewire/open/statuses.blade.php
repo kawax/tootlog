@@ -1,0 +1,51 @@
+<?php
+
+use App\Models\Account;
+use App\Models\User;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\Request;
+use Livewire\Attributes\Computed;
+use Livewire\Volt\Component;
+
+/**
+ * 公開。アカウントの投稿一覧。
+ */
+
+new class extends Component
+{
+    public ?Account $acct = null;
+    public User $user;
+    public string $username;
+    public string $domain;
+
+    public function mount(Request $request): void
+    {
+        $this->acct = Account::byAcct($this->username, $this->domain)->first();
+
+        if ($this->acct->locked) {
+            $this->authorize('show', $acct);
+        }
+    }
+
+    #[Computed]
+    public function statuses()
+    {
+        return $this->acct->openStatuses(request()->query('search'))
+            ->paginate()
+            ->appends(['search' => request()->query('search')]);
+    }
+}; ?>
+
+<div>
+    <div class="mb-3">
+        {{ $this->statuses->links() }}
+    </div>
+
+    @foreach($this->statuses as $status)
+        @include('status.item')
+    @endforeach
+
+    <div class="mt-3">
+        {{ $this->statuses->links() }}
+    </div>
+</div>

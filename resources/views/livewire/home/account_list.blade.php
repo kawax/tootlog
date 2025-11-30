@@ -28,8 +28,8 @@ new class extends Component
     <flux:navlist.group :heading="__('Accounts')" class="grid">
         @foreach($accounts as $account)
             <flux:navlist.item
-                :href="route('home.acct.index', ['username' => $account->username, 'domain' => $account->domain])"
-                :current="request()->is(route('home.acct.index', ['username' => $account->username, 'domain' => $account->domain]))"
+                :href="route('open.account.index', ['user'=> $user,'username' => $account->username, 'domain' => $account->domain])"
+                :current="request()->is(route('open.account.index', ['user'=> $user,'username' => $account->username, 'domain' => $account->domain]))"
                 badge="{{ $account->statuses_count }}"
                 :icon="$account->locked ? 'lock-closed' : ''"
                 wire:navigate>

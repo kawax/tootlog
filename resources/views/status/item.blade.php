@@ -36,7 +36,7 @@
                     </details>
                 @endif
 
-                <div class="text-sm text-gray-600">
+                <div class="text-sm text-gray-600 flex">
                     <a href="{{ route('open.account.show', [
                         'user' => $status->account->user,
                         'username' => $status->account->username,
@@ -50,7 +50,7 @@
                     </a>
 
                     <a href="{{ $status->url }}" target="_blank" rel="nofollow noopener">
-                        <i class="fa fa-external-link" aria-hidden="true"></i>
+                        <flux:icon.arrow-top-right-on-square class="size-5"/>
                     </a>
                 </div>
             </div>

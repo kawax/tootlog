@@ -12,8 +12,7 @@ Volt::route('@{user}', 'open.user')
     //->uses([UserController::class, 'index'])
     ->name('open.user');
 
-Route::get('@{user}/{username}@{domain}')
-    ->uses([AccountController::class, 'index'])
+Volt::route('@{user}/{username}@{domain}', 'open.acct.index')
     ->name('open.account.index');
 
 Volt::route('@{user}/{username}@{domain}/{status_id}', 'open.acct.show')
