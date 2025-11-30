@@ -45,9 +45,15 @@ new class extends Component
 }; ?>
 
 <div>
+    <div class="mb-3">
+        {{ $this->statuses->links() }}
+    </div>
+
     @foreach($this->statuses as $status)
         @include('status.item')
     @endforeach
 
-    {{ $this->statuses->links() }}
+    <div class="mt-3">
+        {{ $this->statuses->links() }}
+    </div>
 </div>
