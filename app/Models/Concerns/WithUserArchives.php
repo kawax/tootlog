@@ -36,9 +36,9 @@ trait WithUserArchives
     public function openArchives(): Collection
     {
         return cache()->remember('archives/'.$this->id, now()->addDay(), function () {
-            $date_format = app()->runningUnitTests()
-                ? 'STRFTIME("%Y-%m", statuses.created_at)'
-                : 'DATE_FORMAT(statuses.created_at,"%Y-%m")';
+            $date_format = app()->isProduction()
+                ? 'DATE_FORMAT(statuses.created_at,"%Y-%m-%d")'
+                : 'STRFTIME("%Y-%m-%d", statuses.created_at)';
 
             return $this->statuses()
                 ->select(['statuses.id', 'statuses.created_at', 'statuses.account_id'])
