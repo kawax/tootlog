@@ -3,6 +3,10 @@
 use Illuminate\View\View;
 use Livewire\Volt\Component;
 
+/**
+ * 非公開。ダッシュボードのホーム画面。
+ */
+
 new class extends Component
 {
     public function rendering(View $view): void

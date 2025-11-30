@@ -6,6 +6,10 @@ use Illuminate\Support\Collection;
 use Illuminate\Http\Request;
 use Livewire\Volt\Component;
 
+/**
+ * 非公開。認証した現在のユーザーの最近の投稿日一覧を表示する。
+ */
+
 new class extends Component
 {
     public Collection $recents;

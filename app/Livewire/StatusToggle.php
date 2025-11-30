@@ -5,6 +5,9 @@ namespace App\Livewire;
 use App\Models\Status;
 use Livewire\Component;
 
+/**
+ * 投稿の表示・非表示を切り替える
+ */
 class StatusToggle extends Component
 {
     public Status $status;

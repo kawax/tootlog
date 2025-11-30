@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 use Livewire\Attributes\Computed;
 use Livewire\Volt\Component;
 
+/**
+ * 非公開。投稿表示コンポーネント。
+ */
+
 new class extends Component
 {
     public ?Account $acct = null;

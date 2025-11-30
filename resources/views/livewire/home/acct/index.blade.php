@@ -5,9 +5,12 @@ use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Livewire\Volt\Component;
 
+/**
+ * 非公開。指定したアカウントの投稿一覧を表示する。
+ */
+
 new class extends Component
 {
-    public ?Account $acct = null;
     public ?string $username = null;
     public ?string $domain = null;
 
@@ -21,7 +24,7 @@ new class extends Component
 
     public function rendering(View $view): void
     {
-        $view->title(__('Dashboard'));
+        $view->title($this->username.'@'.$this->domain);
     }
 }; ?>
 

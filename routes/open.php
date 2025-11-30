@@ -6,9 +6,10 @@ use App\Http\Controllers\Open\DateController;
 use App\Http\Controllers\Open\TagController;
 use App\Http\Controllers\Open\UserController;
 use Illuminate\Support\Facades\Route;
+use Livewire\Volt\Volt;
 
-Route::get('@{user}')
-    ->uses([UserController::class, 'index'])
+Volt::route('@{user}', 'open.user')
+    //->uses([UserController::class, 'index'])
     ->name('open.user');
 
 Route::get('@{user}/{username}@{domain}')
@@ -24,8 +25,8 @@ Route::get('@{user}/date/{date}')
     ->name('open.user.date')
     ->where('date', '[0-9]{4}-[0-9]{2}-[0-9]{2}');
 
-Route::get('@{user}/date/{year?}/{month?}/{day?}')
-    ->uses([DateController::class, 'date'])
+Volt::route('@{user}/date/{year?}/{month?}/{day?}', 'open.date')
+    // ->uses([DateController::class, 'date'])
     ->name('open.user.date.day')
     ->where('year', '[0-9]{4}')
     ->where('month', '[0-9]{2}')

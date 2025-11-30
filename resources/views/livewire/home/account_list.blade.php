@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use Livewire\Volt\Component;
 
+/**
+ * 非公開。認証した現在のユーザーのアカウント一覧を表示する。
+ */
+
 new class extends Component
 {
     public Collection $accounts;
