@@ -17,14 +17,17 @@ class AccountFactory extends Factory
      */
     public function definition(): array
     {
+        $user_name = fake()->userName;
+        $domain = fake()->unique()->domainName;
+
         return [
             'user_id' => fake()->randomNumber(),
             'server_id' => fake()->randomNumber(),
             'account_id' => fake()->randomNumber(),
             'since_id' => fake()->randomNumber(),
             'token' => Str::random(20),
-            'username' => fake()->userName,
-            'acct' => fake()->userName,
+            'username' => $user_name,
+            'acct' => $user_name,
             'display_name' => fake()->name,
             'locked' => false,
             'account_created_at' => fake()->dateTime,
@@ -32,7 +35,7 @@ class AccountFactory extends Factory
             'following_count' => fake()->randomNumber(),
             'followers_count' => fake()->randomNumber(),
             'note' => fake()->text(),
-            'url' => 'https://'.fake()->unique()->domainName.'/test',
+            'url' => 'https://'.$domain.'/@'.$user_name,
             'avatar' => fake()->imageUrl(),
             'avatar_static' => fake()->imageUrl(),
             'header' => fake()->imageUrl(),
