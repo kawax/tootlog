@@ -16,8 +16,7 @@ Route::get('@{user}/{username}@{domain}')
     ->uses([AccountController::class, 'index'])
     ->name('open.account.index');
 
-Route::get('@{user}/{username}@{domain}/{status_id}')
-    ->uses([AccountController::class, 'show'])
+Volt::route('@{user}/{username}@{domain}/{status_id}', 'open.acct.show')
     ->name('open.account.show');
 
 Route::get('@{user}/date/{date}')

@@ -26,6 +26,10 @@ new class extends Component
             $this->domain = $request->input('domain');
 
             $this->acct = Account::byAcct($request->input('username'), $request->input('domain'))->first();
+
+            if ($this->acct->locked) {
+                $this->authorize('show', $acct);
+            }
         }
     }
 
