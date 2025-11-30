@@ -1,5 +1,5 @@
 @if(empty($status->reblog))
-    <div class="bg-white border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-sm mb-2">
+    <div class="bg-white dark:bg-black border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-sm mb-2">
         <div class="flex gap-3 p-4">
             <div class="shrink-0">
                 <a href="{{ $status->account->url }}" class="no-underline" target="_blank" rel="nofollow noopener">

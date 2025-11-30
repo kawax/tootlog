@@ -91,59 +91,59 @@ select:focus[data-flux-control] {
   --body-bg: #ffffff;
 }
 
-body {
-  margin: 0;
-  background-color: var(--body-bg);
-}
+/*body {*/
+/*  margin: 0;*/
+/*  background-color: var(--body-bg);*/
+/*}*/
 
-.theme-thin {
-  font-family: var(--font-family-sans-serif);
-}
+/*.theme-thin {*/
+/*  font-family: var(--font-family-sans-serif);*/
+/*}*/
 
-.theme-normal {
-  font-family: var(--font-family-normal);
-}
+/*.theme-normal {*/
+/*  font-family: var(--font-family-normal);*/
+/*}*/
 
-.toot-icon {
-  max-width: 90px;
-}
+/*.toot-icon {*/
+/*  max-width: 90px;*/
+/*}*/
 
-.toot-icon-small {
-  max-width: 25px;
-}
+/*.toot-icon-small {*/
+/*  max-width: 25px;*/
+/*}*/
 
-.invisible {
-  font-size: 0;
-  line-height: 0;
-  display: inline-block;
-  width: 0;
-}
+/*.invisible {*/
+/*  font-size: 0;*/
+/*  line-height: 0;*/
+/*  display: inline-block;*/
+/*  width: 0;*/
+/*}*/
 
-.ellipsis:after {
-  content: "…";
-}
+/*.ellipsis:after {*/
+/*  content: "…";*/
+/*}*/
 
-img.emoji {
-  height: 1em;
-  width: 1em;
-  margin: 0 .05em 0 .1em;
-  vertical-align: -0.1em;
-}
+/*img.emoji {*/
+/*  height: 1em;*/
+/*  width: 1em;*/
+/*  margin: 0 .05em 0 .1em;*/
+/*  vertical-align: -0.1em;*/
+/*}*/
 
-#calendar_div {
-  width: 100%;
-}
+/*#calendar_div {*/
+/*  width: 100%;*/
+/*}*/
 
-.media-body code {
-  margin: 10px 0;
-  padding: 8px;
-  border-radius: 2px;
-  line-height: 1.2;
-  white-space: pre;
-  display: block;
-}
+/*.media-body code {*/
+/*  margin: 10px 0;*/
+/*  padding: 8px;*/
+/*  border-radius: 2px;*/
+/*  line-height: 1.2;*/
+/*  white-space: pre;*/
+/*  display: block;*/
+/*}*/
 
-.media-body code.inline {
-  display: inline;
-  padding: 1px 6px;
-}
+/*.media-body code.inline {*/
+/*  display: inline;*/
+/*  padding: 1px 6px;*/
+/*}*/

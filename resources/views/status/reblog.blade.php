@@ -1,6 +1,6 @@
-<div class="bg-white rounded-lg shadow-sm ring-1 ring-sky-500 mb-2">
-    <div class="bg-sky-500 text-white px-4 py-2 rounded-t-lg flex items-center gap-2">
-        <img class="rounded-full size-6 object-cover toot-icon-small"
+<div class="bg-white dark:bg-black rounded-lg shadow-sm ring-1 ring-sky-500 dark:ring-sky-700 mb-2">
+    <div class="bg-sky-500 dark:bg-sky-700 text-white px-4 py-2 rounded-t-lg flex items-center gap-2">
+        <img class="rounded-full size-6 object-cover"
              src="{{ $status->account->avatar }}"
              alt="{{ $status->name }}"
              title="{{ $status->name }}">
