@@ -19,6 +19,7 @@ class extends Component
     public ?string $year = null;
     public ?string $month = null;
     public ?string $day = null;
+    public ?string $date = null;
 
     public function mount(Request $request, User $user, ?string $year = null, ?string $month = null, ?string $day = null): void
     {
@@ -30,11 +31,13 @@ class extends Component
         $this->year = $year;
         $this->month = $month;
         $this->day = $day;
+
+        $this->date = collect([$year, $month, $day])->filter()->join('-');
     }
 
     public function rendering(View $view): void
     {
-        $view->title($this->user->name.' - '.Carbon::createFromDate($this->year, $this->month, $this->day)->toDateString());
+        $view->title($this->user->name.' - '.$this->date);
     }
 
     #[Computed]
@@ -48,7 +51,7 @@ class extends Component
     <flux:breadcrumbs class="mb-6">
         <flux:breadcrumbs.item href="{{ route('open.user', $user) }}">{{ '@'.$user->name }}</flux:breadcrumbs.item>
         <flux:breadcrumbs.item href="{{ route('open.archives', $user) }}">{{ __('Archives') }}</flux:breadcrumbs.item>
-        <flux:breadcrumbs.item>{{ Carbon::createFromDate($year, $month, $day)->toDateString() }}</flux:breadcrumbs.item>
+        <flux:breadcrumbs.item>{{ $date }}</flux:breadcrumbs.item>
     </flux:breadcrumbs>
 
     @foreach($this->statuses as $status)
