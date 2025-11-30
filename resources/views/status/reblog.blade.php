@@ -41,7 +41,7 @@
                 @endif
 
                 <div class="text-sm text-gray-600 mb-2">
-                    <a href="{{ $status->reblog->url }}" target="_blank" rel="nofollow noopener" class="no-underline">
+                    <a href="{{ $status->reblog->url }}" target="_blank" rel="nofollow noopener" class="no-underline hover:underline">
                         <time datetime="{{ $status->reblog->created_at->toAtomString() }}">
                             {{ $status->reblog->created_at->diffForHumans() }}
                         </time>
@@ -55,7 +55,7 @@
                             'username' => $status->account->username,
                             'domain' => $status->account->domain,
                             'status_id' => $status->status_id
-                            ]) }}" class="no-underline">
+                            ]) }}" class="no-underline hover:underline">
                             {{ $status->account->acct . '/' . $status->status_id }}
                         </a>
                     </div>

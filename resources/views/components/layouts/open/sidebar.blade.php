@@ -30,6 +30,8 @@
         </flux:navlist.group>
     </flux:navlist>
 
+    <livewire:open.account_list/>
+
     {{--            <flux:navlist variant="outline">--}}
     {{--                <flux:navlist.group :heading="__('Platform')" class="grid">--}}
     {{--                    <flux:navlist.item icon="home" :href="route('home')" :current="request()->routeIs('home')" wire:navigate>{{ __('Dashboard') }}</flux:navlist.item>--}}

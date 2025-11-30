@@ -42,7 +42,7 @@
                         'username' => $status->account->username,
                         'domain' => $status->account->domain,
                         'status_id' => $status->status_id
-                        ]) }}" class="no-underline pr-2">
+                        ]) }}" class="no-underline hover:underline pr-2">
                         <time title="{{ $status->local_datetime->toAtomString() }}"
                               datetime="{{ $status->local_datetime->toAtomString() }}">
                             {{ $status->local_datetime->diffForHumans() }}
