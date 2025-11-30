@@ -452,11 +452,14 @@ This application is a Laravel application and its main Laravel ecosystems packag
 - laravel/horizon (HORIZON) - v5
 - laravel/prompts (PROMPTS) - v0
 - laravel/socialite (SOCIALITE) - v5
+- livewire/flux (FLUXUI_FREE) - v2
 - livewire/livewire (LIVEWIRE) - v3
+- livewire/volt (VOLT) - v1
 - laravel/mcp (MCP) - v0
 - laravel/pint (PINT) - v1
 - laravel/sail (SAIL) - v1
 - phpunit/phpunit (PHPUNIT) - v11
+- tailwindcss (TAILWINDCSS) - v4
 - vue (VUE) - v3
 
 ## Conventions
@@ -626,6 +629,30 @@ protected function isAccessible(User $user, ?string $path = null): bool
 - Casts can and likely should be set in a `casts()` method on a model rather than the `$casts` property. Follow existing conventions from other models.
 
 
+=== fluxui-free/core rules ===
+
+## Flux UI Free
+
+- This project is using the free edition of Flux UI. It has full access to the free components and variants, but does not have access to the Pro components.
+- Flux UI is a component library for Livewire. Flux is a robust, hand-crafted, UI component library for your Livewire applications. It's built using Tailwind CSS and provides a set of components that are easy to use and customize.
+- You should use Flux UI components when available.
+- Fallback to standard Blade components if Flux is unavailable.
+- If available, use Laravel Boost's `search-docs` tool to get the exact documentation and code snippets available for this project.
+- Flux UI components look like this:
+
+<code-snippet name="Flux UI Component Usage Example" lang="blade">
+    <flux:button variant="primary"/>
+</code-snippet>
+
+
+### Available Components
+This is correct as of Boost installation, but there may be additional components within the codebase.
+
+<available-flux-components>
+avatar, badge, brand, breadcrumbs, button, callout, checkbox, dropdown, field, heading, icon, input, modal, navbar, otp-input, profile, radio, select, separator, skeleton, switch, text, textarea, tooltip
+</available-flux-components>
+
+
 === livewire/core rules ===
 
 ## Livewire Core
@@ -709,6 +736,139 @@ document.addEventListener('livewire:init', function () {
 </code-snippet>
 
 
+=== volt/core rules ===
+
+## Livewire Volt
+
+- This project uses Livewire Volt for interactivity within its pages. New pages requiring interactivity must also use Livewire Volt. There is documentation available for it.
+- Make new Volt components using `php artisan make:volt [name] [--test] [--pest]`
+- Volt is a **class-based** and **functional** API for Livewire that supports single-file components, allowing a component's PHP logic and Blade templates to co-exist in the same file
+- Livewire Volt allows PHP logic and Blade templates in one file. Components use the `@volt` directive.
+- You must check existing Volt components to determine if they're functional or class based. If you can't detect that, ask the user which they prefer before writing a Volt component.
+
+### Volt Functional Component Example
+
+<code-snippet name="Volt Functional Component Example" lang="php">
+@volt
+<?php
+use function Livewire\Volt\{state, computed};
+
+state(['count' => 0]);
+
+$increment = fn () => $this->count++;
+$decrement = fn () => $this->count--;
+
+$double = computed(fn () => $this->count * 2);
+?>
+
+<div>
+    <h1>Count: {{ $count }}</h1>
+    <h2>Double: {{ $this->double }}</h2>
+    <button wire:click="increment">+</button>
+    <button wire:click="decrement">-</button>
+</div>
+@endvolt
+</code-snippet>
+
+
+### Volt Class Based Component Example
+To get started, define an anonymous class that extends Livewire\Volt\Component. Within the class, you may utilize all of the features of Livewire using traditional Livewire syntax:
+
+
+<code-snippet name="Volt Class-based Volt Component Example" lang="php">
+use Livewire\Volt\Component;
+
+new class extends Component {
+    public $count = 0;
+
+    public function increment()
+    {
+        $this->count++;
+    }
+} ?>
+
+<div>
+    <h1>{{ $count }}</h1>
+    <button wire:click="increment">+</button>
+</div>
+</code-snippet>
+
+
+### Testing Volt & Volt Components
+- Use the existing directory for tests if it already exists. Otherwise, fallback to `tests/Feature/Volt`.
+
+<code-snippet name="Livewire Test Example" lang="php">
+use Livewire\Volt\Volt;
+
+test('counter increments', function () {
+    Volt::test('counter')
+        ->assertSee('Count: 0')
+        ->call('increment')
+        ->assertSee('Count: 1');
+});
+</code-snippet>
+
+
+<code-snippet name="Volt Component Test Using Pest" lang="php">
+declare(strict_types=1);
+
+use App\Models\{User, Product};
+use Livewire\Volt\Volt;
+
+test('product form creates product', function () {
+    $user = User::factory()->create();
+
+    Volt::test('pages.products.create')
+        ->actingAs($user)
+        ->set('form.name', 'Test Product')
+        ->set('form.description', 'Test Description')
+        ->set('form.price', 99.99)
+        ->call('create')
+        ->assertHasNoErrors();
+
+    expect(Product::where('name', 'Test Product')->exists())->toBeTrue();
+});
+</code-snippet>
+
+
+### Common Patterns
+
+
+<code-snippet name="CRUD With Volt" lang="php">
+<?php
+
+use App\Models\Product;
+use function Livewire\Volt\{state, computed};
+
+state(['editing' => null, 'search' => '']);
+
+$products = computed(fn() => Product::when($this->search,
+    fn($q) => $q->where('name', 'like', "%{$this->search}%")
+)->get());
+
+$edit = fn(Product $product) => $this->editing = $product->id;
+$delete = fn(Product $product) => $product->delete();
+
+?>
+
+<!-- HTML / UI Here -->
+</code-snippet>
+
+<code-snippet name="Real-Time Search With Volt" lang="php">
+    <flux:input
+        wire:model.live.debounce.300ms="search"
+        placeholder="Search..."
+    />
+</code-snippet>
+
+<code-snippet name="Loading States With Volt" lang="php">
+    <flux:button wire:click="save" wire:loading.attr="disabled">
+        <span wire:loading.remove>Save</span>
+        <span wire:loading>Saving...</span>
+    </flux:button>
+</code-snippet>
+
+
 === pint/core rules ===
 
 ## Laravel Pint Code Formatter
@@ -733,6 +893,73 @@ document.addEventListener('livewire:init', function () {
 - To run all tests: `php artisan test`.
 - To run all tests in a file: `php artisan test tests/Feature/ExampleTest.php`.
 - To filter on a particular test name: `php artisan test --filter=testName` (recommended after making a change to a related file).
+
+
+=== tailwindcss/core rules ===
+
+## Tailwind Core
+
+- Use Tailwind CSS classes to style HTML, check and use existing tailwind conventions within the project before writing your own.
+- Offer to extract repeated patterns into components that match the project's conventions (i.e. Blade, JSX, Vue, etc..)
+- Think through class placement, order, priority, and defaults - remove redundant classes, add classes to parent or child carefully to limit repetition, group elements logically
+- You can use the `search-docs` tool to get exact examples from the official documentation when needed.
+
+### Spacing
+- When listing items, use gap utilities for spacing, don't use margins.
+
+    <code-snippet name="Valid Flex Gap Spacing Example" lang="html">
+        <div class="flex gap-8">
+            <div>Superior</div>
+            <div>Michigan</div>
+            <div>Erie</div>
+        </div>
+    </code-snippet>
+
+
+### Dark Mode
+- If existing pages and components support dark mode, new pages and components must support dark mode in a similar way, typically using `dark:`.
+
+
+=== tailwindcss/v4 rules ===
+
+## Tailwind 4
+
+- Always use Tailwind CSS v4 - do not use the deprecated utilities.
+- `corePlugins` is not supported in Tailwind v4.
+- In Tailwind v4, configuration is CSS-first using the `@theme` directive — no separate `tailwind.config.js` file is needed.
+<code-snippet name="Extending Theme in CSS" lang="css">
+@theme {
+  --color-brand: oklch(0.72 0.11 178);
+}
+</code-snippet>
+
+- In Tailwind v4, you import Tailwind using a regular CSS `@import` statement, not using the `@tailwind` directives used in v3:
+
+<code-snippet name="Tailwind v4 Import Tailwind Diff" lang="diff">
+   - @tailwind base;
+   - @tailwind components;
+   - @tailwind utilities;
+   + @import "tailwindcss";
+</code-snippet>
+
+
+### Replaced Utilities
+- Tailwind v4 removed deprecated utilities. Do not use the deprecated option - use the replacement.
+- Opacity values are still numeric.
+
+| Deprecated |	Replacement |
+|------------+--------------|
+| bg-opacity-* | bg-black/* |
+| text-opacity-* | text-black/* |
+| border-opacity-* | border-black/* |
+| divide-opacity-* | divide-black/* |
+| ring-opacity-* | ring-black/* |
+| placeholder-opacity-* | placeholder-black/* |
+| flex-shrink-* | shrink-* |
+| flex-grow-* | grow-* |
+| overflow-ellipsis | text-ellipsis |
+| decoration-slice | box-decoration-slice |
+| decoration-clone | box-decoration-clone |
 
 
 === laravel/fortify rules ===
