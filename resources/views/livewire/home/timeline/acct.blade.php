@@ -22,8 +22,7 @@ new class extends Component
     {
         $this->user = $request->user();
 
-        $this->acct = Account::byAcct($this->username, $this->domain)
-            ->with('server')->firstOrFail();
+        $this->acct = Account::byAcct($this->username, $this->domain)->firstOrFail();
     }
 
     public function rendering(View $view): void
@@ -44,7 +43,7 @@ new class extends Component
         </flux:heading>
 
         <tt-user-timeline domain="{{ $acct->server->domain }}"
-                          streaming="{{ $acct->server->streaming }}"
+                          streaming="{{ $acct->server->streaming_url }}"
                           token="{{ $acct->token }}">
         </tt-user-timeline>
     </div>

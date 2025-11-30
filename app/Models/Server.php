@@ -27,10 +27,10 @@ class Server extends Model
     /**
      * streaming api url.
      */
-    public function streaming(): Attribute
+    public function streamingUrl(): Attribute
     {
         return Attribute::make(
-            get: function ($streaming) {
+            get: function (?string $streaming) {
                 if (! is_null($streaming)) {
                     return $streaming;
                 }
