@@ -29,10 +29,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::post('export/csv', ExportController::class)->name('export.csv');
 
-    Route::get('home', HomeController::class)->name('home');
-
-    Route::view('dashboard', 'dashboard')
-        ->name('dashboard');
+    //Route::get('home', HomeController::class)->name('home');
 });
 
 Route::get('instances', InstanceController::class)->name('instances');
@@ -64,4 +61,5 @@ Route::middleware(['auth'])->group(function () {
         ->name('two-factor.show');
 });
 
+require __DIR__.'/home.php';
 require __DIR__.'/open.php';

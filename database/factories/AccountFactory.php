@@ -20,6 +20,8 @@ class AccountFactory extends Factory
         $user_name = fake()->userName;
         $domain = fake()->unique()->domainName;
 
+        $image = 'https://placehold.co/640x480';
+
         return [
             'user_id' => fake()->randomNumber(),
             'server_id' => fake()->randomNumber(),
@@ -36,10 +38,10 @@ class AccountFactory extends Factory
             'followers_count' => fake()->randomNumber(),
             'note' => fake()->text(),
             'url' => 'https://'.$domain.'/@'.$user_name,
-            'avatar' => fake()->imageUrl(),
-            'avatar_static' => fake()->imageUrl(),
-            'header' => fake()->imageUrl(),
-            'header_static' => fake()->imageUrl(),
+            'avatar' => $image,
+            'avatar_static' => $image,
+            'header' => $image,
+            'header_static' => $image,
         ];
     }
 }

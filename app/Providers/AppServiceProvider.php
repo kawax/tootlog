@@ -20,7 +20,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Mastodon::macro('instance', fn (): array => /** @var MastodonClient $this */ $this->get('/instance'));
 
-        Paginator::useBootstrapFive();
+        // Paginator::useBootstrapFive();
 
         view()->composers([
             AccountComposer::class => 'open.account_list',
