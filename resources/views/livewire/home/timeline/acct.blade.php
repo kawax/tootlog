@@ -32,21 +32,20 @@ new class extends Component
     }
 }; ?>
 <div id="app" class="flex">
-    <div class="order-2 flex-1 px-3">
-        <h2>
-            <a href="{{ $acct->server->domain }}" target="_blank" rel="nofollow noopener"
-               class="text-decoration-none">
+    <div class="mr-6">
+        <livewire:home.timeline.account_list/>
+    </div>
+
+    <div class="flex-1 px-3">
+        <flux:heading size="xl" level="2" class="mb-4">
+            <a href="{{ $acct->server->domain }}" target="_blank" rel="nofollow noopener">
                 {{ $acct->acct }}
             </a>
-        </h2>
+        </flux:heading>
 
         <tt-user-timeline domain="{{ $acct->server->domain }}"
                           streaming="{{ $acct->server->streaming }}"
                           token="{{ $acct->token }}">
         </tt-user-timeline>
-    </div>
-
-    <div class="order-1 mr-6">
-        <livewire:home.timeline.account_list/>
     </div>
 </div>
