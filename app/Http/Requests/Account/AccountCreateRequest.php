@@ -20,7 +20,7 @@ class AccountCreateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'domain' => 'required',
+            'domain' => ['required', 'url'],
         ];
     }
 }
