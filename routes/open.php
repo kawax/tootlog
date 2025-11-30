@@ -35,5 +35,5 @@ Volt::route('@{user}/date/{year?}/{month?}/{day?}', 'open.date')
 Route::resource('@{user}/tags', TagController::class)
     ->only(['index', 'show']);
 
-Route::get('@{user}/archives', ArchiveController::class)
+Volt::route('@{user}/archives', 'open.archives')
     ->name('open.archives');

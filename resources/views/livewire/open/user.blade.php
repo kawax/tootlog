@@ -37,6 +37,10 @@ class extends Component
 }; ?>
 
 <div>
+    <flux:breadcrumbs class="mb-6">
+        <flux:breadcrumbs.item href="{{ route('open.user', $user) }}">{{ '@'.$user->name }}</flux:breadcrumbs.item>
+    </flux:breadcrumbs>
+
     @foreach($this->statuses as $status)
         @include('status.item')
     @endforeach
