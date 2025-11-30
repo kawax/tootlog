@@ -18,6 +18,7 @@
 
             <flux:navlist.item :href="route('open.archives', auth()->user())"
                                :current="request()->routeIs('open.archives')"
+                               icon="eye"
                                wire:navigate>{{ __('Archives') }}</flux:navlist.item>
 
             <flux:navlist.item :href="route('timeline')" :current="request()->routeIs('timeline')"

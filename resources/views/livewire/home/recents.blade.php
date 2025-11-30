@@ -34,6 +34,7 @@ new class extends Component
                 'month' => explode('-', $date)[1],
                 'day' => explode('-', $date)[2]])"
                 badge="{{ $recent }}"
+                icon="eye"
                 wire:navigate>
                 {{ $date }}
             </flux:navlist.item>
