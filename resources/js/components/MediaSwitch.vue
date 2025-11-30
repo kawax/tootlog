@@ -18,12 +18,20 @@ watchEffect(() => emit('changed', active_media.value))
 </script>
 
 <template>
-    <div class="btn-group" role="group">
+    <div class="inline-flex rounded-lg shadow-sm" role="group">
         <button
             type="button"
-            class="btn btn-secondary"
+            class="px-4 py-2 text-sm font-medium border transition-colors"
+            :class="[
+                active_media === media
+                    ? 'bg-gray-700 text-white border-gray-700'
+                    : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50',
+                Object.keys(medias).indexOf(media) === 0 ? 'rounded-l-lg' : '',
+                Object.keys(medias).indexOf(media) === Object.keys(medias).length - 1 ? 'rounded-r-lg' : '',
+                Object.keys(medias).indexOf(media) !== 0 ? 'border-l-0' : ''
+            ]"
             v-for="(html, media) in medias"
-            :class="{ active: active_media === media }"
+            :key="media"
             @click="active_media = media"
             v-html="html"
         ></button>

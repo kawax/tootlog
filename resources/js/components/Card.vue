@@ -1,8 +1,6 @@
 <template>
-    <div class="card">
-        <div class="card bg-white">
-            <slot>
-            </slot>
-        </div>
+    <div class="bg-white rounded-lg shadow">
+        <slot>
+        </slot>
     </div>
 </template>
