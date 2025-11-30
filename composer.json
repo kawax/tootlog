@@ -105,6 +105,7 @@
         "pre-package-uninstall": [
             "Illuminate\\Foundation\\ComposerScripts::prePackageUninstall"
         ],
+        "lint": "pint",
         "boost": "@php artisan boost:update --ansi",
         "ide-helper:meta": "php artisan ide-helper:meta",
         "ide-helper:generate": "php artisan ide-helper:generate",

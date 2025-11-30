@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
 Volt::route('@{user}', 'open.user')
-    //->uses([UserController::class, 'index'])
+    // ->uses([UserController::class, 'index'])
     ->name('open.user');
 
 Volt::route('@{user}/{username}@{domain}', 'open.acct.index')

@@ -29,7 +29,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::post('export/csv', ExportController::class)->name('export.csv');
 
-    //Route::get('home', HomeController::class)->name('home');
+    // Route::get('home', HomeController::class)->name('home');
 });
 
 Route::get('instances', InstanceController::class)->name('instances');
