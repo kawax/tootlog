@@ -49,6 +49,7 @@ class ArtisanTest extends TestCase
     {
         Bus::fake();
 
+        Account::truncate();
         $account = Account::factory(5)->create([
             'user_id' => $this->user->id,
             'server_id' => $this->server->id,

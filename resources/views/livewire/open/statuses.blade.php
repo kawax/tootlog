@@ -13,17 +13,17 @@ use Livewire\Volt\Component;
 
 new class extends Component
 {
-    public ?Account $acct = null;
+    public Account $acct;
     public User $user;
     public string $username;
     public string $domain;
 
     public function mount(Request $request): void
     {
-        $this->acct = Account::byAcct($this->username, $this->domain)->first();
+        $this->acct = Account::byAcct($this->username, $this->domain)->firstOrFail();
 
         if ($this->acct->locked) {
-            $this->authorize('show', $acct);
+            $this->authorize('show', $this->acct);
         }
     }
 

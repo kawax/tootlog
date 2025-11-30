@@ -66,8 +66,8 @@ class UserTest extends TestCase
         $response = $this->actingAs($this->user)
             ->get('/home');
 
-        $response->assertSee('Home');
-        $response->assertSee('@test Account List');
+        $response->assertSee('Dashboard');
+        $response->assertSee('Accounts');
     }
 
     public function test_home_redirect()
@@ -155,9 +155,9 @@ class UserTest extends TestCase
         $response = $this->actingAs($this->user)
             ->get('/@test');
 
-        $response->assertSee('@test Account List');
-        $response->assertSee('Recent');
-        $response->assertViewHas('statuses');
+        $response->assertSee('Accounts');
+        $response->assertDontSee('Recents');
+        $response->assertSee('Public area');
     }
 
     public function test_dont_see_user()
@@ -400,7 +400,8 @@ class UserTest extends TestCase
         $response = $this->actingAs($this->user)
             ->get('/home?search=test');
 
-        $response->assertViewHas('statuses');
+        $response->assertOk()
+            ->assertSee('test');
     }
 
     public function test_search_home_empty()
@@ -427,7 +428,7 @@ class UserTest extends TestCase
         $response = $this->actingAs($this->user)
             ->get('/@test/test@example.com?search=test');
 
-        $response->assertViewHas('statuses');
+        $response->assertSee('test');
     }
 
     public function test_user_tags()
@@ -497,6 +498,6 @@ class UserTest extends TestCase
             ->get('/@test/archives');
 
         $response->assertSee('2017-05');
-        $response->assertSee('2017-05-16');
+        $response->assertDontSee('2017-05-16');
     }
 }
