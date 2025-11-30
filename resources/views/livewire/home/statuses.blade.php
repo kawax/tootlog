@@ -9,6 +9,8 @@ use Livewire\Volt\Component;
 
 /**
  * 非公開。投稿表示コンポーネント。
+ * usernameとdomainでアカウントを指定すればアカウントの投稿一覧。
+ * 指定しなければ認証ユーザーの投稿一覧。
  */
 
 new class extends Component
