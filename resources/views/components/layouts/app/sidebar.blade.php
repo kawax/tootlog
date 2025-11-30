@@ -16,7 +16,8 @@
             <flux:navlist.item icon="home" :href="route('home')" :current="request()->routeIs('home')"
                                wire:navigate>{{ __('Dashboard') }}</flux:navlist.item>
 
-            <flux:navlist.item :href="route('home.timeline')" :current="request()->routeIs('home.timeline.*')">{{ __('Timeline') }}</flux:navlist.item>
+            <flux:navlist.item :href="route('home.timeline')"
+                               :current="request()->routeIs('home.timeline.*')">{{ __('Timeline') }}</flux:navlist.item>
 
             <flux:navlist.item :href="route('open.archives', auth()->user())"
                                :current="request()->routeIs('open.archives')"
