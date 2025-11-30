@@ -11,7 +11,7 @@ trait WithUserArchives
      */
     public function openRecents(): Collection
     {
-        return cache()->remember('recents/open/'.$this->id, now()->addDay(), function () {
+        return cache()->remember('recents/open/'.$this->id, now()->addHour(), function () {
             $date_format = app()->isProduction()
                 ? 'DATE_FORMAT(statuses.created_at,"%Y-%m-%d")'
                 : 'STRFTIME("%Y-%m-%d", statuses.created_at)';
@@ -35,7 +35,7 @@ trait WithUserArchives
      */
     public function openArchives(): Collection
     {
-        return cache()->remember('archives/'.$this->id, now()->addDay(), function () {
+        return cache()->remember('archives/'.$this->id, now()->addHour(), function () {
             $date_format = app()->isProduction()
                 ? 'DATE_FORMAT(statuses.created_at,"%Y-%m")'
                 : 'STRFTIME("%Y-%m", statuses.created_at)';
