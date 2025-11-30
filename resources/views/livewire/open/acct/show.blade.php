@@ -43,5 +43,7 @@ class extends Component
 }; ?>
 
 <div>
+    @include('livewire.open.acct.profile')
+
     @include('status.item')
 </div>
