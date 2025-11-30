@@ -8,12 +8,12 @@
         <div>
             <flux:text>{{ __('Statuses') }}</flux:text>
             <flux:heading size="xl"
-                          class="mb-1">{{ auth()->user()->withCount('statuses')->first()->statuses_count }}</flux:heading>
+                          class="mb-1">{{ auth()->user()->loadCount('statuses')->statuses_count }}</flux:heading>
         </div>
         <div>
             <flux:text>{{ __('Accounts') }}</flux:text>
             <flux:heading size="xl"
-                          class="mb-1">{{ auth()->user()->withCount('accounts')->first()->accounts_count }}</flux:heading>
+                          class="mb-1">{{ auth()->user()->loadCount('accounts')->accounts_count }}</flux:heading>
         </div>
     </div>
 </div>
