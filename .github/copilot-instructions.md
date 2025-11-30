@@ -80,19 +80,6 @@ Welcome to the tootlog project! This guide will help GitHub Copilot understand t
 3. **Configure Environment Variables**
    Edit `.env` file with your settings:
    ```env
-   APP_NAME=tootlog
-   APP_URL=http://localhost:8000
-   
-   DB_CONNECTION=mysql
-   DB_HOST=127.0.0.1
-   DB_PORT=3306
-   DB_DATABASE=tootlog
-   DB_USERNAME=your_username
-   DB_PASSWORD=your_password
-   
-   REDIS_HOST=127.0.0.1
-   REDIS_PORT=6379
-   
    # Mastodon OAuth (required for functionality)
    MASTODON_DOMAIN=your-instance.social
    MASTODON_ID=your_client_id
@@ -116,14 +103,6 @@ Welcome to the tootlog project! This guide will help GitHub Copilot understand t
    php artisan serve
    php artisan horizon  # In separate terminal for queue processing
    ```
-
-### Using Laravel Sail (Docker)
-```bash
-composer run sail:up
-sail artisan migrate
-sail artisan db:seed
-sail npm run build
-```
 
 ## Codebase Structure
 
