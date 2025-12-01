@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {ref, watchEffect} from 'vue';
-import type {MediaKey, TimelineMedia} from '../types';
+import type {MediaKey} from '../types';
+import {DocumentTextIcon, PhotoIcon, ChatBubbleLeftIcon} from '@heroicons/vue/24/outline';
 
 const emit = defineEmits<{
     changed: [media: MediaKey]
@@ -8,11 +9,11 @@ const emit = defineEmits<{
 
 const active_media = ref<MediaKey>('normal');
 
-const medias: TimelineMedia = {
-    normal: '<i class="fa fa-file-image-o" aria-hidden="true"></i> Text and Media',
-    only: '<i class="fa fa-picture-o" aria-hidden="true"></i> Media',
-    except: '<i class="fa fa-commenting-o" aria-hidden="true"></i> Text',
-};
+const medias: { key: MediaKey; icon: typeof DocumentTextIcon; label: string }[] = [
+    {key: 'normal', icon: DocumentTextIcon, label: 'Text and Media'},
+    {key: 'only', icon: PhotoIcon, label: 'Media'},
+    {key: 'except', icon: ChatBubbleLeftIcon, label: 'Text'},
+];
 
 watchEffect(() => emit('changed', active_media.value))
 </script>
@@ -21,19 +22,21 @@ watchEffect(() => emit('changed', active_media.value))
     <div class="inline-flex rounded-lg shadow-sm" role="group">
         <button
             type="button"
-            class="px-4 py-2 text-sm font-medium border transition-colors"
+            class="px-4 py-2 text-sm font-medium border transition-colors inline-flex items-center gap-1"
             :class="[
-                active_media === media
+                active_media === item.key
                     ? 'bg-gray-700 text-white border-gray-700'
                     : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50',
-                Object.keys(medias).indexOf(media) === 0 ? 'rounded-l-lg' : '',
-                Object.keys(medias).indexOf(media) === Object.keys(medias).length - 1 ? 'rounded-r-lg' : '',
-                Object.keys(medias).indexOf(media) !== 0 ? 'border-l-0' : ''
+                index === 0 ? 'rounded-l-lg' : '',
+                index === medias.length - 1 ? 'rounded-r-lg' : '',
+                index !== 0 ? 'border-l-0' : ''
             ]"
-            v-for="(html, media) in medias"
-            :key="media"
-            @click="active_media = media"
-            v-html="html"
-        ></button>
+            v-for="(item, index) in medias"
+            :key="item.key"
+            @click="active_media = item.key"
+        >
+            <component :is="item.icon" class="size-5" aria-hidden="true" />
+            {{ item.label }}
+        </button>
     </div>
 </template>

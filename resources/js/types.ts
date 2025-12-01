@@ -28,7 +28,5 @@ export type StreamEvent = {
 }
 
 export type MediaKey = 'normal' | 'only' | 'except';
-export type TimelineMedia = Record<MediaKey, string>;
 
 export type TypeKey = 'user' | 'public:local' | 'public';
-export type TimelineType = Record<TypeKey, string>;
