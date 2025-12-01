@@ -34,7 +34,7 @@ Artisan::command('welcome:test', function () {
         ->whereNotNull('statuses.content')
         ->where('statuses.content', '!=', '')
         ->select(['statuses.content'])
-        ->latest('statuses.created_at')
+        ->latest('statuses.id')
         ->limit(100)
         ->lazy()
         ->map(fn ($item) => str($item->content)->stripTags()->limit(200)->toString())
