@@ -34,7 +34,6 @@ Artisan::command('welcome:test', function () {
         ->whereNotNull('statuses.content')
         ->where('statuses.content', '!=', '')
         ->select(['statuses.content'])
-        ->inRandomOrder()
         ->limit(100)
         ->get()
         ->map(fn ($item) => str($item->content)->stripTags()->limit(200)->toString())
