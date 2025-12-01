@@ -10,13 +10,14 @@
             <!-- Name -->
             <flux:input
                 name="name"
-                :label="__('Name')"
+                :label="__('User Name')"
                 :value="old('name')"
                 type="text"
                 required
                 autofocus
                 autocomplete="name"
-                :placeholder="__('Full name')"
+                :placeholder="__('User Name')"
+                :description="__('Used as part of your public URL. Only a-z, A-Z, 0-9, _ and - are allowed. Cannot be changed later.')"
             />
 
             <!-- Email Address -->
