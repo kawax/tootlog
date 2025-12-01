@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import {formatDate} from '../support/date';
-import {emoji} from '../support/emoji';
 import {display_name} from '../support/display';
 import type {Post, Account} from '../types';
 
@@ -58,13 +57,13 @@ const account: Account = props.post.reblog.account;
                         class="bg-yellow-400 text-black px-3 py-1 rounded cursor-pointer text-sm"
                         type="button"
                         v-if="reblog.spoiler_text.length > 0"
-                        v-html="emoji(reblog.spoiler_text)"
+                        v-html="reblog.spoiler_text"
                         @click="reblog.spoiler_text = '';"
                     ></button>
 
                     <div
                         v-if="!reblog.spoiler_text"
-                        v-html="emoji(reblog.content)"
+                        v-html="reblog.content"
                         class="mb-3"
                     ></div>
 

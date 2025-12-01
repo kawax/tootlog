@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import {formatDate} from '../support/date';
-import {emoji} from '../support/emoji';
 import {display_name} from '../support/display';
 import type {Post, Account} from '../types';
 
@@ -36,11 +35,11 @@ const account: Account = props.post.account;
                 class="bg-yellow-400 text-black px-3 py-1 rounded cursor-pointer text-sm"
                 type="button"
                 v-if="post.spoiler_text.length > 0"
-                v-html="emoji(post.spoiler_text)"
+                v-html="post.spoiler_text"
                 @click="post.spoiler_text = '';"
             ></button>
 
-            <div v-if="!post.spoiler_text" v-html="emoji(post.content)" class="mb-3"></div>
+            <div v-if="!post.spoiler_text" v-html="post.content" class="mb-3"></div>
 
             <div
                 v-if="post.media_attachments"
