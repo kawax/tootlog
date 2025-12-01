@@ -31,7 +31,7 @@ new class extends Component
     public function statuses()
     {
         return $this->acct->openStatuses(request()->query('search'))
-            ->paginate()
+            ->simplePaginate()
             ->appends(['search' => request()->query('search')]);
     }
 }; ?>
