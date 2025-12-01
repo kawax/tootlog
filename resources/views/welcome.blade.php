@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
 
-    @vite(['resources/css/app.css', 'resources/js/welcome.ts'])
+    @vite(['resources/js/welcome.ts'])
 
     <style>
         :root {
@@ -65,7 +65,7 @@
 
         .welcome-logo {
             font-family: 'Syne', sans-serif;
-            font-size: clamp(3rem, 12vw, 8rem);
+            font-size: clamp(3rem, 12vw, 7rem);
             font-weight: 800;
             letter-spacing: -0.04em;
             background: linear-gradient(135deg, var(--welcome-primary) 0%, var(--welcome-secondary) 50%, var(--welcome-accent) 100%);

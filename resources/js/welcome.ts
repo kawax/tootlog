@@ -8,6 +8,14 @@ interface TootSprite {
     phase: number;
 }
 
+// 調整可能な設定値
+const CONFIG = {
+    // 投稿の流れる基本速度（小さいほど遅い）
+    BASE_SCROLL_SPEED: 0.0007,
+    // 速度のランダム幅
+    SPEED_VARIATION: 0.002,
+};
+
 class WelcomeScene {
     private scene: THREE.Scene;
     private camera: THREE.PerspectiveCamera;
@@ -159,7 +167,7 @@ class WelcomeScene {
 
             this.tootSprites.push({
                 mesh,
-                speed: 0.02 + Math.random() * 0.03,
+                speed: CONFIG.BASE_SCROLL_SPEED + Math.random() * CONFIG.SPEED_VARIATION,
                 amplitude: 0.5 + Math.random() * 1,
                 phase: Math.random() * Math.PI * 2
             });
