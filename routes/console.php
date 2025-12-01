@@ -36,7 +36,7 @@ Artisan::command('welcome:test', function () {
         ->select(['statuses.content'])
         ->limit(100)
         ->latest('statuses.created_at')
-        ->get()
+        ->lazy()
         ->map(fn ($item) => str($item->content)->stripTags()->limit(200)->toString())
         ->toPrettyJson(JSON_UNESCAPED_UNICODE));
 });
