@@ -41,11 +41,15 @@ class extends Component
         <flux:breadcrumbs.item href="{{ route('open.user', $user) }}">{{ '@'.$user->name }}</flux:breadcrumbs.item>
     </flux:breadcrumbs>
 
-    {{ $this->statuses->links() }}
+    <div class="mb-3">
+        {{ $this->statuses->links() }}
+    </div>
 
     @foreach($this->statuses as $status)
         @include('status.item')
     @endforeach
 
-    {{ $this->statuses->links() }}
+    <div class="mt-3">
+        {{ $this->statuses->links() }}
+    </div>
 </div>
