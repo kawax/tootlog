@@ -18,10 +18,11 @@ class WelcomeController extends Controller
         return Status::whereHas('account', function ($query) {
             $query->where('locked', false);
         })
-            ->select('content')
-            ->limit(100)
-            ->inRandomOrder()
+            ->select(['content', 'created_at'])
+            ->latest()
+            ->limit(10000)
             ->get()
+            ->random(100)
             ->reject(fn ($item) => empty($item->content))
             ->map(fn ($item) => str($item->content)->stripTags()->limit(200)->toString())
             ->toPrettyJson(JSON_UNESCAPED_UNICODE);
