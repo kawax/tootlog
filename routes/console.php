@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Status;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Schedule;
@@ -25,3 +26,17 @@ Schedule::command('toot:version')
 Schedule::command('horizon:snapshot')->everyFiveMinutes();
 
 Schedule::command('queue:prune-failed', ['--hours' => 48])->hourly();
+
+Artisan::command('welcome:test', function () {
+    $this->info(Status::query()
+        ->join('accounts', 'statuses.account_id', '=', 'accounts.id')
+        ->where('accounts.locked', false)
+        ->whereNotNull('statuses.content')
+        ->where('statuses.content', '!=', '')
+        ->select(['statuses.content'])
+        ->inRandomOrder()
+        ->limit(100)
+        ->get()
+        ->map(fn ($item) => str($item->content)->stripTags()->limit(200)->toString())
+        ->toPrettyJson(JSON_UNESCAPED_UNICODE));
+});
