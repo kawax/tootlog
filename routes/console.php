@@ -33,9 +33,9 @@ Artisan::command('welcome:test', function () {
         ->where('accounts.locked', false)
         ->whereNotNull('statuses.content')
         ->where('statuses.content', '!=', '')
-        ->select(['statuses.content'])
+        ->select(['statuses.content', 'statuses.created_at'])
         ->limit(100)
-        ->latest()
+        ->latest('statuses.created_at')
         ->get()
         ->map(fn ($item) => str($item->content)->stripTags()->limit(200)->toString())
         ->toPrettyJson(JSON_UNESCAPED_UNICODE));
