@@ -11,7 +11,7 @@ new class extends Component
 {
     public function rendering(View $view): void
     {
-        $view->title(__('Dashboard'));
+        $view->title(config('app.name'));
     }
 }; ?>
 
