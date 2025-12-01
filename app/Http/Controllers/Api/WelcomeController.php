@@ -21,7 +21,7 @@ class WelcomeController extends Controller
             ->whereNotNull('statuses.content')
             ->where('statuses.content', '!=', '')
             ->select(['statuses.content'])
-            ->inRandomOrder()
+            ->latest('statuses.id')
             ->limit(100)
             ->get()
             ->map(fn ($item) => str($item->content)->stripTags()->limit(200)->toString())
