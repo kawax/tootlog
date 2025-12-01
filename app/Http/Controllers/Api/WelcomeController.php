@@ -20,7 +20,7 @@ class WelcomeController extends Controller
         })
             ->select(['content', 'created_at'])
             ->latest()
-            ->limit(10000)
+            ->limit(1000)
             ->get()
             ->random(100)
             ->reject(fn ($item) => empty($item->content))
