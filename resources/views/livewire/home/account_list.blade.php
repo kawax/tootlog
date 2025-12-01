@@ -32,6 +32,7 @@ new class extends Component
                 :current="request()->is(route('open.account.index', ['user'=> $user,'username' => $account->username, 'domain' => $account->domain]))"
                 badge="{{ $account->statuses_count }}"
                 :icon="$account->locked ? 'lock-closed' : ''"
+                icon:variant="micro"
                 wire:navigate>
                 @if($account->fails >= config('tootlog.account_fails'))
                     <del>{{ $account->acct }}</del>

@@ -25,7 +25,8 @@ new class extends Component
         @foreach($accounts as $account)
             <flux:navlist.item
                 :href="route('home.timeline.acct', ['username' => $account->username, 'domain' => $account->domain])"
-                :icon="$account->locked ? 'lock-closed' : ''">
+                :icon="$account->locked ? 'lock-closed' : ''"
+                icon:variant="micro">
                 @if($account->fails >= config('tootlog.account_fails'))
                     <del>{{ $account->acct }}</del>
                 @else
