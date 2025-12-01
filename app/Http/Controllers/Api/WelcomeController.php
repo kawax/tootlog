@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Status;
+use Illuminate\Foundation\Inspiring;
 use Illuminate\Http\Request;
 
 class WelcomeController extends Controller
@@ -12,19 +13,16 @@ class WelcomeController extends Controller
      * Handle the incoming request.
      *
      * welcomeページ用に公開可能な投稿をランダムに返すAPI.
+     *
+     * 直接実行すると時間がかかりすぎるので`welcome:cache`コマンドで毎日キャッシュしておき、
+     * ここではキャッシュを返すだけにする。
      */
     public function __invoke(Request $request)
     {
-        return Status::query()
-            ->join('accounts', 'statuses.account_id', '=', 'accounts.id')
-            ->where('accounts.locked', false)
-            ->whereNotNull('statuses.content')
-            ->where('statuses.content', '!=', '')
-            ->select(['statuses.content'])
-            ->latest('statuses.id')
-            ->limit(100)
-            ->get()
-            ->map(fn ($item) => str($item->content)->stripTags()->limit(200)->toString())
-            ->toPrettyJson(JSON_UNESCAPED_UNICODE);
+        if (cache()->has('welcome_statuses')) {
+            return cache()->get('welcome_statuses');
+        } else {
+            return Inspiring::quotes()->toJson();
+        }
     }
 }

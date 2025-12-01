@@ -27,8 +27,8 @@ Schedule::command('horizon:snapshot')->everyFiveMinutes();
 
 Schedule::command('queue:prune-failed', ['--hours' => 48])->hourly();
 
-Artisan::command('welcome:test', function () {
-    $this->info(Status::query()
+Artisan::command('welcome:cache', function () {
+    $statuses = Status::query()
         ->join('accounts', 'statuses.account_id', '=', 'accounts.id')
         ->where('accounts.locked', false)
         ->whereNotNull('statuses.content')
@@ -38,5 +38,11 @@ Artisan::command('welcome:test', function () {
         ->limit(100)
         ->get()
         ->map(fn ($item) => str($item->content)->stripTags()->limit(200)->toString())
-        ->toPrettyJson(JSON_UNESCAPED_UNICODE));
-});
+        ->toPrettyJson(JSON_UNESCAPED_UNICODE);
+
+    cache()->forever('welcome_statuses', $statuses);
+
+    $this->info('Welcome statuses cached.');
+    $this->info($statuses);
+})->purpose('Cache statuses for welcome page api')
+    ->dailyAt('03:00');
