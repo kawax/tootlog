@@ -19,20 +19,17 @@ class SitemapController extends Controller
             Url::create(url('/'))
                 ->setLastModificationDate(now())
                 ->setPriority(0.2)
-                ->setChangeFrequency('weekly')
         );
 
-        foreach (User::latest()->cursor() as $user) {
+        foreach (User::has('accounts')->cursor() as $user) {
             $sitemap->add(
                 Url::create(route('open.user', ['user' => $user]))
                     ->setLastModificationDate($user->updated_at)
                     ->setPriority(1.0)
-                    ->setChangeFrequency('hourly')
             );
         }
 
-        $accounts = Account::where('locked', false)
-            ->latest()
+        $accounts = Account::has('statuses')->where('locked', false)
             ->cursor();
 
         foreach ($accounts as $account) {
@@ -42,8 +39,7 @@ class SitemapController extends Controller
                     'username' => $account->username,
                     'domain' => $account->domain,
                 ]))->setLastModificationDate($account->updated_at)
-                    ->setPriority(0.5)
-                    ->setChangeFrequency('hourly'));
+                    ->setPriority(0.5));
         }
 
         return $sitemap->toResponse($request);
