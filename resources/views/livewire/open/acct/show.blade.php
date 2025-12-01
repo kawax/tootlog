@@ -25,8 +25,6 @@ class extends Component
 
     public function mount(Request $request): void
     {
-        $this->user = $request->route('user');
-
         $this->acct = Account::byAcct($this->username, $this->domain)->firstOrFail();
 
         $this->status = $this->acct->status($this->status_id);
