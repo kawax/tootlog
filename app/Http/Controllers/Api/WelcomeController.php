@@ -22,6 +22,7 @@ class WelcomeController extends Controller
             ->limit(100)
             ->inRandomOrder()
             ->get()
+            ->reject(fn ($item) => empty($item->content))
             ->map(fn ($item) => str($item->content)->stripTags()->limit(200)->toString())
             ->toPrettyJson(JSON_UNESCAPED_UNICODE);
     }
