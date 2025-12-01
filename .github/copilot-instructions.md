@@ -163,7 +163,7 @@ tests/
 
 ### Route Structure
 
-#### Authenticated Routes (`/routes/web.php`)
+#### Authenticated Routes (`/routes/home.php`)
 - `POST /accounts` - Add Mastodon account
 - `GET /accounts/callback` - OAuth callback
 - `DELETE /accounts/delete/{account}` - Remove account
