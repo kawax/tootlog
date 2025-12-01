@@ -11,11 +11,6 @@ Welcome to the tootlog project! This guide will help GitHub Copilot understand t
 - Browse and search through their archived content
 - Export their data in CSV format
 - Share public archives with custom URLs
-- Filter content by tags, dates, and accounts
-
-**Live Site**: https://tootlog.net/
-**License**: MIT
-**Current Version**: v1.18.0 (see `config/tootlog.php`)
 
 ### Key Features
 - Multi-instance Mastodon support
