@@ -15,15 +15,15 @@ class WelcomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return Status::whereHas('account', function ($query) {
-            $query->where('locked', false);
-        })
-            ->select(['content', 'created_at'])
-            ->latest()
-            ->limit(1000)
-            ->lazy()
-            ->random(fn ($items) => min(100, $items->count()))
-            ->reject(fn ($item) => empty($item->content))
+        return Status::query()
+            ->join('accounts', 'statuses.account_id', '=', 'accounts.id')
+            ->where('accounts.locked', false)
+            ->whereNotNull('statuses.content')
+            ->where('statuses.content', '!=', '')
+            ->select(['statuses.content'])
+            ->inRandomOrder()
+            ->limit(100)
+            ->get()
             ->map(fn ($item) => str($item->content)->stripTags()->limit(200)->toString())
             ->toPrettyJson(JSON_UNESCAPED_UNICODE);
     }
