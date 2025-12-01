@@ -24,7 +24,7 @@ class extends Component
 
     public function rendering(View $view): void
     {
-        $view->title($this->user->name);
+        $view->title('@'.$this->user->name.' - '.__('Statuses'));
     }
 
     #[Computed]

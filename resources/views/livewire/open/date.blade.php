@@ -37,7 +37,7 @@ class extends Component
 
     public function rendering(View $view): void
     {
-        $view->title($this->user->name.' - '.$this->date);
+        $view->title('@'.$this->user->name.' - '.$this->date);
     }
 
     #[Computed]
