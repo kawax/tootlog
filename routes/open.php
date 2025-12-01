@@ -5,7 +5,6 @@ use Livewire\Volt\Volt;
 /**
  * Public Routes
  */
-
 Volt::route('@{user}', 'open.user')
     ->name('open.user');
 
