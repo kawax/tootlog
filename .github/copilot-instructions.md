@@ -38,7 +38,6 @@ Welcome to the tootlog project! This guide will help GitHub Copilot understand t
 - **CSS Framework**: Tailwind 4
 - **JavaScript**: Vue 3 with Vite
 - **Interactive Components**: Livewire and Volt
-- **Icons**: Font Awesome 7
 
 ### Development Tools
 - **Code Style**: Laravel Pint
