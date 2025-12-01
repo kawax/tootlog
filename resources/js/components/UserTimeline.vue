@@ -27,16 +27,16 @@ const active_posts = computed(() => {
 
 <template>
     <div>
-        <div class="btn-toolbar mb-2" role="toolbar" aria-label="toolbar">
+        <div class="flex gap-2 mb-2" role="toolbar" aria-label="toolbar">
             <TypeSwitch @changed="(type) => active_type = type"/>
 
             <MediaSwitch @changed="(media) => active_media = media"/>
         </div>
 
-        <div class="alert alert-danger" v-if="errors.length > 0">
-            <p><strong>Whoops!</strong> Something went wrong!</p>
-            <ul>
-                <li v-for="error in errors">{{ error }}</li>
+        <div class="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg mb-4" v-if="errors.length > 0">
+            <p class="font-bold mb-2">Whoops! Something went wrong!</p>
+            <ul class="list-disc list-inside">
+                <li v-for="error in errors" :key="error">{{ error }}</li>
             </ul>
         </div>
 
@@ -45,7 +45,7 @@ const active_posts = computed(() => {
                 <TimelineReblog :post="post" v-if="post.reblog"></TimelineReblog>
 
                 <TimelineStatus :post="post" v-else></TimelineStatus>
-                <hr/>
+                <hr class="border-gray-200 dark:border-neutral-500"/>
             </div>
         </Card>
     </div>

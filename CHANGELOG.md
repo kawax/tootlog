@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## v1.19.0 (2025-12-01)
+Major renovation
+
+- Livewire Starter Kit
+- Volt
+- Flux UI
+- Tailwind
+
+A flashy 3D welcome page
+
 ## v1.18.0 (2025-03-04)
 - Laravel 12
 

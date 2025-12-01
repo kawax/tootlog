@@ -1,82 +1,64 @@
-/* Bootstrap CSS */
-@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'tailwindcss';
+@import '../../vendor/livewire/flux/dist/flux.css';
 
-/* FontAwesome CSS */
-@import '@fortawesome/fontawesome-free/css/fontawesome.css';
-@import '@fortawesome/fontawesome-free/css/regular.css';
-@import '@fortawesome/fontawesome-free/css/solid.css';
-@import '@fortawesome/fontawesome-free/css/v4-shims.css';
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../vendor/livewire/flux/stubs/**/*.blade.php';
 
-@font-face {
-  font-family: "Noto Sans CJK JP";
-  font-style: normal;
-  font-weight: 200;
-  src: local("Noto Sans CJK JP Light"),
-  url('//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Light.woff2') format("woff2"),
-  url('//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Light.woff') format("woff"),
-  url('//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Light.otf') format("opentype");
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+    --color-zinc-50: #fafafa;
+    --color-zinc-100: #f5f5f5;
+    --color-zinc-200: #e5e5e5;
+    --color-zinc-300: #d4d4d4;
+    --color-zinc-400: #a3a3a3;
+    --color-zinc-500: #737373;
+    --color-zinc-600: #525252;
+    --color-zinc-700: #404040;
+    --color-zinc-800: #262626;
+    --color-zinc-900: #171717;
+    --color-zinc-950: #0a0a0a;
+
+    --color-accent: var(--color-neutral-800);
+    --color-accent-content: var(--color-neutral-800);
+    --color-accent-foreground: var(--color-white);
 }
 
-/* Custom CSS Variables */
-:root {
-  --font-family-sans-serif: "Nunito", "Noto Sans", "Noto Sans CJK JP", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Yu Gothic", sans-serif;
-  --font-family-normal: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --body-bg: #ffffff;
+@layer theme {
+    .dark {
+        --color-accent: var(--color-white);
+        --color-accent-content: var(--color-white);
+        --color-accent-foreground: var(--color-neutral-800);
+    }
 }
 
-body {
-  margin: 0;
-  background-color: var(--body-bg);
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
 }
 
-.theme-thin {
-  font-family: var(--font-family-sans-serif);
+[data-flux-field]:not(ui-radio, ui-checkbox) {
+    @apply grid gap-2;
 }
 
-.theme-normal {
-  font-family: var(--font-family-normal);
+[data-flux-label] {
+    @apply  !mb-0 !leading-tight;
 }
 
-.toot-icon {
-  max-width: 90px;
-}
+/*input:focus[data-flux-control],*/
+/*textarea:focus[data-flux-control],*/
+/*select:focus[data-flux-control] {*/
+/*    @apply outline-hidden ring-2 ring-accent ring-offset-2  ring-offset-accent-foreground;*/
+/*}*/
 
-.toot-icon-small {
-  max-width: 25px;
-}
-
-.invisible {
-  font-size: 0;
-  line-height: 0;
-  display: inline-block;
-  width: 0;
-}
-
-.ellipsis:after {
-  content: "…";
-}
-
-img.emoji {
-  height: 1em;
-  width: 1em;
-  margin: 0 .05em 0 .1em;
-  vertical-align: -0.1em;
-}
-
-#calendar_div {
-  width: 100%;
-}
-
-.media-body code {
-  margin: 10px 0;
-  padding: 8px;
-  border-radius: 2px;
-  line-height: 1.2;
-  white-space: pre;
-  display: block;
-}
-
-.media-body code.inline {
-  display: inline;
-  padding: 1px 6px;
-}
+/* \[:where(&)\]:size-4 {
+    @apply size-4;
+} */
