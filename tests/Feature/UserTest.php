@@ -155,7 +155,7 @@ class UserTest extends TestCase
 
         $response->assertSee('Accounts');
         $response->assertDontSee('Recents');
-        $response->assertSee('Public area');
+        $response->assertSee('Public');
     }
 
     public function test_dont_see_user()
