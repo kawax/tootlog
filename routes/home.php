@@ -6,6 +6,10 @@ use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 use Livewire\Volt\Volt;
 
+/**
+ * Authenticated Routes
+ */
+
 Route::middleware(['auth', 'verified'])->prefix('home')->group(function () {
     Volt::route('/', 'home.home')
         ->name('home');

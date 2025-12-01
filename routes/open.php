@@ -1,8 +1,10 @@
 <?php
 
-use App\Http\Controllers\Open\DateController;
-use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
+
+/**
+ * Public Routes
+ */
 
 Volt::route('@{user}', 'open.user')
     ->name('open.user');
