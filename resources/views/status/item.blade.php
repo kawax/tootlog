@@ -16,7 +16,7 @@
                     <small class="text-gray-500 font-normal">
                         {{ $status->acct }}
                         @if($status->account->locked)
-                            <i class="fa fa-lock" aria-hidden="true"></i>
+                            <flux:icon.lock-closed variant="micro" class="inline"/>
                         @endif
                     </small>
                 </h4>
