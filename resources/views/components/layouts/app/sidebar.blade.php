@@ -12,13 +12,20 @@
     </a>
 
     <flux:navlist variant="outline">
-        <flux:navlist.group :heading="__('Navigation')" class="grid">
+        <flux:navlist.group :heading="__('Private')" class="grid">
             <flux:navlist.item icon="home" :href="route('home')" :current="request()->routeIs('home')"
                                wire:navigate>{{ __('Dashboard') }}</flux:navlist.item>
 
             <flux:navlist.item :href="route('home.timeline')"
                                :current="request()->routeIs('home.timeline.*')">{{ __('Timeline') }}</flux:navlist.item>
+        </flux:navlist.group>
+    </flux:navlist>
 
+    <flux:navlist variant="outline">
+        <flux:navlist.group :heading="__('Public')" class="grid">
+            <flux:navlist.item :href="route('open.user', auth()->user())"
+                               :current="request()->routeIs('open.user')"
+                               wire:navigate>{{ __('Statuses') }}</flux:navlist.item>
             <flux:navlist.item :href="route('open.archives', auth()->user())"
                                :current="request()->routeIs('open.archives')"
                                wire:navigate>{{ __('Archives') }}</flux:navlist.item>
