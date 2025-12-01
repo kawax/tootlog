@@ -21,8 +21,8 @@ class WelcomeController extends Controller
             ->select(['content', 'created_at'])
             ->latest()
             ->limit(1000)
-            ->get()
-            ->random(100)
+            ->lazy()
+            ->random(fn ($items) => min(100, $items->count()))
             ->reject(fn ($item) => empty($item->content))
             ->map(fn ($item) => str($item->content)->stripTags()->limit(200)->toString())
             ->toPrettyJson(JSON_UNESCAPED_UNICODE);
