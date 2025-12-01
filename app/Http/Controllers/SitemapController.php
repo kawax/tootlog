@@ -18,29 +18,29 @@ class SitemapController extends Controller
         $sitemap->add(
             Url::create(url('/'))
                 ->setLastModificationDate(now())
-                ->setPriority(0.2)
+                ->setPriority(0.2),
         );
 
         foreach (User::has('accounts')->cursor() as $user) {
             $sitemap->add(
                 Url::create(route('open.user', ['user' => $user]))
                     ->setLastModificationDate($user->updated_at)
-                    ->setPriority(1.0)
+                    ->setPriority(1.0),
             );
         }
 
-        $accounts = Account::has('statuses')->where('locked', false)
-            ->cursor();
-
-        foreach ($accounts as $account) {
-            $sitemap->add(
-                Url::create(route('open.account.index', [
-                    'user' => $account->user,
-                    'username' => $account->username,
-                    'domain' => $account->domain,
-                ]))->setLastModificationDate($account->updated_at)
-                    ->setPriority(0.5));
-        }
+        //        $accounts = Account::has('statuses')->where('locked', false)
+        //            ->cursor();
+        //
+        //        foreach ($accounts as $account) {
+        //            $sitemap->add(
+        //                Url::create(route('open.account.index', [
+        //                    'user' => $account->user,
+        //                    'username' => $account->username,
+        //                    'domain' => $account->domain,
+        //                ]))->setLastModificationDate($account->updated_at)
+        //                    ->setPriority(0.5));
+        //        }
 
         return $sitemap->toResponse($request);
     }
