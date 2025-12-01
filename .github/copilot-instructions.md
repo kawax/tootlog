@@ -68,16 +68,12 @@ Welcome to the tootlog project! This guide will help GitHub Copilot understand t
 2. **Configure Environment Variables**
    Edit `.env` file with your settings:
    ```env
-   # Mastodon OAuth (required for functionality)
-   MASTODON_DOMAIN=your-instance.social
-   MASTODON_ID=your_client_id
-   MASTODON_SECRET=your_client_secret
-   MASTODON_REDIRECT=http://localhost:8000/accounts/callback
+   MASTODON_REDIRECT=http://127.0.0.1:8000/accounts/callback
    ```
 
 3. **Database Setup**
    ```bash
-   php artisan db:seed
+   php artisan migrate:fresh --seed
    ```
 
 4. **Start Development Server**
