@@ -23,16 +23,6 @@ class GetUserStatus extends Command
     protected $description = 'Get account statuses (test command)';
 
     /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
-    /**
      * Execute the console command.
      */
     public function handle(): int
