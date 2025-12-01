@@ -45,7 +45,7 @@ const active_posts = computed(() => {
                 <TimelineReblog :post="post" v-if="post.reblog"></TimelineReblog>
 
                 <TimelineStatus :post="post" v-else></TimelineStatus>
-                <hr class="border-gray-200"/>
+                <hr class="border-gray-200 dark:border-neutral-500"/>
             </div>
         </Card>
     </div>
