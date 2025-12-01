@@ -1,29 +1,40 @@
 import * as THREE from 'three';
 import axios from 'axios';
 
-interface TootSprite {
+interface TootTile {
     mesh: THREE.Mesh;
-    speed: number;
-    amplitude: number;
-    phase: number;
+    row: number;
+    col: number;
+    targetOpacity: number;
+    currentOpacity: number;
+    tootIndex: number;
 }
 
 // 調整可能な設定値
 const CONFIG = {
-    // 投稿の流れる基本速度（小さいほど遅い）
-    BASE_SCROLL_SPEED: 0.0007,
-    // 速度のランダム幅
-    SPEED_VARIATION: 0.002,
+    // タイル切り替え間隔（秒）
+    TILE_CHANGE_INTERVAL: 10,
+    // 初回表示の遅延（ミリ秒）
+    INITIAL_DELAY: 100,
+    // フェードアニメーション速度
+    FADE_SPEED: 0.03,
+    // タイルの間隔
+    TILE_GAP: 0.3,
 };
 
 class WelcomeScene {
     private scene: THREE.Scene;
     private camera: THREE.PerspectiveCamera;
     private renderer: THREE.WebGLRenderer;
-    private tootSprites: TootSprite[] = [];
+    private tootTiles: TootTile[] = [];
+    private allToots: string[] = [];
     private clock: THREE.Clock;
     private mouse: THREE.Vector2 = new THREE.Vector2();
     private targetRotation: THREE.Vector2 = new THREE.Vector2();
+    private tileLayout: { cols: number; rows: number; tileWidth: number; tileHeight: number } | null = null;
+    private lastChangeTime: number = 0;
+    private initialAnimationComplete: boolean = false;
+    private currentTileIndex: number = 0;
 
     constructor() {
         this.scene = new THREE.Scene();
@@ -93,7 +104,7 @@ class WelcomeScene {
     private async loadToots(): Promise<void> {
         try {
             const response = await axios.get<string[]>('/api/welcome');
-            const toots = response.data;
+            this.allToots = response.data;
 
             const loadingEl = document.getElementById('welcome-loading');
             if (loadingEl) {
@@ -101,7 +112,7 @@ class WelcomeScene {
                 setTimeout(() => loadingEl.remove(), 500);
             }
 
-            this.createTootSprites(toots);
+            this.createTileLayout();
         } catch (error) {
             console.error('Failed to load toots:', error);
             const loadingEl = document.getElementById('welcome-loading');
@@ -111,67 +122,137 @@ class WelcomeScene {
         }
     }
 
-    private createTootSprites(toots: string[]): void {
-        const colors = [0x6366f1, 0xa855f7, 0x22d3ee, 0x818cf8, 0xc084fc];
+    private calculateTileLayout(): { cols: number; rows: number; tileWidth: number; tileHeight: number } {
+        const fov = this.camera.fov * (Math.PI / 180);
+        const distance = this.camera.position.z;
+        const visibleHeight = 2 * Math.tan(fov / 2) * distance;
+        const visibleWidth = visibleHeight * this.camera.aspect;
 
-        toots.forEach((toot, index) => {
-            const canvas = document.createElement('canvas');
-            const context = canvas.getContext('2d')!;
+        const tileAspect = 4;
+        const targetTileWidth = 10;
+        const tileWidth = targetTileWidth;
+        const tileHeight = tileWidth / tileAspect;
 
-            canvas.width = 512;
-            canvas.height = 128;
+        const cols = Math.floor(visibleWidth / (tileWidth + CONFIG.TILE_GAP));
+        const rows = Math.floor(visibleHeight / (tileHeight + CONFIG.TILE_GAP));
 
-            context.fillStyle = `rgba(${Math.random() * 30 + 10}, ${Math.random() * 30 + 10}, ${Math.random() * 40 + 20}, 0.85)`;
-            this.roundRect(context, 0, 0, canvas.width, canvas.height, 12);
-            context.fill();
+        return { cols, rows, tileWidth, tileHeight };
+    }
 
-            const gradient = context.createLinearGradient(0, 0, canvas.width, 0);
-            gradient.addColorStop(0, `rgba(99, 102, 241, 0.3)`);
-            gradient.addColorStop(1, `rgba(168, 85, 247, 0.1)`);
-            context.strokeStyle = gradient;
-            context.lineWidth = 2;
-            this.roundRect(context, 1, 1, canvas.width - 2, canvas.height - 2, 12);
-            context.stroke();
+    private createTileLayout(): void {
+        this.tileLayout = this.calculateTileLayout();
+        const { cols, rows, tileWidth, tileHeight } = this.tileLayout;
 
-            context.fillStyle = '#e2e8f0';
-            context.font = '20px "Space Mono", monospace';
-            context.textAlign = 'left';
-            context.textBaseline = 'middle';
+        const totalWidth = cols * tileWidth + (cols - 1) * CONFIG.TILE_GAP;
+        const totalHeight = rows * tileHeight + (rows - 1) * CONFIG.TILE_GAP;
+        const startX = -totalWidth / 2 + tileWidth / 2;
+        const startY = totalHeight / 2 - tileHeight / 2;
 
-            const truncatedText = toot.length > 40 ? toot.substring(0, 40) + '...' : toot;
-            context.fillText(truncatedText, 20, canvas.height / 2);
+        let tootIndex = 0;
+        let tileIndex = 0;
 
-            const texture = new THREE.CanvasTexture(canvas);
-            texture.needsUpdate = true;
+        for (let row = 0; row < rows; row++) {
+            for (let col = 0; col < cols; col++) {
+                const toot = this.allToots[tootIndex % this.allToots.length];
+                const mesh = this.createTileMesh(toot, tileWidth, tileHeight);
 
-            const material = new THREE.MeshBasicMaterial({
-                map: texture,
-                transparent: true,
-                opacity: 0.9,
-                side: THREE.DoubleSide
-            });
+                mesh.position.x = startX + col * (tileWidth + CONFIG.TILE_GAP);
+                mesh.position.y = startY - row * (tileHeight + CONFIG.TILE_GAP);
+                mesh.position.z = -5;
 
-            const geometry = new THREE.PlaneGeometry(12, 3);
-            const mesh = new THREE.Mesh(geometry, material);
+                (mesh.material as THREE.MeshBasicMaterial).opacity = 0;
 
-            const row = index % 8;
-            const spacing = 60 / 8;
-            mesh.position.x = 50 + (index * 15);
-            mesh.position.y = -30 + (row * spacing) + (Math.random() - 0.5) * 4;
-            mesh.position.z = (Math.random() - 0.5) * 20;
+                this.scene.add(mesh);
 
-            mesh.rotation.y = (Math.random() - 0.5) * 0.3;
-            mesh.rotation.x = (Math.random() - 0.5) * 0.1;
+                const currentTileIndex = tileIndex;
 
-            this.scene.add(mesh);
+                this.tootTiles.push({
+                    mesh,
+                    row,
+                    col,
+                    targetOpacity: 0,
+                    currentOpacity: 0,
+                    tootIndex
+                });
 
-            this.tootSprites.push({
-                mesh,
-                speed: CONFIG.BASE_SCROLL_SPEED + Math.random() * CONFIG.SPEED_VARIATION,
-                amplitude: 0.5 + Math.random() * 1,
-                phase: Math.random() * Math.PI * 2
-            });
+                setTimeout(() => {
+                    const tile = this.tootTiles[currentTileIndex];
+                    if (tile) {
+                        tile.targetOpacity = 0.85;
+                    }
+                }, CONFIG.INITIAL_DELAY * currentTileIndex);
+
+                tootIndex++;
+                tileIndex++;
+            }
+        }
+
+        setTimeout(() => {
+            this.initialAnimationComplete = true;
+            this.lastChangeTime = this.clock.getElapsedTime();
+        }, CONFIG.INITIAL_DELAY * tileIndex + 500);
+    }
+
+    private createTileMesh(toot: string, width: number, height: number): THREE.Mesh {
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d')!;
+
+        canvas.width = 512;
+        canvas.height = 128;
+
+        context.fillStyle = `rgba(${Math.random() * 30 + 10}, ${Math.random() * 30 + 10}, ${Math.random() * 40 + 20}, 0.85)`;
+        this.roundRect(context, 0, 0, canvas.width, canvas.height, 12);
+        context.fill();
+
+        const gradient = context.createLinearGradient(0, 0, canvas.width, 0);
+        gradient.addColorStop(0, `rgba(99, 102, 241, 0.3)`);
+        gradient.addColorStop(1, `rgba(168, 85, 247, 0.1)`);
+        context.strokeStyle = gradient;
+        context.lineWidth = 2;
+        this.roundRect(context, 1, 1, canvas.width - 2, canvas.height - 2, 12);
+        context.stroke();
+
+        context.fillStyle = '#e2e8f0';
+        context.font = '20px "Space Mono", monospace';
+        context.textAlign = 'left';
+        context.textBaseline = 'middle';
+
+        const truncatedText = toot.length > 40 ? toot.substring(0, 40) + '...' : toot;
+        context.fillText(truncatedText, 20, canvas.height / 2);
+
+        const texture = new THREE.CanvasTexture(canvas);
+        texture.needsUpdate = true;
+
+        const material = new THREE.MeshBasicMaterial({
+            map: texture,
+            transparent: true,
+            opacity: 0.85,
+            side: THREE.DoubleSide
         });
+
+        const geometry = new THREE.PlaneGeometry(width, height);
+        return new THREE.Mesh(geometry, material);
+    }
+
+    private updateTileContent(tile: TootTile, newTootIndex: number): void {
+        const toot = this.allToots[newTootIndex % this.allToots.length];
+        const { tileWidth, tileHeight } = this.tileLayout!;
+
+        const oldMesh = tile.mesh;
+        const newMesh = this.createTileMesh(toot, tileWidth, tileHeight);
+
+        newMesh.position.copy(oldMesh.position);
+        (newMesh.material as THREE.MeshBasicMaterial).opacity = 0;
+
+        this.scene.remove(oldMesh);
+        oldMesh.geometry.dispose();
+        (oldMesh.material as THREE.MeshBasicMaterial).dispose();
+
+        this.scene.add(newMesh);
+        tile.mesh = newMesh;
+        tile.tootIndex = newTootIndex;
+        tile.currentOpacity = 0;
+        tile.targetOpacity = 0.85;
     }
 
     private roundRect(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: number, r: number): void {
@@ -204,21 +285,35 @@ class WelcomeScene {
 
         const elapsed = this.clock.getElapsedTime();
 
-        this.targetRotation.x = this.mouse.y * 0.05;
-        this.targetRotation.y = this.mouse.x * 0.05;
+        this.targetRotation.x = this.mouse.y * 0.03;
+        this.targetRotation.y = this.mouse.x * 0.03;
 
         this.camera.rotation.x += (this.targetRotation.x - this.camera.rotation.x) * 0.02;
         this.camera.rotation.y += (this.targetRotation.y - this.camera.rotation.y) * 0.02;
 
-        this.tootSprites.forEach((sprite) => {
-            sprite.mesh.position.x -= sprite.speed * 60;
+        this.tootTiles.forEach((tile) => {
+            if (tile.currentOpacity !== tile.targetOpacity) {
+                const diff = tile.targetOpacity - tile.currentOpacity;
+                tile.currentOpacity += diff * CONFIG.FADE_SPEED;
 
-            sprite.mesh.position.y += Math.sin(elapsed * 0.5 + sprite.phase) * 0.01 * sprite.amplitude;
+                if (Math.abs(diff) < 0.01) {
+                    tile.currentOpacity = tile.targetOpacity;
+                }
 
-            if (sprite.mesh.position.x < -60) {
-                sprite.mesh.position.x = 60 + Math.random() * 20;
+                (tile.mesh.material as THREE.MeshBasicMaterial).opacity = tile.currentOpacity;
             }
         });
+
+        if (this.initialAnimationComplete && this.tootTiles.length > 0) {
+            if (elapsed - this.lastChangeTime >= CONFIG.TILE_CHANGE_INTERVAL) {
+                const tileToChange = this.tootTiles[this.currentTileIndex % this.tootTiles.length];
+                const newTootIndex = tileToChange.tootIndex + this.tootTiles.length;
+                this.updateTileContent(tileToChange, newTootIndex);
+
+                this.currentTileIndex++;
+                this.lastChangeTime = elapsed;
+            }
+        }
 
         this.renderer.render(this.scene, this.camera);
     }
