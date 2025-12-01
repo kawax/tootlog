@@ -13,11 +13,6 @@ Volt::route('@{user}/{username}@{domain}', 'open.acct.index')
 Volt::route('@{user}/{username}@{domain}/{status_id}', 'open.acct.show')
     ->name('open.account.show');
 
-Route::get('@{user}/date/{date}')
-    ->uses([DateController::class, 'show'])
-    ->name('open.user.date')
-    ->where('date', '[0-9]{4}-[0-9]{2}-[0-9]{2}');
-
 Volt::route('@{user}/date/{year?}/{month?}/{day?}', 'open.date')
     ->name('open.user.date.day')
     ->where('year', '[0-9]{4}')
