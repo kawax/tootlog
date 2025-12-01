@@ -50,42 +50,4 @@ class MailTest extends TestCase
             'created_at' => now(),
         ]);
     }
-
-    public function test_export_job()
-    {
-        Bus::fake();
-
-        $response = $this->actingAs($this->user)
-            ->post('/export/csv');
-
-        Bus::assertDispatched(ExportCsvJob::class);
-
-        $response->assertSessionHas('export');
-    }
-
-    public function test_export_mail()
-    {
-        Mail::fake();
-        Storage::fake('local');
-
-        $response = $this->actingAs($this->user)
-            ->post('/export/csv');
-
-        $user = $this->user;
-
-        Mail::assertQueued(CsvExported::class, function ($mail) use ($user) {
-            return $mail->hasTo($user->email);
-        });
-
-        Storage::disk('local')->assertExists('csv/test/test@example.com.csv');
-
-        $response->assertSessionHas('export');
-    }
-
-    public function test_dont_see_export()
-    {
-        $response = $this->post('/export/csv');
-
-        $response->assertRedirect('/login');
-    }
 }

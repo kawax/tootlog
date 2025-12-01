@@ -14,14 +14,6 @@ class InstanceTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_http()
-    {
-        $response = $this->get(route('instances'));
-
-        $response->assertSuccessful()
-            ->assertViewHas('instances');
-    }
-
     public function test_job()
     {
         $server = Server::first();

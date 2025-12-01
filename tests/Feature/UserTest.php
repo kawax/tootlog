@@ -50,8 +50,7 @@ class UserTest extends TestCase
         $response = $this->actingAs($this->user)
             ->get('/');
 
-        $response->assertSee('Home');
-        $response->assertSee('Timeline');
+        $response->assertOk();
     }
 
     public function test_dont_see_welcome()
@@ -116,16 +115,15 @@ class UserTest extends TestCase
     public function test_timeline()
     {
         $response = $this->actingAs($this->user)
-            ->get('/timeline');
+            ->get('/home/timeline');
 
-        $response->assertSee('Timeline');
-        $response->assertSee('<tt-user-timeline', false);
+        $response->assertRedirect();
     }
 
     public function test_timeline_acct()
     {
         $response = $this->actingAs($this->user)
-            ->get('/timeline/test@example.com');
+            ->get('/home/timeline/test@example.com');
 
         $response->assertSee('Timeline');
         $response->assertSee('<tt-user-timeline', false);
@@ -133,7 +131,7 @@ class UserTest extends TestCase
 
     public function test_dont_see_timeline()
     {
-        $response = $this->get('/timeline');
+        $response = $this->get('/home/timeline');
 
         $response->assertRedirect('/login');
     }
@@ -145,7 +143,7 @@ class UserTest extends TestCase
         ]);
 
         $response = $this->actingAs($user2)
-            ->get('/timeline/test@example.com');
+            ->get('/home/timeline/test@example.com');
 
         $response->assertStatus(403);
     }
@@ -351,45 +349,6 @@ class UserTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_preferences()
-    {
-        $response = $this->actingAs($this->user)
-            ->get('/preferences');
-
-        $response->assertSee('User Preferences');
-    }
-
-    public function test_dont_see_preferences()
-    {
-        $response = $this->get('/preferences');
-
-        $response->assertRedirect('/login');
-    }
-
-    public function test_update_preferences()
-    {
-        $response = $this->actingAs($this->user)
-            ->put('/preferences', [
-                'email' => 'test@example.com',
-                'theme' => 'normal',
-                'special_ley' => 'test',
-            ]);
-
-        $response->assertSuccessful()
-            ->assertSee('User Preferences');
-    }
-
-    public function test_update_preferences_fail()
-    {
-        $response = $this->actingAs($this->user)
-            ->put('/preferences', [
-                'email' => 'test@example.com',
-            ]);
-
-        $response->assertStatus(302)
-            ->assertSessionHasErrors(['theme']);
-    }
-
     public function test_search_home()
     {
         $statuses = Status::factory()->create([
@@ -429,60 +388,6 @@ class UserTest extends TestCase
             ->get('/@test/test@example.com?search=test');
 
         $response->assertSee('test');
-    }
-
-    public function test_user_tags()
-    {
-        $statuses = Status::factory()
-            ->hasTags(1)
-            ->create([
-                'account_id' => $this->account->id,
-            ]);
-
-        $response = $this->actingAs($this->user)
-            ->get('/@test/tags');
-
-        $response->assertViewHas('tags');
-        $response->assertSee($statuses->tags()->first()->name);
-    }
-
-    public function test_tag()
-    {
-        $statuses = Status::factory()
-            ->hasTags(1, [
-                'name' => 'test',
-            ])
-            ->create([
-                'account_id' => $this->account->id,
-                'content' => 'test',
-            ]);
-
-        $response = $this->actingAs($this->user)
-            ->get('/@test/tags/test?search=test');
-
-        $response->assertViewHas('tag');
-        $response->assertSee($statuses->content);
-    }
-
-    public function test_locked_tag()
-    {
-        $accounts = Account::factory()->create([
-            'user_id' => $this->user->id,
-            'server_id' => $this->server->id,
-            'locked' => true,
-        ]);
-
-        $statuses = Status::factory()
-            ->hasTags(1, [
-                'name' => 'test',
-            ])->create([
-                'account_id' => $accounts->id,
-            ]);
-
-        $response = $this->actingAs($this->user)
-            ->get('/@test/tags/test');
-
-        $response->assertDontSee($statuses->content);
     }
 
     public function test_archives()

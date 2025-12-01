@@ -23,6 +23,8 @@ new class extends Component
         $this->user = $request->user();
 
         $this->acct = Account::byAcct($this->username, $this->domain)->firstOrFail();
+
+        $this->authorize('show', $this->acct);
     }
 
     public function rendering(View $view): void

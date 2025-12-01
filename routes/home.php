@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Home\AccountController;
+use App\Http\Controllers\Home\AccountDeleteController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 use Livewire\Volt\Volt;
@@ -11,12 +13,18 @@ Route::middleware(['auth', 'verified'])->prefix('home')->group(function () {
     Volt::route('timeline', 'home.timeline.index')
         ->name('home.timeline');
 
-
     Volt::route('timeline/{username}@{domain}', 'home.timeline.acct')
         ->name('home.timeline.acct');
+});
 
-    Volt::route('/{username}@{domain}', 'home.acct.index')
-        ->name('home.acct.index');
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::post('accounts', [AccountController::class, 'redirect'])
+        ->name('accounts.add');
+
+    Route::get('accounts/callback', [AccountController::class, 'callback'])
+        ->name('accounts.callback');
+
+    Route::delete('accounts/delete/{account}', AccountDeleteController::class)->name('accounts.delete');
 });
 
 Route::middleware(['auth'])->group(function () {
