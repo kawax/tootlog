@@ -33,7 +33,7 @@ Artisan::command('welcome:test', function () {
         ->where('accounts.locked', false)
         ->whereNotNull('statuses.content')
         ->where('statuses.content', '!=', '')
-        ->select(['statuses.content', 'statuses.created_at'])
+        ->select(['statuses.content'])
         ->limit(100)
         ->latest('statuses.created_at')
         ->get()
