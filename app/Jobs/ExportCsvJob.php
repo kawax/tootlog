@@ -53,7 +53,8 @@ class ExportCsvJob implements ShouldQueue
     {
         info('Export: '.$this->user->name.' / '.$account->acct);
 
-        $this->writer = Writer::createFromFileObject(new \SplTempFileObject);
+        $this->writer = Writer::from(new \SplTempFileObject);
+        $this->writer->setEscape('');
 
         $this->writer->insertOne($this->header());
 

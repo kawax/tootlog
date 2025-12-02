@@ -5,8 +5,10 @@ namespace App\Mail\Export;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Attachment;
+use Illuminate\Mail\Mailables\Content;
+use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Support\Facades\Storage;
 
 class CsvExported extends Mailable implements ShouldQueue
 {
@@ -16,18 +18,40 @@ class CsvExported extends Mailable implements ShouldQueue
     /**
      * Create a new message instance.
      */
-    public function __construct(public array $files) {}
+    public function __construct(public array $files)
+    {
+        //
+    }
 
     /**
-     * Build the message.
+     * Get the message envelope.
      */
-    public function build(): static
+    public function envelope(): Envelope
     {
-        foreach ($this->files as $file) {
-            $this->attach(Storage::path($file));
-        }
+        return new Envelope(
+            subject: '[tootlog] export',
+        );
+    }
 
-        return $this->subject('[tootlog] export')
-            ->text('emails.export');
+    /**
+     * Get the message content definition.
+     */
+    public function content(): Content
+    {
+        return new Content(
+            text: 'emails.export',
+        );
+    }
+
+    /**
+     * Get the attachments for the message.
+     *
+     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
+     */
+    public function attachments(): array
+    {
+        return collect($this->files)
+            ->map(fn ($file) => Attachment::fromStorage($file))
+            ->toArray();
     }
 }
