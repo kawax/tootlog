@@ -23,7 +23,7 @@ new class extends Component
         $this->accounts = $this->user->openAccounts();
     }
 
-    #[On('account-updated')]
+    #[On(['account-updated', 'status-updated'])]
     public function update(): void
     {
         $this->accounts = $this->user->openAccounts();

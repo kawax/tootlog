@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Livewire;
-
 use App\Models\Status;
-use Livewire\Component;
+use Livewire\Volt\Component;
 
 /**
  * 投稿の表示・非表示を切り替える
  */
-class StatusToggle extends Component
+new class extends Component
 {
     public Status $status;
 
@@ -28,5 +26,17 @@ class StatusToggle extends Component
             $this->status->delete();
             $this->show = false;
         }
+
+        $this->dispatch('status-updated');
     }
-}
+}; ?>
+
+<flux:field variant="inline">
+    <flux:switch
+        wire:key="{{ $status->id }}"
+        wire:click="toggle"
+        wire:model.live="show"
+        align="left"
+        :label="!$status->trashed() ? 'Public' : 'Private'"
+    />
+</flux:field>
