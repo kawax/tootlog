@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.20.0 (2025-12-02)
+- アカウントを非公開に変更する機能を追加。元のマストドンサーバーが終了していると変更できなかったので直接変更可能にした。
+- Added the ability to change your account to private. This was not possible if the original Mastodon server was closed, so it can now be changed directly.
+
 ## v1.19.0 (2025-12-01)
 Major renovation
 

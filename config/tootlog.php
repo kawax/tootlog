@@ -1,9 +1,7 @@
 <?php
 
-use function Revolution\Illuminate\Support\env;
-
 return [
-    'version' => 'v1.19.0',
+    'version' => 'v1.20.0',
 
     // 一度に更新するアカウント数
     'account_limit' => 3,
