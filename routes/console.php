@@ -9,9 +9,6 @@ Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');
 
-Schedule::command('toot:statuses-special')
-    ->hourlyAt(10);
-
 Schedule::command('toot:statuses')
     ->hourlyAt(30);
 

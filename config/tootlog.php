@@ -20,12 +20,4 @@ return [
     'favicon' => [
         'https://pawoo.net' => 'favicon.png',
     ],
-
-    'analytics' => env('GOOGLE_ANALYTICS'),
-
-    // 特典キー
-    'special_key' => env('SPECIAL_KEY', ''),
-
-    // 一度に更新するアカウント数。special版
-    'account_limit_special' => 3,
 ];
