@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Status;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Schedule;
@@ -24,22 +23,4 @@ Schedule::command('horizon:snapshot')->everyFiveMinutes();
 
 Schedule::command('queue:prune-failed', ['--hours' => 48])->hourly();
 
-Artisan::command('welcome:cache', function () {
-    $statuses = Status::query()
-        ->join('accounts', 'statuses.account_id', '=', 'accounts.id')
-        ->where('accounts.locked', false)
-        ->whereNotNull('statuses.content')
-        ->where('statuses.content', '!=', '')
-        ->select(['statuses.content'])
-        ->latest('statuses.id')
-        ->limit(100)
-        ->get()
-        ->map(fn ($item) => str($item->content)->stripTags()->limit(200)->toString())
-        ->toPrettyJson(JSON_UNESCAPED_UNICODE);
-
-    cache()->forever('welcome_statuses', $statuses);
-
-    $this->info('Welcome statuses cached.');
-    $this->info($statuses);
-})->purpose('Cache statuses for welcome page api')
-    ->dailyAt('03:00');
+Schedule::command('welcome:cache')->everyFourHours();
