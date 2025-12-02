@@ -7,7 +7,29 @@ use Illuminate\Support\Collection;
 trait WithUserArchives
 {
     /**
-     * Recentパーツ（公開用）.
+     * Recents（非公開用）.
+     */
+    public function allRecents(): Collection
+    {
+        return cache()->remember('recents/home/'.$this->id, now()->addHour(), function () {
+            $date_format = app()->isProduction()
+                ? 'DATE_FORMAT(statuses.created_at,"%Y-%m-%d")'
+                : 'STRFTIME("%Y-%m-%d", statuses.created_at)';
+
+            return $this->statuses()
+                ->select(['statuses.id', 'statuses.created_at', 'statuses.account_id'])
+                ->selectRaw($date_format.' as date')
+                ->latest('date')
+                ->cursor()
+                ->groupBy('date')
+                ->take(10)
+                ->map(fn ($item) => $item->count())
+                ->collect();
+        });
+    }
+
+    /**
+     * Recents（公開用）.
      */
     public function openRecents(): Collection
     {
