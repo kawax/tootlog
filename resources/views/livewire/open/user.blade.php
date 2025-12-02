@@ -6,6 +6,7 @@ use Livewire\Attributes\Computed;
 use Livewire\Attributes\Layout;
 use Livewire\Volt\Component;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
 
 /**
  * 公開。指定したユーザーの投稿を表示する。
@@ -17,9 +18,9 @@ class extends Component
 {
     public User $user;
 
-    public function mount(Request $request, User $user): void
+    public function mount(Request $request): void
     {
-        $this->user = $user;
+        $this->user = $request->route('user');
     }
 
     public function rendering(View $view): void
