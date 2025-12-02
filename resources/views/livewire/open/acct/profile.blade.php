@@ -34,5 +34,13 @@
                 </a>
             </div>
         </div>
+
     </div>
+
+    @can('update', $acct)
+        <div class="bg-neutral-100 dark:bg-neutral-900 rounded-b-lg p-3">
+            <livewire:open.acct.locked-toggle :acct="$acct"></livewire:open.acct.locked-toggle>
+        </div>
+    @endcan
+
 </div>

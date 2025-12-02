@@ -4,6 +4,7 @@ use App\Models\Account;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
+use Livewire\Attributes\On;
 use Livewire\Volt\Component;
 
 /**
@@ -19,6 +20,12 @@ new class extends Component
     public function mount(Request $request): void
     {
         $this->user = $request->route('user');
+        $this->accounts = $this->user->openAccounts();
+    }
+
+    #[On('account-updated')]
+    public function update(): void
+    {
         $this->accounts = $this->user->openAccounts();
     }
 }; ?>
