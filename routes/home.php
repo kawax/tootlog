@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\Home\AccountController;
-use App\Http\Controllers\Home\AccountDeleteController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 use Livewire\Volt\Volt;
