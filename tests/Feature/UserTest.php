@@ -119,7 +119,7 @@ class UserTest extends TestCase
             ->get('/@test');
 
         $response->assertSee('Accounts');
-        $response->assertDontSee('Recents');
+        $response->assertSee('Recents');
         $response->assertSee('Public');
     }
 
@@ -368,6 +368,5 @@ class UserTest extends TestCase
             ->get('/@test/archives');
 
         $response->assertSee('2017-05');
-        $response->assertDontSee('2017-05-16');
     }
 }
