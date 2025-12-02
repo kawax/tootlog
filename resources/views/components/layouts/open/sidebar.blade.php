@@ -41,6 +41,8 @@
 
     <livewire:open.account_list/>
 
+    <livewire:open.recents/>
+
     <flux:spacer/>
 </flux:sidebar>
 
