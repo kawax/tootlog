@@ -4,6 +4,7 @@ use App\Models\Account;
 use App\Models\User;
 use Illuminate\Support\Collection;
 use Illuminate\Http\Request;
+use Livewire\Attributes\On;
 use Livewire\Volt\Component;
 
 /**
@@ -20,6 +21,12 @@ new class extends Component
     {
         $this->user = $request->user();
 
+        $this->recents = $this->user->openRecents();
+    }
+
+    #[On(['account-updated', 'status-updated'])]
+    public function update(): void
+    {
         $this->recents = $this->user->openRecents();
     }
 }; ?>

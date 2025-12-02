@@ -18,6 +18,11 @@ class StatusPolicy
         //
     }
 
+    public function update(User $user, Status $status): bool
+    {
+        return (int) $user->id === (int) $status->account->user_id;
+    }
+
     public function hide(User $user, Status $status): bool
     {
         return (int) $user->id === (int) $status->account->user_id;

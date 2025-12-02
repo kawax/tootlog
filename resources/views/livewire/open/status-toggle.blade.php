@@ -19,6 +19,8 @@ new class extends Component
 
     public function toggle(): void
     {
+        $this->authorize('update', $this->status);
+
         if ($this->status->trashed()) {
             $this->status->restore();
             $this->show = true;
@@ -26,6 +28,8 @@ new class extends Component
             $this->status->delete();
             $this->show = false;
         }
+
+        cache()->forget('recents/open/'.$this->status->account->user_id);
 
         $this->dispatch('status-updated');
     }

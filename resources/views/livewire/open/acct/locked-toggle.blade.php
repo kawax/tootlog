@@ -24,7 +24,8 @@ new class extends Component
 
         $this->dispatch('account-updated');
 
-        cache()->forget('archives/'.$this->acct->user->id);
+        cache()->forget('archives/'.$this->acct->user_id);
+        cache()->forget('recents/open/'.$this->acct->user_id);
     }
 }; ?>
 
