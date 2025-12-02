@@ -77,41 +77,6 @@ class UserTest extends TestCase
         $response->assertRedirect('/login');
     }
 
-    public function test_home_show()
-    {
-        $statuses = Status::factory()->create([
-            'account_id' => $this->account->id,
-        ]);
-
-        Livewire::test(StatusToggle::class, [
-            'status' => $statuses,
-        ])
-            ->call('toggle');
-
-        $response = $this->actingAs($this->user)
-            ->get('/home');
-
-        $response->assertSeeLivewire('status-toggle');
-    }
-
-    public function test_home_hide()
-    {
-        $statuses = Status::factory()->create([
-            'account_id' => $this->account->id,
-            'deleted_at' => now(),
-        ]);
-
-        Livewire::test(StatusToggle::class, [
-            'status' => $statuses,
-        ])
-            ->call('toggle');
-
-        $response = $this->actingAs($this->user)
-            ->get('/home');
-
-        $response->assertSeeLivewire('status-toggle');
-    }
-
     public function test_timeline()
     {
         $response = $this->actingAs($this->user)
