@@ -21,13 +21,13 @@ new class extends Component
     {
         $this->user = $request->user();
 
-        $this->recents = $this->user->openRecents();
+        $this->recents = $this->user->allRecents();
     }
 
     #[On(['account-updated', 'status-updated'])]
     public function update(): void
     {
-        $this->recents = $this->user->openRecents();
+        $this->recents = $this->user->allRecents();
     }
 }; ?>
 
