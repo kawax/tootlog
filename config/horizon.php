@@ -2,9 +2,20 @@
 
 use Illuminate\Support\Str;
 
-use function Revolution\Illuminate\Support\env;
-
 return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | Horizon Name
+    |--------------------------------------------------------------------------
+    |
+    | This name appears in notifications and in the Horizon UI. Unique names
+    | can be useful while running multiple instances of Horizon within an
+    | application, allowing you to identify the Horizon you're viewing.
+    |
+    */
+
+    'name' => env('HORIZON_NAME'),
 
     /*
     |--------------------------------------------------------------------------
@@ -17,7 +28,7 @@ return [
     |
     */
 
-    'domain' => null,
+    'domain' => env('HORIZON_DOMAIN'),
 
     /*
     |--------------------------------------------------------------------------
@@ -30,7 +41,7 @@ return [
     |
     */
 
-    'path' => 'horizon',
+    'path' => env('HORIZON_PATH', 'horizon'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,7 +67,10 @@ return [
     |
     */
 
-    'prefix' => env('HORIZON_PREFIX', 'horizon-tootlog:'),
+    'prefix' => env(
+        'HORIZON_PREFIX',
+        Str::slug(env('APP_NAME', 'laravel'), '_').'_horizon:'
+    ),
 
     /*
     |--------------------------------------------------------------------------
@@ -104,6 +118,25 @@ return [
         'recent_failed' => 10080,
         'failed' => 10080,
         'monitored' => 10080,
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Silenced Jobs
+    |--------------------------------------------------------------------------
+    |
+    | Silencing a job will instruct Horizon to not place the job in the list
+    | of completed jobs within the Horizon dashboard. This setting may be
+    | used to fully remove any noisy jobs from the completed jobs list.
+    |
+    */
+
+    'silenced' => [
+        // App\Jobs\ExampleJob::class,
+    ],
+
+    'silenced_tags' => [
+        // 'notifications',
     ],
 
     /*
@@ -166,11 +199,15 @@ return [
     'defaults' => [
         'supervisor-1' => [
             'connection' => 'redis',
-            'queue' => ['tootlog'],
+            'queue' => ['default'],
             'balance' => 'auto',
+            'autoScalingStrategy' => 'time',
             'maxProcesses' => 1,
+            'maxTime' => 0,
+            'maxJobs' => 0,
             'memory' => 128,
             'tries' => 1,
+            'timeout' => 60,
             'nice' => 0,
         ],
     ],
@@ -178,7 +215,7 @@ return [
     'environments' => [
         'production' => [
             'supervisor-1' => [
-                'maxProcesses' => 5,
+                'maxProcesses' => 10,
                 'balanceMaxShift' => 1,
                 'balanceCooldown' => 3,
             ],
