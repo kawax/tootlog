@@ -25,9 +25,10 @@ Welcome to the tootlog project! This guide will help GitHub Copilot understand t
 
 ### Starter Kit
 - Livewire Starter Kit
+  -  Migrated from old bootstrap-based frontend.
 
 ### Backend
-- **Framework**: Laravel 12+ (PHP 8.2+)
+- **Framework**: Laravel 12+ (PHP 8.4+)
 - **Database**: MySQL (SQLite in local development)
 - **Queue**: Redis with Laravel Horizon
 - **Authentication**: Laravel Fortify (with 2FA support)
@@ -35,9 +36,11 @@ Welcome to the tootlog project! This guide will help GitHub Copilot understand t
 - **OAuth**: revolution/socialite-mastodon
 
 ### Frontend
-- **CSS Framework**: Tailwind 4
-- **JavaScript**: Vue 3 with Vite
-- **Interactive Components**: Livewire and Volt
+- Flux UI Free
+- Tailwind 4
+- Livewire and Volt
+- Vite
+- Vue 3
 
 ### Development Tools
 - **Code Style**: Laravel Pint
@@ -47,13 +50,6 @@ Welcome to the tootlog project! This guide will help GitHub Copilot understand t
 - **Monitoring**: Laravel Horizon for queues
 
 ## Setup Instructions
-
-### Prerequisites
-- PHP 8.2 or higher
-- Composer
-- Node.js and npm
-- MySQL database
-- Redis server
 
 ### Local Development Setup
 
