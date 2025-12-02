@@ -46,31 +46,4 @@ class AccountTest extends TestCase
             'created_at' => now(),
         ]);
     }
-
-    public function test_destroy()
-    {
-        $response = $this->actingAs($this->user)
-            ->delete(route('accounts.delete', $this->account));
-
-        $this->assertDatabaseMissing('accounts', [
-            'id' => $this->account->id,
-        ]);
-
-        $response->assertRedirect('home')
-            ->assertSessionHas('message');
-    }
-
-    public function test_destroy_another()
-    {
-        $user2 = User::factory()->create();
-
-        $response = $this->actingAs($user2)
-            ->delete(route('accounts.delete', $this->account));
-
-        $this->assertDatabaseHas('accounts', [
-            'id' => $this->account->id,
-        ]);
-
-        $response->assertStatus(403);
-    }
 }

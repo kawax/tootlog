@@ -9,7 +9,9 @@ new class extends Component
     {
         ExportCsvJob::dispatch(auth()->user());
 
-        $this->dispatch('export-dispatched');
+        session()->flash('message', 'Export has started. Please wait for an email.');
+
+        $this->redirect(route('home'));
     }
 }; ?>
 
@@ -20,9 +22,5 @@ new class extends Component
         <flux:button variant="primary" type="submit" wire:click="export">
             {{ __('Export') }}
         </flux:button>
-
-        <x-action-message class="me-3" on="export-dispatched">
-            {{ __('Export has started. Please wait for an email.') }}
-        </x-action-message>
     </x-settings.layout>
 </section>

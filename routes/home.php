@@ -26,8 +26,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('accounts/callback', [AccountController::class, 'callback'])
         ->name('accounts.callback');
-
-    Route::delete('accounts/delete/{account}', AccountDeleteController::class)->name('accounts.delete');
 });
 
 Route::middleware(['auth'])->group(function () {

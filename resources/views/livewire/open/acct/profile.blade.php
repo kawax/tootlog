@@ -4,15 +4,7 @@
         <flux:heading size="lg">Profile</flux:heading>
 
         @can('delete', $acct)
-            <div>
-                <flux:modal.trigger name="delete-modal">
-                    <flux:button variant="danger" size="sm">
-                        Delete...
-                    </flux:button>
-                </flux:modal.trigger>
-
-                @include('livewire.open.acct.delete')
-            </div>
+            <livewire:open.acct.delete :acct="$acct"/>
         @endcan
     </div>
 
