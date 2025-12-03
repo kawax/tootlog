@@ -31,7 +31,6 @@ class WelcomeCacheCommand extends Command
             ->where('accounts.locked', false)
             ->whereNotNull('statuses.content')
             ->where('statuses.content', '!=', '')
-            ->whereNot('statuses.content', 'LIKE', '@%')
             ->select(['statuses.content'])
             ->latest('statuses.id')
             ->limit(100)
