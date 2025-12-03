@@ -21,6 +21,11 @@ Welcome to the tootlog project! This guide will help GitHub Copilot understand t
 - CSV export functionality
 - Real-time status updates via Laravel Horizon
 
+## セキュリティ
+- APIで取得した **htmlを含むユーザー生成コンテンツ** を扱うのでXSS対策などセキュリティを徹底する。
+- マストドン側で **安全にサニタイズされたhtml** を返してる場合はそのまま表示可能。Bladeなら`{!! $variable !!}`で表示。Vueなら`v-html`で表示。
+- **ログインしている現在のユーザーだけが表示できるページ** と **誰でも表示できる公開ページ** が混在しているのでLaravelのAuthorization機能でしっかり制御する。他のユーザーによるupdateやdelete操作を防止する。
+
 ## Technology Stack
 
 ### Starter Kit
