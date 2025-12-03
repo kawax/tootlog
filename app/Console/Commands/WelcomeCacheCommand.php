@@ -36,7 +36,6 @@ class WelcomeCacheCommand extends Command
             ->limit(100)
             ->get()
             ->map(fn ($item) => str($item->content)->stripTags()->limit(200)->toString())
-            ->random()
             ->toPrettyJson(JSON_UNESCAPED_UNICODE);
 
         cache()->forever('welcome_statuses', $statuses);
