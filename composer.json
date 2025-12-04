@@ -27,18 +27,14 @@
         "symfony/mailgun-mailer": "^7.0"
     },
     "require-dev": {
-        "barryvdh/laravel-ide-helper": "^3.0",
         "fakerphp/faker": "^1.9.1",
         "laravel/pail": "^1.2.2",
-        "itsgoingd/clockwork": "^5.0",
         "laravel/pint": "^1.22",
-        "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.5",
         "nunomaduro/collision": "^8.0",
-        "phpunit/phpunit": "^11.0",
+        "phpunit/phpunit": "^12.0",
         "revolution/laravel-boost-copilot-cli": "^1.0",
-        "revolution/laravel-boost-phpstorm-copilot": "^1.0",
-        "revolution/sail-db-backup": "^3.0"
+        "revolution/laravel-boost-phpstorm-copilot": "^1.0"
     },
     "autoload": {
         "psr-4": {
@@ -91,9 +87,7 @@
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-update-cmd": [
-            "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
-            "@php artisan ide-helper:meta",
-            "@php artisan ide-helper:generate"
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate"
@@ -106,13 +100,7 @@
             "Illuminate\\Foundation\\ComposerScripts::prePackageUninstall"
         ],
         "lint": "pint",
-        "boost": "@php artisan boost:install --no-interaction --ansi",
-        "ide-helper:meta": "php artisan ide-helper:meta",
-        "ide-helper:generate": "php artisan ide-helper:generate",
-        "ide-helper:models": "sail artisan ide-helper:models -N",
-        "sail:up": "vendor/bin/sail up -d",
-        "sail:down": "vendor/bin/sail down",
-        "sail:backup": "vendor/bin/sail art sail:backup:mysql"
+        "boost": "@php artisan boost:install --no-interaction --ansi"
     },
     "minimum-stability": "stable",
     "prefer-stable": true
