@@ -168,6 +168,9 @@ tests/
 - `GET /@{user}/date/{year}/{month}/{day}` - Posts by date
 - `GET /@{user}/archives` - Archive overview
 
+## Language
+- viewなどでは全て英語を使う。実際のユーザーは日本人が多いのでシンプルで短い説明にする。
+
 ===
 
 <laravel-boost-guidelines>
