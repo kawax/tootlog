@@ -1,6 +1,6 @@
 import {onMounted, ref, Ref, toValue, watch} from 'vue';
 import {useFetch, useWebSocket} from '@vueuse/core';
-import type {Post, StreamEvent, TimelineType, TypeKey} from './types';
+import type {Post, StreamEvent, TypeKey} from './types';
 
 export function useStream(domain: string, streaming: string, token: string, type: Ref<TypeKey>) {
     const API_VERSION = '/api/v1';
@@ -9,7 +9,7 @@ export function useStream(domain: string, streaming: string, token: string, type
     const errors = ref<string[]>([]);
     let ws_close = null;
 
-    const timelines: TimelineType = {
+    const timelines = {
         user: 'home',
         'public:local': 'public?local=true',
         public: 'public',

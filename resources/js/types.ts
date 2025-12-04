@@ -20,6 +20,7 @@ export type Account = {
 export type MediaAttachment = {
     url: string,
     preview_url: string,
+    description?: string,
 }
 
 export type StreamEvent = {
