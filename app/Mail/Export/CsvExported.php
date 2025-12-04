@@ -39,7 +39,7 @@ class CsvExported extends Mailable implements ShouldQueue
     public function content(): Content
     {
         return new Content(
-            text: 'emails.export',
+            markdown: 'emails.export',
         );
     }
 
