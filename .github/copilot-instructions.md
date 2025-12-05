@@ -76,10 +76,16 @@ Welcome to the tootlog project! This guide will help GitHub Copilot understand t
    php artisan migrate:fresh --seed
    ```
 
+データベースを全て削除してseedまで実行。
+
 4. **Start Development Server**
    ```bash
    composer run dev
    ```
+
+Playwrightで表示するローカルURL:
+http://127.0.0.1:8000/
+テストユーザーはemail=test@example.com、password=passwordでログイン可能。
 
 ## Codebase Structure
 
