@@ -8521,16 +8521,16 @@
         },
         {
             "name": "laravel/boost",
-            "version": "v1.8.3",
+            "version": "v1.8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/boost.git",
-                "reference": "26572e858e67334952779c0110ca4c378a44d28d"
+                "reference": "dbdef07edbf101049f6d308654ead2f4324de703"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/boost/zipball/26572e858e67334952779c0110ca4c378a44d28d",
-                "reference": "26572e858e67334952779c0110ca4c378a44d28d",
+                "url": "https://api.github.com/repos/laravel/boost/zipball/dbdef07edbf101049f6d308654ead2f4324de703",
+                "reference": "dbdef07edbf101049f6d308654ead2f4324de703",
                 "shasum": ""
             },
             "require": {
@@ -8539,7 +8539,7 @@
                 "illuminate/contracts": "^10.49.0|^11.45.3|^12.28.1",
                 "illuminate/routing": "^10.49.0|^11.45.3|^12.28.1",
                 "illuminate/support": "^10.49.0|^11.45.3|^12.28.1",
-                "laravel/mcp": "^0.3.4",
+                "laravel/mcp": "^0.4.1",
                 "laravel/prompts": "0.1.25|^0.3.6",
                 "laravel/roster": "^0.2.9",
                 "php": "^8.1"
@@ -8583,20 +8583,20 @@
                 "issues": "https://github.com/laravel/boost/issues",
                 "source": "https://github.com/laravel/boost"
             },
-            "time": "2025-11-26T14:12:52+00:00"
+            "time": "2025-12-05T05:54:57+00:00"
         },
         {
             "name": "laravel/mcp",
-            "version": "v0.3.4",
+            "version": "v0.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/mcp.git",
-                "reference": "0b86fb613a0df971cec89271c674a677c2cb4f77"
+                "reference": "27ab10181d25067de7ace427edb562084d0d0aa3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/mcp/zipball/0b86fb613a0df971cec89271c674a677c2cb4f77",
-                "reference": "0b86fb613a0df971cec89271c674a677c2cb4f77",
+                "url": "https://api.github.com/repos/laravel/mcp/zipball/27ab10181d25067de7ace427edb562084d0d0aa3",
+                "reference": "27ab10181d25067de7ace427edb562084d0d0aa3",
                 "shasum": ""
             },
             "require": {
@@ -8613,8 +8613,8 @@
                 "php": "^8.1"
             },
             "require-dev": {
-                "laravel/pint": "1.20.0",
-                "orchestra/testbench": "^8.36.0|^9.15.0|^10.6.0",
+                "laravel/pint": "^1.20",
+                "orchestra/testbench": "^8.36|^9.15|^10.8",
                 "pestphp/pest": "^2.36.0|^3.8.4|^4.1.0",
                 "phpstan/phpstan": "^2.1.27",
                 "rector/rector": "^2.2.4"
@@ -8656,7 +8656,7 @@
                 "issues": "https://github.com/laravel/mcp/issues",
                 "source": "https://github.com/laravel/mcp"
             },
-            "time": "2025-11-18T14:41:05+00:00"
+            "time": "2025-12-04T17:29:08+00:00"
         },
         {
             "name": "laravel/pail",
@@ -9561,16 +9561,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "12.4.5",
+            "version": "12.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "5af317802efd27d5b9cbe048e3760d4a2f687f45"
+                "reference": "fef037fe50d20ce826cdbd741b7a2afcdec5f45b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/5af317802efd27d5b9cbe048e3760d4a2f687f45",
-                "reference": "5af317802efd27d5b9cbe048e3760d4a2f687f45",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/fef037fe50d20ce826cdbd741b7a2afcdec5f45b",
+                "reference": "fef037fe50d20ce826cdbd741b7a2afcdec5f45b",
                 "shasum": ""
             },
             "require": {
@@ -9584,7 +9584,7 @@
                 "phar-io/manifest": "^2.0.4",
                 "phar-io/version": "^3.2.1",
                 "php": ">=8.3",
-                "phpunit/php-code-coverage": "^12.4.0",
+                "phpunit/php-code-coverage": "^12.5.0",
                 "phpunit/php-file-iterator": "^6.0.0",
                 "phpunit/php-invoker": "^6.0.0",
                 "phpunit/php-text-template": "^5.0.0",
@@ -9606,7 +9606,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "12.4-dev"
+                    "dev-main": "12.5-dev"
                 }
             },
             "autoload": {
@@ -9638,7 +9638,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/12.4.5"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/12.5.0"
             },
             "funding": [
                 {
@@ -9662,7 +9662,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-12-01T07:40:15+00:00"
+            "time": "2025-12-05T04:59:40+00:00"
         },
         {
             "name": "revolution/laravel-boost-copilot-cli",
