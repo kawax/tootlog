@@ -199,7 +199,7 @@ return [
     'defaults' => [
         'supervisor-1' => [
             'connection' => 'redis',
-            'queue' => [env('REDIS_QUEUE', 'tootlog')],
+            'queue' => [env('REDIS_QUEUE', 'tootlog'), 'default'],
             'balance' => 'auto',
             'autoScalingStrategy' => 'time',
             'maxProcesses' => 1,
