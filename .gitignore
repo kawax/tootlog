@@ -17,3 +17,7 @@ Vagrantfile
 /build
 /public/build
 /.claude/settings.local.json
+
+**/caddy
+frankenphp
+frankenphp-worker.php
