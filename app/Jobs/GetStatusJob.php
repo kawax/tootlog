@@ -37,6 +37,8 @@ class GetStatusJob implements ShouldQueue
     {
         info('GetStatusesJob: '.$this->account->url);
 
+        $this->account->touch();
+
         try {
             $this->account = $this->refresh($this->account);
         } catch (Exception $exception) {
