@@ -27,6 +27,14 @@ class extends Component
         $this->recents = $this->user->openRecents();
     }
 
+    public function placeholder()
+    {
+        return <<<'HTML'
+        <nav>
+        </nav>
+    HTML;
+    }
+
     #[On(['account-updated', 'status-updated'])]
     public function update(): void
     {
@@ -38,6 +46,7 @@ class extends Component
     <flux:navlist.group :heading="__('Recents')" class="grid">
         @foreach($recents as $date => $recent)
             <flux:navlist.item
+                wire:key="{{ $date }}"
                 :href="route('open.user.date.day', [
                 'user' => $user->name ,
                 'year' => explode('-', $date)[0],

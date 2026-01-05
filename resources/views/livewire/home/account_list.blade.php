@@ -27,6 +27,14 @@ class extends Component
         $this->accounts = $this->user->allAccounts();
     }
 
+    public function placeholder()
+    {
+        return <<<'HTML'
+        <nav>
+        </nav>
+    HTML;
+    }
+
     #[On(['account-updated', 'status-updated'])]
     public function update(): void
     {
@@ -38,6 +46,7 @@ class extends Component
     <flux:navlist.group :heading="__('Accounts')" class="grid">
         @foreach($accounts as $account)
             <flux:navlist.item
+                wire:key="{{ $account->id }}"
                 :href="route('open.account.index', ['user'=> $user,'username' => $account->username, 'domain' => $account->domain])"
                 :current="request()->is(route('open.account.index', ['user'=> $user,'username' => $account->username, 'domain' => $account->domain]))"
                 badge="{{ $account->statuses_count }}"
