@@ -10,7 +10,6 @@ use Illuminate\View\View;
 /**
  * 公開。指定したユーザーの月別アーカイブリストページを表示する。
  */
-
 new
 #[Layout('components.layouts.open')]
 class extends Component

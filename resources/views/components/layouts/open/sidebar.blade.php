@@ -39,9 +39,9 @@
         </flux:navlist.group>
     </flux:navlist>
 
-    <livewire:open.account_list/>
+    <livewire:open.account_list :user="request()->route('user')"/>
 
-    <livewire:open.recents/>
+    <livewire:open.recents :user="request()->route('user')"/>
 
     <flux:spacer/>
 </flux:sidebar>

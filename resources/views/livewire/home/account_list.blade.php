@@ -4,6 +4,7 @@ use App\Models\Account;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
+use Livewire\Attributes\Lazy;
 use Livewire\Attributes\On;
 use Livewire\Volt\Component;
 
@@ -11,7 +12,9 @@ use Livewire\Volt\Component;
  * 非公開。認証した現在のユーザーのアカウント一覧を表示する。
  */
 
-new class extends Component
+new
+#[Lazy]
+class extends Component
 {
     public Collection $accounts;
 

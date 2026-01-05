@@ -4,14 +4,16 @@ use App\Models\Account;
 use App\Models\User;
 use Illuminate\Support\Collection;
 use Illuminate\Http\Request;
+use Livewire\Attributes\Lazy;
 use Livewire\Attributes\On;
 use Livewire\Volt\Component;
 
 /**
  * 非公開。認証した現在のユーザーの最近の投稿日一覧を表示する。
  */
-
-new class extends Component
+new
+#[Lazy]
+class extends Component
 {
     public Collection $recents;
 
