@@ -9,6 +9,7 @@ use Illuminate\Support\Carbon;
 use Livewire\Volt\Component;
 use Illuminate\Support\Facades\Storage;
 use Symfony\Component\HttpFoundation\StreamedResponse;
+use Illuminate\Support\Number;
 
 new class extends Component
 {
@@ -38,7 +39,7 @@ new class extends Component
         @foreach($accounts as $account)
             <flux:button variant="ghost" icon="arrow-down-tray" wire:click="download({{ $account->id }})"
                          wire:key="{{ $account->id }}">
-                {{ $account->acct }} [LastModified {{ Carbon::createFromTimestamp(Storage::lastModified("download/$user->name/$account->acct.csv"))->toDateString() }}]
+                {{ $account->acct }} [Size {{ Number::fileSize(Storage::size("download/$user->name/$account->acct.csv")) }}] [LastModified {{ Carbon::createFromTimestamp(Storage::lastModified("download/$user->name/$account->acct.csv"))->toDateString() }}]
             </flux:button>
         @endforeach
 
