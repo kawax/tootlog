@@ -6,6 +6,11 @@
 - メールで送信しようかとも思ったけど巨大すぎる場合もあるので各自でダウンロードする方式。
 - 実際の削除開始はまだ。
 
+- After nearly 10 years of operation, the database size has reached its limit, so we have decided to delete the oldest data.
+- All data as of today can be downloaded in CSV format. Settings → Download.
+- I thought about sending it by email, but since it can be too large, each user will download it themselves.
+- Actual deletion has not yet started.
+
 ## v1.20.0 (2025-12-02)
 - アカウントを非公開に変更する機能を追加。元のマストドンサーバーが終了していると変更できなかったので直接変更可能にした。
 - Added the ability to change your account to private. This was not possible if the original Mastodon server was closed, so it can now be changed directly.
