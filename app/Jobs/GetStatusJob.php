@@ -71,9 +71,6 @@ class GetStatusJob implements ShouldQueue
         if (! empty($since_id)) {
             $this->account->fill(['since_id' => $since_id])->save();
         }
-
-        // 更新が続いてるアクティブアカウントはここでCSVを更新
-        CreateDownloadCsvJob::dispatch($this->account);
     }
 
     protected function refresh(Account $account): Account
