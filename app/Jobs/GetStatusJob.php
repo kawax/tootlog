@@ -87,7 +87,9 @@ class GetStatusJob implements ShouldQueue
     protected function create(?array $statuses): void
     {
         foreach ($statuses as $status) {
-            $this->createStatus($status);
+            if (is_array($status)) {
+                $this->createStatus($status);
+            }
         }
     }
 
