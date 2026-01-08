@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.21.0 (2026-01-08)
+- 10年近く運営してきて需要に比べてデータベースサイズが限界なので古いデータから削除していくことに決めた。
+- 今日時点でのデータは全てCSVでダウンロードできる。Settings→Download。
+- メールで送信しようかとも思ったけど巨大すぎる場合もあるので各自でダウンロードする方式。
+- 実際の削除開始はまだ。
+
 ## v1.20.0 (2025-12-02)
 - アカウントを非公開に変更する機能を追加。元のマストドンサーバーが終了していると変更できなかったので直接変更可能にした。
 - Added the ability to change your account to private. This was not possible if the original Mastodon server was closed, so it can now be changed directly.

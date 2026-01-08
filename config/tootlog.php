@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'version' => 'v1.20.0',
+    'version' => 'v1.21.0',
 
     // 一度に更新するアカウント数
     'account_limit' => 1,
