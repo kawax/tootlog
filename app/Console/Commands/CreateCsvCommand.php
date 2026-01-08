@@ -28,7 +28,6 @@ class CreateCsvCommand extends Command
     public function handle(): int
     {
         // アクティブ・非アクティブ含め全アカウントのCSVを作成。
-        // アクティブアカウントは更新時にCSVも更新される。
 
         Account::query()
             ->each(function (Account $account) {
