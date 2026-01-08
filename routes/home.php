@@ -34,6 +34,7 @@ Route::middleware(['auth'])->group(function () {
     Volt::route('settings/password', 'settings.password')->name('user-password.edit');
     Volt::route('settings/appearance', 'settings.appearance')->name('appearance.edit');
     Volt::route('settings/export', 'settings.export')->name('settings.export');
+    Volt::route('settings/download', 'settings.download')->name('settings.download');
 
     Volt::route('settings/two-factor', 'settings.two-factor')
         ->middleware(
