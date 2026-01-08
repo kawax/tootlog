@@ -24,6 +24,11 @@ class CreateDownloadCsvJob implements ShouldQueue
     use Queueable;
     use SerializesModels;
 
+    /**
+     * The number of seconds the job can run before timing out.
+     */
+    public int $timeout = 600;
+
     protected Writer $writer;
 
     protected array $files = [];
