@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.369.9",
+            "version": "3.369.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "cb7c0a255a34d44f13f9276d720827d56a3b381b"
+                "reference": "014c521eae8eeb1f9562cb512523b17cd6c1bec7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/cb7c0a255a34d44f13f9276d720827d56a3b381b",
-                "reference": "cb7c0a255a34d44f13f9276d720827d56a3b381b",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/014c521eae8eeb1f9562cb512523b17cd6c1bec7",
+                "reference": "014c521eae8eeb1f9562cb512523b17cd6c1bec7",
                 "shasum": ""
             },
             "require": {
@@ -153,9 +153,9 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.369.9"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.369.11"
             },
-            "time": "2026-01-07T19:06:56+00:00"
+            "time": "2026-01-12T19:14:19+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -5333,16 +5333,16 @@
         },
         {
             "name": "spatie/temporary-directory",
-            "version": "2.3.0",
+            "version": "2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/temporary-directory.git",
-                "reference": "580eddfe9a0a41a902cac6eeb8f066b42e65a32b"
+                "reference": "662e481d6ec07ef29fd05010433428851a42cd07"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/temporary-directory/zipball/580eddfe9a0a41a902cac6eeb8f066b42e65a32b",
-                "reference": "580eddfe9a0a41a902cac6eeb8f066b42e65a32b",
+                "url": "https://api.github.com/repos/spatie/temporary-directory/zipball/662e481d6ec07ef29fd05010433428851a42cd07",
+                "reference": "662e481d6ec07ef29fd05010433428851a42cd07",
                 "shasum": ""
             },
             "require": {
@@ -5378,7 +5378,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/temporary-directory/issues",
-                "source": "https://github.com/spatie/temporary-directory/tree/2.3.0"
+                "source": "https://github.com/spatie/temporary-directory/tree/2.3.1"
             },
             "funding": [
                 {
@@ -5390,7 +5390,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-01-13T13:04:43+00:00"
+            "time": "2026-01-12T07:42:22+00:00"
         },
         {
             "name": "symfony/clock",
@@ -9659,16 +9659,16 @@
         },
         {
             "name": "revolution/laravel-boost-copilot-cli",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/invokable/laravel-boost-copilot-cli.git",
-                "reference": "ee91688271f968086df09ca9bb02afc120630850"
+                "reference": "26d3a79647bba5bb1e1f9f20df57b4df742e54af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/invokable/laravel-boost-copilot-cli/zipball/ee91688271f968086df09ca9bb02afc120630850",
-                "reference": "ee91688271f968086df09ca9bb02afc120630850",
+                "url": "https://api.github.com/repos/invokable/laravel-boost-copilot-cli/zipball/26d3a79647bba5bb1e1f9f20df57b4df742e54af",
+                "reference": "26d3a79647bba5bb1e1f9f20df57b4df742e54af",
                 "shasum": ""
             },
             "require": {
@@ -9702,8 +9702,7 @@
             ],
             "authors": [
                 {
-                    "name": "puklipo",
-                    "email": "pcs.engineer.team@gmail.com"
+                    "name": "puklipo"
                 },
                 {
                     "name": "kawax",
@@ -9717,7 +9716,7 @@
                 "laravel"
             ],
             "support": {
-                "source": "https://github.com/invokable/laravel-boost-copilot-cli/tree/1.1.1"
+                "source": "https://github.com/invokable/laravel-boost-copilot-cli/tree/1.1.2"
             },
             "funding": [
                 {
@@ -9725,20 +9724,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-12-19T05:13:43+00:00"
+            "time": "2026-01-09T22:40:00+00:00"
         },
         {
             "name": "revolution/laravel-boost-phpstorm-copilot",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/invokable/laravel-boost-phpstorm-copilot.git",
-                "reference": "6b5b7c9c3628f76663e4260b259b38d1181a5dcf"
+                "reference": "3529cf4326de3e27afa1aad3117c723d65d567c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/invokable/laravel-boost-phpstorm-copilot/zipball/6b5b7c9c3628f76663e4260b259b38d1181a5dcf",
-                "reference": "6b5b7c9c3628f76663e4260b259b38d1181a5dcf",
+                "url": "https://api.github.com/repos/invokable/laravel-boost-phpstorm-copilot/zipball/3529cf4326de3e27afa1aad3117c723d65d567c6",
+                "reference": "3529cf4326de3e27afa1aad3117c723d65d567c6",
                 "shasum": ""
             },
             "require": {
@@ -9773,8 +9772,7 @@
             ],
             "authors": [
                 {
-                    "name": "puklipo",
-                    "email": "pcs.engineer.team@gmail.com"
+                    "name": "puklipo"
                 },
                 {
                     "name": "kawax",
@@ -9789,7 +9787,7 @@
                 "phpstorm"
             ],
             "support": {
-                "source": "https://github.com/invokable/laravel-boost-phpstorm-copilot/tree/1.1.1"
+                "source": "https://github.com/invokable/laravel-boost-phpstorm-copilot/tree/1.1.2"
             },
             "funding": [
                 {
@@ -9797,7 +9795,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-12-19T05:23:49+00:00"
+            "time": "2026-01-09T23:00:37+00:00"
         },
         {
             "name": "sebastian/cli-parser",
