@@ -34,6 +34,7 @@ class DeleteOldStatusJob implements ShouldQueue
             ->first();
 
         $account->statuses()
+            ->withTrashed()
             ->oldest()
             ->limit(50)
             ->delete();
