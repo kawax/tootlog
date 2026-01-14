@@ -11,10 +11,6 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('failed_jobs', function (Blueprint $table) {
-            $table->index(['connection', 'queue', 'failed_at']);
-        });
-
         Schema::table('cache', function (Blueprint $table) {
             $table->index(['expiration']);
         });
@@ -29,10 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('failed_jobs', function (Blueprint $table) {
-            $table->dropIndex(['connection', 'queue', 'failed_at']);
-        });
-
         Schema::table('cache', function (Blueprint $table) {
             $table->dropIndex(['expiration']);
         });
