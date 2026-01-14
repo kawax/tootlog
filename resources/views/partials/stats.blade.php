@@ -1,7 +1,7 @@
 <div class="p-6 w-full">
     <flux:heading size="lg" level="3">{{ __('Stats') }}</flux:heading>
     <flux:subheading size="md" class="mb-3">
-        {{ __('') }}
+        {{ __('Any statuses exceeding 1,000 per account will be automatically deleted in order of oldest.') }}
     </flux:subheading>
 
     <div class="grid grid-cols-2 gap-4">
