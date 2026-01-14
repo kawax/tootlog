@@ -29,10 +29,13 @@ class CreateCsvCommand extends Command
     {
         // アクティブ・非アクティブ含め全アカウントのCSVを作成。
 
-        Account::query()
-            ->each(function (Account $account) {
-                CreateDownloadCsvJob::dispatch($account);
-            });
+        //        Account::query()
+        //            ->each(function (Account $account) {
+        //                CreateDownloadCsvJob::dispatch($account);
+        //            });
+
+        // 削除開始したのでCSV作成は停止。今日までのログはアーカイブとしてダウンロード可能。
+        $this->error('CSV作成は停止しました。');
 
         return 0;
     }

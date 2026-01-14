@@ -1,5 +1,6 @@
 <?php
 
+use App\Jobs\DeleteOldStatusJob;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Schedule;
@@ -22,3 +23,5 @@ Schedule::command('toot:version')
 Schedule::command('queue:prune-failed', ['--hours' => 48])->hourly();
 
 Schedule::command('welcome:cache')->everyFourHours();
+
+Schedule::job(DeleteOldStatusJob::class)->hourly();

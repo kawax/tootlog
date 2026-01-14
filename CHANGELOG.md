@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## v1.22.0 (2026-01-14)
+- 自動削除開始。アカウントごとに1000件以上のデータがある場合に古いデータから削除していくのでデータが少ないアカウントでは削除されない。
+- 今日までのログはダウンロード可能。
+
+- Starting automatic deletion. If there are more than 1000 records per account, the oldest data will be deleted first, so accounts with fewer data will not be deleted.
+- Logs up to today are available for download.
+
 ## v1.21.0 (2026-01-08)
 - 10年近く運営してきて需要に比べてデータベースサイズが限界なので古いデータから削除していくことに決めた。
 - 今日時点でのデータは全てCSVでダウンロードできる。Settings→Download。
