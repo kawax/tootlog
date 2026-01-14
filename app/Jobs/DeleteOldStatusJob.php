@@ -41,6 +41,6 @@ class DeleteOldStatusJob implements ShouldQueue
 
         $account->touch();
 
-        info('Deleted old statuses for account: '.$account->acct.' (remaining: '.$account->statuses_count.')');
+        info('Deleted old statuses for account: '.$account->acct.' (remaining: '.$account->statuses()->count().')');
     }
 }
