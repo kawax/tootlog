@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'version' => 'v1.20.0',
+    'version' => 'v1.22.0',
 
     // 一度に更新するアカウント数
-    'account_limit' => 10,
+    'account_limit' => 1,
 
     // 連続して失敗したらサーバーが死んでる判定。
     'account_fails' => 10,

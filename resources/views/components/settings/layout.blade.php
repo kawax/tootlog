@@ -8,6 +8,7 @@
             @endif
             <flux:navlist.item :href="route('appearance.edit')" wire:navigate>{{ __('Appearance') }}</flux:navlist.item>
             <flux:navlist.item :href="route('settings.export')" wire:navigate>{{ __('Export') }}</flux:navlist.item>
+            <flux:navlist.item :href="route('settings.download')" wire:navigate>{{ __('Download') }}</flux:navlist.item>
         </flux:navlist>
     </div>
 

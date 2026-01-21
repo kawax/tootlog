@@ -4,14 +4,16 @@ use App\Models\Account;
 use App\Models\User;
 use Illuminate\Support\Collection;
 use Illuminate\Http\Request;
+use Livewire\Attributes\Lazy;
 use Livewire\Attributes\On;
 use Livewire\Volt\Component;
 
 /**
  * 非公開。認証した現在のユーザーの最近の投稿日一覧を表示する。
  */
-
-new class extends Component
+new
+#[Lazy]
+class extends Component
 {
     public Collection $recents;
 
@@ -22,6 +24,14 @@ new class extends Component
         $this->user = $request->user();
 
         $this->recents = $this->user->allRecents();
+    }
+
+    public function placeholder()
+    {
+        return <<<'HTML'
+        <nav>
+        </nav>
+    HTML;
     }
 
     #[On(['account-updated', 'status-updated'])]
@@ -35,6 +45,7 @@ new class extends Component
     <flux:navlist.group :heading="__('Recents')" class="grid">
         @foreach($recents as $date => $recent)
             <flux:navlist.item
+                wire:key="{{ $date }}"
                 :href="route('open.user.date.day', [
                 'user' => $user->name ,
                 'year' => explode('-', $date)[0],

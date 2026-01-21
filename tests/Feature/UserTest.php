@@ -115,6 +115,8 @@ class UserTest extends TestCase
 
     public function test_user()
     {
+        Livewire::withoutLazyLoading();
+
         $response = $this->actingAs($this->user)
             ->get('/@test');
 

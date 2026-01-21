@@ -4,6 +4,7 @@ use App\Models\Account;
 use App\Models\User;
 use Illuminate\Support\Collection;
 use Illuminate\Http\Request;
+use Livewire\Attributes\Lazy;
 use Livewire\Attributes\On;
 use Livewire\Volt\Component;
 
@@ -11,17 +12,27 @@ use Livewire\Volt\Component;
  * 公開。指定したユーザーの最近の投稿日一覧を表示する。
  */
 
-new class extends Component
+new
+#[Lazy]
+class extends Component
 {
     public Collection $recents;
 
     public User $user;
 
-    public function mount(Request $request): void
+    public function mount(User $user): void
     {
-        $this->user = $request->route('user');
+        $this->user = $user;
 
         $this->recents = $this->user->openRecents();
+    }
+
+    public function placeholder()
+    {
+        return <<<'HTML'
+        <nav>
+        </nav>
+    HTML;
     }
 
     #[On(['account-updated', 'status-updated'])]
@@ -35,6 +46,7 @@ new class extends Component
     <flux:navlist.group :heading="__('Recents')" class="grid">
         @foreach($recents as $date => $recent)
             <flux:navlist.item
+                wire:key="{{ $date }}"
                 :href="route('open.user.date.day', [
                 'user' => $user->name ,
                 'year' => explode('-', $date)[0],

@@ -2,22 +2,22 @@
 
 namespace App\Jobs;
 
-use App\Mail\Export\CsvExported;
 use App\Models\Account;
 use App\Models\Status;
 use App\Models\User;
+use App\Notifications\FailedCreateCsv;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use League\Csv\CannotInsertRecord;
 use League\Csv\Exception;
 use League\Csv\Writer;
+use Throwable;
 
-class ExportCsvJob implements ShouldQueue
+class CreateDownloadCsvJob implements ShouldQueue
 {
     use Dispatchable;
     use InteractsWithQueue;
@@ -36,18 +36,14 @@ class ExportCsvJob implements ShouldQueue
     /**
      * Create a new job instance.
      */
-    public function __construct(protected User $user) {}
+    public function __construct(protected Account $account) {}
 
     /**
      * Execute the job.
      */
     public function handle(): void
     {
-        $accounts = $this->user->accounts;
-
-        $accounts->each(fn ($account) => $this->write($account));
-
-        Mail::to($this->user)->send(new CsvExported($this->files));
+        $this->write($this->account);
     }
 
     /**
@@ -56,7 +52,13 @@ class ExportCsvJob implements ShouldQueue
      */
     private function write(Account $account): void
     {
-        info('Export: '.$this->user->name.' / '.$account->acct);
+        // 後でダウンロードする用のCSVを事前に作成。
+
+        info('Create CSV for download: '.$account->acct);
+
+        if ($account->statuses()->count() === 0) {
+            return;
+        }
 
         $this->writer = Writer::from(new \SplTempFileObject);
         $this->writer->setEscape('');
@@ -73,11 +75,9 @@ class ExportCsvJob implements ShouldQueue
                 $this->insert($status);
             });
 
-        $path = 'csv/'.$this->user->name.'/'.$account->acct.'.csv';
+        $path = 'download/'.$this->account->user->name.'/'.$account->acct.'.csv';
 
-        if (Storage::put($path, $this->writer)) {
-            $this->files[] = $path;
-        }
+        Storage::put($path, $this->writer);
     }
 
     protected function header(): array
@@ -111,5 +111,18 @@ class ExportCsvJob implements ShouldQueue
         } catch (CannotInsertRecord $e) {
             logger()->error($e->getMessage());
         }
+    }
+
+    /**
+     * Handle a job failure.
+     */
+    public function failed(?Throwable $exception): void
+    {
+        $error = $this->account->acct.': '.$exception->getMessage();
+
+        logger()->error($error);
+
+        // ログが多すぎる場合は失敗する可能性があるので管理者宛に通知して確認。
+        User::find(1)->notify(new FailedCreateCsv($error));
     }
 }
