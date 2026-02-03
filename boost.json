@@ -3,13 +3,19 @@
         "copilot-cli",
         "phpstorm-copilot"
     ],
-    "editors": [
-        "copilot-cli",
-        "phpstorm-copilot"
-    ],
-    "guidelines": [
-        "laravel/fortify",
+    "guidelines": true,
+    "herd_mcp": false,
+    "mcp": true,
+    "packages": [
+        "revolution/laravel-boost-copilot-cli",
         "revolution/laravel-boost-phpstorm-copilot",
-        "revolution/laravel-boost-copilot-cli"
+        "laravel/fortify"
+    ],
+    "sail": false,
+    "skills": [
+        "fluxui-development",
+        "livewire-development",
+        "tailwindcss-development",
+        "developing-with-fortify"
     ]
 }

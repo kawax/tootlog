@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ea7baafd3983fb8de3ec5b770863e5a5",
+    "content-hash": "5506c998612e72a7bf13c1f155287893",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -8537,33 +8537,33 @@
         },
         {
             "name": "laravel/boost",
-            "version": "v1.8.10",
+            "version": "v2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/boost.git",
-                "reference": "aad8b2a423b0a886c2ce7ee92abbfde69992ff32"
+                "reference": "00eede2041a9bac83eabbd3b3f16bd4aa91277c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/boost/zipball/aad8b2a423b0a886c2ce7ee92abbfde69992ff32",
-                "reference": "aad8b2a423b0a886c2ce7ee92abbfde69992ff32",
+                "url": "https://api.github.com/repos/laravel/boost/zipball/00eede2041a9bac83eabbd3b3f16bd4aa91277c9",
+                "reference": "00eede2041a9bac83eabbd3b3f16bd4aa91277c9",
                 "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": "^7.9",
-                "illuminate/console": "^10.49.0|^11.45.3|^12.41.1",
-                "illuminate/contracts": "^10.49.0|^11.45.3|^12.41.1",
-                "illuminate/routing": "^10.49.0|^11.45.3|^12.41.1",
-                "illuminate/support": "^10.49.0|^11.45.3|^12.41.1",
+                "illuminate/console": "^11.45.3|^12.41.1",
+                "illuminate/contracts": "^11.45.3|^12.41.1",
+                "illuminate/routing": "^11.45.3|^12.41.1",
+                "illuminate/support": "^11.45.3|^12.41.1",
                 "laravel/mcp": "^0.5.1",
-                "laravel/prompts": "0.1.25|^0.3.6",
+                "laravel/prompts": "^0.3.10",
                 "laravel/roster": "^0.2.9",
-                "php": "^8.1"
+                "php": "^8.2"
             },
             "require-dev": {
-                "laravel/pint": "^1.20.0",
+                "laravel/pint": "^1.27.0",
                 "mockery/mockery": "^1.6.12",
-                "orchestra/testbench": "^8.36.0|^9.15.0|^10.6",
+                "orchestra/testbench": "^9.15.0|^10.6",
                 "pestphp/pest": "^2.36.0|^3.8.4|^4.1.5",
                 "phpstan/phpstan": "^2.1.27",
                 "rector/rector": "^2.1"
@@ -8599,7 +8599,7 @@
                 "issues": "https://github.com/laravel/boost/issues",
                 "source": "https://github.com/laravel/boost"
             },
-            "time": "2026-01-14T14:51:16+00:00"
+            "time": "2026-02-01T09:52:44+00:00"
         },
         {
             "name": "laravel/mcp",
@@ -9694,21 +9694,21 @@
         },
         {
             "name": "revolution/laravel-boost-copilot-cli",
-            "version": "1.1.4",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/invokable/laravel-boost-copilot-cli.git",
-                "reference": "96326a931dd29c4e10c61f5c51514c5b30e24280"
+                "reference": "942db5abf74123beac932e142a605444ad5af1f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/invokable/laravel-boost-copilot-cli/zipball/96326a931dd29c4e10c61f5c51514c5b30e24280",
-                "reference": "96326a931dd29c4e10c61f5c51514c5b30e24280",
+                "url": "https://api.github.com/repos/invokable/laravel-boost-copilot-cli/zipball/942db5abf74123beac932e142a605444ad5af1f1",
+                "reference": "942db5abf74123beac932e142a605444ad5af1f1",
                 "shasum": ""
             },
             "require": {
                 "illuminate/support": "^12.30",
-                "laravel/boost": "^1.8.2",
+                "laravel/boost": "^2.0",
                 "php": "^8.2"
             },
             "require-dev": {
@@ -9751,7 +9751,7 @@
                 "laravel"
             ],
             "support": {
-                "source": "https://github.com/invokable/laravel-boost-copilot-cli/tree/1.1.4"
+                "source": "https://github.com/invokable/laravel-boost-copilot-cli/tree/2.0.0"
             },
             "funding": [
                 {
@@ -9759,25 +9759,25 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-01-16T08:24:25+00:00"
+            "time": "2026-01-26T11:20:54+00:00"
         },
         {
             "name": "revolution/laravel-boost-phpstorm-copilot",
-            "version": "1.1.2",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/invokable/laravel-boost-phpstorm-copilot.git",
-                "reference": "3529cf4326de3e27afa1aad3117c723d65d567c6"
+                "reference": "4b28de054431e6c54b857da7b4010a803bfcb774"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/invokable/laravel-boost-phpstorm-copilot/zipball/3529cf4326de3e27afa1aad3117c723d65d567c6",
-                "reference": "3529cf4326de3e27afa1aad3117c723d65d567c6",
+                "url": "https://api.github.com/repos/invokable/laravel-boost-phpstorm-copilot/zipball/4b28de054431e6c54b857da7b4010a803bfcb774",
+                "reference": "4b28de054431e6c54b857da7b4010a803bfcb774",
                 "shasum": ""
             },
             "require": {
                 "illuminate/support": "^12.30",
-                "laravel/boost": "^1.7",
+                "laravel/boost": "^2.0",
                 "php": "^8.3"
             },
             "require-dev": {
@@ -9786,7 +9786,7 @@
                 "orchestra/testbench": "^10.6",
                 "pestphp/pest": "^4.1",
                 "pestphp/pest-plugin-laravel": "^4.0",
-                "revolution/laravel-boost-copilot-cli": "^1.1"
+                "revolution/laravel-boost-copilot-cli": "^2.0"
             },
             "type": "library",
             "extra": {
@@ -9814,7 +9814,7 @@
                     "email": "kawaxbiz@gmail.com"
                 }
             ],
-            "description": "Laravel Boost Custom CodeEnvironment for PhpStorm with GitHub Copilot plugin",
+            "description": "Laravel Boost Custom Agent for PhpStorm with GitHub Copilot plugin",
             "keywords": [
                 "boost",
                 "github-copilot",
@@ -9822,7 +9822,7 @@
                 "phpstorm"
             ],
             "support": {
-                "source": "https://github.com/invokable/laravel-boost-phpstorm-copilot/tree/1.1.2"
+                "source": "https://github.com/invokable/laravel-boost-phpstorm-copilot/tree/2.0.0"
             },
             "funding": [
                 {
@@ -9830,7 +9830,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-01-09T23:00:37+00:00"
+            "time": "2026-01-26T11:37:55+00:00"
         },
         {
             "name": "sebastian/cli-parser",

@@ -32,8 +32,8 @@
         "mockery/mockery": "^1.5",
         "nunomaduro/collision": "^8.0",
         "phpunit/phpunit": "^12.0",
-        "revolution/laravel-boost-copilot-cli": "^1.0",
-        "revolution/laravel-boost-phpstorm-copilot": "^1.0"
+        "revolution/laravel-boost-copilot-cli": "^2.0",
+        "revolution/laravel-boost-phpstorm-copilot": "^2.0"
     },
     "autoload": {
         "psr-4": {
