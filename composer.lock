@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.369.35",
+            "version": "3.369.38",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "0f3e296342fe965271b5dd0bded4a18bdab8aba5"
+                "reference": "6b39dcc5284fae1a1f7e5d4fd64878092a56594b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/0f3e296342fe965271b5dd0bded4a18bdab8aba5",
-                "reference": "0f3e296342fe965271b5dd0bded4a18bdab8aba5",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/6b39dcc5284fae1a1f7e5d4fd64878092a56594b",
+                "reference": "6b39dcc5284fae1a1f7e5d4fd64878092a56594b",
                 "shasum": ""
             },
             "require": {
@@ -153,9 +153,9 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.369.35"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.369.38"
             },
-            "time": "2026-02-16T19:15:41+00:00"
+            "time": "2026-02-19T19:06:55+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -1524,16 +1524,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v12.51.0",
+            "version": "v12.52.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "ce4de3feb211e47c4f959d309ccf8a2733b1bc16"
+                "reference": "d5511fa74f4608dbb99864198b1954042aa8d5a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/ce4de3feb211e47c4f959d309ccf8a2733b1bc16",
-                "reference": "ce4de3feb211e47c4f959d309ccf8a2733b1bc16",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/d5511fa74f4608dbb99864198b1954042aa8d5a7",
+                "reference": "d5511fa74f4608dbb99864198b1954042aa8d5a7",
                 "shasum": ""
             },
             "require": {
@@ -1742,20 +1742,20 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2026-02-10T18:20:19+00:00"
+            "time": "2026-02-17T17:07:04+00:00"
         },
         {
             "name": "laravel/nightwatch",
-            "version": "v1.22.2",
+            "version": "v1.22.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/nightwatch.git",
-                "reference": "6b200d20f577978bb91dac14de0428d49b712ae0"
+                "reference": "0831e31b56a932802eb5fea9c92e0931fd5093d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/nightwatch/zipball/6b200d20f577978bb91dac14de0428d49b712ae0",
-                "reference": "6b200d20f577978bb91dac14de0428d49b712ae0",
+                "url": "https://api.github.com/repos/laravel/nightwatch/zipball/0831e31b56a932802eb5fea9c92e0931fd5093d5",
+                "reference": "0831e31b56a932802eb5fea9c92e0931fd5093d5",
                 "shasum": ""
             },
             "require": {
@@ -1836,7 +1836,7 @@
                 "issues": "https://github.com/laravel/nightwatch/issues",
                 "source": "https://github.com/laravel/nightwatch"
             },
-            "time": "2026-02-16T23:38:36+00:00"
+            "time": "2026-02-19T06:31:39+00:00"
         },
         {
             "name": "laravel/octane",
@@ -2969,16 +2969,16 @@
         },
         {
             "name": "livewire/flux",
-            "version": "v2.12.0",
+            "version": "v2.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/flux.git",
-                "reference": "78bc26f54a29c28ff916751b9f796f4ce1592003"
+                "reference": "24c139b97b6df1e67c0235637f0e08c206bf4486"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/flux/zipball/78bc26f54a29c28ff916751b9f796f4ce1592003",
-                "reference": "78bc26f54a29c28ff916751b9f796f4ce1592003",
+                "url": "https://api.github.com/repos/livewire/flux/zipball/24c139b97b6df1e67c0235637f0e08c206bf4486",
+                "reference": "24c139b97b6df1e67c0235637f0e08c206bf4486",
                 "shasum": ""
             },
             "require": {
@@ -2991,7 +2991,7 @@
                 "symfony/console": "^6.0|^7.0"
             },
             "conflict": {
-                "livewire/blaze": "<1.0.0"
+                "livewire/blaze": "<1.0.0-beta.2"
             },
             "type": "library",
             "extra": {
@@ -3029,9 +3029,9 @@
             ],
             "support": {
                 "issues": "https://github.com/livewire/flux/issues",
-                "source": "https://github.com/livewire/flux/tree/v2.12.0"
+                "source": "https://github.com/livewire/flux/tree/v2.12.1"
             },
-            "time": "2026-02-09T23:35:27+00:00"
+            "time": "2026-02-17T21:12:27+00:00"
         },
         {
             "name": "livewire/livewire",
@@ -5028,16 +5028,16 @@
         },
         {
             "name": "spatie/browsershot",
-            "version": "5.2.2",
+            "version": "5.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/browsershot.git",
-                "reference": "c07bbd63f4cb698a0b163995a5851ecf33a16f90"
+                "reference": "d2e4ac7c69162999940172a674bf83ddc5ac59ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/browsershot/zipball/c07bbd63f4cb698a0b163995a5851ecf33a16f90",
-                "reference": "c07bbd63f4cb698a0b163995a5851ecf33a16f90",
+                "url": "https://api.github.com/repos/spatie/browsershot/zipball/d2e4ac7c69162999940172a674bf83ddc5ac59ea",
+                "reference": "d2e4ac7c69162999940172a674bf83ddc5ac59ea",
                 "shasum": ""
             },
             "require": {
@@ -5084,7 +5084,7 @@
                 "webpage"
             ],
             "support": {
-                "source": "https://github.com/spatie/browsershot/tree/5.2.2"
+                "source": "https://github.com/spatie/browsershot/tree/5.2.3"
             },
             "funding": [
                 {
@@ -5092,7 +5092,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-02-10T15:34:05+00:00"
+            "time": "2026-02-18T16:10:58+00:00"
         },
         {
             "name": "spatie/crawler",
@@ -8539,16 +8539,16 @@
         },
         {
             "name": "laravel/boost",
-            "version": "v2.1.5",
+            "version": "v2.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/boost.git",
-                "reference": "c31e7e3d387f6d278549b46afe255ab13840e697"
+                "reference": "3f999986f9dc0f1faa9a6607739e938d551e27df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/boost/zipball/c31e7e3d387f6d278549b46afe255ab13840e697",
-                "reference": "c31e7e3d387f6d278549b46afe255ab13840e697",
+                "url": "https://api.github.com/repos/laravel/boost/zipball/3f999986f9dc0f1faa9a6607739e938d551e27df",
+                "reference": "3f999986f9dc0f1faa9a6607739e938d551e27df",
                 "shasum": ""
             },
             "require": {
@@ -8601,20 +8601,20 @@
                 "issues": "https://github.com/laravel/boost/issues",
                 "source": "https://github.com/laravel/boost"
             },
-            "time": "2026-02-16T13:33:22+00:00"
+            "time": "2026-02-18T12:19:28+00:00"
         },
         {
             "name": "laravel/mcp",
-            "version": "v0.5.7",
+            "version": "v0.5.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/mcp.git",
-                "reference": "97fcdacbce93c572e3d25457cf30395dede67088"
+                "reference": "39e8da60eb7bce4737c5d868d35a3fe78938c129"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/mcp/zipball/97fcdacbce93c572e3d25457cf30395dede67088",
-                "reference": "97fcdacbce93c572e3d25457cf30395dede67088",
+                "url": "https://api.github.com/repos/laravel/mcp/zipball/39e8da60eb7bce4737c5d868d35a3fe78938c129",
+                "reference": "39e8da60eb7bce4737c5d868d35a3fe78938c129",
                 "shasum": ""
             },
             "require": {
@@ -8674,7 +8674,7 @@
                 "issues": "https://github.com/laravel/mcp/issues",
                 "source": "https://github.com/laravel/mcp"
             },
-            "time": "2026-02-13T14:08:37+00:00"
+            "time": "2026-02-17T19:05:53+00:00"
         },
         {
             "name": "laravel/pail",
@@ -9029,36 +9029,36 @@
         },
         {
             "name": "nunomaduro/collision",
-            "version": "v8.9.0",
+            "version": "v8.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/collision.git",
-                "reference": "f52cab234f37641bd759c0ad56de17f632851419"
+                "reference": "a1ed3fa530fd60bc515f9303e8520fcb7d4bd935"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/collision/zipball/f52cab234f37641bd759c0ad56de17f632851419",
-                "reference": "f52cab234f37641bd759c0ad56de17f632851419",
+                "url": "https://api.github.com/repos/nunomaduro/collision/zipball/a1ed3fa530fd60bc515f9303e8520fcb7d4bd935",
+                "reference": "a1ed3fa530fd60bc515f9303e8520fcb7d4bd935",
                 "shasum": ""
             },
             "require": {
                 "filp/whoops": "^2.18.4",
-                "nunomaduro/termwind": "^2.3.3",
+                "nunomaduro/termwind": "^2.4.0",
                 "php": "^8.2.0",
                 "symfony/console": "^7.4.4 || ^8.0.4"
             },
             "conflict": {
                 "laravel/framework": "<11.48.0 || >=14.0.0",
-                "phpunit/phpunit": "<11.5.50 || >=13.0.0"
+                "phpunit/phpunit": "<11.5.50 || >=14.0.0"
             },
             "require-dev": {
                 "brianium/paratest": "^7.8.5",
                 "larastan/larastan": "^3.9.2",
-                "laravel/framework": "^11.48.0 || ^12.51.0",
+                "laravel/framework": "^11.48.0 || ^12.52.0",
                 "laravel/pint": "^1.27.1",
                 "orchestra/testbench-core": "^9.12.0 || ^10.9.0",
-                "pestphp/pest": "^3.8.5 || ^4.3.2",
-                "sebastian/environment": "^7.2.1 || ^8.0.3"
+                "pestphp/pest": "^3.8.5 || ^4.4.1 || ^5.0.0",
+                "sebastian/environment": "^7.2.1 || ^8.0.3 || ^9.0.0"
             },
             "type": "library",
             "extra": {
@@ -9121,7 +9121,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2026-02-16T23:05:52+00:00"
+            "time": "2026-02-17T17:33:08+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -9589,16 +9589,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "12.5.12",
+            "version": "12.5.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "418e06b3b46b0d54bad749ff4907fc7dfb530199"
+                "reference": "47283cfd98d553edcb1353591f4e255dc1bb61f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/418e06b3b46b0d54bad749ff4907fc7dfb530199",
-                "reference": "418e06b3b46b0d54bad749ff4907fc7dfb530199",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/47283cfd98d553edcb1353591f4e255dc1bb61f0",
+                "reference": "47283cfd98d553edcb1353591f4e255dc1bb61f0",
                 "shasum": ""
             },
             "require": {
@@ -9667,7 +9667,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/12.5.12"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/12.5.14"
             },
             "funding": [
                 {
@@ -9691,20 +9691,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-02-16T08:34:36+00:00"
+            "time": "2026-02-18T12:38:40+00:00"
         },
         {
             "name": "revolution/laravel-boost-copilot-cli",
-            "version": "2.0.1",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/invokable/laravel-boost-copilot-cli.git",
-                "reference": "3eb0f06ec1e5a971c21b0d6db2691b294e3b5c84"
+                "reference": "fe159fb6235c0f7fb7181f03363732ac92e67df4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/invokable/laravel-boost-copilot-cli/zipball/3eb0f06ec1e5a971c21b0d6db2691b294e3b5c84",
-                "reference": "3eb0f06ec1e5a971c21b0d6db2691b294e3b5c84",
+                "url": "https://api.github.com/repos/invokable/laravel-boost-copilot-cli/zipball/fe159fb6235c0f7fb7181f03363732ac92e67df4",
+                "reference": "fe159fb6235c0f7fb7181f03363732ac92e67df4",
                 "shasum": ""
             },
             "require": {
@@ -9752,7 +9752,7 @@
                 "laravel"
             ],
             "support": {
-                "source": "https://github.com/invokable/laravel-boost-copilot-cli/tree/2.0.1"
+                "source": "https://github.com/invokable/laravel-boost-copilot-cli/tree/2.0.2"
             },
             "funding": [
                 {
@@ -9760,20 +9760,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-02-04T23:29:38+00:00"
+            "time": "2026-02-18T00:21:25+00:00"
         },
         {
             "name": "revolution/laravel-boost-phpstorm-copilot",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/invokable/laravel-boost-phpstorm-copilot.git",
-                "reference": "4b28de054431e6c54b857da7b4010a803bfcb774"
+                "reference": "3fb18db22fdab53c7afd746a97980b53321bd4de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/invokable/laravel-boost-phpstorm-copilot/zipball/4b28de054431e6c54b857da7b4010a803bfcb774",
-                "reference": "4b28de054431e6c54b857da7b4010a803bfcb774",
+                "url": "https://api.github.com/repos/invokable/laravel-boost-phpstorm-copilot/zipball/3fb18db22fdab53c7afd746a97980b53321bd4de",
+                "reference": "3fb18db22fdab53c7afd746a97980b53321bd4de",
                 "shasum": ""
             },
             "require": {
@@ -9823,7 +9823,7 @@
                 "phpstorm"
             ],
             "support": {
-                "source": "https://github.com/invokable/laravel-boost-phpstorm-copilot/tree/2.0.0"
+                "source": "https://github.com/invokable/laravel-boost-phpstorm-copilot/tree/2.0.1"
             },
             "funding": [
                 {
@@ -9831,7 +9831,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-01-26T11:37:55+00:00"
+            "time": "2026-02-18T00:23:08+00:00"
         },
         {
             "name": "sebastian/cli-parser",

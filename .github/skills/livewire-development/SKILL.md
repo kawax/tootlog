@@ -1,10 +1,9 @@
 ---
 name: livewire-development
-description: >-
-  Develops reactive Livewire 4 components. Activates when creating, updating, or modifying
-  Livewire components; working with wire:model, wire:click, wire:loading, or any wire: directives;
-  adding real-time updates, loading states, or reactivity; debugging component behavior;
-  writing Livewire tests; or when the user mentions Livewire, component, counter, or reactive UI.
+description: "Develops reactive Livewire 4 components. Activates when creating, updating, or modifying Livewire components; working with wire:model, wire:click, wire:loading, or any wire: directives; adding real-time updates, loading states, or reactivity; debugging component behavior; writing Livewire tests; or when the user mentions Livewire, component, counter, or reactive UI."
+license: MIT
+metadata:
+  author: laravel
 ---
 
 # Livewire Development
@@ -26,43 +25,48 @@ Use `search-docs` for detailed Livewire 4 patterns and documentation.
 
 ### Creating Components
 
-<code-snippet name="Component Creation Commands" lang="bash">
+```bash
 
 # Single-file component (default in v4)
 
-{{ $assist->artisanCommand('make:livewire create-post') }}
+php artisan make:livewire create-post
 
 # Multi-file component
 
-{{ $assist->artisanCommand('make:livewire create-post --mfc') }}
+php artisan make:livewire create-post --mfc
 
 # Class-based component (v3 style)
 
-{{ $assist->artisanCommand('make:livewire create-post --class') }}
+php artisan make:livewire create-post --class
 
 # With namespace
 
-{{ $assist->artisanCommand('make:livewire Posts/CreatePost') }}
-
-</code-snippet>
+php artisan make:livewire Posts/CreatePost
+```
 
 ### Converting Between Formats
 
 Use `php artisan livewire:convert create-post` to convert between single-file, multi-file, and class-based formats.
 
+### Choosing a Component Format
+
+Before creating a component, check `config/livewire.php` for directory overrides, which change where files are stored. Then, look at existing files in those directories (defaulting to `app/Livewire/` and `resources/views/livewire/`) to match the established convention.
+
 ### Component Format Reference
 
-| Format | Flag | Structure |
-|--------|------|-----------|
-| Single-file (SFC) | default | PHP + Blade in one file |
-| Multi-file (MFC) | `--mfc` | Separate PHP class, Blade, JS, tests |
-| Class-based | `--class` | Traditional v3 style class |
-| View-based | ⚡ prefix | Blade-only with functional state |
+| Format | Flag | Class Path | View Path |
+|--------|------|------------|-----------|
+| Single-file (SFC) | default | — | `resources/views/livewire/create-post.blade.php` (PHP + Blade in one file) |
+| Multi-file (MFC) | `--mfc` | `app/Livewire/CreatePost.php` | `resources/views/livewire/create-post.blade.php` |
+| Class-based | `--class` | `app/Livewire/CreatePost.php` | `resources/views/livewire/create-post.blade.php` |
+| View-based | ⚡ prefix | — | `resources/views/livewire/create-post.blade.php` (Blade-only with functional state) |
+
+Namespaced components map to subdirectories: `make:livewire Posts/CreatePost` creates files at `app/Livewire/Posts/CreatePost.php` and `resources/views/livewire/posts/create-post.blade.php`.
 
 ### Single-File Component Example
 
-<code-snippet name="Single-File Component Example" lang="php">
-
+<!-- Single-File Component Example -->
+```php
 <?php
 use Livewire\Component;
 
@@ -79,8 +83,7 @@ new class extends Component {
 <div>
     <button wire:click="increment">Count: @{{ $count }}</button>
 </div>
-
-</code-snippet>
+```
 
 ## Livewire 4 Specifics
 
@@ -88,7 +91,7 @@ new class extends Component {
 
 These things changed in Livewire 4, but may not have been updated in this application. Verify this application's setup to ensure you follow existing conventions.
 
-- Use `Route::livewire()` for full-page components; config keys renamed: `layout` → `component_layout`, `lazy_placeholder` → `component_placeholder`.
+- Use `Route::livewire()` for full-page components (e.g., `Route::livewire('/posts/create', CreatePost::class)`); config keys renamed: `layout` → `component_layout`, `lazy_placeholder` → `component_placeholder`.
 - `wire:model` now ignores child events by default (use `wire:model.deep` for old behavior); `wire:scroll` renamed to `wire:navigate:scroll`.
 - Component tags must be properly closed; `wire:transition` now uses View Transitions API (modifiers removed).
 - JavaScript: `$wire.$js('name', fn)` → `$wire.$js.name = fn`; `commit`/`request` hooks → `interceptMessage()`/`interceptRequest()`.
@@ -139,14 +142,13 @@ For interceptors and hooks, see [reference/javascript-hooks.md](reference/javasc
 
 ## Testing
 
-<code-snippet name="Testing Example" lang="php">
-
+<!-- Testing Example -->
+```php
 Livewire::test(Counter::class)
     ->assertSet('count', 0)
     ->call('increment')
     ->assertSet('count', 1);
-
-</code-snippet>
+```
 
 ## Verification
 
