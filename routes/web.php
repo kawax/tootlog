@@ -9,6 +9,7 @@ Route::view('/', 'welcome')->name('welcome');
 
 require __DIR__.'/home.php';
 require __DIR__.'/open.php';
+require __DIR__.'/settings.php';
 
 Route::get('/mail/preview', function () {
     return new App\Mail\Export\CsvExported([]);
