@@ -43,13 +43,13 @@ Welcome to the tootlog project! This guide will help GitHub Copilot understand t
 ### Frontend
 - Flux UI Free
 - Tailwind 4
-- Livewire and Volt
+- Livewire 4
 - Vite
 - Vue 3
 
 ### Development Tools
 - **Code Style**: Laravel Pint
-- **Testing**: PHPUnit 11+
+- **Testing**: PHPUnit 12+
 - **CI/CD**: GitHub Actions
 - **Deployment**: Laravel Forge
 - **Monitoring**: Laravel Horizon for queues
