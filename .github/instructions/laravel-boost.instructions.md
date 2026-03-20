@@ -269,8 +269,8 @@ $this->app->singleton(Service::class, fn () => new Service(fn () => request()));
 
 ## Laravel Boost for GitHub Copilot CLI
 
-This project uses [Laravel Boost](https://github.com/laravel/boost) to provide MCP (Model Context Protocol) tools for GitHub Copilot CLI.
-The MCP server is configured in `.vscode/mcp.json` and automatically loaded by Copilot CLI.
+This project uses Laravel Boost to provide MCP (Model Context Protocol) tools for GitHub Copilot CLI.
+The MCP server is configured in `.mcp.json` and automatically loaded by Copilot CLI.
 
 === revolution/laravel-boost-phpstorm-copilot rules ===
 
