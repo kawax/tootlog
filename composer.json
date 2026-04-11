@@ -18,6 +18,7 @@
         "laravel/tinker": "^3.0",
         "league/csv": "^9.8",
         "league/flysystem-aws-s3-v3": "^3.0",
+        "livewire/blaze": "^1.0",
         "livewire/flux": "^2.9.0",
         "livewire/livewire": "^4.0",
         "revolution/laravel-mastodon-api": "^3.0",
