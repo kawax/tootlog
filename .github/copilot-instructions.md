@@ -50,8 +50,7 @@ Welcome to the tootlog project! This guide will help GitHub Copilot understand t
 - **Code Style**: Laravel Pint
 - **Testing**: PHPUnit 12+
 - **CI/CD**: GitHub Actions
-- **Deployment**: Laravel Forge
-- **Monitoring**: Laravel Horizon for queues
+- **Deployment**: Laravel Cloud
 
 ## Setup Instructions
 
@@ -75,14 +74,14 @@ Welcome to the tootlog project! This guide will help GitHub Copilot understand t
    php artisan migrate:fresh --seed
    ```
 
-データベースを全て削除してseedまで実行。
+   データベースを全て削除してseedまで実行。
 
 4. **Start Development Server**
    ```bash
    composer run dev
    ```
 
-Playwrightで表示するローカルURL:
+ローカルURL:
 http://127.0.0.1:8000/
 テストユーザーはemail=test@example.com、password=passwordでログイン可能。
 
