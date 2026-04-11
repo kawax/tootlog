@@ -1,5 +1,6 @@
 <?php
 
+use Flux\Flux;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rules\Password;
 use Illuminate\Validation\ValidationException;
@@ -32,7 +33,7 @@ new class extends Component {
 
         $this->reset('current_password', 'password', 'password_confirmation');
 
-        $this->dispatch('password-updated');
+        Flux::toast(variant: 'success', text: __('Password updated.'));
     }
 }; ?>
 
@@ -64,15 +65,9 @@ new class extends Component {
             />
 
             <div class="flex items-center gap-4">
-                <div class="flex items-center justify-end">
-                    <flux:button variant="primary" type="submit" class="w-full" data-test="update-password-button">
-                        {{ __('Save') }}
-                    </flux:button>
-                </div>
-
-                <x-action-message class="me-3" on="password-updated">
-                    {{ __('Saved.') }}
-                </x-action-message>
+                <flux:button variant="primary" type="submit" data-test="update-password-button">
+                    {{ __('Save') }}
+                </flux:button>
             </div>
         </form>
     </x-pages::settings.layout>
