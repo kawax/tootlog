@@ -3,6 +3,7 @@
 use App\Jobs\DeleteAccountJob;
 use App\Models\Account;
 use Livewire\Component;
+use Flux\Flux;
 
 new class extends Component
 {
@@ -14,9 +15,9 @@ new class extends Component
 
         DeleteAccountJob::dispatch($this->acct);
 
-        session()->flash('message', 'Account deletion scheduled.');
+        Flux::toast(text: __('Account deletion scheduled.'), variant: 'danger');
 
-        $this->redirect(route('home'));
+        $this->redirect(route('home'), navigate: true);
     }
 }; ?>
 

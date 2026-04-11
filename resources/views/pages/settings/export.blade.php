@@ -2,6 +2,7 @@
 
 use App\Jobs\ExportCsvJob;
 use Livewire\Component;
+use Flux\Flux;
 
 new class extends Component
 {
@@ -9,9 +10,13 @@ new class extends Component
     {
         ExportCsvJob::dispatch(auth()->user());
 
-        session()->flash('message', 'Export has started. Please wait for an email.');
+        Flux::toast(
+            text: __('Please wait for an email.'),
+            heading: __('Export has started'),
+            variant: 'success'
+        );
 
-        $this->redirect(route('home'));
+        $this->redirect(route('home'), navigate: true);
     }
 }; ?>
 

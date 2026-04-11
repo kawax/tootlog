@@ -30,10 +30,4 @@ new class extends Component
     <div class="relative h-full">
         <livewire:pages::home.statuses/>
     </div>
-
-    @if(session('message'))
-        <x-toast>
-            {{ session('message') }}
-        </x-toast>
-    @endif
 </div>
