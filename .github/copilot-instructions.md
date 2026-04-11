@@ -35,7 +35,6 @@ Welcome to the tootlog project! This guide will help GitHub Copilot understand t
 ### Backend
 - **Framework**: Laravel 13+ (PHP 8.4+)
 - **Database**: MySQL (SQLite in local development)
-- **Queue**: Redis with Laravel Horizon
 - **Authentication**: Laravel Fortify (with 2FA support)
 - **API Integration**: revolution/laravel-mastodon-api
 - **OAuth**: revolution/socialite-mastodon
