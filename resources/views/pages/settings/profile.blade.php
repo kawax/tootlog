@@ -47,7 +47,7 @@ new class extends Component {
 
         $user->save();
 
-        Flux::toast(variant: 'success', text: __('Profile updated.'));
+        Flux::toast(variant: 'success', text: __('Saved.'));
     }
 
     /**
