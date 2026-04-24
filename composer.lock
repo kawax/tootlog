@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.379.5",
+            "version": "3.379.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "c81342df6e09bbc30d28ea57cc4644bb35c53ce2"
+                "reference": "587f0bafd28a7dc3395b0c55f93f2474657767e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/c81342df6e09bbc30d28ea57cc4644bb35c53ce2",
-                "reference": "c81342df6e09bbc30d28ea57cc4644bb35c53ce2",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/587f0bafd28a7dc3395b0c55f93f2474657767e2",
+                "reference": "587f0bafd28a7dc3395b0c55f93f2474657767e2",
                 "shasum": ""
             },
             "require": {
@@ -153,9 +153,9 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.379.5"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.379.6"
             },
-            "time": "2026-04-22T18:13:16+00:00"
+            "time": "2026-04-23T18:11:11+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -3032,16 +3032,16 @@
         },
         {
             "name": "livewire/flux",
-            "version": "v2.13.2",
+            "version": "v2.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/flux.git",
-                "reference": "4dbf3c4fdb936a66e082495ebd26c0f3193fd72c"
+                "reference": "44f240efd186b5629d5e4c4a4cc7bbba0111fb48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/flux/zipball/4dbf3c4fdb936a66e082495ebd26c0f3193fd72c",
-                "reference": "4dbf3c4fdb936a66e082495ebd26c0f3193fd72c",
+                "url": "https://api.github.com/repos/livewire/flux/zipball/44f240efd186b5629d5e4c4a4cc7bbba0111fb48",
+                "reference": "44f240efd186b5629d5e4c4a4cc7bbba0111fb48",
                 "shasum": ""
             },
             "require": {
@@ -3092,9 +3092,9 @@
             ],
             "support": {
                 "issues": "https://github.com/livewire/flux/issues",
-                "source": "https://github.com/livewire/flux/tree/v2.13.2"
+                "source": "https://github.com/livewire/flux/tree/v2.14.1"
             },
-            "time": "2026-03-31T20:25:36+00:00"
+            "time": "2026-04-23T23:00:08+00:00"
         },
         {
             "name": "livewire/livewire",
