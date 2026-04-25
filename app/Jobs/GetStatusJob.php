@@ -28,7 +28,10 @@ class GetStatusJob implements ShouldQueue
     /**
      * Create a new job instance.
      */
-    public function __construct(protected Account $account) {}
+    public function __construct(protected Account $account)
+    {
+        $this->onQueue('status');
+    }
 
     /**
      * Execute the job.
@@ -36,6 +39,8 @@ class GetStatusJob implements ShouldQueue
     public function handle(): void
     {
         info('GetStatusesJob: '.$this->account->url);
+
+        $this->account->touch();
 
         try {
             $this->account = $this->refresh($this->account);
@@ -82,7 +87,9 @@ class GetStatusJob implements ShouldQueue
     protected function create(?array $statuses): void
     {
         foreach ($statuses as $status) {
-            $this->createStatus($status);
+            if (is_array($status)) {
+                $this->createStatus($status);
+            }
         }
     }
 

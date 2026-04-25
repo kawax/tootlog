@@ -1,18 +1,18 @@
-<div class="p-6 w-full">
+<div class="p-3 w-full">
     <flux:heading size="lg" level="3">{{ __('Stats') }}</flux:heading>
     <flux:subheading size="md" class="mb-3">
-        {{ __('') }}
+        {{ __('Any statuses exceeding 1,000 per account will be automatically deleted in order of oldest.') }}
     </flux:subheading>
 
     <div class="grid grid-cols-2 gap-4">
         <div>
             <flux:text>{{ __('Statuses') }}</flux:text>
-            <flux:heading size="xl"
+            <flux:heading size="lg"
                           class="mb-1">{{ auth()->user()->loadCount('statuses')->statuses_count }}</flux:heading>
         </div>
         <div>
             <flux:text>{{ __('Accounts') }}</flux:text>
-            <flux:heading size="xl"
+            <flux:heading size="lg"
                           class="mb-1">{{ auth()->user()->loadCount('accounts')->accounts_count }}</flux:heading>
         </div>
     </div>
