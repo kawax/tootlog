@@ -2,7 +2,6 @@
 
 namespace Tests\Feature;
 
-use App\Livewire\StatusToggle;
 use App\Models\Account;
 use App\Models\Server;
 use App\Models\Status;
@@ -115,6 +114,8 @@ class UserTest extends TestCase
 
     public function test_user()
     {
+        Livewire::withoutLazyLoading();
+
         $response = $this->actingAs($this->user)
             ->get('/@test');
 

@@ -21,3 +21,4 @@ Vagrantfile
 **/caddy
 frankenphp
 frankenphp-worker.php
+/.phpunit.result.cache

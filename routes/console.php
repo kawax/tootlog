@@ -1,5 +1,6 @@
 <?php
 
+use App\Jobs\DeleteOldStatusJob;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Schedule;
@@ -9,7 +10,7 @@ Artisan::command('inspire', function () {
 })->purpose('Display an inspiring quote');
 
 Schedule::command('toot:statuses')
-    ->hourlyAt(30);
+    ->everyFiveMinutes();
 
 Schedule::command('toot:info')
     ->dailyAt('08:00')
@@ -22,3 +23,5 @@ Schedule::command('toot:version')
 Schedule::command('queue:prune-failed', ['--hours' => 48])->hourly();
 
 Schedule::command('welcome:cache')->everyFourHours();
+
+Schedule::job(DeleteOldStatusJob::class)->hourly();
