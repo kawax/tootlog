@@ -10,7 +10,7 @@ Artisan::command('inspire', function () {
 })->purpose('Display an inspiring quote');
 
 Schedule::command('toot:statuses')
-    ->everyFiveMinutes();
+    ->everyThirtyMinutes();
 
 Schedule::command('toot:info')
     ->dailyAt('08:00')
