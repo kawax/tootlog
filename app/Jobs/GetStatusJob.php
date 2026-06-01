@@ -30,7 +30,7 @@ class GetStatusJob implements ShouldQueue
      */
     public function __construct(protected Account $account)
     {
-        $this->onQueue('status');
+        //
     }
 
     /**
