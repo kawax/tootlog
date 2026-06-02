@@ -34,6 +34,8 @@ class DeleteOldStatusJob implements ShouldQueue
             ->first();
 
         if (! $account->exists) {
+            info('No account to delete old statuses.');
+
             return;
         }
 
