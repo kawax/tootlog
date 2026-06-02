@@ -37,6 +37,8 @@ class DeleteOldStatusJob implements ShouldQueue
             info('No account to delete old statuses.');
 
             return;
+        } else {
+            info('Start to delete old statuses for account: '.$account->acct);
         }
 
         $account->statuses()
