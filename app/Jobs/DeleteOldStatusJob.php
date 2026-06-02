@@ -27,28 +27,32 @@ class DeleteOldStatusJob implements ShouldQueue
     {
         // MAX_STATUSES以上の投稿を持つアカウントの古い投稿を少量(50件)ずつ削除。
 
-        $account = Account::with('statuses')
-            ->withCount('statuses')
-            ->having('statuses_count', '>', self::MAX_STATUSES)
-            ->oldest()
-            ->first();
+        try {
+            $account = Account::with('statuses')
+                ->withCount('statuses')
+                ->having('statuses_count', '>', self::MAX_STATUSES)
+                ->oldest()
+                ->first();
 
-        if (! $account->exists) {
-            info('No account to delete old statuses.');
+            if (! $account->exists) {
+                info('No account to delete old statuses.');
 
-            return;
-        } else {
-            info('Start to delete old statuses for account: '.$account->acct);
+                return;
+            } else {
+                info('Start to delete old statuses for account: '.$account->acct);
+            }
+
+            $account->statuses()
+                ->withTrashed()
+                ->oldest()
+                ->limit(50)
+                ->delete();
+
+            $account->touch();
+
+            info('Deleted old statuses for account: '.$account->acct.' (remaining: '.$account->statuses()->count().')');
+        } catch (\Exception $exception) {
+            logger()->error('DeleteOldStatusJob: '.$exception->getMessage());
         }
-
-        $account->statuses()
-            ->withTrashed()
-            ->oldest()
-            ->limit(50)
-            ->delete();
-
-        $account->touch();
-
-        info('Deleted old statuses for account: '.$account->acct.' (remaining: '.$account->statuses()->count().')');
     }
 }
