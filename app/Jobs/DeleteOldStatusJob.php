@@ -33,6 +33,10 @@ class DeleteOldStatusJob implements ShouldQueue
             ->oldest()
             ->first();
 
+        if (! $account->exists) {
+            return;
+        }
+
         $account->statuses()
             ->withTrashed()
             ->oldest()
