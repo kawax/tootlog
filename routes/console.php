@@ -24,4 +24,4 @@ Schedule::command('queue:prune-failed', ['--hours' => 48])->hourly();
 
 Schedule::command('welcome:cache')->everyFourHours();
 
-Schedule::job(DeleteOldStatusJob::class)->hourly();
+// Schedule::job(DeleteOldStatusJob::class)->hourly();

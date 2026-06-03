@@ -49,6 +49,8 @@ class GetStatusJob implements ShouldQueue
 
             $this->account->increment('fails');
 
+            DeleteOldAccountStatusJob::dispatch($this->account);
+
             return;
         }
 
@@ -61,6 +63,8 @@ class GetStatusJob implements ShouldQueue
 
             $this->account->increment('fails');
 
+            DeleteOldAccountStatusJob::dispatch($this->account);
+
             return;
         }
 
@@ -71,6 +75,8 @@ class GetStatusJob implements ShouldQueue
         if (! empty($since_id)) {
             $this->account->fill(['since_id' => $since_id])->save();
         }
+
+        DeleteOldAccountStatusJob::dispatch($this->account);
     }
 
     protected function refresh(Account $account): Account
@@ -199,5 +205,7 @@ class GetStatusJob implements ShouldQueue
     public function failed(): void
     {
         $this->account->increment('fails');
+
+        DeleteOldAccountStatusJob::dispatch($this->account);
     }
 }
