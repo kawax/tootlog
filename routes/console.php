@@ -20,7 +20,7 @@ Schedule::command('toot:version')
     ->timezone('Asia/Tokyo')
     ->dailyAt('23:20');
 
-Schedule::command('queue:prune-failed', ['--hours' => 48])->hourly();
+// Schedule::command('queue:prune-failed', ['--hours' => 48])->hourly();
 
 Schedule::command('welcome:cache')->everyFourHours();
 
