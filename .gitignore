@@ -16,6 +16,7 @@ Vagrantfile
 /.phpunit.cache
 /build
 /public/build
+/public/fonts-manifest.dev.json
 /.claude/settings.local.json
 
 **/caddy
