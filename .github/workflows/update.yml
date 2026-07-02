@@ -6,15 +6,15 @@ on:
 
 jobs:
   composer:
-    uses: kawax/composer-workflow/.github/workflows/update.yml@v1
+    uses: kawax/composer-workflow/.github/workflows/update.yml@b1ad2a4aa1d05fba8ce5c3590f486546a5c7c0fa # v1
     secrets:
       token: ${{ secrets.GITHUB_TOKEN }}
     with:
-      php: 8.4
+      php: 8.5
       git-name: kawax
       git-email: 1502086+kawax@users.noreply.github.com
   npm:
-    uses: kawax/npm-workflow/.github/workflows/update.yml@v1
+    uses: kawax/npm-workflow/.github/workflows/update.yml@0340b8e7582f60e440c100abca8c306ddf221fda # v1
     secrets:
       token: ${{ secrets.GITHUB_TOKEN }}
     with:
