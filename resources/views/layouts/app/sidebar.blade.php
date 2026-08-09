@@ -13,17 +13,10 @@
 
         <flux:navlist variant="outline">
             <flux:navlist.group :heading="__('Private')" class="grid">
-                <flux:navlist.item
-                    icon="home"
-                    :href="route('home')"
-                    :current="request()->routeIs('home')"
-                >
+                <flux:navlist.item icon="home" :href="route('home')" :current="request()->routeIs('home')">
                     {{ __('Dashboard') }}</flux:navlist.item>
 
-                <flux:navlist.item
-                    :href="route('home.timeline')"
-                    :current="request()->routeIs('home.timeline.*')"
-                >
+                <flux:navlist.item :href="route('home.timeline')" :current="request()->routeIs('home.timeline.*')">
                     {{ __('Timeline') }}</flux:navlist.item>
             </flux:navlist.group>
         </flux:navlist>
@@ -84,11 +77,7 @@
                 <flux:menu.separator />
 
                 <flux:menu.radio.group>
-                    <flux:menu.item
-                        :href="route('profile.edit')"
-                        icon="cog"
-                        wire:navigate
-                    >
+                    <flux:menu.item :href="route('profile.edit')" icon="cog" wire:navigate>
                         {{ __('Settings') }}</flux:menu.item>
                 </flux:menu.radio.group>
 
