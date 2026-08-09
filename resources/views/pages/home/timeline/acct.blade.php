@@ -2,20 +2,22 @@
 
 use App\Models\Account;
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Illuminate\View\View;
 use Livewire\Component;
-use Illuminate\Http\Request;
 
 /**
  * 非公開。Vueコンポーネントでリアルタイムのタイムラインを表示する。
  */
-
 new class extends Component
 {
     public Account $acct;
+
     public User $user;
+
     public string $username;
+
     public string $domain;
 
     public function mount(Request $request): void
@@ -34,19 +36,19 @@ new class extends Component
 }; ?>
 <div id="app" class="flex">
     <div class="mr-6">
-        <livewire:pages::home.timeline.account_list/>
+        <livewire:pages::home.timeline.account_list />
     </div>
 
     <div class="flex-1 px-3">
         <flux:heading size="xl" level="2" class="mb-4">
-            <a href="{{ $acct->server->domain }}" target="_blank" rel="nofollow noopener">
-                {{ $acct->acct }}
-            </a>
+            <a href="{{ $acct->server->domain }}" target="_blank" rel="nofollow noopener"> {{ $acct->acct }} </a>
         </flux:heading>
 
-        <tt-user-timeline domain="{{ $acct->server->domain }}"
-                          streaming="{{ $acct->server->streaming_url }}"
-                          token="{{ $acct->token }}">
+        <tt-user-timeline
+            domain="{{ $acct->server->domain }}"
+            streaming="{{ $acct->server->streaming_url }}"
+            token="{{ $acct->token }}"
+        >
         </tt-user-timeline>
     </div>
 </div>

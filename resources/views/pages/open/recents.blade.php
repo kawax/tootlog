@@ -2,8 +2,8 @@
 
 use App\Models\Account;
 use App\Models\User;
-use Illuminate\Support\Collection;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 use Livewire\Attributes\Lazy;
 use Livewire\Attributes\On;
 use Livewire\Component;
@@ -11,7 +11,6 @@ use Livewire\Component;
 /**
  * 公開。指定したユーザーの最近の投稿日一覧を表示する。
  */
-
 new
 #[Lazy]
 class extends Component

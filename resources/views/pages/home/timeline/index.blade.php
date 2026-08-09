@@ -1,10 +1,10 @@
 <?php
 
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Illuminate\View\View;
 use Livewire\Component;
-use Illuminate\Http\Request;
 
 /**
  * timeline.acctへリダイレクト
@@ -20,4 +20,4 @@ new class extends Component
             $this->redirect(route('home.timeline.acct', ['username' => $acct->username, 'domain' => $acct->domain]));
         }
     }
-}; ?>
+};

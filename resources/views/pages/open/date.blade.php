@@ -2,23 +2,26 @@
 
 use App\Models\User;
 use Carbon\Carbon;
+use Illuminate\View\View;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
-use Illuminate\View\View;
 
 /**
  * 公開。指定したユーザーの投稿を日付で絞り込んで表示する。
  */
-
 new
 #[Layout('layouts.open')]
 class extends Component
 {
     public User $user;
+
     public ?string $year = null;
+
     public ?string $month = null;
+
     public ?string $day = null;
+
     public ?string $date = null;
 
     public function mount(Request $request, User $user, ?string $year = null, ?string $month = null, ?string $day = null): void
@@ -54,7 +57,7 @@ class extends Component
         <flux:breadcrumbs.item>{{ $date }}</flux:breadcrumbs.item>
     </flux:breadcrumbs>
 
-    @foreach($this->statuses as $status)
+    @foreach ($this->statuses as $status)
         @include('status.item')
     @endforeach
 

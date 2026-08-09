@@ -3,24 +3,28 @@
 use App\Models\Account;
 use App\Models\Status;
 use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
-use Illuminate\View\View;
-use Illuminate\Http\Request;
 
 /**
  * 公開。指定したアカウントの個別投稿を表示する。
  */
-
 new
 #[Layout('layouts.open')]
 class extends Component
 {
     public Status $status;
+
     public User $user;
+
     public Account $acct;
+
     public string $username;
+
     public string $domain;
+
     public string $status_id;
 
     public function mount(Request $request): void
@@ -43,7 +47,8 @@ class extends Component
 <div>
     <flux:breadcrumbs class="mb-6">
         <flux:breadcrumbs.item href="{{ route('open.user', $user) }}">{{ '@'.$user->name }}</flux:breadcrumbs.item>
-        <flux:breadcrumbs.item href="{{ route('open.account.index', ['user' => $user, 'username' => $username, 'domain' => $domain]) }}">{{ $acct->acct }}</flux:breadcrumbs.item>
+        <flux:breadcrumbs.item href="{{ route('open.account.index', ['user' => $user, 'username' => $username, 'domain' => $domain]) }}">
+            {{ $acct->acct }}</flux:breadcrumbs.item>
     </flux:breadcrumbs>
 
     @include('pages.open.acct.profile')

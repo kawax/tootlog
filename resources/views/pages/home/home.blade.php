@@ -6,7 +6,6 @@ use Livewire\Component;
 /**
  * 非公開。ダッシュボードのホーム画面。
  */
-
 new class extends Component
 {
     public function rendering(View $view): void
@@ -28,6 +27,6 @@ new class extends Component
         </div>
     </div>
     <div class="relative h-full">
-        <livewire:pages::home.statuses/>
+        <livewire:pages::home.statuses />
     </div>
 </div>

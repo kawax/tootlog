@@ -41,6 +41,6 @@ new class extends Component
         wire:click="toggle"
         wire:model.live="show"
         align="left"
-        :label="!$status->trashed() ? 'Public' : 'Private'"
+        :label="! $status->trashed() ? 'Public' : 'Private'"
     />
 </flux:field>

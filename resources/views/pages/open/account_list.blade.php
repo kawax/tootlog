@@ -11,7 +11,6 @@ use Livewire\Component;
 /**
  * 公開。指定したユーザーのアカウント一覧を表示する。
  */
-
 new
 #[Lazy]
 class extends Component
@@ -46,8 +45,8 @@ class extends Component
         @foreach($accounts as $account)
             <flux:navlist.item
                 wire:key="{{ $account->id }}"
-                :href="route('open.account.index', ['user'=> $user,'username' => $account->username, 'domain' => $account->domain])"
-                :current="request()->is(route('open.account.index', ['user'=> $user,'username' => $account->username, 'domain' => $account->domain]))"
+                :href="route('open.account.index', ['user' => $user, 'username' => $account->username, 'domain' => $account->domain])"
+                :current="request()->is(route('open.account.index', ['user' => $user, 'username' => $account->username, 'domain' => $account->domain]))"
                 badge="{{ $account->statuses_count }}"
                 :icon="$account->locked ? 'lock-closed' : ''"
                 wire:navigate>

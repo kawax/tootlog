@@ -36,6 +36,6 @@ new class extends Component
         wire:click="toggle"
         wire:model.live="locked"
         align="left"
-        :label="$acct->locked ? 'This account is private': 'This account is public to everyone'"
+        :label="$acct->locked ? 'This account is private' : 'This account is public to everyone'"
     />
 </flux:field>

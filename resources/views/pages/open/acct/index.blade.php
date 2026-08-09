@@ -10,14 +10,16 @@ use Livewire\Component;
 /**
  * 公開。指定したアカウントの投稿一覧を表示する。
  */
-
 new
 #[Layout('layouts.open')]
 class extends Component
 {
     public User $user;
+
     public string $username;
+
     public string $domain;
+
     public Account $acct;
 
     public function mount(Request $request): void
@@ -39,5 +41,5 @@ class extends Component
 
     @include('pages.open.acct.profile')
 
-    <livewire:pages::open.statuses :username="$username" :domain="$domain"/>
+    <livewire:pages::open.statuses :username="$username" :domain="$domain" />
 </div>

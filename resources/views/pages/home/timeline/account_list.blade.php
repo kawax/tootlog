@@ -9,7 +9,6 @@ use Livewire\Component;
 /**
  * 非公開。timeline用。認証した現在のユーザーのアカウント一覧を表示する。
  */
-
 new class extends Component
 {
     public Collection $accounts;
@@ -22,12 +21,13 @@ new class extends Component
 
 <flux:navlist variant="outline">
     <flux:navlist.group :heading="__('Timeline')" class="grid">
-        @foreach($accounts as $account)
+        @foreach ($accounts as $account)
             <flux:navlist.item
                 :href="route('home.timeline.acct', ['username' => $account->username, 'domain' => $account->domain])"
                 :icon="$account->locked ? 'lock-closed' : ''"
-                icon:variant="micro">
-                @if($account->fails >= config('tootlog.account_fails'))
+                icon:variant="micro"
+            >
+                @if ($account->fails >= config('tootlog.account_fails'))
                     <del>{{ $account->acct }}</del>
                 @else
                     {{ $account->acct }}

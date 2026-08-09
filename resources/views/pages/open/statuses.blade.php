@@ -10,12 +10,14 @@ use Livewire\Component;
 /**
  * 公開。アカウントの投稿一覧。
  */
-
 new class extends Component
 {
     public Account $acct;
+
     public User $user;
+
     public string $username;
+
     public string $domain;
 
     public function mount(Request $request): void
@@ -37,15 +39,11 @@ new class extends Component
 }; ?>
 
 <div>
-    <div class="mb-3">
-        {{ $this->statuses->links() }}
-    </div>
+    <div class="mb-3">{{ $this->statuses->links() }}</div>
 
-    @foreach($this->statuses as $status)
+    @foreach ($this->statuses as $status)
         @include('status.item')
     @endforeach
 
-    <div class="mt-3">
-        {{ $this->statuses->links() }}
-    </div>
+    <div class="mt-3">{{ $this->statuses->links() }}</div>
 </div>

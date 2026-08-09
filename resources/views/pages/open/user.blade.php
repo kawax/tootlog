@@ -2,16 +2,15 @@
 
 use App\Models\User;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
-use Illuminate\View\View;
-use Illuminate\Http\Request;
 
 /**
  * 公開。指定したユーザーの投稿を表示する。
  */
-
 new
 #[Layout('layouts.open')]
 class extends Component
@@ -42,15 +41,11 @@ class extends Component
         <flux:breadcrumbs.item href="{{ route('open.user', $user) }}">{{ '@'.$user->name }}</flux:breadcrumbs.item>
     </flux:breadcrumbs>
 
-    <div class="mb-3">
-        {{ $this->statuses->links() }}
-    </div>
+    <div class="mb-3">{{ $this->statuses->links() }}</div>
 
-    @foreach($this->statuses as $status)
+    @foreach ($this->statuses as $status)
         @include('status.item')
     @endforeach
 
-    <div class="mt-3">
-        {{ $this->statuses->links() }}
-    </div>
+    <div class="mt-3">{{ $this->statuses->links() }}</div>
 </div>

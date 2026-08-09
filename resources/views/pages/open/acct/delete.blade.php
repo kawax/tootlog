@@ -2,8 +2,8 @@
 
 use App\Jobs\DeleteAccountJob;
 use App\Models\Account;
-use Livewire\Component;
 use Flux\Flux;
+use Livewire\Component;
 
 new class extends Component
 {
@@ -23,20 +23,16 @@ new class extends Component
 
 <div>
     <flux:modal.trigger name="delete-modal">
-        <flux:button variant="danger" size="sm">
-            Delete...
-        </flux:button>
+        <flux:button variant="danger" size="sm"> Delete... </flux:button>
     </flux:modal.trigger>
 
     <flux:modal name="delete-modal" class="max-w-md">
         <div>
             <flux:heading size="lg" class="mb-4">Delete account : {{ $acct->acct }}</flux:heading>
 
-            <flux:text class="mb-6">
-                All statuses will be delete. Can't undo.
-            </flux:text>
+            <flux:text class="mb-6"> All statuses will be delete. Can't undo. </flux:text>
 
-            <div class="flex gap-2 justify-end">
+            <div class="flex justify-end gap-2">
                 <flux:modal.close>
                     <flux:button variant="ghost">Cancel</flux:button>
                 </flux:modal.close>

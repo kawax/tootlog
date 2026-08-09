@@ -2,10 +2,10 @@
 
 use App\Models\User;
 use Carbon\Carbon;
+use Illuminate\View\View;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
-use Illuminate\View\View;
 
 /**
  * 公開。指定したユーザーの月別アーカイブリストページを表示する。
@@ -43,14 +43,17 @@ class extends Component
     <flux:text class="mt-2 mb-6">{{ __('Monthly Archive List') }}</flux:text>
 
     <flux:navlist variant="outline" class="w-64">
-        @foreach($this->archives as $date => $archive)
+        @foreach ($this->archives as $date => $archive)
             <flux:navlist.item
-                href="{{ route('open.user.date.day', [
-                        'user' => $user->name ,
+                href="{{
+                    route('open.user.date.day', [
+                        'user' => $user->name,
                         'year' => explode('-', $date)[0],
-                        'month' => explode('-', $date)[1]]) }}"
+                        'month' => explode('-', $date)[1]])
+                }}"
                 badge="{{ $archive }}"
-                icon="calendar-days">
+                icon="calendar-days"
+            >
                 {{ $date }}
             </flux:navlist.item>
         @endforeach

@@ -12,11 +12,12 @@ use Livewire\Component;
  * usernameとdomainでアカウントを指定すればアカウントの投稿一覧。
  * 指定しなければ認証ユーザーの投稿一覧。
  */
-
 new class extends Component
 {
     public ?Account $acct = null;
+
     public ?string $username = null;
+
     public ?string $domain = null;
 
     public function mount(Request $request): void
@@ -49,15 +50,11 @@ new class extends Component
 }; ?>
 
 <div>
-    <div class="mb-3">
-        {{ $this->statuses->links() }}
-    </div>
+    <div class="mb-3">{{ $this->statuses->links() }}</div>
 
-    @foreach($this->statuses as $status)
+    @foreach ($this->statuses as $status)
         @include('status.item')
     @endforeach
 
-    <div class="mt-3">
-        {{ $this->statuses->links() }}
-    </div>
+    <div class="mt-3">{{ $this->statuses->links() }}</div>
 </div>
