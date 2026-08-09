@@ -54,7 +54,7 @@ class Account extends Model
     }
 
     #[Scope]
-    public function byAcct(Builder $query, string $username, string $domain): void
+    protected function byAcct(Builder $query, string $username, string $domain): void
     {
         $url = '://'.$domain.'/@'.$username;
 
