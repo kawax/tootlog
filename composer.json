@@ -99,7 +99,7 @@
         "pre-package-uninstall": [
             "Illuminate\\Foundation\\ComposerScripts::prePackageUninstall"
         ],
-        "lint": "pint --parallel --blade",
+        "lint": "pint --parallel",
         "boost": "@php artisan boost:install --no-interaction --ansi"
     },
     "minimum-stability": "stable",
