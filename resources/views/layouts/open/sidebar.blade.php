@@ -20,11 +20,7 @@
         @auth
             <flux:navlist variant="outline">
                 <flux:navlist.group :heading="__('Private')" class="grid">
-                    <flux:navlist.item
-                        icon="home"
-                        :href="route('home')"
-                        wire:navigate
-                    >
+                    <flux:navlist.item icon="home" :href="route('home')" wire:navigate>
                         {{ __('Dashboard') }}</flux:navlist.item>
                 </flux:navlist.group>
             </flux:navlist>
