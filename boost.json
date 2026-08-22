@@ -1,14 +1,23 @@
 {
     "agents": [
-        "copilot"
-    ],
-    "editors": [
         "copilot-cli",
         "phpstorm-copilot"
     ],
-    "guidelines": [
-        "laravel/fortify",
-        "revolution/laravel-boost-phpstorm-copilot",
-        "revolution/laravel-boost-copilot-cli"
+    "guidelines": true,
+    "mcp": true,
+    "nightwatch_mcp": false,
+    "packages": [
+        "revolution/laravel-boost-copilot-cli",
+        "revolution/laravel-boost-phpstorm-copilot"
+    ],
+    "sail": false,
+    "skills": [
+        "fortify-development",
+        "laravel-best-practices",
+        "configure-nightwatch",
+        "socialite-development",
+        "fluxui-development",
+        "livewire-development",
+        "tailwindcss-development"
     ]
 }
