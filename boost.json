@@ -3,18 +3,22 @@
         "copilot-cli",
         "phpstorm-copilot"
     ],
+    "cloud": false,
     "guidelines": true,
     "mcp": true,
-    "nightwatch_mcp": false,
+    "nightwatch": false,
     "packages": [
         "revolution/laravel-boost-copilot-cli",
         "revolution/laravel-boost-phpstorm-copilot"
     ],
     "sail": false,
     "skills": [
+        "infer-conventions",
         "fortify-development",
         "laravel-best-practices",
+        "testing-best-practices",
         "configure-nightwatch",
+        "octane-development",
         "socialite-development",
         "fluxui-development",
         "livewire-development",
