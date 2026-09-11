@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import axios from 'axios';
 
 interface TootTile {
     mesh: THREE.Mesh;
@@ -103,8 +102,9 @@ class WelcomeScene {
 
     private async loadToots(): Promise<void> {
         try {
-            const response = await axios.get<string[]>('/api/welcome');
-            this.allToots = response.data;
+            const response = await fetch('/api/welcome');
+            if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
+            this.allToots = await response.json() as string[];
 
             const loadingEl = document.getElementById('welcome-loading');
             if (loadingEl) {
