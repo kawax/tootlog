@@ -2,6 +2,6 @@
     "preset": "laravel",
     "rules": {
         "no_unused_imports": false,
-        "Pint/laravel_blade": true
+        "Pint/laravel_blade": false
     }
 }
