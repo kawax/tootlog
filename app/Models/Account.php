@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Concerns\WithAccountStatus;
+use Illuminate\Database\Eloquent\Attributes\Scope;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -52,7 +53,8 @@ class Account extends Model
         return [];
     }
 
-    public function scopeByAcct(Builder $query, string $username, string $domain): void
+    #[Scope]
+    protected function byAcct(Builder $query, string $username, string $domain): void
     {
         $url = '://'.$domain.'/@'.$username;
 
