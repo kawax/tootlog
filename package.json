@@ -21,7 +21,7 @@
         "tailwindcss": "^4.0.7",
         "three": "^0.185.1",
         "vite": "^8.0.0",
-        "vite-plus": "0.3.0",
+        "vite-plus": "0.3.3",
         "vue": "^3.0"
     },
     "optionalDependencies": {
