@@ -1,5 +1,23 @@
 # CHANGELOG
 
+## v1.22.0 (2026-01-14)
+- 自動削除開始。アカウントごとに1000件以上のデータがある場合に古いデータから削除していくのでデータが少ないアカウントでは削除されない。
+- 今日までのログはダウンロード可能。
+
+- Starting automatic deletion. If there are more than 1000 records per account, the oldest data will be deleted first, so accounts with fewer data will not be deleted.
+- Logs up to today are available for download.
+
+## v1.21.0 (2026-01-08)
+- 10年近く運営してきて需要に比べてデータベースサイズが限界なので古いデータから削除していくことに決めた。
+- 今日時点でのデータは全てCSVでダウンロードできる。Settings→Download。
+- メールで送信しようかとも思ったけど巨大すぎる場合もあるので各自でダウンロードする方式。
+- 実際の削除開始はまだ。
+
+- After nearly 10 years of operation, the database size has reached its limit, so we have decided to delete the oldest data.
+- All data as of today can be downloaded in CSV format. Settings → Download.
+- I thought about sending it by email, but since it can be too large, each user will download it themselves.
+- Actual deletion has not yet started.
+
 ## v1.20.0 (2025-12-02)
 - アカウントを非公開に変更する機能を追加。元のマストドンサーバーが終了していると変更できなかったので直接変更可能にした。
 - Added the ability to change your account to private. This was not possible if the original Mastodon server was closed, so it can now be changed directly.
