@@ -1,24 +1,24 @@
 <?php
 
-use Livewire\Volt\Volt;
+use Illuminate\Support\Facades\Route;
 
 /**
  * Public Routes
  */
-Volt::route('@{user}', 'open.user')
+Route::livewire('@{user}', 'pages::open.user')
     ->name('open.user');
 
-Volt::route('@{user}/{username}@{domain}', 'open.acct.index')
+Route::livewire('@{user}/{username}@{domain}', 'pages::open.acct.index')
     ->name('open.account.index');
 
-Volt::route('@{user}/{username}@{domain}/{status_id}', 'open.acct.show')
+Route::livewire('@{user}/{username}@{domain}/{status_id}', 'pages::open.acct.show')
     ->name('open.account.show');
 
-Volt::route('@{user}/date/{year?}/{month?}/{day?}', 'open.date')
+Route::livewire('@{user}/date/{year?}/{month?}/{day?}', 'pages::open.date')
     ->name('open.user.date.day')
     ->where('year', '[0-9]{4}')
     ->where('month', '[0-9]{2}')
     ->where('day', '[0-9]{2}');
 
-Volt::route('@{user}/archives', 'open.archives')
+Route::livewire('@{user}/archives', 'pages::open.archives')
     ->name('open.archives');
